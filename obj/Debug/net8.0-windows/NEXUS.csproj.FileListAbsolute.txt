@@ -1,0 +1,17 @@
+C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\NEXUS.exe
+C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\NEXUS.deps.json
+C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\NEXUS.runtimeconfig.json
+C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\NEXUS.dll
+C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\NEXUS.pdb
+C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.csproj.GenerateResource.cache
+C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.AssemblyInfoInputs.cache
+C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.AssemblyInfo.cs
+C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.csproj.CoreCompileInputs.cache
+C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.dll
+C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\refint\NEXUS.dll
+C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.pdb
+C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.genruntimeconfig.cache
+C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\ref\NEXUS.dll
+C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.LogInForm.resources
+C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.WelcomeForm.resources
