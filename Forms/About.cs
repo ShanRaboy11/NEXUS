@@ -11,20 +11,18 @@ using System.Windows.Forms;
 
 namespace NEXUS.Forms
 {
-    public partial class LogInForm : Form
+    public partial class About : Form
     {
-        public LogInForm()
+        public About()
         {
             InitializeComponent();
-            btnLogIn.ColorBackground_Pen = Color.FromArgb(24, 60, 114);
-            btnRegister.ColorBackground_Pen = Color.Black;
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-        private void Login_MouseDown(object sender, MouseEventArgs e)
+        private void About_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);

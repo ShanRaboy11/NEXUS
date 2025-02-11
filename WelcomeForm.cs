@@ -18,12 +18,12 @@ namespace NEXUS
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-        private void Form1_MouseDown(object sender, MouseEventArgs e)
+
+        private void Welcome_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
 
         private void Maximize(object sender, EventArgs e)
         {
@@ -44,6 +44,11 @@ namespace NEXUS
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cyberButton2_Click(object sender, EventArgs e)
         {
 
         }

@@ -20,3 +20,4 @@ C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Properti
 C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\ReaLTaiizor.dll
 C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.csproj.AssemblyReference.cache
 C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.csproj.Up2Date
+C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.About.resources

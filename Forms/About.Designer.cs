@@ -1,14 +1,14 @@
-﻿namespace NEXUS
+﻿namespace NEXUS.Forms
 {
-    partial class WelcomeForm
+    partial class About
     {
         /// <summary>
-        ///  Required designer variable.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        ///  Clean up any resources being used.
+        /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -23,19 +23,17 @@
         #region Windows Form Designer generated code
 
         /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WelcomeForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(About));
             panel1 = new Panel();
             cyberButton3 = new ReaLTaiizor.Controls.CyberButton();
             btnMaximize = new ReaLTaiizor.Controls.CyberButton();
             cyberButton1 = new ReaLTaiizor.Controls.CyberButton();
             pbNexus = new PictureBox();
-            label1 = new Label();
-            btnEnter = new ReaLTaiizor.Controls.CyberButton();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbNexus).BeginInit();
             SuspendLayout();
@@ -49,9 +47,9 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(485, 34);
-            panel1.TabIndex = 0;
-            panel1.MouseDown += Welcome_MouseDown;
+            panel1.Size = new Size(509, 34);
+            panel1.TabIndex = 1;
+            panel1.MouseDown += About_MouseDown;
             // 
             // cyberButton3
             // 
@@ -79,7 +77,7 @@
             cyberButton3.Lighting = false;
             cyberButton3.LinearGradient_Background = false;
             cyberButton3.LinearGradientPen = false;
-            cyberButton3.Location = new Point(389, 1);
+            cyberButton3.Location = new Point(415, 1);
             cyberButton3.Name = "cyberButton3";
             cyberButton3.PenWidth = 15;
             cyberButton3.Rounding = true;
@@ -92,7 +90,6 @@
             cyberButton3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             cyberButton3.Timer_Effect_1 = 5;
             cyberButton3.Timer_RGB = 300;
-            cyberButton3.Click += Minimize;
             // 
             // btnMaximize
             // 
@@ -120,7 +117,7 @@
             btnMaximize.Lighting = false;
             btnMaximize.LinearGradient_Background = false;
             btnMaximize.LinearGradientPen = false;
-            btnMaximize.Location = new Point(420, 1);
+            btnMaximize.Location = new Point(446, 1);
             btnMaximize.Name = "btnMaximize";
             btnMaximize.PenWidth = 15;
             btnMaximize.Rounding = true;
@@ -133,7 +130,6 @@
             btnMaximize.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             btnMaximize.Timer_Effect_1 = 5;
             btnMaximize.Timer_RGB = 300;
-            btnMaximize.Click += Maximize;
             // 
             // cyberButton1
             // 
@@ -161,7 +157,7 @@
             cyberButton1.Lighting = false;
             cyberButton1.LinearGradient_Background = false;
             cyberButton1.LinearGradientPen = false;
-            cyberButton1.Location = new Point(451, 1);
+            cyberButton1.Location = new Point(477, 1);
             cyberButton1.Name = "cyberButton1";
             cyberButton1.PenWidth = 15;
             cyberButton1.Rounding = true;
@@ -174,104 +170,44 @@
             cyberButton1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             cyberButton1.Timer_Effect_1 = 5;
             cyberButton1.Timer_RGB = 300;
-            cyberButton1.Click += Close;
             // 
             // pbNexus
             // 
-            pbNexus.Dock = DockStyle.Fill;
             pbNexus.Image = Properties.Resources.NEXUS__1__removebg_preview__1_;
-            pbNexus.Location = new Point(0, 0);
+            pbNexus.Location = new Point(161, -14);
             pbNexus.Name = "pbNexus";
-            pbNexus.Size = new Size(485, 482);
+            pbNexus.Size = new Size(178, 237);
             pbNexus.SizeMode = PictureBoxSizeMode.Zoom;
-            pbNexus.TabIndex = 1;
+            pbNexus.TabIndex = 2;
             pbNexus.TabStop = false;
-            pbNexus.Click += pictureBox1_Click;
-            pbNexus.MouseDown += Welcome_MouseDown;
             // 
-            // label1
+            // About
             // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            label1.AutoSize = true;
-            label1.Font = new Font("Inter", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label1.ForeColor = Color.FromArgb(24, 60, 114);
-            label1.Location = new Point(154, 63);
-            label1.Name = "label1";
-            label1.Size = new Size(150, 35);
-            label1.TabIndex = 2;
-            label1.Text = "Welcome to";
-            // 
-            // btnEnter
-            // 
-            btnEnter.Alpha = 20;
-            btnEnter.BackColor = Color.Transparent;
-            btnEnter.Background = true;
-            btnEnter.Background_WidthPen = 4F;
-            btnEnter.BackgroundPen = true;
-            btnEnter.ColorBackground = Color.FromArgb(128, 223, 255);
-            btnEnter.ColorBackground_1 = Color.FromArgb(128, 223, 255);
-            btnEnter.ColorBackground_2 = Color.FromArgb(128, 223, 255);
-            btnEnter.ColorBackground_Pen = Color.FromArgb(128, 223, 255);
-            btnEnter.ColorLighting = Color.FromArgb(128, 223, 255);
-            btnEnter.ColorPen_1 = Color.FromArgb(128, 223, 255);
-            btnEnter.ColorPen_2 = Color.FromArgb(128, 223, 255);
-            btnEnter.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            btnEnter.Effect_1 = true;
-            btnEnter.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
-            btnEnter.Effect_1_Transparency = 25;
-            btnEnter.Effect_2 = true;
-            btnEnter.Effect_2_ColorBackground = Color.White;
-            btnEnter.Effect_2_Transparency = 20;
-            btnEnter.Font = new Font("Inter", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnEnter.ForeColor = Color.FromArgb(24, 60, 114);
-            btnEnter.Lighting = false;
-            btnEnter.LinearGradient_Background = false;
-            btnEnter.LinearGradientPen = false;
-            btnEnter.Location = new Point(154, 401);
-            btnEnter.Name = "btnEnter";
-            btnEnter.PenWidth = 15;
-            btnEnter.Rounding = true;
-            btnEnter.RoundingInt = 70;
-            btnEnter.Size = new Size(165, 46);
-            btnEnter.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            btnEnter.TabIndex = 5;
-            btnEnter.Tag = "Cyber";
-            btnEnter.TextButton = "Enter";
-            btnEnter.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            btnEnter.Timer_Effect_1 = 5;
-            btnEnter.Timer_RGB = 300;
-            btnEnter.Click += cyberButton2_Click;
-            // 
-            // WelcomeForm
-            // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
-            ClientSize = new Size(485, 482);
-            Controls.Add(btnEnter);
-            Controls.Add(label1);
+            ClientSize = new Size(509, 525);
             Controls.Add(panel1);
             Controls.Add(pbNexus);
+            Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "WelcomeForm";
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "About";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Nexus";
-            MouseDown += Welcome_MouseDown;
+            Text = "About";
+            MouseDown += About_MouseDown;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbNexus).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private Panel panel1;
-        private PictureBox pbNexus;
-        private Label label1;
+        private ReaLTaiizor.Controls.CyberButton cyberButton3;
         private ReaLTaiizor.Controls.CyberButton btnMaximize;
         private ReaLTaiizor.Controls.CyberButton cyberButton1;
-        private ReaLTaiizor.Controls.CyberButton cyberButton3;
-        private ReaLTaiizor.Controls.CyberButton btnEnter;
+        private PictureBox pbNexus;
     }
 }
