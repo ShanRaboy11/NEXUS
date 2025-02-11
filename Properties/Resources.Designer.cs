@@ -63,9 +63,29 @@ namespace NEXUS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _8530693_window_maximize_icon {
+            get {
+                object obj = ResourceManager.GetObject("8530693_window_maximize_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap NEXUS__1__removebg_preview__1_ {
             get {
                 object obj = ResourceManager.GetObject("NEXUS__1_-removebg-preview (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Removal_915 {
+            get {
+                object obj = ResourceManager.GetObject("Removal-915", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

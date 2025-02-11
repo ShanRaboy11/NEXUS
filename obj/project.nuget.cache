@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Ma33+zfoExc=",
+  "dgSpecHash": "/EwgjHPqOBY=",
   "success": true,
   "projectFilePath": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\NEXUS.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Shan Michael\\.nuget\\packages\\realtaiizor\\3.8.1.1\\realtaiizor.3.8.1.1.nupkg.sha512"
+  ],
   "logs": []
 }
