@@ -1,3 +1,4 @@
+using NEXUS.Forms;
 using System.Runtime.InteropServices;
 
 namespace NEXUS
@@ -43,14 +44,22 @@ namespace NEXUS
             Application.Exit();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void AboutPage(object sender, EventArgs e)
         {
+            About about = new About();
+            about.FormClosed += (s, args) => this.Show();
+            about.Owner = this;
 
+            about.Show();
+            this.Hide();
         }
 
         private void cyberButton2_Click(object sender, EventArgs e)
         {
+            LogInForm logInForm = new LogInForm();
 
+           logInForm.Show();
+           this.Hide();
         }
     }
 }

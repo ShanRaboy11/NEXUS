@@ -63,6 +63,26 @@ namespace NEXUS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3844443_disable_eye_inactive_see_show_icon {
+            get {
+                object obj = ResourceManager.GetObject("3844443_disable_eye_inactive_see_show_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _4115230_cancel_close_delete_icon {
+            get {
+                object obj = ResourceManager.GetObject("4115230_cancel_close_delete_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _8530693_window_maximize_icon {
             get {
                 object obj = ResourceManager.GetObject("8530693_window_maximize_icon", resourceCulture);
@@ -86,6 +106,16 @@ namespace NEXUS.Properties {
         internal static System.Drawing.Bitmap Removal_915 {
             get {
                 object obj = ResourceManager.GetObject("Removal-915", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap show_eye {
+            get {
+                object obj = ResourceManager.GetObject("show_eye", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

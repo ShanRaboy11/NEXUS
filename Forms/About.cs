@@ -44,7 +44,7 @@ namespace NEXUS.Forms
 
         private void Close(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
     }
 }

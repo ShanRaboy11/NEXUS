@@ -28,32 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogInForm));
             pbLogo = new PictureBox();
             pnlUsername = new Panel();
-            lblUsername = new Label();
+            contextShortcuts = new ContextMenuStrip(components);
+            copyToolStripMenuItem = new ToolStripMenuItem();
+            cutToolStripMenuItem = new ToolStripMenuItem();
+            pasteToolStripMenuItem = new ToolStripMenuItem();
+            selectAllToolStripMenuItem = new ToolStripMenuItem();
+            tbxEnterUsername = new TextBox();
             btnLogIn = new ReaLTaiizor.Controls.CyberButton();
             lblForgetPass = new Label();
             checkBox1 = new CheckBox();
             pnlPassword = new Panel();
-            lblPassword = new Label();
+            tbxEnterPassword = new TextBox();
+            pbPrivacy = new PictureBox();
             lblRemember = new Label();
             btnRegister = new ReaLTaiizor.Controls.CyberButton();
             panel1 = new Panel();
-            cyberButton3 = new ReaLTaiizor.Controls.CyberButton();
-            btnMaximize = new ReaLTaiizor.Controls.CyberButton();
-            cyberButton1 = new ReaLTaiizor.Controls.CyberButton();
+            panel2 = new Panel();
+            pictureBox3 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pbLogo).BeginInit();
             pnlUsername.SuspendLayout();
+            contextShortcuts.SuspendLayout();
             pnlPassword.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbPrivacy).BeginInit();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // pbLogo
             // 
+            pbLogo.Cursor = Cursors.Hand;
             pbLogo.Image = Properties.Resources.Removal_915;
-            pbLogo.Location = new Point(148, 60);
+            pbLogo.Location = new Point(162, 57);
             pbLogo.Name = "pbLogo";
-            pbLogo.Size = new Size(87, 87);
+            pbLogo.Size = new Size(90, 90);
             pbLogo.SizeMode = PictureBoxSizeMode.Zoom;
             pbLogo.TabIndex = 0;
             pbLogo.TabStop = false;
@@ -62,22 +78,63 @@
             // 
             pnlUsername.BackColor = Color.FromArgb(176, 233, 255);
             pnlUsername.BackgroundImageLayout = ImageLayout.None;
-            pnlUsername.Controls.Add(lblUsername);
-            pnlUsername.Location = new Point(38, 170);
+            pnlUsername.ContextMenuStrip = contextShortcuts;
+            pnlUsername.Controls.Add(tbxEnterUsername);
+            pnlUsername.Location = new Point(43, 170);
             pnlUsername.Name = "pnlUsername";
             pnlUsername.Size = new Size(311, 48);
             pnlUsername.TabIndex = 2;
+            pnlUsername.Click += EnterUsername;
             // 
-            // lblUsername
+            // contextShortcuts
             // 
-            lblUsername.AutoSize = true;
-            lblUsername.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblUsername.ForeColor = Color.FromArgb(24, 60, 114);
-            lblUsername.Location = new Point(32, 11);
-            lblUsername.Name = "lblUsername";
-            lblUsername.Size = new Size(86, 23);
-            lblUsername.TabIndex = 6;
-            lblUsername.Text = "Username";
+            contextShortcuts.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            contextShortcuts.Items.AddRange(new ToolStripItem[] { copyToolStripMenuItem, cutToolStripMenuItem, pasteToolStripMenuItem, selectAllToolStripMenuItem });
+            contextShortcuts.Name = "contextShortcuts";
+            contextShortcuts.Size = new Size(132, 92);
+            // 
+            // copyToolStripMenuItem
+            // 
+            copyToolStripMenuItem.Name = "copyToolStripMenuItem";
+            copyToolStripMenuItem.Size = new Size(131, 22);
+            copyToolStripMenuItem.Text = "Copy";
+            copyToolStripMenuItem.Click += CopyText;
+            // 
+            // cutToolStripMenuItem
+            // 
+            cutToolStripMenuItem.Name = "cutToolStripMenuItem";
+            cutToolStripMenuItem.Size = new Size(131, 22);
+            cutToolStripMenuItem.Text = "Cut";
+            cutToolStripMenuItem.Click += CutText;
+            // 
+            // pasteToolStripMenuItem
+            // 
+            pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
+            pasteToolStripMenuItem.Size = new Size(131, 22);
+            pasteToolStripMenuItem.Text = "Paste";
+            pasteToolStripMenuItem.Click += PasteText;
+            // 
+            // selectAllToolStripMenuItem
+            // 
+            selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
+            selectAllToolStripMenuItem.Size = new Size(131, 22);
+            selectAllToolStripMenuItem.Text = "Select all";
+            selectAllToolStripMenuItem.Click += SelectAllText;
+            // 
+            // tbxEnterUsername
+            // 
+            tbxEnterUsername.BackColor = Color.FromArgb(176, 233, 255);
+            tbxEnterUsername.BorderStyle = BorderStyle.None;
+            tbxEnterUsername.ContextMenuStrip = contextShortcuts;
+            tbxEnterUsername.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbxEnterUsername.ForeColor = Color.FromArgb(24, 60, 114);
+            tbxEnterUsername.Location = new Point(30, 14);
+            tbxEnterUsername.Name = "tbxEnterUsername";
+            tbxEnterUsername.Size = new Size(237, 20);
+            tbxEnterUsername.TabIndex = 9;
+            tbxEnterUsername.TabStop = false;
+            tbxEnterUsername.Text = "Username";
+            tbxEnterUsername.Click += EnterUsername;
             // 
             // btnLogIn
             // 
@@ -93,6 +150,7 @@
             btnLogIn.ColorLighting = Color.FromArgb(24, 60, 114);
             btnLogIn.ColorPen_1 = Color.FromArgb(24, 60, 114);
             btnLogIn.ColorPen_2 = Color.FromArgb(24, 60, 114);
+            btnLogIn.Cursor = Cursors.Hand;
             btnLogIn.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
             btnLogIn.Effect_1 = true;
             btnLogIn.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
@@ -105,7 +163,7 @@
             btnLogIn.Lighting = false;
             btnLogIn.LinearGradient_Background = false;
             btnLogIn.LinearGradientPen = false;
-            btnLogIn.Location = new Point(38, 291);
+            btnLogIn.Location = new Point(43, 291);
             btnLogIn.Name = "btnLogIn";
             btnLogIn.PenWidth = 15;
             btnLogIn.Rounding = true;
@@ -122,9 +180,10 @@
             // lblForgetPass
             // 
             lblForgetPass.AutoSize = true;
+            lblForgetPass.Cursor = Cursors.Hand;
             lblForgetPass.Font = new Font("Inter", 10.25F);
             lblForgetPass.ForeColor = Color.FromArgb(84, 84, 84);
-            lblForgetPass.Location = new Point(222, 339);
+            lblForgetPass.Location = new Point(227, 339);
             lblForgetPass.Name = "lblForgetPass";
             lblForgetPass.RightToLeft = RightToLeft.No;
             lblForgetPass.Size = new Size(127, 21);
@@ -134,7 +193,8 @@
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(47, 344);
+            checkBox1.Cursor = Cursors.Hand;
+            checkBox1.Location = new Point(52, 344);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(15, 14);
             checkBox1.TabIndex = 9;
@@ -144,29 +204,46 @@
             // 
             pnlPassword.BackColor = Color.FromArgb(176, 233, 255);
             pnlPassword.BackgroundImageLayout = ImageLayout.None;
-            pnlPassword.Controls.Add(lblPassword);
-            pnlPassword.Location = new Point(38, 232);
+            pnlPassword.Controls.Add(tbxEnterPassword);
+            pnlPassword.Controls.Add(pbPrivacy);
+            pnlPassword.Location = new Point(43, 232);
             pnlPassword.Name = "pnlPassword";
             pnlPassword.Size = new Size(309, 48);
             pnlPassword.TabIndex = 7;
+            pnlPassword.Enter += EnterPassword;
             // 
-            // lblPassword
+            // tbxEnterPassword
             // 
-            lblPassword.AutoSize = true;
-            lblPassword.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPassword.ForeColor = Color.FromArgb(24, 60, 114);
-            lblPassword.Location = new Point(32, 11);
-            lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(84, 23);
-            lblPassword.TabIndex = 6;
-            lblPassword.Text = "Password";
+            tbxEnterPassword.BackColor = Color.FromArgb(176, 233, 255);
+            tbxEnterPassword.BorderStyle = BorderStyle.None;
+            tbxEnterPassword.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbxEnterPassword.ForeColor = Color.FromArgb(24, 60, 114);
+            tbxEnterPassword.Location = new Point(32, 14);
+            tbxEnterPassword.Name = "tbxEnterPassword";
+            tbxEnterPassword.Size = new Size(227, 20);
+            tbxEnterPassword.TabIndex = 8;
+            tbxEnterPassword.Text = "Password";
+            tbxEnterPassword.Click += EnterPassword;
+            // 
+            // pbPrivacy
+            // 
+            pbPrivacy.Cursor = Cursors.Hand;
+            pbPrivacy.Image = Properties.Resources._3844443_disable_eye_inactive_see_show_icon;
+            pbPrivacy.Location = new Point(265, 14);
+            pbPrivacy.Name = "pbPrivacy";
+            pbPrivacy.Size = new Size(33, 21);
+            pbPrivacy.SizeMode = PictureBoxSizeMode.CenterImage;
+            pbPrivacy.TabIndex = 7;
+            pbPrivacy.TabStop = false;
+            pbPrivacy.Click += pbPrivacy_Click;
             // 
             // lblRemember
             // 
             lblRemember.AutoSize = true;
+            lblRemember.Cursor = Cursors.Hand;
             lblRemember.Font = new Font("Inter", 10.25F);
             lblRemember.ForeColor = Color.FromArgb(84, 84, 84);
-            lblRemember.Location = new Point(63, 339);
+            lblRemember.Location = new Point(68, 339);
             lblRemember.Name = "lblRemember";
             lblRemember.RightToLeft = RightToLeft.No;
             lblRemember.Size = new Size(105, 21);
@@ -187,6 +264,7 @@
             btnRegister.ColorLighting = Color.White;
             btnRegister.ColorPen_1 = Color.White;
             btnRegister.ColorPen_2 = Color.White;
+            btnRegister.Cursor = Cursors.Hand;
             btnRegister.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
             btnRegister.Effect_1 = true;
             btnRegister.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
@@ -199,7 +277,7 @@
             btnRegister.Lighting = false;
             btnRegister.LinearGradient_Background = false;
             btnRegister.LinearGradientPen = false;
-            btnRegister.Location = new Point(78, 406);
+            btnRegister.Location = new Point(83, 406);
             btnRegister.Name = "btnRegister";
             btnRegister.PenWidth = 15;
             btnRegister.Rounding = true;
@@ -216,9 +294,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(153, 229, 255);
-            panel1.Controls.Add(cyberButton3);
-            panel1.Controls.Add(btnMaximize);
-            panel1.Controls.Add(cyberButton1);
+            panel1.Controls.Add(panel2);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -226,125 +302,50 @@
             panel1.TabIndex = 12;
             panel1.MouseDown += Login_MouseDown;
             // 
-            // cyberButton3
+            // panel2
             // 
-            cyberButton3.Alpha = 20;
-            cyberButton3.BackColor = Color.Transparent;
-            cyberButton3.Background = true;
-            cyberButton3.Background_WidthPen = 4F;
-            cyberButton3.BackgroundPen = true;
-            cyberButton3.ColorBackground = Color.White;
-            cyberButton3.ColorBackground_1 = Color.White;
-            cyberButton3.ColorBackground_2 = Color.White;
-            cyberButton3.ColorBackground_Pen = Color.FromArgb(128, 223, 255);
-            cyberButton3.ColorLighting = Color.White;
-            cyberButton3.ColorPen_1 = Color.FromArgb(37, 52, 68);
-            cyberButton3.ColorPen_2 = Color.FromArgb(41, 63, 86);
-            cyberButton3.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            cyberButton3.Effect_1 = true;
-            cyberButton3.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
-            cyberButton3.Effect_1_Transparency = 25;
-            cyberButton3.Effect_2 = true;
-            cyberButton3.Effect_2_ColorBackground = Color.FromArgb(29, 200, 238);
-            cyberButton3.Effect_2_Transparency = 20;
-            cyberButton3.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            cyberButton3.ForeColor = Color.FromArgb(0, 229, 255);
-            cyberButton3.Lighting = false;
-            cyberButton3.LinearGradient_Background = false;
-            cyberButton3.LinearGradientPen = false;
-            cyberButton3.Location = new Point(304, 1);
-            cyberButton3.Name = "cyberButton3";
-            cyberButton3.PenWidth = 15;
-            cyberButton3.Rounding = true;
-            cyberButton3.RoundingInt = 70;
-            cyberButton3.Size = new Size(30, 30);
-            cyberButton3.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            cyberButton3.TabIndex = 8;
-            cyberButton3.Tag = "Cyber";
-            cyberButton3.TextButton = "_";
-            cyberButton3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            cyberButton3.Timer_Effect_1 = 5;
-            cyberButton3.Timer_RGB = 300;
+            panel2.BackColor = Color.FromArgb(153, 229, 255);
+            panel2.Controls.Add(pictureBox3);
+            panel2.Controls.Add(pictureBox2);
+            panel2.Controls.Add(pictureBox1);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(397, 34);
+            panel2.TabIndex = 13;
             // 
-            // btnMaximize
+            // pictureBox3
             // 
-            btnMaximize.Alpha = 20;
-            btnMaximize.BackColor = Color.Transparent;
-            btnMaximize.Background = true;
-            btnMaximize.Background_WidthPen = 4F;
-            btnMaximize.BackgroundPen = true;
-            btnMaximize.ColorBackground = Color.White;
-            btnMaximize.ColorBackground_1 = Color.White;
-            btnMaximize.ColorBackground_2 = Color.White;
-            btnMaximize.ColorBackground_Pen = Color.FromArgb(128, 223, 255);
-            btnMaximize.ColorLighting = Color.White;
-            btnMaximize.ColorPen_1 = Color.FromArgb(37, 52, 68);
-            btnMaximize.ColorPen_2 = Color.FromArgb(41, 63, 86);
-            btnMaximize.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            btnMaximize.Effect_1 = true;
-            btnMaximize.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
-            btnMaximize.Effect_1_Transparency = 25;
-            btnMaximize.Effect_2 = true;
-            btnMaximize.Effect_2_ColorBackground = Color.White;
-            btnMaximize.Effect_2_Transparency = 20;
-            btnMaximize.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnMaximize.ForeColor = Color.FromArgb(0, 229, 255);
-            btnMaximize.Lighting = false;
-            btnMaximize.LinearGradient_Background = false;
-            btnMaximize.LinearGradientPen = false;
-            btnMaximize.Location = new Point(335, 1);
-            btnMaximize.Name = "btnMaximize";
-            btnMaximize.PenWidth = 15;
-            btnMaximize.Rounding = true;
-            btnMaximize.RoundingInt = 70;
-            btnMaximize.Size = new Size(30, 30);
-            btnMaximize.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            btnMaximize.TabIndex = 7;
-            btnMaximize.Tag = "Cyber";
-            btnMaximize.TextButton = "⛶";
-            btnMaximize.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            btnMaximize.Timer_Effect_1 = 5;
-            btnMaximize.Timer_RGB = 300;
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(344, 11);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(14, 14);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 2;
+            pictureBox3.TabStop = false;
+            pictureBox3.Click += Maximize;
             // 
-            // cyberButton1
+            // pictureBox2
             // 
-            cyberButton1.Alpha = 20;
-            cyberButton1.BackColor = Color.Transparent;
-            cyberButton1.Background = true;
-            cyberButton1.Background_WidthPen = 4F;
-            cyberButton1.BackgroundPen = true;
-            cyberButton1.ColorBackground = Color.White;
-            cyberButton1.ColorBackground_1 = Color.White;
-            cyberButton1.ColorBackground_2 = Color.White;
-            cyberButton1.ColorBackground_Pen = Color.FromArgb(128, 223, 255);
-            cyberButton1.ColorLighting = Color.White;
-            cyberButton1.ColorPen_1 = Color.FromArgb(37, 52, 68);
-            cyberButton1.ColorPen_2 = Color.FromArgb(41, 63, 86);
-            cyberButton1.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            cyberButton1.Effect_1 = true;
-            cyberButton1.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
-            cyberButton1.Effect_1_Transparency = 25;
-            cyberButton1.Effect_2 = true;
-            cyberButton1.Effect_2_ColorBackground = Color.White;
-            cyberButton1.Effect_2_Transparency = 20;
-            cyberButton1.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            cyberButton1.ForeColor = Color.FromArgb(0, 229, 255);
-            cyberButton1.Lighting = false;
-            cyberButton1.LinearGradient_Background = false;
-            cyberButton1.LinearGradientPen = false;
-            cyberButton1.Location = new Point(366, 1);
-            cyberButton1.Name = "cyberButton1";
-            cyberButton1.PenWidth = 15;
-            cyberButton1.Rounding = true;
-            cyberButton1.RoundingInt = 70;
-            cyberButton1.Size = new Size(30, 30);
-            cyberButton1.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            cyberButton1.TabIndex = 6;
-            cyberButton1.Tag = "Cyber";
-            cyberButton1.TextButton = "x";
-            cyberButton1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            cyberButton1.Timer_Effect_1 = 5;
-            cyberButton1.Timer_RGB = 300;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(313, 9);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(19, 19);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 1;
+            pictureBox2.TabStop = false;
+            pictureBox2.Click += Minimize;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(371, 9);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(18, 18);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += Close;
             // 
             // LogInForm
             // 
@@ -369,9 +370,15 @@
             ((System.ComponentModel.ISupportInitialize)pbLogo).EndInit();
             pnlUsername.ResumeLayout(false);
             pnlUsername.PerformLayout();
+            contextShortcuts.ResumeLayout(false);
             pnlPassword.ResumeLayout(false);
             pnlPassword.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pbPrivacy).EndInit();
             panel1.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -389,8 +396,17 @@
         private Label lblRemember;
         private ReaLTaiizor.Controls.CyberButton btnRegister;
         private Panel panel1;
-        private ReaLTaiizor.Controls.CyberButton cyberButton3;
-        private ReaLTaiizor.Controls.CyberButton btnMaximize;
-        private ReaLTaiizor.Controls.CyberButton cyberButton1;
+        private PictureBox pbPrivacy;
+        private TextBox tbxEnterUsername;
+        private TextBox tbxEnterPassword;
+        private ContextMenuStrip contextShortcuts;
+        private ToolStripMenuItem copyToolStripMenuItem;
+        private ToolStripMenuItem cutToolStripMenuItem;
+        private ToolStripMenuItem pasteToolStripMenuItem;
+        private ToolStripMenuItem selectAllToolStripMenuItem;
+        private Panel panel2;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox3;
     }
 }
