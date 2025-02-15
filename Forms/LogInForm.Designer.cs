@@ -46,21 +46,19 @@
             pbPrivacy = new PictureBox();
             lblRemember = new Label();
             btnRegister = new ReaLTaiizor.Controls.CyberButton();
-            panel1 = new Panel();
             panel2 = new Panel();
-            pictureBox3 = new PictureBox();
-            pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            pictureBox3 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pbLogo).BeginInit();
             pnlUsername.SuspendLayout();
             contextShortcuts.SuspendLayout();
             pnlPassword.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbPrivacy).BeginInit();
-            panel1.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // pbLogo
@@ -296,17 +294,6 @@
             btnRegister.Timer_RGB = 300;
             btnRegister.Click += btnRegister_Click;
             // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(153, 229, 255);
-            panel1.Controls.Add(panel2);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(397, 34);
-            panel1.TabIndex = 12;
-            panel1.MouseDown += Login_MouseDown;
-            // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(153, 229, 255);
@@ -316,36 +303,14 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(397, 34);
+            panel2.Size = new Size(397, 28);
             panel2.TabIndex = 13;
             panel2.MouseDown += Login_MouseDown;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(344, 11);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(14, 14);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 2;
-            pictureBox3.TabStop = false;
-            pictureBox3.Click += Maximize;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(313, 9);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(19, 19);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 1;
-            pictureBox2.TabStop = false;
-            pictureBox2.Click += Minimize;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(371, 9);
+            pictureBox1.Location = new Point(371, 5);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(18, 18);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -353,13 +318,35 @@
             pictureBox1.TabStop = false;
             pictureBox1.Click += Close;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(313, 5);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(19, 19);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 1;
+            pictureBox2.TabStop = false;
+            pictureBox2.Click += Minimize;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(344, 7);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(14, 14);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 2;
+            pictureBox3.TabStop = false;
+            pictureBox3.Click += Maximize;
+            // 
             // LogInForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
             ClientSize = new Size(397, 486);
-            Controls.Add(panel1);
+            Controls.Add(panel2);
             Controls.Add(btnRegister);
             Controls.Add(lblRemember);
             Controls.Add(pnlPassword);
@@ -380,11 +367,10 @@
             pnlPassword.ResumeLayout(false);
             pnlPassword.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbPrivacy).EndInit();
-            panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -401,7 +387,6 @@
         private Label lblPassword;
         private Label lblRemember;
         private ReaLTaiizor.Controls.CyberButton btnRegister;
-        private Panel panel1;
         private PictureBox pbPrivacy;
         private TextBox tbxEnterUsername;
         private TextBox tbxEnterPassword;
@@ -411,8 +396,8 @@
         private ToolStripMenuItem pasteToolStripMenuItem;
         private ToolStripMenuItem selectAllToolStripMenuItem;
         private Panel panel2;
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
         private PictureBox pictureBox3;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox1;
     }
 }

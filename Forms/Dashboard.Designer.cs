@@ -33,6 +33,7 @@
             pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
+            panel1 = new Panel();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -48,14 +49,14 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(800, 34);
+            panel2.Size = new Size(960, 28);
             panel2.TabIndex = 17;
             panel2.MouseDown += Dashboard_MouseDown;
             // 
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(499, 11);
+            pictureBox3.Location = new Point(902, 6);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(14, 14);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -66,7 +67,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(468, 9);
+            pictureBox2.Location = new Point(871, 4);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(19, 19);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -77,7 +78,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(526, 9);
+            pictureBox1.Location = new Point(929, 4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(18, 18);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -85,12 +86,22 @@
             pictureBox1.TabStop = false;
             pictureBox1.Click += Close;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(24, 60, 114);
+            panel1.Dock = DockStyle.Left;
+            panel1.Location = new Point(0, 28);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(186, 557);
+            panel1.TabIndex = 18;
+            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(960, 585);
+            Controls.Add(panel1);
             Controls.Add(panel2);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -111,5 +122,6 @@
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
+        private Panel panel1;
     }
 }

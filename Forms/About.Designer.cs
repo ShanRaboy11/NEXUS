@@ -61,14 +61,14 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(509, 34);
+            panel2.Size = new Size(509, 28);
             panel2.TabIndex = 15;
             panel2.MouseDown += About_MouseDown;
             // 
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(455, 11);
+            pictureBox3.Location = new Point(455, 6);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(14, 14);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -79,7 +79,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(424, 9);
+            pictureBox2.Location = new Point(424, 4);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(19, 19);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -90,7 +90,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(482, 9);
+            pictureBox1.Location = new Point(482, 4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(18, 18);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;

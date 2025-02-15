@@ -58,16 +58,23 @@ namespace NEXUS.Forms
         {
             isPasswordVisible = !isPasswordVisible;
 
+            if(tbxEnterPassword.Text == "Password")
+            {
+                tbxEnterPassword.Text = "";
+            }
+
             if (isPasswordVisible)
             {
                 pbPrivacy.Image = Resources.show_eye;
                 tbxEnterPassword.UseSystemPasswordChar = false;
                 tbxEnterPassword.TabStop = false;
+                tbxEnterPassword.Font = new Font("Inter", 12, FontStyle.Regular);
             }
             else
             {
                 pbPrivacy.Image = Resources._3844443_disable_eye_inactive_see_show_icon;
                 tbxEnterPassword.UseSystemPasswordChar = true;
+                tbxEnterPassword.Font = new Font("Inter" , 9, FontStyle.Regular);
             }
         }
 
@@ -86,6 +93,7 @@ namespace NEXUS.Forms
             isClicked2 = true;
             tbxEnterPassword.Text = "";
             tbxEnterPassword.UseSystemPasswordChar = true;
+            tbxEnterPassword.Font = new Font("Inter", 9, FontStyle.Regular);
         }
 
         private void CopyText(object sender, EventArgs e)

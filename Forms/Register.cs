@@ -49,6 +49,28 @@ namespace NEXUS.Forms
             this.Close();
         }
 
+        private void EnterFirstname(object sender, EventArgs e)
+        {
+            tbxNewFirstName.Text = "";
+        }
+
+        private void EnterLastname(object sender, EventArgs e)
+        {
+            tbxNewLastName.Text = "";
+        }
+
+        private void EnterUsername(object sender, EventArgs e)
+        {
+            tbxNewUserName.Text = "";
+        }
+
+        private void EnterPassword(object sender, EventArgs e)
+        {
+            tbxNewPassword.Text = "";
+            tbxNewPassword.UseSystemPasswordChar = true;
+            tbxNewPassword.Font = new Font("Inter", 9, FontStyle.Regular);
+        }
+
         private void pbPrivacy1_Click(object sender, EventArgs e)
         {
             isPasswordVisible = !isPasswordVisible;
@@ -57,15 +79,50 @@ namespace NEXUS.Forms
             {
                 pbPrivacy1.Image = Resources.show_eye;
                 tbxNewPassword.UseSystemPasswordChar = false;
+                tbxNewPassword.Font = new Font("Inter", 12, FontStyle.Regular);
             }
             else
             {
                 pbPrivacy1.Image = Resources._3844443_disable_eye_inactive_see_show_icon;
                 tbxNewPassword.UseSystemPasswordChar = true;
+                tbxNewPassword.Font = new Font("Inter", 9, FontStyle.Regular);
             }
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(tbxNewFirstName.Text) ||
+                string.IsNullOrWhiteSpace(tbxNewLastName.Text) ||
+                string.IsNullOrWhiteSpace(tbxNewUserName.Text) ||
+                string.IsNullOrWhiteSpace(tbxNewPassword.Text) ||
+                string.IsNullOrWhiteSpace(cmbxMonth.Text) ||
+                string.IsNullOrWhiteSpace(cmbxDay.Text) ||
+                string.IsNullOrWhiteSpace(cmbxYear.Text) ||
+                (!rbtnFemale.Checked && !rbtnMale.Checked && !rbtnNotSay.Checked))
+            {
+                MessageBox.Show("Please fill in all required fields before signing up.",
+                                "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            List<string> userInfo = new List<string>
+             {
+                tbxNewFirstName.Text,
+                tbxNewLastName.Text,
+                tbxNewUserName.Text,
+                tbxNewPassword.Text,
+                cmbxMonth.Text,
+                cmbxDay.Text,
+                cmbxYear.Text,
+                (rbtnFemale.Checked ? rbtnFemale.Text : rbtnMale.Checked ? rbtnMale.Text : rbtnNotSay.Text)
+             };
+
+            MessageBox.Show("Signed up Successfully! \n\nWelcome to Messenger!",
+                            "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
+        }
+
+        private void Register_Load(object sender, EventArgs e)
         {
 
         }
