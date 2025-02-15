@@ -1,4 +1,5 @@
-﻿using NEXUS.Properties;
+﻿using Microsoft.Win32;
+using NEXUS.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,11 +16,12 @@ namespace NEXUS.Forms
     public partial class LogInForm : Form
     {
         private bool isPasswordVisible = false;
+        private bool isClicked1 = false, isClicked2 = false;
 
         public LogInForm()
         {
             InitializeComponent();
-            btnLogIn.ColorBackground_Pen = Color.FromArgb(24, 60, 114);
+            btnLogin.ColorBackground_Pen = Color.FromArgb(24, 60, 114);
             //btnRegister.ColorBackground_Pen = Color.Black;
         }
 
@@ -60,21 +62,28 @@ namespace NEXUS.Forms
             {
                 pbPrivacy.Image = Resources.show_eye;
                 tbxEnterPassword.UseSystemPasswordChar = false;
+                tbxEnterPassword.TabStop = false;
             }
             else
             {
-                pbPrivacy.Image = Resources._3844443_disable_eye_inactive_see_show_icon; 
+                pbPrivacy.Image = Resources._3844443_disable_eye_inactive_see_show_icon;
                 tbxEnterPassword.UseSystemPasswordChar = true;
             }
         }
 
         private void EnterUsername(object sender, EventArgs e)
         {
+            if (isClicked1) return;
+
+            isClicked1 = true;
             tbxEnterUsername.Text = "";
         }
 
         private void EnterPassword(object sender, EventArgs e)
         {
+            if (isClicked2) return;
+
+            isClicked2 = true;
             tbxEnterPassword.Text = "";
             tbxEnterPassword.UseSystemPasswordChar = true;
         }
@@ -116,8 +125,35 @@ namespace NEXUS.Forms
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true;
-                //btnLogin(this, EventArgs.Empty);
+                btnLogin_Click(sender, EventArgs.Empty);            
             }
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            Register register = new Register();
+
+            register.FormClosed += (s, args) => this.Show();
+            register.Owner = this;
+            register.Show();
+            this.Hide();
+        }
+
+        private void pbLogo_Click(object sender, EventArgs e)
+        {
+            About about = new About();
+
+            about.FormClosed += (s, args) => this.Show();
+            about.Owner = this;
+            about.Show();
+            this.Hide();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            Dashboard dashboard = new Dashboard();
+            dashboard.Show();
+            this.Close();
         }
     }
 }

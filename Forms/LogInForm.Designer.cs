@@ -38,7 +38,7 @@
             pasteToolStripMenuItem = new ToolStripMenuItem();
             selectAllToolStripMenuItem = new ToolStripMenuItem();
             tbxEnterUsername = new TextBox();
-            btnLogIn = new ReaLTaiizor.Controls.CyberButton();
+            btnLogin = new ReaLTaiizor.Controls.CyberButton();
             lblForgetPass = new Label();
             checkBox1 = new CheckBox();
             pnlPassword = new Panel();
@@ -73,6 +73,7 @@
             pbLogo.SizeMode = PictureBoxSizeMode.Zoom;
             pbLogo.TabIndex = 0;
             pbLogo.TabStop = false;
+            pbLogo.Click += pbLogo_Click;
             // 
             // pnlUsername
             // 
@@ -136,46 +137,47 @@
             tbxEnterUsername.Text = "Username";
             tbxEnterUsername.Click += EnterUsername;
             // 
-            // btnLogIn
+            // btnLogin
             // 
-            btnLogIn.Alpha = 20;
-            btnLogIn.BackColor = Color.Transparent;
-            btnLogIn.Background = true;
-            btnLogIn.Background_WidthPen = 4F;
-            btnLogIn.BackgroundPen = true;
-            btnLogIn.ColorBackground = Color.FromArgb(24, 60, 114);
-            btnLogIn.ColorBackground_1 = Color.FromArgb(24, 60, 114);
-            btnLogIn.ColorBackground_2 = Color.FromArgb(24, 60, 114);
-            btnLogIn.ColorBackground_Pen = Color.FromArgb(128, 223, 255);
-            btnLogIn.ColorLighting = Color.FromArgb(24, 60, 114);
-            btnLogIn.ColorPen_1 = Color.FromArgb(24, 60, 114);
-            btnLogIn.ColorPen_2 = Color.FromArgb(24, 60, 114);
-            btnLogIn.Cursor = Cursors.Hand;
-            btnLogIn.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            btnLogIn.Effect_1 = true;
-            btnLogIn.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
-            btnLogIn.Effect_1_Transparency = 25;
-            btnLogIn.Effect_2 = true;
-            btnLogIn.Effect_2_ColorBackground = Color.White;
-            btnLogIn.Effect_2_Transparency = 20;
-            btnLogIn.Font = new Font("Inter", 12.25F);
-            btnLogIn.ForeColor = Color.FromArgb(245, 245, 245);
-            btnLogIn.Lighting = false;
-            btnLogIn.LinearGradient_Background = false;
-            btnLogIn.LinearGradientPen = false;
-            btnLogIn.Location = new Point(43, 291);
-            btnLogIn.Name = "btnLogIn";
-            btnLogIn.PenWidth = 15;
-            btnLogIn.Rounding = true;
-            btnLogIn.RoundingInt = 70;
-            btnLogIn.Size = new Size(311, 44);
-            btnLogIn.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            btnLogIn.TabIndex = 4;
-            btnLogIn.Tag = "Cyber";
-            btnLogIn.TextButton = "Log in";
-            btnLogIn.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            btnLogIn.Timer_Effect_1 = 5;
-            btnLogIn.Timer_RGB = 300;
+            btnLogin.Alpha = 20;
+            btnLogin.BackColor = Color.Transparent;
+            btnLogin.Background = true;
+            btnLogin.Background_WidthPen = 4F;
+            btnLogin.BackgroundPen = true;
+            btnLogin.ColorBackground = Color.FromArgb(24, 60, 114);
+            btnLogin.ColorBackground_1 = Color.FromArgb(24, 60, 114);
+            btnLogin.ColorBackground_2 = Color.FromArgb(24, 60, 114);
+            btnLogin.ColorBackground_Pen = Color.FromArgb(128, 223, 255);
+            btnLogin.ColorLighting = Color.FromArgb(24, 60, 114);
+            btnLogin.ColorPen_1 = Color.FromArgb(24, 60, 114);
+            btnLogin.ColorPen_2 = Color.FromArgb(24, 60, 114);
+            btnLogin.Cursor = Cursors.Hand;
+            btnLogin.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            btnLogin.Effect_1 = true;
+            btnLogin.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            btnLogin.Effect_1_Transparency = 25;
+            btnLogin.Effect_2 = true;
+            btnLogin.Effect_2_ColorBackground = Color.White;
+            btnLogin.Effect_2_Transparency = 20;
+            btnLogin.Font = new Font("Inter", 12.25F);
+            btnLogin.ForeColor = Color.FromArgb(245, 245, 245);
+            btnLogin.Lighting = false;
+            btnLogin.LinearGradient_Background = false;
+            btnLogin.LinearGradientPen = false;
+            btnLogin.Location = new Point(43, 291);
+            btnLogin.Name = "btnLogin";
+            btnLogin.PenWidth = 15;
+            btnLogin.Rounding = true;
+            btnLogin.RoundingInt = 70;
+            btnLogin.Size = new Size(311, 44);
+            btnLogin.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            btnLogin.TabIndex = 4;
+            btnLogin.Tag = "Cyber";
+            btnLogin.TextButton = "Log in";
+            btnLogin.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            btnLogin.Timer_Effect_1 = 5;
+            btnLogin.Timer_RGB = 300;
+            btnLogin.Click += btnLogin_Click;
             // 
             // lblForgetPass
             // 
@@ -222,8 +224,10 @@
             tbxEnterPassword.Name = "tbxEnterPassword";
             tbxEnterPassword.Size = new Size(227, 20);
             tbxEnterPassword.TabIndex = 8;
+            tbxEnterPassword.TabStop = false;
             tbxEnterPassword.Text = "Password";
             tbxEnterPassword.Click += EnterPassword;
+            tbxEnterPassword.KeyDown += tbxPassword_KeyDown;
             // 
             // pbPrivacy
             // 
@@ -290,6 +294,7 @@
             btnRegister.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             btnRegister.Timer_Effect_1 = 5;
             btnRegister.Timer_RGB = 300;
+            btnRegister.Click += btnRegister_Click;
             // 
             // panel1
             // 
@@ -313,6 +318,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(397, 34);
             panel2.TabIndex = 13;
+            panel2.MouseDown += Login_MouseDown;
             // 
             // pictureBox3
             // 
@@ -359,7 +365,7 @@
             Controls.Add(pnlPassword);
             Controls.Add(checkBox1);
             Controls.Add(lblForgetPass);
-            Controls.Add(btnLogIn);
+            Controls.Add(btnLogin);
             Controls.Add(pnlUsername);
             Controls.Add(pbLogo);
             FormBorderStyle = FormBorderStyle.None;
@@ -387,7 +393,7 @@
 
         private PictureBox pbLogo;
         private Panel pnlUsername;
-        private ReaLTaiizor.Controls.CyberButton btnLogIn;
+        private ReaLTaiizor.Controls.CyberButton btnLogin;
         private Label lblUsername;
         private Label lblForgetPass;
         private CheckBox checkBox1;

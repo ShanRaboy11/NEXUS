@@ -21,3 +21,5 @@ C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\ReaLTaiizor.dl
 C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.csproj.AssemblyReference.cache
 C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.csproj.Up2Date
 C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.About.resources
+C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.Register.resources
+C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.Dashboard.resources
