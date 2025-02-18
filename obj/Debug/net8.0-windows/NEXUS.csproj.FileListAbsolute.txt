@@ -23,6 +23,5 @@ C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.csproj.U
 C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.About.resources
 C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.Register.resources
 C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.Dashboard.resources
-C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\CircularProgressBar.dll
-C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\WinFormAnimation.dll
 C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.ProgressBar.resources
+C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.DialogBox.resources

@@ -7,6 +7,9 @@
     <Compile Update="Forms\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\DialogBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\ProgressBar.cs">
       <SubType>Form</SubType>
     </Compile>

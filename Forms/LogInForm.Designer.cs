@@ -47,18 +47,18 @@
             lblRemember = new Label();
             btnRegister = new ReaLTaiizor.Controls.CyberButton();
             panel2 = new Panel();
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pbLogo).BeginInit();
             pnlUsername.SuspendLayout();
             contextShortcuts.SuspendLayout();
             pnlPassword.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbPrivacy).BeginInit();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // pbLogo
@@ -307,16 +307,16 @@
             panel2.TabIndex = 13;
             panel2.MouseDown += Login_MouseDown;
             // 
-            // pictureBox1
+            // pictureBox3
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(371, 5);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(18, 18);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += Close;
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(344, 7);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(14, 14);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 2;
+            pictureBox3.TabStop = false;
+            pictureBox3.Click += Maximize;
             // 
             // pictureBox2
             // 
@@ -329,16 +329,16 @@
             pictureBox2.TabStop = false;
             pictureBox2.Click += Minimize;
             // 
-            // pictureBox3
+            // pictureBox1
             // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(344, 7);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(14, 14);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 2;
-            pictureBox3.TabStop = false;
-            pictureBox3.Click += Maximize;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(371, 5);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(18, 18);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += Close;
             // 
             // LogInForm
             // 
@@ -356,6 +356,7 @@
             Controls.Add(pnlUsername);
             Controls.Add(pbLogo);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "LogInForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "LogInForm";
@@ -368,9 +369,9 @@
             pnlPassword.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbPrivacy).EndInit();
             panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
