@@ -32,15 +32,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DialogBox));
             pbDialogIcon = new PictureBox();
             Pausetimer = new System.Windows.Forms.Timer(components);
-            label1 = new Label();
+            lblMessage = new Label();
             btnOK = new ReaLTaiizor.Controls.CyberButton();
             ((System.ComponentModel.ISupportInitialize)pbDialogIcon).BeginInit();
             SuspendLayout();
             // 
             // pbDialogIcon
             // 
-            pbDialogIcon.Image = (Image)resources.GetObject("pbDialogIcon.Image");
-            pbDialogIcon.Location = new Point(72, -2);
+            pbDialogIcon.Image = Properties.Resources.Animation___1739885779319;
+            pbDialogIcon.Location = new Point(70, -2);
             pbDialogIcon.Name = "pbDialogIcon";
             pbDialogIcon.Size = new Size(181, 119);
             pbDialogIcon.SizeMode = PictureBoxSizeMode.Zoom;
@@ -53,16 +53,16 @@
             Pausetimer.Interval = 2500;
             Pausetimer.Tick += Pausetimer_Tick;
             // 
-            // label1
+            // lblMessage
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Inter Medium", 12F, FontStyle.Bold);
-            label1.ForeColor = Color.FromArgb(24, 60, 114);
-            label1.Location = new Point(96, 109);
-            label1.Name = "label1";
-            label1.Size = new Size(142, 23);
-            label1.TabIndex = 1;
-            label1.Text = "Login Successful";
+            lblMessage.Font = new Font("Inter Medium", 12F, FontStyle.Bold);
+            lblMessage.ForeColor = Color.FromArgb(24, 60, 114);
+            lblMessage.Location = new Point(12, 108);
+            lblMessage.Name = "lblMessage";
+            lblMessage.Size = new Size(303, 23);
+            lblMessage.TabIndex = 1;
+            lblMessage.Text = "Login Successful";
+            lblMessage.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnOK
             // 
@@ -91,7 +91,7 @@
             btnOK.Lighting = false;
             btnOK.LinearGradient_Background = false;
             btnOK.LinearGradientPen = false;
-            btnOK.Location = new Point(111, 150);
+            btnOK.Location = new Point(108, 150);
             btnOK.Name = "btnOK";
             btnOK.PenWidth = 15;
             btnOK.Rounding = true;
@@ -113,7 +113,7 @@
             BackColor = Color.White;
             ClientSize = new Size(327, 204);
             Controls.Add(btnOK);
-            Controls.Add(label1);
+            Controls.Add(lblMessage);
             Controls.Add(pbDialogIcon);
             Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
@@ -124,14 +124,13 @@
             Text = "DialogBox";
             ((System.ComponentModel.ISupportInitialize)pbDialogIcon).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private PictureBox pbDialogIcon;
         private System.Windows.Forms.Timer Pausetimer;
-        private Label label1;
+        private Label lblMessage;
         private ReaLTaiizor.Controls.CyberButton btnOK;
     }
 }

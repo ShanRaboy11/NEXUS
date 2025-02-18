@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NEXUS.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +22,24 @@ namespace NEXUS.Forms
         {
             pbDialogIcon.Enabled = false;
             Pausetimer.Stop();
+        }
+
+        public void ShowIcon(string message)
+        {
+            if(message == "successful")
+            {
+                return;
+            }
+            else if (message == "fail")
+            {
+                pbDialogIcon.Image = Resources.Animation___1739888041200;
+                lblMessage.Text = "Incorrect username or password.";
+            }
+            else
+            {
+                pbDialogIcon.Image = Resources.Animation___1739888639577;
+                lblMessage.Text = "Fill in all required fields.";
+            }
         }
 
         private void btnOK_Click(object sender, EventArgs e)
