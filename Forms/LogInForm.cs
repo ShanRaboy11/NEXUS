@@ -22,7 +22,6 @@ namespace NEXUS.Forms
         {
             InitializeComponent();
             btnLogin.ColorBackground_Pen = Color.FromArgb(24, 60, 114);
-            //btnRegister.ColorBackground_Pen = Color.Black;
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]

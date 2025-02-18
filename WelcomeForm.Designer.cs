@@ -53,7 +53,6 @@
             // pbNexus
             // 
             pbNexus.ContextMenuStrip = contextMenuStrip1;
-            pbNexus.Cursor = Cursors.Hand;
             pbNexus.Image = Properties.Resources.NEXUS__1__removebg_preview__1_;
             pbNexus.Location = new Point(0, 2);
             pbNexus.Name = "pbNexus";
