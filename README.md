@@ -1,1 +1,3 @@
-The word “NEXUS” signifies a link, bridge, or connection—a perfect representation of what the system aims to achieve in public transportation.
+**NEXUS** is a smart and cashless public utility vehicle (PUV) system designed to enhance security, efficiency, and transparency in transportation. By integrating an in-app wallet, QR code-based payments, and trip monitoring, NEXUS eliminates the reliance on physical cash, reduces security risks, and promotes a seamless commuting experience. With automated fare calculations, incident reporting, and a structured trip history, NEXUS empowers both commuters and drivers, ensuring a safer, smarter, and more convenient transportation system.
+
+The word “**NEXUS**” signifies a link, bridge, or connection—a perfect representation of what the system aims to achieve in public transportation.
