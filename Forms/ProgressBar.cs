@@ -30,9 +30,22 @@ namespace NEXUS.Forms
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
             progressBar1.Percentage = 0;
-            timer1.Interval = 55; // Adjust the interval as needed
+            timer1.Interval = 55; 
             timer1.Tick += timer1_Tick;
             timer1.Start();
+        }
+
+        public void labelChange(string label1)
+        {
+            if(label1 == "NEXUS")
+            {
+                return;
+            }
+            else if(label1 == "QR")
+            {
+                lblIdentifier.Text = "QR Code";
+                lblLoading.Text = "Generating...";
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)

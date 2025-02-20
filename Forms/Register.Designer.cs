@@ -487,7 +487,6 @@
             Name = "Register";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Register";
-            Load += Register_Load;
             MouseDown += Register_MouseDown;
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();

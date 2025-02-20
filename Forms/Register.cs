@@ -91,6 +91,9 @@ namespace NEXUS.Forms
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
+            DialogBox dialogBox = new DialogBox();
+            LogInForm logInForm2 = new LogInForm();
+
             if (string.IsNullOrWhiteSpace(tbxNewFirstName.Text) ||
                 string.IsNullOrWhiteSpace(tbxNewLastName.Text) ||
                 string.IsNullOrWhiteSpace(tbxNewUserName.Text) ||
@@ -99,9 +102,10 @@ namespace NEXUS.Forms
                 string.IsNullOrWhiteSpace(cmbxDay.Text) ||
                 string.IsNullOrWhiteSpace(cmbxYear.Text) ||
                 (!rbtnFemale.Checked && !rbtnMale.Checked && !rbtnNotSay.Checked))
-            {
-                MessageBox.Show("Please fill in all required fields before signing up.",
-                                "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            {             
+
+                dialogBox.ShowIcon("blank");
+                dialogBox.Show();
                 return;
             }
 
@@ -117,14 +121,12 @@ namespace NEXUS.Forms
                 (rbtnFemale.Checked ? rbtnFemale.Text : rbtnMale.Checked ? rbtnMale.Text : rbtnNotSay.Text)
              };
 
-            MessageBox.Show("Signed up Successfully! \n\nWelcome to Messenger!",
-                            "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
-        }
-
-        private void Register_Load(object sender, EventArgs e)
-        {
-
+            dialogBox.ShowIcon("register");
+            if (dialogBox.ShowDialog() == DialogResult.OK)
+            {
+                logInForm2.Show();
+                this.Close();
+            }
         }
     }
 }

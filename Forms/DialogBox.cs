@@ -26,17 +26,25 @@ namespace NEXUS.Forms
 
         public void ShowIcon(string message)
         {
-            if(message == "successful")
+            if(message == "login")
             {
                 return;
             }
             else if (message == "fail")
             {
+                Pausetimer.Interval = 2000;
+                pbDialogIcon.Size = new Size(146, 84);
+                pbDialogIcon.Location = new Point(90, 15);
                 pbDialogIcon.Image = Resources.Animation___1739888041200;
                 lblMessage.Text = "Incorrect username or password.";
             }
+            else if (message == "register")
+            {
+                lblMessage.Text = "Registered Successfully";
+            }
             else
             {
+                Pausetimer.Enabled = false;
                 pbDialogIcon.Image = Resources.Animation___1739888639577;
                 lblMessage.Text = "Fill in all required fields.";
             }
@@ -44,9 +52,6 @@ namespace NEXUS.Forms
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            Dashboard dashboard = new Dashboard();
-            dashboard.Show();
-
             this.DialogResult = DialogResult.OK; 
             this.Close();
         }

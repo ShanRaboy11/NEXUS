@@ -159,9 +159,13 @@ namespace NEXUS.Forms
         private void btnLogin_Click(object sender, EventArgs e)
         {
             DialogBox dialogBox = new DialogBox();
-
+            Dashboard dashboard = new Dashboard();
+            
+            //dialogBox.ShowIcon("fail");
+            dialogBox.ShowIcon("login");
             if (dialogBox.ShowDialog() == DialogResult.OK) 
             {
+                dashboard.Show();
                 this.Close(); 
             }
         }

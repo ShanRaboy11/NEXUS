@@ -31,8 +31,8 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProgressBar));
             progressBar1 = new ReaLTaiizor.Controls.ParrotCircleProgressBar();
-            label1 = new Label();
-            label2 = new Label();
+            lblIdentifier = new Label();
+            lblLoading = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
@@ -60,27 +60,27 @@
             progressBar1.UnFilledColor = Color.FromArgb(28, 48, 43);
             progressBar1.UnfilledThickness = 10;
             // 
-            // label1
+            // lblIdentifier
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Inter Medium", 25.75F, FontStyle.Bold);
-            label1.ForeColor = Color.FromArgb(24, 60, 114);
-            label1.Location = new Point(60, 45);
-            label1.Name = "label1";
-            label1.Size = new Size(143, 50);
-            label1.TabIndex = 1;
-            label1.Text = "NEXUS";
+            lblIdentifier.Font = new Font("Inter", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblIdentifier.ForeColor = Color.FromArgb(24, 60, 114);
+            lblIdentifier.Location = new Point(12, 45);
+            lblIdentifier.Name = "lblIdentifier";
+            lblIdentifier.Size = new Size(231, 50);
+            lblIdentifier.TabIndex = 1;
+            lblIdentifier.Text = "NEXUS";
+            lblIdentifier.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // lblLoading
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Inter Medium", 16.75F, FontStyle.Bold);
-            label2.ForeColor = Color.FromArgb(24, 60, 114);
-            label2.Location = new Point(65, 300);
-            label2.Name = "label2";
-            label2.Size = new Size(123, 32);
-            label2.TabIndex = 2;
-            label2.Text = "Loading...";
+            lblLoading.Font = new Font("Inter Medium", 16.75F, FontStyle.Bold);
+            lblLoading.ForeColor = Color.FromArgb(24, 60, 114);
+            lblLoading.Location = new Point(12, 300);
+            lblLoading.Name = "lblLoading";
+            lblLoading.Size = new Size(231, 32);
+            lblLoading.TabIndex = 2;
+            lblLoading.Text = "Loading...";
+            lblLoading.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // timer1
             // 
@@ -92,9 +92,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(255, 378);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(lblLoading);
+            Controls.Add(lblIdentifier);
             Controls.Add(progressBar1);
+            Cursor = Cursors.AppStarting;
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ProgressBar";
@@ -102,14 +103,13 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ProgressBar";
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private ReaLTaiizor.Controls.ParrotCircleProgressBar progressBar1;
-        private Label label1;
-        private Label label2;
+        private Label lblIdentifier;
+        private Label lblLoading;
         private System.Windows.Forms.Timer timer1;
     }
 }

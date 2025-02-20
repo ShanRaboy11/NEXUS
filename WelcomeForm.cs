@@ -63,7 +63,7 @@ namespace NEXUS
                 LogInForm logInForm = new LogInForm();
                 logInForm.Show();
             };
-
+            progressBar.labelChange("NEXUS");
             progressBar.Show();
             this.Hide();
         }
