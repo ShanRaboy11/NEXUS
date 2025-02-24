@@ -42,6 +42,10 @@ namespace NEXUS.Forms
             {
                 lblMessage.Text = "Registered Successfully";
             }
+            else if(message == "save")
+            {
+                lblMessage.Text = "Image Succssfully Saved";
+            }
             else
             {
                 Pausetimer.Enabled = false;

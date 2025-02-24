@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "/EwgjHPqOBY=",
+  "dgSpecHash": "BDfqQnM9C3A=",
   "success": true,
   "projectFilePath": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\NEXUS.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Shan Michael\\.nuget\\packages\\realtaiizor\\3.8.1.1\\realtaiizor.3.8.1.1.nupkg.sha512"
+    "C:\\Users\\Shan Michael\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\Shan Michael\\.nuget\\packages\\qrcoder\\1.6.0\\qrcoder.1.6.0.nupkg.sha512",
+    "C:\\Users\\Shan Michael\\.nuget\\packages\\realtaiizor\\3.8.1.1\\realtaiizor.3.8.1.1.nupkg.sha512",
+    "C:\\Users\\Shan Michael\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }
