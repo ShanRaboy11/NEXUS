@@ -45,6 +45,10 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "dependencies": {
+            "AForge.Video.DirectShow": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
             "QRCoder": {
               "target": "Package",
               "version": "[1.6.0, )"
@@ -52,6 +56,10 @@
             "ReaLTaiizor": {
               "target": "Package",
               "version": "[3.8.1.1, )"
+            },
+            "ZXing.Net": {
+              "target": "Package",
+              "version": "[0.16.10, )"
             }
           },
           "imports": [

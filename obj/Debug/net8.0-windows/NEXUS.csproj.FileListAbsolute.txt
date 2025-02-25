@@ -26,3 +26,11 @@ C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.Da
 C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.ProgressBar.resources
 C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.DialogBox.resources
 C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\QRCoder.dll
+C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\AForge.dll
+C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\AForge.Video.dll
+C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\AForge.Video.DirectShow.dll
+C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\zxing.dll
+C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.PaymentForm.resources
+C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.QRCodeFunctions.resources
+C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.QRCodeScannerForm.resources
+C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.QRScannerForm.resources
