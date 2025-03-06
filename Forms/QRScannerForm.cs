@@ -11,107 +11,71 @@ namespace NEXUS.Forms
 {
     public partial class QRScannerForm : Form
     {
-        private VideoCaptureDevice videoSource;
+        private VideoCaptureDevice videoCaptureDevice;
         private FilterInfoCollection videoDevices;
 
         public QRScannerForm()
         {
             InitializeComponent();
+            InitializeCamera();
+        }
+
+        private void InitializeCamera()
+        {
             videoDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
             if (videoDevices.Count > 0)
             {
-                videoSource = new VideoCaptureDevice(videoDevices[0].MonikerString);
-                videoSource.NewFrame += VideoSource_NewFrame;
+                videoCaptureDevice = new VideoCaptureDevice(videoDevices[0].MonikerString); // Automatically selects the first camera
+                videoCaptureDevice.NewFrame += FinalFrame_NewFrame;
+                videoCaptureDevice.Start();
             }
-
-            // Initialize and start timer for scanning
-            scanTimer.Interval = 500; // Scan every 500ms
-            scanTimer.Tick += ScanTimer_Tick;
-        }
-
-        private void btnStartCamera_Click(object sender, EventArgs e)
-        {
-            if (videoSource != null && !videoSource.IsRunning)
+            else
             {
-                videoSource.Start();
-                scanTimer.Start();
+                MessageBox.Show("No camera detected!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void btnStopCamera_Click(object sender, EventArgs e)
+        private void FinalFrame_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
-            if (videoSource != null && videoSource.IsRunning)
+            if (picCam.InvokeRequired)
             {
-                scanTimer.Stop();
-                videoSource.SignalToStop();
-                videoSource.WaitForStop();
-                picCam.Image = null;
+                picCam.Invoke(new MethodInvoker(delegate { picCam.Image = (Bitmap)eventArgs.Frame.Clone(); }));
+            }
+            else
+            {
+                picCam.Image = (Bitmap)eventArgs.Frame.Clone();
             }
         }
 
-        // 📷 Display camera feed in PictureBox
-        private void VideoSource_NewFrame(object sender, NewFrameEventArgs eventArgs)
+        private void scanTimer_Tick(object sender, EventArgs e)
         {
-            Bitmap frame = (Bitmap)eventArgs.Frame.Clone();
-            picCam.Image = frame;
-        }
+            if (picCam.Image == null) return;
 
-        // 📌 QR Code Scanning Logic
-        private void ScanTimer_Tick(object sender, EventArgs e)
-        {
-            if (picCam.Image == null)
-                return;
+            BarcodeReader reader = new BarcodeReader();
+            Result result = reader.Decode((Bitmap)picCam.Image);
 
-            try
+            if (result != null)
             {
-                Bitmap img = new Bitmap(picCam.Image);
-                BarcodeReader reader = new BarcodeReader();
-                Result result = reader.Decode(img);
+                scanTimer.Stop(); // Stop scanning to prevent multiple openings
+                videoCaptureDevice.SignalToStop(); // Stop the camera
 
-                if (result != null)
-                {
-                    txtQRContent.Text = result.Text;  // Display scanned content
-                    scanTimer.Stop();  // Stop scanning after successful read
-
-                    // 🎯 Open scanned URL in the default web browser
-                    OpenScannedURL(result.Text);
-                }
-
-                img.Dispose();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error scanning QR code: " + ex.Message);
+                PaymentForm paymentForm = new PaymentForm(null);
+                paymentForm.Show();
+                this.Close();
             }
         }
 
-        // 🌍 Function to Open the Scanned URL
-        private void OpenScannedURL(string url)
+        private void btnDecode_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (Uri.IsWellFormedUriString(url, UriKind.Absolute))
-                {
-                    Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
-                }
-                else
-                {
-                    MessageBox.Show("Scanned content is not a valid URL.", "Invalid QR Code", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error opening the scanned URL: " + ex.Message);
-            }
+            scanTimer.Start();
         }
 
-        private void QRCodeScannerForm_FormClosing(object sender, FormClosingEventArgs e)
+        private void QRScannerForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (videoSource != null && videoSource.IsRunning)
+            if (videoCaptureDevice != null && videoCaptureDevice.IsRunning)
             {
-                scanTimer.Stop();
-                videoSource.SignalToStop();
-                videoSource.WaitForStop();
+                videoCaptureDevice.SignalToStop();
+                videoCaptureDevice.WaitForStop();
             }
         }
     }
