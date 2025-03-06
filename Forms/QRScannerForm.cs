@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Diagnostics;  // Required for opening URLs
+using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 using AForge.Video;
 using AForge.Video.DirectShow;
 using ZXing;
-using ZXing.QrCode;
+using ZXing.Windows.Compatibility;
 
 namespace NEXUS.Forms
 {
@@ -25,7 +25,7 @@ namespace NEXUS.Forms
             videoDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
             if (videoDevices.Count > 0)
             {
-                videoCaptureDevice = new VideoCaptureDevice(videoDevices[0].MonikerString); // Automatically selects the first camera
+                videoCaptureDevice = new VideoCaptureDevice(videoDevices[0].MonikerString); // Use the first available camera
                 videoCaptureDevice.NewFrame += FinalFrame_NewFrame;
                 videoCaptureDevice.Start();
             }
@@ -51,15 +51,29 @@ namespace NEXUS.Forms
         {
             if (picCam.Image == null) return;
 
-            BarcodeReader reader = new BarcodeReader();
-            Result result = reader.Decode((Bitmap)picCam.Image);
+            // Capture the current frame as a Bitmap
+            Bitmap bitmap = new Bitmap(picCam.Image);
+
+            // QR Code reader with enhanced settings
+            BarcodeReader reader = new BarcodeReader
+            {
+                AutoRotate = true,
+                Options = { TryHarder = true, PossibleFormats = new[] { BarcodeFormat.QR_CODE } }
+            };
+
+            Result result = reader.Decode(bitmap);
 
             if (result != null)
             {
                 scanTimer.Stop(); // Stop scanning to prevent multiple openings
                 videoCaptureDevice.SignalToStop(); // Stop the camera
 
-                PaymentForm paymentForm = new PaymentForm(null);
+                string decoded = result.Text.Trim();
+
+                // Capture a snapshot if there is a match
+                picCam.Image = bitmap;
+
+                PaymentForm paymentForm = new PaymentForm(decoded); // Pass QR data
                 paymentForm.Show();
                 this.Close();
             }
