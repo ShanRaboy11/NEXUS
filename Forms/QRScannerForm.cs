@@ -25,9 +25,18 @@ namespace NEXUS.Forms
             videoDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
             if (videoDevices.Count > 0)
             {
-                videoCaptureDevice = new VideoCaptureDevice(videoDevices[0].MonikerString); // Use the first available camera
+                videoCaptureDevice = new VideoCaptureDevice(videoDevices[0].MonikerString);
                 videoCaptureDevice.NewFrame += FinalFrame_NewFrame;
-                videoCaptureDevice.Start();
+
+                try
+                {
+                    videoCaptureDevice.Start();
+                    scanTimer.Start(); // Start scanning automatically!
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Camera failed to start: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
@@ -51,7 +60,7 @@ namespace NEXUS.Forms
         {
             if (picCam.Image == null) return;
 
-            // Capture the current frame as a Bitmap
+            // Convert the captured frame to a bitmap
             Bitmap bitmap = new Bitmap(picCam.Image);
 
             // QR Code reader with enhanced settings
@@ -63,21 +72,22 @@ namespace NEXUS.Forms
 
             Result result = reader.Decode(bitmap);
 
-            if (result != null)
+            if (result != null && !string.IsNullOrEmpty(result.Text)) // Ensure valid data
             {
-                scanTimer.Stop(); // Stop scanning to prevent multiple openings
-                videoCaptureDevice.SignalToStop(); // Stop the camera
+                scanTimer.Stop(); // Stop scanning
+                videoCaptureDevice.SignalToStop(); // Stop camera
 
                 string decoded = result.Text.Trim();
 
-                // Capture a snapshot if there is a match
-                picCam.Image = bitmap;
-
-                PaymentForm paymentForm = new PaymentForm(decoded); // Pass QR data
+                // Open Payment Form immediately
+                PaymentForm paymentForm = new PaymentForm(decoded);
                 paymentForm.Show();
+
+                // Close this form automatically
                 this.Close();
             }
         }
+
 
         private void btnDecode_Click(object sender, EventArgs e)
         {
