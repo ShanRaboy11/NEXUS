@@ -56,16 +56,20 @@ namespace NEXUS.Forms
                 dialogBox.ShowIcon("no qr");
                 return;
             }
-
-            using (SaveFileDialog saveFileDialog = new SaveFileDialog() { Filter = "PNG|*.png" })
+            else
             {
-                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                using (SaveFileDialog saveFileDialog = new SaveFileDialog() { Filter = "PNG|*.png" })
                 {
-                    pbQRCode.Image.Save(saveFileDialog.FileName);
-                    dialogBox.Show();
-                    dialogBox.ShowIcon("save"); 
+                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        pbQRCode.Image.Save(saveFileDialog.FileName);
+
+                    }
                 }
             }
+
+            dialogBox.ShowIcon("save");
+            dialogBox.ShowDialog();
         }
 
         private void Maximize(object sender, EventArgs e)

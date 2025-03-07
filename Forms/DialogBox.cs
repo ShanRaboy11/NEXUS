@@ -50,6 +50,9 @@ namespace NEXUS.Forms
             }
             else if(message == "no qr")
             {
+                Pausetimer.Interval = 2000;
+                pbDialogIcon.Size = new Size(146, 84);
+                pbDialogIcon.Location = new Point(90, 15);
                 pbDialogIcon.Image = Resources.Animation___1739888041200;
                 lblMessage.Text = "No QR Code to save";
             }
