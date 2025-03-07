@@ -71,25 +71,29 @@
             // 
             // aboutToolStripMenuItem
             // 
+            aboutToolStripMenuItem.Image = Properties.Resources.Removal_9151;
             aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            aboutToolStripMenuItem.Size = new Size(134, 22);
+            aboutToolStripMenuItem.Size = new Size(180, 22);
             aboutToolStripMenuItem.Text = "About";
             aboutToolStripMenuItem.Click += AboutPage;
             // 
             // closeToolStripMenuItem
             // 
+            closeToolStripMenuItem.Image = Properties.Resources.close__1_;
             closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            closeToolStripMenuItem.Size = new Size(134, 22);
+            closeToolStripMenuItem.Size = new Size(180, 22);
             closeToolStripMenuItem.Text = "Close";
             // 
             // minimizeToolStripMenuItem
             // 
+            minimizeToolStripMenuItem.Image = Properties.Resources.minus;
             minimizeToolStripMenuItem.Name = "minimizeToolStripMenuItem";
-            minimizeToolStripMenuItem.Size = new Size(134, 22);
+            minimizeToolStripMenuItem.Size = new Size(180, 22);
             minimizeToolStripMenuItem.Text = "Minimize";
             // 
             // maximizeToolStripMenuItem
             // 
+            maximizeToolStripMenuItem.Image = Properties.Resources._8530693_window_maximize_icon__1_;
             maximizeToolStripMenuItem.Name = "maximizeToolStripMenuItem";
             maximizeToolStripMenuItem.Size = new Size(134, 22);
             maximizeToolStripMenuItem.Text = "Maximize";

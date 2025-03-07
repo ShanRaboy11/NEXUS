@@ -158,10 +158,6 @@ namespace NEXUS.Forms
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            QRScannerForm qRScannerForm = new QRScannerForm();
-            qRScannerForm.Show();
-            this.Close();
-            /*
             DialogBox dialogBox = new DialogBox();
             Dashboard dashboard = new Dashboard();
             
@@ -171,7 +167,7 @@ namespace NEXUS.Forms
             {
                 dashboard.Show();
                 this.Close(); 
-            }*/
+            }
         }
     }
 }

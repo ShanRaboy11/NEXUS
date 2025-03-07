@@ -93,6 +93,16 @@ namespace NEXUS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _8530693_window_maximize_icon__1_ {
+            get {
+                object obj = ResourceManager.GetObject("8530693_window_maximize_icon (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Animation___1739885779319 {
             get {
                 object obj = ResourceManager.GetObject("Animation - 1739885779319", resourceCulture);
@@ -123,6 +133,26 @@ namespace NEXUS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap close__1_ {
+            get {
+                object obj = ResourceManager.GetObject("close (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minus {
+            get {
+                object obj = ResourceManager.GetObject("minus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap NEXUS__1__removebg_preview__1_ {
             get {
                 object obj = ResourceManager.GetObject("NEXUS__1_-removebg-preview (1)", resourceCulture);
@@ -136,6 +166,16 @@ namespace NEXUS.Properties {
         internal static System.Drawing.Bitmap Removal_915 {
             get {
                 object obj = ResourceManager.GetObject("Removal-915", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Removal_9151 {
+            get {
+                object obj = ResourceManager.GetObject("Removal-9151", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
