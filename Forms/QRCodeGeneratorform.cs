@@ -21,38 +21,39 @@ namespace NEXUS.Forms
         public QRCodeGeneratorform()
         {
             InitializeComponent();
+            pbQRCode.Image = null;
         }
 
         private void btnQRGenerate_Click(object sender, EventArgs e)
         {
             string data = "https://github.com/ShanRaboy11/NEXUS";
-            try
-            {
-                QRCodeGenerator qrGenerator = new QRCodeGenerator();
-                QRCodeData qrCodeData = qrGenerator.CreateQrCode(data, QRCodeGenerator.ECCLevel.Q);
-                QRCode qrCode = new QRCode(qrCodeData);
-                Bitmap qrCodeImage = qrCode.GetGraphic(20);
+            ProgressBar progressBar = new ProgressBar();
+            progressBar.FormClosed += (s, args) => this.Show();
+            progressBar.Owner = this;
 
-                if (pbQRCode != null)
-                {
-                    pbQRCode.Image = qrCodeImage; // Displays the QR code in the PictureBox
-                }
-                else
-                {
-                    MessageBox.Show("Error: PictureBox is not assigned!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception ex)
+            progressBar.Show();
+            progressBar.labelChange("QR");
+            this.Hide();
+            
+
+            QRCodeGenerator qrGenerator = new QRCodeGenerator();
+            QRCodeData qrCodeData = qrGenerator.CreateQrCode(data, QRCodeGenerator.ECCLevel.Q);
+            QRCode qrCode = new QRCode(qrCodeData);
+            Bitmap qrCodeImage = qrCode.GetGraphic(20);
+
+            if(pbQRCode != null)
             {
-                MessageBox.Show("QR Code generation failed: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                pbQRCode.Image = qrCodeImage; 
             }
         }
 
         public void save_Click(object sender, EventArgs e)
         {
+            DialogBox dialogBox = new DialogBox();
             if (pbQRCode.Image == null)
             {
-                MessageBox.Show("No QR Code to save.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dialogBox.Show();
+                dialogBox.ShowIcon("no qr");
                 return;
             }
 
@@ -61,10 +62,28 @@ namespace NEXUS.Forms
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     pbQRCode.Image.Save(saveFileDialog.FileName);
+                    dialogBox.Show();
+                    dialogBox.ShowIcon("save"); 
                 }
             }
         }
 
-       
+        private void Maximize(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+                this.WindowState = FormWindowState.Maximized;
+            else
+                this.WindowState = FormWindowState.Normal;
+        }
+
+        private void Minimize(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void Close(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

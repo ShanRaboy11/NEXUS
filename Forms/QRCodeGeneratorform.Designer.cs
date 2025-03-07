@@ -35,10 +35,10 @@
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             pbQRCode = new PictureBox();
-            airButton1 = new ReaLTaiizor.Controls.AirButton();
-            btnQRGenerate = new ReaLTaiizor.Controls.CyberButton();
             cmxSave = new ContextMenuStrip(components);
             saveToolStripMenuItem = new ToolStripMenuItem();
+            airButton1 = new ReaLTaiizor.Controls.AirButton();
+            btnQRGenerate = new ReaLTaiizor.Controls.CyberButton();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -68,6 +68,7 @@
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 2;
             pictureBox3.TabStop = false;
+            pictureBox3.Click += Maximize;
             // 
             // pictureBox2
             // 
@@ -78,6 +79,7 @@
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
+            pictureBox2.Click += Minimize;
             // 
             // pictureBox1
             // 
@@ -88,6 +90,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += Close;
             // 
             // pbQRCode
             // 
@@ -98,6 +101,21 @@
             pbQRCode.SizeMode = PictureBoxSizeMode.Zoom;
             pbQRCode.TabIndex = 20;
             pbQRCode.TabStop = false;
+            // 
+            // cmxSave
+            // 
+            cmxSave.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmxSave.Items.AddRange(new ToolStripItem[] { saveToolStripMenuItem });
+            cmxSave.Name = "cmxSave";
+            cmxSave.Size = new Size(107, 26);
+            // 
+            // saveToolStripMenuItem
+            // 
+            saveToolStripMenuItem.Image = Properties.Resources._1904659_arrow_backup_down_download_save_icon;
+            saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            saveToolStripMenuItem.Size = new Size(106, 22);
+            saveToolStripMenuItem.Text = "Save";
+            saveToolStripMenuItem.Click += save_Click;
             // 
             // airButton1
             // 
@@ -153,21 +171,6 @@
             btnQRGenerate.Timer_Effect_1 = 5;
             btnQRGenerate.Timer_RGB = 300;
             btnQRGenerate.Click += btnQRGenerate_Click;
-            // 
-            // cmxSave
-            // 
-            cmxSave.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cmxSave.Items.AddRange(new ToolStripItem[] { saveToolStripMenuItem });
-            cmxSave.Name = "cmxSave";
-            cmxSave.Size = new Size(107, 26);
-            // 
-            // saveToolStripMenuItem
-            // 
-            saveToolStripMenuItem.Image = Properties.Resources._1904659_arrow_backup_down_download_save_icon;
-            saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            saveToolStripMenuItem.Size = new Size(106, 22);
-            saveToolStripMenuItem.Text = "Save";
-            saveToolStripMenuItem.Click += save_Click;
             // 
             // QRCodeGeneratorform
             // 

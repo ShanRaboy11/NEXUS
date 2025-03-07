@@ -28,7 +28,7 @@ namespace NEXUS.Forms
         {
             if(message == "login")
             {
-                return;
+                pbDialogIcon.Image = Resources.Animation___1739885779319;
             }
             else if (message == "fail")
             {
@@ -40,11 +40,18 @@ namespace NEXUS.Forms
             }
             else if (message == "register")
             {
+                pbDialogIcon.Image = Resources.Animation___1739885779319;
                 lblMessage.Text = "Registered Successfully";
             }
             else if(message == "save")
             {
+                pbDialogIcon.Image = Resources.Animation___1739885779319;
                 lblMessage.Text = "Image Succssfully Saved";
+            }
+            else if(message == "no qr")
+            {
+                pbDialogIcon.Image = Resources.Animation___1739888041200;
+                lblMessage.Text = "No QR Code to save";
             }
             else
             {

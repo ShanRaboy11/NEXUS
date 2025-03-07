@@ -59,7 +59,7 @@ namespace NEXUS.Forms
             if (progressBar1.Percentage >= 100)
             {
                 timer1.Stop();
-                this.Hide();
+                this.Close();
                 ProgressCompleted?.Invoke(); // Notify that progress is done
             }
         }
