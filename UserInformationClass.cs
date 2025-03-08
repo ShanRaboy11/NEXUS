@@ -15,7 +15,6 @@ namespace NEXUS
 
     public abstract class UserInformation
     {
-        public int UserID { get; set; }
         public string Name { get; set; }
         public string ContactInfo { get; set; }
         public string Email { get; set; }
@@ -24,9 +23,8 @@ namespace NEXUS
         public double WalletAmount { get; set; }
 
         // Constructor
-        protected UserInformation(int userId, string name, string contactInfo, string email, string username, string password)
+        protected UserInformation(string name, string contactInfo, string email, string username, string password)
         {
-            UserID = userId;
             Name = name;
             ContactInfo = contactInfo;
             Email = email;
@@ -55,8 +53,8 @@ namespace NEXUS
         public List<string> TripHistory { get; private set; }
 
         // Constructor
-        public Passenger(int userID, string name, string contactInfo, string email, string username, string password)
-            : base(userID, name, contactInfo, email, username, password)
+        public Passenger(string name, string contactInfo, string email, string username, string password)
+            : base(name, contactInfo, email, username, password)
         { }
 
         // Method to add trip history
@@ -76,8 +74,8 @@ namespace NEXUS
         public string PlateNumber { get; set; }
 
         // Constructor
-        public Driver(int userID, string name, string contactInfo, string email, string username, string password, double ratings, string vehicleType, string plateNumber)
-            : base(userID, name, contactInfo, email, username, password)
+        public Driver(string name, string contactInfo, string email, string username, string password, double ratings, string vehicleType, string plateNumber)
+            : base(name, contactInfo, email, username, password)
         {
             Ratings = ratings;
             VehicleType = vehicleType;
@@ -87,31 +85,76 @@ namespace NEXUS
 
     public class EmergencyReport
     {
-        public int ReportID;
-        public int PassengerID;
-        public int DriverID;
-        public string IncidentDetails;
-        public DateTime TimeStamp;
+        public int PassengerID { get; private set; }
+        public int DriverID { get; private set; }
+        public string IncidentDetails { get; private set; }
+        public DateTime TimeStamp { get; private set; }
+
+        // Constructor
+        public EmergencyReport(int passengerID, int driverID, string incidentDetails)
+        {
+            PassengerID = passengerID;
+            DriverID = driverID;
+            IncidentDetails = !string.IsNullOrWhiteSpace(incidentDetails) ? incidentDetails : "No details provided";
+            TimeStamp = DateTime.Now; 
+        }
     }
 
     public class RatingSystem
     {
-        public int RatingID;
-        public int PassengerID;
-        public int DriverID;
-        public string Feedback;
+        public int PassengerID { get; private set; }
+        public int DriverID { get; private set; }
+        public int Rating { get; private set; }  
+        public string Feedback { get; private set; }
+
+        // Constructor
+        public RatingSystem(int passengerID, int driverID, int rating, string feedback)
+        {
+            PassengerID = passengerID;
+            DriverID = driverID;
+            SetRating(rating);
+            Feedback = !string.IsNullOrWhiteSpace(feedback) ? feedback : "No feedback provided";
+        }
+
+        public void SetRating(int rating)
+        {
+            if (rating < 1 || rating > 5)
+            {
+                throw new ArgumentException("Rating must be between 1 and 5.");
+            }
+            Rating = rating;
+        }
     }
+
 
     public class Trip
     {
-        public int TripID;
-        public string RouteTaken;
-        public double FarePaid;
-        public DateTime TripTimeStamp;
+        public string RouteTaken { get; private set; }
+        public double FarePaid { get; private set; }
+        public DateTime TripTimeStamp { get; private set; }
 
+        // Constructor (exclude TripID since it's DB-generated)
+        public Trip(string routeTaken, double farePaid)
+        {
+            if (string.IsNullOrWhiteSpace(routeTaken))
+                throw new ArgumentException("RouteTaken cannot be empty.");
+
+            if (farePaid < 0)
+                throw new ArgumentException("Fare cannot be negative.");
+
+            RouteTaken = routeTaken;
+            FarePaid = farePaid;
+            TripTimeStamp = DateTime.Now;
+        }      
+
+        // Generate a receipt string
         public string GenerateReceipt()
         {
-            return null;
+            return $"Trip Receipt\n" +
+                   $"-----------------------\n" +
+                   $"Route: {RouteTaken}\n" +
+                   $"Fare Paid: {FarePaid:C}\n" +
+                   $"Date: {TripTimeStamp:yyyy-MM-dd HH:mm:ss}\n";
         }
     }
 }
