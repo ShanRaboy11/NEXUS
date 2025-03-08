@@ -49,6 +49,10 @@
               "target": "Package",
               "version": "[2.2.5, )"
             },
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
             "QRCoder": {
               "target": "Package",
               "version": "[1.6.0, )"
