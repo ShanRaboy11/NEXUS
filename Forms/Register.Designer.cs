@@ -59,6 +59,12 @@
             panel7 = new Panel();
             panel5 = new Panel();
             panel6 = new Panel();
+            panel9 = new Panel();
+            rbtnPassenger = new ReaLTaiizor.Controls.HopeRadioButton();
+            panel10 = new Panel();
+            rbtnDriver = new ReaLTaiizor.Controls.HopeRadioButton();
+            panel12 = new Panel();
+            label5 = new Label();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -69,6 +75,8 @@
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbPrivacy1).BeginInit();
             panel8.SuspendLayout();
+            panel9.SuspendLayout();
+            panel10.SuspendLayout();
             SuspendLayout();
             // 
             // panel2
@@ -266,7 +274,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Inter", 10.55F);
             label3.ForeColor = Color.FromArgb(24, 60, 114);
-            label3.Location = new Point(16, 315);
+            label3.Location = new Point(16, 402);
             label3.Name = "label3";
             label3.Size = new Size(69, 22);
             label3.TabIndex = 23;
@@ -279,7 +287,7 @@
             cmbxMonth.ForeColor = Color.FromArgb(24, 60, 114);
             cmbxMonth.FormattingEnabled = true;
             cmbxMonth.Items.AddRange(new object[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" });
-            cmbxMonth.Location = new Point(29, 341);
+            cmbxMonth.Location = new Point(29, 428);
             cmbxMonth.Name = "cmbxMonth";
             cmbxMonth.Size = new Size(168, 30);
             cmbxMonth.TabIndex = 24;
@@ -292,7 +300,7 @@
             cmbxDay.ForeColor = Color.FromArgb(24, 60, 114);
             cmbxDay.FormattingEnabled = true;
             cmbxDay.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" });
-            cmbxDay.Location = new Point(220, 341);
+            cmbxDay.Location = new Point(220, 428);
             cmbxDay.Name = "cmbxDay";
             cmbxDay.Size = new Size(123, 30);
             cmbxDay.TabIndex = 25;
@@ -305,7 +313,7 @@
             cmbxYear.ForeColor = Color.FromArgb(24, 60, 114);
             cmbxYear.FormattingEnabled = true;
             cmbxYear.Items.AddRange(new object[] { "1950", "1951", "1952", "1953", "1954", "1955", "1956", "1957", "1958", "1959", "1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025" });
-            cmbxYear.Location = new Point(366, 341);
+            cmbxYear.Location = new Point(366, 428);
             cmbxYear.Name = "cmbxYear";
             cmbxYear.Size = new Size(145, 30);
             cmbxYear.TabIndex = 26;
@@ -316,7 +324,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Inter", 10.55F);
             label4.ForeColor = Color.FromArgb(24, 60, 114);
-            label4.Location = new Point(16, 384);
+            label4.Location = new Point(16, 471);
             label4.Name = "label4";
             label4.Size = new Size(63, 22);
             label4.TabIndex = 27;
@@ -369,7 +377,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Inter", 10F);
             label7.ForeColor = Color.DimGray;
-            label7.Location = new Point(19, 468);
+            label7.Location = new Point(19, 555);
             label7.Name = "label7";
             label7.Size = new Size(425, 21);
             label7.TabIndex = 66;
@@ -385,7 +393,7 @@
             btnSignUp.Image = null;
             btnSignUp.ImageAlign = ContentAlignment.MiddleLeft;
             btnSignUp.InactiveColor = Color.FromArgb(24, 60, 114);
-            btnSignUp.Location = new Point(171, 509);
+            btnSignUp.Location = new Point(171, 596);
             btnSignUp.Name = "btnSignUp";
             btnSignUp.PressedBorderColor = Color.FromArgb(176, 233, 255);
             btnSignUp.PressedColor = Color.FromArgb(176, 233, 255);
@@ -405,7 +413,7 @@
             panel8.Controls.Add(panel7);
             panel8.Controls.Add(panel5);
             panel8.Controls.Add(panel6);
-            panel8.Location = new Point(20, 409);
+            panel8.Location = new Point(20, 496);
             panel8.Name = "panel8";
             panel8.Size = new Size(511, 55);
             panel8.TabIndex = 29;
@@ -458,12 +466,98 @@
             panel6.Size = new Size(139, 41);
             panel6.TabIndex = 71;
             // 
+            // panel9
+            // 
+            panel9.BackColor = Color.FromArgb(230, 249, 255);
+            panel9.BackgroundImageLayout = ImageLayout.None;
+            panel9.Controls.Add(rbtnPassenger);
+            panel9.Controls.Add(panel10);
+            panel9.Controls.Add(panel12);
+            panel9.Location = new Point(21, 335);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(511, 55);
+            panel9.TabIndex = 72;
+            // 
+            // rbtnPassenger
+            // 
+            rbtnPassenger.AutoSize = true;
+            rbtnPassenger.BackColor = Color.FromArgb(176, 233, 255);
+            rbtnPassenger.CheckedColor = Color.FromArgb(64, 158, 255);
+            rbtnPassenger.DisabledColor = Color.FromArgb(196, 198, 202);
+            rbtnPassenger.DisabledStringColor = Color.FromArgb(186, 187, 189);
+            rbtnPassenger.Enable = true;
+            rbtnPassenger.EnabledCheckedColor = Color.FromArgb(64, 158, 255);
+            rbtnPassenger.EnabledStringColor = Color.FromArgb(146, 146, 146);
+            rbtnPassenger.EnabledUncheckedColor = Color.FromArgb(156, 158, 161);
+            rbtnPassenger.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rbtnPassenger.ForeColor = Color.FromArgb(24, 60, 114);
+            rbtnPassenger.Location = new Point(21, 16);
+            rbtnPassenger.Name = "rbtnPassenger";
+            rbtnPassenger.Size = new Size(113, 20);
+            rbtnPassenger.TabIndex = 28;
+            rbtnPassenger.TabStop = true;
+            rbtnPassenger.Text = "Passenger";
+            rbtnPassenger.UseVisualStyleBackColor = false;
+            // 
+            // panel10
+            // 
+            panel10.BackColor = Color.FromArgb(176, 233, 255);
+            panel10.BackgroundImageLayout = ImageLayout.None;
+            panel10.Controls.Add(rbtnDriver);
+            panel10.Location = new Point(199, 6);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(153, 41);
+            panel10.TabIndex = 69;
+            // 
+            // rbtnDriver
+            // 
+            rbtnDriver.AutoSize = true;
+            rbtnDriver.BackColor = Color.FromArgb(176, 233, 255);
+            rbtnDriver.CheckedColor = Color.FromArgb(64, 158, 255);
+            rbtnDriver.DisabledColor = Color.FromArgb(196, 198, 202);
+            rbtnDriver.DisabledStringColor = Color.FromArgb(186, 187, 189);
+            rbtnDriver.Enable = true;
+            rbtnDriver.EnabledCheckedColor = Color.FromArgb(64, 158, 255);
+            rbtnDriver.EnabledStringColor = Color.FromArgb(146, 146, 146);
+            rbtnDriver.EnabledUncheckedColor = Color.FromArgb(156, 158, 161);
+            rbtnDriver.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rbtnDriver.ForeColor = Color.FromArgb(24, 60, 114);
+            rbtnDriver.Location = new Point(21, 10);
+            rbtnDriver.Name = "rbtnDriver";
+            rbtnDriver.Size = new Size(81, 20);
+            rbtnDriver.TabIndex = 28;
+            rbtnDriver.TabStop = true;
+            rbtnDriver.Text = "Driver";
+            rbtnDriver.UseVisualStyleBackColor = false;
+            // 
+            // panel12
+            // 
+            panel12.BackColor = Color.FromArgb(176, 233, 255);
+            panel12.BackgroundImageLayout = ImageLayout.None;
+            panel12.Location = new Point(3, 6);
+            panel12.Name = "panel12";
+            panel12.Size = new Size(159, 41);
+            panel12.TabIndex = 71;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Inter", 10.55F);
+            label5.ForeColor = Color.FromArgb(24, 60, 114);
+            label5.Location = new Point(19, 311);
+            label5.Name = "label5";
+            label5.Size = new Size(42, 22);
+            label5.TabIndex = 73;
+            label5.Text = "Role";
+            // 
             // Register
             // 
             AutoScaleDimensions = new SizeF(8F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
-            ClientSize = new Size(554, 566);
+            ClientSize = new Size(554, 652);
+            Controls.Add(label5);
+            Controls.Add(panel9);
             Controls.Add(btnSignUp);
             Controls.Add(label7);
             Controls.Add(label4);
@@ -503,6 +597,10 @@
             ((System.ComponentModel.ISupportInitialize)pbPrivacy1).EndInit();
             panel8.ResumeLayout(false);
             panel8.PerformLayout();
+            panel9.ResumeLayout(false);
+            panel9.PerformLayout();
+            panel10.ResumeLayout(false);
+            panel10.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -539,5 +637,11 @@
         private Panel panel5;
         private ReaLTaiizor.Controls.HopeRadioButton rbtnFemale;
         private Panel panel6;
+        private Panel panel9;
+        private ReaLTaiizor.Controls.HopeRadioButton rbtnPassenger;
+        private Panel panel10;
+        private ReaLTaiizor.Controls.HopeRadioButton rbtnDriver;
+        private Panel panel12;
+        private Label label5;
     }
 }

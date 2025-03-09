@@ -101,8 +101,9 @@ namespace NEXUS.Forms
                 string.IsNullOrWhiteSpace(cmbxMonth.Text) ||
                 string.IsNullOrWhiteSpace(cmbxDay.Text) ||
                 string.IsNullOrWhiteSpace(cmbxYear.Text) ||
-                (!rbtnFemale.Checked && !rbtnMale.Checked && !rbtnNotSay.Checked))
-            {             
+                (!rbtnFemale.Checked && !rbtnMale.Checked && !rbtnNotSay.Checked) ||
+                (!rbtnDriver.Checked && !rbtnPassenger.Checked))
+            {
 
                 dialogBox.ShowIcon("blank");
                 dialogBox.Show();
