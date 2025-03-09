@@ -65,6 +65,8 @@
             rbtnDriver = new ReaLTaiizor.Controls.HopeRadioButton();
             panel12 = new Panel();
             label5 = new Label();
+            panel11 = new Panel();
+            tbxEmail = new TextBox();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -77,6 +79,7 @@
             panel8.SuspendLayout();
             panel9.SuspendLayout();
             panel10.SuspendLayout();
+            panel11.SuspendLayout();
             SuspendLayout();
             // 
             // panel2
@@ -274,7 +277,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Inter", 10.55F);
             label3.ForeColor = Color.FromArgb(24, 60, 114);
-            label3.Location = new Point(16, 402);
+            label3.Location = new Point(16, 466);
             label3.Name = "label3";
             label3.Size = new Size(69, 22);
             label3.TabIndex = 23;
@@ -287,7 +290,7 @@
             cmbxMonth.ForeColor = Color.FromArgb(24, 60, 114);
             cmbxMonth.FormattingEnabled = true;
             cmbxMonth.Items.AddRange(new object[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" });
-            cmbxMonth.Location = new Point(29, 428);
+            cmbxMonth.Location = new Point(29, 492);
             cmbxMonth.Name = "cmbxMonth";
             cmbxMonth.Size = new Size(168, 30);
             cmbxMonth.TabIndex = 24;
@@ -300,7 +303,7 @@
             cmbxDay.ForeColor = Color.FromArgb(24, 60, 114);
             cmbxDay.FormattingEnabled = true;
             cmbxDay.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" });
-            cmbxDay.Location = new Point(220, 428);
+            cmbxDay.Location = new Point(220, 492);
             cmbxDay.Name = "cmbxDay";
             cmbxDay.Size = new Size(123, 30);
             cmbxDay.TabIndex = 25;
@@ -313,7 +316,7 @@
             cmbxYear.ForeColor = Color.FromArgb(24, 60, 114);
             cmbxYear.FormattingEnabled = true;
             cmbxYear.Items.AddRange(new object[] { "1950", "1951", "1952", "1953", "1954", "1955", "1956", "1957", "1958", "1959", "1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025" });
-            cmbxYear.Location = new Point(366, 428);
+            cmbxYear.Location = new Point(366, 492);
             cmbxYear.Name = "cmbxYear";
             cmbxYear.Size = new Size(145, 30);
             cmbxYear.TabIndex = 26;
@@ -324,7 +327,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Inter", 10.55F);
             label4.ForeColor = Color.FromArgb(24, 60, 114);
-            label4.Location = new Point(16, 471);
+            label4.Location = new Point(16, 535);
             label4.Name = "label4";
             label4.Size = new Size(63, 22);
             label4.TabIndex = 27;
@@ -377,7 +380,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Inter", 10F);
             label7.ForeColor = Color.DimGray;
-            label7.Location = new Point(19, 555);
+            label7.Location = new Point(19, 619);
             label7.Name = "label7";
             label7.Size = new Size(425, 21);
             label7.TabIndex = 66;
@@ -393,7 +396,7 @@
             btnSignUp.Image = null;
             btnSignUp.ImageAlign = ContentAlignment.MiddleLeft;
             btnSignUp.InactiveColor = Color.FromArgb(24, 60, 114);
-            btnSignUp.Location = new Point(171, 596);
+            btnSignUp.Location = new Point(171, 660);
             btnSignUp.Name = "btnSignUp";
             btnSignUp.PressedBorderColor = Color.FromArgb(176, 233, 255);
             btnSignUp.PressedColor = Color.FromArgb(176, 233, 255);
@@ -413,7 +416,7 @@
             panel8.Controls.Add(panel7);
             panel8.Controls.Add(panel5);
             panel8.Controls.Add(panel6);
-            panel8.Location = new Point(20, 496);
+            panel8.Location = new Point(20, 560);
             panel8.Name = "panel8";
             panel8.Size = new Size(511, 55);
             panel8.TabIndex = 29;
@@ -443,25 +446,25 @@
             // 
             panel7.BackColor = Color.FromArgb(176, 233, 255);
             panel7.BackgroundImageLayout = ImageLayout.None;
-            panel7.Location = new Point(308, 6);
+            panel7.Location = new Point(318, 6);
             panel7.Name = "panel7";
-            panel7.Size = new Size(201, 41);
+            panel7.Size = new Size(191, 41);
             panel7.TabIndex = 69;
             // 
             // panel5
             // 
             panel5.BackColor = Color.FromArgb(176, 233, 255);
             panel5.BackgroundImageLayout = ImageLayout.None;
-            panel5.Location = new Point(169, 6);
+            panel5.Location = new Point(180, 6);
             panel5.Name = "panel5";
-            panel5.Size = new Size(112, 41);
+            panel5.Size = new Size(107, 41);
             panel5.TabIndex = 70;
             // 
             // panel6
             // 
             panel6.BackColor = Color.FromArgb(176, 233, 255);
             panel6.BackgroundImageLayout = ImageLayout.None;
-            panel6.Location = new Point(3, 6);
+            panel6.Location = new Point(14, 6);
             panel6.Name = "panel6";
             panel6.Size = new Size(139, 41);
             panel6.TabIndex = 71;
@@ -473,7 +476,7 @@
             panel9.Controls.Add(rbtnPassenger);
             panel9.Controls.Add(panel10);
             panel9.Controls.Add(panel12);
-            panel9.Location = new Point(21, 335);
+            panel9.Location = new Point(21, 399);
             panel9.Name = "panel9";
             panel9.Size = new Size(511, 55);
             panel9.TabIndex = 72;
@@ -504,7 +507,7 @@
             panel10.BackColor = Color.FromArgb(176, 233, 255);
             panel10.BackgroundImageLayout = ImageLayout.None;
             panel10.Controls.Add(rbtnDriver);
-            panel10.Location = new Point(199, 6);
+            panel10.Location = new Point(210, 6);
             panel10.Name = "panel10";
             panel10.Size = new Size(153, 41);
             panel10.TabIndex = 69;
@@ -534,7 +537,7 @@
             // 
             panel12.BackColor = Color.FromArgb(176, 233, 255);
             panel12.BackgroundImageLayout = ImageLayout.None;
-            panel12.Location = new Point(3, 6);
+            panel12.Location = new Point(14, 6);
             panel12.Name = "panel12";
             panel12.Size = new Size(159, 41);
             panel12.TabIndex = 71;
@@ -544,18 +547,42 @@
             label5.AutoSize = true;
             label5.Font = new Font("Inter", 10.55F);
             label5.ForeColor = Color.FromArgb(24, 60, 114);
-            label5.Location = new Point(19, 311);
+            label5.Location = new Point(19, 374);
             label5.Name = "label5";
             label5.Size = new Size(42, 22);
             label5.TabIndex = 73;
             label5.Text = "Role";
+            // 
+            // panel11
+            // 
+            panel11.BackColor = Color.FromArgb(176, 233, 255);
+            panel11.BackgroundImageLayout = ImageLayout.None;
+            panel11.Controls.Add(tbxEmail);
+            panel11.Location = new Point(21, 316);
+            panel11.Name = "panel11";
+            panel11.Size = new Size(511, 48);
+            panel11.TabIndex = 22;
+            // 
+            // tbxEmail
+            // 
+            tbxEmail.BackColor = Color.FromArgb(176, 233, 255);
+            tbxEmail.BorderStyle = BorderStyle.None;
+            tbxEmail.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbxEmail.ForeColor = Color.FromArgb(24, 60, 114);
+            tbxEmail.Location = new Point(13, 13);
+            tbxEmail.Name = "tbxEmail";
+            tbxEmail.Size = new Size(481, 20);
+            tbxEmail.TabIndex = 9;
+            tbxEmail.TabStop = false;
+            tbxEmail.Text = "Email address";
             // 
             // Register
             // 
             AutoScaleDimensions = new SizeF(8F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
-            ClientSize = new Size(554, 652);
+            ClientSize = new Size(554, 718);
+            Controls.Add(panel11);
             Controls.Add(label5);
             Controls.Add(panel9);
             Controls.Add(btnSignUp);
@@ -601,6 +628,8 @@
             panel9.PerformLayout();
             panel10.ResumeLayout(false);
             panel10.PerformLayout();
+            panel11.ResumeLayout(false);
+            panel11.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -643,5 +672,7 @@
         private ReaLTaiizor.Controls.HopeRadioButton rbtnDriver;
         private Panel panel12;
         private Label label5;
+        private Panel panel11;
+        private TextBox tbxEmail;
     }
 }

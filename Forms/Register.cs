@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NEXUS;
 
 namespace NEXUS.Forms
 {
@@ -101,6 +102,7 @@ namespace NEXUS.Forms
                 string.IsNullOrWhiteSpace(cmbxMonth.Text) ||
                 string.IsNullOrWhiteSpace(cmbxDay.Text) ||
                 string.IsNullOrWhiteSpace(cmbxYear.Text) ||
+                string.IsNullOrWhiteSpace(tbxEmail.Text) ||
                 (!rbtnFemale.Checked && !rbtnMale.Checked && !rbtnNotSay.Checked) ||
                 (!rbtnDriver.Checked && !rbtnPassenger.Checked))
             {
@@ -121,6 +123,8 @@ namespace NEXUS.Forms
                 cmbxYear.Text,
                 (rbtnFemale.Checked ? rbtnFemale.Text : rbtnMale.Checked ? rbtnMale.Text : rbtnNotSay.Text)
              };
+
+            //add here for initializing the registered infos using userInfo[0];
 
             dialogBox.ShowIcon("register");
             if (dialogBox.ShowDialog() == DialogResult.OK)
