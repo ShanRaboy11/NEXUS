@@ -28,7 +28,6 @@ namespace NEXUS.Forms
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-
         private void Maximize(object sender, EventArgs e)
         {
             if (WindowState == FormWindowState.Normal)
@@ -63,6 +62,38 @@ namespace NEXUS.Forms
             qRScannerForm.Owner = this;
             qRScannerForm.Show();
             this.Hide();
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            Dashboard dashboard = new Dashboard();
+            dashboard.Show();
+            this.Close();
+        }
+
+        private void btnRoute_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnHistory_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

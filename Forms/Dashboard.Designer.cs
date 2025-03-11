@@ -133,6 +133,7 @@
             btnLogout.SizeMode = PictureBoxSizeMode.CenterImage;
             btnLogout.TabIndex = 7;
             btnLogout.TabStop = false;
+            btnLogout.Click += btnLogout_Click;
             // 
             // pbAbout
             // 
@@ -156,6 +157,7 @@
             btnHome.SizeMode = PictureBoxSizeMode.CenterImage;
             btnHome.TabIndex = 5;
             btnHome.TabStop = false;
+            btnHome.Click += btnHome_Click;
             // 
             // btnScan
             // 
@@ -179,6 +181,7 @@
             btnReport.SizeMode = PictureBoxSizeMode.Zoom;
             btnReport.TabIndex = 3;
             btnReport.TabStop = false;
+            btnReport.Click += btnReport_Click;
             // 
             // btnHistory
             // 
@@ -190,6 +193,7 @@
             btnHistory.SizeMode = PictureBoxSizeMode.CenterImage;
             btnHistory.TabIndex = 2;
             btnHistory.TabStop = false;
+            btnHistory.Click += btnHistory_Click;
             // 
             // btnRate
             // 
@@ -201,6 +205,7 @@
             btnRate.SizeMode = PictureBoxSizeMode.Zoom;
             btnRate.TabIndex = 1;
             btnRate.TabStop = false;
+            btnRate.Click += btnRate_Click;
             // 
             // btnRoute
             // 
@@ -212,6 +217,7 @@
             btnRoute.SizeMode = PictureBoxSizeMode.CenterImage;
             btnRoute.TabIndex = 0;
             btnRoute.TabStop = false;
+            btnRoute.Click += btnRoute_Click;
             // 
             // Dashboard
             // 
