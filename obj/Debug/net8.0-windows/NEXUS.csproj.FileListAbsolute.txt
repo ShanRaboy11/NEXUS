@@ -35,3 +35,4 @@ C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.QR
 C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\System.Drawing.Common.dll
 C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\ZXing.Windows.Compatibility.dll
 C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.QRCodeGeneratorform.resources
+C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\BCrypt.Net-Next.dll

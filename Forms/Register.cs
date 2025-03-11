@@ -19,6 +19,9 @@ namespace NEXUS.Forms
         public Register()
         {
             InitializeComponent();
+            rbtnDriver.Parent = pnlRole;
+            rbtnPassenger.Parent = pnlRole;
+            panel10.Parent = pnlRole;
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -63,6 +66,11 @@ namespace NEXUS.Forms
         private void EnterUsername(object sender, EventArgs e)
         {
             tbxNewUserName.Text = "";
+        }
+
+        private void tbxEmail_Click(object sender, EventArgs e)
+        {
+            tbxEmail.Text = "";
         }
 
         private void EnterPassword(object sender, EventArgs e)

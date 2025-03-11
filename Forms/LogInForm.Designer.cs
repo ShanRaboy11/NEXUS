@@ -65,7 +65,7 @@
             // 
             pbLogo.Cursor = Cursors.Hand;
             pbLogo.Image = Properties.Resources.Removal_915;
-            pbLogo.Location = new Point(162, 57);
+            pbLogo.Location = new Point(153, 57);
             pbLogo.Name = "pbLogo";
             pbLogo.Size = new Size(90, 90);
             pbLogo.SizeMode = PictureBoxSizeMode.Zoom;

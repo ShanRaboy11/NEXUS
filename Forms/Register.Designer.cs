@@ -59,11 +59,11 @@
             panel7 = new Panel();
             panel5 = new Panel();
             panel6 = new Panel();
-            panel9 = new Panel();
-            rbtnPassenger = new ReaLTaiizor.Controls.HopeRadioButton();
-            panel10 = new Panel();
+            pnlRole = new Panel();
             rbtnDriver = new ReaLTaiizor.Controls.HopeRadioButton();
+            rbtnPassenger = new ReaLTaiizor.Controls.HopeRadioButton();
             panel12 = new Panel();
+            panel10 = new Panel();
             label5 = new Label();
             panel11 = new Panel();
             tbxEmail = new TextBox();
@@ -77,8 +77,7 @@
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbPrivacy1).BeginInit();
             panel8.SuspendLayout();
-            panel9.SuspendLayout();
-            panel10.SuspendLayout();
+            pnlRole.SuspendLayout();
             panel11.SuspendLayout();
             SuspendLayout();
             // 
@@ -469,48 +468,18 @@
             panel6.Size = new Size(139, 41);
             panel6.TabIndex = 71;
             // 
-            // panel9
+            // pnlRole
             // 
-            panel9.BackColor = Color.FromArgb(230, 249, 255);
-            panel9.BackgroundImageLayout = ImageLayout.None;
-            panel9.Controls.Add(rbtnPassenger);
-            panel9.Controls.Add(panel10);
-            panel9.Controls.Add(panel12);
-            panel9.Location = new Point(21, 399);
-            panel9.Name = "panel9";
-            panel9.Size = new Size(511, 55);
-            panel9.TabIndex = 72;
-            // 
-            // rbtnPassenger
-            // 
-            rbtnPassenger.AutoSize = true;
-            rbtnPassenger.BackColor = Color.FromArgb(176, 233, 255);
-            rbtnPassenger.CheckedColor = Color.FromArgb(64, 158, 255);
-            rbtnPassenger.DisabledColor = Color.FromArgb(196, 198, 202);
-            rbtnPassenger.DisabledStringColor = Color.FromArgb(186, 187, 189);
-            rbtnPassenger.Enable = true;
-            rbtnPassenger.EnabledCheckedColor = Color.FromArgb(64, 158, 255);
-            rbtnPassenger.EnabledStringColor = Color.FromArgb(146, 146, 146);
-            rbtnPassenger.EnabledUncheckedColor = Color.FromArgb(156, 158, 161);
-            rbtnPassenger.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rbtnPassenger.ForeColor = Color.FromArgb(24, 60, 114);
-            rbtnPassenger.Location = new Point(21, 16);
-            rbtnPassenger.Name = "rbtnPassenger";
-            rbtnPassenger.Size = new Size(113, 20);
-            rbtnPassenger.TabIndex = 28;
-            rbtnPassenger.TabStop = true;
-            rbtnPassenger.Text = "Passenger";
-            rbtnPassenger.UseVisualStyleBackColor = false;
-            // 
-            // panel10
-            // 
-            panel10.BackColor = Color.FromArgb(176, 233, 255);
-            panel10.BackgroundImageLayout = ImageLayout.None;
-            panel10.Controls.Add(rbtnDriver);
-            panel10.Location = new Point(210, 6);
-            panel10.Name = "panel10";
-            panel10.Size = new Size(153, 41);
-            panel10.TabIndex = 69;
+            pnlRole.BackColor = Color.FromArgb(230, 249, 255);
+            pnlRole.BackgroundImageLayout = ImageLayout.None;
+            pnlRole.Controls.Add(rbtnDriver);
+            pnlRole.Controls.Add(rbtnPassenger);
+            pnlRole.Controls.Add(panel12);
+            pnlRole.Controls.Add(panel10);
+            pnlRole.Location = new Point(21, 399);
+            pnlRole.Name = "pnlRole";
+            pnlRole.Size = new Size(390, 55);
+            pnlRole.TabIndex = 72;
             // 
             // rbtnDriver
             // 
@@ -525,7 +494,7 @@
             rbtnDriver.EnabledUncheckedColor = Color.FromArgb(156, 158, 161);
             rbtnDriver.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rbtnDriver.ForeColor = Color.FromArgb(24, 60, 114);
-            rbtnDriver.Location = new Point(21, 10);
+            rbtnDriver.Location = new Point(240, 16);
             rbtnDriver.Name = "rbtnDriver";
             rbtnDriver.Size = new Size(81, 20);
             rbtnDriver.TabIndex = 28;
@@ -533,14 +502,44 @@
             rbtnDriver.Text = "Driver";
             rbtnDriver.UseVisualStyleBackColor = false;
             // 
+            // rbtnPassenger
+            // 
+            rbtnPassenger.AutoSize = true;
+            rbtnPassenger.BackColor = Color.FromArgb(176, 233, 255);
+            rbtnPassenger.CheckedColor = Color.FromArgb(64, 158, 255);
+            rbtnPassenger.DisabledColor = Color.FromArgb(196, 198, 202);
+            rbtnPassenger.DisabledStringColor = Color.FromArgb(186, 187, 189);
+            rbtnPassenger.Enable = true;
+            rbtnPassenger.EnabledCheckedColor = Color.FromArgb(64, 158, 255);
+            rbtnPassenger.EnabledStringColor = Color.FromArgb(146, 146, 146);
+            rbtnPassenger.EnabledUncheckedColor = Color.FromArgb(156, 158, 161);
+            rbtnPassenger.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rbtnPassenger.ForeColor = Color.FromArgb(24, 60, 114);
+            rbtnPassenger.Location = new Point(27, 16);
+            rbtnPassenger.Name = "rbtnPassenger";
+            rbtnPassenger.Size = new Size(113, 20);
+            rbtnPassenger.TabIndex = 28;
+            rbtnPassenger.TabStop = true;
+            rbtnPassenger.Text = "Passenger";
+            rbtnPassenger.UseVisualStyleBackColor = false;
+            // 
             // panel12
             // 
             panel12.BackColor = Color.FromArgb(176, 233, 255);
             panel12.BackgroundImageLayout = ImageLayout.None;
-            panel12.Location = new Point(14, 6);
+            panel12.Location = new Point(14, 3);
             panel12.Name = "panel12";
-            panel12.Size = new Size(159, 41);
+            panel12.Size = new Size(159, 46);
             panel12.TabIndex = 71;
+            // 
+            // panel10
+            // 
+            panel10.BackColor = Color.FromArgb(176, 233, 255);
+            panel10.BackgroundImageLayout = ImageLayout.None;
+            panel10.Location = new Point(223, 3);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(153, 46);
+            panel10.TabIndex = 69;
             // 
             // label5
             // 
@@ -562,6 +561,7 @@
             panel11.Name = "panel11";
             panel11.Size = new Size(511, 48);
             panel11.TabIndex = 22;
+            panel11.ClientSizeChanged += tbxEmail_Click;
             // 
             // tbxEmail
             // 
@@ -575,6 +575,7 @@
             tbxEmail.TabIndex = 9;
             tbxEmail.TabStop = false;
             tbxEmail.Text = "Email address";
+            tbxEmail.Click += tbxEmail_Click;
             // 
             // Register
             // 
@@ -584,7 +585,7 @@
             ClientSize = new Size(554, 718);
             Controls.Add(panel11);
             Controls.Add(label5);
-            Controls.Add(panel9);
+            Controls.Add(pnlRole);
             Controls.Add(btnSignUp);
             Controls.Add(label7);
             Controls.Add(label4);
@@ -624,10 +625,8 @@
             ((System.ComponentModel.ISupportInitialize)pbPrivacy1).EndInit();
             panel8.ResumeLayout(false);
             panel8.PerformLayout();
-            panel9.ResumeLayout(false);
-            panel9.PerformLayout();
-            panel10.ResumeLayout(false);
-            panel10.PerformLayout();
+            pnlRole.ResumeLayout(false);
+            pnlRole.PerformLayout();
             panel11.ResumeLayout(false);
             panel11.PerformLayout();
             ResumeLayout(false);
@@ -666,7 +665,7 @@
         private Panel panel5;
         private ReaLTaiizor.Controls.HopeRadioButton rbtnFemale;
         private Panel panel6;
-        private Panel panel9;
+        private Panel pnlRole;
         private ReaLTaiizor.Controls.HopeRadioButton rbtnPassenger;
         private Panel panel10;
         private ReaLTaiizor.Controls.HopeRadioButton rbtnDriver;
