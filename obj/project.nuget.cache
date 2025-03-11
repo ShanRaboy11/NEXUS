@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "EuOj06akPyE=",
+  "dgSpecHash": "WM7MDAMhLF0=",
   "success": true,
   "projectFilePath": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\NEXUS.csproj",
   "expectedPackageFiles": [
@@ -8,10 +8,13 @@
     "C:\\Users\\Shan Michael\\.nuget\\packages\\aforge.video\\2.2.5\\aforge.video.2.2.5.nupkg.sha512",
     "C:\\Users\\Shan Michael\\.nuget\\packages\\aforge.video.directshow\\2.2.5\\aforge.video.directshow.2.2.5.nupkg.sha512",
     "C:\\Users\\Shan Michael\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
+    "C:\\Users\\Shan Michael\\.nuget\\packages\\guna.ui2.winforms\\2.0.4.7\\guna.ui2.winforms.2.0.4.7.nupkg.sha512",
     "C:\\Users\\Shan Michael\\.nuget\\packages\\microsoft.win32.systemevents\\8.0.0\\microsoft.win32.systemevents.8.0.0.nupkg.sha512",
     "C:\\Users\\Shan Michael\\.nuget\\packages\\qrcoder\\1.6.0\\qrcoder.1.6.0.nupkg.sha512",
     "C:\\Users\\Shan Michael\\.nuget\\packages\\realtaiizor\\3.8.1.1\\realtaiizor.3.8.1.1.nupkg.sha512",
+    "C:\\Users\\Shan Michael\\.nuget\\packages\\system.codedom\\7.0.0\\system.codedom.7.0.0.nupkg.sha512",
     "C:\\Users\\Shan Michael\\.nuget\\packages\\system.drawing.common\\8.0.12\\system.drawing.common.8.0.12.nupkg.sha512",
+    "C:\\Users\\Shan Michael\\.nuget\\packages\\system.management\\7.0.0\\system.management.7.0.0.nupkg.sha512",
     "C:\\Users\\Shan Michael\\.nuget\\packages\\zxing.net\\0.16.10\\zxing.net.0.16.10.nupkg.sha512",
     "C:\\Users\\Shan Michael\\.nuget\\packages\\zxing.net.bindings.windows.compatibility\\0.16.13\\zxing.net.bindings.windows.compatibility.0.16.13.nupkg.sha512"
   ],

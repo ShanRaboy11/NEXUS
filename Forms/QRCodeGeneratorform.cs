@@ -87,7 +87,10 @@ namespace NEXUS.Forms
 
         private void Close(object sender, EventArgs e)
         {
+            Dashboard dashboard = new Dashboard();
+
             this.Close();
+            dashboard.Show();
         }
     }
 }

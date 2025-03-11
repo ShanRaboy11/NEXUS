@@ -44,6 +44,17 @@
           }
         }
       },
+      "Guna.UI2.WinForms/2.0.4.7": {
+        "dependencies": {
+          "System.Management": "7.0.0"
+        },
+        "runtime": {
+          "lib/net7.0-windows7.0/Guna.UI2.dll": {
+            "assemblyVersion": "2.0.4.7",
+            "fileVersion": "2.0.4.7"
+          }
+        }
+      },
       "Microsoft.Win32.SystemEvents/8.0.0": {
         "runtime": {
           "lib/net8.0/Microsoft.Win32.SystemEvents.dll": {
@@ -79,6 +90,14 @@
           }
         }
       },
+      "System.CodeDom/7.0.0": {
+        "runtime": {
+          "lib/net7.0/System.CodeDom.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        }
+      },
       "System.Drawing.Common/8.0.12": {
         "dependencies": {
           "Microsoft.Win32.SystemEvents": "8.0.0"
@@ -87,6 +106,25 @@
           "lib/net8.0/System.Drawing.Common.dll": {
             "assemblyVersion": "8.0.0.0",
             "fileVersion": "8.0.1224.60306"
+          }
+        }
+      },
+      "System.Management/7.0.0": {
+        "dependencies": {
+          "System.CodeDom": "7.0.0"
+        },
+        "runtime": {
+          "lib/net7.0/System.Management.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net7.0/System.Management.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "7.0.22.51805"
           }
         }
       },
@@ -141,6 +179,13 @@
       "path": "bcrypt.net-next/4.0.3",
       "hashPath": "bcrypt.net-next.4.0.3.nupkg.sha512"
     },
+    "Guna.UI2.WinForms/2.0.4.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8BdBYsfnntuICbFMHIZsd5morwURN8Ucsvq7wJeyLV1Z1ze6CAIxVKEirufgjGIiXfF0M0sCr9EVFloZSazWew==",
+      "path": "guna.ui2.winforms/2.0.4.7",
+      "hashPath": "guna.ui2.winforms.2.0.4.7.nupkg.sha512"
+    },
     "Microsoft.Win32.SystemEvents/8.0.0": {
       "type": "package",
       "serviceable": true,
@@ -162,12 +207,26 @@
       "path": "realtaiizor/3.8.1.1",
       "hashPath": "realtaiizor.3.8.1.1.nupkg.sha512"
     },
+    "System.CodeDom/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GLltyqEsE5/3IE+zYRP5sNa1l44qKl9v+bfdMcwg+M9qnQf47wK3H0SUR/T+3N4JEQXF3vV4CSuuo0rsg+nq2A==",
+      "path": "system.codedom/7.0.0",
+      "hashPath": "system.codedom.7.0.0.nupkg.sha512"
+    },
     "System.Drawing.Common/8.0.12": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-mZrI0KKFAZO8gWaARhdaJblMUNEeHMlPsFa/nRS4j4EenYP/+f8F2bzu4yb0Co7WYuJ/w/D8d/zW4KGCdYJCyQ==",
       "path": "system.drawing.common/8.0.12",
       "hashPath": "system.drawing.common.8.0.12.nupkg.sha512"
+    },
+    "System.Management/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-A4jed4QUviDOm7fJNKAJObEAEkEUXmkGL/w0iyCYTzrl1rezTj8LGFHfsVst4Vb9JwFcTpboiDrvdST48avBpw==",
+      "path": "system.management/7.0.0",
+      "hashPath": "system.management.7.0.0.nupkg.sha512"
     },
     "ZXing.Net/0.16.10": {
       "type": "package",
