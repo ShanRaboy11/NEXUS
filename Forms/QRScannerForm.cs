@@ -20,6 +20,24 @@ namespace NEXUS.Forms
             InitializeCamera();
         }
 
+        private void Maximize(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+                this.WindowState = FormWindowState.Maximized;
+            else
+                this.WindowState = FormWindowState.Normal;
+        }
+
+        private void Minimize(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void Close(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void InitializeCamera()
         {
             videoDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);

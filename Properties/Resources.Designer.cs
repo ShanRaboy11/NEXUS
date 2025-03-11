@@ -163,6 +163,26 @@ namespace NEXUS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap emergency {
+            get {
+                object obj = ResourceManager.GetObject("emergency", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap emergency__1_ {
+            get {
+                object obj = ResourceManager.GetObject("emergency (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap history_hover {
             get {
                 object obj = ResourceManager.GetObject("history_hover", resourceCulture);
@@ -196,6 +216,16 @@ namespace NEXUS.Properties {
         internal static System.Drawing.Bitmap home_normal {
             get {
                 object obj = ResourceManager.GetObject("home_normal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logout_normal {
+            get {
+                object obj = ResourceManager.GetObject("logout_normal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -323,9 +353,29 @@ namespace NEXUS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap scan_hoverr {
+            get {
+                object obj = ResourceManager.GetObject("scan_hoverr", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap scan_normal {
             get {
                 object obj = ResourceManager.GetObject("scan_normal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap scan_normall {
+            get {
+                object obj = ResourceManager.GetObject("scan_normall", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

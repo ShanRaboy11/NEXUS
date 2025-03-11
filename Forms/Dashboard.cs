@@ -46,5 +46,23 @@ namespace NEXUS.Forms
         {
             Application.Exit();
         }
+
+        private void pbAbout_Click(object sender, EventArgs e)
+        {
+            About about = new About();
+            about.FormClosed += (s, args) => this.Show();
+            about.Owner = this;
+            about.Show();
+            this.Hide();
+        }
+
+        private void btnScan_Click(object sender, EventArgs e)
+        {
+            QRScannerForm qRScannerForm = new QRScannerForm();
+            qRScannerForm.FormClosed += (s, args) => this.Show();
+            qRScannerForm.Owner = this;
+            qRScannerForm.Show();
+            this.Hide();
+        }
     }
 }

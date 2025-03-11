@@ -55,6 +55,7 @@
             picCam.Location = new Point(102, 93);
             picCam.Name = "picCam";
             picCam.Size = new Size(579, 330);
+            picCam.SizeMode = PictureBoxSizeMode.CenterImage;
             picCam.TabIndex = 0;
             picCam.TabStop = false;
             // 
@@ -100,6 +101,7 @@
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 2;
             pictureBox3.TabStop = false;
+            pictureBox3.Click += Maximize;
             // 
             // pictureBox2
             // 
@@ -110,6 +112,7 @@
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
+            pictureBox2.Click += Minimize;
             // 
             // pictureBox1
             // 
@@ -120,6 +123,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += Close;
             // 
             // QRScannerForm
             // 

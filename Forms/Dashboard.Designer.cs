@@ -34,25 +34,27 @@
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
-            pictureBox4 = new PictureBox();
-            pictureBox5 = new PictureBox();
-            pictureBox6 = new PictureBox();
-            pictureBox7 = new PictureBox();
-            pictureBox8 = new PictureBox();
-            pictureBox9 = new PictureBox();
-            pictureBox10 = new PictureBox();
+            btnLogout = new PictureBox();
+            pbAbout = new PictureBox();
+            btnHome = new PictureBox();
+            btnScan = new PictureBox();
+            btnReport = new PictureBox();
+            btnHistory = new PictureBox();
+            btnRate = new PictureBox();
+            btnRoute = new PictureBox();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnLogout).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbAbout).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnHome).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnScan).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnReport).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnHistory).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnRate).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnRoute).BeginInit();
             SuspendLayout();
             // 
             // panel2
@@ -107,88 +109,109 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(pictureBox10);
-            panel1.Controls.Add(pictureBox9);
-            panel1.Controls.Add(pictureBox8);
-            panel1.Controls.Add(pictureBox7);
-            panel1.Controls.Add(pictureBox6);
-            panel1.Controls.Add(pictureBox5);
-            panel1.Controls.Add(pictureBox4);
+            panel1.Controls.Add(btnLogout);
+            panel1.Controls.Add(pbAbout);
+            panel1.Controls.Add(btnHome);
+            panel1.Controls.Add(btnScan);
+            panel1.Controls.Add(btnReport);
+            panel1.Controls.Add(btnHistory);
+            panel1.Controls.Add(btnRate);
+            panel1.Controls.Add(btnRoute);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 28);
             panel1.Name = "panel1";
             panel1.Size = new Size(88, 879);
             panel1.TabIndex = 18;
             // 
-            // pictureBox4
+            // btnLogout
             // 
-            pictureBox4.Image = Properties.Resources.route_normal;
-            pictureBox4.Location = new Point(22, 250);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(45, 44);
-            pictureBox4.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox4.TabIndex = 0;
-            pictureBox4.TabStop = false;
+            btnLogout.Cursor = Cursors.Hand;
+            btnLogout.Image = Properties.Resources.logout_normal;
+            btnLogout.Location = new Point(17, 805);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(50, 44);
+            btnLogout.SizeMode = PictureBoxSizeMode.CenterImage;
+            btnLogout.TabIndex = 7;
+            btnLogout.TabStop = false;
             // 
-            // pictureBox5
+            // pbAbout
             // 
-            pictureBox5.Image = Properties.Resources.rate1_normal;
-            pictureBox5.Location = new Point(22, 475);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(45, 44);
-            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox5.TabIndex = 1;
-            pictureBox5.TabStop = false;
+            pbAbout.Cursor = Cursors.Hand;
+            pbAbout.Image = Properties.Resources.Removal_915;
+            pbAbout.Location = new Point(17, 15);
+            pbAbout.Name = "pbAbout";
+            pbAbout.Size = new Size(53, 55);
+            pbAbout.SizeMode = PictureBoxSizeMode.Zoom;
+            pbAbout.TabIndex = 6;
+            pbAbout.TabStop = false;
+            pbAbout.Click += pbAbout_Click;
             // 
-            // pictureBox6
+            // btnHome
             // 
-            pictureBox6.Image = Properties.Resources.history_normal;
-            pictureBox6.Location = new Point(22, 550);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(45, 44);
-            pictureBox6.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox6.TabIndex = 2;
-            pictureBox6.TabStop = false;
+            btnHome.Cursor = Cursors.Hand;
+            btnHome.Image = Properties.Resources.home_normal;
+            btnHome.Location = new Point(22, 175);
+            btnHome.Name = "btnHome";
+            btnHome.Size = new Size(45, 44);
+            btnHome.SizeMode = PictureBoxSizeMode.CenterImage;
+            btnHome.TabIndex = 5;
+            btnHome.TabStop = false;
             // 
-            // pictureBox7
+            // btnScan
             // 
-            pictureBox7.Image = Properties.Resources.report_normal;
-            pictureBox7.Location = new Point(22, 400);
-            pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(45, 44);
-            pictureBox7.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox7.TabIndex = 3;
-            pictureBox7.TabStop = false;
+            btnScan.Cursor = Cursors.Hand;
+            btnScan.Image = Properties.Resources.scan_normall;
+            btnScan.Location = new Point(22, 325);
+            btnScan.Name = "btnScan";
+            btnScan.Size = new Size(45, 44);
+            btnScan.SizeMode = PictureBoxSizeMode.Zoom;
+            btnScan.TabIndex = 4;
+            btnScan.TabStop = false;
+            btnScan.Click += btnScan_Click;
             // 
-            // pictureBox8
+            // btnReport
             // 
-            pictureBox8.Image = Properties.Resources.scan_normal;
-            pictureBox8.Location = new Point(22, 325);
-            pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(45, 44);
-            pictureBox8.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox8.TabIndex = 4;
-            pictureBox8.TabStop = false;
+            btnReport.Cursor = Cursors.Hand;
+            btnReport.Image = Properties.Resources.emergency__1_;
+            btnReport.Location = new Point(22, 400);
+            btnReport.Name = "btnReport";
+            btnReport.Size = new Size(45, 44);
+            btnReport.SizeMode = PictureBoxSizeMode.Zoom;
+            btnReport.TabIndex = 3;
+            btnReport.TabStop = false;
             // 
-            // pictureBox9
+            // btnHistory
             // 
-            pictureBox9.Image = Properties.Resources.home_normal;
-            pictureBox9.Location = new Point(22, 175);
-            pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(45, 44);
-            pictureBox9.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox9.TabIndex = 5;
-            pictureBox9.TabStop = false;
+            btnHistory.Cursor = Cursors.Hand;
+            btnHistory.Image = Properties.Resources.history_normal;
+            btnHistory.Location = new Point(22, 550);
+            btnHistory.Name = "btnHistory";
+            btnHistory.Size = new Size(45, 44);
+            btnHistory.SizeMode = PictureBoxSizeMode.CenterImage;
+            btnHistory.TabIndex = 2;
+            btnHistory.TabStop = false;
             // 
-            // pictureBox10
+            // btnRate
             // 
-            pictureBox10.Image = Properties.Resources.Removal_915;
-            pictureBox10.Location = new Point(17, 15);
-            pictureBox10.Name = "pictureBox10";
-            pictureBox10.Size = new Size(53, 55);
-            pictureBox10.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox10.TabIndex = 6;
-            pictureBox10.TabStop = false;
+            btnRate.Cursor = Cursors.Hand;
+            btnRate.Image = Properties.Resources.rate1_normal;
+            btnRate.Location = new Point(22, 475);
+            btnRate.Name = "btnRate";
+            btnRate.Size = new Size(45, 44);
+            btnRate.SizeMode = PictureBoxSizeMode.Zoom;
+            btnRate.TabIndex = 1;
+            btnRate.TabStop = false;
+            // 
+            // btnRoute
+            // 
+            btnRoute.Cursor = Cursors.Hand;
+            btnRoute.Image = Properties.Resources.route_normal;
+            btnRoute.Location = new Point(22, 250);
+            btnRoute.Name = "btnRoute";
+            btnRoute.Size = new Size(45, 44);
+            btnRoute.SizeMode = PictureBoxSizeMode.CenterImage;
+            btnRoute.TabIndex = 0;
+            btnRoute.TabStop = false;
             // 
             // Dashboard
             // 
@@ -209,13 +232,14 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnLogout).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbAbout).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnHome).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnScan).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnReport).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnHistory).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnRate).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnRoute).EndInit();
             ResumeLayout(false);
         }
 
@@ -226,12 +250,13 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
         private Panel panel1;
-        private PictureBox pictureBox4;
-        private PictureBox pictureBox10;
-        private PictureBox pictureBox9;
-        private PictureBox pictureBox8;
-        private PictureBox pictureBox7;
-        private PictureBox pictureBox6;
-        private PictureBox pictureBox5;
+        private PictureBox btnRoute;
+        private PictureBox pbAbout;
+        private PictureBox btnHome;
+        private PictureBox btnScan;
+        private PictureBox btnReport;
+        private PictureBox btnHistory;
+        private PictureBox btnRate;
+        private PictureBox btnLogout;
     }
 }

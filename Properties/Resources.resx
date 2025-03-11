@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="rate1_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rate1_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="8530693_window_maximize_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\8530693_window_maximize_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -163,6 +166,9 @@
   <data name="Removal-915" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Removal-915.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="scan_normall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\scan_normall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="home_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\home_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -171,6 +177,9 @@
   </data>
   <data name="route_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\route_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="scan_hoverr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\scan_hoverr.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="minus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,6 +196,9 @@
   <data name="Animation - 1739885779319" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Animation - 1739885779319.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="logout_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logout_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="history_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\history_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -202,7 +214,10 @@
   <data name="report_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\report_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="rate1_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rate1_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="emergency (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\emergency (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="emergency" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\emergency.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
