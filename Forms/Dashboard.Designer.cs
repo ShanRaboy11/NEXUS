@@ -28,33 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             panel2 = new Panel();
             pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
-            panel1 = new Panel();
-            btnLogout = new PictureBox();
+            pnlSidebar = new Panel();
+            parrotButton7 = new ReaLTaiizor.Controls.ParrotButton();
+            parrotButton6 = new ReaLTaiizor.Controls.ParrotButton();
+            parrotButton5 = new ReaLTaiizor.Controls.ParrotButton();
+            parrotButton4 = new ReaLTaiizor.Controls.ParrotButton();
+            parrotButton3 = new ReaLTaiizor.Controls.ParrotButton();
+            parrotButton2 = new ReaLTaiizor.Controls.ParrotButton();
+            parrotButton1 = new ReaLTaiizor.Controls.ParrotButton();
             pbAbout = new PictureBox();
-            btnHome = new PictureBox();
-            btnScan = new PictureBox();
-            btnReport = new PictureBox();
-            btnHistory = new PictureBox();
-            btnRate = new PictureBox();
-            btnRoute = new PictureBox();
+            SidebarTransition = new System.Windows.Forms.Timer(components);
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)btnLogout).BeginInit();
+            pnlSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbAbout).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnHome).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnScan).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnReport).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnHistory).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnRate).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnRoute).BeginInit();
             SuspendLayout();
             // 
             // panel2
@@ -106,118 +101,208 @@
             pictureBox1.TabStop = false;
             pictureBox1.Click += Close;
             // 
-            // panel1
+            // pnlSidebar
             // 
-            panel1.BackColor = Color.White;
-            panel1.Controls.Add(btnLogout);
-            panel1.Controls.Add(pbAbout);
-            panel1.Controls.Add(btnHome);
-            panel1.Controls.Add(btnScan);
-            panel1.Controls.Add(btnReport);
-            panel1.Controls.Add(btnHistory);
-            panel1.Controls.Add(btnRate);
-            panel1.Controls.Add(btnRoute);
-            panel1.Dock = DockStyle.Left;
-            panel1.Location = new Point(0, 28);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(88, 879);
-            panel1.TabIndex = 18;
+            pnlSidebar.BackColor = Color.White;
+            pnlSidebar.Controls.Add(parrotButton7);
+            pnlSidebar.Controls.Add(parrotButton6);
+            pnlSidebar.Controls.Add(parrotButton5);
+            pnlSidebar.Controls.Add(parrotButton4);
+            pnlSidebar.Controls.Add(parrotButton3);
+            pnlSidebar.Controls.Add(parrotButton2);
+            pnlSidebar.Controls.Add(parrotButton1);
+            pnlSidebar.Controls.Add(pbAbout);
+            pnlSidebar.Dock = DockStyle.Left;
+            pnlSidebar.Location = new Point(0, 28);
+            pnlSidebar.Name = "pnlSidebar";
+            pnlSidebar.Size = new Size(88, 879);
+            pnlSidebar.TabIndex = 18;
+            pnlSidebar.Click += pnlSidebar_Click;
             // 
-            // btnLogout
+            // parrotButton7
             // 
-            btnLogout.Cursor = Cursors.Hand;
-            btnLogout.Image = Properties.Resources.logout_normal;
-            btnLogout.Location = new Point(17, 805);
-            btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(50, 44);
-            btnLogout.SizeMode = PictureBoxSizeMode.CenterImage;
-            btnLogout.TabIndex = 7;
-            btnLogout.TabStop = false;
-            btnLogout.Click += btnLogout_Click;
+            parrotButton7.BackgroundColor = Color.FromArgb(255, 255, 255);
+            parrotButton7.ButtonImage = Properties.Resources.scan_normall;
+            parrotButton7.ButtonStyle = ReaLTaiizor.Controls.ParrotButton.Style.MaterialRounded;
+            parrotButton7.ButtonText = "Scan";
+            parrotButton7.ClickBackColor = Color.FromArgb(230, 249, 255);
+            parrotButton7.ClickTextColor = Color.DodgerBlue;
+            parrotButton7.CornerRadius = 8;
+            parrotButton7.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            parrotButton7.Horizontal_Alignment = StringAlignment.Center;
+            parrotButton7.HoverBackgroundColor = Color.FromArgb(230, 249, 255);
+            parrotButton7.HoverTextColor = Color.DodgerBlue;
+            parrotButton7.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Left;
+            parrotButton7.Location = new Point(24, 325);
+            parrotButton7.Name = "parrotButton7";
+            parrotButton7.Size = new Size(150, 33);
+            parrotButton7.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            parrotButton7.TabIndex = 30;
+            parrotButton7.TextColor = Color.FromArgb(24, 60, 114);
+            parrotButton7.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            parrotButton7.Vertical_Alignment = StringAlignment.Center;
+            parrotButton7.Click += btnScan_Click;
+            // 
+            // parrotButton6
+            // 
+            parrotButton6.BackgroundColor = Color.FromArgb(255, 255, 255);
+            parrotButton6.ButtonImage = Properties.Resources.route_normal;
+            parrotButton6.ButtonStyle = ReaLTaiizor.Controls.ParrotButton.Style.MaterialRounded;
+            parrotButton6.ButtonText = "Route";
+            parrotButton6.ClickBackColor = Color.FromArgb(230, 249, 255);
+            parrotButton6.ClickTextColor = Color.DodgerBlue;
+            parrotButton6.CornerRadius = 8;
+            parrotButton6.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            parrotButton6.Horizontal_Alignment = StringAlignment.Center;
+            parrotButton6.HoverBackgroundColor = Color.FromArgb(230, 249, 255);
+            parrotButton6.HoverTextColor = Color.DodgerBlue;
+            parrotButton6.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Left;
+            parrotButton6.Location = new Point(24, 250);
+            parrotButton6.Name = "parrotButton6";
+            parrotButton6.Size = new Size(150, 33);
+            parrotButton6.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            parrotButton6.TabIndex = 29;
+            parrotButton6.TextColor = Color.FromArgb(24, 60, 114);
+            parrotButton6.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            parrotButton6.Vertical_Alignment = StringAlignment.Center;
+            parrotButton6.Click += btnRoute_Click;
+            // 
+            // parrotButton5
+            // 
+            parrotButton5.BackgroundColor = Color.FromArgb(255, 255, 255);
+            parrotButton5.ButtonImage = Properties.Resources.home_normal;
+            parrotButton5.ButtonStyle = ReaLTaiizor.Controls.ParrotButton.Style.MaterialRounded;
+            parrotButton5.ButtonText = "Home";
+            parrotButton5.ClickBackColor = Color.FromArgb(230, 249, 255);
+            parrotButton5.ClickTextColor = Color.DodgerBlue;
+            parrotButton5.CornerRadius = 8;
+            parrotButton5.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            parrotButton5.Horizontal_Alignment = StringAlignment.Center;
+            parrotButton5.HoverBackgroundColor = Color.FromArgb(230, 249, 255);
+            parrotButton5.HoverTextColor = Color.DodgerBlue;
+            parrotButton5.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Left;
+            parrotButton5.Location = new Point(24, 175);
+            parrotButton5.Name = "parrotButton5";
+            parrotButton5.Size = new Size(150, 33);
+            parrotButton5.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            parrotButton5.TabIndex = 28;
+            parrotButton5.TextColor = Color.FromArgb(24, 60, 114);
+            parrotButton5.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            parrotButton5.Vertical_Alignment = StringAlignment.Center;
+            parrotButton5.Click += btnHome_Click;
+            // 
+            // parrotButton4
+            // 
+            parrotButton4.BackgroundColor = Color.FromArgb(255, 255, 255);
+            parrotButton4.ButtonImage = Properties.Resources.emergency__1_;
+            parrotButton4.ButtonStyle = ReaLTaiizor.Controls.ParrotButton.Style.MaterialRounded;
+            parrotButton4.ButtonText = "Report";
+            parrotButton4.ClickBackColor = Color.FromArgb(230, 249, 255);
+            parrotButton4.ClickTextColor = Color.DodgerBlue;
+            parrotButton4.CornerRadius = 8;
+            parrotButton4.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            parrotButton4.Horizontal_Alignment = StringAlignment.Center;
+            parrotButton4.HoverBackgroundColor = Color.FromArgb(230, 249, 255);
+            parrotButton4.HoverTextColor = Color.DodgerBlue;
+            parrotButton4.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Left;
+            parrotButton4.Location = new Point(24, 400);
+            parrotButton4.Name = "parrotButton4";
+            parrotButton4.Size = new Size(150, 33);
+            parrotButton4.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            parrotButton4.TabIndex = 27;
+            parrotButton4.TextColor = Color.FromArgb(24, 60, 114);
+            parrotButton4.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            parrotButton4.Vertical_Alignment = StringAlignment.Center;
+            parrotButton4.Click += btnReport_Click;
+            // 
+            // parrotButton3
+            // 
+            parrotButton3.BackgroundColor = Color.FromArgb(255, 255, 255);
+            parrotButton3.ButtonImage = Properties.Resources.rate_normal;
+            parrotButton3.ButtonStyle = ReaLTaiizor.Controls.ParrotButton.Style.MaterialRounded;
+            parrotButton3.ButtonText = "Rate";
+            parrotButton3.ClickBackColor = Color.FromArgb(230, 249, 255);
+            parrotButton3.ClickTextColor = Color.DodgerBlue;
+            parrotButton3.CornerRadius = 8;
+            parrotButton3.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            parrotButton3.Horizontal_Alignment = StringAlignment.Center;
+            parrotButton3.HoverBackgroundColor = Color.FromArgb(230, 249, 255);
+            parrotButton3.HoverTextColor = Color.DodgerBlue;
+            parrotButton3.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Left;
+            parrotButton3.Location = new Point(24, 475);
+            parrotButton3.Name = "parrotButton3";
+            parrotButton3.Size = new Size(150, 33);
+            parrotButton3.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            parrotButton3.TabIndex = 26;
+            parrotButton3.TextColor = Color.FromArgb(24, 60, 114);
+            parrotButton3.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            parrotButton3.Vertical_Alignment = StringAlignment.Center;
+            parrotButton3.Click += btnRate_Click;
+            // 
+            // parrotButton2
+            // 
+            parrotButton2.BackgroundColor = Color.FromArgb(255, 255, 255);
+            parrotButton2.ButtonImage = Properties.Resources.history_normal;
+            parrotButton2.ButtonStyle = ReaLTaiizor.Controls.ParrotButton.Style.MaterialRounded;
+            parrotButton2.ButtonText = "History";
+            parrotButton2.ClickBackColor = Color.FromArgb(153, 229, 255);
+            parrotButton2.ClickTextColor = Color.DodgerBlue;
+            parrotButton2.CornerRadius = 8;
+            parrotButton2.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            parrotButton2.Horizontal_Alignment = StringAlignment.Center;
+            parrotButton2.HoverBackgroundColor = Color.FromArgb(230, 249, 255);
+            parrotButton2.HoverTextColor = Color.DodgerBlue;
+            parrotButton2.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Left;
+            parrotButton2.Location = new Point(24, 550);
+            parrotButton2.Name = "parrotButton2";
+            parrotButton2.Size = new Size(150, 33);
+            parrotButton2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            parrotButton2.TabIndex = 25;
+            parrotButton2.TextColor = Color.FromArgb(24, 60, 114);
+            parrotButton2.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            parrotButton2.Vertical_Alignment = StringAlignment.Center;
+            parrotButton2.Click += btnHistory_Click;
+            // 
+            // parrotButton1
+            // 
+            parrotButton1.BackgroundColor = Color.FromArgb(255, 255, 255);
+            parrotButton1.ButtonImage = Properties.Resources.logout_normal;
+            parrotButton1.ButtonStyle = ReaLTaiizor.Controls.ParrotButton.Style.MaterialRounded;
+            parrotButton1.ButtonText = "Logout";
+            parrotButton1.ClickBackColor = Color.FromArgb(230, 249, 255);
+            parrotButton1.ClickTextColor = Color.DodgerBlue;
+            parrotButton1.CornerRadius = 8;
+            parrotButton1.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            parrotButton1.Horizontal_Alignment = StringAlignment.Center;
+            parrotButton1.HoverBackgroundColor = Color.FromArgb(230, 249, 255);
+            parrotButton1.HoverTextColor = Color.DodgerBlue;
+            parrotButton1.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Left;
+            parrotButton1.Location = new Point(25, 811);
+            parrotButton1.Name = "parrotButton1";
+            parrotButton1.Size = new Size(150, 33);
+            parrotButton1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            parrotButton1.TabIndex = 19;
+            parrotButton1.TextColor = Color.FromArgb(24, 60, 114);
+            parrotButton1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            parrotButton1.Vertical_Alignment = StringAlignment.Center;
+            parrotButton1.Click += btnLogout_Click;
             // 
             // pbAbout
             // 
             pbAbout.Cursor = Cursors.Hand;
             pbAbout.Image = Properties.Resources.Removal_915;
-            pbAbout.Location = new Point(17, 15);
+            pbAbout.Location = new Point(15, 25);
             pbAbout.Name = "pbAbout";
-            pbAbout.Size = new Size(53, 55);
+            pbAbout.Size = new Size(58, 60);
             pbAbout.SizeMode = PictureBoxSizeMode.Zoom;
             pbAbout.TabIndex = 6;
             pbAbout.TabStop = false;
             pbAbout.Click += pbAbout_Click;
             // 
-            // btnHome
+            // SidebarTransition
             // 
-            btnHome.Cursor = Cursors.Hand;
-            btnHome.Image = Properties.Resources.home_normal;
-            btnHome.Location = new Point(22, 175);
-            btnHome.Name = "btnHome";
-            btnHome.Size = new Size(45, 44);
-            btnHome.SizeMode = PictureBoxSizeMode.CenterImage;
-            btnHome.TabIndex = 5;
-            btnHome.TabStop = false;
-            btnHome.Click += btnHome_Click;
-            // 
-            // btnScan
-            // 
-            btnScan.Cursor = Cursors.Hand;
-            btnScan.Image = Properties.Resources.scan_normall;
-            btnScan.Location = new Point(22, 325);
-            btnScan.Name = "btnScan";
-            btnScan.Size = new Size(45, 44);
-            btnScan.SizeMode = PictureBoxSizeMode.Zoom;
-            btnScan.TabIndex = 4;
-            btnScan.TabStop = false;
-            btnScan.Click += btnScan_Click;
-            // 
-            // btnReport
-            // 
-            btnReport.Cursor = Cursors.Hand;
-            btnReport.Image = Properties.Resources.emergency__1_;
-            btnReport.Location = new Point(22, 400);
-            btnReport.Name = "btnReport";
-            btnReport.Size = new Size(45, 44);
-            btnReport.SizeMode = PictureBoxSizeMode.Zoom;
-            btnReport.TabIndex = 3;
-            btnReport.TabStop = false;
-            btnReport.Click += btnReport_Click;
-            // 
-            // btnHistory
-            // 
-            btnHistory.Cursor = Cursors.Hand;
-            btnHistory.Image = Properties.Resources.history_normal;
-            btnHistory.Location = new Point(22, 550);
-            btnHistory.Name = "btnHistory";
-            btnHistory.Size = new Size(45, 44);
-            btnHistory.SizeMode = PictureBoxSizeMode.CenterImage;
-            btnHistory.TabIndex = 2;
-            btnHistory.TabStop = false;
-            btnHistory.Click += btnHistory_Click;
-            // 
-            // btnRate
-            // 
-            btnRate.Cursor = Cursors.Hand;
-            btnRate.Image = Properties.Resources.rate1_normal;
-            btnRate.Location = new Point(22, 475);
-            btnRate.Name = "btnRate";
-            btnRate.Size = new Size(45, 44);
-            btnRate.SizeMode = PictureBoxSizeMode.Zoom;
-            btnRate.TabIndex = 1;
-            btnRate.TabStop = false;
-            btnRate.Click += btnRate_Click;
-            // 
-            // btnRoute
-            // 
-            btnRoute.Cursor = Cursors.Hand;
-            btnRoute.Image = Properties.Resources.route_normal;
-            btnRoute.Location = new Point(22, 250);
-            btnRoute.Name = "btnRoute";
-            btnRoute.Size = new Size(45, 44);
-            btnRoute.SizeMode = PictureBoxSizeMode.CenterImage;
-            btnRoute.TabIndex = 0;
-            btnRoute.TabStop = false;
-            btnRoute.Click += btnRoute_Click;
+            SidebarTransition.Interval = 10;
+            SidebarTransition.Tick += SidebarTransition_Tick;
             // 
             // Dashboard
             // 
@@ -225,7 +310,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
             ClientSize = new Size(1400, 907);
-            Controls.Add(panel1);
+            Controls.Add(pnlSidebar);
             Controls.Add(panel2);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -237,15 +322,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)btnLogout).EndInit();
+            pnlSidebar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbAbout).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnHome).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnScan).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnReport).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnHistory).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnRate).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnRoute).EndInit();
             ResumeLayout(false);
         }
 
@@ -255,14 +333,15 @@
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
-        private Panel panel1;
-        private PictureBox btnRoute;
+        private Panel pnlSidebar;
         private PictureBox pbAbout;
-        private PictureBox btnHome;
-        private PictureBox btnScan;
-        private PictureBox btnReport;
-        private PictureBox btnHistory;
-        private PictureBox btnRate;
-        private PictureBox btnLogout;
+        private System.Windows.Forms.Timer SidebarTransition;
+        private ReaLTaiizor.Controls.ParrotButton parrotButton1;
+        private ReaLTaiizor.Controls.ParrotButton parrotButton2;
+        private ReaLTaiizor.Controls.ParrotButton parrotButton6;
+        private ReaLTaiizor.Controls.ParrotButton parrotButton5;
+        private ReaLTaiizor.Controls.ParrotButton parrotButton4;
+        private ReaLTaiizor.Controls.ParrotButton parrotButton3;
+        private ReaLTaiizor.Controls.ParrotButton parrotButton7;
     }
 }

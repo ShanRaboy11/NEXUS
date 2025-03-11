@@ -13,6 +13,7 @@ namespace NEXUS.Forms
 {
     public partial class Dashboard : Form
     {
+        bool sidebarExpand = false;
         public Dashboard()
         {
             InitializeComponent();
@@ -94,6 +95,40 @@ namespace NEXUS.Forms
         private void btnLogout_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void SidebarTransition_Tick(object sender, EventArgs e)
+        {
+            if (sidebarExpand)
+            {
+                pnlSidebar.Width -= 10;
+                pbAbout.Location = new Point(15 + (pnlSidebar.Width - 88) * 40 / 90, 25);
+
+                if (pnlSidebar.Width <= 88)
+                {
+                    SidebarTransition.Stop();
+                    sidebarExpand = false;
+                    pbAbout.Location = new Point(15, 25);
+                }
+            }
+            else
+            {
+                pnlSidebar.Width += 10;
+                pbAbout.Location = new Point(15 + (pnlSidebar.Width - 88) * 40 / 90, 25);
+
+                if (pnlSidebar.Width >= 178)
+                {
+                    SidebarTransition.Stop();
+                    sidebarExpand = true;
+                    pbAbout.Location = new Point(55, 25); 
+                }
+            }
+        }
+
+
+        private void pnlSidebar_Click(object sender, EventArgs e)
+        {
+            SidebarTransition.Start();
         }
     }
 }
