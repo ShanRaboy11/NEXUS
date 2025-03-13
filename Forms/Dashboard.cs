@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NEXUS.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -120,7 +121,7 @@ namespace NEXUS.Forms
                 {
                     SidebarTransition.Stop();
                     sidebarExpand = true;
-                    pbAbout.Location = new Point(55, 25); 
+                    pbAbout.Location = new Point(55, 25);
                 }
             }
         }
@@ -129,6 +130,17 @@ namespace NEXUS.Forms
         private void pnlSidebar_Click(object sender, EventArgs e)
         {
             SidebarTransition.Start();
+        }
+
+        private void btnHome_MouseHover(object sender, EventArgs e)
+        {
+            btnHomeHover.Visible = true;
+            btnHomeHover.Image = Resources.home_animation;
+        }
+
+        private void btnHome_MouseLeave(object sender, EventArgs e)
+        {
+            btnHomeHover.Visible = false;
         }
     }
 }
