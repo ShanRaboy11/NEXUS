@@ -160,14 +160,25 @@ namespace NEXUS.Forms
         {
             DialogBox dialogBox = new DialogBox();
             Dashboard dashboard = new Dashboard();
-            
-            //dialogBox.ShowIcon("fail");
-            dialogBox.ShowIcon("login");
-            if (dialogBox.ShowDialog() == DialogResult.OK) 
+
+            if (string.IsNullOrEmpty(tbxEnterUsername.Text) || string.IsNullOrEmpty(tbxEnterPassword.Text) ||
+                tbxEnterPassword.Text == "Username" || tbxEnterPassword.Text == "Password")
             {
-                dashboard.Show();
-                this.Close(); 
+                dialogBox.ShowIcon("blank");
+                dialogBox.Show();
+                return;
             }
+            else
+            {
+                dialogBox.ShowIcon("login");
+                if (dialogBox.ShowDialog() == DialogResult.OK)
+                {
+                    dashboard.Show();
+                    this.Close();
+                }
+            }
+            //dialogBox.ShowIcon("fail");
+            
         }
     }
 }
