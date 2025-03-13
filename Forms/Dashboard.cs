@@ -15,6 +15,7 @@ namespace NEXUS.Forms
     public partial class Dashboard : Form
     {
         bool sidebarExpand = false;
+        private Form currentChildForm;
         public Dashboard()
         {
             InitializeComponent();
@@ -60,10 +61,11 @@ namespace NEXUS.Forms
         private void btnScan_Click(object sender, EventArgs e)
         {
             QRScannerForm qRScannerForm = new QRScannerForm();
-            qRScannerForm.FormClosed += (s, args) => this.Show();
-            qRScannerForm.Owner = this;
-            qRScannerForm.Show();
-            this.Hide();
+            //qRScannerForm.FormClosed += (s, args) => this.Show();
+            //qRScannerForm.Owner = this;
+            //qRScannerForm.Show();
+            //this.Hide();
+            OpenChildForm(qRScannerForm);
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -201,5 +203,26 @@ namespace NEXUS.Forms
         {
             btnLogout.ButtonImage= Resources.logout_normal;
         }
+
+        private void OpenChildForm(Form childForm)
+        {
+            if (currentChildForm != null)
+            {
+                // Close and remove the current child form from the panel before adding a new one
+                currentChildForm.Close();
+                pnlDesktop.Controls.Remove(currentChildForm);
+            }
+
+            currentChildForm = childForm;
+            childForm.TopLevel = false; // Ensure the form is not a top-level window
+            childForm.Dock = DockStyle.Fill;
+
+            pnlDesktop.Controls.Add(childForm);
+            pnlDesktop.Tag = childForm;
+
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
     }
 }

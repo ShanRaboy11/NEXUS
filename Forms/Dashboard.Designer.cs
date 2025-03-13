@@ -44,6 +44,7 @@
             btnLogout = new ReaLTaiizor.Controls.ParrotButton();
             pbAbout = new PictureBox();
             SidebarTransition = new System.Windows.Forms.Timer(components);
+            pnlDesktop = new Panel();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -318,12 +319,21 @@
             SidebarTransition.Interval = 10;
             SidebarTransition.Tick += SidebarTransition_Tick;
             // 
+            // pnlDesktop
+            // 
+            pnlDesktop.Dock = DockStyle.Fill;
+            pnlDesktop.Location = new Point(88, 28);
+            pnlDesktop.Name = "pnlDesktop";
+            pnlDesktop.Size = new Size(1312, 879);
+            pnlDesktop.TabIndex = 19;
+            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
             ClientSize = new Size(1400, 907);
+            Controls.Add(pnlDesktop);
             Controls.Add(pnlSidebar);
             Controls.Add(panel2);
             FormBorderStyle = FormBorderStyle.None;
@@ -357,5 +367,6 @@
         private ReaLTaiizor.Controls.ParrotButton btnReport;
         private ReaLTaiizor.Controls.ParrotButton btnRate;
         private ReaLTaiizor.Controls.ParrotButton btnScan;
+        private Panel pnlDesktop;
     }
 }
