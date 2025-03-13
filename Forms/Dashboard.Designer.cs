@@ -35,13 +35,6 @@
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             pnlSidebar = new Panel();
-            btnRateHover = new PictureBox();
-            btnHistoryHover = new PictureBox();
-            btnLogoutHover = new PictureBox();
-            btnReportHover = new PictureBox();
-            btnScanHover = new PictureBox();
-            btnRouteHover = new PictureBox();
-            btnHomeHover = new PictureBox();
             btnScan = new ReaLTaiizor.Controls.ParrotButton();
             btnRoute = new ReaLTaiizor.Controls.ParrotButton();
             btnHome = new ReaLTaiizor.Controls.ParrotButton();
@@ -56,13 +49,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnlSidebar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)btnRateHover).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnHistoryHover).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnLogoutHover).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnReportHover).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnScanHover).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnRouteHover).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnHomeHover).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbAbout).BeginInit();
             SuspendLayout();
             // 
@@ -118,13 +104,6 @@
             // pnlSidebar
             // 
             pnlSidebar.BackColor = Color.White;
-            pnlSidebar.Controls.Add(btnRateHover);
-            pnlSidebar.Controls.Add(btnHistoryHover);
-            pnlSidebar.Controls.Add(btnLogoutHover);
-            pnlSidebar.Controls.Add(btnReportHover);
-            pnlSidebar.Controls.Add(btnScanHover);
-            pnlSidebar.Controls.Add(btnRouteHover);
-            pnlSidebar.Controls.Add(btnHomeHover);
             pnlSidebar.Controls.Add(btnScan);
             pnlSidebar.Controls.Add(btnRoute);
             pnlSidebar.Controls.Add(btnHome);
@@ -139,93 +118,6 @@
             pnlSidebar.Size = new Size(88, 879);
             pnlSidebar.TabIndex = 18;
             pnlSidebar.Click += pnlSidebar_Click;
-            // 
-            // btnRateHover
-            // 
-            btnRateHover.BackColor = Color.FromArgb(230, 249, 255);
-            btnRateHover.Image = Properties.Resources.rate_hover1;
-            btnRateHover.Location = new Point(25, 475);
-            btnRateHover.Name = "btnRateHover";
-            btnRateHover.Size = new Size(35, 35);
-            btnRateHover.SizeMode = PictureBoxSizeMode.Zoom;
-            btnRateHover.TabIndex = 36;
-            btnRateHover.TabStop = false;
-            btnRateHover.Visible = false;
-            // 
-            // btnHistoryHover
-            // 
-            btnHistoryHover.BackColor = Color.FromArgb(230, 249, 255);
-            btnHistoryHover.Image = Properties.Resources.history_hover1;
-            btnHistoryHover.Location = new Point(25, 550);
-            btnHistoryHover.Name = "btnHistoryHover";
-            btnHistoryHover.Size = new Size(35, 35);
-            btnHistoryHover.SizeMode = PictureBoxSizeMode.Zoom;
-            btnHistoryHover.TabIndex = 35;
-            btnHistoryHover.TabStop = false;
-            btnHistoryHover.Visible = false;
-            // 
-            // btnLogoutHover
-            // 
-            btnLogoutHover.BackColor = Color.FromArgb(230, 249, 255);
-            btnLogoutHover.Image = Properties.Resources.logout_hover;
-            btnLogoutHover.Location = new Point(25, 811);
-            btnLogoutHover.Name = "btnLogoutHover";
-            btnLogoutHover.Size = new Size(35, 35);
-            btnLogoutHover.SizeMode = PictureBoxSizeMode.Zoom;
-            btnLogoutHover.TabIndex = 34;
-            btnLogoutHover.TabStop = false;
-            btnLogoutHover.Visible = false;
-            // 
-            // btnReportHover
-            // 
-            btnReportHover.BackColor = Color.FromArgb(230, 249, 255);
-            btnReportHover.Image = Properties.Resources.report_hover1;
-            btnReportHover.Location = new Point(25, 400);
-            btnReportHover.Name = "btnReportHover";
-            btnReportHover.Size = new Size(35, 35);
-            btnReportHover.SizeMode = PictureBoxSizeMode.Zoom;
-            btnReportHover.TabIndex = 33;
-            btnReportHover.TabStop = false;
-            btnReportHover.Visible = false;
-            // 
-            // btnScanHover
-            // 
-            btnScanHover.BackColor = Color.FromArgb(230, 249, 255);
-            btnScanHover.Image = Properties.Resources.scan_hover1;
-            btnScanHover.Location = new Point(25, 325);
-            btnScanHover.Name = "btnScanHover";
-            btnScanHover.Size = new Size(35, 35);
-            btnScanHover.SizeMode = PictureBoxSizeMode.CenterImage;
-            btnScanHover.TabIndex = 32;
-            btnScanHover.TabStop = false;
-            btnScanHover.Visible = false;
-            btnScanHover.MouseLeave += btnScanHover_MouseLeave;
-            btnScanHover.MouseHover += btnScanHover_MouseHover;
-            // 
-            // btnRouteHover
-            // 
-            btnRouteHover.BackColor = Color.FromArgb(230, 249, 255);
-            btnRouteHover.Image = (Image)resources.GetObject("btnRouteHover.Image");
-            btnRouteHover.Location = new Point(25, 250);
-            btnRouteHover.Name = "btnRouteHover";
-            btnRouteHover.Size = new Size(35, 35);
-            btnRouteHover.SizeMode = PictureBoxSizeMode.Zoom;
-            btnRouteHover.TabIndex = 31;
-            btnRouteHover.TabStop = false;
-            btnRouteHover.Visible = false;
-            btnRouteHover.MouseLeave += btnRouteHover_MouseLeave;
-            btnRouteHover.MouseHover += btnRouteHover_MouseHover;
-            // 
-            // btnHomeHover
-            // 
-            btnHomeHover.BackColor = Color.FromArgb(230, 249, 255);
-            btnHomeHover.Location = new Point(25, 175);
-            btnHomeHover.Name = "btnHomeHover";
-            btnHomeHover.Size = new Size(35, 35);
-            btnHomeHover.SizeMode = PictureBoxSizeMode.Zoom;
-            btnHomeHover.TabIndex = 19;
-            btnHomeHover.TabStop = false;
-            btnHomeHover.Visible = false;
             // 
             // btnScan
             // 
@@ -250,6 +142,8 @@
             btnScan.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             btnScan.Vertical_Alignment = StringAlignment.Center;
             btnScan.Click += btnScan_Click;
+            btnScan.MouseLeave += btnScanHover_MouseLeave;
+            btnScan.MouseHover += btnScanHover_MouseHover;
             // 
             // btnRoute
             // 
@@ -274,6 +168,8 @@
             btnRoute.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             btnRoute.Vertical_Alignment = StringAlignment.Center;
             btnRoute.Click += btnRoute_Click;
+            btnRoute.MouseLeave += btnRouteHover_MouseLeave;
+            btnRoute.MouseHover += btnRouteHover_MouseHover;
             // 
             // btnHome
             // 
@@ -324,6 +220,8 @@
             btnReport.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             btnReport.Vertical_Alignment = StringAlignment.Center;
             btnReport.Click += btnReport_Click;
+            btnReport.MouseLeave += btnReport_MouseLeave;
+            btnReport.MouseHover += btnReport_MouseHover;
             // 
             // btnRate
             // 
@@ -348,6 +246,8 @@
             btnRate.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             btnRate.Vertical_Alignment = StringAlignment.Center;
             btnRate.Click += btnRate_Click;
+            btnRate.MouseLeave += btnRate_MouseLeave;
+            btnRate.MouseHover += btnRate_MouseHover;
             // 
             // btnHistory
             // 
@@ -372,6 +272,8 @@
             btnHistory.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             btnHistory.Vertical_Alignment = StringAlignment.Center;
             btnHistory.Click += btnHistory_Click;
+            btnHistory.MouseLeave += btnHistory_MouseLeave;
+            btnHistory.MouseHover += btnHistory_MouseHover;
             // 
             // btnLogout
             // 
@@ -396,6 +298,8 @@
             btnLogout.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             btnLogout.Vertical_Alignment = StringAlignment.Center;
             btnLogout.Click += btnLogout_Click;
+            btnLogout.MouseLeave += btnLogout_MouseLeave;
+            btnLogout.MouseHover += btnLogout_MouseHover;
             // 
             // pbAbout
             // 
@@ -433,13 +337,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             pnlSidebar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)btnRateHover).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnHistoryHover).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnLogoutHover).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnReportHover).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnScanHover).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnRouteHover).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnHomeHover).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbAbout).EndInit();
             ResumeLayout(false);
         }
@@ -460,12 +357,5 @@
         private ReaLTaiizor.Controls.ParrotButton btnReport;
         private ReaLTaiizor.Controls.ParrotButton btnRate;
         private ReaLTaiizor.Controls.ParrotButton btnScan;
-        private PictureBox btnHomeHover;
-        private PictureBox btnRateHover;
-        private PictureBox btnHistoryHover;
-        private PictureBox btnLogoutHover;
-        private PictureBox btnReportHover;
-        private PictureBox btnScanHover;
-        private PictureBox btnRouteHover;
     }
 }

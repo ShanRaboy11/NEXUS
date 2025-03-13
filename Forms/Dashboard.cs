@@ -134,33 +134,72 @@ namespace NEXUS.Forms
 
         private void btnHome_MouseHover(object sender, EventArgs e)
         {
-            btnHomeHover.Visible = true;
-            btnHomeHover.Image = Resources.home_animation;
+            btnHome.ButtonImage = Resources.home;
         }
 
         private void btnHome_MouseLeave(object sender, EventArgs e)
         {
-            btnHomeHover.Visible = false;
+            btnHome.ButtonImage = Resources.home_normal;
         }
 
         private void btnRouteHover_MouseHover(object sender, EventArgs e)
         {
-            btnRouteHover.Visible = true;
+            btnRoute.ButtonImage = Resources.route_hover1;
         }
 
         private void btnRouteHover_MouseLeave(object sender, EventArgs e)
         {
-            btnRouteHover.Visible = false;
+            btnRoute.ButtonImage = Resources.route_normal;
         }
 
         private void btnScanHover_MouseHover(object sender, EventArgs e)
         {
-            btnScanHover.Visible = true;
+            btnScan.ButtonImage = Resources.scan_hover;
         }
 
         private void btnScanHover_MouseLeave(object sender, EventArgs e)
         {
-            btnScanHover.Visible = false;
+            btnScan.ButtonImage= Resources.scan_normal;
+        }
+
+        private void btnReport_MouseHover(object sender, EventArgs e)
+        {
+            btnReport.ButtonImage = Resources.report_hover2;
+        }
+
+        private void btnReport_MouseLeave(object sender, EventArgs e)
+        {
+            btnReport.ButtonImage = Resources.emergency__1_;
+        }
+
+        private void btnRate_MouseHover(object sender, EventArgs e)
+        {
+            btnRate.ButtonImage = Resources.rate_hover2;
+        }
+
+        private void btnRate_MouseLeave(object sender, EventArgs e)
+        {
+            btnRate.ButtonImage = Resources.rate_normal;
+        }
+
+        private void btnHistory_MouseHover(object sender, EventArgs e)
+        {
+            btnHistory.ButtonImage = Resources.history_hover;
+        }
+
+        private void btnHistory_MouseLeave(object sender, EventArgs e)
+        {
+            btnHistory.ButtonImage = Resources.history_normal;
+        }
+
+        private void btnLogout_MouseHover(object sender, EventArgs e)
+        {
+            btnLogout.ButtonImage = Resources.logout_hover1;
+        }
+
+        private void btnLogout_MouseLeave(object sender, EventArgs e)
+        {
+            btnLogout.ButtonImage= Resources.logout_normal;
         }
     }
 }

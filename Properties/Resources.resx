@@ -124,8 +124,8 @@
   <data name="8530693_window_maximize_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\8530693_window_maximize_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Animation - 1739888041200" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Animation - 1739888041200.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="home_animation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\home_animation.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="route_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\route_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -133,11 +133,23 @@
   <data name="8530693_window_maximize_icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\8530693_window_maximize_icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Animation - 1739888041200" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Animation - 1739888041200.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logout_hover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logout_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="rate_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rate_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="history_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\history_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="route_hover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\route_hover1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="report_hover2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\report_hover1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="home_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\home_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,6 +163,9 @@
   <data name="rate_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rate_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="logout_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logout_hover.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="SuccessfulIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SuccessfulIcon.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -160,20 +175,26 @@
   <data name="scan_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\scan_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="home_animation" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\home_animation.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="show_eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\show_eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Removal-915" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Removal-915.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="history_hover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\history_hover.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="scan_normall" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\scan_normall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Animation - 1739888639577" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Animation - 1739888639577.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="home_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\home_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="report_hover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\report_hover.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="2075817_compass_explore_route_travel_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2075817_compass_explore_route_travel_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,17 +214,23 @@
   <data name="report_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\report_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="rate_hover2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rate_hover1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="home_hover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\home_hover1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="4115230_cancel_close_delete_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\4115230_cancel_close_delete_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Animation - 1739888639577" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Animation - 1739888639577.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="emergency (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\emergency (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Animation - 1739885779319" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Animation - 1739885779319.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="scan_hover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\scan_hover.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logout_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logout_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,6 +241,9 @@
   <data name="scan_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\scan_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="rate_hover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rate_hover.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="close (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -223,19 +253,7 @@
   <data name="report_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\report_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="history_hover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\history_hover.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logout_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logout_hover.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rate_hover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rate_hover.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="report_hover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\report_hover.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="scan_hover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\scan_hover.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="home" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

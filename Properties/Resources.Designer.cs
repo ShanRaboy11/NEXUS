@@ -213,6 +213,16 @@ namespace NEXUS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap home {
+            get {
+                object obj = ResourceManager.GetObject("home", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap home_animation {
             get {
                 object obj = ResourceManager.GetObject("home_animation", resourceCulture);
@@ -233,6 +243,16 @@ namespace NEXUS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap home_hover1 {
+            get {
+                object obj = ResourceManager.GetObject("home_hover1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap home_normal {
             get {
                 object obj = ResourceManager.GetObject("home_normal", resourceCulture);
@@ -246,6 +266,16 @@ namespace NEXUS.Properties {
         internal static System.Drawing.Bitmap logout_hover {
             get {
                 object obj = ResourceManager.GetObject("logout_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logout_hover1 {
+            get {
+                object obj = ResourceManager.GetObject("logout_hover1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -296,6 +326,16 @@ namespace NEXUS.Properties {
         internal static System.Drawing.Bitmap rate_hover1 {
             get {
                 object obj = ResourceManager.GetObject("rate_hover1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rate_hover2 {
+            get {
+                object obj = ResourceManager.GetObject("rate_hover2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -363,6 +403,16 @@ namespace NEXUS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap report_hover2 {
+            get {
+                object obj = ResourceManager.GetObject("report_hover2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap report_normal {
             get {
                 object obj = ResourceManager.GetObject("report_normal", resourceCulture);
@@ -376,6 +426,16 @@ namespace NEXUS.Properties {
         internal static System.Drawing.Bitmap route_hover {
             get {
                 object obj = ResourceManager.GetObject("route_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap route_hover1 {
+            get {
+                object obj = ResourceManager.GetObject("route_hover1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
