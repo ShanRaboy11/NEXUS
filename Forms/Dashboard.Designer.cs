@@ -35,6 +35,12 @@
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             pnlSidebar = new Panel();
+            btnRateHover = new PictureBox();
+            btnHistoryHover = new PictureBox();
+            btnLogoutHover = new PictureBox();
+            btnReportHover = new PictureBox();
+            btnScanHover = new PictureBox();
+            btnRouteHover = new PictureBox();
             btnHomeHover = new PictureBox();
             btnScan = new ReaLTaiizor.Controls.ParrotButton();
             btnRoute = new ReaLTaiizor.Controls.ParrotButton();
@@ -45,25 +51,19 @@
             btnLogout = new ReaLTaiizor.Controls.ParrotButton();
             pbAbout = new PictureBox();
             SidebarTransition = new System.Windows.Forms.Timer(components);
-            btnRouteHover = new PictureBox();
-            btnScanHover = new PictureBox();
-            btnReportHover = new PictureBox();
-            btnLogoutHover = new PictureBox();
-            btnHistoryHover = new PictureBox();
-            btnRateHover = new PictureBox();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnlSidebar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)btnRateHover).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnHistoryHover).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnLogoutHover).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnReportHover).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnScanHover).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnRouteHover).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnHomeHover).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbAbout).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnRouteHover).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnScanHover).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnReportHover).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnLogoutHover).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnHistoryHover).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnRateHover).BeginInit();
             SuspendLayout();
             // 
             // panel2
@@ -139,6 +139,82 @@
             pnlSidebar.Size = new Size(88, 879);
             pnlSidebar.TabIndex = 18;
             pnlSidebar.Click += pnlSidebar_Click;
+            // 
+            // btnRateHover
+            // 
+            btnRateHover.BackColor = Color.FromArgb(230, 249, 255);
+            btnRateHover.Image = Properties.Resources.rate_hover1;
+            btnRateHover.Location = new Point(25, 475);
+            btnRateHover.Name = "btnRateHover";
+            btnRateHover.Size = new Size(35, 35);
+            btnRateHover.SizeMode = PictureBoxSizeMode.Zoom;
+            btnRateHover.TabIndex = 36;
+            btnRateHover.TabStop = false;
+            btnRateHover.Visible = false;
+            // 
+            // btnHistoryHover
+            // 
+            btnHistoryHover.BackColor = Color.FromArgb(230, 249, 255);
+            btnHistoryHover.Image = Properties.Resources.history_hover1;
+            btnHistoryHover.Location = new Point(25, 550);
+            btnHistoryHover.Name = "btnHistoryHover";
+            btnHistoryHover.Size = new Size(35, 35);
+            btnHistoryHover.SizeMode = PictureBoxSizeMode.Zoom;
+            btnHistoryHover.TabIndex = 35;
+            btnHistoryHover.TabStop = false;
+            btnHistoryHover.Visible = false;
+            // 
+            // btnLogoutHover
+            // 
+            btnLogoutHover.BackColor = Color.FromArgb(230, 249, 255);
+            btnLogoutHover.Image = Properties.Resources.logout_hover;
+            btnLogoutHover.Location = new Point(25, 811);
+            btnLogoutHover.Name = "btnLogoutHover";
+            btnLogoutHover.Size = new Size(35, 35);
+            btnLogoutHover.SizeMode = PictureBoxSizeMode.Zoom;
+            btnLogoutHover.TabIndex = 34;
+            btnLogoutHover.TabStop = false;
+            btnLogoutHover.Visible = false;
+            // 
+            // btnReportHover
+            // 
+            btnReportHover.BackColor = Color.FromArgb(230, 249, 255);
+            btnReportHover.Image = Properties.Resources.report_hover1;
+            btnReportHover.Location = new Point(25, 400);
+            btnReportHover.Name = "btnReportHover";
+            btnReportHover.Size = new Size(35, 35);
+            btnReportHover.SizeMode = PictureBoxSizeMode.Zoom;
+            btnReportHover.TabIndex = 33;
+            btnReportHover.TabStop = false;
+            btnReportHover.Visible = false;
+            // 
+            // btnScanHover
+            // 
+            btnScanHover.BackColor = Color.FromArgb(230, 249, 255);
+            btnScanHover.Image = Properties.Resources.scan_hover1;
+            btnScanHover.Location = new Point(25, 325);
+            btnScanHover.Name = "btnScanHover";
+            btnScanHover.Size = new Size(35, 35);
+            btnScanHover.SizeMode = PictureBoxSizeMode.CenterImage;
+            btnScanHover.TabIndex = 32;
+            btnScanHover.TabStop = false;
+            btnScanHover.Visible = false;
+            btnScanHover.MouseLeave += btnScanHover_MouseLeave;
+            btnScanHover.MouseHover += btnScanHover_MouseHover;
+            // 
+            // btnRouteHover
+            // 
+            btnRouteHover.BackColor = Color.FromArgb(230, 249, 255);
+            btnRouteHover.Image = (Image)resources.GetObject("btnRouteHover.Image");
+            btnRouteHover.Location = new Point(25, 250);
+            btnRouteHover.Name = "btnRouteHover";
+            btnRouteHover.Size = new Size(35, 35);
+            btnRouteHover.SizeMode = PictureBoxSizeMode.Zoom;
+            btnRouteHover.TabIndex = 31;
+            btnRouteHover.TabStop = false;
+            btnRouteHover.Visible = false;
+            btnRouteHover.MouseLeave += btnRouteHover_MouseLeave;
+            btnRouteHover.MouseHover += btnRouteHover_MouseHover;
             // 
             // btnHomeHover
             // 
@@ -338,72 +414,6 @@
             SidebarTransition.Interval = 10;
             SidebarTransition.Tick += SidebarTransition_Tick;
             // 
-            // btnRouteHover
-            // 
-            btnRouteHover.BackColor = Color.FromArgb(230, 249, 255);
-            btnRouteHover.Location = new Point(25, 250);
-            btnRouteHover.Name = "btnRouteHover";
-            btnRouteHover.Size = new Size(35, 35);
-            btnRouteHover.SizeMode = PictureBoxSizeMode.Zoom;
-            btnRouteHover.TabIndex = 31;
-            btnRouteHover.TabStop = false;
-            btnRouteHover.Visible = false;
-            // 
-            // btnScanHover
-            // 
-            btnScanHover.BackColor = Color.FromArgb(230, 249, 255);
-            btnScanHover.Location = new Point(25, 325);
-            btnScanHover.Name = "btnScanHover";
-            btnScanHover.Size = new Size(35, 35);
-            btnScanHover.SizeMode = PictureBoxSizeMode.Zoom;
-            btnScanHover.TabIndex = 32;
-            btnScanHover.TabStop = false;
-            btnScanHover.Visible = false;
-            // 
-            // btnReportHover
-            // 
-            btnReportHover.BackColor = Color.FromArgb(230, 249, 255);
-            btnReportHover.Location = new Point(25, 400);
-            btnReportHover.Name = "btnReportHover";
-            btnReportHover.Size = new Size(35, 35);
-            btnReportHover.SizeMode = PictureBoxSizeMode.Zoom;
-            btnReportHover.TabIndex = 33;
-            btnReportHover.TabStop = false;
-            btnReportHover.Visible = false;
-            // 
-            // btnLogoutHover
-            // 
-            btnLogoutHover.BackColor = Color.FromArgb(230, 249, 255);
-            btnLogoutHover.Location = new Point(25, 811);
-            btnLogoutHover.Name = "btnLogoutHover";
-            btnLogoutHover.Size = new Size(35, 35);
-            btnLogoutHover.SizeMode = PictureBoxSizeMode.Zoom;
-            btnLogoutHover.TabIndex = 34;
-            btnLogoutHover.TabStop = false;
-            btnLogoutHover.Visible = false;
-            // 
-            // btnHistoryHover
-            // 
-            btnHistoryHover.BackColor = Color.FromArgb(230, 249, 255);
-            btnHistoryHover.Location = new Point(25, 550);
-            btnHistoryHover.Name = "btnHistoryHover";
-            btnHistoryHover.Size = new Size(35, 35);
-            btnHistoryHover.SizeMode = PictureBoxSizeMode.Zoom;
-            btnHistoryHover.TabIndex = 35;
-            btnHistoryHover.TabStop = false;
-            btnHistoryHover.Visible = false;
-            // 
-            // btnRateHover
-            // 
-            btnRateHover.BackColor = Color.FromArgb(230, 249, 255);
-            btnRateHover.Location = new Point(25, 475);
-            btnRateHover.Name = "btnRateHover";
-            btnRateHover.Size = new Size(35, 35);
-            btnRateHover.SizeMode = PictureBoxSizeMode.Zoom;
-            btnRateHover.TabIndex = 36;
-            btnRateHover.TabStop = false;
-            btnRateHover.Visible = false;
-            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -423,14 +433,14 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             pnlSidebar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)btnRateHover).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnHistoryHover).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnLogoutHover).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnReportHover).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnScanHover).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnRouteHover).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnHomeHover).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbAbout).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnRouteHover).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnScanHover).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnReportHover).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnLogoutHover).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnHistoryHover).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnRateHover).EndInit();
             ResumeLayout(false);
         }
 

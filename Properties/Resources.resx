@@ -160,6 +160,9 @@
   <data name="scan_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\scan_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="home_animation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\home_animation.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="show_eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\show_eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -220,7 +223,19 @@
   <data name="report_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\report_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="home_animation" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\home_animation.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="history_hover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\history_hover.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logout_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logout_hover.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rate_hover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rate_hover.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="report_hover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\report_hover.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="scan_hover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\scan_hover.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

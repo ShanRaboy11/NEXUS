@@ -142,5 +142,25 @@ namespace NEXUS.Forms
         {
             btnHomeHover.Visible = false;
         }
+
+        private void btnRouteHover_MouseHover(object sender, EventArgs e)
+        {
+            btnRouteHover.Visible = true;
+        }
+
+        private void btnRouteHover_MouseLeave(object sender, EventArgs e)
+        {
+            btnRouteHover.Visible = false;
+        }
+
+        private void btnScanHover_MouseHover(object sender, EventArgs e)
+        {
+            btnScanHover.Visible = true;
+        }
+
+        private void btnScanHover_MouseLeave(object sender, EventArgs e)
+        {
+            btnScanHover.Visible = false;
+        }
     }
 }
