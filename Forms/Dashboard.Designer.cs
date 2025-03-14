@@ -45,16 +45,25 @@
             pbAbout = new PictureBox();
             SidebarTransition = new System.Windows.Forms.Timer(components);
             pnlDesktop = new Panel();
-            panel1 = new Panel();
+            panel3 = new Panel();
             pictureBox4 = new PictureBox();
+            panel1 = new Panel();
+            pictureBox7 = new PictureBox();
+            label1 = new Label();
+            pictureBox6 = new PictureBox();
+            pictureBox5 = new PictureBox();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnlSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbAbout).BeginInit();
-            panel1.SuspendLayout();
+            pnlDesktop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             SuspendLayout();
             // 
             // panel2
@@ -133,6 +142,7 @@
             btnScan.ClickBackColor = Color.FromArgb(230, 249, 255);
             btnScan.ClickTextColor = Color.DodgerBlue;
             btnScan.CornerRadius = 8;
+            btnScan.Cursor = Cursors.Hand;
             btnScan.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnScan.Horizontal_Alignment = StringAlignment.Center;
             btnScan.HoverBackgroundColor = Color.FromArgb(230, 249, 255);
@@ -159,6 +169,7 @@
             btnRoute.ClickBackColor = Color.FromArgb(230, 249, 255);
             btnRoute.ClickTextColor = Color.DodgerBlue;
             btnRoute.CornerRadius = 8;
+            btnRoute.Cursor = Cursors.Hand;
             btnRoute.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnRoute.Horizontal_Alignment = StringAlignment.Center;
             btnRoute.HoverBackgroundColor = Color.FromArgb(230, 249, 255);
@@ -185,6 +196,7 @@
             btnHome.ClickBackColor = Color.FromArgb(230, 249, 255);
             btnHome.ClickTextColor = Color.DodgerBlue;
             btnHome.CornerRadius = 8;
+            btnHome.Cursor = Cursors.Hand;
             btnHome.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnHome.Horizontal_Alignment = StringAlignment.Center;
             btnHome.HoverBackgroundColor = Color.FromArgb(230, 249, 255);
@@ -211,6 +223,7 @@
             btnReport.ClickBackColor = Color.FromArgb(230, 249, 255);
             btnReport.ClickTextColor = Color.DodgerBlue;
             btnReport.CornerRadius = 8;
+            btnReport.Cursor = Cursors.Hand;
             btnReport.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnReport.Horizontal_Alignment = StringAlignment.Center;
             btnReport.HoverBackgroundColor = Color.FromArgb(230, 249, 255);
@@ -237,6 +250,7 @@
             btnRate.ClickBackColor = Color.FromArgb(230, 249, 255);
             btnRate.ClickTextColor = Color.DodgerBlue;
             btnRate.CornerRadius = 8;
+            btnRate.Cursor = Cursors.Hand;
             btnRate.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnRate.Horizontal_Alignment = StringAlignment.Center;
             btnRate.HoverBackgroundColor = Color.FromArgb(230, 249, 255);
@@ -263,6 +277,7 @@
             btnHistory.ClickBackColor = Color.FromArgb(153, 229, 255);
             btnHistory.ClickTextColor = Color.DodgerBlue;
             btnHistory.CornerRadius = 8;
+            btnHistory.Cursor = Cursors.Hand;
             btnHistory.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnHistory.Horizontal_Alignment = StringAlignment.Center;
             btnHistory.HoverBackgroundColor = Color.FromArgb(230, 249, 255);
@@ -289,6 +304,7 @@
             btnLogout.ClickBackColor = Color.FromArgb(230, 249, 255);
             btnLogout.ClickTextColor = Color.DodgerBlue;
             btnLogout.CornerRadius = 8;
+            btnLogout.Cursor = Cursors.Hand;
             btnLogout.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnLogout.Horizontal_Alignment = StringAlignment.Center;
             btnLogout.HoverBackgroundColor = Color.FromArgb(230, 249, 255);
@@ -325,31 +341,91 @@
             // 
             // pnlDesktop
             // 
+            pnlDesktop.Controls.Add(panel3);
+            pnlDesktop.Controls.Add(pictureBox4);
             pnlDesktop.Dock = DockStyle.Fill;
             pnlDesktop.Location = new Point(88, 28);
             pnlDesktop.Name = "pnlDesktop";
             pnlDesktop.Size = new Size(1312, 879);
             pnlDesktop.TabIndex = 19;
             // 
-            // panel1
+            // panel3
             // 
-            panel1.Controls.Add(pictureBox4);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(88, 28);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1312, 140);
-            panel1.TabIndex = 0;
+            panel3.BackColor = Color.White;
+            panel3.Dock = DockStyle.Right;
+            panel3.Location = new Point(988, 0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(324, 879);
+            panel3.TabIndex = 32;
             // 
             // pictureBox4
             // 
+            pictureBox4.BackColor = Color.FromArgb(38, 36, 68, 255);
             pictureBox4.Cursor = Cursors.Hand;
             pictureBox4.Image = Properties.Resources.Removal_915;
-            pictureBox4.Location = new Point(679, 25);
+            pictureBox4.Location = new Point(1197, 162);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(58, 60);
+            pictureBox4.Size = new Size(45, 46);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 31;
             pictureBox4.TabStop = false;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(pictureBox7);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(pictureBox6);
+            panel1.Controls.Add(pictureBox5);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(88, 28);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1312, 145);
+            panel1.TabIndex = 0;
+            // 
+            // pictureBox7
+            // 
+            pictureBox7.BackColor = Color.FromArgb(38, 36, 68);
+            pictureBox7.Cursor = Cursors.Hand;
+            pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
+            pictureBox7.Location = new Point(1238, 17);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(58, 60);
+            pictureBox7.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox7.TabIndex = 33;
+            pictureBox7.TabStop = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Inter SemiBold", 21F, FontStyle.Bold);
+            label1.Location = new Point(16, 22);
+            label1.Name = "label1";
+            label1.Size = new Size(198, 40);
+            label1.TabIndex = 32;
+            label1.Text = "Hello Angelo!";
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.BackColor = Color.FromArgb(38, 36, 68);
+            pictureBox6.Cursor = Cursors.Hand;
+            pictureBox6.Image = Properties.Resources.Removal_915;
+            pictureBox6.Location = new Point(1016, 18);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(58, 60);
+            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox6.TabIndex = 31;
+            pictureBox6.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.BackColor = Color.White;
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Location = new Point(989, -2);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(323, 145);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 0;
+            pictureBox5.TabStop = false;
             // 
             // Dashboard
             // 
@@ -373,8 +449,13 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             pnlSidebar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbAbout).EndInit();
-            panel1.ResumeLayout(false);
+            pnlDesktop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ResumeLayout(false);
         }
 
@@ -397,5 +478,10 @@
         private Panel pnlDesktop;
         private Panel panel1;
         private PictureBox pictureBox4;
+        private PictureBox pictureBox5;
+        private Panel panel3;
+        private Label label1;
+        private PictureBox pictureBox6;
+        private PictureBox pictureBox7;
     }
 }
