@@ -129,7 +129,7 @@
             pnlSidebar.Dock = DockStyle.Left;
             pnlSidebar.Location = new Point(0, 28);
             pnlSidebar.Name = "pnlSidebar";
-            pnlSidebar.Size = new Size(88, 879);
+            pnlSidebar.Size = new Size(185, 879);
             pnlSidebar.TabIndex = 18;
             pnlSidebar.Click += pnlSidebar_Click;
             // 
@@ -344,16 +344,16 @@
             pnlDesktop.Controls.Add(panel3);
             pnlDesktop.Controls.Add(pictureBox4);
             pnlDesktop.Dock = DockStyle.Fill;
-            pnlDesktop.Location = new Point(88, 28);
+            pnlDesktop.Location = new Point(185, 28);
             pnlDesktop.Name = "pnlDesktop";
-            pnlDesktop.Size = new Size(1312, 879);
+            pnlDesktop.Size = new Size(1215, 879);
             pnlDesktop.TabIndex = 19;
             // 
             // panel3
             // 
             panel3.BackColor = Color.White;
             panel3.Dock = DockStyle.Right;
-            panel3.Location = new Point(988, 0);
+            panel3.Location = new Point(891, 0);
             panel3.Name = "panel3";
             panel3.Size = new Size(324, 879);
             panel3.TabIndex = 32;
@@ -377,9 +377,9 @@
             panel1.Controls.Add(pictureBox6);
             panel1.Controls.Add(pictureBox5);
             panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(88, 28);
+            panel1.Location = new Point(185, 28);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1312, 145);
+            panel1.Size = new Size(1215, 145);
             panel1.TabIndex = 0;
             // 
             // pictureBox7

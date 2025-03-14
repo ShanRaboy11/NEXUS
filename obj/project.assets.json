@@ -48,6 +48,18 @@
           }
         }
       },
+      "FontAwesome.Sharp/6.6.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-windows7.0/FontAwesome.Sharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/FontAwesome.Sharp.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App"
+        ]
+      },
       "Microsoft.Win32.SystemEvents/8.0.0": {
         "type": "package",
         "compile": {
@@ -218,6 +230,23 @@
         "lib/netstandard2.1/BCrypt.Net-Next.dll",
         "lib/netstandard2.1/BCrypt.Net-Next.xml",
         "readme.md"
+      ]
+    },
+    "FontAwesome.Sharp/6.6.0": {
+      "sha512": "bJCb2x73UC1nD9+9iMLaUy6Ujf9Pf+buL6FHwVnaoDYT4CQNLazz59hO5gQ0+SMSW0G+ZXmjjShOYr3Jn2UZiw==",
+      "type": "package",
+      "path": "fontawesome.sharp/6.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fontawesome.sharp.6.6.0.nupkg.sha512",
+        "fontawesome.sharp.nuspec",
+        "lib/net472/FontAwesome.Sharp.dll",
+        "lib/net48/FontAwesome.Sharp.dll",
+        "lib/net6.0-windows7.0/FontAwesome.Sharp.dll",
+        "lib/net7.0-windows7.0/FontAwesome.Sharp.dll",
+        "lib/net8.0-windows7.0/FontAwesome.Sharp.dll",
+        "lib/netcoreapp3.1/FontAwesome.Sharp.dll"
       ]
     },
     "Microsoft.Win32.SystemEvents/8.0.0": {
@@ -467,6 +496,7 @@
     "net8.0-windows7.0": [
       "AForge.Video.DirectShow >= 2.2.5",
       "BCrypt.Net-Next >= 4.0.3",
+      "FontAwesome.Sharp >= 6.6.0",
       "QRCoder >= 1.6.0",
       "ReaLTaiizor >= 3.8.1.1",
       "ZXing.Net >= 0.16.10",
@@ -524,6 +554,10 @@
           "BCrypt.Net-Next": {
             "target": "Package",
             "version": "[4.0.3, )"
+          },
+          "FontAwesome.Sharp": {
+            "target": "Package",
+            "version": "[6.6.0, )"
           },
           "QRCoder": {
             "target": "Package",

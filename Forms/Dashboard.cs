@@ -67,33 +67,38 @@ namespace NEXUS.Forms
 
         private void btnHome_Click(object sender, EventArgs e)
         {
+            btnHome.ButtonImage = Resources.home;
             Home home = new Home();
             OpenChildForm(home);
         }
 
         private void btnRoute_Click(object sender, EventArgs e)
         {
-
+            btnRoute.ButtonImage = Resources.route_hover1;
+            //OpenChildForm(route);
         }
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-
+            btnReport.ButtonImage = Resources.report_hover2;
+            //OpenChildForm(report);
         }
 
         private void btnRate_Click(object sender, EventArgs e)
         {
-
+            btnRate.ButtonImage = Resources.rate_hover2;
+            //OpenChildForm(rate);
         }
 
         private void btnHistory_Click(object sender, EventArgs e)
         {
-
+            btnHistory.ButtonImage = Resources.history_hover;
+            //OpenChildForm(history);
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-
+            btnLogout.ButtonImage = Resources.logout_hover1;
         }
 
         private void SidebarTransition_Tick(object sender, EventArgs e)
