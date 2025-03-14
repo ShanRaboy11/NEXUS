@@ -43,7 +43,7 @@
             // picCam
             // 
             picCam.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            picCam.Location = new Point(111, 203);
+            picCam.Location = new Point(111, 221);
             picCam.Name = "picCam";
             picCam.Size = new Size(1095, 622);
             picCam.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -54,7 +54,7 @@
             // 
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label1.Font = new Font("Inter ExtraBold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(12, 145);
+            label1.Location = new Point(12, 163);
             label1.Name = "label1";
             label1.Size = new Size(1288, 36);
             label1.TabIndex = 1;
@@ -66,7 +66,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1312, 124);
+            panel1.Size = new Size(1312, 140);
             panel1.TabIndex = 2;
             // 
             // QRScannerForm

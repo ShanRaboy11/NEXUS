@@ -62,18 +62,13 @@ namespace NEXUS.Forms
         private void btnScan_Click(object sender, EventArgs e)
         {
             QRScannerForm qRScannerForm = new QRScannerForm();
-            //qRScannerForm.FormClosed += (s, args) => this.Show();
-            //qRScannerForm.Owner = this;
-            //qRScannerForm.Show();
-            //this.Hide();
             OpenChildForm(qRScannerForm);
         }
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            Dashboard dashboard = new Dashboard();
-            dashboard.Show();
-            this.Close();
+            Home home = new Home();
+            OpenChildForm(home);
         }
 
         private void btnRoute_Click(object sender, EventArgs e)

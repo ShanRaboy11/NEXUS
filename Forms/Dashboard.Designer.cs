@@ -337,7 +337,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(88, 28);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1312, 124);
+            panel1.Size = new Size(1312, 140);
             panel1.TabIndex = 0;
             // 
             // pictureBox4
