@@ -19,6 +19,7 @@ namespace NEXUS.Forms
         public Dashboard()
         {
             InitializeComponent();
+            this.DoubleBuffered = true;
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -206,6 +207,7 @@ namespace NEXUS.Forms
 
         private void OpenChildForm(Form childForm)
         {
+            //currentChildForm = null;
             if (currentChildForm != null)
             {
                 // Close and remove the current child form from the panel before adding a new one

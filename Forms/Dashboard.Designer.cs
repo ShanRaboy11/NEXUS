@@ -45,12 +45,16 @@
             pbAbout = new PictureBox();
             SidebarTransition = new System.Windows.Forms.Timer(components);
             pnlDesktop = new Panel();
+            panel1 = new Panel();
+            pictureBox4 = new PictureBox();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnlSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbAbout).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
             // panel2
@@ -327,12 +331,33 @@
             pnlDesktop.Size = new Size(1312, 879);
             pnlDesktop.TabIndex = 19;
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(pictureBox4);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(88, 28);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1312, 124);
+            panel1.TabIndex = 0;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Cursor = Cursors.Hand;
+            pictureBox4.Image = Properties.Resources.Removal_915;
+            pictureBox4.Location = new Point(679, 25);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(58, 60);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 31;
+            pictureBox4.TabStop = false;
+            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
             ClientSize = new Size(1400, 907);
+            Controls.Add(panel1);
             Controls.Add(pnlDesktop);
             Controls.Add(pnlSidebar);
             Controls.Add(panel2);
@@ -348,6 +373,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             pnlSidebar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbAbout).EndInit();
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
         }
 
@@ -368,5 +395,7 @@
         private ReaLTaiizor.Controls.ParrotButton btnRate;
         private ReaLTaiizor.Controls.ParrotButton btnScan;
         private Panel pnlDesktop;
+        private Panel panel1;
+        private PictureBox pictureBox4;
     }
 }

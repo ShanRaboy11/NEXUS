@@ -64,6 +64,9 @@ namespace NEXUS.Forms
 
         private void FinalFrame_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
+            if (picCam == null || picCam.IsDisposed)
+                StopCamera();
+
             if (picCam.InvokeRequired)
             {
                 picCam.Invoke(new MethodInvoker(delegate { picCam.Image = (Bitmap)eventArgs.Frame.Clone(); }));
@@ -78,10 +81,8 @@ namespace NEXUS.Forms
         {
             if (picCam.Image == null) return;
 
-            // Convert the captured frame to a bitmap
             Bitmap bitmap = new Bitmap(picCam.Image);
 
-            // QR Code reader with enhanced settings
             BarcodeReader reader = new BarcodeReader
             {
                 AutoRotate = true,
@@ -90,19 +91,27 @@ namespace NEXUS.Forms
 
             Result result = reader.Decode(bitmap);
 
-            if (result != null && !string.IsNullOrEmpty(result.Text)) // Ensure valid data
+            if (result != null && !string.IsNullOrEmpty(result.Text))
             {
-                scanTimer.Stop(); // Stop scanning
-                videoCaptureDevice.SignalToStop(); // Stop camera
+                StopCamera();
 
                 string decoded = result.Text.Trim();
 
-                // Open Payment Form immediately
                 PaymentForm paymentForm = new PaymentForm(decoded);
                 paymentForm.Show();
 
-                // Close this form automatically
-                this.Close();
+                this.Hide(); 
+            }
+        }
+
+        private void StopCamera()
+        {
+            if (videoCaptureDevice != null && videoCaptureDevice.IsRunning)
+            {
+                scanTimer.Stop(); // ✅ Stop the timer
+                videoCaptureDevice.SignalToStop(); // ✅ Stop the camera
+                videoCaptureDevice.WaitForStop(); // ✅ Ensure camera thread exits
+                videoCaptureDevice = null; // ✅ Remove reference to avoid conflicts
             }
         }
 
