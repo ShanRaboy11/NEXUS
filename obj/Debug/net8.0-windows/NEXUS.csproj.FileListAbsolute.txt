@@ -37,3 +37,4 @@ C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\ZXing.Windows.
 C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.QRCodeGeneratorform.resources
 C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\BCrypt.Net-Next.dll
 C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.Home.resources
+C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\FontAwesome.Sharp.dll

@@ -35,17 +35,17 @@
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             pnlSidebar = new Panel();
-            btnScan = new ReaLTaiizor.Controls.ParrotButton();
-            btnRoute = new ReaLTaiizor.Controls.ParrotButton();
-            btnHome = new ReaLTaiizor.Controls.ParrotButton();
-            btnReport = new ReaLTaiizor.Controls.ParrotButton();
-            btnRate = new ReaLTaiizor.Controls.ParrotButton();
-            btnHistory = new ReaLTaiizor.Controls.ParrotButton();
-            btnLogout = new ReaLTaiizor.Controls.ParrotButton();
             pbAbout = new PictureBox();
             SidebarTransition = new System.Windows.Forms.Timer(components);
             pnlDesktop = new Panel();
+            btnLogout = new FontAwesome.Sharp.IconButton();
+            btnHistory = new FontAwesome.Sharp.IconButton();
+            btnRate = new FontAwesome.Sharp.IconButton();
+            btnReport = new FontAwesome.Sharp.IconButton();
+            btnScan = new FontAwesome.Sharp.IconButton();
+            btnRoute = new FontAwesome.Sharp.IconButton();
             panel3 = new Panel();
+            btnHome = new FontAwesome.Sharp.IconButton();
             pictureBox4 = new PictureBox();
             panel1 = new Panel();
             pictureBox7 = new PictureBox();
@@ -118,209 +118,20 @@
             // pnlSidebar
             // 
             pnlSidebar.BackColor = Color.White;
+            pnlSidebar.Controls.Add(btnLogout);
+            pnlSidebar.Controls.Add(btnHistory);
+            pnlSidebar.Controls.Add(pbAbout);
+            pnlSidebar.Controls.Add(btnRate);
+            pnlSidebar.Controls.Add(btnReport);
+            pnlSidebar.Controls.Add(btnHome);
             pnlSidebar.Controls.Add(btnScan);
             pnlSidebar.Controls.Add(btnRoute);
-            pnlSidebar.Controls.Add(btnHome);
-            pnlSidebar.Controls.Add(btnReport);
-            pnlSidebar.Controls.Add(btnRate);
-            pnlSidebar.Controls.Add(btnHistory);
-            pnlSidebar.Controls.Add(btnLogout);
-            pnlSidebar.Controls.Add(pbAbout);
             pnlSidebar.Dock = DockStyle.Left;
             pnlSidebar.Location = new Point(0, 28);
             pnlSidebar.Name = "pnlSidebar";
-            pnlSidebar.Size = new Size(185, 879);
+            pnlSidebar.Size = new Size(88, 879);
             pnlSidebar.TabIndex = 18;
             pnlSidebar.Click += pnlSidebar_Click;
-            // 
-            // btnScan
-            // 
-            btnScan.BackgroundColor = Color.FromArgb(255, 255, 255);
-            btnScan.ButtonImage = Properties.Resources.scan_normall;
-            btnScan.ButtonStyle = ReaLTaiizor.Controls.ParrotButton.Style.MaterialRounded;
-            btnScan.ButtonText = "Scan";
-            btnScan.ClickBackColor = Color.FromArgb(230, 249, 255);
-            btnScan.ClickTextColor = Color.DodgerBlue;
-            btnScan.CornerRadius = 8;
-            btnScan.Cursor = Cursors.Hand;
-            btnScan.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnScan.Horizontal_Alignment = StringAlignment.Center;
-            btnScan.HoverBackgroundColor = Color.FromArgb(230, 249, 255);
-            btnScan.HoverTextColor = Color.DodgerBlue;
-            btnScan.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Left;
-            btnScan.Location = new Point(24, 325);
-            btnScan.Name = "btnScan";
-            btnScan.Size = new Size(150, 33);
-            btnScan.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            btnScan.TabIndex = 30;
-            btnScan.TextColor = Color.FromArgb(24, 60, 114);
-            btnScan.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            btnScan.Vertical_Alignment = StringAlignment.Center;
-            btnScan.Click += btnScan_Click;
-            btnScan.MouseLeave += btnScanHover_MouseLeave;
-            btnScan.MouseHover += btnScanHover_MouseHover;
-            // 
-            // btnRoute
-            // 
-            btnRoute.BackgroundColor = Color.FromArgb(255, 255, 255);
-            btnRoute.ButtonImage = Properties.Resources.route_normal;
-            btnRoute.ButtonStyle = ReaLTaiizor.Controls.ParrotButton.Style.MaterialRounded;
-            btnRoute.ButtonText = "Route";
-            btnRoute.ClickBackColor = Color.FromArgb(230, 249, 255);
-            btnRoute.ClickTextColor = Color.DodgerBlue;
-            btnRoute.CornerRadius = 8;
-            btnRoute.Cursor = Cursors.Hand;
-            btnRoute.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnRoute.Horizontal_Alignment = StringAlignment.Center;
-            btnRoute.HoverBackgroundColor = Color.FromArgb(230, 249, 255);
-            btnRoute.HoverTextColor = Color.DodgerBlue;
-            btnRoute.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Left;
-            btnRoute.Location = new Point(24, 250);
-            btnRoute.Name = "btnRoute";
-            btnRoute.Size = new Size(150, 33);
-            btnRoute.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            btnRoute.TabIndex = 29;
-            btnRoute.TextColor = Color.FromArgb(24, 60, 114);
-            btnRoute.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            btnRoute.Vertical_Alignment = StringAlignment.Center;
-            btnRoute.Click += btnRoute_Click;
-            btnRoute.MouseLeave += btnRouteHover_MouseLeave;
-            btnRoute.MouseHover += btnRouteHover_MouseHover;
-            // 
-            // btnHome
-            // 
-            btnHome.BackgroundColor = Color.FromArgb(255, 255, 255);
-            btnHome.ButtonImage = Properties.Resources.home_normal;
-            btnHome.ButtonStyle = ReaLTaiizor.Controls.ParrotButton.Style.MaterialRounded;
-            btnHome.ButtonText = "Home";
-            btnHome.ClickBackColor = Color.FromArgb(230, 249, 255);
-            btnHome.ClickTextColor = Color.DodgerBlue;
-            btnHome.CornerRadius = 8;
-            btnHome.Cursor = Cursors.Hand;
-            btnHome.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnHome.Horizontal_Alignment = StringAlignment.Center;
-            btnHome.HoverBackgroundColor = Color.FromArgb(230, 249, 255);
-            btnHome.HoverTextColor = Color.DodgerBlue;
-            btnHome.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Left;
-            btnHome.Location = new Point(25, 175);
-            btnHome.Name = "btnHome";
-            btnHome.Size = new Size(149, 33);
-            btnHome.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            btnHome.TabIndex = 28;
-            btnHome.TextColor = Color.FromArgb(24, 60, 114);
-            btnHome.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            btnHome.Vertical_Alignment = StringAlignment.Center;
-            btnHome.Click += btnHome_Click;
-            btnHome.MouseLeave += btnHome_MouseLeave;
-            btnHome.MouseHover += btnHome_MouseHover;
-            // 
-            // btnReport
-            // 
-            btnReport.BackgroundColor = Color.FromArgb(255, 255, 255);
-            btnReport.ButtonImage = Properties.Resources.emergency__1_;
-            btnReport.ButtonStyle = ReaLTaiizor.Controls.ParrotButton.Style.MaterialRounded;
-            btnReport.ButtonText = "Report";
-            btnReport.ClickBackColor = Color.FromArgb(230, 249, 255);
-            btnReport.ClickTextColor = Color.DodgerBlue;
-            btnReport.CornerRadius = 8;
-            btnReport.Cursor = Cursors.Hand;
-            btnReport.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnReport.Horizontal_Alignment = StringAlignment.Center;
-            btnReport.HoverBackgroundColor = Color.FromArgb(230, 249, 255);
-            btnReport.HoverTextColor = Color.DodgerBlue;
-            btnReport.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Left;
-            btnReport.Location = new Point(24, 400);
-            btnReport.Name = "btnReport";
-            btnReport.Size = new Size(150, 33);
-            btnReport.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            btnReport.TabIndex = 27;
-            btnReport.TextColor = Color.FromArgb(24, 60, 114);
-            btnReport.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            btnReport.Vertical_Alignment = StringAlignment.Center;
-            btnReport.Click += btnReport_Click;
-            btnReport.MouseLeave += btnReport_MouseLeave;
-            btnReport.MouseHover += btnReport_MouseHover;
-            // 
-            // btnRate
-            // 
-            btnRate.BackgroundColor = Color.FromArgb(255, 255, 255);
-            btnRate.ButtonImage = Properties.Resources.rate_normal;
-            btnRate.ButtonStyle = ReaLTaiizor.Controls.ParrotButton.Style.MaterialRounded;
-            btnRate.ButtonText = "Rate";
-            btnRate.ClickBackColor = Color.FromArgb(230, 249, 255);
-            btnRate.ClickTextColor = Color.DodgerBlue;
-            btnRate.CornerRadius = 8;
-            btnRate.Cursor = Cursors.Hand;
-            btnRate.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnRate.Horizontal_Alignment = StringAlignment.Center;
-            btnRate.HoverBackgroundColor = Color.FromArgb(230, 249, 255);
-            btnRate.HoverTextColor = Color.DodgerBlue;
-            btnRate.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Left;
-            btnRate.Location = new Point(24, 475);
-            btnRate.Name = "btnRate";
-            btnRate.Size = new Size(150, 33);
-            btnRate.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            btnRate.TabIndex = 26;
-            btnRate.TextColor = Color.FromArgb(24, 60, 114);
-            btnRate.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            btnRate.Vertical_Alignment = StringAlignment.Center;
-            btnRate.Click += btnRate_Click;
-            btnRate.MouseLeave += btnRate_MouseLeave;
-            btnRate.MouseHover += btnRate_MouseHover;
-            // 
-            // btnHistory
-            // 
-            btnHistory.BackgroundColor = Color.FromArgb(255, 255, 255);
-            btnHistory.ButtonImage = Properties.Resources.history_normal;
-            btnHistory.ButtonStyle = ReaLTaiizor.Controls.ParrotButton.Style.MaterialRounded;
-            btnHistory.ButtonText = "History";
-            btnHistory.ClickBackColor = Color.FromArgb(153, 229, 255);
-            btnHistory.ClickTextColor = Color.DodgerBlue;
-            btnHistory.CornerRadius = 8;
-            btnHistory.Cursor = Cursors.Hand;
-            btnHistory.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnHistory.Horizontal_Alignment = StringAlignment.Center;
-            btnHistory.HoverBackgroundColor = Color.FromArgb(230, 249, 255);
-            btnHistory.HoverTextColor = Color.DodgerBlue;
-            btnHistory.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Left;
-            btnHistory.Location = new Point(24, 550);
-            btnHistory.Name = "btnHistory";
-            btnHistory.Size = new Size(150, 33);
-            btnHistory.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            btnHistory.TabIndex = 25;
-            btnHistory.TextColor = Color.FromArgb(24, 60, 114);
-            btnHistory.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            btnHistory.Vertical_Alignment = StringAlignment.Center;
-            btnHistory.Click += btnHistory_Click;
-            btnHistory.MouseLeave += btnHistory_MouseLeave;
-            btnHistory.MouseHover += btnHistory_MouseHover;
-            // 
-            // btnLogout
-            // 
-            btnLogout.BackgroundColor = Color.FromArgb(255, 255, 255);
-            btnLogout.ButtonImage = Properties.Resources.logout_normal;
-            btnLogout.ButtonStyle = ReaLTaiizor.Controls.ParrotButton.Style.MaterialRounded;
-            btnLogout.ButtonText = "Logout";
-            btnLogout.ClickBackColor = Color.FromArgb(230, 249, 255);
-            btnLogout.ClickTextColor = Color.DodgerBlue;
-            btnLogout.CornerRadius = 8;
-            btnLogout.Cursor = Cursors.Hand;
-            btnLogout.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnLogout.Horizontal_Alignment = StringAlignment.Center;
-            btnLogout.HoverBackgroundColor = Color.FromArgb(230, 249, 255);
-            btnLogout.HoverTextColor = Color.DodgerBlue;
-            btnLogout.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Left;
-            btnLogout.Location = new Point(25, 811);
-            btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(150, 33);
-            btnLogout.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            btnLogout.TabIndex = 19;
-            btnLogout.TextColor = Color.FromArgb(24, 60, 114);
-            btnLogout.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            btnLogout.Vertical_Alignment = StringAlignment.Center;
-            btnLogout.Click += btnLogout_Click;
-            btnLogout.MouseLeave += btnLogout_MouseLeave;
-            btnLogout.MouseHover += btnLogout_MouseHover;
             // 
             // pbAbout
             // 
@@ -344,19 +155,158 @@
             pnlDesktop.Controls.Add(panel3);
             pnlDesktop.Controls.Add(pictureBox4);
             pnlDesktop.Dock = DockStyle.Fill;
-            pnlDesktop.Location = new Point(185, 28);
+            pnlDesktop.Location = new Point(88, 28);
             pnlDesktop.Name = "pnlDesktop";
-            pnlDesktop.Size = new Size(1215, 879);
+            pnlDesktop.Size = new Size(1312, 879);
             pnlDesktop.TabIndex = 19;
+            // 
+            // btnLogout
+            // 
+            btnLogout.FlatAppearance.BorderSize = 0;
+            btnLogout.FlatStyle = FlatStyle.Flat;
+            btnLogout.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnLogout.IconChar = FontAwesome.Sharp.IconChar.ArrowAltCircleLeft;
+            btnLogout.IconColor = Color.Black;
+            btnLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnLogout.ImageAlign = ContentAlignment.MiddleLeft;
+            btnLogout.Location = new Point(0, 811);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Padding = new Padding(15, 0, 0, 0);
+            btnLogout.Size = new Size(185, 43);
+            btnLogout.TabIndex = 39;
+            btnLogout.Text = "      Logout";
+            btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.MouseLeave += btnLogout_MouseHover;
+            btnLogout.MouseHover += btnLogout_MouseHover;
+            // 
+            // btnHistory
+            // 
+            btnHistory.FlatAppearance.BorderSize = 0;
+            btnHistory.FlatStyle = FlatStyle.Flat;
+            btnHistory.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnHistory.IconChar = FontAwesome.Sharp.IconChar.ClockRotateLeft;
+            btnHistory.IconColor = Color.Black;
+            btnHistory.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnHistory.ImageAlign = ContentAlignment.MiddleLeft;
+            btnHistory.Location = new Point(0, 590);
+            btnHistory.Name = "btnHistory";
+            btnHistory.Padding = new Padding(15, 0, 0, 0);
+            btnHistory.Size = new Size(185, 43);
+            btnHistory.TabIndex = 38;
+            btnHistory.Text = "      History";
+            btnHistory.UseVisualStyleBackColor = true;
+            btnHistory.Click += btnHistory_Click;
+            btnHistory.MouseLeave += btnHistory_MouseLeave;
+            btnHistory.MouseHover += btnHistory_MouseHover;
+            // 
+            // btnRate
+            // 
+            btnRate.FlatAppearance.BorderSize = 0;
+            btnRate.FlatStyle = FlatStyle.Flat;
+            btnRate.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnRate.IconChar = FontAwesome.Sharp.IconChar.Star;
+            btnRate.IconColor = Color.Black;
+            btnRate.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnRate.ImageAlign = ContentAlignment.MiddleLeft;
+            btnRate.Location = new Point(0, 505);
+            btnRate.Name = "btnRate";
+            btnRate.Padding = new Padding(15, 0, 0, 0);
+            btnRate.Size = new Size(185, 43);
+            btnRate.TabIndex = 37;
+            btnRate.Text = "  Rate";
+            btnRate.UseVisualStyleBackColor = true;
+            btnRate.Click += btnRate_Click;
+            btnRate.MouseLeave += btnRate_MouseLeave;
+            btnRate.MouseHover += btnRate_MouseHover;
+            // 
+            // btnReport
+            // 
+            btnReport.FlatAppearance.BorderSize = 0;
+            btnReport.FlatStyle = FlatStyle.Flat;
+            btnReport.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnReport.IconChar = FontAwesome.Sharp.IconChar.Flag;
+            btnReport.IconColor = Color.Black;
+            btnReport.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnReport.ImageAlign = ContentAlignment.MiddleLeft;
+            btnReport.Location = new Point(0, 425);
+            btnReport.Name = "btnReport";
+            btnReport.Padding = new Padding(15, 0, 0, 0);
+            btnReport.Size = new Size(185, 43);
+            btnReport.TabIndex = 36;
+            btnReport.Text = "     Report";
+            btnReport.UseVisualStyleBackColor = true;
+            btnReport.Click += btnReport_Click;
+            btnReport.MouseLeave += btnReport_MouseLeave;
+            btnReport.MouseHover += btnReport_MouseHover;
+            // 
+            // btnScan
+            // 
+            btnScan.FlatAppearance.BorderSize = 0;
+            btnScan.FlatStyle = FlatStyle.Flat;
+            btnScan.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnScan.IconChar = FontAwesome.Sharp.IconChar.Qrcode;
+            btnScan.IconColor = Color.Black;
+            btnScan.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnScan.ImageAlign = ContentAlignment.MiddleLeft;
+            btnScan.Location = new Point(0, 340);
+            btnScan.Name = "btnScan";
+            btnScan.Padding = new Padding(15, 0, 0, 0);
+            btnScan.Size = new Size(185, 43);
+            btnScan.TabIndex = 35;
+            btnScan.Text = "   Scan";
+            btnScan.UseVisualStyleBackColor = true;
+            btnScan.Click += btnScan_Click;
+            btnScan.MouseLeave += btnScanHover_MouseLeave;
+            btnScan.MouseHover += btnScanHover_MouseHover;
+            // 
+            // btnRoute
+            // 
+            btnRoute.FlatAppearance.BorderSize = 0;
+            btnRoute.FlatStyle = FlatStyle.Flat;
+            btnRoute.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnRoute.IconChar = FontAwesome.Sharp.IconChar.Route;
+            btnRoute.IconColor = Color.Black;
+            btnRoute.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnRoute.ImageAlign = ContentAlignment.MiddleLeft;
+            btnRoute.Location = new Point(0, 255);
+            btnRoute.Name = "btnRoute";
+            btnRoute.Padding = new Padding(15, 0, 0, 0);
+            btnRoute.Size = new Size(185, 43);
+            btnRoute.TabIndex = 34;
+            btnRoute.Text = "     Route";
+            btnRoute.UseVisualStyleBackColor = true;
+            btnRoute.Click += btnRoute_Click;
+            btnRoute.MouseLeave += btnRouteHover_MouseLeave;
+            btnRoute.MouseHover += btnRouteHover_MouseHover;
             // 
             // panel3
             // 
             panel3.BackColor = Color.White;
             panel3.Dock = DockStyle.Right;
-            panel3.Location = new Point(891, 0);
+            panel3.Location = new Point(988, 0);
             panel3.Name = "panel3";
             panel3.Size = new Size(324, 879);
             panel3.TabIndex = 32;
+            // 
+            // btnHome
+            // 
+            btnHome.FlatAppearance.BorderSize = 0;
+            btnHome.FlatStyle = FlatStyle.Flat;
+            btnHome.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnHome.IconChar = FontAwesome.Sharp.IconChar.House;
+            btnHome.IconColor = Color.Black;
+            btnHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnHome.ImageAlign = ContentAlignment.MiddleLeft;
+            btnHome.Location = new Point(0, 170);
+            btnHome.Name = "btnHome";
+            btnHome.Padding = new Padding(15, 0, 0, 0);
+            btnHome.Size = new Size(185, 43);
+            btnHome.TabIndex = 33;
+            btnHome.Text = "     Home";
+            btnHome.UseVisualStyleBackColor = true;
+            btnHome.Click += btnHome_Click;
+            btnHome.MouseLeave += btnHome_MouseLeave;
+            btnHome.MouseHover += btnHome_MouseHover;
             // 
             // pictureBox4
             // 
@@ -377,9 +327,9 @@
             panel1.Controls.Add(pictureBox6);
             panel1.Controls.Add(pictureBox5);
             panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(185, 28);
+            panel1.Location = new Point(88, 28);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1215, 145);
+            panel1.Size = new Size(1312, 145);
             panel1.TabIndex = 0;
             // 
             // pictureBox7
@@ -409,7 +359,7 @@
             pictureBox6.BackColor = Color.FromArgb(38, 36, 68);
             pictureBox6.Cursor = Cursors.Hand;
             pictureBox6.Image = Properties.Resources.Removal_915;
-            pictureBox6.Location = new Point(1016, 18);
+            pictureBox6.Location = new Point(986, 18);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(58, 60);
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
@@ -420,7 +370,7 @@
             // 
             pictureBox5.BackColor = Color.White;
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(989, -2);
+            pictureBox5.Location = new Point(959, -2);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(323, 145);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
@@ -468,13 +418,6 @@
         private Panel pnlSidebar;
         private PictureBox pbAbout;
         private System.Windows.Forms.Timer SidebarTransition;
-        private ReaLTaiizor.Controls.ParrotButton btnLogout;
-        private ReaLTaiizor.Controls.ParrotButton btnHistory;
-        private ReaLTaiizor.Controls.ParrotButton btnRoute;
-        private ReaLTaiizor.Controls.ParrotButton btnHome;
-        private ReaLTaiizor.Controls.ParrotButton btnReport;
-        private ReaLTaiizor.Controls.ParrotButton btnRate;
-        private ReaLTaiizor.Controls.ParrotButton btnScan;
         private Panel pnlDesktop;
         private Panel panel1;
         private PictureBox pictureBox4;
@@ -483,5 +426,12 @@
         private Label label1;
         private PictureBox pictureBox6;
         private PictureBox pictureBox7;
+        private FontAwesome.Sharp.IconButton btnHome;
+        private FontAwesome.Sharp.IconButton btnRoute;
+        private FontAwesome.Sharp.IconButton btnRate;
+        private FontAwesome.Sharp.IconButton btnReport;
+        private FontAwesome.Sharp.IconButton btnScan;
+        private FontAwesome.Sharp.IconButton btnLogout;
+        private FontAwesome.Sharp.IconButton btnHistory;
     }
 }

@@ -67,38 +67,38 @@ namespace NEXUS.Forms
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            btnHome.ButtonImage = Resources.home;
+            
             Home home = new Home();
             OpenChildForm(home);
         }
 
         private void btnRoute_Click(object sender, EventArgs e)
         {
-            btnRoute.ButtonImage = Resources.route_hover1;
+            
             //OpenChildForm(route);
         }
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            btnReport.ButtonImage = Resources.report_hover2;
+            
             //OpenChildForm(report);
         }
 
         private void btnRate_Click(object sender, EventArgs e)
         {
-            btnRate.ButtonImage = Resources.rate_hover2;
+            
             //OpenChildForm(rate);
         }
 
         private void btnHistory_Click(object sender, EventArgs e)
         {
-            btnHistory.ButtonImage = Resources.history_hover;
+            
             //OpenChildForm(history);
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            btnLogout.ButtonImage = Resources.logout_hover1;
+            
         }
 
         private void SidebarTransition_Tick(object sender, EventArgs e)
@@ -137,72 +137,72 @@ namespace NEXUS.Forms
 
         private void btnHome_MouseHover(object sender, EventArgs e)
         {
-            btnHome.ButtonImage = Resources.home;
+            btnHome.BackColor = Color.FromArgb(230, 249, 255);
         }
 
         private void btnHome_MouseLeave(object sender, EventArgs e)
         {
-            btnHome.ButtonImage = Resources.home_normal;
+            
         }
 
         private void btnRouteHover_MouseHover(object sender, EventArgs e)
         {
-            btnRoute.ButtonImage = Resources.route_hover1;
+            btnRoute.BackColor = Color.FromArgb(230, 249, 255);
         }
 
         private void btnRouteHover_MouseLeave(object sender, EventArgs e)
         {
-            btnRoute.ButtonImage = Resources.route_normal;
+            
         }
 
         private void btnScanHover_MouseHover(object sender, EventArgs e)
         {
-            btnScan.ButtonImage = Resources.scan_hover;
+            btnScan.BackColor = Color.FromArgb(230, 249, 255);
         }
 
         private void btnScanHover_MouseLeave(object sender, EventArgs e)
         {
-            btnScan.ButtonImage= Resources.scan_normal;
+           
         }
 
         private void btnReport_MouseHover(object sender, EventArgs e)
         {
-            btnReport.ButtonImage = Resources.report_hover2;
+            btnReport.BackColor = Color.FromArgb(230, 249, 255);
         }
 
         private void btnReport_MouseLeave(object sender, EventArgs e)
         {
-            btnReport.ButtonImage = Resources.emergency__1_;
+            
         }
 
         private void btnRate_MouseHover(object sender, EventArgs e)
         {
-            btnRate.ButtonImage = Resources.rate_hover2;
+            btnRate.BackColor = Color.FromArgb(230, 249, 255);
         }
 
         private void btnRate_MouseLeave(object sender, EventArgs e)
         {
-            btnRate.ButtonImage = Resources.rate_normal;
+            
         }
 
         private void btnHistory_MouseHover(object sender, EventArgs e)
         {
-            btnHistory.ButtonImage = Resources.history_hover;
+            btnHistory.BackColor = Color.FromArgb(230, 249, 255);
         }
 
         private void btnHistory_MouseLeave(object sender, EventArgs e)
         {
-            btnHistory.ButtonImage = Resources.history_normal;
+            
         }
 
         private void btnLogout_MouseHover(object sender, EventArgs e)
         {
-            btnLogout.ButtonImage = Resources.logout_hover1;
+            btnLogout.BackColor = Color.FromArgb(230, 249, 255);
         }
 
         private void btnLogout_MouseLeave(object sender, EventArgs e)
         {
-            btnLogout.ButtonImage= Resources.logout_normal;
+            
         }
 
         private void OpenChildForm(Form childForm)
