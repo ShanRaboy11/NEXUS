@@ -35,23 +35,23 @@
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             pnlSidebar = new Panel();
-            pbAbout = new PictureBox();
-            SidebarTransition = new System.Windows.Forms.Timer(components);
-            pnlDesktop = new Panel();
             btnLogout = new FontAwesome.Sharp.IconButton();
             btnHistory = new FontAwesome.Sharp.IconButton();
+            pbAbout = new PictureBox();
             btnRate = new FontAwesome.Sharp.IconButton();
             btnReport = new FontAwesome.Sharp.IconButton();
+            btnHome = new FontAwesome.Sharp.IconButton();
             btnScan = new FontAwesome.Sharp.IconButton();
             btnRoute = new FontAwesome.Sharp.IconButton();
-            panel3 = new Panel();
-            btnHome = new FontAwesome.Sharp.IconButton();
-            pictureBox4 = new PictureBox();
-            panel1 = new Panel();
-            pictureBox7 = new PictureBox();
+            SidebarTransition = new System.Windows.Forms.Timer(components);
+            pnlDesktop = new Panel();
+            pnlTop = new Panel();
             label1 = new Label();
+            panel3 = new Panel();
             pictureBox6 = new PictureBox();
+            pictureBox7 = new PictureBox();
             pictureBox5 = new PictureBox();
+            pictureBox4 = new PictureBox();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -59,11 +59,12 @@
             pnlSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbAbout).BeginInit();
             pnlDesktop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            pnlTop.SuspendLayout();
+            panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
             // panel2
@@ -133,33 +134,6 @@
             pnlSidebar.TabIndex = 18;
             pnlSidebar.Click += pnlSidebar_Click;
             // 
-            // pbAbout
-            // 
-            pbAbout.Cursor = Cursors.Hand;
-            pbAbout.Image = Properties.Resources.Removal_915;
-            pbAbout.Location = new Point(15, 25);
-            pbAbout.Name = "pbAbout";
-            pbAbout.Size = new Size(58, 60);
-            pbAbout.SizeMode = PictureBoxSizeMode.Zoom;
-            pbAbout.TabIndex = 6;
-            pbAbout.TabStop = false;
-            pbAbout.Click += pbAbout_Click;
-            // 
-            // SidebarTransition
-            // 
-            SidebarTransition.Interval = 10;
-            SidebarTransition.Tick += SidebarTransition_Tick;
-            // 
-            // pnlDesktop
-            // 
-            pnlDesktop.Controls.Add(panel3);
-            pnlDesktop.Controls.Add(pictureBox4);
-            pnlDesktop.Dock = DockStyle.Fill;
-            pnlDesktop.Location = new Point(88, 28);
-            pnlDesktop.Name = "pnlDesktop";
-            pnlDesktop.Size = new Size(1312, 879);
-            pnlDesktop.TabIndex = 19;
-            // 
             // btnLogout
             // 
             btnLogout.FlatAppearance.BorderSize = 0;
@@ -176,7 +150,7 @@
             btnLogout.TabIndex = 39;
             btnLogout.Text = "      Logout";
             btnLogout.UseVisualStyleBackColor = true;
-            btnLogout.MouseLeave += btnLogout_MouseHover;
+            btnLogout.MouseLeave += btnLogout_MouseLeave;
             btnLogout.MouseHover += btnLogout_MouseHover;
             // 
             // btnHistory
@@ -198,6 +172,18 @@
             btnHistory.Click += btnHistory_Click;
             btnHistory.MouseLeave += btnHistory_MouseLeave;
             btnHistory.MouseHover += btnHistory_MouseHover;
+            // 
+            // pbAbout
+            // 
+            pbAbout.Cursor = Cursors.Hand;
+            pbAbout.Image = Properties.Resources.Removal_915;
+            pbAbout.Location = new Point(15, 25);
+            pbAbout.Name = "pbAbout";
+            pbAbout.Size = new Size(58, 60);
+            pbAbout.SizeMode = PictureBoxSizeMode.Zoom;
+            pbAbout.TabIndex = 6;
+            pbAbout.TabStop = false;
+            pbAbout.Click += pbAbout_Click;
             // 
             // btnRate
             // 
@@ -239,6 +225,26 @@
             btnReport.MouseLeave += btnReport_MouseLeave;
             btnReport.MouseHover += btnReport_MouseHover;
             // 
+            // btnHome
+            // 
+            btnHome.FlatAppearance.BorderSize = 0;
+            btnHome.FlatStyle = FlatStyle.Flat;
+            btnHome.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnHome.IconChar = FontAwesome.Sharp.IconChar.House;
+            btnHome.IconColor = Color.Black;
+            btnHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnHome.ImageAlign = ContentAlignment.MiddleLeft;
+            btnHome.Location = new Point(0, 170);
+            btnHome.Name = "btnHome";
+            btnHome.Padding = new Padding(15, 0, 0, 0);
+            btnHome.Size = new Size(185, 43);
+            btnHome.TabIndex = 33;
+            btnHome.Text = "     Home";
+            btnHome.UseVisualStyleBackColor = true;
+            btnHome.Click += btnHome_Click;
+            btnHome.MouseLeave += btnHome_MouseLeave;
+            btnHome.MouseHover += btnHome_MouseHover;
+            // 
             // btnScan
             // 
             btnScan.FlatAppearance.BorderSize = 0;
@@ -279,34 +285,87 @@
             btnRoute.MouseLeave += btnRouteHover_MouseLeave;
             btnRoute.MouseHover += btnRouteHover_MouseHover;
             // 
+            // SidebarTransition
+            // 
+            SidebarTransition.Interval = 10;
+            SidebarTransition.Tick += SidebarTransition_Tick;
+            // 
+            // pnlDesktop
+            // 
+            pnlDesktop.Controls.Add(pnlTop);
+            pnlDesktop.Controls.Add(panel3);
+            pnlDesktop.Controls.Add(pictureBox4);
+            pnlDesktop.Dock = DockStyle.Fill;
+            pnlDesktop.Location = new Point(88, 28);
+            pnlDesktop.Name = "pnlDesktop";
+            pnlDesktop.Size = new Size(1312, 879);
+            pnlDesktop.TabIndex = 19;
+            // 
+            // pnlTop
+            // 
+            pnlTop.Controls.Add(label1);
+            pnlTop.Dock = DockStyle.Top;
+            pnlTop.Location = new Point(0, 0);
+            pnlTop.Name = "pnlTop";
+            pnlTop.Size = new Size(988, 145);
+            pnlTop.TabIndex = 0;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Inter SemiBold", 21F, FontStyle.Bold);
+            label1.Location = new Point(16, 22);
+            label1.Name = "label1";
+            label1.Size = new Size(198, 40);
+            label1.TabIndex = 32;
+            label1.Text = "Hello Angelo!";
+            // 
             // panel3
             // 
             panel3.BackColor = Color.White;
+            panel3.Controls.Add(pictureBox6);
+            panel3.Controls.Add(pictureBox7);
+            panel3.Controls.Add(pictureBox5);
             panel3.Dock = DockStyle.Right;
             panel3.Location = new Point(988, 0);
             panel3.Name = "panel3";
             panel3.Size = new Size(324, 879);
             panel3.TabIndex = 32;
             // 
-            // btnHome
+            // pictureBox6
             // 
-            btnHome.FlatAppearance.BorderSize = 0;
-            btnHome.FlatStyle = FlatStyle.Flat;
-            btnHome.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnHome.IconChar = FontAwesome.Sharp.IconChar.House;
-            btnHome.IconColor = Color.Black;
-            btnHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnHome.ImageAlign = ContentAlignment.MiddleLeft;
-            btnHome.Location = new Point(0, 170);
-            btnHome.Name = "btnHome";
-            btnHome.Padding = new Padding(15, 0, 0, 0);
-            btnHome.Size = new Size(185, 43);
-            btnHome.TabIndex = 33;
-            btnHome.Text = "     Home";
-            btnHome.UseVisualStyleBackColor = true;
-            btnHome.Click += btnHome_Click;
-            btnHome.MouseLeave += btnHome_MouseLeave;
-            btnHome.MouseHover += btnHome_MouseHover;
+            pictureBox6.BackColor = Color.FromArgb(38, 36, 68);
+            pictureBox6.Cursor = Cursors.Hand;
+            pictureBox6.Image = Properties.Resources.Removal_915;
+            pictureBox6.Location = new Point(37, 25);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(58, 60);
+            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox6.TabIndex = 31;
+            pictureBox6.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            pictureBox7.BackColor = Color.FromArgb(38, 36, 68);
+            pictureBox7.Cursor = Cursors.Hand;
+            pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
+            pictureBox7.Location = new Point(253, 25);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(58, 60);
+            pictureBox7.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox7.TabIndex = 33;
+            pictureBox7.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.BackColor = Color.White;
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Location = new Point(-15, -3);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(341, 145);
+            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox5.TabIndex = 0;
+            pictureBox5.TabStop = false;
             // 
             // pictureBox4
             // 
@@ -320,70 +379,12 @@
             pictureBox4.TabIndex = 31;
             pictureBox4.TabStop = false;
             // 
-            // panel1
-            // 
-            panel1.Controls.Add(pictureBox7);
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(pictureBox6);
-            panel1.Controls.Add(pictureBox5);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(88, 28);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1312, 145);
-            panel1.TabIndex = 0;
-            // 
-            // pictureBox7
-            // 
-            pictureBox7.BackColor = Color.FromArgb(38, 36, 68);
-            pictureBox7.Cursor = Cursors.Hand;
-            pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(1238, 17);
-            pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(58, 60);
-            pictureBox7.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox7.TabIndex = 33;
-            pictureBox7.TabStop = false;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Inter SemiBold", 21F, FontStyle.Bold);
-            label1.Location = new Point(16, 22);
-            label1.Name = "label1";
-            label1.Size = new Size(198, 40);
-            label1.TabIndex = 32;
-            label1.Text = "Hello Angelo!";
-            // 
-            // pictureBox6
-            // 
-            pictureBox6.BackColor = Color.FromArgb(38, 36, 68);
-            pictureBox6.Cursor = Cursors.Hand;
-            pictureBox6.Image = Properties.Resources.Removal_915;
-            pictureBox6.Location = new Point(986, 18);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(58, 60);
-            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox6.TabIndex = 31;
-            pictureBox6.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            pictureBox5.BackColor = Color.White;
-            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(959, -2);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(323, 145);
-            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox5.TabIndex = 0;
-            pictureBox5.TabStop = false;
-            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
             ClientSize = new Size(1400, 907);
-            Controls.Add(panel1);
             Controls.Add(pnlDesktop);
             Controls.Add(pnlSidebar);
             Controls.Add(panel2);
@@ -400,12 +401,13 @@
             pnlSidebar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbAbout).EndInit();
             pnlDesktop.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            pnlTop.ResumeLayout(false);
+            pnlTop.PerformLayout();
+            panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
         }
 
@@ -419,7 +421,7 @@
         private PictureBox pbAbout;
         private System.Windows.Forms.Timer SidebarTransition;
         private Panel pnlDesktop;
-        private Panel panel1;
+        private Panel pnlTop;
         private PictureBox pictureBox4;
         private PictureBox pictureBox5;
         private Panel panel3;

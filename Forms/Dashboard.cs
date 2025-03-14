@@ -16,6 +16,7 @@ namespace NEXUS.Forms
     {
         bool sidebarExpand = false;
         private Form currentChildForm;
+        private FontAwesome.Sharp.IconButton selectedButton = null;
         public Dashboard()
         {
             InitializeComponent();
@@ -67,8 +68,12 @@ namespace NEXUS.Forms
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            
             Home home = new Home();
+            //btnHome.BackColor = Color.FromArgb(38, 36, 68);
+            //btnHome.IconColor = Color.FromArgb(0, 229, 255);
+            //btnHome.ForeColor = Color.White;
+            //btnHome.Size = new Size(190, 60);
+            SelectButton(btnHome);
             OpenChildForm(home);
         }
 
@@ -106,6 +111,7 @@ namespace NEXUS.Forms
             if (sidebarExpand)
             {
                 pnlSidebar.Width -= 10;
+                //pnlTop.Width -= 10; stop at 898 dapat
                 pbAbout.Location = new Point(15 + (pnlSidebar.Width - 88) * 40 / 90, 25);
 
                 if (pnlSidebar.Width <= 88)
@@ -118,6 +124,7 @@ namespace NEXUS.Forms
             else
             {
                 pnlSidebar.Width += 10;
+                //pnlTop.Width += 10;
                 pbAbout.Location = new Point(15 + (pnlSidebar.Width - 88) * 40 / 90, 25);
 
                 if (pnlSidebar.Width >= 178)
@@ -135,74 +142,114 @@ namespace NEXUS.Forms
             SidebarTransition.Start();
         }
 
+        private void HighlightButton(FontAwesome.Sharp.IconButton button)
+        {
+            if (selectedButton != button)
+            {
+                button.BackColor = Color.FromArgb(38, 36, 68);
+                button.IconColor = Color.FromArgb(0, 229, 255);
+                button.ForeColor = Color.White;
+                button.Size = new Size(190, 60);
+            }
+        }
+
+        private void ResetButton(FontAwesome.Sharp.IconButton button)
+        {
+            if (selectedButton != button)
+            {
+                button.IconColor = Color.Black;
+                button.BackColor = Color.White;
+                button.ForeColor = Color.Black;
+                button.Size = new Size(185, 43);
+            }
+        }
+
+        private void SelectButton(FontAwesome.Sharp.IconButton button)
+        {
+            if (selectedButton != null)
+            {
+                // Reset previously selected button
+                selectedButton.BackColor = Color.White;
+                selectedButton.ForeColor = Color.Black;
+                selectedButton.Size = new Size(180, 50);
+            }
+
+            // Set the new selected button
+            selectedButton = button;
+            button.BackColor = Color.FromArgb(38, 36, 68);
+            button.IconColor = Color.FromArgb(0, 229, 255);
+            button.ForeColor = Color.White;
+            button.Size = new Size(190, 60);
+        }
+
         private void btnHome_MouseHover(object sender, EventArgs e)
         {
-            btnHome.BackColor = Color.FromArgb(230, 249, 255);
+            HighlightButton(btnHome);
         }
 
         private void btnHome_MouseLeave(object sender, EventArgs e)
         {
-            
+            ResetButton(btnHome);
         }
 
         private void btnRouteHover_MouseHover(object sender, EventArgs e)
         {
-            btnRoute.BackColor = Color.FromArgb(230, 249, 255);
+            HighlightButton(btnRoute);
         }
 
         private void btnRouteHover_MouseLeave(object sender, EventArgs e)
         {
-            
+            ResetButton(btnRoute);
         }
 
         private void btnScanHover_MouseHover(object sender, EventArgs e)
         {
-            btnScan.BackColor = Color.FromArgb(230, 249, 255);
+            HighlightButton(btnScan);
         }
 
         private void btnScanHover_MouseLeave(object sender, EventArgs e)
         {
-           
+            ResetButton(btnScan);
         }
 
         private void btnReport_MouseHover(object sender, EventArgs e)
         {
-            btnReport.BackColor = Color.FromArgb(230, 249, 255);
+            HighlightButton(btnReport);
         }
 
         private void btnReport_MouseLeave(object sender, EventArgs e)
         {
-            
+            ResetButton(btnReport);
         }
 
         private void btnRate_MouseHover(object sender, EventArgs e)
         {
-            btnRate.BackColor = Color.FromArgb(230, 249, 255);
+            HighlightButton(btnRate);
         }
 
         private void btnRate_MouseLeave(object sender, EventArgs e)
         {
-            
+            ResetButton(btnRate);
         }
 
         private void btnHistory_MouseHover(object sender, EventArgs e)
         {
-            btnHistory.BackColor = Color.FromArgb(230, 249, 255);
+            HighlightButton(btnHistory);
         }
 
         private void btnHistory_MouseLeave(object sender, EventArgs e)
         {
-            
+            ResetButton(btnHistory);
         }
 
         private void btnLogout_MouseHover(object sender, EventArgs e)
         {
-            btnLogout.BackColor = Color.FromArgb(230, 249, 255);
+            HighlightButton(btnLogout);
         }
 
         private void btnLogout_MouseLeave(object sender, EventArgs e)
         {
-            
+            ResetButton(btnLogout);
         }
 
         private void OpenChildForm(Form childForm)
