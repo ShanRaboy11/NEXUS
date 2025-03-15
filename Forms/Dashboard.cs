@@ -64,19 +64,14 @@ namespace NEXUS.Forms
 
         private void btnScan_Click(object sender, EventArgs e)
         {
-            QRScannerForm qRScannerForm = new QRScannerForm();
+            QRScannerForm qrScanner = new QRScannerForm(this);
             SelectButton(btnScan);
-            OpenChildForm(qRScannerForm);
+            OpenChildForm(qrScanner);
         }
 
         private void btnHome_Click(object sender, EventArgs e)
         {
             Home home = new Home();
-            //btnHome.BackColor = Color.FromArgb(38, 36, 68);
-            //btnHome.IconColor = Color.FromArgb(0, 229, 255);
-            //btnHome.ForeColor = Color.White;
-            //btnHome.Size = new Size(190, 60);
-            //ActivateButton(sender, Color.FromArgb(0, 229, 255));
             SelectButton(btnHome);
             OpenChildForm(home);
         }
@@ -102,7 +97,9 @@ namespace NEXUS.Forms
 
         private void btnHistory_Click(object sender, EventArgs e)
         {
+            PaymentForm paymentForm = new PaymentForm(null);
             SelectButton(btnHistory);
+            OpenChildForm(paymentForm);
             //OpenChildForm(history);
         }
 
@@ -257,18 +254,16 @@ namespace NEXUS.Forms
             ResetButton(btnLogout);
         }
 
-        private void OpenChildForm(Form childForm)
+        public void OpenChildForm(Form childForm)
         {
-            //currentChildForm = null;
             if (currentChildForm != null)
             {
-                // Close and remove the current child form from the panel before adding a new one
                 currentChildForm.Close();
                 pnlDesktop.Controls.Remove(currentChildForm);
             }
 
             currentChildForm = childForm;
-            childForm.TopLevel = false; // Ensure the form is not a top-level window
+            childForm.TopLevel = false; 
             childForm.Dock = DockStyle.Fill;
 
             pnlDesktop.Controls.Add(childForm);
@@ -276,6 +271,7 @@ namespace NEXUS.Forms
 
             childForm.BringToFront();
             childForm.Show();
+            Application.DoEvents();
         }
 
     }

@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using AForge.Video;
 using AForge.Video.DirectShow;
+using Microsoft.Win32;
 using ZXing;
 using ZXing.Windows.Compatibility;
 
@@ -11,13 +12,15 @@ namespace NEXUS.Forms
 {
     public partial class QRScannerForm : Form
     {
+        //Dashboard dashboardFrom = new Dashboard();
         private VideoCaptureDevice videoCaptureDevice;
         private FilterInfoCollection videoDevices;
-
-        public QRScannerForm()
+        private Dashboard dashboard; 
+        public QRScannerForm(Dashboard dashboardRef)
         {
             InitializeComponent();
             InitializeCamera();
+            this.dashboard = dashboardRef;
         }
 
         private void Maximize(object sender, EventArgs e)
@@ -93,25 +96,26 @@ namespace NEXUS.Forms
 
             if (result != null && !string.IsNullOrEmpty(result.Text))
             {
-                StopCamera();
-
+                StopCamera(); // Stop the camera first
                 string decoded = result.Text.Trim();
-
                 PaymentForm paymentForm = new PaymentForm(decoded);
-                paymentForm.Show();
 
-                this.Hide(); 
+                Application.DoEvents(); // Allow UI updates
+
+                this.Invoke(new Action(() =>
+                {
+                    dashboard.OpenChildForm(paymentForm);
+                }));
             }
         }
-
         private void StopCamera()
         {
             if (videoCaptureDevice != null && videoCaptureDevice.IsRunning)
             {
-                scanTimer.Stop(); // ✅ Stop the timer
-                videoCaptureDevice.SignalToStop(); // ✅ Stop the camera
-                videoCaptureDevice.WaitForStop(); // ✅ Ensure camera thread exits
-                videoCaptureDevice = null; // ✅ Remove reference to avoid conflicts
+                scanTimer.Stop(); 
+                videoCaptureDevice.SignalToStop(); 
+                videoCaptureDevice.WaitForStop(); 
+                videoCaptureDevice = null; 
             }
         }
 
