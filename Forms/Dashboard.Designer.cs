@@ -167,7 +167,7 @@
             btnHistory.Padding = new Padding(15, 0, 0, 0);
             btnHistory.Size = new Size(185, 43);
             btnHistory.TabIndex = 38;
-            btnHistory.Text = "      History";
+            btnHistory.Text = "       History";
             btnHistory.UseVisualStyleBackColor = true;
             btnHistory.Click += btnHistory_Click;
             btnHistory.MouseLeave += btnHistory_MouseLeave;
@@ -219,7 +219,7 @@
             btnReport.Padding = new Padding(15, 0, 0, 0);
             btnReport.Size = new Size(185, 43);
             btnReport.TabIndex = 36;
-            btnReport.Text = "     Report";
+            btnReport.Text = "      Report";
             btnReport.UseVisualStyleBackColor = true;
             btnReport.Click += btnReport_Click;
             btnReport.MouseLeave += btnReport_MouseLeave;
@@ -259,7 +259,7 @@
             btnScan.Padding = new Padding(15, 0, 0, 0);
             btnScan.Size = new Size(185, 43);
             btnScan.TabIndex = 35;
-            btnScan.Text = "   Scan";
+            btnScan.Text = "    Scan";
             btnScan.UseVisualStyleBackColor = true;
             btnScan.Click += btnScan_Click;
             btnScan.MouseLeave += btnScanHover_MouseLeave;

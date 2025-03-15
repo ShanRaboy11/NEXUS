@@ -1,4 +1,5 @@
-﻿using NEXUS.Properties;
+﻿using FontAwesome.Sharp;
+using NEXUS.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,7 @@ namespace NEXUS.Forms
         bool sidebarExpand = false;
         private Form currentChildForm;
         private FontAwesome.Sharp.IconButton selectedButton = null;
+        private FontAwesome.Sharp.IconButton currentBtn;
         public Dashboard()
         {
             InitializeComponent();
@@ -63,6 +65,7 @@ namespace NEXUS.Forms
         private void btnScan_Click(object sender, EventArgs e)
         {
             QRScannerForm qRScannerForm = new QRScannerForm();
+            SelectButton(btnScan);
             OpenChildForm(qRScannerForm);
         }
 
@@ -73,37 +76,39 @@ namespace NEXUS.Forms
             //btnHome.IconColor = Color.FromArgb(0, 229, 255);
             //btnHome.ForeColor = Color.White;
             //btnHome.Size = new Size(190, 60);
+            //ActivateButton(sender, Color.FromArgb(0, 229, 255));
             SelectButton(btnHome);
             OpenChildForm(home);
         }
 
         private void btnRoute_Click(object sender, EventArgs e)
         {
-            
+            //ActivateButton(sender, Color.FromArgb(0, 229, 255));
+            SelectButton(btnRoute);
             //OpenChildForm(route);
         }
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            
+            SelectButton(btnReport);
             //OpenChildForm(report);
         }
 
         private void btnRate_Click(object sender, EventArgs e)
         {
-            
+            SelectButton(btnRate);
             //OpenChildForm(rate);
         }
 
         private void btnHistory_Click(object sender, EventArgs e)
         {
-            
+            SelectButton(btnHistory);
             //OpenChildForm(history);
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            
+            SelectButton(btnLogout);
         }
 
         private void SidebarTransition_Tick(object sender, EventArgs e)
@@ -164,17 +169,17 @@ namespace NEXUS.Forms
             }
         }
 
+        // Method to activate the clicked button
         private void SelectButton(FontAwesome.Sharp.IconButton button)
         {
             if (selectedButton != null)
             {
-                // Reset previously selected button
+                selectedButton.IconColor = Color.Black;
                 selectedButton.BackColor = Color.White;
                 selectedButton.ForeColor = Color.Black;
                 selectedButton.Size = new Size(180, 50);
             }
 
-            // Set the new selected button
             selectedButton = button;
             button.BackColor = Color.FromArgb(38, 36, 68);
             button.IconColor = Color.FromArgb(0, 229, 255);
