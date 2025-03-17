@@ -61,7 +61,6 @@ namespace NEXUS.Forms
             about.FormClosed += (s, args) => this.Show();
             about.Owner = this;
             about.Show();
-            this.Hide();
         }
 
         private void btnScan_Click(object sender, EventArgs e)
@@ -89,25 +88,31 @@ namespace NEXUS.Forms
 
         private void btnReport_Click(object sender, EventArgs e)
         {
+            Report report = new Report();
             SelectButton(btnReport);
-            //OpenChildForm(report);
+            OpenChildForm(report);
         }
 
         private void btnRate_Click(object sender, EventArgs e)
         {
+            Rate rate = new Rate();
             SelectButton(btnRate);
-            //OpenChildForm(rate);
+            OpenChildForm(rate);
         }
 
         private void btnHistory_Click(object sender, EventArgs e)
         {
+            History history = new History();
             SelectButton(btnHistory);
-            //OpenChildForm(history);
+            OpenChildForm(history);
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            LogInForm logInForm = new LogInForm();
             SelectButton(btnLogout);
+            logInForm.Show();
+            this.Close();
         }
 
         private void SidebarTransition_Tick(object sender, EventArgs e)
@@ -166,7 +171,6 @@ namespace NEXUS.Forms
             }
         }
 
-        // Method to activate the clicked button
         private void SelectButton(FontAwesome.Sharp.IconButton button)
         {
             if (selectedButton != null)

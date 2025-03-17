@@ -174,6 +174,7 @@
             btnLogout.TabIndex = 39;
             btnLogout.Text = "      Logout";
             btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
             btnLogout.MouseLeave += btnLogout_MouseLeave;
             btnLogout.MouseHover += btnLogout_MouseHover;
             // 

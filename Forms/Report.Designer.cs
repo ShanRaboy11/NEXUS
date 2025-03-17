@@ -1,6 +1,6 @@
 ﻿namespace NEXUS.Forms
 {
-    partial class RouteFinder
+    partial class Report
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RouteFinder));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Report));
             label1 = new Label();
             SuspendLayout();
             // 
@@ -36,13 +36,13 @@
             // 
             label1.Font = new Font("Inter ExtraBold", 23F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(38, 36, 68);
-            label1.Location = new Point(12, 15);
+            label1.Location = new Point(9, 13);
             label1.Name = "label1";
-            label1.Size = new Size(282, 44);
-            label1.TabIndex = 20;
-            label1.Text = "ROUTE FINDER";
+            label1.Size = new Size(315, 44);
+            label1.TabIndex = 21;
+            label1.Text = "REPORT INCIDENT";
             // 
-            // RouteFinder
+            // Report
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -51,8 +51,8 @@
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "RouteFinder";
-            Text = "RouteFinder";
+            Name = "Report";
+            Text = "Report";
             ResumeLayout(false);
         }
 
