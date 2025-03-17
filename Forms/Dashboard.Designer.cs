@@ -46,6 +46,10 @@
             SidebarTransition = new System.Windows.Forms.Timer(components);
             pnlDesktop = new Panel();
             pnlTop = new Panel();
+            spaceSeparatorHorizontal1 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
+            label15 = new Label();
+            lblPoints = new Label();
+            pbWheelPoints = new PictureBox();
             lblUserFName = new Label();
             label1 = new Label();
             panel3 = new Panel();
@@ -80,6 +84,7 @@
             ((System.ComponentModel.ISupportInitialize)pbAbout).BeginInit();
             pnlDesktop.SuspendLayout();
             pnlTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbWheelPoints).BeginInit();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbProfilePicture).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbProfile).BeginInit();
@@ -321,6 +326,10 @@
             // 
             // pnlTop
             // 
+            pnlTop.Controls.Add(spaceSeparatorHorizontal1);
+            pnlTop.Controls.Add(label15);
+            pnlTop.Controls.Add(lblPoints);
+            pnlTop.Controls.Add(pbWheelPoints);
             pnlTop.Controls.Add(lblUserFName);
             pnlTop.Controls.Add(label1);
             pnlTop.Dock = DockStyle.Top;
@@ -328,6 +337,55 @@
             pnlTop.Name = "pnlTop";
             pnlTop.Size = new Size(988, 145);
             pnlTop.TabIndex = 0;
+            // 
+            // spaceSeparatorHorizontal1
+            // 
+            spaceSeparatorHorizontal1.Customization = "Kioq/yoqKv8jIyP/Kioq/w==";
+            spaceSeparatorHorizontal1.Font = new Font("Verdana", 8F);
+            spaceSeparatorHorizontal1.Image = null;
+            spaceSeparatorHorizontal1.Location = new Point(640, 120);
+            spaceSeparatorHorizontal1.Name = "spaceSeparatorHorizontal1";
+            spaceSeparatorHorizontal1.NoRounding = false;
+            spaceSeparatorHorizontal1.Size = new Size(355, 4);
+            spaceSeparatorHorizontal1.TabIndex = 33;
+            spaceSeparatorHorizontal1.Text = "spaceSeparatorHorizontal1";
+            spaceSeparatorHorizontal1.Transparent = false;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.BackColor = Color.FromArgb(230, 249, 255);
+            label15.Font = new Font("Inter", 23F, FontStyle.Bold);
+            label15.ForeColor = Color.FromArgb(38, 36, 68);
+            label15.Location = new Point(669, 61);
+            label15.Name = "label15";
+            label15.Size = new Size(157, 44);
+            label15.TabIndex = 55;
+            label15.Text = "You have";
+            // 
+            // lblPoints
+            // 
+            lblPoints.AutoSize = true;
+            lblPoints.BackColor = Color.FromArgb(230, 249, 255);
+            lblPoints.Font = new Font("Inter", 35F, FontStyle.Bold);
+            lblPoints.ForeColor = Color.FromArgb(38, 36, 68);
+            lblPoints.Location = new Point(827, 45);
+            lblPoints.Name = "lblPoints";
+            lblPoints.Size = new Size(61, 67);
+            lblPoints.TabIndex = 54;
+            lblPoints.Text = "0";
+            // 
+            // pbWheelPoints
+            // 
+            pbWheelPoints.Cursor = Cursors.Hand;
+            pbWheelPoints.Image = (Image)resources.GetObject("pbWheelPoints.Image");
+            pbWheelPoints.Location = new Point(892, 49);
+            pbWheelPoints.Name = "pbWheelPoints";
+            pbWheelPoints.Size = new Size(71, 62);
+            pbWheelPoints.SizeMode = PictureBoxSizeMode.Zoom;
+            pbWheelPoints.TabIndex = 40;
+            pbWheelPoints.TabStop = false;
+            pbWheelPoints.Click += pbWheelPoints_Click;
             // 
             // lblUserFName
             // 
@@ -795,6 +853,7 @@
             pnlDesktop.ResumeLayout(false);
             pnlTop.ResumeLayout(false);
             pnlTop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pbWheelPoints).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbProfilePicture).EndInit();
@@ -847,5 +906,9 @@
         private ReaLTaiizor.Controls.CyberButton cyberButton4;
         private Label label13;
         private Label label12;
+        private Label lblPoints;
+        private PictureBox pbWheelPoints;
+        private Label label15;
+        private ReaLTaiizor.Controls.SpaceSeparatorHorizontal spaceSeparatorHorizontal1;
     }
 }

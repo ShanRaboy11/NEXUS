@@ -261,7 +261,7 @@ namespace NEXUS.Forms
             }
 
             currentChildForm = childForm;
-            childForm.TopLevel = false; 
+            childForm.TopLevel = false;
             childForm.Dock = DockStyle.Fill;
 
             pnlDesktop.Controls.Add(childForm);
@@ -272,5 +272,12 @@ namespace NEXUS.Forms
             Application.DoEvents();
         }
 
+        private void pbWheelPoints_Click(object sender, EventArgs e)
+        {
+            WheelTokens wheelTokens = new WheelTokens();
+            wheelTokens.FormClosed += (s, args) => this.Show();
+            wheelTokens.Owner = this;
+            wheelTokens.Show();
+        }
     }
 }

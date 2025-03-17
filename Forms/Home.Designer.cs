@@ -35,11 +35,11 @@
             // 
             // pictureBox6
             // 
-            pictureBox6.Dock = DockStyle.Top;
             pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(0, 0);
+            pictureBox6.Location = new Point(4, 1);
             pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(988, 250);
+            pictureBox6.Size = new Size(980, 243);
+            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox6.TabIndex = 34;
             pictureBox6.TabStop = false;
             // 

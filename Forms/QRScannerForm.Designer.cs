@@ -52,10 +52,11 @@
             // label1
             // 
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label1.Font = new Font("Inter ExtraBold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Inter ExtraBold", 24F, FontStyle.Bold);
+            label1.ForeColor = Color.FromArgb(38, 36, 68);
             label1.Location = new Point(13, 46);
             label1.Name = "label1";
-            label1.Size = new Size(964, 36);
+            label1.Size = new Size(964, 53);
             label1.TabIndex = 2;
             label1.Text = "SCAN QR CODE";
             label1.TextAlign = ContentAlignment.MiddleCenter;
