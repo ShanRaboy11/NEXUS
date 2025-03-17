@@ -19,12 +19,12 @@ namespace NEXUS.Forms
         private Form currentChildForm;
         private FontAwesome.Sharp.IconButton selectedButton = null;
         private FontAwesome.Sharp.IconButton currentBtn;
-
         public Dashboard()
         {
             InitializeComponent();
             this.DoubleBuffered = true;
-            btnHome_Click(btnHome, EventArgs.Empty);
+            this.Load += (s, e) => btnHome_Click(btnHome, EventArgs.Empty);
+            //btnHome_Click(btnHome, EventArgs.Empty);
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -82,9 +82,9 @@ namespace NEXUS.Forms
 
         private void btnRoute_Click(object sender, EventArgs e)
         {
-            //ActivateButton(sender, Color.FromArgb(0, 229, 255));
+            RouteFinder route = new RouteFinder();
             SelectButton(btnRoute);
-            //OpenChildForm(route);
+            OpenChildForm(route);
         }
 
         private void btnReport_Click(object sender, EventArgs e)

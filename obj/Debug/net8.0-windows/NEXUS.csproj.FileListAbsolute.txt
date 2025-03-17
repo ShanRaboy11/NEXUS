@@ -50,3 +50,4 @@ C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\Microsoft.Web.
 C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.WinForms.xml
 C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Wpf.xml
 C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.RouteFinder.resources

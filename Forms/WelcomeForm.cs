@@ -57,7 +57,7 @@ namespace NEXUS
         private void cyberButton2_Click(object sender, EventArgs e)
         {
             NEXUS.Forms.ProgressBar progressBar = new NEXUS.Forms.ProgressBar();
-            // Subscribe to ProgressCompleted event
+
             progressBar.ProgressCompleted += () =>
             {
                 LogInForm logInForm = new LogInForm();

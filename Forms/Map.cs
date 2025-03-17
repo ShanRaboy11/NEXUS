@@ -19,9 +19,9 @@ namespace NEXUS.Forms
         public Map()
         {
             InitializeComponent();
-            InitializeMap();
+            //InitializeMap();
         }
-
+        /*
         private async void InitializeMap()
         {
             await webViewMap.EnsureCoreWebView2Async(null);
@@ -87,6 +87,6 @@ namespace NEXUS.Forms
         ";
 
             webViewMap.NavigateToString(mapHtml);
-        }
+        }*/
     }
 }
