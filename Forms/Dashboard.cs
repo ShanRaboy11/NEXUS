@@ -19,10 +19,12 @@ namespace NEXUS.Forms
         private Form currentChildForm;
         private FontAwesome.Sharp.IconButton selectedButton = null;
         private FontAwesome.Sharp.IconButton currentBtn;
+
         public Dashboard()
         {
             InitializeComponent();
             this.DoubleBuffered = true;
+            btnHome_Click(btnHome, EventArgs.Empty);
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -97,9 +99,7 @@ namespace NEXUS.Forms
 
         private void btnHistory_Click(object sender, EventArgs e)
         {
-            PaymentForm paymentForm = new PaymentForm(null);
             SelectButton(btnHistory);
-            OpenChildForm(paymentForm);
             //OpenChildForm(history);
         }
 
@@ -113,7 +113,6 @@ namespace NEXUS.Forms
             if (sidebarExpand)
             {
                 pnlSidebar.Width -= 10;
-                //pnlTop.Width -= 10; stop at 898 dapat
                 pbAbout.Location = new Point(15 + (pnlSidebar.Width - 88) * 40 / 90, 25);
 
                 if (pnlSidebar.Width <= 88)
@@ -126,7 +125,6 @@ namespace NEXUS.Forms
             else
             {
                 pnlSidebar.Width += 10;
-                //pnlTop.Width += 10;
                 pbAbout.Location = new Point(15 + (pnlSidebar.Width - 88) * 40 / 90, 25);
 
                 if (pnlSidebar.Width >= 178)

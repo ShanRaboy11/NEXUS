@@ -37,8 +37,8 @@
             pnlSidebar = new Panel();
             btnLogout = new FontAwesome.Sharp.IconButton();
             btnHistory = new FontAwesome.Sharp.IconButton();
-            pbAbout = new PictureBox();
             btnRate = new FontAwesome.Sharp.IconButton();
+            pbAbout = new PictureBox();
             btnReport = new FontAwesome.Sharp.IconButton();
             btnHome = new FontAwesome.Sharp.IconButton();
             btnScan = new FontAwesome.Sharp.IconButton();
@@ -72,7 +72,6 @@
             pbProfile = new PictureBox();
             pictureBox5 = new PictureBox();
             cyberButton2 = new ReaLTaiizor.Controls.CyberButton();
-            pictureBox4 = new PictureBox();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -85,7 +84,6 @@
             ((System.ComponentModel.ISupportInitialize)pbProfilePicture).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbProfile).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
             // panel2
@@ -142,8 +140,8 @@
             pnlSidebar.BackColor = Color.White;
             pnlSidebar.Controls.Add(btnLogout);
             pnlSidebar.Controls.Add(btnHistory);
-            pnlSidebar.Controls.Add(pbAbout);
             pnlSidebar.Controls.Add(btnRate);
+            pnlSidebar.Controls.Add(pbAbout);
             pnlSidebar.Controls.Add(btnReport);
             pnlSidebar.Controls.Add(btnHome);
             pnlSidebar.Controls.Add(btnScan);
@@ -194,18 +192,6 @@
             btnHistory.MouseLeave += btnHistory_MouseLeave;
             btnHistory.MouseHover += btnHistory_MouseHover;
             // 
-            // pbAbout
-            // 
-            pbAbout.Cursor = Cursors.Hand;
-            pbAbout.Image = Properties.Resources.Removal_915;
-            pbAbout.Location = new Point(15, 25);
-            pbAbout.Name = "pbAbout";
-            pbAbout.Size = new Size(58, 60);
-            pbAbout.SizeMode = PictureBoxSizeMode.Zoom;
-            pbAbout.TabIndex = 6;
-            pbAbout.TabStop = false;
-            pbAbout.Click += pbAbout_Click;
-            // 
             // btnRate
             // 
             btnRate.FlatAppearance.BorderSize = 0;
@@ -225,6 +211,18 @@
             btnRate.Click += btnRate_Click;
             btnRate.MouseLeave += btnRate_MouseLeave;
             btnRate.MouseHover += btnRate_MouseHover;
+            // 
+            // pbAbout
+            // 
+            pbAbout.Cursor = Cursors.Hand;
+            pbAbout.Image = Properties.Resources.Removal_915;
+            pbAbout.Location = new Point(12, 25);
+            pbAbout.Name = "pbAbout";
+            pbAbout.Size = new Size(58, 60);
+            pbAbout.SizeMode = PictureBoxSizeMode.Zoom;
+            pbAbout.TabIndex = 6;
+            pbAbout.TabStop = false;
+            pbAbout.Click += pbAbout_Click;
             // 
             // btnReport
             // 
@@ -315,7 +313,6 @@
             // 
             pnlDesktop.Controls.Add(pnlTop);
             pnlDesktop.Controls.Add(panel3);
-            pnlDesktop.Controls.Add(pictureBox4);
             pnlDesktop.Dock = DockStyle.Fill;
             pnlDesktop.Location = new Point(88, 28);
             pnlDesktop.Name = "pnlDesktop";
@@ -774,18 +771,6 @@
             cyberButton2.Timer_Effect_1 = 5;
             cyberButton2.Timer_RGB = 300;
             // 
-            // pictureBox4
-            // 
-            pictureBox4.BackColor = Color.FromArgb(38, 36, 68, 255);
-            pictureBox4.Cursor = Cursors.Hand;
-            pictureBox4.Image = Properties.Resources.Removal_915;
-            pictureBox4.Location = new Point(1197, 162);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(45, 46);
-            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox4.TabIndex = 31;
-            pictureBox4.TabStop = false;
-            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -815,7 +800,6 @@
             ((System.ComponentModel.ISupportInitialize)pbProfilePicture).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbProfile).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
         }
 
@@ -830,7 +814,6 @@
         private System.Windows.Forms.Timer SidebarTransition;
         private Panel pnlDesktop;
         private Panel pnlTop;
-        private PictureBox pictureBox4;
         private PictureBox pictureBox5;
         private Panel panel3;
         private Label label1;
