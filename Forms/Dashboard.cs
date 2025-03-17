@@ -67,8 +67,10 @@ namespace NEXUS.Forms
         private void btnScan_Click(object sender, EventArgs e)
         {
             QRScannerForm qrScanner = new QRScannerForm(this);
-            SelectButton(btnScan);
             OpenChildForm(qrScanner);
+            //QRCodeGeneratorform qRCodeGeneratorform = new QRCodeGeneratorform();
+            SelectButton(btnScan);
+            //OpenChildForm(qRCodeGeneratorform);
         }
 
         private void btnHome_Click(object sender, EventArgs e)

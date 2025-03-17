@@ -30,74 +30,22 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QRCodeGeneratorform));
-            panel2 = new Panel();
-            pictureBox3 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox1 = new PictureBox();
             pbQRCode = new PictureBox();
             cmxSave = new ContextMenuStrip(components);
             saveToolStripMenuItem = new ToolStripMenuItem();
             airButton1 = new ReaLTaiizor.Controls.AirButton();
             btnQRGenerate = new ReaLTaiizor.Controls.CyberButton();
-            panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)pbQRCode).BeginInit();
             cmxSave.SuspendLayout();
             SuspendLayout();
             // 
-            // panel2
-            // 
-            panel2.BackColor = Color.FromArgb(153, 229, 255);
-            panel2.Controls.Add(pictureBox3);
-            panel2.Controls.Add(pictureBox2);
-            panel2.Controls.Add(pictureBox1);
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(0, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(514, 32);
-            panel2.TabIndex = 19;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(457, 8);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(14, 16);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 2;
-            pictureBox3.TabStop = false;
-            pictureBox3.Click += Maximize;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(426, 6);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(19, 22);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 1;
-            pictureBox2.TabStop = false;
-            pictureBox2.Click += Minimize;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(484, 6);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(18, 20);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += Close;
-            // 
             // pbQRCode
             // 
             pbQRCode.ContextMenuStrip = cmxSave;
-            pbQRCode.Location = new Point(111, 73);
+            pbQRCode.Location = new Point(147, 77);
             pbQRCode.Name = "pbQRCode";
-            pbQRCode.Size = new Size(279, 228);
+            pbQRCode.Size = new Size(661, 472);
             pbQRCode.SizeMode = PictureBoxSizeMode.Zoom;
             pbQRCode.TabIndex = 20;
             pbQRCode.TabStop = false;
@@ -122,7 +70,7 @@
             airButton1.Customization = "7e3t//Ly8v/r6+v/5ubm/+vr6//f39//p6en/zw8PP8UFBT/gICA/w==";
             airButton1.Font = new Font("Segoe UI", 9F);
             airButton1.Image = null;
-            airButton1.Location = new Point(229, 432);
+            airButton1.Location = new Point(235, 434);
             airButton1.Name = "airButton1";
             airButton1.NoRounding = false;
             airButton1.Size = new Size(8, 9);
@@ -140,7 +88,7 @@
             btnQRGenerate.ColorBackground = Color.FromArgb(24, 60, 114);
             btnQRGenerate.ColorBackground_1 = Color.FromArgb(24, 60, 114);
             btnQRGenerate.ColorBackground_2 = Color.FromArgb(24, 60, 114);
-            btnQRGenerate.ColorBackground_Pen = Color.FromArgb(128, 223, 255);
+            btnQRGenerate.ColorBackground_Pen = Color.FromArgb(153, 229, 255);
             btnQRGenerate.ColorLighting = Color.FromArgb(24, 60, 114);
             btnQRGenerate.ColorPen_1 = Color.FromArgb(24, 60, 114);
             btnQRGenerate.ColorPen_2 = Color.FromArgb(24, 60, 114);
@@ -157,7 +105,7 @@
             btnQRGenerate.Lighting = false;
             btnQRGenerate.LinearGradient_Background = false;
             btnQRGenerate.LinearGradientPen = false;
-            btnQRGenerate.Location = new Point(91, 395);
+            btnQRGenerate.Location = new Point(319, 613);
             btnQRGenerate.Name = "btnQRGenerate";
             btnQRGenerate.PenWidth = 15;
             btnQRGenerate.Rounding = true;
@@ -172,41 +120,41 @@
             btnQRGenerate.Timer_RGB = 300;
             btnQRGenerate.Click += btnQRGenerate_Click;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(153, 229, 255);
+            panel1.Location = new Point(117, 55);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(722, 523);
+            panel1.TabIndex = 23;
+            // 
             // QRCodeGeneratorform
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
-            ClientSize = new Size(514, 481);
+            ClientSize = new Size(988, 739);
             Controls.Add(btnQRGenerate);
             Controls.Add(airButton1);
             Controls.Add(pbQRCode);
-            Controls.Add(panel2);
+            Controls.Add(panel1);
             Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "QRCodeGeneratorform";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "QRCodeGeneratorform";
-            panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbQRCode).EndInit();
             cmxSave.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Panel panel2;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox1;
         private PictureBox pbQRCode;
         private ReaLTaiizor.Controls.AirButton airButton1;
         private ReaLTaiizor.Controls.CyberButton btnQRGenerate;
         private ContextMenuStrip cmxSave;
         private ToolStripMenuItem saveToolStripMenuItem;
+        private Panel panel1;
     }
 }

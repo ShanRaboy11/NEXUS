@@ -57,6 +57,14 @@
               "target": "Package",
               "version": "[6.6.0, )"
             },
+            "Microsoft.Web.WebView2": {
+              "target": "Package",
+              "version": "[1.0.3124.44, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "QRCoder": {
               "target": "Package",
               "version": "[1.6.0, )"

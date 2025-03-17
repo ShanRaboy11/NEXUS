@@ -39,3 +39,14 @@ C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\BCrypt.Net-Nex
 C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.Home.resources
 C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\FontAwesome.Sharp.dll
 C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.WheelTokens.resources
+C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.Map.resources
+C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\runtimes\win-x86\native\WebView2Loader.dll
+C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\runtimes\win-x64\native\WebView2Loader.dll
+C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\runtimes\win-arm64\native\WebView2Loader.dll
+C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Core.dll
+C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.WinForms.dll
+C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Wpf.dll
+C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Core.xml
+C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.WinForms.xml
+C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Wpf.xml
+C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\Newtonsoft.Json.dll

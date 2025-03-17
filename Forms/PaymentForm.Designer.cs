@@ -30,26 +30,26 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaymentForm));
             label1 = new Label();
-            label2 = new Label();
+            panel1 = new Panel();
             SuspendLayout();
             // 
             // label1
             // 
-            label1.Font = new Font("Inter ExtraBold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Inter ExtraBold", 23F, FontStyle.Bold);
+            label1.ForeColor = Color.FromArgb(38, 36, 68);
             label1.Location = new Point(11, 46);
             label1.Name = "label1";
-            label1.Size = new Size(206, 38);
+            label1.Size = new Size(282, 44);
             label1.TabIndex = 19;
             label1.Text = "PAYMENT PAGE";
             // 
-            // label2
+            // panel1
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(52, 157);
-            label2.Name = "label2";
-            label2.Size = new Size(108, 18);
-            label2.TabIndex = 20;
-            label2.Text = "PAYMENT PAGE";
+            panel1.BackColor = Color.FromArgb(153, 229, 255);
+            panel1.Location = new Point(82, 136);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(787, 534);
+            panel1.TabIndex = 20;
             // 
             // PaymentForm
             // 
@@ -57,7 +57,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
             ClientSize = new Size(988, 739);
-            Controls.Add(label2);
+            Controls.Add(panel1);
             Controls.Add(label1);
             Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
@@ -67,11 +67,10 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "PaymentForm";
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
         private Label label1;
-        private Label label2;
+        private Panel panel1;
     }
 }
