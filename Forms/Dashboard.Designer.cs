@@ -344,10 +344,10 @@
             spaceSeparatorHorizontal1.Customization = "Kioq/yoqKv8jIyP/Kioq/w==";
             spaceSeparatorHorizontal1.Font = new Font("Verdana", 8F);
             spaceSeparatorHorizontal1.Image = null;
-            spaceSeparatorHorizontal1.Location = new Point(640, 120);
+            spaceSeparatorHorizontal1.Location = new Point(667, 122);
             spaceSeparatorHorizontal1.Name = "spaceSeparatorHorizontal1";
             spaceSeparatorHorizontal1.NoRounding = false;
-            spaceSeparatorHorizontal1.Size = new Size(355, 4);
+            spaceSeparatorHorizontal1.Size = new Size(325, 4);
             spaceSeparatorHorizontal1.TabIndex = 33;
             spaceSeparatorHorizontal1.Text = "spaceSeparatorHorizontal1";
             spaceSeparatorHorizontal1.Transparent = false;
@@ -356,11 +356,11 @@
             // 
             label15.AutoSize = true;
             label15.BackColor = Color.FromArgb(230, 249, 255);
-            label15.Font = new Font("Inter", 23F, FontStyle.Bold);
+            label15.Font = new Font("Inter", 21F, FontStyle.Bold);
             label15.ForeColor = Color.FromArgb(38, 36, 68);
-            label15.Location = new Point(669, 61);
+            label15.Location = new Point(694, 66);
             label15.Name = "label15";
-            label15.Size = new Size(157, 44);
+            label15.Size = new Size(141, 40);
             label15.TabIndex = 55;
             label15.Text = "You have";
             // 
@@ -368,11 +368,11 @@
             // 
             lblPoints.AutoSize = true;
             lblPoints.BackColor = Color.FromArgb(230, 249, 255);
-            lblPoints.Font = new Font("Inter", 35F, FontStyle.Bold);
+            lblPoints.Font = new Font("Inter", 31F, FontStyle.Bold);
             lblPoints.ForeColor = Color.FromArgb(38, 36, 68);
-            lblPoints.Location = new Point(827, 45);
+            lblPoints.Location = new Point(837, 52);
             lblPoints.Name = "lblPoints";
-            lblPoints.Size = new Size(61, 67);
+            lblPoints.Size = new Size(55, 61);
             lblPoints.TabIndex = 54;
             lblPoints.Text = "0";
             // 
@@ -380,9 +380,9 @@
             // 
             pbWheelPoints.Cursor = Cursors.Hand;
             pbWheelPoints.Image = (Image)resources.GetObject("pbWheelPoints.Image");
-            pbWheelPoints.Location = new Point(892, 49);
+            pbWheelPoints.Location = new Point(890, 55);
             pbWheelPoints.Name = "pbWheelPoints";
-            pbWheelPoints.Size = new Size(71, 62);
+            pbWheelPoints.Size = new Size(66, 58);
             pbWheelPoints.SizeMode = PictureBoxSizeMode.Zoom;
             pbWheelPoints.TabIndex = 40;
             pbWheelPoints.TabStop = false;
@@ -391,22 +391,22 @@
             // lblUserFName
             // 
             lblUserFName.AutoSize = true;
-            lblUserFName.Font = new Font("Inter ExtraBold", 21F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblUserFName.Font = new Font("Inter ExtraBold", 23F, FontStyle.Bold);
             lblUserFName.ForeColor = Color.FromArgb(24, 60, 114);
-            lblUserFName.Location = new Point(95, 21);
+            lblUserFName.Location = new Point(103, 21);
             lblUserFName.Name = "lblUserFName";
-            lblUserFName.Size = new Size(127, 40);
+            lblUserFName.Size = new Size(141, 44);
             lblUserFName.TabIndex = 33;
             lblUserFName.Text = "Angelo!";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Inter SemiBold", 21F, FontStyle.Bold);
+            label1.Font = new Font("Inter SemiBold", 23F, FontStyle.Bold);
             label1.ForeColor = SystemColors.ControlDarkDark;
             label1.Location = new Point(16, 22);
             label1.Name = "label1";
-            label1.Size = new Size(86, 40);
+            label1.Size = new Size(95, 44);
             label1.TabIndex = 32;
             label1.Text = "Hello";
             // 
