@@ -3,44 +3,52 @@
   "WorkspaceRootPath": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\forms\\history.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:forms\\history.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\forms\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:forms\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|c:\\users\\shan michael\\source\\repos\\nexus\\forms\\report.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:forms\\report.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|c:\\users\\shan michael\\source\\repos\\nexus\\forms\\routefinder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:forms\\routefinder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\forms\\qrscannerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:forms\\qrscannerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\forms\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:forms\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|c:\\users\\shan michael\\source\\repos\\nexus\\forms\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:forms\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|c:\\users\\shan michael\\source\\repos\\nexus\\forms\\routefinder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:forms\\routefinder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\forms\\qrcodegeneratorform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:forms\\qrcodegeneratorform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|c:\\users\\shan michael\\source\\repos\\nexus\\userinformationclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:userinformationclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\forms\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:forms\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|c:\\users\\shan michael\\source\\repos\\nexus\\forms\\history.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:forms\\history.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\forms\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:forms\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\forms\\qrscannerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:forms\\qrscannerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|c:\\users\\shan michael\\source\\repos\\nexus\\forms\\qrscannerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:forms\\qrscannerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\forms\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:forms\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|c:\\users\\shan michael\\source\\repos\\nexus\\userinformationclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:userinformationclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,11 +58,35 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
+              "Title": "RouteFinder.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\RouteFinder.cs",
+              "RelativeDocumentMoniker": "Forms\\RouteFinder.cs",
+              "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\RouteFinder.cs [Design]",
+              "RelativeToolTip": "Forms\\RouteFinder.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T13:57:43.326Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Report.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\Report.cs",
+              "RelativeDocumentMoniker": "Forms\\Report.cs",
+              "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\Report.cs [Design]",
+              "RelativeToolTip": "Forms\\Report.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T13:36:02.914Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "RouteFinder.cs",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\RouteFinder.cs",
               "RelativeDocumentMoniker": "Forms\\RouteFinder.cs",
@@ -67,7 +99,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Register.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\Register.cs",
               "RelativeDocumentMoniker": "Forms\\Register.cs",
@@ -79,7 +111,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "History.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\History.cs",
               "RelativeDocumentMoniker": "Forms\\History.cs",
@@ -91,25 +123,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "QRCodeGeneratorform.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\QRCodeGeneratorform.cs",
               "RelativeDocumentMoniker": "Forms\\QRCodeGeneratorform.cs",
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\QRCodeGeneratorform.cs [Design]",
               "RelativeToolTip": "Forms\\QRCodeGeneratorform.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T13:51:09.22Z"
+              "WhenOpened": "2025-03-17T13:51:09.22Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "Home.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\Home.cs",
               "RelativeDocumentMoniker": "Forms\\Home.cs",
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\Home.cs [Design]",
               "RelativeToolTip": "Forms\\Home.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T04:41:54.925Z"
+              "WhenOpened": "2025-03-14T04:41:54.925Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -119,14 +153,14 @@
               "RelativeDocumentMoniker": "Forms\\QRScannerForm.cs",
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\QRScannerForm.cs",
               "RelativeToolTip": "Forms\\QRScannerForm.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAIBJwBYAAAAqAAAA",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAABYAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-11T11:46:04.058Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "QRScannerForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\QRScannerForm.cs",
               "RelativeDocumentMoniker": "Forms\\QRScannerForm.cs",
@@ -138,7 +172,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "UserInformationClass.cs",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\UserInformationClass.cs",
               "RelativeDocumentMoniker": "UserInformationClass.cs",
@@ -150,7 +184,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "Dashboard.cs",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\Dashboard.cs",
               "RelativeDocumentMoniker": "Forms\\Dashboard.cs",
@@ -163,14 +197,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "Dashboard.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\Dashboard.cs",
               "RelativeDocumentMoniker": "Forms\\Dashboard.cs",
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\Dashboard.cs [Design]",
               "RelativeToolTip": "Forms\\Dashboard.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-15T07:01:16.223Z"
+              "WhenOpened": "2025-02-15T07:01:16.223Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

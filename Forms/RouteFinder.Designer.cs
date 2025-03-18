@@ -62,6 +62,7 @@
             // cmbxJeepCodes
             // 
             cmbxJeepCodes.BackColor = Color.FromArgb(176, 233, 255);
+            cmbxJeepCodes.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbxJeepCodes.Font = new Font("Inter", 15.25F);
             cmbxJeepCodes.ForeColor = Color.FromArgb(24, 60, 114);
             cmbxJeepCodes.FormattingEnabled = true;
