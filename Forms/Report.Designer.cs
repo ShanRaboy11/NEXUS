@@ -42,10 +42,19 @@
             label5 = new Label();
             panel3 = new Panel();
             rtbxIncidentDescription = new RichTextBox();
-            pnlUsername.SuspendLayout();
+            label6 = new Label();
+            label7 = new Label();
+            panel4 = new Panel();
+            btnAttach = new FontAwesome.Sharp.IconButton();
+            lblFileName = new Label();
+            btnLogin = new ReaLTaiizor.Controls.CyberButton();
+            panel5 = new Panel();
+            poisonDateTime3 = new ReaLTaiizor.Controls.PoisonDateTime();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
+            panel4.SuspendLayout();
+            panel5.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -65,7 +74,7 @@
             poisonDateTime1.Location = new Point(15, 8);
             poisonDateTime1.MinimumSize = new Size(0, 29);
             poisonDateTime1.Name = "poisonDateTime1";
-            poisonDateTime1.Size = new Size(210, 29);
+            poisonDateTime1.Size = new Size(239, 29);
             poisonDateTime1.TabIndex = 22;
             // 
             // label2
@@ -82,7 +91,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Inter Medium", 15F, FontStyle.Bold);
-            label3.Location = new Point(496, 83);
+            label3.Location = new Point(589, 186);
             label3.Name = "label3";
             label3.Size = new Size(182, 28);
             label3.TabIndex = 24;
@@ -92,10 +101,9 @@
             // 
             pnlUsername.BackColor = Color.White;
             pnlUsername.BackgroundImageLayout = ImageLayout.None;
-            pnlUsername.Controls.Add(tbxIncidentLocation);
-            pnlUsername.Location = new Point(524, 123);
+            pnlUsername.Location = new Point(617, 226);
             pnlUsername.Name = "pnlUsername";
-            pnlUsername.Size = new Size(365, 48);
+            pnlUsername.Size = new Size(267, 48);
             pnlUsername.TabIndex = 25;
             // 
             // tbxIncidentLocation
@@ -104,7 +112,7 @@
             tbxIncidentLocation.BorderStyle = BorderStyle.None;
             tbxIncidentLocation.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbxIncidentLocation.ForeColor = Color.FromArgb(24, 60, 114);
-            tbxIncidentLocation.Location = new Point(13, 14);
+            tbxIncidentLocation.Location = new Point(396, -349);
             tbxIncidentLocation.Name = "tbxIncidentLocation";
             tbxIncidentLocation.Size = new Size(339, 20);
             tbxIncidentLocation.TabIndex = 10;
@@ -117,14 +125,14 @@
             panel1.Controls.Add(poisonDateTime1);
             panel1.Location = new Point(99, 123);
             panel1.Name = "panel1";
-            panel1.Size = new Size(237, 48);
+            panel1.Size = new Size(266, 48);
             panel1.TabIndex = 26;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Inter Medium", 15F, FontStyle.Bold);
-            label4.Location = new Point(62, 212);
+            label4.Location = new Point(62, 186);
             label4.Name = "label4";
             label4.Size = new Size(165, 28);
             label4.TabIndex = 27;
@@ -135,9 +143,9 @@
             panel2.BackColor = Color.White;
             panel2.BackgroundImageLayout = ImageLayout.None;
             panel2.Controls.Add(cmbxMonth);
-            panel2.Location = new Point(99, 255);
+            panel2.Location = new Point(99, 229);
             panel2.Name = "panel2";
-            panel2.Size = new Size(237, 48);
+            panel2.Size = new Size(266, 48);
             panel2.TabIndex = 26;
             // 
             // cmbxMonth
@@ -150,7 +158,7 @@
             cmbxMonth.Items.AddRange(new object[] { "Traffic Accident", "Mechanical Breakdown", "Theft", "Lost", "Assaults", "Sexual Harassment" });
             cmbxMonth.Location = new Point(15, 9);
             cmbxMonth.Name = "cmbxMonth";
-            cmbxMonth.Size = new Size(210, 30);
+            cmbxMonth.Size = new Size(239, 30);
             cmbxMonth.TabIndex = 25;
             cmbxMonth.TabStop = false;
             // 
@@ -158,7 +166,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Inter Medium", 15F, FontStyle.Bold);
-            label5.Location = new Point(66, 331);
+            label5.Location = new Point(66, 305);
             label5.Name = "label5";
             label5.Size = new Size(210, 28);
             label5.TabIndex = 28;
@@ -169,7 +177,7 @@
             panel3.BackColor = Color.White;
             panel3.BackgroundImageLayout = ImageLayout.None;
             panel3.Controls.Add(rtbxIncidentDescription);
-            panel3.Location = new Point(99, 376);
+            panel3.Location = new Point(99, 350);
             panel3.Name = "panel3";
             panel3.Size = new Size(790, 194);
             panel3.TabIndex = 27;
@@ -185,12 +193,132 @@
             rtbxIncidentDescription.TabIndex = 0;
             rtbxIncidentDescription.Text = "";
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Inter Medium", 15F, FontStyle.Bold);
+            label6.Location = new Point(589, 83);
+            label6.Name = "label6";
+            label6.Size = new Size(173, 28);
+            label6.TabIndex = 29;
+            label6.Text = "Time of Incident:";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Inter Medium", 15F, FontStyle.Bold);
+            label7.Location = new Point(66, 566);
+            label7.Name = "label7";
+            label7.Size = new Size(164, 28);
+            label7.TabIndex = 30;
+            label7.Text = "Documentation:";
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.White;
+            panel4.BackgroundImageLayout = ImageLayout.None;
+            panel4.Controls.Add(btnAttach);
+            panel4.Controls.Add(tbxIncidentLocation);
+            panel4.Controls.Add(lblFileName);
+            panel4.Location = new Point(99, 606);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(266, 48);
+            panel4.TabIndex = 27;
+            // 
+            // btnAttach
+            // 
+            btnAttach.IconChar = FontAwesome.Sharp.IconChar.Image;
+            btnAttach.IconColor = Color.Black;
+            btnAttach.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnAttach.IconSize = 30;
+            btnAttach.Location = new Point(208, 8);
+            btnAttach.Name = "btnAttach";
+            btnAttach.Size = new Size(46, 35);
+            btnAttach.TabIndex = 32;
+            btnAttach.UseVisualStyleBackColor = true;
+            btnAttach.Click += btnAttach_Click;
+            // 
+            // lblFileName
+            // 
+            lblFileName.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblFileName.Location = new Point(15, 12);
+            lblFileName.Name = "lblFileName";
+            lblFileName.Size = new Size(187, 23);
+            lblFileName.TabIndex = 31;
+            // 
+            // btnLogin
+            // 
+            btnLogin.Alpha = 20;
+            btnLogin.BackColor = Color.Transparent;
+            btnLogin.Background = true;
+            btnLogin.Background_WidthPen = 4F;
+            btnLogin.BackgroundPen = true;
+            btnLogin.ColorBackground = Color.FromArgb(24, 60, 114);
+            btnLogin.ColorBackground_1 = Color.FromArgb(24, 60, 114);
+            btnLogin.ColorBackground_2 = Color.FromArgb(24, 60, 114);
+            btnLogin.ColorBackground_Pen = Color.FromArgb(128, 223, 255);
+            btnLogin.ColorLighting = Color.FromArgb(24, 60, 114);
+            btnLogin.ColorPen_1 = Color.FromArgb(24, 60, 114);
+            btnLogin.ColorPen_2 = Color.FromArgb(24, 60, 114);
+            btnLogin.Cursor = Cursors.Hand;
+            btnLogin.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            btnLogin.Effect_1 = true;
+            btnLogin.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            btnLogin.Effect_1_Transparency = 25;
+            btnLogin.Effect_2 = true;
+            btnLogin.Effect_2_ColorBackground = Color.White;
+            btnLogin.Effect_2_Transparency = 20;
+            btnLogin.Font = new Font("Inter", 12.25F);
+            btnLogin.ForeColor = Color.FromArgb(245, 245, 245);
+            btnLogin.Lighting = false;
+            btnLogin.LinearGradient_Background = false;
+            btnLogin.LinearGradientPen = false;
+            btnLogin.Location = new Point(357, 674);
+            btnLogin.Name = "btnLogin";
+            btnLogin.PenWidth = 15;
+            btnLogin.Rounding = true;
+            btnLogin.RoundingInt = 70;
+            btnLogin.Size = new Size(311, 44);
+            btnLogin.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            btnLogin.TabIndex = 33;
+            btnLogin.Tag = "Cyber";
+            btnLogin.TextButton = "Submit";
+            btnLogin.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            btnLogin.Timer_Effect_1 = 5;
+            btnLogin.Timer_RGB = 300;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.White;
+            panel5.BackgroundImageLayout = ImageLayout.None;
+            panel5.Controls.Add(poisonDateTime3);
+            panel5.Location = new Point(617, 123);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(267, 48);
+            panel5.TabIndex = 27;
+            // 
+            // poisonDateTime3
+            // 
+            poisonDateTime3.CalendarFont = new Font("Inter", 12.25F);
+            poisonDateTime3.CalendarMonthBackground = Color.FromArgb(176, 233, 255);
+            poisonDateTime3.Format = DateTimePickerFormat.Time;
+            poisonDateTime3.Location = new Point(15, 8);
+            poisonDateTime3.MinimumSize = new Size(0, 29);
+            poisonDateTime3.Name = "poisonDateTime3";
+            poisonDateTime3.Size = new Size(239, 29);
+            poisonDateTime3.TabIndex = 22;
+            // 
             // Report
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
             ClientSize = new Size(988, 739);
+            Controls.Add(panel5);
+            Controls.Add(btnLogin);
+            Controls.Add(panel4);
+            Controls.Add(label7);
+            Controls.Add(label6);
             Controls.Add(panel3);
             Controls.Add(label5);
             Controls.Add(panel2);
@@ -204,11 +332,12 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Report";
             Text = "Report";
-            pnlUsername.ResumeLayout(false);
-            pnlUsername.PerformLayout();
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            panel5.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -228,5 +357,13 @@
         private Panel panel3;
         private RichTextBox rtbxIncidentDescription;
         private ComboBox cmbxMonth;
+        private Label label6;
+        private Label label7;
+        private Panel panel4;
+        private Label lblFileName;
+        private FontAwesome.Sharp.IconButton btnAttach;
+        private ReaLTaiizor.Controls.CyberButton btnLogin;
+        private Panel panel5;
+        private ReaLTaiizor.Controls.PoisonDateTime poisonDateTime3;
     }
 }
