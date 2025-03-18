@@ -546,11 +546,11 @@
             label5.AutoSize = true;
             label5.Font = new Font("Inter", 10.55F);
             label5.ForeColor = Color.FromArgb(24, 60, 114);
-            label5.Location = new Point(19, 374);
+            label5.Location = new Point(14, 374);
             label5.Name = "label5";
-            label5.Size = new Size(42, 22);
+            label5.Size = new Size(83, 22);
             label5.TabIndex = 73;
-            label5.Text = "Role";
+            label5.Text = "User Type";
             // 
             // panel11
             // 
