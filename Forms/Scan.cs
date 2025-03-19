@@ -19,7 +19,7 @@ namespace NEXUS.Forms
             InitializeComponent();
         }
 
-        private void ShowOverlay(Form newForm)
+        public void ShowOverlay(Form newForm)
         {
             var overlayForm = new Form();
             overlayForm.StartPosition = FormStartPosition.CenterScreen;

@@ -13,6 +13,7 @@ namespace NEXUS.Forms
 {
     public partial class Report : Form
     {
+        private Image attachedImage;
         public Report()
         {
             InitializeComponent();
@@ -27,10 +28,8 @@ namespace NEXUS.Forms
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    // Display the selected image in the PictureBox
-                    //pbAttachedImage.Image = Image.FromFile(openFileDialog.FileName);
+                    attachedImage = Image.FromFile(openFileDialog.FileName);
 
-                    // Display the filename in the label or textbox
                     lblFileName.Text = Path.GetFileName(openFileDialog.FileName);
                     lblFileName.Font = new Font(lblFileName.Font, FontStyle.Underline);
                 }
@@ -57,6 +56,14 @@ namespace NEXUS.Forms
                     rtbxIncidentDescription.Text = string.Empty;
                     cmbxNature.SelectedIndex = -1;
                 }
+            }
+        }
+
+        private void lblFileName_Click(object sender, EventArgs e)
+        {
+            if (attachedImage != null)
+            {
+                DisplayImage displayImage = new DisplayImage(attachedImage);
             }
         }
     }

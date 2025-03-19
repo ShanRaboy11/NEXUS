@@ -34,6 +34,7 @@
             label2 = new Label();
             label3 = new Label();
             pnlUsername = new Panel();
+            tbxLocation = new TextBox();
             tbxIncidentLocation = new TextBox();
             panel1 = new Panel();
             label4 = new Label();
@@ -50,7 +51,6 @@
             btnSubmitReport = new ReaLTaiizor.Controls.CyberButton();
             panel5 = new Panel();
             poisonDateTime3 = new ReaLTaiizor.Controls.PoisonDateTime();
-            tbxLocation = new TextBox();
             pnlUsername.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -108,6 +108,15 @@
             pnlUsername.Name = "pnlUsername";
             pnlUsername.Size = new Size(267, 48);
             pnlUsername.TabIndex = 25;
+            // 
+            // tbxLocation
+            // 
+            tbxLocation.BorderStyle = BorderStyle.None;
+            tbxLocation.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbxLocation.Location = new Point(14, 15);
+            tbxLocation.Name = "tbxLocation";
+            tbxLocation.Size = new Size(239, 20);
+            tbxLocation.TabIndex = 0;
             // 
             // tbxIncidentLocation
             // 
@@ -243,11 +252,13 @@
             // 
             // lblFileName
             // 
+            lblFileName.Cursor = Cursors.Hand;
             lblFileName.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblFileName.Location = new Point(15, 12);
             lblFileName.Name = "lblFileName";
             lblFileName.Size = new Size(187, 23);
             lblFileName.TabIndex = 31;
+            lblFileName.Click += lblFileName_Click;
             // 
             // btnSubmitReport
             // 
@@ -311,15 +322,6 @@
             poisonDateTime3.Name = "poisonDateTime3";
             poisonDateTime3.Size = new Size(239, 29);
             poisonDateTime3.TabIndex = 22;
-            // 
-            // tbxLocation
-            // 
-            tbxLocation.BorderStyle = BorderStyle.None;
-            tbxLocation.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbxLocation.Location = new Point(14, 15);
-            tbxLocation.Name = "tbxLocation";
-            tbxLocation.Size = new Size(239, 20);
-            tbxLocation.TabIndex = 0;
             // 
             // Report
             // 

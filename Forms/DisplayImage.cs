@@ -12,9 +12,17 @@ namespace NEXUS.Forms
 {
     public partial class DisplayImage : Form
     {
-        public DisplayImage()
+        Scan scan = new Scan();
+        public DisplayImage(Image image)
         {
             InitializeComponent();
+            scan.ShowOverlay(this);
+            pbImageUploaded.Image = image;
+        }
+
+        private void pbClose1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
