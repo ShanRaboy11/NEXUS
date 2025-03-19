@@ -47,7 +47,7 @@
             panel4 = new Panel();
             btnAttach = new FontAwesome.Sharp.IconButton();
             lblFileName = new Label();
-            btnLogin = new ReaLTaiizor.Controls.CyberButton();
+            btnSubmitReport = new ReaLTaiizor.Controls.CyberButton();
             panel5 = new Panel();
             poisonDateTime3 = new ReaLTaiizor.Controls.PoisonDateTime();
             panel1.SuspendLayout();
@@ -246,46 +246,46 @@
             lblFileName.Size = new Size(187, 23);
             lblFileName.TabIndex = 31;
             // 
-            // btnLogin
+            // btnSubmitReport
             // 
-            btnLogin.Alpha = 20;
-            btnLogin.BackColor = Color.Transparent;
-            btnLogin.Background = true;
-            btnLogin.Background_WidthPen = 4F;
-            btnLogin.BackgroundPen = true;
-            btnLogin.ColorBackground = Color.FromArgb(24, 60, 114);
-            btnLogin.ColorBackground_1 = Color.FromArgb(24, 60, 114);
-            btnLogin.ColorBackground_2 = Color.FromArgb(24, 60, 114);
-            btnLogin.ColorBackground_Pen = Color.FromArgb(128, 223, 255);
-            btnLogin.ColorLighting = Color.FromArgb(24, 60, 114);
-            btnLogin.ColorPen_1 = Color.FromArgb(24, 60, 114);
-            btnLogin.ColorPen_2 = Color.FromArgb(24, 60, 114);
-            btnLogin.Cursor = Cursors.Hand;
-            btnLogin.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            btnLogin.Effect_1 = true;
-            btnLogin.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
-            btnLogin.Effect_1_Transparency = 25;
-            btnLogin.Effect_2 = true;
-            btnLogin.Effect_2_ColorBackground = Color.White;
-            btnLogin.Effect_2_Transparency = 20;
-            btnLogin.Font = new Font("Inter", 12.25F);
-            btnLogin.ForeColor = Color.FromArgb(245, 245, 245);
-            btnLogin.Lighting = false;
-            btnLogin.LinearGradient_Background = false;
-            btnLogin.LinearGradientPen = false;
-            btnLogin.Location = new Point(357, 674);
-            btnLogin.Name = "btnLogin";
-            btnLogin.PenWidth = 15;
-            btnLogin.Rounding = true;
-            btnLogin.RoundingInt = 70;
-            btnLogin.Size = new Size(311, 44);
-            btnLogin.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            btnLogin.TabIndex = 33;
-            btnLogin.Tag = "Cyber";
-            btnLogin.TextButton = "Submit";
-            btnLogin.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            btnLogin.Timer_Effect_1 = 5;
-            btnLogin.Timer_RGB = 300;
+            btnSubmitReport.Alpha = 20;
+            btnSubmitReport.BackColor = Color.Transparent;
+            btnSubmitReport.Background = true;
+            btnSubmitReport.Background_WidthPen = 4F;
+            btnSubmitReport.BackgroundPen = true;
+            btnSubmitReport.ColorBackground = Color.FromArgb(24, 60, 114);
+            btnSubmitReport.ColorBackground_1 = Color.FromArgb(24, 60, 114);
+            btnSubmitReport.ColorBackground_2 = Color.FromArgb(24, 60, 114);
+            btnSubmitReport.ColorBackground_Pen = Color.FromArgb(153, 229, 255);
+            btnSubmitReport.ColorLighting = Color.FromArgb(24, 60, 114);
+            btnSubmitReport.ColorPen_1 = Color.FromArgb(24, 60, 114);
+            btnSubmitReport.ColorPen_2 = Color.FromArgb(24, 60, 114);
+            btnSubmitReport.Cursor = Cursors.Hand;
+            btnSubmitReport.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            btnSubmitReport.Effect_1 = true;
+            btnSubmitReport.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            btnSubmitReport.Effect_1_Transparency = 25;
+            btnSubmitReport.Effect_2 = true;
+            btnSubmitReport.Effect_2_ColorBackground = Color.White;
+            btnSubmitReport.Effect_2_Transparency = 20;
+            btnSubmitReport.Font = new Font("Inter", 12.25F);
+            btnSubmitReport.ForeColor = Color.FromArgb(245, 245, 245);
+            btnSubmitReport.Lighting = false;
+            btnSubmitReport.LinearGradient_Background = false;
+            btnSubmitReport.LinearGradientPen = false;
+            btnSubmitReport.Location = new Point(357, 674);
+            btnSubmitReport.Name = "btnSubmitReport";
+            btnSubmitReport.PenWidth = 15;
+            btnSubmitReport.Rounding = true;
+            btnSubmitReport.RoundingInt = 70;
+            btnSubmitReport.Size = new Size(311, 44);
+            btnSubmitReport.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            btnSubmitReport.TabIndex = 33;
+            btnSubmitReport.Tag = "Cyber";
+            btnSubmitReport.TextButton = "Submit";
+            btnSubmitReport.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            btnSubmitReport.Timer_Effect_1 = 5;
+            btnSubmitReport.Timer_RGB = 300;
             // 
             // panel5
             // 
@@ -315,7 +315,7 @@
             BackColor = Color.FromArgb(230, 249, 255);
             ClientSize = new Size(988, 739);
             Controls.Add(panel5);
-            Controls.Add(btnLogin);
+            Controls.Add(btnSubmitReport);
             Controls.Add(panel4);
             Controls.Add(label7);
             Controls.Add(label6);
@@ -362,7 +362,7 @@
         private Panel panel4;
         private Label lblFileName;
         private FontAwesome.Sharp.IconButton btnAttach;
-        private ReaLTaiizor.Controls.CyberButton btnLogin;
+        private ReaLTaiizor.Controls.CyberButton btnSubmitReport;
         private Panel panel5;
         private ReaLTaiizor.Controls.PoisonDateTime poisonDateTime3;
     }

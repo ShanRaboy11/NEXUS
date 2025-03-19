@@ -15,12 +15,14 @@ namespace NEXUS.Forms
         //Dashboard dashboardFrom = new Dashboard();
         private VideoCaptureDevice videoCaptureDevice;
         private FilterInfoCollection videoDevices;
-        private Dashboard dashboard; 
-        public QRScannerForm(Dashboard dashboardRef)
+        private Dashboard dashboard;
+
+        //Dashboard dashboardRef
+        public QRScannerForm()
         {
             InitializeComponent();
             InitializeCamera();
-            this.dashboard = dashboardRef;
+            //this.dashboard = dashboardRef;
         }
 
         private void Maximize(object sender, EventArgs e)
@@ -112,17 +114,11 @@ namespace NEXUS.Forms
         {
             if (videoCaptureDevice != null && videoCaptureDevice.IsRunning)
             {
-                scanTimer.Stop(); 
-                videoCaptureDevice.SignalToStop(); 
-                videoCaptureDevice.WaitForStop(); 
-                videoCaptureDevice = null; 
+                scanTimer.Stop();
+                videoCaptureDevice.SignalToStop();
+                videoCaptureDevice.WaitForStop();
+                videoCaptureDevice = null;
             }
-        }
-
-
-        private void btnDecode_Click(object sender, EventArgs e)
-        {
-            scanTimer.Start();
         }
 
         private void QRScannerForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -132,6 +128,14 @@ namespace NEXUS.Forms
                 videoCaptureDevice.SignalToStop();
                 videoCaptureDevice.WaitForStop();
             }
+        }
+
+        private void pbClose_Click(object sender, EventArgs e)
+        {
+            FormClosingEventArgs args = new FormClosingEventArgs(CloseReason.UserClosing, false);
+            QRScannerForm_FormClosing(this, args);
+
+            this.Close();
         }
     }
 }
