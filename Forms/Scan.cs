@@ -29,9 +29,9 @@ namespace NEXUS.Forms
             overlayForm.Size = new Size(1400, 907);
             overlayForm.Location = this.Location;
             overlayForm.ShowInTaskbar = false;
-            
+
             overlayForm.Show();
-            newForm.FormClosed += (s, args) => overlayForm.Close();    
+            newForm.FormClosed += (s, args) => overlayForm.Close();
             newForm.Show();
         }
 

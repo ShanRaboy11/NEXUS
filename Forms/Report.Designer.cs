@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Report));
             label1 = new Label();
-            poisonDateTime1 = new ReaLTaiizor.Controls.PoisonDateTime();
+            dtIncidentDate = new ReaLTaiizor.Controls.PoisonDateTime();
             label2 = new Label();
             label3 = new Label();
             pnlUsername = new Panel();
@@ -38,7 +38,7 @@
             panel1 = new Panel();
             label4 = new Label();
             panel2 = new Panel();
-            cmbxMonth = new ComboBox();
+            cmbxNature = new ComboBox();
             label5 = new Label();
             panel3 = new Panel();
             rtbxIncidentDescription = new RichTextBox();
@@ -50,6 +50,8 @@
             btnSubmitReport = new ReaLTaiizor.Controls.CyberButton();
             panel5 = new Panel();
             poisonDateTime3 = new ReaLTaiizor.Controls.PoisonDateTime();
+            tbxLocation = new TextBox();
+            pnlUsername.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -67,15 +69,15 @@
             label1.TabIndex = 21;
             label1.Text = "REPORT INCIDENT";
             // 
-            // poisonDateTime1
+            // dtIncidentDate
             // 
-            poisonDateTime1.CalendarFont = new Font("Inter", 12.25F);
-            poisonDateTime1.CalendarMonthBackground = Color.FromArgb(176, 233, 255);
-            poisonDateTime1.Location = new Point(15, 8);
-            poisonDateTime1.MinimumSize = new Size(0, 29);
-            poisonDateTime1.Name = "poisonDateTime1";
-            poisonDateTime1.Size = new Size(239, 29);
-            poisonDateTime1.TabIndex = 22;
+            dtIncidentDate.CalendarFont = new Font("Inter", 12.25F);
+            dtIncidentDate.CalendarMonthBackground = Color.FromArgb(176, 233, 255);
+            dtIncidentDate.Location = new Point(15, 8);
+            dtIncidentDate.MinimumSize = new Size(0, 29);
+            dtIncidentDate.Name = "dtIncidentDate";
+            dtIncidentDate.Size = new Size(239, 29);
+            dtIncidentDate.TabIndex = 22;
             // 
             // label2
             // 
@@ -101,6 +103,7 @@
             // 
             pnlUsername.BackColor = Color.White;
             pnlUsername.BackgroundImageLayout = ImageLayout.None;
+            pnlUsername.Controls.Add(tbxLocation);
             pnlUsername.Location = new Point(617, 226);
             pnlUsername.Name = "pnlUsername";
             pnlUsername.Size = new Size(267, 48);
@@ -122,7 +125,7 @@
             // 
             panel1.BackColor = Color.White;
             panel1.BackgroundImageLayout = ImageLayout.None;
-            panel1.Controls.Add(poisonDateTime1);
+            panel1.Controls.Add(dtIncidentDate);
             panel1.Location = new Point(99, 123);
             panel1.Name = "panel1";
             panel1.Size = new Size(266, 48);
@@ -142,25 +145,25 @@
             // 
             panel2.BackColor = Color.White;
             panel2.BackgroundImageLayout = ImageLayout.None;
-            panel2.Controls.Add(cmbxMonth);
+            panel2.Controls.Add(cmbxNature);
             panel2.Location = new Point(99, 229);
             panel2.Name = "panel2";
             panel2.Size = new Size(266, 48);
             panel2.TabIndex = 26;
             // 
-            // cmbxMonth
+            // cmbxNature
             // 
-            cmbxMonth.BackColor = Color.FromArgb(176, 233, 255);
-            cmbxMonth.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbxMonth.Font = new Font("Inter", 11.25F);
-            cmbxMonth.ForeColor = Color.FromArgb(24, 60, 114);
-            cmbxMonth.FormattingEnabled = true;
-            cmbxMonth.Items.AddRange(new object[] { "Traffic Accident", "Mechanical Breakdown", "Theft", "Lost", "Assaults", "Sexual Harassment" });
-            cmbxMonth.Location = new Point(15, 9);
-            cmbxMonth.Name = "cmbxMonth";
-            cmbxMonth.Size = new Size(239, 30);
-            cmbxMonth.TabIndex = 25;
-            cmbxMonth.TabStop = false;
+            cmbxNature.BackColor = Color.FromArgb(176, 233, 255);
+            cmbxNature.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbxNature.Font = new Font("Inter", 11.25F);
+            cmbxNature.ForeColor = Color.FromArgb(24, 60, 114);
+            cmbxNature.FormattingEnabled = true;
+            cmbxNature.Items.AddRange(new object[] { "Traffic Accident", "Mechanical Breakdown", "Theft", "Lost", "Assaults", "Sexual Harassment" });
+            cmbxNature.Location = new Point(15, 9);
+            cmbxNature.Name = "cmbxNature";
+            cmbxNature.Size = new Size(239, 30);
+            cmbxNature.TabIndex = 25;
+            cmbxNature.TabStop = false;
             // 
             // label5
             // 
@@ -286,6 +289,7 @@
             btnSubmitReport.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             btnSubmitReport.Timer_Effect_1 = 5;
             btnSubmitReport.Timer_RGB = 300;
+            btnSubmitReport.Click += btnSubmitReport_Click;
             // 
             // panel5
             // 
@@ -307,6 +311,15 @@
             poisonDateTime3.Name = "poisonDateTime3";
             poisonDateTime3.Size = new Size(239, 29);
             poisonDateTime3.TabIndex = 22;
+            // 
+            // tbxLocation
+            // 
+            tbxLocation.BorderStyle = BorderStyle.None;
+            tbxLocation.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbxLocation.Location = new Point(14, 15);
+            tbxLocation.Name = "tbxLocation";
+            tbxLocation.Size = new Size(239, 20);
+            tbxLocation.TabIndex = 0;
             // 
             // Report
             // 
@@ -332,6 +345,8 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Report";
             Text = "Report";
+            pnlUsername.ResumeLayout(false);
+            pnlUsername.PerformLayout();
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
@@ -345,7 +360,7 @@
         #endregion
 
         private Label label1;
-        private ReaLTaiizor.Controls.PoisonDateTime poisonDateTime1;
+        private ReaLTaiizor.Controls.PoisonDateTime dtIncidentDate;
         private Label label2;
         private Label label3;
         private Panel pnlUsername;
@@ -356,7 +371,7 @@
         private Label label5;
         private Panel panel3;
         private RichTextBox rtbxIncidentDescription;
-        private ComboBox cmbxMonth;
+        private ComboBox cmbxNature;
         private Label label6;
         private Label label7;
         private Panel panel4;
@@ -365,5 +380,6 @@
         private ReaLTaiizor.Controls.CyberButton btnSubmitReport;
         private Panel panel5;
         private ReaLTaiizor.Controls.PoisonDateTime poisonDateTime3;
+        private TextBox tbxLocation;
     }
 }
