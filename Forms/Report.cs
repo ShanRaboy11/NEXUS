@@ -21,6 +21,8 @@ namespace NEXUS.Forms
 
         private void btnAttach_Click(object sender, EventArgs e)
         {
+            lblFileName.Text = "";
+            lblFileName.ForeColor = Color.Black;
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";

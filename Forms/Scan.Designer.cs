@@ -118,6 +118,7 @@
             // btnUploadQR
             // 
             btnUploadQR.BackColor = Color.White;
+            btnUploadQR.Cursor = Cursors.Hand;
             btnUploadQR.Image = (Image)resources.GetObject("btnUploadQR.Image");
             btnUploadQR.Location = new Point(534, 277);
             btnUploadQR.Name = "btnUploadQR";
@@ -131,6 +132,7 @@
             // 
             lblUpload.AutoSize = true;
             lblUpload.BackColor = Color.White;
+            lblUpload.Cursor = Cursors.Hand;
             lblUpload.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblUpload.ForeColor = Color.FromArgb(24, 60, 114);
             lblUpload.Location = new Point(674, 461);
@@ -138,10 +140,12 @@
             lblUpload.Size = new Size(138, 23);
             lblUpload.TabIndex = 42;
             lblUpload.Text = "Upload QR Code";
+            lblUpload.Click += btnUploadQR_Click;
             // 
             // pictureBox2
             // 
             pictureBox2.BackColor = Color.White;
+            pictureBox2.Cursor = Cursors.Hand;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(69, 277);
             pictureBox2.Name = "pictureBox2";
@@ -155,6 +159,7 @@
             // 
             label6.AutoSize = true;
             label6.BackColor = Color.White;
+            label6.Cursor = Cursors.Hand;
             label6.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.FromArgb(24, 60, 114);
             label6.Location = new Point(208, 461);

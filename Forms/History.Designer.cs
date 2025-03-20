@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(History));
             label1 = new Label();
             label3 = new Label();
@@ -35,10 +36,14 @@
             dtDate = new ReaLTaiizor.Controls.PoisonDateTime();
             label2 = new Label();
             dgvHistory = new DataGridView();
+            cmsDataGrid = new ContextMenuStrip(components);
+            displayToolStripMenuItem = new ToolStripMenuItem();
+            rateToolStripMenuItem = new ToolStripMenuItem();
             cmbxFilter = new ComboBox();
             pbIcon = new PictureBox();
             tbxJeepCode = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvHistory).BeginInit();
+            cmsDataGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbIcon).BeginInit();
             SuspendLayout();
             // 
@@ -104,11 +109,33 @@
             // 
             dgvHistory.BackgroundColor = Color.FromArgb(153, 229, 255);
             dgvHistory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvHistory.ContextMenuStrip = cmsDataGrid;
             dgvHistory.Location = new Point(41, 211);
             dgvHistory.Name = "dgvHistory";
             dgvHistory.Size = new Size(897, 470);
             dgvHistory.TabIndex = 52;
-            dgvHistory.Visible = false;
+            // 
+            // cmsDataGrid
+            // 
+            cmsDataGrid.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmsDataGrid.Items.AddRange(new ToolStripItem[] { displayToolStripMenuItem, rateToolStripMenuItem });
+            cmsDataGrid.Name = "contextMenuStrip1";
+            cmsDataGrid.Size = new Size(181, 82);
+            // 
+            // displayToolStripMenuItem
+            // 
+            displayToolStripMenuItem.Image = Properties.Resources._9104142_fullscreen_expand_maximize_enlarge_screen_icon;
+            displayToolStripMenuItem.Name = "displayToolStripMenuItem";
+            displayToolStripMenuItem.Size = new Size(180, 28);
+            displayToolStripMenuItem.Text = "Display";
+            // 
+            // rateToolStripMenuItem
+            // 
+            rateToolStripMenuItem.Image = Properties.Resources.rate_hover;
+            rateToolStripMenuItem.Name = "rateToolStripMenuItem";
+            rateToolStripMenuItem.Size = new Size(180, 28);
+            rateToolStripMenuItem.Text = "Rate";
+            rateToolStripMenuItem.Click += rateToolStripMenuItem_Click;
             // 
             // cmbxFilter
             // 
@@ -170,6 +197,7 @@
             Name = "History";
             Text = "History";
             ((System.ComponentModel.ISupportInitialize)dgvHistory).EndInit();
+            cmsDataGrid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbIcon).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -186,5 +214,8 @@
         private ComboBox cmbxFilter;
         private PictureBox pbIcon;
         private TextBox tbxJeepCode;
+        private ContextMenuStrip cmsDataGrid;
+        private ToolStripMenuItem displayToolStripMenuItem;
+        private ToolStripMenuItem rateToolStripMenuItem;
     }
 }

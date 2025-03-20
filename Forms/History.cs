@@ -51,5 +51,14 @@ namespace NEXUS.Forms
             tbxJeepCode.Text = "";
             tbxJeepCode.ForeColor = Color.Black;
         }
+
+        private void rateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Rate rate = new Rate();
+            Scan scan = new Scan();
+
+            scan.ShowOverlay(rate, null);
+            scan.FormClosed += (s, args) => this.Show();
+        }
     }
 }

@@ -254,10 +254,12 @@
             // 
             lblFileName.Cursor = Cursors.Hand;
             lblFileName.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblFileName.ForeColor = Color.Gray;
             lblFileName.Location = new Point(15, 12);
             lblFileName.Name = "lblFileName";
             lblFileName.Size = new Size(187, 23);
             lblFileName.TabIndex = 31;
+            lblFileName.Text = "Optional";
             lblFileName.Click += lblFileName_Click;
             // 
             // btnSubmitReport
