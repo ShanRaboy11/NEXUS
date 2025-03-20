@@ -509,9 +509,9 @@
             // 
             lblSpeed.BackColor = Color.FromArgb(230, 249, 255);
             lblSpeed.Font = new Font("Inter SemiBold", 13.5F, FontStyle.Bold);
-            lblSpeed.Location = new Point(73, 557);
+            lblSpeed.Location = new Point(50, 557);
             lblSpeed.Name = "lblSpeed";
-            lblSpeed.Size = new Size(174, 26);
+            lblSpeed.Size = new Size(229, 26);
             lblSpeed.TabIndex = 69;
             lblSpeed.Text = "Driving Safety:";
             lblSpeed.TextAlign = ContentAlignment.MiddleCenter;
@@ -576,9 +576,9 @@
             // 
             lblComfortability.BackColor = Color.FromArgb(230, 249, 255);
             lblComfortability.Font = new Font("Inter SemiBold", 13.5F, FontStyle.Bold);
-            lblComfortability.Location = new Point(507, 337);
+            lblComfortability.Location = new Point(488, 337);
             lblComfortability.Name = "lblComfortability";
-            lblComfortability.Size = new Size(174, 26);
+            lblComfortability.Size = new Size(214, 26);
             lblComfortability.TabIndex = 75;
             lblComfortability.Text = "Driving Safety:";
             lblComfortability.TextAlign = ContentAlignment.MiddleCenter;

@@ -16,6 +16,7 @@ namespace NEXUS.Forms
         private VideoCaptureDevice videoCaptureDevice;
         private FilterInfoCollection videoDevices;
         private Dashboard dashboard;
+        
 
         //Dashboard dashboardRef
         public QRScannerForm()
@@ -54,7 +55,7 @@ namespace NEXUS.Forms
                 try
                 {
                     videoCaptureDevice.Start();
-                    scanTimer.Start(); // Start scanning automatically!
+                    scanTimer.Start(); 
                 }
                 catch (Exception ex)
                 {
@@ -81,36 +82,39 @@ namespace NEXUS.Forms
                 picCam.Image = (Bitmap)eventArgs.Frame.Clone();
             }
         }
-
+        Scan scan = new Scan();
         private void scanTimer_Tick(object sender, EventArgs e)
         {
+            
             if (picCam.Image == null) return;
 
-            Bitmap bitmap = new Bitmap(picCam.Image);
-
-            BarcodeReader reader = new BarcodeReader
+            using (Bitmap bitmap = new Bitmap(picCam.Image))
             {
-                AutoRotate = true,
-                Options = { TryHarder = true, PossibleFormats = new[] { BarcodeFormat.QR_CODE } }
-            };
-
-            Result result = reader.Decode(bitmap);
-
-            if (result != null && !string.IsNullOrEmpty(result.Text))
-            {
-                StopCamera(); // Stop the camera first
-                string decoded = result.Text.Trim();
-                PaymentForm paymentForm = new PaymentForm(decoded);
-
-                Application.DoEvents(); // Allow UI updates
-
-                this.Invoke(new Action(() =>
+                BarcodeReader reader = new BarcodeReader
                 {
-                    pbClose_Click(null, EventArgs.Empty);
-                    dashboard.OpenChildForm(paymentForm);
-                }));
+                    AutoRotate = true,
+                    Options = { TryHarder = true, PossibleFormats = new[] { BarcodeFormat.QR_CODE } }
+                };
+
+                Result result = reader.Decode(bitmap);
+
+                if (result != null && !string.IsNullOrEmpty(result.Text))
+                {
+                    StopCamera(); 
+                    string decoded = result.Text.Trim();
+
+                    this.BeginInvoke(new Action(() =>
+                    {
+                        this.Hide(); 
+                        PaymentForm paymentForm = new PaymentForm(decoded);
+                        //paymentForm.Show();
+                        scan.ShowOverlay(paymentForm, null);
+                        this.Close(); // Close properly to prevent freezing
+                    }));
+                }
             }
         }
+
         private void StopCamera()
         {
             if (videoCaptureDevice != null && videoCaptureDevice.IsRunning)

@@ -6,21 +6,15 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Forms;
 
 namespace NEXUS.Forms
 {
-    public partial class PaymentForm : Form
+    public partial class Profile : Form
     {
-        public PaymentForm(string FareAmount)
+        public Profile()
         {
             InitializeComponent();
-        }
-
-        private void btnClosee_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }
