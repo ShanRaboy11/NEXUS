@@ -15,6 +15,7 @@ namespace NEXUS.Forms
 {
     public partial class Register : Form
     {
+        LogInForm logInForm = new LogInForm();
         private bool isPasswordVisible = false;
         public Register()
         {
@@ -101,7 +102,6 @@ namespace NEXUS.Forms
         private void btnSignUp_Click(object sender, EventArgs e)
         {
             DialogBox dialogBox = new DialogBox();
-            LogInForm logInForm2 = new LogInForm();
 
             if (string.IsNullOrWhiteSpace(tbxNewFirstName.Text) ||
                 string.IsNullOrWhiteSpace(tbxNewLastName.Text) ||
@@ -116,7 +116,7 @@ namespace NEXUS.Forms
             {
 
                 dialogBox.ShowIcon("blank");
-                dialogBox.Show();
+                logInForm.overlayForm(this, dialogBox);
                 return;
             }
 
@@ -135,11 +135,9 @@ namespace NEXUS.Forms
             //add here for initializing the registered infos using userInfo[0];
 
             dialogBox.ShowIcon("register");
-            if (dialogBox.ShowDialog() == DialogResult.OK)
-            {
-                logInForm2.Show();
-                this.Close();
-            }
+            logInForm.overlayForm(this, dialogBox);
+            logInForm.Show();
+            this.Close();
         }
     }
 }

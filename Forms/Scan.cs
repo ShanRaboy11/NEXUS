@@ -12,8 +12,7 @@ namespace NEXUS.Forms
 {
     public partial class Scan : Form
     {
-        //QRScannerForm qrScanner = new QRScannerForm();
-
+        Dashboard dashboard = new Dashboard();
         public Scan()
         {
             InitializeComponent();

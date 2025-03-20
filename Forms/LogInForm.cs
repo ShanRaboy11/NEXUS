@@ -156,6 +156,27 @@ namespace NEXUS.Forms
             this.Hide();
         }
 
+        public void overlayForm(Form newForm, Form dialog)
+        {
+            var overlay = new Form();
+
+            overlay.StartPosition = FormStartPosition.CenterScreen;
+            overlay.FormBorderStyle = FormBorderStyle.None;
+            overlay.Opacity = 0.5d;
+            overlay.BackColor = Color.Black;
+            overlay.Size = newForm.Size;
+            overlay.Location = this.Location;
+            overlay.ShowInTaskbar = false;
+
+            overlay.Show();
+            newForm.FormClosed += (s, args) => overlay.Close();
+            newForm.Show();
+            if(dialog.ShowDialog() == DialogResult.OK)
+            {
+                overlay.Close();
+            }
+        }
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             DialogBox dialogBox = new DialogBox();
@@ -165,20 +186,18 @@ namespace NEXUS.Forms
                 tbxEnterPassword.Text == "Username" || tbxEnterPassword.Text == "Password")
             {
                 dialogBox.ShowIcon("blank");
-                dialogBox.Show();
+                overlayForm(this, dialogBox);
+                //dialogBox.Show();
                 return;
             }
             else
             {
                 dialogBox.ShowIcon("login");
-                if (dialogBox.ShowDialog() == DialogResult.OK)
-                {
-                    dashboard.Show();
-                    this.Close();
-                }
+                overlayForm(this, dialogBox);
+                dashboard.Show();
+                this.Close();
             }
-            //dialogBox.ShowIcon("fail");
-            
+            //dialogBox.ShowIcon("fail");    
         }
     }
 }
