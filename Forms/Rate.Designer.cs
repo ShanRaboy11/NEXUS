@@ -53,38 +53,38 @@
             pbSafety4 = new PictureBox();
             pbSafety5 = new PictureBox();
             lblSafety = new Label();
-            label6 = new Label();
+            lblSmoothness = new Label();
             pbSmoothness5 = new PictureBox();
             pbSmoothness4 = new PictureBox();
             pbSmoothness3 = new PictureBox();
             pbSmoothness2 = new PictureBox();
             pbSmoothness1 = new PictureBox();
             label7 = new Label();
-            label8 = new Label();
+            lblSpeed = new Label();
             pbSpeed4 = new PictureBox();
             pbSpeed3 = new PictureBox();
             pbSpeed2 = new PictureBox();
             pbSpeed1 = new PictureBox();
             label9 = new Label();
-            label10 = new Label();
+            lblComfortability = new Label();
             pbComfortability4 = new PictureBox();
             pbComfortability3 = new PictureBox();
             pbComfortability2 = new PictureBox();
             pbComfortability1 = new PictureBox();
             label11 = new Label();
-            label12 = new Label();
+            lblCleanliness = new Label();
             pbCleanliness4 = new PictureBox();
             pbCleanliness3 = new PictureBox();
             pbCleanliness2 = new PictureBox();
             pbCleanliness1 = new PictureBox();
             label13 = new Label();
-            label14 = new Label();
+            lblSatisfaction = new Label();
             pbSatisfaction4 = new PictureBox();
             pbSatisfaction3 = new PictureBox();
             pbSatisfaction2 = new PictureBox();
             pbSatisfaction1 = new PictureBox();
             label15 = new Label();
-            pictureBox8 = new PictureBox();
+            pbSpeed5 = new PictureBox();
             pbComfortability5 = new PictureBox();
             pbCleanliness5 = new PictureBox();
             pbSatisfaction5 = new PictureBox();
@@ -124,7 +124,7 @@
             ((System.ComponentModel.ISupportInitialize)pbSatisfaction3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbSatisfaction2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbSatisfaction1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbSpeed5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbComfortability5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbCleanliness5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbSatisfaction5).BeginInit();
@@ -366,6 +366,7 @@
             pbSafety1.SizeMode = PictureBoxSizeMode.CenterImage;
             pbSafety1.TabIndex = 51;
             pbSafety1.TabStop = false;
+            pbSafety1.Click += pbSafety1_Click;
             // 
             // pbSafety2
             // 
@@ -376,6 +377,7 @@
             pbSafety2.SizeMode = PictureBoxSizeMode.CenterImage;
             pbSafety2.TabIndex = 52;
             pbSafety2.TabStop = false;
+            pbSafety2.Click += pbSafety2_Click;
             // 
             // pbSafety3
             // 
@@ -386,6 +388,7 @@
             pbSafety3.SizeMode = PictureBoxSizeMode.CenterImage;
             pbSafety3.TabIndex = 53;
             pbSafety3.TabStop = false;
+            pbSafety3.Click += pbSafety3_Click;
             // 
             // pbSafety4
             // 
@@ -396,6 +399,7 @@
             pbSafety4.SizeMode = PictureBoxSizeMode.CenterImage;
             pbSafety4.TabIndex = 54;
             pbSafety4.TabStop = false;
+            pbSafety4.Click += pbSafety4_Click;
             // 
             // pbSafety5
             // 
@@ -406,30 +410,31 @@
             pbSafety5.SizeMode = PictureBoxSizeMode.CenterImage;
             pbSafety5.TabIndex = 55;
             pbSafety5.TabStop = false;
+            pbSafety5.Click += pbSafety5_Click;
             // 
             // lblSafety
             // 
-            lblSafety.AutoSize = true;
             lblSafety.BackColor = Color.FromArgb(230, 249, 255);
             lblSafety.Font = new Font("Inter SemiBold", 13.5F, FontStyle.Bold);
-            lblSafety.Location = new Point(82, 346);
+            lblSafety.Location = new Point(68, 346);
             lblSafety.Name = "lblSafety";
-            lblSafety.Size = new Size(142, 26);
+            lblSafety.Size = new Size(174, 26);
             lblSafety.TabIndex = 56;
             lblSafety.Text = "Driving Safety:";
+            lblSafety.TextAlign = ContentAlignment.MiddleCenter;
             lblSafety.Visible = false;
             // 
-            // label6
+            // lblSmoothness
             // 
-            label6.AutoSize = true;
-            label6.BackColor = Color.FromArgb(230, 249, 255);
-            label6.Font = new Font("Inter SemiBold", 13.5F, FontStyle.Bold);
-            label6.Location = new Point(87, 456);
-            label6.Name = "label6";
-            label6.Size = new Size(142, 26);
-            label6.TabIndex = 63;
-            label6.Text = "Driving Safety:";
-            label6.Visible = false;
+            lblSmoothness.BackColor = Color.FromArgb(230, 249, 255);
+            lblSmoothness.Font = new Font("Inter SemiBold", 13.5F, FontStyle.Bold);
+            lblSmoothness.Location = new Point(73, 456);
+            lblSmoothness.Name = "lblSmoothness";
+            lblSmoothness.Size = new Size(169, 26);
+            lblSmoothness.TabIndex = 63;
+            lblSmoothness.Text = "Driving Safety:";
+            lblSmoothness.TextAlign = ContentAlignment.MiddleCenter;
+            lblSmoothness.Visible = false;
             // 
             // pbSmoothness5
             // 
@@ -440,6 +445,7 @@
             pbSmoothness5.SizeMode = PictureBoxSizeMode.CenterImage;
             pbSmoothness5.TabIndex = 62;
             pbSmoothness5.TabStop = false;
+            pbSmoothness5.Click += pbSmoothness5_Click;
             // 
             // pbSmoothness4
             // 
@@ -450,6 +456,7 @@
             pbSmoothness4.SizeMode = PictureBoxSizeMode.CenterImage;
             pbSmoothness4.TabIndex = 61;
             pbSmoothness4.TabStop = false;
+            pbSmoothness4.Click += pbSmoothness4_Click;
             // 
             // pbSmoothness3
             // 
@@ -460,6 +467,7 @@
             pbSmoothness3.SizeMode = PictureBoxSizeMode.CenterImage;
             pbSmoothness3.TabIndex = 60;
             pbSmoothness3.TabStop = false;
+            pbSmoothness3.Click += pbSmoothness3_Click;
             // 
             // pbSmoothness2
             // 
@@ -470,6 +478,7 @@
             pbSmoothness2.SizeMode = PictureBoxSizeMode.CenterImage;
             pbSmoothness2.TabIndex = 59;
             pbSmoothness2.TabStop = false;
+            pbSmoothness2.Click += pbSmoothness2_Click;
             // 
             // pbSmoothness1
             // 
@@ -480,6 +489,7 @@
             pbSmoothness1.SizeMode = PictureBoxSizeMode.CenterImage;
             pbSmoothness1.TabIndex = 58;
             pbSmoothness1.TabStop = false;
+            pbSmoothness1.Click += pbSmoothness1_Click;
             // 
             // label7
             // 
@@ -492,17 +502,17 @@
             label7.TabIndex = 57;
             label7.Text = "Driving Smoothness:";
             // 
-            // label8
+            // lblSpeed
             // 
-            label8.AutoSize = true;
-            label8.BackColor = Color.FromArgb(230, 249, 255);
-            label8.Font = new Font("Inter SemiBold", 13.5F, FontStyle.Bold);
-            label8.Location = new Point(87, 566);
-            label8.Name = "label8";
-            label8.Size = new Size(142, 26);
-            label8.TabIndex = 69;
-            label8.Text = "Driving Safety:";
-            label8.Visible = false;
+            lblSpeed.BackColor = Color.FromArgb(230, 249, 255);
+            lblSpeed.Font = new Font("Inter SemiBold", 13.5F, FontStyle.Bold);
+            lblSpeed.Location = new Point(73, 566);
+            lblSpeed.Name = "lblSpeed";
+            lblSpeed.Size = new Size(174, 26);
+            lblSpeed.TabIndex = 69;
+            lblSpeed.Text = "Driving Safety:";
+            lblSpeed.TextAlign = ContentAlignment.MiddleCenter;
+            lblSpeed.Visible = false;
             // 
             // pbSpeed4
             // 
@@ -513,6 +523,7 @@
             pbSpeed4.SizeMode = PictureBoxSizeMode.CenterImage;
             pbSpeed4.TabIndex = 68;
             pbSpeed4.TabStop = false;
+            pbSpeed4.Click += pbSpeed4_Click;
             // 
             // pbSpeed3
             // 
@@ -523,6 +534,7 @@
             pbSpeed3.SizeMode = PictureBoxSizeMode.CenterImage;
             pbSpeed3.TabIndex = 67;
             pbSpeed3.TabStop = false;
+            pbSpeed3.Click += pbSpeed3_Click;
             // 
             // pbSpeed2
             // 
@@ -533,6 +545,7 @@
             pbSpeed2.SizeMode = PictureBoxSizeMode.CenterImage;
             pbSpeed2.TabIndex = 66;
             pbSpeed2.TabStop = false;
+            pbSpeed2.Click += pbSpeed2_Click;
             // 
             // pbSpeed1
             // 
@@ -543,6 +556,7 @@
             pbSpeed1.SizeMode = PictureBoxSizeMode.CenterImage;
             pbSpeed1.TabIndex = 65;
             pbSpeed1.TabStop = false;
+            pbSpeed1.Click += pbSpeed1_Click;
             // 
             // label9
             // 
@@ -555,17 +569,17 @@
             label9.TabIndex = 64;
             label9.Text = "Speed:";
             // 
-            // label10
+            // lblComfortability
             // 
-            label10.AutoSize = true;
-            label10.BackColor = Color.FromArgb(230, 249, 255);
-            label10.Font = new Font("Inter SemiBold", 13.5F, FontStyle.Bold);
-            label10.Location = new Point(521, 346);
-            label10.Name = "label10";
-            label10.Size = new Size(142, 26);
-            label10.TabIndex = 75;
-            label10.Text = "Driving Safety:";
-            label10.Visible = false;
+            lblComfortability.BackColor = Color.FromArgb(230, 249, 255);
+            lblComfortability.Font = new Font("Inter SemiBold", 13.5F, FontStyle.Bold);
+            lblComfortability.Location = new Point(507, 346);
+            lblComfortability.Name = "lblComfortability";
+            lblComfortability.Size = new Size(174, 26);
+            lblComfortability.TabIndex = 75;
+            lblComfortability.Text = "Driving Safety:";
+            lblComfortability.TextAlign = ContentAlignment.MiddleCenter;
+            lblComfortability.Visible = false;
             // 
             // pbComfortability4
             // 
@@ -618,17 +632,17 @@
             label11.TabIndex = 70;
             label11.Text = "Vehicle's Comfortability:";
             // 
-            // label12
+            // lblCleanliness
             // 
-            label12.AutoSize = true;
-            label12.BackColor = Color.FromArgb(230, 249, 255);
-            label12.Font = new Font("Inter SemiBold", 13.5F, FontStyle.Bold);
-            label12.Location = new Point(521, 456);
-            label12.Name = "label12";
-            label12.Size = new Size(142, 26);
-            label12.TabIndex = 81;
-            label12.Text = "Driving Safety:";
-            label12.Visible = false;
+            lblCleanliness.BackColor = Color.FromArgb(230, 249, 255);
+            lblCleanliness.Font = new Font("Inter SemiBold", 13.5F, FontStyle.Bold);
+            lblCleanliness.Location = new Point(507, 456);
+            lblCleanliness.Name = "lblCleanliness";
+            lblCleanliness.Size = new Size(174, 26);
+            lblCleanliness.TabIndex = 81;
+            lblCleanliness.Text = "Driving Safety:";
+            lblCleanliness.TextAlign = ContentAlignment.MiddleCenter;
+            lblCleanliness.Visible = false;
             // 
             // pbCleanliness4
             // 
@@ -681,17 +695,17 @@
             label13.TabIndex = 76;
             label13.Text = "Vehicle's Cleanliness:";
             // 
-            // label14
+            // lblSatisfaction
             // 
-            label14.AutoSize = true;
-            label14.BackColor = Color.FromArgb(230, 249, 255);
-            label14.Font = new Font("Inter SemiBold", 13.5F, FontStyle.Bold);
-            label14.Location = new Point(521, 566);
-            label14.Name = "label14";
-            label14.Size = new Size(142, 26);
-            label14.TabIndex = 87;
-            label14.Text = "Driving Safety:";
-            label14.Visible = false;
+            lblSatisfaction.BackColor = Color.FromArgb(230, 249, 255);
+            lblSatisfaction.Font = new Font("Inter SemiBold", 13.5F, FontStyle.Bold);
+            lblSatisfaction.Location = new Point(507, 566);
+            lblSatisfaction.Name = "lblSatisfaction";
+            lblSatisfaction.Size = new Size(174, 26);
+            lblSatisfaction.TabIndex = 87;
+            lblSatisfaction.Text = "Driving Safety:";
+            lblSatisfaction.TextAlign = ContentAlignment.MiddleCenter;
+            lblSatisfaction.Visible = false;
             // 
             // pbSatisfaction4
             // 
@@ -744,15 +758,16 @@
             label15.TabIndex = 82;
             label15.Text = "Overall Satisfaction:";
             // 
-            // pictureBox8
+            // pbSpeed5
             // 
-            pictureBox8.Image = Properties.Resources.rate_normal;
-            pictureBox8.Location = new Point(217, 532);
-            pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(30, 31);
-            pictureBox8.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox8.TabIndex = 88;
-            pictureBox8.TabStop = false;
+            pbSpeed5.Image = Properties.Resources.rate_normal;
+            pbSpeed5.Location = new Point(217, 532);
+            pbSpeed5.Name = "pbSpeed5";
+            pbSpeed5.Size = new Size(30, 31);
+            pbSpeed5.SizeMode = PictureBoxSizeMode.CenterImage;
+            pbSpeed5.TabIndex = 88;
+            pbSpeed5.TabStop = false;
+            pbSpeed5.Click += pbSpeed5_Click;
             // 
             // pbComfortability5
             // 
@@ -793,32 +808,32 @@
             Controls.Add(pbSatisfaction5);
             Controls.Add(pbCleanliness5);
             Controls.Add(pbComfortability5);
-            Controls.Add(pictureBox8);
-            Controls.Add(label14);
+            Controls.Add(pbSpeed5);
+            Controls.Add(lblSatisfaction);
             Controls.Add(pbSatisfaction4);
             Controls.Add(pbSatisfaction3);
             Controls.Add(pbSatisfaction2);
             Controls.Add(pbSatisfaction1);
             Controls.Add(label15);
-            Controls.Add(label12);
+            Controls.Add(lblCleanliness);
             Controls.Add(pbCleanliness4);
             Controls.Add(pbCleanliness3);
             Controls.Add(pbCleanliness2);
             Controls.Add(pbCleanliness1);
             Controls.Add(label13);
-            Controls.Add(label10);
+            Controls.Add(lblComfortability);
             Controls.Add(pbComfortability4);
             Controls.Add(pbComfortability3);
             Controls.Add(pbComfortability2);
             Controls.Add(pbComfortability1);
             Controls.Add(label11);
-            Controls.Add(label8);
+            Controls.Add(lblSpeed);
             Controls.Add(pbSpeed4);
             Controls.Add(pbSpeed3);
             Controls.Add(pbSpeed2);
             Controls.Add(pbSpeed1);
             Controls.Add(label9);
-            Controls.Add(label6);
+            Controls.Add(lblSmoothness);
             Controls.Add(pbSmoothness5);
             Controls.Add(pbSmoothness4);
             Controls.Add(pbSmoothness3);
@@ -881,7 +896,7 @@
             ((System.ComponentModel.ISupportInitialize)pbSatisfaction3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbSatisfaction2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbSatisfaction1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbSpeed5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbComfortability5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbCleanliness5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbSatisfaction5).EndInit();
@@ -915,38 +930,38 @@
         private PictureBox pbSafety4;
         private PictureBox pbSafety5;
         private Label lblSafety;
-        private Label label6;
+        private Label lblSmoothness;
         private PictureBox pbSmoothness5;
         private PictureBox pbSmoothness4;
         private PictureBox pbSmoothness3;
         private PictureBox pbSmoothness2;
         private PictureBox pbSmoothness1;
         private Label label7;
-        private Label label8;
+        private Label lblSpeed;
         private PictureBox pbSpeed4;
         private PictureBox pbSpeed3;
         private PictureBox pbSpeed2;
         private PictureBox pbSpeed1;
         private Label label9;
-        private Label label10;
+        private Label lblComfortability;
         private PictureBox pbComfortability4;
         private PictureBox pbComfortability3;
         private PictureBox pbComfortability2;
         private PictureBox pbComfortability1;
         private Label label11;
-        private Label label12;
+        private Label lblCleanliness;
         private PictureBox pbCleanliness4;
         private PictureBox pbCleanliness3;
         private PictureBox pbCleanliness2;
         private PictureBox pbCleanliness1;
         private Label label13;
-        private Label label14;
+        private Label lblSatisfaction;
         private PictureBox pbSatisfaction4;
         private PictureBox pbSatisfaction3;
         private PictureBox pbSatisfaction2;
         private PictureBox pbSatisfaction1;
         private Label label15;
-        private PictureBox pictureBox8;
+        private PictureBox pbSpeed5;
         private PictureBox pbComfortability5;
         private PictureBox pictureBox10;
         private PictureBox pbSatisfaction5;
