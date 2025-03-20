@@ -96,13 +96,6 @@ namespace NEXUS.Forms
             OpenChildForm(report);
         }
 
-        private void btnRate_Click(object sender, EventArgs e)
-        {
-            Rate rate = new Rate();
-            SelectButton(btnRate);
-            OpenChildForm(rate);
-        }
-
         private void btnHistory_Click(object sender, EventArgs e)
         {
             History history = new History();
@@ -229,16 +222,6 @@ namespace NEXUS.Forms
         private void btnReport_MouseLeave(object sender, EventArgs e)
         {
             ResetButton(btnReport);
-        }
-
-        private void btnRate_MouseHover(object sender, EventArgs e)
-        {
-            HighlightButton(btnRate);
-        }
-
-        private void btnRate_MouseLeave(object sender, EventArgs e)
-        {
-            ResetButton(btnRate);
         }
 
         private void btnHistory_MouseHover(object sender, EventArgs e)

@@ -43,7 +43,7 @@
             // 
             label1.Font = new Font("Inter ExtraBold", 20F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(38, 36, 68);
-            label1.Location = new Point(12, 12);
+            label1.Location = new Point(18, 15);
             label1.Name = "label1";
             label1.Size = new Size(614, 44);
             label1.TabIndex = 20;
@@ -90,19 +90,19 @@
             label3.BackColor = Color.FromArgb(153, 229, 255);
             label3.Font = new Font("Inter", 13F);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(70, 87);
+            label3.Location = new Point(76, 90);
             label3.Name = "label3";
-            label3.Size = new Size(783, 26);
+            label3.Size = new Size(788, 26);
             label3.TabIndex = 27;
-            label3.Text = "This panel helps you navigate the city with easeby providing the most efficient public utility";
+            label3.Text = "This panel helps you navigate the city with ease by providing the most efficient public utility";
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.FromArgb(153, 229, 255);
-            label4.Font = new Font("Inter", 12.5F);
+            label4.Font = new Font("Inter", 12.7F);
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(70, 135);
+            label4.Location = new Point(76, 138);
             label4.Name = "label4";
             label4.Size = new Size(837, 24);
             label4.TabIndex = 28;
@@ -124,7 +124,7 @@
             cyberRichTextBox1.ForeColor = Color.FromArgb(245, 245, 245);
             cyberRichTextBox1.Lighting = false;
             cyberRichTextBox1.LinearGradientPen = false;
-            cyberRichTextBox1.Location = new Point(52, 64);
+            cyberRichTextBox1.Location = new Point(58, 67);
             cyberRichTextBox1.Name = "cyberRichTextBox1";
             cyberRichTextBox1.PenWidth = 15;
             cyberRichTextBox1.RGB = false;

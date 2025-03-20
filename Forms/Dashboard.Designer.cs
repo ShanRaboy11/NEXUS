@@ -37,7 +37,6 @@
             pnlSidebar = new Panel();
             btnLogout = new FontAwesome.Sharp.IconButton();
             btnHistory = new FontAwesome.Sharp.IconButton();
-            btnRate = new FontAwesome.Sharp.IconButton();
             pbAbout = new PictureBox();
             btnReport = new FontAwesome.Sharp.IconButton();
             btnHome = new FontAwesome.Sharp.IconButton();
@@ -145,7 +144,6 @@
             pnlSidebar.BackColor = Color.White;
             pnlSidebar.Controls.Add(btnLogout);
             pnlSidebar.Controls.Add(btnHistory);
-            pnlSidebar.Controls.Add(btnRate);
             pnlSidebar.Controls.Add(pbAbout);
             pnlSidebar.Controls.Add(btnReport);
             pnlSidebar.Controls.Add(btnHome);
@@ -187,7 +185,7 @@
             btnHistory.IconColor = Color.Black;
             btnHistory.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnHistory.ImageAlign = ContentAlignment.MiddleLeft;
-            btnHistory.Location = new Point(0, 590);
+            btnHistory.Location = new Point(0, 570);
             btnHistory.Name = "btnHistory";
             btnHistory.Padding = new Padding(15, 0, 0, 0);
             btnHistory.Size = new Size(185, 43);
@@ -197,26 +195,6 @@
             btnHistory.Click += btnHistory_Click;
             btnHistory.MouseLeave += btnHistory_MouseLeave;
             btnHistory.MouseHover += btnHistory_MouseHover;
-            // 
-            // btnRate
-            // 
-            btnRate.FlatAppearance.BorderSize = 0;
-            btnRate.FlatStyle = FlatStyle.Flat;
-            btnRate.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnRate.IconChar = FontAwesome.Sharp.IconChar.Star;
-            btnRate.IconColor = Color.Black;
-            btnRate.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnRate.ImageAlign = ContentAlignment.MiddleLeft;
-            btnRate.Location = new Point(0, 505);
-            btnRate.Name = "btnRate";
-            btnRate.Padding = new Padding(15, 0, 0, 0);
-            btnRate.Size = new Size(185, 43);
-            btnRate.TabIndex = 37;
-            btnRate.Text = "  Rate";
-            btnRate.UseVisualStyleBackColor = true;
-            btnRate.Click += btnRate_Click;
-            btnRate.MouseLeave += btnRate_MouseLeave;
-            btnRate.MouseHover += btnRate_MouseHover;
             // 
             // pbAbout
             // 
@@ -239,7 +217,7 @@
             btnReport.IconColor = Color.Black;
             btnReport.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnReport.ImageAlign = ContentAlignment.MiddleLeft;
-            btnReport.Location = new Point(0, 425);
+            btnReport.Location = new Point(0, 470);
             btnReport.Name = "btnReport";
             btnReport.Padding = new Padding(15, 0, 0, 0);
             btnReport.Size = new Size(185, 43);
@@ -279,7 +257,7 @@
             btnScan.IconColor = Color.Black;
             btnScan.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnScan.ImageAlign = ContentAlignment.MiddleLeft;
-            btnScan.Location = new Point(0, 340);
+            btnScan.Location = new Point(0, 370);
             btnScan.Name = "btnScan";
             btnScan.Padding = new Padding(15, 0, 0, 0);
             btnScan.Size = new Size(185, 43);
@@ -299,7 +277,7 @@
             btnRoute.IconColor = Color.Black;
             btnRoute.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnRoute.ImageAlign = ContentAlignment.MiddleLeft;
-            btnRoute.Location = new Point(0, 255);
+            btnRoute.Location = new Point(0, 270);
             btnRoute.Name = "btnRoute";
             btnRoute.Padding = new Padding(15, 0, 0, 0);
             btnRoute.Size = new Size(185, 43);
@@ -881,7 +859,6 @@
         private PictureBox pbProfile;
         private FontAwesome.Sharp.IconButton btnHome;
         private FontAwesome.Sharp.IconButton btnRoute;
-        private FontAwesome.Sharp.IconButton btnRate;
         private FontAwesome.Sharp.IconButton btnReport;
         private FontAwesome.Sharp.IconButton btnScan;
         private FontAwesome.Sharp.IconButton btnLogout;
