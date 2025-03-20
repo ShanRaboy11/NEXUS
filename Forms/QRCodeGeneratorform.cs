@@ -26,14 +26,16 @@ namespace NEXUS.Forms
 
         private void btnQRGenerate_Click(object sender, EventArgs e)
         {
+            Scan scan = new Scan();
             string data = "https://github.com/ShanRaboy11/NEXUS";
             ProgressBar progressBar = new ProgressBar();
+
+            progressBar.labelChange("QR");
+            scan.ShowOverlay(progressBar, null);
+            this.Hide();
             progressBar.FormClosed += (s, args) => this.Show();
             progressBar.Owner = this;
-
-            progressBar.Show();
-            progressBar.labelChange("QR");
-            this.Hide();
+            //progressBar.Show();
             
 
             QRCodeGenerator qrGenerator = new QRCodeGenerator();
