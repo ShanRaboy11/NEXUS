@@ -782,7 +782,7 @@
             // 
             pictureBox5.BackColor = Color.White;
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(-15, -3);
+            pictureBox5.Location = new Point(-15, 0);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(341, 145);
             pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;

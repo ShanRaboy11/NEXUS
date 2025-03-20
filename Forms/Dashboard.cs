@@ -15,6 +15,7 @@ namespace NEXUS.Forms
 {
     public partial class Dashboard : Form
     {
+        
         bool sidebarExpand = false;
         private Form currentChildForm;
         private FontAwesome.Sharp.IconButton selectedButton = null;
@@ -281,6 +282,8 @@ namespace NEXUS.Forms
         private void pbWheelPoints_Click(object sender, EventArgs e)
         {
             WheelTokens wheelTokens = new WheelTokens();
+            Scan scan = new Scan();
+            scan.ShowOverlay(wheelTokens);
             wheelTokens.FormClosed += (s, args) => this.Show();
             wheelTokens.Owner = this;
             wheelTokens.Show();
