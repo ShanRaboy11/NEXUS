@@ -88,6 +88,9 @@
             pbComfortability5 = new PictureBox();
             pbCleanliness5 = new PictureBox();
             pbSatisfaction5 = new PictureBox();
+            label8 = new Label();
+            rtbxComment = new RichTextBox();
+            btnSubmitReport = new ReaLTaiizor.Controls.CyberButton();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
@@ -316,7 +319,7 @@
             label2.AutoSize = true;
             label2.BackColor = Color.FromArgb(230, 249, 255);
             label2.Font = new Font("Inter SemiBold", 18.5F, FontStyle.Bold);
-            label2.Location = new Point(25, 215);
+            label2.Location = new Point(25, 206);
             label2.Name = "label2";
             label2.Size = new Size(104, 36);
             label2.TabIndex = 45;
@@ -327,7 +330,7 @@
             lblDriver.AutoSize = true;
             lblDriver.BackColor = Color.FromArgb(230, 249, 255);
             lblDriver.Font = new Font("Inter SemiBold", 18.5F, FontStyle.Bold);
-            lblDriver.Location = new Point(135, 215);
+            lblDriver.Location = new Point(135, 206);
             lblDriver.Name = "lblDriver";
             lblDriver.Size = new Size(245, 36);
             lblDriver.TabIndex = 46;
@@ -338,7 +341,7 @@
             label5.AutoSize = true;
             label5.BackColor = Color.FromArgb(230, 249, 255);
             label5.Font = new Font("Inter SemiBold", 13.5F, FontStyle.Bold);
-            label5.Location = new Point(25, 275);
+            label5.Location = new Point(25, 266);
             label5.Name = "label5";
             label5.Size = new Size(142, 26);
             label5.TabIndex = 47;
@@ -349,7 +352,7 @@
             spaceSeparatorHorizontal1.Customization = "Kioq/yoqKv8jIyP/Kioq/w==";
             spaceSeparatorHorizontal1.Font = new Font("Verdana", 8F);
             spaceSeparatorHorizontal1.Image = null;
-            spaceSeparatorHorizontal1.Location = new Point(30, 261);
+            spaceSeparatorHorizontal1.Location = new Point(30, 252);
             spaceSeparatorHorizontal1.Name = "spaceSeparatorHorizontal1";
             spaceSeparatorHorizontal1.NoRounding = false;
             spaceSeparatorHorizontal1.Size = new Size(880, 4);
@@ -360,7 +363,7 @@
             // pbSafety1
             // 
             pbSafety1.Image = Properties.Resources.rate_normal;
-            pbSafety1.Location = new Point(68, 313);
+            pbSafety1.Location = new Point(68, 304);
             pbSafety1.Name = "pbSafety1";
             pbSafety1.Size = new Size(30, 31);
             pbSafety1.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -371,7 +374,7 @@
             // pbSafety2
             // 
             pbSafety2.Image = Properties.Resources.rate_normal;
-            pbSafety2.Location = new Point(104, 313);
+            pbSafety2.Location = new Point(104, 304);
             pbSafety2.Name = "pbSafety2";
             pbSafety2.Size = new Size(30, 31);
             pbSafety2.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -382,7 +385,7 @@
             // pbSafety3
             // 
             pbSafety3.Image = Properties.Resources.rate_normal;
-            pbSafety3.Location = new Point(140, 313);
+            pbSafety3.Location = new Point(140, 304);
             pbSafety3.Name = "pbSafety3";
             pbSafety3.Size = new Size(30, 31);
             pbSafety3.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -393,7 +396,7 @@
             // pbSafety4
             // 
             pbSafety4.Image = Properties.Resources.rate_normal;
-            pbSafety4.Location = new Point(176, 313);
+            pbSafety4.Location = new Point(176, 304);
             pbSafety4.Name = "pbSafety4";
             pbSafety4.Size = new Size(30, 31);
             pbSafety4.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -404,7 +407,7 @@
             // pbSafety5
             // 
             pbSafety5.Image = Properties.Resources.rate_normal;
-            pbSafety5.Location = new Point(212, 313);
+            pbSafety5.Location = new Point(212, 304);
             pbSafety5.Name = "pbSafety5";
             pbSafety5.Size = new Size(30, 31);
             pbSafety5.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -416,7 +419,7 @@
             // 
             lblSafety.BackColor = Color.FromArgb(230, 249, 255);
             lblSafety.Font = new Font("Inter SemiBold", 13.5F, FontStyle.Bold);
-            lblSafety.Location = new Point(68, 346);
+            lblSafety.Location = new Point(68, 337);
             lblSafety.Name = "lblSafety";
             lblSafety.Size = new Size(174, 26);
             lblSafety.TabIndex = 56;
@@ -428,7 +431,7 @@
             // 
             lblSmoothness.BackColor = Color.FromArgb(230, 249, 255);
             lblSmoothness.Font = new Font("Inter SemiBold", 13.5F, FontStyle.Bold);
-            lblSmoothness.Location = new Point(73, 456);
+            lblSmoothness.Location = new Point(73, 447);
             lblSmoothness.Name = "lblSmoothness";
             lblSmoothness.Size = new Size(169, 26);
             lblSmoothness.TabIndex = 63;
@@ -439,7 +442,7 @@
             // pbSmoothness5
             // 
             pbSmoothness5.Image = Properties.Resources.rate_normal;
-            pbSmoothness5.Location = new Point(217, 423);
+            pbSmoothness5.Location = new Point(217, 414);
             pbSmoothness5.Name = "pbSmoothness5";
             pbSmoothness5.Size = new Size(30, 31);
             pbSmoothness5.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -450,7 +453,7 @@
             // pbSmoothness4
             // 
             pbSmoothness4.Image = Properties.Resources.rate_normal;
-            pbSmoothness4.Location = new Point(181, 423);
+            pbSmoothness4.Location = new Point(181, 414);
             pbSmoothness4.Name = "pbSmoothness4";
             pbSmoothness4.Size = new Size(30, 31);
             pbSmoothness4.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -461,7 +464,7 @@
             // pbSmoothness3
             // 
             pbSmoothness3.Image = Properties.Resources.rate_normal;
-            pbSmoothness3.Location = new Point(145, 423);
+            pbSmoothness3.Location = new Point(145, 414);
             pbSmoothness3.Name = "pbSmoothness3";
             pbSmoothness3.Size = new Size(30, 31);
             pbSmoothness3.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -472,7 +475,7 @@
             // pbSmoothness2
             // 
             pbSmoothness2.Image = Properties.Resources.rate_normal;
-            pbSmoothness2.Location = new Point(109, 423);
+            pbSmoothness2.Location = new Point(109, 414);
             pbSmoothness2.Name = "pbSmoothness2";
             pbSmoothness2.Size = new Size(30, 31);
             pbSmoothness2.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -483,7 +486,7 @@
             // pbSmoothness1
             // 
             pbSmoothness1.Image = Properties.Resources.rate_normal;
-            pbSmoothness1.Location = new Point(73, 423);
+            pbSmoothness1.Location = new Point(73, 414);
             pbSmoothness1.Name = "pbSmoothness1";
             pbSmoothness1.Size = new Size(30, 31);
             pbSmoothness1.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -496,7 +499,7 @@
             label7.AutoSize = true;
             label7.BackColor = Color.FromArgb(230, 249, 255);
             label7.Font = new Font("Inter SemiBold", 13.5F, FontStyle.Bold);
-            label7.Location = new Point(30, 385);
+            label7.Location = new Point(30, 376);
             label7.Name = "label7";
             label7.Size = new Size(195, 26);
             label7.TabIndex = 57;
@@ -506,7 +509,7 @@
             // 
             lblSpeed.BackColor = Color.FromArgb(230, 249, 255);
             lblSpeed.Font = new Font("Inter SemiBold", 13.5F, FontStyle.Bold);
-            lblSpeed.Location = new Point(73, 566);
+            lblSpeed.Location = new Point(73, 557);
             lblSpeed.Name = "lblSpeed";
             lblSpeed.Size = new Size(174, 26);
             lblSpeed.TabIndex = 69;
@@ -517,7 +520,7 @@
             // pbSpeed4
             // 
             pbSpeed4.Image = Properties.Resources.rate_normal;
-            pbSpeed4.Location = new Point(181, 533);
+            pbSpeed4.Location = new Point(181, 524);
             pbSpeed4.Name = "pbSpeed4";
             pbSpeed4.Size = new Size(30, 31);
             pbSpeed4.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -528,7 +531,7 @@
             // pbSpeed3
             // 
             pbSpeed3.Image = Properties.Resources.rate_normal;
-            pbSpeed3.Location = new Point(145, 533);
+            pbSpeed3.Location = new Point(145, 524);
             pbSpeed3.Name = "pbSpeed3";
             pbSpeed3.Size = new Size(30, 31);
             pbSpeed3.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -539,7 +542,7 @@
             // pbSpeed2
             // 
             pbSpeed2.Image = Properties.Resources.rate_normal;
-            pbSpeed2.Location = new Point(109, 533);
+            pbSpeed2.Location = new Point(109, 524);
             pbSpeed2.Name = "pbSpeed2";
             pbSpeed2.Size = new Size(30, 31);
             pbSpeed2.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -550,7 +553,7 @@
             // pbSpeed1
             // 
             pbSpeed1.Image = Properties.Resources.rate_normal;
-            pbSpeed1.Location = new Point(73, 533);
+            pbSpeed1.Location = new Point(73, 524);
             pbSpeed1.Name = "pbSpeed1";
             pbSpeed1.Size = new Size(30, 31);
             pbSpeed1.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -563,7 +566,7 @@
             label9.AutoSize = true;
             label9.BackColor = Color.FromArgb(230, 249, 255);
             label9.Font = new Font("Inter SemiBold", 13.5F, FontStyle.Bold);
-            label9.Location = new Point(30, 495);
+            label9.Location = new Point(30, 486);
             label9.Name = "label9";
             label9.Size = new Size(74, 26);
             label9.TabIndex = 64;
@@ -573,7 +576,7 @@
             // 
             lblComfortability.BackColor = Color.FromArgb(230, 249, 255);
             lblComfortability.Font = new Font("Inter SemiBold", 13.5F, FontStyle.Bold);
-            lblComfortability.Location = new Point(507, 346);
+            lblComfortability.Location = new Point(507, 337);
             lblComfortability.Name = "lblComfortability";
             lblComfortability.Size = new Size(174, 26);
             lblComfortability.TabIndex = 75;
@@ -584,49 +587,53 @@
             // pbComfortability4
             // 
             pbComfortability4.Image = Properties.Resources.rate_normal;
-            pbComfortability4.Location = new Point(615, 313);
+            pbComfortability4.Location = new Point(615, 304);
             pbComfortability4.Name = "pbComfortability4";
             pbComfortability4.Size = new Size(30, 31);
             pbComfortability4.SizeMode = PictureBoxSizeMode.CenterImage;
             pbComfortability4.TabIndex = 74;
             pbComfortability4.TabStop = false;
+            pbComfortability4.Click += pbComfortability4_Click;
             // 
             // pbComfortability3
             // 
             pbComfortability3.Image = Properties.Resources.rate_normal;
-            pbComfortability3.Location = new Point(579, 313);
+            pbComfortability3.Location = new Point(579, 304);
             pbComfortability3.Name = "pbComfortability3";
             pbComfortability3.Size = new Size(30, 31);
             pbComfortability3.SizeMode = PictureBoxSizeMode.CenterImage;
             pbComfortability3.TabIndex = 73;
             pbComfortability3.TabStop = false;
+            pbComfortability3.Click += pbComfortability3_Click;
             // 
             // pbComfortability2
             // 
             pbComfortability2.Image = Properties.Resources.rate_normal;
-            pbComfortability2.Location = new Point(543, 313);
+            pbComfortability2.Location = new Point(543, 304);
             pbComfortability2.Name = "pbComfortability2";
             pbComfortability2.Size = new Size(30, 31);
             pbComfortability2.SizeMode = PictureBoxSizeMode.CenterImage;
             pbComfortability2.TabIndex = 72;
             pbComfortability2.TabStop = false;
+            pbComfortability2.Click += pbComfortability2_Click;
             // 
             // pbComfortability1
             // 
             pbComfortability1.Image = Properties.Resources.rate_normal;
-            pbComfortability1.Location = new Point(507, 313);
+            pbComfortability1.Location = new Point(507, 304);
             pbComfortability1.Name = "pbComfortability1";
             pbComfortability1.Size = new Size(30, 31);
             pbComfortability1.SizeMode = PictureBoxSizeMode.CenterImage;
             pbComfortability1.TabIndex = 71;
             pbComfortability1.TabStop = false;
+            pbComfortability1.Click += pbComfortability1_Click;
             // 
             // label11
             // 
             label11.AutoSize = true;
             label11.BackColor = Color.FromArgb(230, 249, 255);
             label11.Font = new Font("Inter SemiBold", 13.5F, FontStyle.Bold);
-            label11.Location = new Point(464, 275);
+            label11.Location = new Point(464, 266);
             label11.Name = "label11";
             label11.Size = new Size(227, 26);
             label11.TabIndex = 70;
@@ -636,7 +643,7 @@
             // 
             lblCleanliness.BackColor = Color.FromArgb(230, 249, 255);
             lblCleanliness.Font = new Font("Inter SemiBold", 13.5F, FontStyle.Bold);
-            lblCleanliness.Location = new Point(507, 456);
+            lblCleanliness.Location = new Point(507, 447);
             lblCleanliness.Name = "lblCleanliness";
             lblCleanliness.Size = new Size(174, 26);
             lblCleanliness.TabIndex = 81;
@@ -647,49 +654,53 @@
             // pbCleanliness4
             // 
             pbCleanliness4.Image = Properties.Resources.rate_normal;
-            pbCleanliness4.Location = new Point(615, 423);
+            pbCleanliness4.Location = new Point(615, 414);
             pbCleanliness4.Name = "pbCleanliness4";
             pbCleanliness4.Size = new Size(30, 31);
             pbCleanliness4.SizeMode = PictureBoxSizeMode.CenterImage;
             pbCleanliness4.TabIndex = 80;
             pbCleanliness4.TabStop = false;
+            pbCleanliness4.Click += pbCleanliness4_Click;
             // 
             // pbCleanliness3
             // 
             pbCleanliness3.Image = Properties.Resources.rate_normal;
-            pbCleanliness3.Location = new Point(579, 423);
+            pbCleanliness3.Location = new Point(579, 414);
             pbCleanliness3.Name = "pbCleanliness3";
             pbCleanliness3.Size = new Size(30, 31);
             pbCleanliness3.SizeMode = PictureBoxSizeMode.CenterImage;
             pbCleanliness3.TabIndex = 79;
             pbCleanliness3.TabStop = false;
+            pbCleanliness3.Click += pbCleanliness3_Click;
             // 
             // pbCleanliness2
             // 
             pbCleanliness2.Image = Properties.Resources.rate_normal;
-            pbCleanliness2.Location = new Point(543, 423);
+            pbCleanliness2.Location = new Point(543, 414);
             pbCleanliness2.Name = "pbCleanliness2";
             pbCleanliness2.Size = new Size(30, 31);
             pbCleanliness2.SizeMode = PictureBoxSizeMode.CenterImage;
             pbCleanliness2.TabIndex = 78;
             pbCleanliness2.TabStop = false;
+            pbCleanliness2.Click += pbCleanliness2_Click;
             // 
             // pbCleanliness1
             // 
             pbCleanliness1.Image = Properties.Resources.rate_normal;
-            pbCleanliness1.Location = new Point(507, 423);
+            pbCleanliness1.Location = new Point(507, 414);
             pbCleanliness1.Name = "pbCleanliness1";
             pbCleanliness1.Size = new Size(30, 31);
             pbCleanliness1.SizeMode = PictureBoxSizeMode.CenterImage;
             pbCleanliness1.TabIndex = 77;
             pbCleanliness1.TabStop = false;
+            pbCleanliness1.Click += pbCleanliness1_Click;
             // 
             // label13
             // 
             label13.AutoSize = true;
             label13.BackColor = Color.FromArgb(230, 249, 255);
             label13.Font = new Font("Inter SemiBold", 13.5F, FontStyle.Bold);
-            label13.Location = new Point(464, 385);
+            label13.Location = new Point(464, 376);
             label13.Name = "label13";
             label13.Size = new Size(206, 26);
             label13.TabIndex = 76;
@@ -699,7 +710,7 @@
             // 
             lblSatisfaction.BackColor = Color.FromArgb(230, 249, 255);
             lblSatisfaction.Font = new Font("Inter SemiBold", 13.5F, FontStyle.Bold);
-            lblSatisfaction.Location = new Point(507, 566);
+            lblSatisfaction.Location = new Point(507, 557);
             lblSatisfaction.Name = "lblSatisfaction";
             lblSatisfaction.Size = new Size(174, 26);
             lblSatisfaction.TabIndex = 87;
@@ -710,49 +721,53 @@
             // pbSatisfaction4
             // 
             pbSatisfaction4.Image = Properties.Resources.rate_normal;
-            pbSatisfaction4.Location = new Point(615, 533);
+            pbSatisfaction4.Location = new Point(615, 524);
             pbSatisfaction4.Name = "pbSatisfaction4";
             pbSatisfaction4.Size = new Size(30, 31);
             pbSatisfaction4.SizeMode = PictureBoxSizeMode.CenterImage;
             pbSatisfaction4.TabIndex = 86;
             pbSatisfaction4.TabStop = false;
+            pbSatisfaction4.Click += pbSatisfaction4_Click;
             // 
             // pbSatisfaction3
             // 
             pbSatisfaction3.Image = Properties.Resources.rate_normal;
-            pbSatisfaction3.Location = new Point(579, 533);
+            pbSatisfaction3.Location = new Point(579, 524);
             pbSatisfaction3.Name = "pbSatisfaction3";
             pbSatisfaction3.Size = new Size(30, 31);
             pbSatisfaction3.SizeMode = PictureBoxSizeMode.CenterImage;
             pbSatisfaction3.TabIndex = 85;
             pbSatisfaction3.TabStop = false;
+            pbSatisfaction3.Click += pbSatisfaction3_Click;
             // 
             // pbSatisfaction2
             // 
             pbSatisfaction2.Image = Properties.Resources.rate_normal;
-            pbSatisfaction2.Location = new Point(543, 533);
+            pbSatisfaction2.Location = new Point(543, 524);
             pbSatisfaction2.Name = "pbSatisfaction2";
             pbSatisfaction2.Size = new Size(30, 31);
             pbSatisfaction2.SizeMode = PictureBoxSizeMode.CenterImage;
             pbSatisfaction2.TabIndex = 84;
             pbSatisfaction2.TabStop = false;
+            pbSatisfaction2.Click += pbSatisfaction2_Click;
             // 
             // pbSatisfaction1
             // 
             pbSatisfaction1.Image = Properties.Resources.rate_normal;
-            pbSatisfaction1.Location = new Point(507, 533);
+            pbSatisfaction1.Location = new Point(507, 524);
             pbSatisfaction1.Name = "pbSatisfaction1";
             pbSatisfaction1.Size = new Size(30, 31);
             pbSatisfaction1.SizeMode = PictureBoxSizeMode.CenterImage;
             pbSatisfaction1.TabIndex = 83;
             pbSatisfaction1.TabStop = false;
+            pbSatisfaction1.Click += pbSatisfaction1_Click;
             // 
             // label15
             // 
             label15.AutoSize = true;
             label15.BackColor = Color.FromArgb(230, 249, 255);
             label15.Font = new Font("Inter SemiBold", 13.5F, FontStyle.Bold);
-            label15.Location = new Point(464, 495);
+            label15.Location = new Point(464, 486);
             label15.Name = "label15";
             label15.Size = new Size(189, 26);
             label15.TabIndex = 82;
@@ -761,7 +776,7 @@
             // pbSpeed5
             // 
             pbSpeed5.Image = Properties.Resources.rate_normal;
-            pbSpeed5.Location = new Point(217, 532);
+            pbSpeed5.Location = new Point(217, 523);
             pbSpeed5.Name = "pbSpeed5";
             pbSpeed5.Size = new Size(30, 31);
             pbSpeed5.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -772,32 +787,97 @@
             // pbComfortability5
             // 
             pbComfortability5.Image = Properties.Resources.rate_normal;
-            pbComfortability5.Location = new Point(651, 313);
+            pbComfortability5.Location = new Point(651, 304);
             pbComfortability5.Name = "pbComfortability5";
             pbComfortability5.Size = new Size(30, 31);
             pbComfortability5.SizeMode = PictureBoxSizeMode.CenterImage;
             pbComfortability5.TabIndex = 89;
             pbComfortability5.TabStop = false;
+            pbComfortability5.Click += pbComfortability5_Click;
             // 
             // pbCleanliness5
             // 
             pbCleanliness5.Image = Properties.Resources.rate_normal;
-            pbCleanliness5.Location = new Point(651, 422);
+            pbCleanliness5.Location = new Point(651, 413);
             pbCleanliness5.Name = "pbCleanliness5";
             pbCleanliness5.Size = new Size(30, 31);
             pbCleanliness5.SizeMode = PictureBoxSizeMode.CenterImage;
             pbCleanliness5.TabIndex = 90;
             pbCleanliness5.TabStop = false;
+            pbCleanliness5.Click += pbCleanliness5_Click;
             // 
             // pbSatisfaction5
             // 
             pbSatisfaction5.Image = Properties.Resources.rate_normal;
-            pbSatisfaction5.Location = new Point(651, 533);
+            pbSatisfaction5.Location = new Point(651, 524);
             pbSatisfaction5.Name = "pbSatisfaction5";
             pbSatisfaction5.Size = new Size(30, 31);
             pbSatisfaction5.SizeMode = PictureBoxSizeMode.CenterImage;
             pbSatisfaction5.TabIndex = 91;
             pbSatisfaction5.TabStop = false;
+            pbSatisfaction5.Click += pbSatisfaction5_Click;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = Color.FromArgb(230, 249, 255);
+            label8.Font = new Font("Inter SemiBold", 13.5F, FontStyle.Bold);
+            label8.Location = new Point(30, 596);
+            label8.Name = "label8";
+            label8.Size = new Size(112, 26);
+            label8.TabIndex = 93;
+            label8.Text = "Comments:";
+            // 
+            // rtbxComment
+            // 
+            rtbxComment.BorderStyle = BorderStyle.None;
+            rtbxComment.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rtbxComment.Location = new Point(68, 628);
+            rtbxComment.Name = "rtbxComment";
+            rtbxComment.Size = new Size(842, 96);
+            rtbxComment.TabIndex = 94;
+            rtbxComment.Text = "";
+            // 
+            // btnSubmitReport
+            // 
+            btnSubmitReport.Alpha = 20;
+            btnSubmitReport.BackColor = Color.Transparent;
+            btnSubmitReport.Background = true;
+            btnSubmitReport.Background_WidthPen = 4F;
+            btnSubmitReport.BackgroundPen = true;
+            btnSubmitReport.ColorBackground = Color.FromArgb(24, 60, 114);
+            btnSubmitReport.ColorBackground_1 = Color.FromArgb(24, 60, 114);
+            btnSubmitReport.ColorBackground_2 = Color.FromArgb(24, 60, 114);
+            btnSubmitReport.ColorBackground_Pen = Color.FromArgb(153, 229, 255);
+            btnSubmitReport.ColorLighting = Color.FromArgb(24, 60, 114);
+            btnSubmitReport.ColorPen_1 = Color.FromArgb(24, 60, 114);
+            btnSubmitReport.ColorPen_2 = Color.FromArgb(24, 60, 114);
+            btnSubmitReport.Cursor = Cursors.Hand;
+            btnSubmitReport.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            btnSubmitReport.Effect_1 = true;
+            btnSubmitReport.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            btnSubmitReport.Effect_1_Transparency = 25;
+            btnSubmitReport.Effect_2 = true;
+            btnSubmitReport.Effect_2_ColorBackground = Color.White;
+            btnSubmitReport.Effect_2_Transparency = 20;
+            btnSubmitReport.Font = new Font("Inter", 12.25F);
+            btnSubmitReport.ForeColor = Color.FromArgb(245, 245, 245);
+            btnSubmitReport.Lighting = false;
+            btnSubmitReport.LinearGradient_Background = false;
+            btnSubmitReport.LinearGradientPen = false;
+            btnSubmitReport.Location = new Point(342, 744);
+            btnSubmitReport.Name = "btnSubmitReport";
+            btnSubmitReport.PenWidth = 15;
+            btnSubmitReport.Rounding = true;
+            btnSubmitReport.RoundingInt = 70;
+            btnSubmitReport.Size = new Size(267, 44);
+            btnSubmitReport.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            btnSubmitReport.TabIndex = 95;
+            btnSubmitReport.Tag = "Cyber";
+            btnSubmitReport.TextButton = "Submit";
+            btnSubmitReport.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            btnSubmitReport.Timer_Effect_1 = 5;
+            btnSubmitReport.Timer_RGB = 300;
             // 
             // Rate
             // 
@@ -805,6 +885,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
             ClientSize = new Size(988, 800);
+            Controls.Add(btnSubmitReport);
+            Controls.Add(rtbxComment);
+            Controls.Add(label8);
             Controls.Add(pbSatisfaction5);
             Controls.Add(pbCleanliness5);
             Controls.Add(pbComfortability5);
@@ -966,5 +1049,9 @@
         private PictureBox pictureBox10;
         private PictureBox pbSatisfaction5;
         private PictureBox pbCleanliness5;
+        private Label label6;
+        private Label label8;
+        private RichTextBox rtbxComment;
+        private ReaLTaiizor.Controls.CyberButton btnSubmitReport;
     }
 }
