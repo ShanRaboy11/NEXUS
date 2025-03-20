@@ -35,19 +35,19 @@
             pbJeepDestination = new PictureBox();
             label3 = new Label();
             label4 = new Label();
-            label5 = new Label();
+            cyberRichTextBox1 = new ReaLTaiizor.Controls.CyberRichTextBox();
             ((System.ComponentModel.ISupportInitialize)pbJeepDestination).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
-            label1.Font = new Font("Inter ExtraBold", 23F, FontStyle.Bold);
+            label1.Font = new Font("Inter ExtraBold", 20F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(38, 36, 68);
-            label1.Location = new Point(12, 3);
+            label1.Location = new Point(12, 12);
             label1.Name = "label1";
-            label1.Size = new Size(282, 44);
+            label1.Size = new Size(614, 44);
             label1.TabIndex = 20;
-            label1.Text = "ROUTE FINDER";
+            label1.Text = "Welcome to the NEXUS Route Finder!";
             // 
             // label2
             // 
@@ -87,38 +87,56 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.BackColor = Color.FromArgb(230, 249, 255);
-            label3.Font = new Font("Inter", 14.25F);
+            label3.BackColor = Color.FromArgb(153, 229, 255);
+            label3.Font = new Font("Inter", 13F);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(85, 68);
+            label3.Location = new Point(70, 87);
             label3.Name = "label3";
-            label3.Size = new Size(778, 27);
+            label3.Size = new Size(783, 26);
             label3.TabIndex = 27;
-            label3.Text = "Welcome to the NEXUS Route Finder! This panel helps you navigate the city with ease";
+            label3.Text = "This panel helps you navigate the city with easeby providing the most efficient public utility";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.BackColor = Color.FromArgb(230, 249, 255);
-            label4.Font = new Font("Inter", 14.25F);
+            label4.BackColor = Color.FromArgb(153, 229, 255);
+            label4.Font = new Font("Inter", 12.5F);
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(85, 117);
+            label4.Location = new Point(70, 135);
             label4.Name = "label4";
-            label4.Size = new Size(791, 27);
+            label4.Size = new Size(837, 24);
             label4.TabIndex = 28;
-            label4.Text = "by providing the most efficient public utility vehicle (PUV) routes. Discover route codes";
+            label4.Text = "vehicle (PUV) routes. Discover route codes and directions to plan your trip smoothly and conveniently.";
             // 
-            // label5
+            // cyberRichTextBox1
             // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.FromArgb(230, 249, 255);
-            label5.Font = new Font("Inter", 14.25F);
-            label5.ForeColor = Color.Black;
-            label5.Location = new Point(85, 164);
-            label5.Name = "label5";
-            label5.Size = new Size(532, 27);
-            label5.TabIndex = 29;
-            label5.Text = "and directions to plan your trip smoothly and conveniently";
+            cyberRichTextBox1.Alpha = 20;
+            cyberRichTextBox1.BackColor = Color.Transparent;
+            cyberRichTextBox1.Background_WidthPen = 3F;
+            cyberRichTextBox1.BackgroundPen = true;
+            cyberRichTextBox1.ColorBackground = Color.FromArgb(153, 229, 255);
+            cyberRichTextBox1.ColorBackground_Pen = Color.FromArgb(29, 200, 238);
+            cyberRichTextBox1.ColorLighting = Color.FromArgb(29, 200, 238);
+            cyberRichTextBox1.ColorPen_1 = Color.FromArgb(29, 200, 238);
+            cyberRichTextBox1.ColorPen_2 = Color.FromArgb(37, 52, 68);
+            cyberRichTextBox1.CyberRichTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            cyberRichTextBox1.Font = new Font("Arial", 11F);
+            cyberRichTextBox1.ForeColor = Color.FromArgb(245, 245, 245);
+            cyberRichTextBox1.Lighting = false;
+            cyberRichTextBox1.LinearGradientPen = false;
+            cyberRichTextBox1.Location = new Point(52, 64);
+            cyberRichTextBox1.Name = "cyberRichTextBox1";
+            cyberRichTextBox1.PenWidth = 15;
+            cyberRichTextBox1.RGB = false;
+            cyberRichTextBox1.Rounding = true;
+            cyberRichTextBox1.RoundingInt = 60;
+            cyberRichTextBox1.Size = new Size(874, 119);
+            cyberRichTextBox1.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            cyberRichTextBox1.TabIndex = 44;
+            cyberRichTextBox1.Tag = "Cyber";
+            cyberRichTextBox1.TextButton = "";
+            cyberRichTextBox1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            cyberRichTextBox1.Timer_RGB = 300;
             // 
             // RouteFinder
             // 
@@ -126,13 +144,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
             ClientSize = new Size(988, 739);
-            Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(pbJeepDestination);
             Controls.Add(cmbxJeepCodes);
             Controls.Add(label2);
             Controls.Add(label1);
+            Controls.Add(cyberRichTextBox1);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "RouteFinder";
@@ -150,6 +168,6 @@
         private PictureBox pbJeepDestination;
         private Label label3;
         private Label label4;
-        private Label label5;
+        private ReaLTaiizor.Controls.CyberRichTextBox cyberRichTextBox1;
     }
 }
