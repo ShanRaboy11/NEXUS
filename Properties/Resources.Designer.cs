@@ -173,6 +173,26 @@ namespace NEXUS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _115762_calendar_date_event_month_icon {
+            get {
+                object obj = ResourceManager.GetObject("115762_calendar_date_event_month_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1814097_clock_schedule_time_icon__1_ {
+            get {
+                object obj = ResourceManager.GetObject("1814097_clock_schedule_time_icon (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _1904659_arrow_backup_down_download_save_icon {
             get {
                 object obj = ResourceManager.GetObject("1904659_arrow_backup_down_download_save_icon", resourceCulture);
@@ -226,6 +246,16 @@ namespace NEXUS.Properties {
         internal static System.Drawing.Bitmap _8530693_window_maximize_icon__1_ {
             get {
                 object obj = ResourceManager.GetObject("8530693_window_maximize_icon (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _8608569_ecommerce_pesos_icon {
+            get {
+                object obj = ResourceManager.GetObject("8608569_ecommerce_pesos_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -376,6 +406,16 @@ namespace NEXUS.Properties {
         internal static System.Drawing.Bitmap home_normal {
             get {
                 object obj = ResourceManager.GetObject("home_normal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap jeepcode {
+            get {
+                object obj = ResourceManager.GetObject("jeepcode", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -636,6 +676,36 @@ namespace NEXUS.Properties {
         internal static System.Drawing.Bitmap SuccessfulIcon {
             get {
                 object obj = ResourceManager.GetObject("SuccessfulIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap white_calendar {
+            get {
+                object obj = ResourceManager.GetObject("white_calendar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap white_clock {
+            get {
+                object obj = ResourceManager.GetObject("white_clock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap white_pesos {
+            get {
+                object obj = ResourceManager.GetObject("white_pesos", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
