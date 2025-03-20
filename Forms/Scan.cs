@@ -18,7 +18,7 @@ namespace NEXUS.Forms
             InitializeComponent();
         }
 
-        public void ShowOverlay(Form newForm)
+        public void ShowOverlay(Form newForm, Form dialog)
         {
             var overlayForm = new Form();
             overlayForm.StartPosition = FormStartPosition.CenterScreen;
@@ -29,15 +29,27 @@ namespace NEXUS.Forms
             overlayForm.Location = this.Location;
             overlayForm.ShowInTaskbar = false;
 
-            overlayForm.Show();
-            newForm.FormClosed += (s, args) => overlayForm.Close();
-            newForm.Show();
+            if (dialog != null)
+            {
+                overlayForm.Show();
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    dialog.Close();
+                    overlayForm.Close();
+                }
+            }
+            else
+            {
+                overlayForm.Show();
+                newForm.FormClosed += (s, args) => overlayForm.Close();
+                newForm.Show();
+            }
         }
 
         private void btnOpenQRScan_Click(object sender, EventArgs e)
         {
             QRScannerForm qRScannerForm = new QRScannerForm();
-            ShowOverlay(qRScannerForm);
+            ShowOverlay(qRScannerForm,null);
             qRScannerForm.FormClosed += (s, args) => this.Show();
         }
     }

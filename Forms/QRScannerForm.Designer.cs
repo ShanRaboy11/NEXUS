@@ -58,10 +58,10 @@
             // picCam
             // 
             picCam.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            picCam.Location = new Point(60, 158);
+            picCam.Location = new Point(36, 158);
             picCam.Name = "picCam";
-            picCam.Size = new Size(719, 406);
-            picCam.SizeMode = PictureBoxSizeMode.CenterImage;
+            picCam.Size = new Size(769, 406);
+            picCam.SizeMode = PictureBoxSizeMode.Zoom;
             picCam.TabIndex = 0;
             picCam.TabStop = false;
             // 

@@ -187,7 +187,6 @@ namespace NEXUS.Forms
             {
                 dialogBox.ShowIcon("blank");
                 overlayForm(this, dialogBox);
-                //dialogBox.Show();
                 return;
             }
             else

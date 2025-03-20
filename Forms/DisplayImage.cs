@@ -16,7 +16,7 @@ namespace NEXUS.Forms
         public DisplayImage(Image image)
         {
             InitializeComponent();
-            scan.ShowOverlay(this);
+            scan.ShowOverlay(this,null);
             pbImageUploaded.Image = image;
         }
 

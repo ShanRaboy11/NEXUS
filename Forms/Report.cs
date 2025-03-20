@@ -39,23 +39,24 @@ namespace NEXUS.Forms
         private void btnSubmitReport_Click(object sender, EventArgs e)
         {
             DialogBox dialogBox = new DialogBox();
+            Scan scan = new Scan();
+
             if (dtIncidentDate == null || cmbxNature == null ||
                 string.IsNullOrEmpty(tbxLocation.Text) || string.IsNullOrEmpty(rtbxIncidentDescription.Text))
             {
                 dialogBox.ShowIcon("blank");
-                dialogBox.Show();
+                scan.ShowOverlay(this,dialogBox);
             }
             else
             {
                 dialogBox.ShowIcon("report");
-                if (dialogBox.ShowDialog() == DialogResult.OK)
-                {
-                    dtIncidentDate.Value = DateTime.Now;
-                    lblFileName.Text = string.Empty;
-                    tbxLocation.Text = string.Empty;
-                    rtbxIncidentDescription.Text = string.Empty;
-                    cmbxNature.SelectedIndex = -1;
-                }
+                scan.ShowOverlay(this,dialogBox);
+
+                dtIncidentDate.Value = DateTime.Now;
+                lblFileName.Text = string.Empty;
+                tbxLocation.Text = string.Empty;
+                rtbxIncidentDescription.Text = string.Empty;
+                cmbxNature.SelectedIndex = -1;
             }
         }
 

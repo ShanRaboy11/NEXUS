@@ -59,9 +59,11 @@ namespace NEXUS.Forms
         private void pbAbout_Click(object sender, EventArgs e)
         {
             About about = new About();
+            Scan scan = new Scan();
+
+            scan.ShowOverlay(about, null);
             about.FormClosed += (s, args) => this.Show();
             about.Owner = this;
-            about.Show();
         }
 
         private void btnScan_Click(object sender, EventArgs e)
@@ -283,10 +285,9 @@ namespace NEXUS.Forms
         {
             WheelTokens wheelTokens = new WheelTokens();
             Scan scan = new Scan();
-            scan.ShowOverlay(wheelTokens);
+            scan.ShowOverlay(wheelTokens,null);
             wheelTokens.FormClosed += (s, args) => this.Show();
             wheelTokens.Owner = this;
-            wheelTokens.Show();
         }
     }
 }
