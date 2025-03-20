@@ -106,6 +106,7 @@ namespace NEXUS.Forms
 
                 this.Invoke(new Action(() =>
                 {
+                    pbClose_Click(null, EventArgs.Empty);
                     dashboard.OpenChildForm(paymentForm);
                 }));
             }

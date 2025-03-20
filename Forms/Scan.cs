@@ -49,8 +49,24 @@ namespace NEXUS.Forms
         private void btnOpenQRScan_Click(object sender, EventArgs e)
         {
             QRScannerForm qRScannerForm = new QRScannerForm();
-            ShowOverlay(qRScannerForm,null);
+            ShowOverlay(qRScannerForm, null);
             qRScannerForm.FormClosed += (s, args) => this.Show();
+        }
+
+        private void btnUploadQR_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
+                openFileDialog.Title = "Select an Image";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    btnUploadQR.SizeMode = PictureBoxSizeMode.Zoom;
+                    btnUploadQR.Image = Image.FromFile(openFileDialog.FileName);
+                    lblUpload.Visible = false;
+                }
+            }
         }
     }
 }
