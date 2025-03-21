@@ -89,9 +89,9 @@ namespace NEXUS.Forms
 
         private void btnHistory_Click(object sender, EventArgs e)
         {
-            History history = new History();
+            DriverHistory driverHistory = new DriverHistory();
             SelectButton(btnHistory1);
-            OpenChildForm(history);
+            OpenChildForm(driverHistory);
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
