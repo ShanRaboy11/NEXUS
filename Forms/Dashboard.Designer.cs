@@ -755,6 +755,7 @@
             pbProfile.SizeMode = PictureBoxSizeMode.CenterImage;
             pbProfile.TabIndex = 33;
             pbProfile.TabStop = false;
+            pbProfile.Click += pbProfile_Click;
             // 
             // pictureBox5
             // 

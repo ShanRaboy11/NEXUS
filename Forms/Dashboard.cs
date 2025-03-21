@@ -15,7 +15,7 @@ namespace NEXUS.Forms
 {
     public partial class Dashboard : Form
     {
-        
+
         bool sidebarExpand = false;
         private Form currentChildForm;
         private FontAwesome.Sharp.IconButton selectedButton = null;
@@ -268,9 +268,16 @@ namespace NEXUS.Forms
         {
             WheelTokens wheelTokens = new WheelTokens();
             Scan scan = new Scan();
-            scan.ShowOverlay(wheelTokens,null);
+            scan.ShowOverlay(wheelTokens, null);
             wheelTokens.FormClosed += (s, args) => this.Show();
             wheelTokens.Owner = this;
+        }
+
+        private void pbProfile_Click(object sender, EventArgs e)
+        {
+            Profile profile = new Profile();
+            Scan scan = new Scan();
+            scan.ShowOverlay(profile, null);
         }
     }
 }

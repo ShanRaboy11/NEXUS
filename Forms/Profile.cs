@@ -16,5 +16,15 @@ namespace NEXUS.Forms
         {
             InitializeComponent();
         }
+
+        private void pbCloseee_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
