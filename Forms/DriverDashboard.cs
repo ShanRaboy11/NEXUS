@@ -83,8 +83,9 @@ namespace NEXUS.Forms
 
         private void btnGraph_Click(object sender, EventArgs e)
         {
+            Analytics analytics = new Analytics();
             SelectButton(btnGraph);
-
+            OpenChildForm(analytics);
         }
 
         private void btnHistory_Click(object sender, EventArgs e)
