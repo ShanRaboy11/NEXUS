@@ -1,0 +1,565 @@
+﻿namespace NEXUS.Forms
+{
+    partial class Register2
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register2));
+            label5 = new Label();
+            pnlRole = new Panel();
+            rbtnDriver = new ReaLTaiizor.Controls.HopeRadioButton();
+            rbtnPassenger = new ReaLTaiizor.Controls.HopeRadioButton();
+            panel12 = new Panel();
+            panel10 = new Panel();
+            btnSignUp = new ReaLTaiizor.Controls.Button();
+            label7 = new Label();
+            label4 = new Label();
+            cmbxYear = new ComboBox();
+            cmbxDay = new ComboBox();
+            cmbxMonth = new ComboBox();
+            label3 = new Label();
+            panel8 = new Panel();
+            rbtnFemale = new ReaLTaiizor.Controls.HopeRadioButton();
+            rbtnMale = new ReaLTaiizor.Controls.HopeRadioButton();
+            panel7 = new Panel();
+            rbtnNotSay = new ReaLTaiizor.Controls.HopeRadioButton();
+            panel5 = new Panel();
+            panel6 = new Panel();
+            separator1 = new ReaLTaiizor.Controls.Separator();
+            label2 = new Label();
+            label1 = new Label();
+            panel2 = new Panel();
+            pictureBox3 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            pictureBox1 = new PictureBox();
+            label6 = new Label();
+            panel4 = new Panel();
+            btnAttach = new FontAwesome.Sharp.IconButton();
+            tbxIncidentLocation = new TextBox();
+            lblFileName = new Label();
+            pnlRole.SuspendLayout();
+            panel8.SuspendLayout();
+            panel7.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel4.SuspendLayout();
+            SuspendLayout();
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Inter", 10.55F);
+            label5.ForeColor = Color.FromArgb(24, 60, 114);
+            label5.Location = new Point(14, 119);
+            label5.Name = "label5";
+            label5.Size = new Size(83, 22);
+            label5.TabIndex = 83;
+            label5.Text = "User Type";
+            // 
+            // pnlRole
+            // 
+            pnlRole.BackColor = Color.FromArgb(230, 249, 255);
+            pnlRole.BackgroundImageLayout = ImageLayout.None;
+            pnlRole.Controls.Add(rbtnDriver);
+            pnlRole.Controls.Add(rbtnPassenger);
+            pnlRole.Controls.Add(panel12);
+            pnlRole.Controls.Add(panel10);
+            pnlRole.Location = new Point(12, 152);
+            pnlRole.Name = "pnlRole";
+            pnlRole.Size = new Size(390, 55);
+            pnlRole.TabIndex = 82;
+            // 
+            // rbtnDriver
+            // 
+            rbtnDriver.AutoSize = true;
+            rbtnDriver.BackColor = Color.FromArgb(176, 233, 255);
+            rbtnDriver.CheckedColor = Color.FromArgb(64, 158, 255);
+            rbtnDriver.DisabledColor = Color.FromArgb(196, 198, 202);
+            rbtnDriver.DisabledStringColor = Color.FromArgb(186, 187, 189);
+            rbtnDriver.Enable = true;
+            rbtnDriver.EnabledCheckedColor = Color.FromArgb(64, 158, 255);
+            rbtnDriver.EnabledStringColor = Color.FromArgb(146, 146, 146);
+            rbtnDriver.EnabledUncheckedColor = Color.FromArgb(156, 158, 161);
+            rbtnDriver.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rbtnDriver.ForeColor = Color.FromArgb(24, 60, 114);
+            rbtnDriver.Location = new Point(240, 16);
+            rbtnDriver.Name = "rbtnDriver";
+            rbtnDriver.Size = new Size(81, 20);
+            rbtnDriver.TabIndex = 28;
+            rbtnDriver.TabStop = true;
+            rbtnDriver.Text = "Driver";
+            rbtnDriver.UseVisualStyleBackColor = false;
+            // 
+            // rbtnPassenger
+            // 
+            rbtnPassenger.AutoSize = true;
+            rbtnPassenger.BackColor = Color.FromArgb(176, 233, 255);
+            rbtnPassenger.CheckedColor = Color.FromArgb(64, 158, 255);
+            rbtnPassenger.DisabledColor = Color.FromArgb(196, 198, 202);
+            rbtnPassenger.DisabledStringColor = Color.FromArgb(186, 187, 189);
+            rbtnPassenger.Enable = true;
+            rbtnPassenger.EnabledCheckedColor = Color.FromArgb(64, 158, 255);
+            rbtnPassenger.EnabledStringColor = Color.FromArgb(146, 146, 146);
+            rbtnPassenger.EnabledUncheckedColor = Color.FromArgb(156, 158, 161);
+            rbtnPassenger.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rbtnPassenger.ForeColor = Color.FromArgb(24, 60, 114);
+            rbtnPassenger.Location = new Point(27, 16);
+            rbtnPassenger.Name = "rbtnPassenger";
+            rbtnPassenger.Size = new Size(113, 20);
+            rbtnPassenger.TabIndex = 28;
+            rbtnPassenger.TabStop = true;
+            rbtnPassenger.Text = "Passenger";
+            rbtnPassenger.UseVisualStyleBackColor = false;
+            // 
+            // panel12
+            // 
+            panel12.BackColor = Color.FromArgb(176, 233, 255);
+            panel12.BackgroundImageLayout = ImageLayout.None;
+            panel12.Location = new Point(14, 3);
+            panel12.Name = "panel12";
+            panel12.Size = new Size(159, 46);
+            panel12.TabIndex = 71;
+            // 
+            // panel10
+            // 
+            panel10.BackColor = Color.FromArgb(176, 233, 255);
+            panel10.BackgroundImageLayout = ImageLayout.None;
+            panel10.Location = new Point(223, 3);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(153, 46);
+            panel10.TabIndex = 69;
+            // 
+            // btnSignUp
+            // 
+            btnSignUp.BackColor = Color.FromArgb(24, 60, 114);
+            btnSignUp.BorderColor = Color.FromArgb(24, 60, 114);
+            btnSignUp.EnteredBorderColor = Color.FromArgb(255, 192, 192);
+            btnSignUp.EnteredColor = Color.FromArgb(24, 60, 114);
+            btnSignUp.Font = new Font("Inter Medium", 12.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            btnSignUp.Image = null;
+            btnSignUp.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSignUp.InactiveColor = Color.FromArgb(24, 60, 114);
+            btnSignUp.Location = new Point(157, 528);
+            btnSignUp.Name = "btnSignUp";
+            btnSignUp.PressedBorderColor = Color.FromArgb(176, 233, 255);
+            btnSignUp.PressedColor = Color.FromArgb(176, 233, 255);
+            btnSignUp.Size = new Size(215, 40);
+            btnSignUp.TabIndex = 81;
+            btnSignUp.Text = "Sign Up";
+            btnSignUp.TextAlignment = StringAlignment.Center;
+            btnSignUp.Click += btnSignUp_Click;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Inter", 10F);
+            label7.ForeColor = Color.DimGray;
+            label7.Location = new Point(46, 497);
+            label7.Name = "label7";
+            label7.Size = new Size(425, 21);
+            label7.TabIndex = 80;
+            label7.Text = "By signing up, you agree to our Privacy Policy and Data Usage.";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Inter", 10.55F);
+            label4.ForeColor = Color.FromArgb(24, 60, 114);
+            label4.Location = new Point(15, 298);
+            label4.Name = "label4";
+            label4.Size = new Size(111, 22);
+            label4.TabIndex = 78;
+            label4.Text = "Classification:";
+            // 
+            // cmbxYear
+            // 
+            cmbxYear.BackColor = Color.FromArgb(176, 233, 255);
+            cmbxYear.Font = new Font("Inter", 11.25F);
+            cmbxYear.ForeColor = Color.FromArgb(24, 60, 114);
+            cmbxYear.FormattingEnabled = true;
+            cmbxYear.Items.AddRange(new object[] { "1950", "1951", "1952", "1953", "1954", "1955", "1956", "1957", "1958", "1959", "1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025" });
+            cmbxYear.Location = new Point(348, 252);
+            cmbxYear.Name = "cmbxYear";
+            cmbxYear.Size = new Size(145, 30);
+            cmbxYear.TabIndex = 77;
+            cmbxYear.Text = "Year";
+            // 
+            // cmbxDay
+            // 
+            cmbxDay.BackColor = Color.FromArgb(176, 233, 255);
+            cmbxDay.Font = new Font("Inter", 11.25F);
+            cmbxDay.ForeColor = Color.FromArgb(24, 60, 114);
+            cmbxDay.FormattingEnabled = true;
+            cmbxDay.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" });
+            cmbxDay.Location = new Point(211, 252);
+            cmbxDay.Name = "cmbxDay";
+            cmbxDay.Size = new Size(123, 30);
+            cmbxDay.TabIndex = 76;
+            cmbxDay.Text = "Day";
+            // 
+            // cmbxMonth
+            // 
+            cmbxMonth.BackColor = Color.FromArgb(176, 233, 255);
+            cmbxMonth.Font = new Font("Inter", 11.25F);
+            cmbxMonth.ForeColor = Color.FromArgb(24, 60, 114);
+            cmbxMonth.FormattingEnabled = true;
+            cmbxMonth.Items.AddRange(new object[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" });
+            cmbxMonth.Location = new Point(27, 252);
+            cmbxMonth.Name = "cmbxMonth";
+            cmbxMonth.Size = new Size(168, 30);
+            cmbxMonth.TabIndex = 75;
+            cmbxMonth.Text = "Month";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Inter", 10.55F);
+            label3.ForeColor = Color.FromArgb(24, 60, 114);
+            label3.Location = new Point(14, 223);
+            label3.Name = "label3";
+            label3.Size = new Size(69, 22);
+            label3.TabIndex = 74;
+            label3.Text = "Birthday";
+            // 
+            // panel8
+            // 
+            panel8.BackColor = Color.FromArgb(230, 249, 255);
+            panel8.BackgroundImageLayout = ImageLayout.None;
+            panel8.Controls.Add(rbtnFemale);
+            panel8.Controls.Add(rbtnMale);
+            panel8.Controls.Add(panel7);
+            panel8.Controls.Add(panel5);
+            panel8.Controls.Add(panel6);
+            panel8.Location = new Point(15, 330);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(511, 55);
+            panel8.TabIndex = 79;
+            // 
+            // rbtnFemale
+            // 
+            rbtnFemale.AutoSize = true;
+            rbtnFemale.BackColor = Color.FromArgb(176, 233, 255);
+            rbtnFemale.CheckedColor = Color.FromArgb(64, 158, 255);
+            rbtnFemale.DisabledColor = Color.FromArgb(196, 198, 202);
+            rbtnFemale.DisabledStringColor = Color.FromArgb(186, 187, 189);
+            rbtnFemale.Enable = true;
+            rbtnFemale.EnabledCheckedColor = Color.FromArgb(64, 158, 255);
+            rbtnFemale.EnabledStringColor = Color.FromArgb(146, 146, 146);
+            rbtnFemale.EnabledUncheckedColor = Color.FromArgb(156, 158, 161);
+            rbtnFemale.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rbtnFemale.ForeColor = Color.FromArgb(24, 60, 114);
+            rbtnFemale.Location = new Point(34, 16);
+            rbtnFemale.Name = "rbtnFemale";
+            rbtnFemale.Size = new Size(92, 20);
+            rbtnFemale.TabIndex = 28;
+            rbtnFemale.TabStop = true;
+            rbtnFemale.Text = "Student";
+            rbtnFemale.UseVisualStyleBackColor = false;
+            // 
+            // rbtnMale
+            // 
+            rbtnMale.AutoSize = true;
+            rbtnMale.BackColor = Color.FromArgb(176, 233, 255);
+            rbtnMale.CheckedColor = Color.FromArgb(64, 158, 255);
+            rbtnMale.DisabledColor = Color.FromArgb(196, 198, 202);
+            rbtnMale.DisabledStringColor = Color.FromArgb(186, 187, 189);
+            rbtnMale.Enable = true;
+            rbtnMale.EnabledCheckedColor = Color.FromArgb(64, 158, 255);
+            rbtnMale.EnabledStringColor = Color.FromArgb(146, 146, 146);
+            rbtnMale.EnabledUncheckedColor = Color.FromArgb(156, 158, 161);
+            rbtnMale.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rbtnMale.ForeColor = Color.FromArgb(24, 60, 114);
+            rbtnMale.Location = new Point(168, 16);
+            rbtnMale.Name = "rbtnMale";
+            rbtnMale.Size = new Size(140, 20);
+            rbtnMale.TabIndex = 28;
+            rbtnMale.TabStop = true;
+            rbtnMale.Text = "Senior Citizen";
+            rbtnMale.UseVisualStyleBackColor = false;
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.FromArgb(176, 233, 255);
+            panel7.BackgroundImageLayout = ImageLayout.None;
+            panel7.Controls.Add(rbtnNotSay);
+            panel7.Location = new Point(341, 6);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(135, 41);
+            panel7.TabIndex = 69;
+            // 
+            // rbtnNotSay
+            // 
+            rbtnNotSay.AutoSize = true;
+            rbtnNotSay.BackColor = Color.FromArgb(176, 233, 255);
+            rbtnNotSay.CheckedColor = Color.FromArgb(64, 158, 255);
+            rbtnNotSay.DisabledColor = Color.FromArgb(196, 198, 202);
+            rbtnNotSay.DisabledStringColor = Color.FromArgb(186, 187, 189);
+            rbtnNotSay.Enable = true;
+            rbtnNotSay.EnabledCheckedColor = Color.FromArgb(64, 158, 255);
+            rbtnNotSay.EnabledStringColor = Color.FromArgb(146, 146, 146);
+            rbtnNotSay.EnabledUncheckedColor = Color.FromArgb(156, 158, 161);
+            rbtnNotSay.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rbtnNotSay.ForeColor = Color.FromArgb(24, 60, 114);
+            rbtnNotSay.Location = new Point(16, 11);
+            rbtnNotSay.Name = "rbtnNotSay";
+            rbtnNotSay.Size = new Size(92, 20);
+            rbtnNotSay.TabIndex = 28;
+            rbtnNotSay.TabStop = true;
+            rbtnNotSay.Text = "Regular";
+            rbtnNotSay.UseVisualStyleBackColor = false;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.FromArgb(176, 233, 255);
+            panel5.BackgroundImageLayout = ImageLayout.None;
+            panel5.Location = new Point(160, 6);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(155, 41);
+            panel5.TabIndex = 70;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.FromArgb(176, 233, 255);
+            panel6.BackgroundImageLayout = ImageLayout.None;
+            panel6.Location = new Point(18, 6);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(123, 41);
+            panel6.TabIndex = 71;
+            // 
+            // separator1
+            // 
+            separator1.LineColor = Color.Gray;
+            separator1.Location = new Point(12, 99);
+            separator1.Name = "separator1";
+            separator1.Size = new Size(469, 20);
+            separator1.TabIndex = 87;
+            separator1.Text = "separator1";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Inter", 10F);
+            label2.ForeColor = Color.DimGray;
+            label2.Location = new Point(15, 75);
+            label2.Name = "label2";
+            label2.Size = new Size(137, 21);
+            label2.TabIndex = 86;
+            label2.Text = "It's quick and easy.";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Inter", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(24, 60, 114);
+            label1.Location = new Point(10, 37);
+            label1.Name = "label1";
+            label1.Size = new Size(116, 39);
+            label1.TabIndex = 85;
+            label1.Text = "Sign up";
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(153, 229, 255);
+            panel2.Controls.Add(pictureBox3);
+            panel2.Controls.Add(pictureBox2);
+            panel2.Controls.Add(pictureBox1);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(506, 28);
+            panel2.TabIndex = 84;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(438, 6);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(14, 14);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 2;
+            pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(407, 4);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(19, 19);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 1;
+            pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(465, 4);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(18, 18);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Inter", 10.55F);
+            label6.ForeColor = Color.FromArgb(24, 60, 114);
+            label6.Location = new Point(20, 399);
+            label6.Name = "label6";
+            label6.Size = new Size(96, 22);
+            label6.TabIndex = 88;
+            label6.Text = "Attachment:";
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.FromArgb(176, 233, 255);
+            panel4.BackgroundImageLayout = ImageLayout.None;
+            panel4.Controls.Add(btnAttach);
+            panel4.Controls.Add(tbxIncidentLocation);
+            panel4.Controls.Add(lblFileName);
+            panel4.Location = new Point(32, 430);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(266, 46);
+            panel4.TabIndex = 89;
+            // 
+            // btnAttach
+            // 
+            btnAttach.IconChar = FontAwesome.Sharp.IconChar.Image;
+            btnAttach.IconColor = Color.Black;
+            btnAttach.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnAttach.IconSize = 30;
+            btnAttach.Location = new Point(208, 6);
+            btnAttach.Name = "btnAttach";
+            btnAttach.Size = new Size(46, 35);
+            btnAttach.TabIndex = 32;
+            btnAttach.UseVisualStyleBackColor = true;
+            // 
+            // tbxIncidentLocation
+            // 
+            tbxIncidentLocation.BackColor = Color.White;
+            tbxIncidentLocation.BorderStyle = BorderStyle.None;
+            tbxIncidentLocation.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbxIncidentLocation.ForeColor = Color.FromArgb(24, 60, 114);
+            tbxIncidentLocation.Location = new Point(396, -349);
+            tbxIncidentLocation.Name = "tbxIncidentLocation";
+            tbxIncidentLocation.Size = new Size(339, 20);
+            tbxIncidentLocation.TabIndex = 10;
+            tbxIncidentLocation.TabStop = false;
+            // 
+            // lblFileName
+            // 
+            lblFileName.Cursor = Cursors.Hand;
+            lblFileName.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblFileName.ForeColor = Color.Gray;
+            lblFileName.Location = new Point(15, 11);
+            lblFileName.Name = "lblFileName";
+            lblFileName.Size = new Size(187, 23);
+            lblFileName.TabIndex = 31;
+            lblFileName.Text = "Attach ID";
+            // 
+            // Register2
+            // 
+            AutoScaleDimensions = new SizeF(7F, 17F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(230, 249, 255);
+            ClientSize = new Size(506, 590);
+            Controls.Add(panel4);
+            Controls.Add(label6);
+            Controls.Add(separator1);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(panel2);
+            Controls.Add(label5);
+            Controls.Add(pnlRole);
+            Controls.Add(btnSignUp);
+            Controls.Add(label7);
+            Controls.Add(label4);
+            Controls.Add(cmbxYear);
+            Controls.Add(cmbxDay);
+            Controls.Add(cmbxMonth);
+            Controls.Add(label3);
+            Controls.Add(panel8);
+            Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "Register2";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Register2";
+            pnlRole.ResumeLayout(false);
+            pnlRole.PerformLayout();
+            panel8.ResumeLayout(false);
+            panel8.PerformLayout();
+            panel7.ResumeLayout(false);
+            panel7.PerformLayout();
+            panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
+        }
+
+        #endregion
+
+        private Label label5;
+        private Panel pnlRole;
+        private ReaLTaiizor.Controls.HopeRadioButton rbtnDriver;
+        private ReaLTaiizor.Controls.HopeRadioButton rbtnPassenger;
+        private Panel panel12;
+        private Panel panel10;
+        private ReaLTaiizor.Controls.Button btnSignUp;
+        private Label label7;
+        private Label label4;
+        private ComboBox cmbxYear;
+        private ComboBox cmbxDay;
+        private ComboBox cmbxMonth;
+        private Label label3;
+        private Panel panel8;
+        private ReaLTaiizor.Controls.HopeRadioButton rbtnFemale;
+        private ReaLTaiizor.Controls.HopeRadioButton rbtnMale;
+        private ReaLTaiizor.Controls.HopeRadioButton rbtnNotSay;
+        private Panel panel7;
+        private Panel panel5;
+        private Panel panel6;
+        private ReaLTaiizor.Controls.Separator separator1;
+        private Label label2;
+        private Label label1;
+        private Panel panel2;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox1;
+        private Label label6;
+        private Panel panel4;
+        private FontAwesome.Sharp.IconButton btnAttach;
+        private TextBox tbxIncidentLocation;
+        private Label lblFileName;
+    }
+}

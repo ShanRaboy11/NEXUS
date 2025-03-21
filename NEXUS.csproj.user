@@ -55,6 +55,9 @@
     <Compile Update="Forms\LogInForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\Register2.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\Report.cs">
       <SubType>Form</SubType>
     </Compile>

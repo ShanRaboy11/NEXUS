@@ -20,9 +20,7 @@ namespace NEXUS.Forms
         public Register()
         {
             InitializeComponent();
-            rbtnDriver.Parent = pnlRole;
-            rbtnPassenger.Parent = pnlRole;
-            panel10.Parent = pnlRole;
+            
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -102,17 +100,12 @@ namespace NEXUS.Forms
         private void btnSignUp_Click(object sender, EventArgs e)
         {
             DialogBox dialogBox = new DialogBox();
+            Register2 register2 = new Register2();
 
             if (string.IsNullOrWhiteSpace(tbxNewFirstName.Text) ||
                 string.IsNullOrWhiteSpace(tbxNewLastName.Text) ||
                 string.IsNullOrWhiteSpace(tbxNewUserName.Text) ||
-                string.IsNullOrWhiteSpace(tbxNewPassword.Text) ||
-                string.IsNullOrWhiteSpace(cmbxMonth.Text) ||
-                string.IsNullOrWhiteSpace(cmbxDay.Text) ||
-                string.IsNullOrWhiteSpace(cmbxYear.Text) ||
-                string.IsNullOrWhiteSpace(tbxEmail.Text) ||
-                (!rbtnFemale.Checked && !rbtnMale.Checked && !rbtnNotSay.Checked) ||
-                (!rbtnDriver.Checked && !rbtnPassenger.Checked))
+                string.IsNullOrWhiteSpace(tbxNewPassword.Text))
             {
 
                 dialogBox.ShowIcon("blank");
@@ -126,17 +119,12 @@ namespace NEXUS.Forms
                 tbxNewLastName.Text,
                 tbxNewUserName.Text,
                 tbxNewPassword.Text,
-                cmbxMonth.Text,
-                cmbxDay.Text,
-                cmbxYear.Text,
                 (rbtnFemale.Checked ? rbtnFemale.Text : rbtnMale.Checked ? rbtnMale.Text : rbtnNotSay.Text)
              };
 
             //add here for initializing the registered infos using userInfo[0];
 
-            dialogBox.ShowIcon("register");
-            logInForm.overlayForm(this, dialogBox);
-            logInForm.Show();
+            register2.Show();
             this.Close();
         }
     }

@@ -32,13 +32,13 @@
             pbProfilePicture = new PictureBox();
             pictureBox2 = new PictureBox();
             panel1 = new Panel();
-            label7 = new Label();
+            lblClassification = new Label();
             label6 = new Label();
-            label5 = new Label();
+            lblUserType = new Label();
             label4 = new Label();
             panel5 = new Panel();
             label3 = new Label();
-            label2 = new Label();
+            lblTokens = new Label();
             lblUserName = new Label();
             label1 = new Label();
             panel2 = new Panel();
@@ -57,11 +57,11 @@
             btnSubmitReport = new ReaLTaiizor.Controls.CyberButton();
             label9 = new Label();
             label10 = new Label();
-            label11 = new Label();
-            lblUserFName = new Label();
-            label12 = new Label();
-            label13 = new Label();
-            label14 = new Label();
+            lblEmail = new Label();
+            lblPassword = new Label();
+            lblBirthday = new Label();
+            lblUser = new Label();
+            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)pbProfilePicture).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
@@ -100,50 +100,50 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(38, 36, 68);
-            panel1.Controls.Add(label7);
+            panel1.Controls.Add(lblClassification);
             panel1.Controls.Add(label6);
-            panel1.Controls.Add(label5);
+            panel1.Controls.Add(lblUserType);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(panel5);
             panel1.Controls.Add(label3);
-            panel1.Controls.Add(label2);
+            panel1.Controls.Add(lblTokens);
             panel1.Location = new Point(75, 274);
             panel1.Name = "panel1";
             panel1.Size = new Size(420, 95);
             panel1.TabIndex = 2;
             // 
-            // label7
+            // lblClassification
             // 
-            label7.Font = new Font("Inter SemiBold", 15.25F, FontStyle.Bold);
-            label7.ForeColor = Color.White;
-            label7.Location = new Point(14, 14);
-            label7.Name = "label7";
-            label7.Size = new Size(126, 34);
-            label7.TabIndex = 40;
-            label7.Text = "Student";
-            label7.TextAlign = ContentAlignment.MiddleCenter;
+            lblClassification.Font = new Font("Inter SemiBold", 15.25F, FontStyle.Bold);
+            lblClassification.ForeColor = Color.White;
+            lblClassification.Location = new Point(6, 14);
+            lblClassification.Name = "lblClassification";
+            lblClassification.Size = new Size(126, 34);
+            lblClassification.TabIndex = 40;
+            lblClassification.Text = "Male";
+            lblClassification.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label6
             // 
             label6.Font = new Font("Inter", 12.25F);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(12, 54);
+            label6.Location = new Point(4, 54);
             label6.Name = "label6";
             label6.Size = new Size(131, 23);
             label6.TabIndex = 39;
-            label6.Text = "Classification";
+            label6.Text = "Gender";
             label6.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // lblUserType
             // 
-            label5.Font = new Font("Inter SemiBold", 15.25F, FontStyle.Bold);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(162, 14);
-            label5.Name = "label5";
-            label5.Size = new Size(128, 34);
-            label5.TabIndex = 38;
-            label5.Text = "Passenger";
-            label5.TextAlign = ContentAlignment.MiddleCenter;
+            lblUserType.Font = new Font("Inter SemiBold", 15.25F, FontStyle.Bold);
+            lblUserType.ForeColor = Color.White;
+            lblUserType.Location = new Point(162, 14);
+            lblUserType.Name = "lblUserType";
+            lblUserType.Size = new Size(128, 34);
+            lblUserType.TabIndex = 38;
+            lblUserType.Text = "Passenger";
+            lblUserType.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
@@ -159,7 +159,7 @@
             // panel5
             // 
             panel5.BackColor = Color.White;
-            panel5.Location = new Point(145, 16);
+            panel5.Location = new Point(135, 16);
             panel5.Name = "panel5";
             panel5.Size = new Size(3, 65);
             panel5.TabIndex = 36;
@@ -168,23 +168,23 @@
             // 
             label3.Font = new Font("Inter", 12.25F);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(324, 55);
+            label3.Location = new Point(326, 55);
             label3.Name = "label3";
             label3.Size = new Size(83, 23);
             label3.TabIndex = 1;
             label3.Text = "Tokens";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // lblTokens
             // 
-            label2.Font = new Font("Inter SemiBold", 15.25F, FontStyle.Bold);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(329, 14);
-            label2.Name = "label2";
-            label2.Size = new Size(70, 34);
-            label2.TabIndex = 0;
-            label2.Text = "8";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
+            lblTokens.Font = new Font("Inter SemiBold", 15.25F, FontStyle.Bold);
+            lblTokens.ForeColor = Color.White;
+            lblTokens.Location = new Point(331, 14);
+            lblTokens.Name = "lblTokens";
+            lblTokens.Size = new Size(70, 34);
+            lblTokens.TabIndex = 0;
+            lblTokens.Text = "8";
+            lblTokens.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblUserName
             // 
@@ -339,7 +339,7 @@
             // panel4
             // 
             panel4.BackColor = Color.White;
-            panel4.Location = new Point(376, 290);
+            panel4.Location = new Point(381, 290);
             panel4.Name = "panel4";
             panel4.Size = new Size(3, 65);
             panel4.TabIndex = 35;
@@ -349,7 +349,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Inter SemiBold", 16F, FontStyle.Bold);
             label8.ForeColor = SystemColors.ControlDarkDark;
-            label8.Location = new Point(57, 406);
+            label8.Location = new Point(55, 452);
             label8.Name = "label8";
             label8.Size = new Size(85, 31);
             label8.TabIndex = 33;
@@ -402,7 +402,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Inter SemiBold", 16F, FontStyle.Bold);
             label9.ForeColor = SystemColors.ControlDarkDark;
-            label9.Location = new Point(57, 556);
+            label9.Location = new Point(57, 552);
             label9.Name = "label9";
             label9.Size = new Size(118, 31);
             label9.TabIndex = 37;
@@ -413,62 +413,66 @@
             label10.AutoSize = true;
             label10.Font = new Font("Inter SemiBold", 16F, FontStyle.Bold);
             label10.ForeColor = SystemColors.ControlDarkDark;
-            label10.Location = new Point(57, 456);
+            label10.Location = new Point(55, 502);
             label10.Name = "label10";
             label10.Size = new Size(132, 31);
             label10.TabIndex = 38;
             label10.Text = "Password :";
             // 
-            // label11
+            // lblEmail
             // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Inter SemiBold", 16F, FontStyle.Bold);
-            label11.ForeColor = SystemColors.ControlDarkDark;
-            label11.Location = new Point(57, 506);
-            label11.Name = "label11";
-            label11.Size = new Size(105, 31);
-            label11.TabIndex = 39;
-            label11.Text = "Gender :";
+            lblEmail.Font = new Font("Inter Medium", 17F, FontStyle.Bold);
+            lblEmail.ForeColor = Color.FromArgb(24, 60, 114);
+            lblEmail.Location = new Point(210, 444);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(327, 44);
+            lblEmail.TabIndex = 40;
+            lblEmail.Text = "angelorivera@gmail.com";
+            lblEmail.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // lblUserFName
+            // lblPassword
             // 
-            lblUserFName.Font = new Font("Inter Medium", 17F, FontStyle.Bold);
-            lblUserFName.ForeColor = Color.FromArgb(24, 60, 114);
-            lblUserFName.Location = new Point(212, 404);
-            lblUserFName.Name = "lblUserFName";
-            lblUserFName.Size = new Size(327, 44);
-            lblUserFName.TabIndex = 40;
-            lblUserFName.Text = "angelorivera@gmail.com";
+            lblPassword.Font = new Font("Inter Medium", 17F, FontStyle.Bold);
+            lblPassword.ForeColor = Color.FromArgb(24, 60, 114);
+            lblPassword.Location = new Point(210, 494);
+            lblPassword.Name = "lblPassword";
+            lblPassword.Size = new Size(327, 44);
+            lblPassword.TabIndex = 41;
+            lblPassword.Text = "angelorivera@gmail.com";
+            lblPassword.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // label12
+            // lblBirthday
             // 
-            label12.Font = new Font("Inter Medium", 17F, FontStyle.Bold);
-            label12.ForeColor = Color.FromArgb(24, 60, 114);
-            label12.Location = new Point(212, 448);
-            label12.Name = "label12";
-            label12.Size = new Size(327, 44);
-            label12.TabIndex = 41;
-            label12.Text = "angelorivera@gmail.com";
+            lblBirthday.Font = new Font("Inter Medium", 17F, FontStyle.Bold);
+            lblBirthday.ForeColor = Color.FromArgb(24, 60, 114);
+            lblBirthday.Location = new Point(210, 544);
+            lblBirthday.Name = "lblBirthday";
+            lblBirthday.Size = new Size(327, 44);
+            lblBirthday.TabIndex = 43;
+            lblBirthday.Text = "angelorivera@gmail.com";
+            lblBirthday.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // label13
+            // lblUser
             // 
-            label13.Font = new Font("Inter Medium", 17F, FontStyle.Bold);
-            label13.ForeColor = Color.FromArgb(24, 60, 114);
-            label13.Location = new Point(212, 493);
-            label13.Name = "label13";
-            label13.Size = new Size(327, 44);
-            label13.TabIndex = 42;
-            label13.Text = "angelorivera@gmail.com";
+            lblUser.Font = new Font("Inter Medium", 17F, FontStyle.Bold);
+            lblUser.ForeColor = Color.FromArgb(24, 60, 114);
+            lblUser.Location = new Point(210, 394);
+            lblUser.Name = "lblUser";
+            lblUser.Size = new Size(327, 44);
+            lblUser.TabIndex = 45;
+            lblUser.Text = "angelorivera@gmail.com";
+            lblUser.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // label14
+            // label5
             // 
-            label14.Font = new Font("Inter Medium", 17F, FontStyle.Bold);
-            label14.ForeColor = Color.FromArgb(24, 60, 114);
-            label14.Location = new Point(212, 543);
-            label14.Name = "label14";
-            label14.Size = new Size(327, 44);
-            label14.TabIndex = 43;
-            label14.Text = "angelorivera@gmail.com";
+            label5.AutoSize = true;
+            label5.Font = new Font("Inter SemiBold", 16F, FontStyle.Bold);
+            label5.ForeColor = SystemColors.ControlDarkDark;
+            label5.Location = new Point(57, 402);
+            label5.Name = "label5";
+            label5.Size = new Size(136, 31);
+            label5.TabIndex = 44;
+            label5.Text = "Username :";
             // 
             // Profile
             // 
@@ -476,11 +480,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
             ClientSize = new Size(577, 667);
-            Controls.Add(label14);
-            Controls.Add(label13);
-            Controls.Add(label12);
-            Controls.Add(lblUserFName);
-            Controls.Add(label11);
+            Controls.Add(lblUser);
+            Controls.Add(label5);
+            Controls.Add(lblBirthday);
+            Controls.Add(lblPassword);
+            Controls.Add(lblEmail);
             Controls.Add(label10);
             Controls.Add(label9);
             Controls.Add(btnSubmitReport);
@@ -534,10 +538,10 @@
         private PictureBox pbCloseee;
         private Panel panel3;
         private Label label3;
-        private Label label2;
-        private Label label7;
+        private Label lblTokens;
+        private Label lblClassification;
         private Label label6;
-        private Label label5;
+        private Label lblUserType;
         private Label label4;
         private Panel panel5;
         private Panel panel4;
@@ -545,10 +549,10 @@
         private ReaLTaiizor.Controls.CyberButton btnSubmitReport;
         private Label label9;
         private Label label10;
-        private Label label11;
-        private Label lblUserFName;
-        private Label label12;
-        private Label label13;
-        private Label label14;
+        private Label lblEmail;
+        private Label lblPassword;
+        private Label lblBirthday;
+        private Label lblUser;
+        private Label label5;
     }
 }
