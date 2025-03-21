@@ -81,6 +81,12 @@ namespace NEXUS.Forms
             OpenChildForm(report);
         }
 
+        private void btnGraph_Click(object sender, EventArgs e)
+        {
+            SelectButton(btnGraph);
+
+        }
+
         private void btnHistory_Click(object sender, EventArgs e)
         {
             History history = new History();

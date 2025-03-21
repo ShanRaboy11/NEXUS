@@ -16,6 +16,9 @@
     <Compile Update="Forms\DriverDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\DriverHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\History.cs">
       <SubType>Form</SubType>
     </Compile>

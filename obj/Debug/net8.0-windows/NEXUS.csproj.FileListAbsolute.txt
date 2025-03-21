@@ -58,3 +58,4 @@ C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.Sc
 C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.DisplayImage.resources
 C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.Profile.resources
 C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.DriverDashboard.resources
+C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.DriverHistory.resources

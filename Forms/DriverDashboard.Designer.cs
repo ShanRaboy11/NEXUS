@@ -38,7 +38,7 @@
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             pnlSidebar = new Panel();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
+            btnGraph = new FontAwesome.Sharp.IconButton();
             btnLogout1 = new FontAwesome.Sharp.IconButton();
             btnHistory1 = new FontAwesome.Sharp.IconButton();
             pbAbout1 = new PictureBox();
@@ -166,7 +166,7 @@
             // pnlSidebar
             // 
             pnlSidebar.BackColor = Color.White;
-            pnlSidebar.Controls.Add(iconButton1);
+            pnlSidebar.Controls.Add(btnGraph);
             pnlSidebar.Controls.Add(btnLogout1);
             pnlSidebar.Controls.Add(btnHistory1);
             pnlSidebar.Controls.Add(pbAbout1);
@@ -180,22 +180,23 @@
             pnlSidebar.TabIndex = 19;
             pnlSidebar.Click += pnlSidebar_Click;
             // 
-            // iconButton1
+            // btnGraph
             // 
-            iconButton1.FlatAppearance.BorderSize = 0;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.PieChart;
-            iconButton1.IconColor = Color.Black;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton1.Location = new Point(0, 422);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Padding = new Padding(15, 0, 0, 0);
-            iconButton1.Size = new Size(185, 43);
-            iconButton1.TabIndex = 40;
-            iconButton1.Text = "         Analytics";
-            iconButton1.UseVisualStyleBackColor = true;
+            btnGraph.FlatAppearance.BorderSize = 0;
+            btnGraph.FlatStyle = FlatStyle.Flat;
+            btnGraph.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnGraph.IconChar = FontAwesome.Sharp.IconChar.PieChart;
+            btnGraph.IconColor = Color.Black;
+            btnGraph.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnGraph.ImageAlign = ContentAlignment.MiddleLeft;
+            btnGraph.Location = new Point(0, 422);
+            btnGraph.Name = "btnGraph";
+            btnGraph.Padding = new Padding(15, 0, 0, 0);
+            btnGraph.Size = new Size(185, 43);
+            btnGraph.TabIndex = 40;
+            btnGraph.Text = "         Analytics";
+            btnGraph.UseVisualStyleBackColor = true;
+            btnGraph.Click += btnGraph_Click;
             // 
             // btnLogout1
             // 
@@ -587,6 +588,7 @@
             // SidebarTransition
             // 
             SidebarTransition.Interval = 10;
+            SidebarTransition.Tick += SidebarTransition_Tick;
             // 
             // DriverDashboard
             // 
@@ -603,6 +605,7 @@
             Name = "DriverDashboard";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "DriverDashboard";
+            MouseDown += Dashboard_MouseDown;
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
@@ -655,7 +658,7 @@
         private PictureBox pictureBox9;
         private PictureBox pictureBox10;
         private ReaLTaiizor.Controls.CyberButton cyberButton8;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btnGraph;
         private System.Windows.Forms.Timer SidebarTransition;
     }
 }
