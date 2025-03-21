@@ -28,38 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DriverDashboard));
             panel2 = new Panel();
-            pictureBox3 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox1 = new PictureBox();
             pictureBox4 = new PictureBox();
             pictureBox5 = new PictureBox();
             pictureBox6 = new PictureBox();
+            pictureBox3 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            pictureBox1 = new PictureBox();
             pnlSidebar = new Panel();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
             btnLogout1 = new FontAwesome.Sharp.IconButton();
             btnHistory1 = new FontAwesome.Sharp.IconButton();
             pbAbout1 = new PictureBox();
             btnReport1 = new FontAwesome.Sharp.IconButton();
             btnHome1 = new FontAwesome.Sharp.IconButton();
             btnScan1 = new FontAwesome.Sharp.IconButton();
-            pnlDesktop = new Panel();
+            pnlDesktop1 = new Panel();
             pnlTop = new Panel();
             lblUserFName = new Label();
             label1 = new Label();
             panel1 = new Panel();
-            label14 = new Label();
-            label16 = new Label();
-            label17 = new Label();
-            label18 = new Label();
-            label19 = new Label();
-            label20 = new Label();
-            label21 = new Label();
-            cyberButton5 = new ReaLTaiizor.Controls.CyberButton();
-            label22 = new Label();
-            label23 = new Label();
-            label24 = new Label();
-            label25 = new Label();
             cyberButton6 = new ReaLTaiizor.Controls.CyberButton();
             label26 = new Label();
             label27 = new Label();
@@ -71,16 +61,17 @@
             pictureBox9 = new PictureBox();
             pictureBox10 = new PictureBox();
             cyberButton8 = new ReaLTaiizor.Controls.CyberButton();
+            SidebarTransition = new System.Windows.Forms.Timer(components);
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnlSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbAbout1).BeginInit();
-            pnlDesktop.SuspendLayout();
+            pnlDesktop1.SuspendLayout();
             pnlTop.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
@@ -102,6 +93,42 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1400, 28);
             panel2.TabIndex = 18;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(1345, 9);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(14, 14);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 5;
+            pictureBox4.TabStop = false;
+            pictureBox4.Click += Maximize;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Location = new Point(1314, 7);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(19, 19);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 4;
+            pictureBox5.TabStop = false;
+            pictureBox5.Click += Minimize;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
+            pictureBox6.Location = new Point(1372, 7);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(18, 18);
+            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox6.TabIndex = 3;
+            pictureBox6.TabStop = false;
+            pictureBox6.Click += Close;
             // 
             // pictureBox3
             // 
@@ -136,42 +163,10 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // pictureBox4
-            // 
-            pictureBox4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(1345, 9);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(14, 14);
-            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox4.TabIndex = 5;
-            pictureBox4.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            pictureBox5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(1314, 7);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(19, 19);
-            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox5.TabIndex = 4;
-            pictureBox5.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            pictureBox6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(1372, 7);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(18, 18);
-            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox6.TabIndex = 3;
-            pictureBox6.TabStop = false;
-            // 
             // pnlSidebar
             // 
             pnlSidebar.BackColor = Color.White;
+            pnlSidebar.Controls.Add(iconButton1);
             pnlSidebar.Controls.Add(btnLogout1);
             pnlSidebar.Controls.Add(btnHistory1);
             pnlSidebar.Controls.Add(pbAbout1);
@@ -183,6 +178,24 @@
             pnlSidebar.Name = "pnlSidebar";
             pnlSidebar.Size = new Size(88, 879);
             pnlSidebar.TabIndex = 19;
+            pnlSidebar.Click += pnlSidebar_Click;
+            // 
+            // iconButton1
+            // 
+            iconButton1.FlatAppearance.BorderSize = 0;
+            iconButton1.FlatStyle = FlatStyle.Flat;
+            iconButton1.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.PieChart;
+            iconButton1.IconColor = Color.Black;
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
+            iconButton1.Location = new Point(0, 422);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Padding = new Padding(15, 0, 0, 0);
+            iconButton1.Size = new Size(185, 43);
+            iconButton1.TabIndex = 40;
+            iconButton1.Text = "         Analytics";
+            iconButton1.UseVisualStyleBackColor = true;
             // 
             // btnLogout1
             // 
@@ -200,6 +213,9 @@
             btnLogout1.TabIndex = 39;
             btnLogout1.Text = "      Logout";
             btnLogout1.UseVisualStyleBackColor = true;
+            btnLogout1.Click += btnLogout_Click;
+            btnLogout1.MouseLeave += btnLogout1_MouseLeave;
+            btnLogout1.MouseHover += btnLogout1_MouseHover;
             // 
             // btnHistory1
             // 
@@ -210,13 +226,16 @@
             btnHistory1.IconColor = Color.Black;
             btnHistory1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnHistory1.ImageAlign = ContentAlignment.MiddleLeft;
-            btnHistory1.Location = new Point(0, 512);
+            btnHistory1.Location = new Point(0, 642);
             btnHistory1.Name = "btnHistory1";
             btnHistory1.Padding = new Padding(15, 0, 0, 0);
             btnHistory1.Size = new Size(185, 43);
             btnHistory1.TabIndex = 38;
             btnHistory1.Text = "       History";
             btnHistory1.UseVisualStyleBackColor = true;
+            btnHistory1.Click += btnHistory_Click;
+            btnHistory1.MouseLeave += btnHistory1_MouseLeave;
+            btnHistory1.MouseHover += btnHistory1_MouseHover;
             // 
             // pbAbout1
             // 
@@ -228,6 +247,7 @@
             pbAbout1.SizeMode = PictureBoxSizeMode.Zoom;
             pbAbout1.TabIndex = 6;
             pbAbout1.TabStop = false;
+            pbAbout1.Click += pbAbout_Click;
             // 
             // btnReport1
             // 
@@ -238,13 +258,16 @@
             btnReport1.IconColor = Color.Black;
             btnReport1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnReport1.ImageAlign = ContentAlignment.MiddleLeft;
-            btnReport1.Location = new Point(0, 412);
+            btnReport1.Location = new Point(0, 522);
             btnReport1.Name = "btnReport1";
             btnReport1.Padding = new Padding(15, 0, 0, 0);
             btnReport1.Size = new Size(185, 43);
             btnReport1.TabIndex = 36;
             btnReport1.Text = "      Report";
             btnReport1.UseVisualStyleBackColor = true;
+            btnReport1.Click += btnReport_Click;
+            btnReport1.MouseLeave += btnReport1_MouseLeave;
+            btnReport1.MouseHover += btnReport1_MouseHover;
             // 
             // btnHome1
             // 
@@ -262,6 +285,9 @@
             btnHome1.TabIndex = 33;
             btnHome1.Text = "     Home";
             btnHome1.UseVisualStyleBackColor = true;
+            btnHome1.Click += btnHome_Click;
+            btnHome1.MouseLeave += btnHome1_MouseLeave;
+            btnHome1.MouseHover += btnHome1_MouseHover;
             // 
             // btnScan1
             // 
@@ -279,16 +305,19 @@
             btnScan1.TabIndex = 35;
             btnScan1.Text = "    Scan";
             btnScan1.UseVisualStyleBackColor = true;
+            btnScan1.Click += btnScan_Click;
+            btnScan1.MouseLeave += btnScanHover_MouseLeave;
+            btnScan1.MouseHover += btnScan1Hover_MouseHover;
             // 
-            // pnlDesktop
+            // pnlDesktop1
             // 
-            pnlDesktop.Controls.Add(pnlTop);
-            pnlDesktop.Controls.Add(panel1);
-            pnlDesktop.Dock = DockStyle.Fill;
-            pnlDesktop.Location = new Point(88, 28);
-            pnlDesktop.Name = "pnlDesktop";
-            pnlDesktop.Size = new Size(1312, 879);
-            pnlDesktop.TabIndex = 34;
+            pnlDesktop1.Controls.Add(pnlTop);
+            pnlDesktop1.Controls.Add(panel1);
+            pnlDesktop1.Dock = DockStyle.Fill;
+            pnlDesktop1.Location = new Point(88, 28);
+            pnlDesktop1.Name = "pnlDesktop1";
+            pnlDesktop1.Size = new Size(1312, 879);
+            pnlDesktop1.TabIndex = 34;
             // 
             // pnlTop
             // 
@@ -325,18 +354,6 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(label14);
-            panel1.Controls.Add(label16);
-            panel1.Controls.Add(label17);
-            panel1.Controls.Add(label18);
-            panel1.Controls.Add(label19);
-            panel1.Controls.Add(label20);
-            panel1.Controls.Add(label21);
-            panel1.Controls.Add(cyberButton5);
-            panel1.Controls.Add(label22);
-            panel1.Controls.Add(label23);
-            panel1.Controls.Add(label24);
-            panel1.Controls.Add(label25);
             panel1.Controls.Add(cyberButton6);
             panel1.Controls.Add(label26);
             panel1.Controls.Add(label27);
@@ -353,181 +370,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(324, 879);
             panel1.TabIndex = 32;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.BackColor = Color.FromArgb(38, 36, 68);
-            label14.Font = new Font("Inter", 18F, FontStyle.Bold);
-            label14.ForeColor = Color.White;
-            label14.Location = new Point(184, 802);
-            label14.Name = "label14";
-            label14.Size = new Size(92, 35);
-            label14.TabIndex = 53;
-            label14.Text = "₱ 8.00";
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.BackColor = Color.FromArgb(38, 36, 68);
-            label16.Font = new Font("Inter", 18F, FontStyle.Bold);
-            label16.ForeColor = Color.White;
-            label16.Location = new Point(184, 760);
-            label16.Name = "label16";
-            label16.Size = new Size(107, 35);
-            label16.TabIndex = 52;
-            label16.Text = "₱ 20.00";
-            // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.BackColor = Color.FromArgb(38, 36, 68);
-            label17.Font = new Font("Inter", 18F, FontStyle.Bold);
-            label17.ForeColor = Color.White;
-            label17.Location = new Point(46, 802);
-            label17.Name = "label17";
-            label17.Size = new Size(132, 35);
-            label17.TabIndex = 51;
-            label17.Text = "Change   :";
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.BackColor = Color.FromArgb(38, 36, 68);
-            label18.Font = new Font("Inter", 18F, FontStyle.Bold);
-            label18.ForeColor = Color.White;
-            label18.Location = new Point(46, 760);
-            label18.Name = "label18";
-            label18.Size = new Size(133, 35);
-            label18.TabIndex = 50;
-            label18.Text = "Payment :";
-            // 
-            // label19
-            // 
-            label19.AutoSize = true;
-            label19.BackColor = Color.FromArgb(38, 36, 68);
-            label19.Font = new Font("Inter", 18F, FontStyle.Bold);
-            label19.ForeColor = Color.White;
-            label19.Location = new Point(215, 718);
-            label19.Name = "label19";
-            label19.RightToLeft = RightToLeft.No;
-            label19.Size = new Size(84, 35);
-            label19.TabIndex = 49;
-            label19.Text = "CIT-U";
-            label19.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // label20
-            // 
-            label20.AutoSize = true;
-            label20.BackColor = Color.FromArgb(38, 36, 68);
-            label20.Font = new Font("Inter", 18F, FontStyle.Bold);
-            label20.ForeColor = Color.White;
-            label20.Location = new Point(154, 718);
-            label20.Name = "label20";
-            label20.Size = new Size(38, 35);
-            label20.TabIndex = 48;
-            label20.Text = "->";
-            // 
-            // label21
-            // 
-            label21.AutoSize = true;
-            label21.BackColor = Color.FromArgb(38, 36, 68);
-            label21.Font = new Font("Inter", 18F, FontStyle.Bold);
-            label21.ForeColor = Color.White;
-            label21.Location = new Point(46, 718);
-            label21.Name = "label21";
-            label21.Size = new Size(86, 35);
-            label21.TabIndex = 47;
-            label21.Text = "Basak";
-            // 
-            // cyberButton5
-            // 
-            cyberButton5.Alpha = 20;
-            cyberButton5.BackColor = Color.Transparent;
-            cyberButton5.Background = true;
-            cyberButton5.Background_WidthPen = 4F;
-            cyberButton5.BackgroundPen = true;
-            cyberButton5.ColorBackground = Color.FromArgb(38, 36, 68);
-            cyberButton5.ColorBackground_1 = Color.FromArgb(38, 36, 68);
-            cyberButton5.ColorBackground_2 = Color.FromArgb(41, 63, 86);
-            cyberButton5.ColorBackground_Pen = Color.FromArgb(153, 229, 255);
-            cyberButton5.ColorLighting = Color.FromArgb(153, 229, 255);
-            cyberButton5.ColorPen_1 = Color.FromArgb(37, 52, 68);
-            cyberButton5.ColorPen_2 = Color.FromArgb(41, 63, 86);
-            cyberButton5.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            cyberButton5.Effect_1 = true;
-            cyberButton5.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
-            cyberButton5.Effect_1_Transparency = 25;
-            cyberButton5.Effect_2 = true;
-            cyberButton5.Effect_2_ColorBackground = Color.White;
-            cyberButton5.Effect_2_Transparency = 20;
-            cyberButton5.Enabled = false;
-            cyberButton5.Font = new Font("Inter", 12F);
-            cyberButton5.ForeColor = Color.FromArgb(38, 36, 68);
-            cyberButton5.Lighting = false;
-            cyberButton5.LinearGradient_Background = false;
-            cyberButton5.LinearGradientPen = false;
-            cyberButton5.Location = new Point(20, 692);
-            cyberButton5.Name = "cyberButton5";
-            cyberButton5.PenWidth = 15;
-            cyberButton5.Rounding = true;
-            cyberButton5.RoundingInt = 70;
-            cyberButton5.Size = new Size(292, 167);
-            cyberButton5.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            cyberButton5.TabIndex = 46;
-            cyberButton5.Tag = "Cyber";
-            cyberButton5.TextButton = "";
-            cyberButton5.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            cyberButton5.Timer_Effect_1 = 5;
-            cyberButton5.Timer_RGB = 300;
-            // 
-            // label22
-            // 
-            label22.AutoSize = true;
-            label22.BackColor = Color.FromArgb(153, 229, 255);
-            label22.Font = new Font("Inter", 15F, FontStyle.Bold);
-            label22.ForeColor = Color.FromArgb(24, 60, 114);
-            label22.Location = new Point(84, 520);
-            label22.Name = "label22";
-            label22.Size = new Size(164, 28);
-            label22.TabIndex = 45;
-            label22.Text = "March 13, 2025";
-            // 
-            // label23
-            // 
-            label23.AutoSize = true;
-            label23.BackColor = Color.FromArgb(153, 229, 255);
-            label23.Font = new Font("Inter", 18F, FontStyle.Bold);
-            label23.ForeColor = Color.FromArgb(24, 60, 114);
-            label23.Location = new Point(177, 600);
-            label23.Name = "label23";
-            label23.Size = new Size(116, 35);
-            label23.TabIndex = 44;
-            label23.Text = "8:34 AM";
-            // 
-            // label24
-            // 
-            label24.AutoSize = true;
-            label24.BackColor = Color.FromArgb(153, 229, 255);
-            label24.Font = new Font("Inter", 18F, FontStyle.Bold);
-            label24.ForeColor = Color.FromArgb(24, 60, 114);
-            label24.Location = new Point(179, 564);
-            label24.Name = "label24";
-            label24.Size = new Size(107, 35);
-            label24.TabIndex = 43;
-            label24.Text = "481HOF";
-            // 
-            // label25
-            // 
-            label25.AutoSize = true;
-            label25.BackColor = Color.FromArgb(153, 229, 255);
-            label25.Font = new Font("Inter", 50F, FontStyle.Bold);
-            label25.ForeColor = Color.FromArgb(24, 60, 114);
-            label25.Location = new Point(32, 550);
-            label25.Name = "label25";
-            label25.Size = new Size(153, 96);
-            label25.TabIndex = 42;
-            label25.Text = "10F";
             // 
             // cyberButton6
             // 
@@ -556,12 +398,12 @@
             cyberButton6.Lighting = false;
             cyberButton6.LinearGradient_Background = false;
             cyberButton6.LinearGradientPen = false;
-            cyberButton6.Location = new Point(19, 503);
+            cyberButton6.Location = new Point(20, 512);
             cyberButton6.Name = "cyberButton6";
             cyberButton6.PenWidth = 15;
             cyberButton6.Rounding = true;
             cyberButton6.RoundingInt = 70;
-            cyberButton6.Size = new Size(292, 167);
+            cyberButton6.Size = new Size(292, 252);
             cyberButton6.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             cyberButton6.TabIndex = 41;
             cyberButton6.Tag = "Cyber";
@@ -577,20 +419,20 @@
             label26.ForeColor = Color.FromArgb(24, 60, 114);
             label26.Location = new Point(15, 442);
             label26.Name = "label26";
-            label26.Size = new Size(104, 40);
+            label26.Size = new Size(126, 40);
             label26.TabIndex = 40;
-            label26.Text = "Latest";
+            label26.Text = "Current";
             // 
             // label27
             // 
             label27.AutoSize = true;
             label27.Font = new Font("Inter SemiBold", 21F, FontStyle.Bold);
             label27.ForeColor = SystemColors.ControlDarkDark;
-            label27.Location = new Point(113, 442);
+            label27.Location = new Point(138, 442);
             label27.Name = "label27";
-            label27.Size = new Size(175, 40);
+            label27.Size = new Size(134, 40);
             label27.TabIndex = 39;
-            label27.Text = "Transaction";
+            label27.Text = "Revenue";
             // 
             // cyberButton7
             // 
@@ -742,13 +584,17 @@
             cyberButton8.Timer_Effect_1 = 5;
             cyberButton8.Timer_RGB = 300;
             // 
+            // SidebarTransition
+            // 
+            SidebarTransition.Interval = 10;
+            // 
             // DriverDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
             ClientSize = new Size(1400, 907);
-            Controls.Add(pnlDesktop);
+            Controls.Add(pnlDesktop1);
             Controls.Add(pnlSidebar);
             Controls.Add(panel2);
             Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -758,15 +604,15 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "DriverDashboard";
             panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             pnlSidebar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbAbout1).EndInit();
-            pnlDesktop.ResumeLayout(false);
+            pnlDesktop1.ResumeLayout(false);
             pnlTop.ResumeLayout(false);
             pnlTop.PerformLayout();
             panel1.ResumeLayout(false);
@@ -793,23 +639,11 @@
         private FontAwesome.Sharp.IconButton btnReport1;
         private FontAwesome.Sharp.IconButton btnHome1;
         private FontAwesome.Sharp.IconButton btnScan1;
-        private Panel pnlDesktop;
+        private Panel pnlDesktop1;
         private Panel pnlTop;
         private Label lblUserFName;
         private Label label1;
         private Panel panel1;
-        private Label label14;
-        private Label label16;
-        private Label label17;
-        private Label label18;
-        private Label label19;
-        private Label label20;
-        private Label label21;
-        private ReaLTaiizor.Controls.CyberButton cyberButton5;
-        private Label label22;
-        private Label label23;
-        private Label label24;
-        private Label label25;
         private ReaLTaiizor.Controls.CyberButton cyberButton6;
         private Label label26;
         private Label label27;
@@ -821,5 +655,7 @@
         private PictureBox pictureBox9;
         private PictureBox pictureBox10;
         private ReaLTaiizor.Controls.CyberButton cyberButton8;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private System.Windows.Forms.Timer SidebarTransition;
     }
 }
