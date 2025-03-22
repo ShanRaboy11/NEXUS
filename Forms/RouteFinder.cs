@@ -9,6 +9,9 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OleDb;
+using System.Data;
+using NEXUS.Classes;
 
 namespace NEXUS.Forms
 {
@@ -31,25 +34,33 @@ namespace NEXUS.Forms
 
         private void JeepCodeDestinations(string jeepCode)
         {
-            switch (jeepCode)
+            string query = "SELECT [Image Path] FROM [Routes] WHERE [Route Number] = ?";  
+
+            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Shan Michael\OneDrive\文档\2nd Year 2nd Sem\OOP2\NEXUS\NEXUS.accdb";
+
+            using (OleDbConnection conn = new OleDbConnection(connectionString))
+            using (OleDbCommand cmd = new OleDbCommand(query, conn))
             {
-                case "01K":
-                    pbJeepDestination.Image = Resources._01K;
-                    break;
-                case "01C":
-                    pbJeepDestination.Image = Resources._01C;
-                    break;
-                case "02B":
-                    pbJeepDestination.Image = Resources._02B;
-                    break;
-                case "03A":
-                    pbJeepDestination.Image = Resources._03A;
-                    break;
-                    //03B
-                default:
-                    pbJeepDestination.Image = Resources._default;
-                    break;
+                conn.Open();
+                cmd.Parameters.AddWithValue("?", jeepCode);  
+
+                using (OleDbDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        string imagePath = reader["Image Path"].ToString(); 
+                        if (File.Exists(imagePath))
+                        {
+                            pbJeepDestination.Image = Image.FromFile(imagePath);
+                        }
+                        else
+                        {
+                            pbJeepDestination.Image = Resources._default;
+                        }
+                    }
+                }
             }
         }
+
     }
 }
