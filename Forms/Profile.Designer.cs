@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Profile));
             pbProfilePicture = new PictureBox();
-            pictureBox2 = new PictureBox();
+            pbBackground = new PictureBox();
             panel1 = new Panel();
             lblClassification = new Label();
             label6 = new Label();
@@ -63,7 +63,7 @@
             lblUser = new Label();
             label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)pbProfilePicture).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbBackground).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
@@ -88,14 +88,14 @@
             pbProfilePicture.TabIndex = 0;
             pbProfilePicture.TabStop = false;
             // 
-            // pictureBox2
+            // pbBackground
             // 
-            pictureBox2.BackColor = Color.FromArgb(0, 229, 255);
-            pictureBox2.Location = new Point(19, 50);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(542, 275);
-            pictureBox2.TabIndex = 1;
-            pictureBox2.TabStop = false;
+            pbBackground.BackColor = Color.FromArgb(0, 229, 255);
+            pbBackground.Location = new Point(19, 50);
+            pbBackground.Name = "pbBackground";
+            pbBackground.Size = new Size(542, 275);
+            pbBackground.TabIndex = 1;
+            pbBackground.TabStop = false;
             // 
             // panel1
             // 
@@ -189,7 +189,7 @@
             // lblUserName
             // 
             lblUserName.BackColor = Color.FromArgb(0, 229, 255);
-            lblUserName.Font = new Font("Inter SemiBold", 17.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblUserName.Font = new Font("Inter", 17.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblUserName.ForeColor = Color.FromArgb(24, 60, 114);
             lblUserName.Location = new Point(89, 185);
             lblUserName.Name = "lblUserName";
@@ -201,8 +201,8 @@
             // label1
             // 
             label1.BackColor = Color.FromArgb(0, 229, 255);
-            label1.Font = new Font("Inter Medium", 12.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.ControlDarkDark;
+            label1.Font = new Font("Inter Medium", 13.75F, FontStyle.Bold);
+            label1.ForeColor = Color.FromArgb(64, 64, 64);
             label1.Location = new Point(89, 225);
             label1.Name = "label1";
             label1.Size = new Size(405, 44);
@@ -331,7 +331,7 @@
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(80, 15, 13, 40);
-            panel3.Location = new Point(79, 280);
+            panel3.Location = new Point(71, 279);
             panel3.Name = "panel3";
             panel3.Size = new Size(420, 95);
             panel3.TabIndex = 3;
@@ -496,14 +496,14 @@
             Controls.Add(panel1);
             Controls.Add(pbProfilePicture);
             Controls.Add(panel3);
-            Controls.Add(pictureBox2);
+            Controls.Add(pbBackground);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Profile";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Profile";
             ((System.ComponentModel.ISupportInitialize)pbProfilePicture).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbBackground).EndInit();
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
@@ -522,7 +522,7 @@
         #endregion
 
         private PictureBox pbProfilePicture;
-        private PictureBox pictureBox2;
+        private PictureBox pbBackground;
         private Panel panel1;
         private Label lblUserName;
         private Label label1;
