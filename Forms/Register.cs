@@ -97,7 +97,7 @@ namespace NEXUS.Forms
             }
         }
 
-        private void btnSignUp_Click(object sender, EventArgs e)
+        private void btnNext_Click(object sender, EventArgs e)
         {
             DialogBox dialogBox = new DialogBox();
             Register2 register2 = new Register2();
@@ -105,15 +105,17 @@ namespace NEXUS.Forms
             if (string.IsNullOrWhiteSpace(tbxNewFirstName.Text) ||
                 string.IsNullOrWhiteSpace(tbxNewLastName.Text) ||
                 string.IsNullOrWhiteSpace(tbxNewUserName.Text) ||
-                string.IsNullOrWhiteSpace(tbxNewPassword.Text))
+                string.IsNullOrWhiteSpace(tbxNewPassword.Text) ||
+                (!rbtnFemale.Checked && !rbtnMale.Checked && !rbtnNotSay.Checked))
             {
 
                 dialogBox.ShowIcon("blank");
                 logInForm.overlayForm(this, dialogBox);
                 return;
             }
-
-            List<string> userInfo = new List<string>
+            else
+            {
+                List<string> userInfo = new List<string>
              {
                 tbxNewFirstName.Text,
                 tbxNewLastName.Text,
@@ -122,10 +124,11 @@ namespace NEXUS.Forms
                 (rbtnFemale.Checked ? rbtnFemale.Text : rbtnMale.Checked ? rbtnMale.Text : rbtnNotSay.Text)
              };
 
-            //add here for initializing the registered infos using userInfo[0];
+                //add here for initializing the registered infos using userInfo[0];
 
-            register2.Show();
-            this.Close();
+                register2.Show();
+                this.Close();
+            }         
         }
     }
 }

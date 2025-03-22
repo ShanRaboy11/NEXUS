@@ -61,6 +61,7 @@
             btnAttach = new FontAwesome.Sharp.IconButton();
             tbxIncidentLocation = new TextBox();
             lblFileName = new Label();
+            btnBack = new FontAwesome.Sharp.IconButton();
             pnlRole.SuspendLayout();
             pnlClassification.SuspendLayout();
             panel7.SuspendLayout();
@@ -493,12 +494,26 @@
             lblFileName.Visible = false;
             lblFileName.Click += lblFileName_Click;
             // 
+            // btnBack
+            // 
+            btnBack.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft;
+            btnBack.IconColor = Color.FromArgb(24, 60, 114);
+            btnBack.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnBack.IconSize = 30;
+            btnBack.Location = new Point(15, 440);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(46, 35);
+            btnBack.TabIndex = 33;
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
+            // 
             // Register2
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
             ClientSize = new Size(506, 590);
+            Controls.Add(btnBack);
             Controls.Add(pnlAttach);
             Controls.Add(lblAttachment);
             Controls.Add(separator1);
@@ -571,5 +586,6 @@
         private FontAwesome.Sharp.IconButton btnAttach;
         private TextBox tbxIncidentLocation;
         private Label lblFileName;
+        private FontAwesome.Sharp.IconButton btnBack;
     }
 }

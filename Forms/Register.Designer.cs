@@ -277,7 +277,7 @@
             btnNext.TabIndex = 68;
             btnNext.Text = "Next";
             btnNext.TextAlignment = StringAlignment.Center;
-            btnNext.Click += btnSignUp_Click;
+            btnNext.Click += btnNext_Click;
             // 
             // panel11
             // 

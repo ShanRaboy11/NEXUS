@@ -52,7 +52,7 @@ namespace NEXUS.Forms
                 (rbtnStudent.Checked ? rbtnStudent.Text : rbtnSenior.Checked ? rbtnSenior.Text : rbtnRegular.Text)
              };
             dialogBox.ShowIcon("register");
-            overlayForm(this, dialogBox);
+            logInForm.overlayForm(this, dialogBox);
             logInForm.Show();
             this.Close();
         }
@@ -73,7 +73,8 @@ namespace NEXUS.Forms
             this.Size = new System.Drawing.Size(506, 590);
             lblNote.Location = new System.Drawing.Point(46, 500);
             btnSignUp.Location = new System.Drawing.Point(157, 533);
-            if(!increase)
+            btnBack.Location = new System.Drawing.Point(15, 534);
+            if (!increase)
             {
                 this.Location = new System.Drawing.Point(this.Location.X, this.Location.Y - 47);
                 increase = true;
@@ -89,11 +90,12 @@ namespace NEXUS.Forms
             this.Size = new System.Drawing.Size(506, 590);
             lblNote.Location = new System.Drawing.Point(46, 500);
             btnSignUp.Location = new System.Drawing.Point(157, 533);
+            btnBack.Location = new System.Drawing.Point(15, 534);
             if (!increase)
             {
                 this.Location = new System.Drawing.Point(this.Location.X, this.Location.Y - 47);
                 increase = true;
-            }                
+            }
         }
 
         private void rbtnRegular_CheckedChanged(object sender, EventArgs e)
@@ -105,6 +107,7 @@ namespace NEXUS.Forms
             this.Size = new System.Drawing.Size(504, 495);
             lblNote.Location = new System.Drawing.Point(41, 406);
             btnSignUp.Location = new System.Drawing.Point(152, 439);
+            btnBack.Location = new System.Drawing.Point(15, 440);
             if (increase)
             {
                 this.Location = new System.Drawing.Point(this.Location.X, this.Location.Y + 47);
@@ -131,32 +134,19 @@ namespace NEXUS.Forms
             }
         }
 
-        public void overlayForm(Form newForm, Form dialog)
-        {
-            var overlay = new Form();
-
-            overlay.FormBorderStyle = FormBorderStyle.None;
-            overlay.Opacity = 0.5d;
-            overlay.BackColor = Color.Black;
-            overlay.Size = this.Size;
-            overlay.Location = this.Location;
-            overlay.ShowInTaskbar = false;
-
-            overlay.Show();
-            newForm.FormClosed += (s, args) => overlay.Close();
-            newForm.Show();
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                overlay.Close();
-            }
-        }
-
         private void lblFileName_Click(object sender, EventArgs e)
         {
             if (attachedImage1 != null)
             {
                 DisplayImage displayImage = new DisplayImage(attachedImage1, "register");
             }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Register register = new Register();
+            register.Show();
+            this.Close();
         }
     }
 }
