@@ -32,7 +32,7 @@
             panel2 = new Panel();
             pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
-            pictureBox1 = new PictureBox();
+            pbCloseee = new PictureBox();
             label1 = new Label();
             separator1 = new ReaLTaiizor.Controls.Separator();
             label2 = new Label();
@@ -59,7 +59,7 @@
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbCloseee).BeginInit();
             pnlUsername.SuspendLayout();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
@@ -74,7 +74,7 @@
             panel2.BackColor = Color.FromArgb(153, 229, 255);
             panel2.Controls.Add(pictureBox3);
             panel2.Controls.Add(pictureBox2);
-            panel2.Controls.Add(pictureBox1);
+            panel2.Controls.Add(pbCloseee);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
@@ -85,7 +85,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(438, 6);
+            pictureBox3.Location = new Point(456, 6);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(14, 14);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -96,7 +96,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(407, 4);
+            pictureBox2.Location = new Point(425, 4);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(19, 19);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -104,16 +104,16 @@
             pictureBox2.TabStop = false;
             pictureBox2.Click += Minimize;
             // 
-            // pictureBox1
+            // pbCloseee
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(465, 4);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(18, 18);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += Close;
+            pbCloseee.Image = (Image)resources.GetObject("pbCloseee.Image");
+            pbCloseee.Location = new Point(483, 4);
+            pbCloseee.Name = "pbCloseee";
+            pbCloseee.Size = new Size(18, 18);
+            pbCloseee.SizeMode = PictureBoxSizeMode.Zoom;
+            pbCloseee.TabIndex = 0;
+            pbCloseee.TabStop = false;
+            pbCloseee.Click += Close;
             // 
             // label1
             // 
@@ -449,7 +449,7 @@
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbCloseee).EndInit();
             pnlUsername.ResumeLayout(false);
             pnlUsername.PerformLayout();
             panel1.ResumeLayout(false);
@@ -472,7 +472,7 @@
         private Panel panel2;
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
-        private PictureBox pictureBox1;
+        private PictureBox pbCloseee;
         private Label label1;
         private ReaLTaiizor.Controls.Separator separator1;
         private Label label2;

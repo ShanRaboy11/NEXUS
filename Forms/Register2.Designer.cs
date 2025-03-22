@@ -49,6 +49,8 @@
             rbtnRegular = new ReaLTaiizor.Controls.HopeRadioButton();
             panel5 = new Panel();
             panel6 = new Panel();
+            pnlPlate = new Panel();
+            tbxPlateNumber = new TextBox();
             separator1 = new ReaLTaiizor.Controls.Separator();
             label2 = new Label();
             label1 = new Label();
@@ -62,9 +64,11 @@
             tbxIncidentLocation = new TextBox();
             lblFileName = new Label();
             btnBack = new FontAwesome.Sharp.IconButton();
+            label6 = new Label();
             pnlRole.SuspendLayout();
             pnlClassification.SuspendLayout();
             panel7.SuspendLayout();
+            pnlPlate.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -116,6 +120,7 @@
             rbtnDriver.TabStop = true;
             rbtnDriver.Text = "Driver";
             rbtnDriver.UseVisualStyleBackColor = false;
+            rbtnDriver.CheckedChanged += rbtnDriver_CheckedChanged;
             // 
             // rbtnPassenger
             // 
@@ -137,6 +142,7 @@
             rbtnPassenger.TabStop = true;
             rbtnPassenger.Text = "Passenger";
             rbtnPassenger.UseVisualStyleBackColor = false;
+            rbtnPassenger.CheckedChanged += rbtnPassenger_CheckedChanged;
             // 
             // panel12
             // 
@@ -260,6 +266,7 @@
             pnlClassification.Controls.Add(panel7);
             pnlClassification.Controls.Add(panel5);
             pnlClassification.Controls.Add(panel6);
+            pnlClassification.Controls.Add(pnlPlate);
             pnlClassification.Location = new Point(15, 330);
             pnlClassification.Name = "pnlClassification";
             pnlClassification.Size = new Size(511, 55);
@@ -356,6 +363,30 @@
             panel6.Size = new Size(123, 41);
             panel6.TabIndex = 71;
             // 
+            // pnlPlate
+            // 
+            pnlPlate.BackColor = Color.FromArgb(176, 233, 255);
+            pnlPlate.BackgroundImageLayout = ImageLayout.None;
+            pnlPlate.Controls.Add(tbxPlateNumber);
+            pnlPlate.Location = new Point(12, 3);
+            pnlPlate.Name = "pnlPlate";
+            pnlPlate.Size = new Size(266, 48);
+            pnlPlate.TabIndex = 91;
+            pnlPlate.Visible = false;
+            // 
+            // tbxPlateNumber
+            // 
+            tbxPlateNumber.BackColor = Color.FromArgb(176, 233, 255);
+            tbxPlateNumber.BorderStyle = BorderStyle.None;
+            tbxPlateNumber.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbxPlateNumber.ForeColor = Color.FromArgb(24, 60, 114);
+            tbxPlateNumber.Location = new Point(13, 13);
+            tbxPlateNumber.Name = "tbxPlateNumber";
+            tbxPlateNumber.Size = new Size(238, 20);
+            tbxPlateNumber.TabIndex = 9;
+            tbxPlateNumber.TabStop = false;
+            tbxPlateNumber.Visible = false;
+            // 
             // separator1
             // 
             separator1.LineColor = Color.Gray;
@@ -408,6 +439,7 @@
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 2;
             pictureBox3.TabStop = false;
+            pictureBox3.Click += Maximize;
             // 
             // pictureBox2
             // 
@@ -418,6 +450,7 @@
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
+            pictureBox2.Click += Minimize;
             // 
             // pictureBox1
             // 
@@ -507,12 +540,25 @@
             btnBack.UseVisualStyleBackColor = true;
             btnBack.Click += btnBack_Click;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Inter", 10.55F);
+            label6.ForeColor = Color.FromArgb(24, 60, 114);
+            label6.Location = new Point(15, 298);
+            label6.Name = "label6";
+            label6.Size = new Size(115, 22);
+            label6.TabIndex = 90;
+            label6.Text = "Plate Number: ";
+            label6.Visible = false;
+            // 
             // Register2
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
             ClientSize = new Size(506, 590);
+            Controls.Add(label6);
             Controls.Add(btnBack);
             Controls.Add(pnlAttach);
             Controls.Add(lblAttachment);
@@ -542,6 +588,8 @@
             pnlClassification.PerformLayout();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
+            pnlPlate.ResumeLayout(false);
+            pnlPlate.PerformLayout();
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -587,5 +635,8 @@
         private TextBox tbxIncidentLocation;
         private Label lblFileName;
         private FontAwesome.Sharp.IconButton btnBack;
+        private Label label6;
+        private Panel pnlPlate;
+        private TextBox tbxPlateNumber;
     }
 }

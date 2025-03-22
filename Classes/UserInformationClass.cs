@@ -71,16 +71,12 @@ namespace NEXUS.Classes
 
     public class Driver : UserInformation
     {
-        public double Ratings { get; set; }
-        public string VehicleType { get; set; }
         public string PlateNumber { get; set; }
 
         // Constructor
-        public Driver(string name,  string email, string username, string password, string gender, string userType, string birthday, string classification, double ratings, string vehicleType, string plateNumber)
+        public Driver(string name,  string email, string username, string password, string gender, string userType, string birthday, string classification,  string plateNumber)
             : base(name, email, username, password, gender, userType, birthday, classification)
         {
-            Ratings = ratings;
-            VehicleType = vehicleType;
             PlateNumber = plateNumber;
         }
     }

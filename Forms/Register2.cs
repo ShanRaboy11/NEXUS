@@ -31,6 +31,8 @@ namespace NEXUS.Forms
             this.Size = new System.Drawing.Size(504, 495);
             lblNote.Location = new System.Drawing.Point(41, 406);
             btnSignUp.Location = new System.Drawing.Point(152, 439);
+            pnlPlate.Parent = this;
+            pnlPlate.Location = new Point(30, 330);
             userData = data;
         }
 
@@ -50,13 +52,15 @@ namespace NEXUS.Forms
             else
             {
                 string fullName = userData.FName + " " + userData.LName;
+                string birthday = cmbxMonth.Text + cmbxDay.Text + cmbxYear;
                 if (rbtnPassenger.Checked)
                 {
                     Passenger newPassenger = new Passenger
                     (
                         fullName,
-                        userData.Email, userData.UserName,
-                        userData.Password                    
+                        userData.Email, userData.UserName, userData.Password, 
+                        userData.Gender, rbtnPassenger.Text, birthday, 
+                        (rbtnStudent.Checked ? rbtnStudent.Text : rbtnSenior.Checked ? rbtnSenior.Text : rbtnRegular.Checked ? rbtnRegular.Text : "None")
                     );
                 }
                 List<string> userInfo = new List<string>
@@ -70,7 +74,7 @@ namespace NEXUS.Forms
                 logInForm.overlayForm(this, dialogBox);
                 logInForm.Show();
                 this.Close();
-            }  
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -78,6 +82,19 @@ namespace NEXUS.Forms
             LogInForm logInForm = new LogInForm();
             this.Close();
             logInForm.Show();
+        }
+
+        private void Maximize(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+                this.WindowState = FormWindowState.Maximized;
+            else
+                this.WindowState = FormWindowState.Normal;
+        }
+
+        private void Minimize(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
 
         private void rbtnStudent_CheckedChanged(object sender, EventArgs e)
@@ -163,6 +180,26 @@ namespace NEXUS.Forms
             Register register = new Register();
             register.Show();
             this.Close();
+        }
+
+        private void rbtnDriver_CheckedChanged(object sender, EventArgs e)
+        {
+            label6.Visible = true;
+            tbxPlateNumber.Visible = true;
+            pnlPlate.BringToFront();
+            tbxPlateNumber.BringToFront();
+            pnlPlate.Visible = true;
+            label4.Visible = false;
+            pnlClassification.Visible = false;
+        }
+
+        private void rbtnPassenger_CheckedChanged(object sender, EventArgs e)
+        {
+            label6.Visible = false;
+            tbxPlateNumber.Visible = false;
+            pnlPlate.Visible = false;
+            label4.Visible = true;
+            pnlClassification.Visible = true;
         }
     }
 }

@@ -50,7 +50,10 @@ namespace NEXUS.Forms
 
         private void Close(object sender, EventArgs e)
         {
+            LogInForm logInForm = new LogInForm();
+
             this.Close();
+            logInForm.Show();
         }
 
         private void EnterFirstname(object sender, EventArgs e)
