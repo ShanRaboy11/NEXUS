@@ -58,7 +58,7 @@
             label29 = new Label();
             label30 = new Label();
             pictureBox8 = new PictureBox();
-            pictureBox9 = new PictureBox();
+            pbProfile1 = new PictureBox();
             pictureBox10 = new PictureBox();
             cyberButton8 = new ReaLTaiizor.Controls.CyberButton();
             SidebarTransition = new System.Windows.Forms.Timer(components);
@@ -75,7 +75,7 @@
             pnlTop.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbProfile1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             SuspendLayout();
             // 
@@ -363,7 +363,7 @@
             panel1.Controls.Add(label29);
             panel1.Controls.Add(label30);
             panel1.Controls.Add(pictureBox8);
-            panel1.Controls.Add(pictureBox9);
+            panel1.Controls.Add(pbProfile1);
             panel1.Controls.Add(pictureBox10);
             panel1.Controls.Add(cyberButton8);
             panel1.Dock = DockStyle.Right;
@@ -521,17 +521,18 @@
             pictureBox8.TabIndex = 31;
             pictureBox8.TabStop = false;
             // 
-            // pictureBox9
+            // pbProfile1
             // 
-            pictureBox9.BackColor = Color.FromArgb(38, 36, 68);
-            pictureBox9.Cursor = Cursors.Hand;
-            pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
-            pictureBox9.Location = new Point(256, 29);
-            pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(48, 50);
-            pictureBox9.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox9.TabIndex = 33;
-            pictureBox9.TabStop = false;
+            pbProfile1.BackColor = Color.FromArgb(38, 36, 68);
+            pbProfile1.Cursor = Cursors.Hand;
+            pbProfile1.Image = (Image)resources.GetObject("pbProfile1.Image");
+            pbProfile1.Location = new Point(256, 29);
+            pbProfile1.Name = "pbProfile1";
+            pbProfile1.Size = new Size(48, 50);
+            pbProfile1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pbProfile1.TabIndex = 33;
+            pbProfile1.TabStop = false;
+            pbProfile1.Click += pbProfile1_Click;
             // 
             // pictureBox10
             // 
@@ -621,7 +622,7 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbProfile1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             ResumeLayout(false);
         }
@@ -655,7 +656,7 @@
         private Label label29;
         private Label label30;
         private PictureBox pictureBox8;
-        private PictureBox pictureBox9;
+        private PictureBox pbProfile1;
         private PictureBox pictureBox10;
         private ReaLTaiizor.Controls.CyberButton cyberButton8;
         private FontAwesome.Sharp.IconButton btnGraph;

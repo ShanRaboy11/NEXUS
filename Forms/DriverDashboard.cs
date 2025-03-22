@@ -245,5 +245,13 @@ namespace NEXUS.Forms
             childForm.Show();
             Application.DoEvents();
         }
+
+        private void pbProfile1_Click(object sender, EventArgs e)
+        {
+            Profile profile = new Profile();
+            Scan scan = new Scan();
+
+            scan.ShowOverlay(profile, null);
+        }
     }
 }

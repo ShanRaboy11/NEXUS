@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BCrypt.Net;
 
-namespace NEXUS
+namespace NEXUS.Classes
 {
     public interface Users
     {
@@ -19,7 +19,7 @@ namespace NEXUS
         public string ContactInfo { get; set; }
         public string Email { get; set; }
         public string Username { get; set; }
-        private string hashedPassword; 
+        private string hashedPassword;
         public double WalletAmount { get; set; }
 
         // Constructor
@@ -96,7 +96,7 @@ namespace NEXUS
             PassengerID = passengerID;
             DriverID = driverID;
             IncidentDetails = !string.IsNullOrWhiteSpace(incidentDetails) ? incidentDetails : "No details provided";
-            TimeStamp = DateTime.Now; 
+            TimeStamp = DateTime.Now;
         }
     }
 
@@ -104,7 +104,7 @@ namespace NEXUS
     {
         public int PassengerID { get; private set; }
         public int DriverID { get; private set; }
-        public int Rating { get; private set; }  
+        public int Rating { get; private set; }
         public string Feedback { get; private set; }
 
         // Constructor
@@ -145,7 +145,7 @@ namespace NEXUS
             RouteTaken = routeTaken;
             FarePaid = farePaid;
             TripTimeStamp = DateTime.Now;
-        }      
+        }
 
         // Generate a receipt string
         public string GenerateReceipt()
