@@ -1,5 +1,6 @@
 using NEXUS.Forms;
 using System.Runtime.InteropServices;
+using NEXUS.Classes;
 
 namespace NEXUS
 {
@@ -57,6 +58,7 @@ namespace NEXUS
         private void cyberButton2_Click(object sender, EventArgs e)
         {
             NEXUS.Forms.ProgressBar progressBar = new NEXUS.Forms.ProgressBar();
+            DatabaseManagement.Connect();
 
             progressBar.ProgressCompleted += () =>
             {
