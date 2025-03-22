@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "rxjsiFPTJ+8=",
+  "dgSpecHash": "D5ITL4Vdn14=",
   "success": true,
   "projectFilePath": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\NEXUS.csproj",
   "expectedPackageFiles": [
@@ -14,7 +14,12 @@
     "C:\\Users\\Shan Michael\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Shan Michael\\.nuget\\packages\\qrcoder\\1.6.0\\qrcoder.1.6.0.nupkg.sha512",
     "C:\\Users\\Shan Michael\\.nuget\\packages\\realtaiizor\\3.8.1.1\\realtaiizor.3.8.1.1.nupkg.sha512",
+    "C:\\Users\\Shan Michael\\.nuget\\packages\\system.configuration.configurationmanager\\9.0.3\\system.configuration.configurationmanager.9.0.3.nupkg.sha512",
+    "C:\\Users\\Shan Michael\\.nuget\\packages\\system.data.oledb\\9.0.3\\system.data.oledb.9.0.3.nupkg.sha512",
+    "C:\\Users\\Shan Michael\\.nuget\\packages\\system.diagnostics.eventlog\\9.0.3\\system.diagnostics.eventlog.9.0.3.nupkg.sha512",
+    "C:\\Users\\Shan Michael\\.nuget\\packages\\system.diagnostics.performancecounter\\9.0.3\\system.diagnostics.performancecounter.9.0.3.nupkg.sha512",
     "C:\\Users\\Shan Michael\\.nuget\\packages\\system.drawing.common\\8.0.12\\system.drawing.common.8.0.12.nupkg.sha512",
+    "C:\\Users\\Shan Michael\\.nuget\\packages\\system.security.cryptography.protecteddata\\9.0.3\\system.security.cryptography.protecteddata.9.0.3.nupkg.sha512",
     "C:\\Users\\Shan Michael\\.nuget\\packages\\zxing.net\\0.16.10\\zxing.net.0.16.10.nupkg.sha512",
     "C:\\Users\\Shan Michael\\.nuget\\packages\\zxing.net.bindings.windows.compatibility\\0.16.13\\zxing.net.bindings.windows.compatibility.0.16.13.nupkg.sha512"
   ],
