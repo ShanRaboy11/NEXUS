@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BCrypt.Net;
+using NEXUS.Classes;
 
 namespace NEXUS.Classes
 {
@@ -16,36 +17,37 @@ namespace NEXUS.Classes
     public abstract class UserInformation
     {
         public string Name { get; set; }
-        public string ContactInfo { get; set; }
         public string Email { get; set; }
         public string Username { get; set; }
-        private string hashedPassword;
+        private string HashedPassword;
+        public string Gender { get; set; }
+        public string UserType { get; set; }
+        public string Birthday { get; set; }
+        public string Classification { get; set; }
         public double WalletAmount { get; set; }
 
         // Constructor
-        protected UserInformation(string name, string contactInfo, string email, string username, string password)
+        protected UserInformation(string name,  string email, string username, string password, string gender, string userType, string birthday, string classification)
         {
             Name = name;
-            ContactInfo = contactInfo;
             Email = email;
             Username = username;
-            SetPassword(password);
+            HashedPassword = Cryptography.ToSHA256(password);
+            Gender = gender;
+            UserType = userType;
+            Birthday = birthday;
+            Classification = classification;
         }
+    }
 
-        public void SetPassword(string password)
-        {
-            if (!string.IsNullOrWhiteSpace(password))
-            {
-                hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
-            }
-        }
-
-        // Verify password input against stored hash
-        public bool VerifyPassword(string password)
-        {
-            return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
-        }
-
+    public class UserRegistrationData
+    {
+        public string FName { get; set; }
+        public string LName { get; set; }
+        public string UserName { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public string Gender { get; set; }
     }
 
     public class Passenger : UserInformation
@@ -53,8 +55,8 @@ namespace NEXUS.Classes
         public List<string> TripHistory { get; private set; }
 
         // Constructor
-        public Passenger(string name, string contactInfo, string email, string username, string password)
-            : base(name, contactInfo, email, username, password)
+        public Passenger(string name, string email, string username, string password, string gender, string userType, string birthday, string classification)
+            : base(name, email, username, password, gender, userType, birthday, classification)
         { }
 
         // Method to add trip history
@@ -74,8 +76,8 @@ namespace NEXUS.Classes
         public string PlateNumber { get; set; }
 
         // Constructor
-        public Driver(string name, string contactInfo, string email, string username, string password, double ratings, string vehicleType, string plateNumber)
-            : base(name, contactInfo, email, username, password)
+        public Driver(string name,  string email, string username, string password, string gender, string userType, string birthday, string classification, double ratings, string vehicleType, string plateNumber)
+            : base(name, email, username, password, gender, userType, birthday, classification)
         {
             Ratings = ratings;
             VehicleType = vehicleType;

@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NEXUS;
+using NEXUS.Classes;
 
 namespace NEXUS.Forms
 {
@@ -99,8 +100,7 @@ namespace NEXUS.Forms
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            DialogBox dialogBox = new DialogBox();
-            Register2 register2 = new Register2();
+            DialogBox dialogBox = new DialogBox();  
 
             if (string.IsNullOrWhiteSpace(tbxNewFirstName.Text) ||
                 string.IsNullOrWhiteSpace(tbxNewLastName.Text) ||
@@ -115,17 +115,17 @@ namespace NEXUS.Forms
             }
             else
             {
-                List<string> userInfo = new List<string>
-             {
-                tbxNewFirstName.Text,
-                tbxNewLastName.Text,
-                tbxNewUserName.Text,
-                tbxNewPassword.Text,
-                (rbtnFemale.Checked ? rbtnFemale.Text : rbtnMale.Checked ? rbtnMale.Text : rbtnNotSay.Text)
-             };
+                UserRegistrationData userRegistrationData = new UserRegistrationData
+                {
+                    FName = tbxNewFirstName.Text,
+                    LName = tbxNewLastName.Text,
+                    UserName = tbxNewUserName.Text,
+                    Password = tbxNewPassword.Text,
+                    Gender = (rbtnFemale.Checked ? rbtnFemale.Text : rbtnMale.Checked ? rbtnMale.Text : rbtnNotSay.Text)
+                };
 
                 //add here for initializing the registered infos using userInfo[0];
-
+                Register2 register2 = new Register2(userRegistrationData);
                 register2.Show();
                 this.Close();
             }         

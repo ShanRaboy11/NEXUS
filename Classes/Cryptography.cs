@@ -7,7 +7,7 @@ using System.Security.Cryptography;
 
 namespace NEXUS.Classes
 {
-    internal class Cryptography
+    public class Cryptography
     {
         public static string ToSHA256(string s)
         {
@@ -23,6 +23,12 @@ namespace NEXUS.Classes
 
                 return sb.ToString();
             }
+        }
+
+        public static bool VerifyPassword(string enteredPassword, string storedHash)
+        {
+            string enteredHash = ToSHA256(enteredPassword); 
+            return enteredHash.Equals(storedHash, StringComparison.OrdinalIgnoreCase); 
         }
     }
 }

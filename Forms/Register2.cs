@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NEXUS.Classes;
 
 namespace NEXUS.Forms
 {
@@ -14,7 +15,8 @@ namespace NEXUS.Forms
     {
         private Image attachedImage1;
         bool increase = false;
-        public Register2()
+        private UserRegistrationData userData;
+        public Register2(UserRegistrationData data)
         {
             InitializeComponent();
             rbtnDriver.Parent = pnlRole;
@@ -29,6 +31,7 @@ namespace NEXUS.Forms
             this.Size = new System.Drawing.Size(504, 495);
             lblNote.Location = new System.Drawing.Point(41, 406);
             btnSignUp.Location = new System.Drawing.Point(152, 439);
+            userData = data;
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)
@@ -44,17 +47,30 @@ namespace NEXUS.Forms
                 logInForm.overlayForm(this, dialogBox);
                 return;
             }
-            List<string> userInfo = new List<string>
+            else
+            {
+                string fullName = userData.FName + " " + userData.LName;
+                if (rbtnPassenger.Checked)
+                {
+                    Passenger newPassenger = new Passenger
+                    (
+                        fullName,
+                        userData.Email, userData.UserName,
+                        userData.Password                    
+                    );
+                }
+                List<string> userInfo = new List<string>
              {
                 cmbxMonth.Text,
                 cmbxDay.Text,
                 cmbxYear.Text,
                 (rbtnStudent.Checked ? rbtnStudent.Text : rbtnSenior.Checked ? rbtnSenior.Text : rbtnRegular.Text)
              };
-            dialogBox.ShowIcon("register");
-            logInForm.overlayForm(this, dialogBox);
-            logInForm.Show();
-            this.Close();
+                dialogBox.ShowIcon("register");
+                logInForm.overlayForm(this, dialogBox);
+                logInForm.Show();
+                this.Close();
+            }  
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
