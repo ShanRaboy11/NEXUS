@@ -139,11 +139,8 @@ namespace NEXUS.Forms
         private void btnRegister_Click(object sender, EventArgs e)
         {
             Register register = new Register();
-
-            register.FormClosed += (s, args) => this.Show();
-            register.Owner = this;
             register.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void pbLogo_Click(object sender, EventArgs e)

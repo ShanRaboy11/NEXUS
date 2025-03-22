@@ -36,17 +36,17 @@
             panel12 = new Panel();
             panel10 = new Panel();
             btnSignUp = new ReaLTaiizor.Controls.Button();
-            label7 = new Label();
+            lblNote = new Label();
             label4 = new Label();
             cmbxYear = new ComboBox();
             cmbxDay = new ComboBox();
             cmbxMonth = new ComboBox();
             label3 = new Label();
-            panel8 = new Panel();
-            rbtnFemale = new ReaLTaiizor.Controls.HopeRadioButton();
-            rbtnMale = new ReaLTaiizor.Controls.HopeRadioButton();
+            pnlClassification = new Panel();
+            rbtnStudent = new ReaLTaiizor.Controls.HopeRadioButton();
+            rbtnSenior = new ReaLTaiizor.Controls.HopeRadioButton();
             panel7 = new Panel();
-            rbtnNotSay = new ReaLTaiizor.Controls.HopeRadioButton();
+            rbtnRegular = new ReaLTaiizor.Controls.HopeRadioButton();
             panel5 = new Panel();
             panel6 = new Panel();
             separator1 = new ReaLTaiizor.Controls.Separator();
@@ -56,19 +56,19 @@
             pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
-            label6 = new Label();
-            panel4 = new Panel();
+            lblAttachment = new Label();
+            pnlAttach = new Panel();
             btnAttach = new FontAwesome.Sharp.IconButton();
             tbxIncidentLocation = new TextBox();
             lblFileName = new Label();
             pnlRole.SuspendLayout();
-            panel8.SuspendLayout();
+            pnlClassification.SuspendLayout();
             panel7.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel4.SuspendLayout();
+            pnlAttach.SuspendLayout();
             SuspendLayout();
             // 
             // label5
@@ -165,7 +165,7 @@
             btnSignUp.Image = null;
             btnSignUp.ImageAlign = ContentAlignment.MiddleLeft;
             btnSignUp.InactiveColor = Color.FromArgb(24, 60, 114);
-            btnSignUp.Location = new Point(157, 528);
+            btnSignUp.Location = new Point(152, 439);
             btnSignUp.Name = "btnSignUp";
             btnSignUp.PressedBorderColor = Color.FromArgb(176, 233, 255);
             btnSignUp.PressedColor = Color.FromArgb(176, 233, 255);
@@ -175,16 +175,16 @@
             btnSignUp.TextAlignment = StringAlignment.Center;
             btnSignUp.Click += btnSignUp_Click;
             // 
-            // label7
+            // lblNote
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Inter", 10F);
-            label7.ForeColor = Color.DimGray;
-            label7.Location = new Point(46, 497);
-            label7.Name = "label7";
-            label7.Size = new Size(425, 21);
-            label7.TabIndex = 80;
-            label7.Text = "By signing up, you agree to our Privacy Policy and Data Usage.";
+            lblNote.AutoSize = true;
+            lblNote.Font = new Font("Inter", 10F);
+            lblNote.ForeColor = Color.DimGray;
+            lblNote.Location = new Point(41, 406);
+            lblNote.Name = "lblNote";
+            lblNote.Size = new Size(425, 21);
+            lblNote.TabIndex = 80;
+            lblNote.Text = "By signing up, you agree to our Privacy Policy and Data Usage.";
             // 
             // label4
             // 
@@ -208,6 +208,7 @@
             cmbxYear.Name = "cmbxYear";
             cmbxYear.Size = new Size(145, 30);
             cmbxYear.TabIndex = 77;
+            cmbxYear.TabStop = false;
             cmbxYear.Text = "Year";
             // 
             // cmbxDay
@@ -221,6 +222,7 @@
             cmbxDay.Name = "cmbxDay";
             cmbxDay.Size = new Size(123, 30);
             cmbxDay.TabIndex = 76;
+            cmbxDay.TabStop = false;
             cmbxDay.Text = "Day";
             // 
             // cmbxMonth
@@ -234,6 +236,7 @@
             cmbxMonth.Name = "cmbxMonth";
             cmbxMonth.Size = new Size(168, 30);
             cmbxMonth.TabIndex = 75;
+            cmbxMonth.TabStop = false;
             cmbxMonth.Text = "Month";
             // 
             // label3
@@ -247,92 +250,92 @@
             label3.TabIndex = 74;
             label3.Text = "Birthday";
             // 
-            // panel8
+            // pnlClassification
             // 
-            panel8.BackColor = Color.FromArgb(230, 249, 255);
-            panel8.BackgroundImageLayout = ImageLayout.None;
-            panel8.Controls.Add(rbtnFemale);
-            panel8.Controls.Add(rbtnMale);
-            panel8.Controls.Add(panel7);
-            panel8.Controls.Add(panel5);
-            panel8.Controls.Add(panel6);
-            panel8.Location = new Point(15, 330);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(511, 55);
-            panel8.TabIndex = 79;
+            pnlClassification.BackColor = Color.FromArgb(230, 249, 255);
+            pnlClassification.BackgroundImageLayout = ImageLayout.None;
+            pnlClassification.Controls.Add(rbtnStudent);
+            pnlClassification.Controls.Add(rbtnSenior);
+            pnlClassification.Controls.Add(panel7);
+            pnlClassification.Controls.Add(panel5);
+            pnlClassification.Controls.Add(panel6);
+            pnlClassification.Location = new Point(15, 330);
+            pnlClassification.Name = "pnlClassification";
+            pnlClassification.Size = new Size(511, 55);
+            pnlClassification.TabIndex = 79;
             // 
-            // rbtnFemale
+            // rbtnStudent
             // 
-            rbtnFemale.AutoSize = true;
-            rbtnFemale.BackColor = Color.FromArgb(176, 233, 255);
-            rbtnFemale.CheckedColor = Color.FromArgb(64, 158, 255);
-            rbtnFemale.DisabledColor = Color.FromArgb(196, 198, 202);
-            rbtnFemale.DisabledStringColor = Color.FromArgb(186, 187, 189);
-            rbtnFemale.Enable = true;
-            rbtnFemale.EnabledCheckedColor = Color.FromArgb(64, 158, 255);
-            rbtnFemale.EnabledStringColor = Color.FromArgb(146, 146, 146);
-            rbtnFemale.EnabledUncheckedColor = Color.FromArgb(156, 158, 161);
-            rbtnFemale.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rbtnFemale.ForeColor = Color.FromArgb(24, 60, 114);
-            rbtnFemale.Location = new Point(34, 16);
-            rbtnFemale.Name = "rbtnFemale";
-            rbtnFemale.Size = new Size(92, 20);
-            rbtnFemale.TabIndex = 28;
-            rbtnFemale.TabStop = true;
-            rbtnFemale.Text = "Student";
-            rbtnFemale.UseVisualStyleBackColor = false;
+            rbtnStudent.AutoSize = true;
+            rbtnStudent.BackColor = Color.FromArgb(176, 233, 255);
+            rbtnStudent.CheckedColor = Color.FromArgb(64, 158, 255);
+            rbtnStudent.DisabledColor = Color.FromArgb(196, 198, 202);
+            rbtnStudent.DisabledStringColor = Color.FromArgb(186, 187, 189);
+            rbtnStudent.Enable = true;
+            rbtnStudent.EnabledCheckedColor = Color.FromArgb(64, 158, 255);
+            rbtnStudent.EnabledStringColor = Color.FromArgb(146, 146, 146);
+            rbtnStudent.EnabledUncheckedColor = Color.FromArgb(156, 158, 161);
+            rbtnStudent.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rbtnStudent.ForeColor = Color.FromArgb(24, 60, 114);
+            rbtnStudent.Location = new Point(34, 16);
+            rbtnStudent.Name = "rbtnStudent";
+            rbtnStudent.Size = new Size(92, 20);
+            rbtnStudent.TabIndex = 28;
+            rbtnStudent.Text = "Student";
+            rbtnStudent.UseVisualStyleBackColor = false;
+            rbtnStudent.CheckedChanged += rbtnStudent_CheckedChanged;
             // 
-            // rbtnMale
+            // rbtnSenior
             // 
-            rbtnMale.AutoSize = true;
-            rbtnMale.BackColor = Color.FromArgb(176, 233, 255);
-            rbtnMale.CheckedColor = Color.FromArgb(64, 158, 255);
-            rbtnMale.DisabledColor = Color.FromArgb(196, 198, 202);
-            rbtnMale.DisabledStringColor = Color.FromArgb(186, 187, 189);
-            rbtnMale.Enable = true;
-            rbtnMale.EnabledCheckedColor = Color.FromArgb(64, 158, 255);
-            rbtnMale.EnabledStringColor = Color.FromArgb(146, 146, 146);
-            rbtnMale.EnabledUncheckedColor = Color.FromArgb(156, 158, 161);
-            rbtnMale.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rbtnMale.ForeColor = Color.FromArgb(24, 60, 114);
-            rbtnMale.Location = new Point(168, 16);
-            rbtnMale.Name = "rbtnMale";
-            rbtnMale.Size = new Size(140, 20);
-            rbtnMale.TabIndex = 28;
-            rbtnMale.TabStop = true;
-            rbtnMale.Text = "Senior Citizen";
-            rbtnMale.UseVisualStyleBackColor = false;
+            rbtnSenior.AutoSize = true;
+            rbtnSenior.BackColor = Color.FromArgb(176, 233, 255);
+            rbtnSenior.CheckedColor = Color.FromArgb(64, 158, 255);
+            rbtnSenior.DisabledColor = Color.FromArgb(196, 198, 202);
+            rbtnSenior.DisabledStringColor = Color.FromArgb(186, 187, 189);
+            rbtnSenior.Enable = true;
+            rbtnSenior.EnabledCheckedColor = Color.FromArgb(64, 158, 255);
+            rbtnSenior.EnabledStringColor = Color.FromArgb(146, 146, 146);
+            rbtnSenior.EnabledUncheckedColor = Color.FromArgb(156, 158, 161);
+            rbtnSenior.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rbtnSenior.ForeColor = Color.FromArgb(24, 60, 114);
+            rbtnSenior.Location = new Point(168, 16);
+            rbtnSenior.Name = "rbtnSenior";
+            rbtnSenior.Size = new Size(140, 20);
+            rbtnSenior.TabIndex = 28;
+            rbtnSenior.Text = "Senior Citizen";
+            rbtnSenior.UseVisualStyleBackColor = false;
+            rbtnSenior.CheckedChanged += rbtnSenior_CheckedChanged;
             // 
             // panel7
             // 
             panel7.BackColor = Color.FromArgb(176, 233, 255);
             panel7.BackgroundImageLayout = ImageLayout.None;
-            panel7.Controls.Add(rbtnNotSay);
+            panel7.Controls.Add(rbtnRegular);
             panel7.Location = new Point(341, 6);
             panel7.Name = "panel7";
             panel7.Size = new Size(135, 41);
             panel7.TabIndex = 69;
             // 
-            // rbtnNotSay
+            // rbtnRegular
             // 
-            rbtnNotSay.AutoSize = true;
-            rbtnNotSay.BackColor = Color.FromArgb(176, 233, 255);
-            rbtnNotSay.CheckedColor = Color.FromArgb(64, 158, 255);
-            rbtnNotSay.DisabledColor = Color.FromArgb(196, 198, 202);
-            rbtnNotSay.DisabledStringColor = Color.FromArgb(186, 187, 189);
-            rbtnNotSay.Enable = true;
-            rbtnNotSay.EnabledCheckedColor = Color.FromArgb(64, 158, 255);
-            rbtnNotSay.EnabledStringColor = Color.FromArgb(146, 146, 146);
-            rbtnNotSay.EnabledUncheckedColor = Color.FromArgb(156, 158, 161);
-            rbtnNotSay.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rbtnNotSay.ForeColor = Color.FromArgb(24, 60, 114);
-            rbtnNotSay.Location = new Point(16, 11);
-            rbtnNotSay.Name = "rbtnNotSay";
-            rbtnNotSay.Size = new Size(92, 20);
-            rbtnNotSay.TabIndex = 28;
-            rbtnNotSay.TabStop = true;
-            rbtnNotSay.Text = "Regular";
-            rbtnNotSay.UseVisualStyleBackColor = false;
+            rbtnRegular.AutoSize = true;
+            rbtnRegular.BackColor = Color.FromArgb(176, 233, 255);
+            rbtnRegular.CheckedColor = Color.FromArgb(64, 158, 255);
+            rbtnRegular.DisabledColor = Color.FromArgb(196, 198, 202);
+            rbtnRegular.DisabledStringColor = Color.FromArgb(186, 187, 189);
+            rbtnRegular.Enable = true;
+            rbtnRegular.EnabledCheckedColor = Color.FromArgb(64, 158, 255);
+            rbtnRegular.EnabledStringColor = Color.FromArgb(146, 146, 146);
+            rbtnRegular.EnabledUncheckedColor = Color.FromArgb(156, 158, 161);
+            rbtnRegular.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rbtnRegular.ForeColor = Color.FromArgb(24, 60, 114);
+            rbtnRegular.Location = new Point(16, 11);
+            rbtnRegular.Name = "rbtnRegular";
+            rbtnRegular.Size = new Size(92, 20);
+            rbtnRegular.TabIndex = 28;
+            rbtnRegular.Text = "Regular";
+            rbtnRegular.UseVisualStyleBackColor = false;
+            rbtnRegular.CheckedChanged += rbtnRegular_CheckedChanged;
             // 
             // panel5
             // 
@@ -398,7 +401,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(438, 6);
+            pictureBox3.Location = new Point(455, 6);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(14, 14);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -408,7 +411,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(407, 4);
+            pictureBox2.Location = new Point(424, 4);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(19, 19);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -418,35 +421,38 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(465, 4);
+            pictureBox1.Location = new Point(482, 4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(18, 18);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
-            // label6
+            // lblAttachment
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Inter", 10.55F);
-            label6.ForeColor = Color.FromArgb(24, 60, 114);
-            label6.Location = new Point(20, 399);
-            label6.Name = "label6";
-            label6.Size = new Size(96, 22);
-            label6.TabIndex = 88;
-            label6.Text = "Attachment:";
+            lblAttachment.AutoSize = true;
+            lblAttachment.Font = new Font("Inter", 10.55F);
+            lblAttachment.ForeColor = Color.FromArgb(24, 60, 114);
+            lblAttachment.Location = new Point(20, 399);
+            lblAttachment.Name = "lblAttachment";
+            lblAttachment.Size = new Size(96, 22);
+            lblAttachment.TabIndex = 88;
+            lblAttachment.Text = "Attachment:";
+            lblAttachment.Visible = false;
             // 
-            // panel4
+            // pnlAttach
             // 
-            panel4.BackColor = Color.FromArgb(176, 233, 255);
-            panel4.BackgroundImageLayout = ImageLayout.None;
-            panel4.Controls.Add(btnAttach);
-            panel4.Controls.Add(tbxIncidentLocation);
-            panel4.Controls.Add(lblFileName);
-            panel4.Location = new Point(32, 430);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(266, 46);
-            panel4.TabIndex = 89;
+            pnlAttach.BackColor = Color.FromArgb(176, 233, 255);
+            pnlAttach.BackgroundImageLayout = ImageLayout.None;
+            pnlAttach.Controls.Add(btnAttach);
+            pnlAttach.Controls.Add(tbxIncidentLocation);
+            pnlAttach.Controls.Add(lblFileName);
+            pnlAttach.Location = new Point(32, 430);
+            pnlAttach.Name = "pnlAttach";
+            pnlAttach.Size = new Size(266, 46);
+            pnlAttach.TabIndex = 89;
+            pnlAttach.Visible = false;
             // 
             // btnAttach
             // 
@@ -459,6 +465,8 @@
             btnAttach.Size = new Size(46, 35);
             btnAttach.TabIndex = 32;
             btnAttach.UseVisualStyleBackColor = true;
+            btnAttach.Visible = false;
+            btnAttach.Click += btnAttach_Click;
             // 
             // tbxIncidentLocation
             // 
@@ -482,6 +490,8 @@
             lblFileName.Size = new Size(187, 23);
             lblFileName.TabIndex = 31;
             lblFileName.Text = "Attach ID";
+            lblFileName.Visible = false;
+            lblFileName.Click += lblFileName_Click;
             // 
             // Register2
             // 
@@ -489,8 +499,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
             ClientSize = new Size(506, 590);
-            Controls.Add(panel4);
-            Controls.Add(label6);
+            Controls.Add(pnlAttach);
+            Controls.Add(lblAttachment);
             Controls.Add(separator1);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -498,13 +508,13 @@
             Controls.Add(label5);
             Controls.Add(pnlRole);
             Controls.Add(btnSignUp);
-            Controls.Add(label7);
+            Controls.Add(lblNote);
             Controls.Add(label4);
             Controls.Add(cmbxYear);
             Controls.Add(cmbxDay);
             Controls.Add(cmbxMonth);
             Controls.Add(label3);
-            Controls.Add(panel8);
+            Controls.Add(pnlClassification);
             Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -513,16 +523,16 @@
             Text = "Register2";
             pnlRole.ResumeLayout(false);
             pnlRole.PerformLayout();
-            panel8.ResumeLayout(false);
-            panel8.PerformLayout();
+            pnlClassification.ResumeLayout(false);
+            pnlClassification.PerformLayout();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
+            pnlAttach.ResumeLayout(false);
+            pnlAttach.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -536,16 +546,16 @@
         private Panel panel12;
         private Panel panel10;
         private ReaLTaiizor.Controls.Button btnSignUp;
-        private Label label7;
+        private Label lblNote;
         private Label label4;
         private ComboBox cmbxYear;
         private ComboBox cmbxDay;
         private ComboBox cmbxMonth;
         private Label label3;
-        private Panel panel8;
-        private ReaLTaiizor.Controls.HopeRadioButton rbtnFemale;
-        private ReaLTaiizor.Controls.HopeRadioButton rbtnMale;
-        private ReaLTaiizor.Controls.HopeRadioButton rbtnNotSay;
+        private Panel pnlClassification;
+        private ReaLTaiizor.Controls.HopeRadioButton rbtnStudent;
+        private ReaLTaiizor.Controls.HopeRadioButton rbtnSenior;
+        private ReaLTaiizor.Controls.HopeRadioButton rbtnRegular;
         private Panel panel7;
         private Panel panel5;
         private Panel panel6;
@@ -556,8 +566,8 @@
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
-        private Label label6;
-        private Panel panel4;
+        private Label lblAttachment;
+        private Panel pnlAttach;
         private FontAwesome.Sharp.IconButton btnAttach;
         private TextBox tbxIncidentLocation;
         private Label lblFileName;

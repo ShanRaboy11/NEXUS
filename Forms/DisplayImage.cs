@@ -13,11 +13,19 @@ namespace NEXUS.Forms
     public partial class DisplayImage : Form
     {
         Scan scan = new Scan();
-        public DisplayImage(Image image)
+        public DisplayImage(Image image, string message)
         {
             InitializeComponent();
-            scan.ShowOverlay(this,null);
             pbImageUploaded.Image = image;
+            if (message == "report")
+            {
+                scan.ShowOverlay(this, null);       
+            }
+            else
+            {
+                this.Show();
+            }
+            
         }
 
         private void pbClose1_Click(object sender, EventArgs e)
