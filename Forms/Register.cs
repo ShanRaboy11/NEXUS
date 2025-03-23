@@ -18,6 +18,7 @@ namespace NEXUS.Forms
     {
         LogInForm logInForm = new LogInForm();
         private bool isPasswordVisible = false;
+        bool isClicked1 = false, isClicked2 = false, isClicked3 = false, isClicked4 = false, isClicked5 = false;
         public Register()
         {
             InitializeComponent();
@@ -58,26 +59,41 @@ namespace NEXUS.Forms
 
         private void EnterFirstname(object sender, EventArgs e)
         {
+            if (isClicked1) return;
+
+            isClicked1 = true;
             tbxNewFirstName.Text = "";
         }
 
         private void EnterLastname(object sender, EventArgs e)
         {
+            if (isClicked2) return;
+
+            isClicked2 = true;
             tbxNewLastName.Text = "";
         }
 
         private void EnterUsername(object sender, EventArgs e)
         {
+            if (isClicked3) return;
+
+            isClicked3 = true;
             tbxNewUserName.Text = "";
         }
 
         private void tbxEmail_Click(object sender, EventArgs e)
         {
+            if (isClicked4) return;
+
+            isClicked4 = true;
             tbxEmail.Text = "";
         }
 
         private void EnterPassword(object sender, EventArgs e)
         {
+            if (isClicked5) return;
+
+            isClicked5 = true;
             tbxNewPassword.Text = "";
             tbxNewPassword.UseSystemPasswordChar = true;
             tbxNewPassword.Font = new Font("Inter", 9, FontStyle.Regular);
