@@ -1,4 +1,5 @@
 ﻿using FontAwesome.Sharp;
+using NEXUS.Classes;
 using NEXUS.Properties;
 using System;
 using System.Collections.Generic;
@@ -15,19 +16,22 @@ namespace NEXUS.Forms
 {
     public partial class Dashboard : Form
     {
-
+        Passenger passenger;
         bool sidebarExpand = false;
         private Form currentChildForm;
         private FontAwesome.Sharp.IconButton selectedButton = null;
         private FontAwesome.Sharp.IconButton currentBtn;
-        public Dashboard()
+        public Dashboard(Passenger currentPassenger)
         {
             InitializeComponent();
+            this.passenger = currentPassenger;
             this.DoubleBuffered = true;
             this.Load += (s, e) => btnHome_Click(btnHome, EventArgs.Empty);
             //btnHome_Click(btnHome, EventArgs.Empty);
+            string currentName = currentPassenger.Name;
+            lblUserFName.Text = currentName;
         }
-
+        
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -70,14 +74,12 @@ namespace NEXUS.Forms
         {
             Scan scan = new Scan();
             OpenChildForm(scan);
-            //QRCodeGeneratorform qRCodeGeneratorform = new QRCodeGeneratorform();
             SelectButton(btnScan);
-            //OpenChildForm(qRCodeGeneratorform);
         }
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            Home home = new Home();
+            Home home = new Home(passenger);
             SelectButton(btnHome);
             OpenChildForm(home);
         }

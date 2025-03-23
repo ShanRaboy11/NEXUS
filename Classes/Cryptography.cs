@@ -29,8 +29,8 @@ namespace NEXUS.Classes
 
         public static UserInformation VerifyPassword(string userName, string enteredPassword)
         {
-            string query = "SELECT [User Name], [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Classification, Attachment " +
-                           "FROM [Accounts] WHERE [User Name] = ?";
+            string query = "SELECT Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Classification, Attachment " +
+                   "FROM Accounts WHERE Username = ?";
 
             string enteredHash = ToSHA256(enteredPassword);
 
@@ -44,31 +44,33 @@ namespace NEXUS.Classes
                 {
                     if (reader.Read()) // If a record is found
                     {
-                        string storedHash = reader.GetString(1); // Retrieve hashed password
+                        string storedHash = reader.GetString(1);
 
                         if (enteredHash.Equals(storedHash, StringComparison.OrdinalIgnoreCase))
                         {
-                            // Extract user information from the database
-                            string username = reader.GetString(1);
-                            string fullName = reader.GetString(3);
-                            string email = reader.GetString(4);
-                            string gender = reader.GetString(5);
-                            string userType = reader.GetString(6);
-                            string birthday = reader.GetString(7);
-                            string classification = reader.IsDBNull(8) ? null : reader.GetString(7);
-                            string attachment = reader.IsDBNull(9) ? null : reader.GetString(8);
-                            string platenumber = reader.IsDBNull(10) ? null : reader.GetString(8);
+                            string username = reader.GetString(0);
+                            string fullName = reader.GetString(2);
+                            string email = reader.GetString(3);
+                            string gender = reader.GetString(4);
+                            string userType = reader.GetString(5);
+                            string birthday = reader.GetString(6);
+                            string classification = reader.IsDBNull(7) ? null : reader.GetString(7);
+                            string attachment = reader.IsDBNull(8) ? null : reader.GetString(8);
 
-                            // Create and return the appropriate UserInformation object
-                            return new Passenger(fullName, email, username, enteredPassword, gender, userType, birthday, classification, attachment);
+                            if (userType == "Passenger")
+                            {
+                                return new Passenger(fullName, email, username, enteredPassword, gender, userType, birthday, classification, attachment);
+                            }
+                            else
+                            {
+                                string plateNumber = reader.IsDBNull(9) ? null : reader.GetString(9);
+                                return new Driver(fullName, email, username, enteredPassword, gender, userType, birthday, plateNumber, attachment);
+                            }
                         }
                     }
                 }
             }
-
             return null; 
         }
-
-
     }
 }

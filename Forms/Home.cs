@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NEXUS.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,16 +13,39 @@ namespace NEXUS.Forms
 {
     public partial class Home : Form
     {
-        Dashboard dashboard = new Dashboard();
-        public Home()
+        private Dashboard passengerDashboard;
+        private DriverDashboard driverDashboard;
+        private UserInformation currentUser; 
+
+        public Home(UserInformation user)
         {
             InitializeComponent();
+            this.currentUser = user;
+
+            
+            if (user is Passenger passenger)
+            {
+                passengerDashboard = new Dashboard(passenger);
+            }
+            else if (user is Driver driver)
+            {
+                driverDashboard = new DriverDashboard(driver);
+            }
         }
 
         private void pbMap_Click(object sender, EventArgs e)
         {
             Map map = new Map();
-            dashboard.OpenChildForm(map);
+
+            if (currentUser is Passenger)
+            {
+                passengerDashboard?.OpenChildForm(map);
+            }
+            else if (currentUser is Driver)
+            {
+                driverDashboard?.OpenChildForm(map);
+            }
         }
     }
+
 }

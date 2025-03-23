@@ -178,8 +178,9 @@ namespace NEXUS.Forms
         private void btnLogin_Click(object sender, EventArgs e)
         {
             DialogBox dialogBox = new DialogBox();
-            Dashboard dashboard = new Dashboard();
-
+            
+            string username = tbxEnterUsername.Text;
+            string password = tbxEnterPassword.Text;
             if (string.IsNullOrEmpty(tbxEnterUsername.Text) || string.IsNullOrEmpty(tbxEnterPassword.Text) ||
                 tbxEnterPassword.Text == "Username" || tbxEnterPassword.Text == "Password")
             {
@@ -187,19 +188,38 @@ namespace NEXUS.Forms
                 overlayForm(this, dialogBox);
                 return;
             }
-            else
+            UserInformation user = Cryptography.VerifyPassword(username, password);
+
+            if (user == null)
+            {
+                dialogBox.ShowIcon("fail");
+                overlayForm(this, dialogBox);
+                return;
+            }
+
+            if (user is Passenger passenger)
             {
                 dialogBox.ShowIcon("login");
                 overlayForm(this, dialogBox);
+                Dashboard dashboard = new Dashboard(passenger);
+                //Home home = new Home(passenger);
                 dashboard.Show();
                 this.Close();
             }
-            //dialogBox.ShowIcon("fail");    
+            else if (user is Driver driver)
+            {
+                dialogBox.ShowIcon("login");
+                overlayForm(this, dialogBox);
+                DriverDashboard driverDashboard = new DriverDashboard(driver);
+                driverDashboard.Show();
+                this.Close();
+            }
+
         }
 
         private void CheckCredentials(string username, string password)
         {
-            Cryptography.VerifyPassword
+            
         }
     }
 }

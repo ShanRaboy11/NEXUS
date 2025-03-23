@@ -12,7 +12,7 @@ namespace NEXUS.Forms
 {
     public partial class Scan : Form
     {
-        Dashboard dashboard = new Dashboard();
+        Dashboard dashboard = new Dashboard(null);
         public Scan()
         {
             InitializeComponent();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NEXUS.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,13 +14,15 @@ namespace NEXUS.Forms
 {
     public partial class DriverDashboard : Form
     {
+        Driver driver;
         Form currentChildForm1;
         bool sidebarExpand = false;
         private FontAwesome.Sharp.IconButton selectedButton = null;
         private FontAwesome.Sharp.IconButton currentBtn;
-        public DriverDashboard()
+        public DriverDashboard(Driver currentDriver)
         {
             InitializeComponent();
+            this.driver = currentDriver;
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -69,7 +72,7 @@ namespace NEXUS.Forms
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            Home home = new Home();
+            Home home = new Home(driver);
             SelectButton(btnHome1);
             OpenChildForm(home);
         }
