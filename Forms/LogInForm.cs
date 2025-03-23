@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NEXUS.Classes;
 
 namespace NEXUS.Forms
 {
@@ -194,6 +195,11 @@ namespace NEXUS.Forms
                 this.Close();
             }
             //dialogBox.ShowIcon("fail");    
+        }
+
+        private void CheckCredentials(string username, string password)
+        {
+            Cryptography.VerifyPassword
         }
     }
 }

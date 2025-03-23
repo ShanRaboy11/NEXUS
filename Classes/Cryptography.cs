@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
+using NEXUS.Properties;
+using System.Data.OleDb;
 
 namespace NEXUS.Classes
 {
@@ -25,10 +27,48 @@ namespace NEXUS.Classes
             }
         }
 
-        public static bool VerifyPassword(string enteredPassword, string storedHash)
+        public static UserInformation VerifyPassword(string userName, string enteredPassword)
         {
-            string enteredHash = ToSHA256(enteredPassword); 
-            return enteredHash.Equals(storedHash, StringComparison.OrdinalIgnoreCase); 
+            string query = "SELECT [User Name], [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Classification, Attachment " +
+                           "FROM [Accounts] WHERE [User Name] = ?";
+
+            string enteredHash = ToSHA256(enteredPassword);
+
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            using (OleDbCommand cmd = new OleDbCommand(query, conn))
+            {
+                conn.Open();
+                cmd.Parameters.AddWithValue("?", userName);
+
+                using (OleDbDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read()) // If a record is found
+                    {
+                        string storedHash = reader.GetString(1); // Retrieve hashed password
+
+                        if (enteredHash.Equals(storedHash, StringComparison.OrdinalIgnoreCase))
+                        {
+                            // Extract user information from the database
+                            string username = reader.GetString(1);
+                            string fullName = reader.GetString(3);
+                            string email = reader.GetString(4);
+                            string gender = reader.GetString(5);
+                            string userType = reader.GetString(6);
+                            string birthday = reader.GetString(7);
+                            string classification = reader.IsDBNull(8) ? null : reader.GetString(7);
+                            string attachment = reader.IsDBNull(9) ? null : reader.GetString(8);
+                            string platenumber = reader.IsDBNull(10) ? null : reader.GetString(8);
+
+                            // Create and return the appropriate UserInformation object
+                            return new Passenger(fullName, email, username, enteredPassword, gender, userType, birthday, classification, attachment);
+                        }
+                    }
+                }
+            }
+
+            return null; 
         }
+
+
     }
 }
