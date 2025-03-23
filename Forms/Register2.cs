@@ -41,43 +41,68 @@ namespace NEXUS.Forms
             DialogBox dialogBox = new DialogBox();
             LogInForm logInForm = new LogInForm();
 
-            if ((!rbtnStudent.Checked && !rbtnSenior.Checked && !rbtnRegular.Checked) ||
-                (!rbtnDriver.Checked && !rbtnPassenger.Checked))
+            if(!rbtnPassenger.Checked && !rbtnDriver.Checked)
             {
-
                 dialogBox.ShowIcon("blank");
                 logInForm.overlayForm(this, dialogBox);
                 return;
             }
-            else
+            else if(rbtnPassenger.Checked)
             {
-                string fullName = userData.FName + " " + userData.LName;
-                string birthday = cmbxMonth.Text + " " + cmbxDay.Text + ", " + cmbxYear.Text;
-                if (rbtnPassenger.Checked)
+                if((!rbtnStudent.Checked && !rbtnSenior.Checked && !rbtnRegular.Checked) || cmbxMonth.Text == "Month" ||
+                    cmbxDay.Text == "Day" || cmbxYear.Text == "Year" || (lblFileName.Text == "Attach ID" && rbtnStudent.Checked && rbtnSenior.Checked))
                 {
-                    Passenger newPassenger = new Passenger
-                    (
-                        fullName, userData.Email, userData.UserName, userData.Password, 
-                        userData.Gender, rbtnPassenger.Text, birthday, 
-                        (rbtnStudent.Checked ? rbtnStudent.Text : rbtnSenior.Checked ? rbtnSenior.Text : rbtnRegular.Checked ? rbtnRegular.Text : "None"),
-                        (rbtnStudent.Checked || rbtnSenior.Checked ? lblFileName.Text :  rbtnRegular.Checked ? "" : "None")
-                    );
-                }
-                else if(rbtnDriver.Checked)
-                {
-                    Driver newDriver = new Driver
-                    (
-                        fullName, userData.Email, userData.UserName, userData.Password,
-                        userData.Gender, rbtnDriver.Text, birthday, tbxPlateNumber.Text,
-                        lblFileName.Text
-                    );
-                }
-
-                dialogBox.ShowIcon("register");
-                logInForm.overlayForm(this, dialogBox);
-                logInForm.Show();
-                this.Close();
+                    dialogBox.ShowIcon("blank");
+                    logInForm.overlayForm(this, dialogBox);
+                    return;
+                }     
+                else
+                    SaveCredentials();
             }
+            else if(rbtnDriver.Checked)
+            {
+                if(string.IsNullOrEmpty(tbxPlateNumber.Text) || cmbxMonth.Text == "Month" ||
+                    cmbxDay.Text == "Day" || cmbxYear.Text == "Year" || lblFileName.Text == "Attach ID")
+                {
+                    dialogBox.ShowIcon("blank");
+                    logInForm.overlayForm(this, dialogBox);
+                    return;
+                }
+                else
+                    SaveCredentials();
+            }
+        }
+
+        private void SaveCredentials()
+        {
+            DialogBox dialogBox = new DialogBox();
+            LogInForm logInForm = new LogInForm();
+            string fullName = userData.FName + " " + userData.LName;
+            string birthday = cmbxMonth.Text + " " + cmbxDay.Text + ", " + cmbxYear.Text;
+            if (rbtnPassenger.Checked)
+            {
+                Passenger newPassenger = new Passenger
+                (
+                    fullName, userData.Email, userData.UserName, userData.Password,
+                    userData.Gender, rbtnPassenger.Text, birthday,
+                    (rbtnStudent.Checked ? rbtnStudent.Text : rbtnSenior.Checked ? rbtnSenior.Text : rbtnRegular.Checked ? rbtnRegular.Text : "None"),
+                    (rbtnStudent.Checked || rbtnSenior.Checked ? lblFileName.Text : rbtnRegular.Checked ? "" : "None")
+                );
+            }
+            else if (rbtnDriver.Checked)
+            {
+                Driver newDriver = new Driver
+                (
+                    fullName, userData.Email, userData.UserName, userData.Password,
+                    userData.Gender, rbtnDriver.Text, birthday, tbxPlateNumber.Text,
+                    lblFileName.Text
+                );
+            }
+
+            dialogBox.ShowIcon("register");
+            logInForm.overlayForm(this, dialogBox);
+            logInForm.Show();
+            this.Close();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

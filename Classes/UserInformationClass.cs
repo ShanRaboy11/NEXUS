@@ -10,6 +10,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace NEXUS.Classes
 {
+
     public interface Users
     {
         float ProcessPayment();
@@ -76,7 +77,6 @@ namespace NEXUS.Classes
             {
                 conn.Open();
 
-                // Add parameters in the correct order, handling possible null values
                 cmd.Parameters.AddWithValue("?", this.Username);
                 cmd.Parameters.AddWithValue("?", this.HashedPassword);
                 cmd.Parameters.AddWithValue("?", this.Name);
@@ -85,14 +85,11 @@ namespace NEXUS.Classes
                 cmd.Parameters.AddWithValue("?", this.UserType);
                 cmd.Parameters.AddWithValue("?", this.Birthday);
                 cmd.Parameters.AddWithValue("?", Classification);
-                cmd.Parameters.AddWithValue("?", string.IsNullOrEmpty(this.Attachment) ? DBNull.Value : this.Attachment); // Handle NULL values correctly
+                cmd.Parameters.AddWithValue("?", string.IsNullOrEmpty(this.Attachment) ? DBNull.Value : this.Attachment);
 
                 cmd.ExecuteNonQuery();
             }
         }
-
-
-
 
         // Method to add trip history
         public void AddTrip(string tripDetails)
@@ -106,6 +103,7 @@ namespace NEXUS.Classes
 
     public class Driver : UserInformation
     {
+        private string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Shan Michael\OneDrive\文档\2nd Year 2nd Sem\OOP2\NEXUS\NEXUS.accdb";
         public string PlateNumber { get; set; }
 
         // Constructor
@@ -113,6 +111,31 @@ namespace NEXUS.Classes
             : base(name, email, username, password, gender, userType, birthday, attachment)
         {
             PlateNumber = plateNumber;
+            SaveToDatabase();
+        }
+
+        private void SaveToDatabase()
+        {
+            string query = "INSERT INTO Accounts (Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, [Plate Number], Attachment) " +
+                           "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+            using (OleDbConnection conn = new OleDbConnection(connectionString))
+            using (OleDbCommand cmd = new OleDbCommand(query, conn))
+            {
+                conn.Open();
+
+                cmd.Parameters.AddWithValue("?", this.Username);
+                cmd.Parameters.AddWithValue("?", this.HashedPassword);
+                cmd.Parameters.AddWithValue("?", this.Name);
+                cmd.Parameters.AddWithValue("?", this.Email);
+                cmd.Parameters.AddWithValue("?", this.Gender);
+                cmd.Parameters.AddWithValue("?", this.UserType);
+                cmd.Parameters.AddWithValue("?", this.Birthday);
+                cmd.Parameters.AddWithValue("?", PlateNumber);
+                cmd.Parameters.AddWithValue("?", this.Attachment);
+
+                cmd.ExecuteNonQuery();
+            }
         }
     }
 
