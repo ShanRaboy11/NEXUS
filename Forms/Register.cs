@@ -123,6 +123,7 @@ namespace NEXUS.Forms
                     FName = tbxNewFirstName.Text,
                     LName = tbxNewLastName.Text,
                     UserName = tbxNewUserName.Text,
+                    Email = tbxEmail.Text,
                     Password = tbxNewPassword.Text,
                     Gender = (rbtnFemale.Checked ? rbtnFemale.Text : rbtnMale.Checked ? rbtnMale.Text : rbtnNotSay.Text)
                 };

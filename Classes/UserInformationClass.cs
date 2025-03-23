@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.OleDb;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BCrypt.Net;
 using NEXUS.Classes;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace NEXUS.Classes
 {
@@ -19,11 +21,11 @@ namespace NEXUS.Classes
         public string Name { get; set; }
         public string Email { get; set; }
         public string Username { get; set; }
-        private string HashedPassword;
+        protected string HashedPassword { get; set; }
         public string Gender { get; set; }
         public string UserType { get; set; }
         public string Birthday { get; set; }
-        private string Attachment {  get; set; }
+        public string Attachment {  get; set; }
         public double WalletAmount { get; set; }
 
         // Constructor
@@ -54,13 +56,43 @@ namespace NEXUS.Classes
     {
         public List<string> TripHistory { get; private set; }
         public string Classification { get; set;}
+        private string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Shan Michael\OneDrive\文档\2nd Year 2nd Sem\OOP2\NEXUS\NEXUS.accdb";
 
         // Constructor
         public Passenger(string name, string email, string username, string password, string gender, string userType, string birthday, string classification, string attachment)
             : base(name, email, username, password, gender, userType, birthday, attachment)
         {
             Classification = classification;
+            SaveToDatabase();
         }
+
+        private void SaveToDatabase()
+        {
+            string query = "INSERT INTO Accounts (Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Classification, Attachment) " +
+                           "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+            using (OleDbConnection conn = new OleDbConnection(connectionString))
+            using (OleDbCommand cmd = new OleDbCommand(query, conn))
+            {
+                conn.Open();
+
+                // Add parameters in the correct order, handling possible null values
+                cmd.Parameters.AddWithValue("?", this.Username);
+                cmd.Parameters.AddWithValue("?", this.HashedPassword);
+                cmd.Parameters.AddWithValue("?", this.Name);
+                cmd.Parameters.AddWithValue("?", this.Email);
+                cmd.Parameters.AddWithValue("?", this.Gender);
+                cmd.Parameters.AddWithValue("?", this.UserType);
+                cmd.Parameters.AddWithValue("?", this.Birthday);
+                cmd.Parameters.AddWithValue("?", Classification);
+                cmd.Parameters.AddWithValue("?", string.IsNullOrEmpty(this.Attachment) ? DBNull.Value : this.Attachment); // Handle NULL values correctly
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+
+
 
         // Method to add trip history
         public void AddTrip(string tripDetails)

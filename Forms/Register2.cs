@@ -52,15 +52,15 @@ namespace NEXUS.Forms
             else
             {
                 string fullName = userData.FName + " " + userData.LName;
-                string birthday = cmbxMonth.Text + cmbxDay.Text + cmbxYear;
+                string birthday = cmbxMonth.Text + " " + cmbxDay.Text + ", " + cmbxYear.Text;
                 if (rbtnPassenger.Checked)
                 {
                     Passenger newPassenger = new Passenger
                     (
                         fullName, userData.Email, userData.UserName, userData.Password, 
                         userData.Gender, rbtnPassenger.Text, birthday, 
-                        (rbtnStudent.Checked ? rbtnStudent.Text : rbtnSenior.Checked ? rbtnSenior.Text : rbtnRegular.Checked ? rbtnRegular.Text : "None"), 
-                        lblFileName.Text
+                        (rbtnStudent.Checked ? rbtnStudent.Text : rbtnSenior.Checked ? rbtnSenior.Text : rbtnRegular.Checked ? rbtnRegular.Text : "None"),
+                        (rbtnStudent.Checked || rbtnSenior.Checked ? lblFileName.Text :  rbtnRegular.Checked ? "" : "None")
                     );
                 }
                 else if(rbtnDriver.Checked)
@@ -188,6 +188,7 @@ namespace NEXUS.Forms
         private void rbtnDriver_CheckedChanged(object sender, EventArgs e)
         {
             label6.Visible = true;
+            lblAttachment.Text = "Driver's License";
             tbxPlateNumber.Visible = true;
             pnlPlate.BringToFront();
             tbxPlateNumber.BringToFront();
@@ -211,7 +212,7 @@ namespace NEXUS.Forms
 
         private void rbtnPassenger_CheckedChanged(object sender, EventArgs e)
         {
-            label6.Visible = false;
+            lblAttachment.Text = "Attachment";
             tbxPlateNumber.Visible = false;
             pnlPlate.Visible = false;
             label4.Visible = true;
