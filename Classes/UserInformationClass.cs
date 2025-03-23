@@ -23,11 +23,11 @@ namespace NEXUS.Classes
         public string Gender { get; set; }
         public string UserType { get; set; }
         public string Birthday { get; set; }
-        public string Classification { get; set; }
+        private string Attachment {  get; set; }
         public double WalletAmount { get; set; }
 
         // Constructor
-        protected UserInformation(string name,  string email, string username, string password, string gender, string userType, string birthday, string classification)
+        protected UserInformation(string name,  string email, string username, string password, string gender, string userType, string birthday, string attachment)
         {
             Name = name;
             Email = email;
@@ -36,7 +36,7 @@ namespace NEXUS.Classes
             Gender = gender;
             UserType = userType;
             Birthday = birthday;
-            Classification = classification;
+            Attachment = attachment;
         }
     }
 
@@ -53,11 +53,14 @@ namespace NEXUS.Classes
     public class Passenger : UserInformation
     {
         public List<string> TripHistory { get; private set; }
+        public string Classification { get; set;}
 
         // Constructor
-        public Passenger(string name, string email, string username, string password, string gender, string userType, string birthday, string classification)
-            : base(name, email, username, password, gender, userType, birthday, classification)
-        { }
+        public Passenger(string name, string email, string username, string password, string gender, string userType, string birthday, string classification, string attachment)
+            : base(name, email, username, password, gender, userType, birthday, attachment)
+        {
+            Classification = classification;
+        }
 
         // Method to add trip history
         public void AddTrip(string tripDetails)
@@ -74,8 +77,8 @@ namespace NEXUS.Classes
         public string PlateNumber { get; set; }
 
         // Constructor
-        public Driver(string name,  string email, string username, string password, string gender, string userType, string birthday, string classification,  string plateNumber)
-            : base(name, email, username, password, gender, userType, birthday, classification)
+        public Driver(string name,  string email, string username, string password, string gender, string userType, string birthday,  string plateNumber, string attachment)
+            : base(name, email, username, password, gender, userType, birthday, attachment)
         {
             PlateNumber = plateNumber;
         }

@@ -57,19 +57,22 @@ namespace NEXUS.Forms
                 {
                     Passenger newPassenger = new Passenger
                     (
-                        fullName,
-                        userData.Email, userData.UserName, userData.Password, 
+                        fullName, userData.Email, userData.UserName, userData.Password, 
                         userData.Gender, rbtnPassenger.Text, birthday, 
-                        (rbtnStudent.Checked ? rbtnStudent.Text : rbtnSenior.Checked ? rbtnSenior.Text : rbtnRegular.Checked ? rbtnRegular.Text : "None")
+                        (rbtnStudent.Checked ? rbtnStudent.Text : rbtnSenior.Checked ? rbtnSenior.Text : rbtnRegular.Checked ? rbtnRegular.Text : "None"), 
+                        lblFileName.Text
                     );
                 }
-                List<string> userInfo = new List<string>
-             {
-                cmbxMonth.Text,
-                cmbxDay.Text,
-                cmbxYear.Text,
-                (rbtnStudent.Checked ? rbtnStudent.Text : rbtnSenior.Checked ? rbtnSenior.Text : rbtnRegular.Text)
-             };
+                else if(rbtnDriver.Checked)
+                {
+                    Driver newDriver = new Driver
+                    (
+                        fullName, userData.Email, userData.UserName, userData.Password,
+                        userData.Gender, rbtnDriver.Text, birthday, tbxPlateNumber.Text,
+                        lblFileName.Text
+                    );
+                }
+
                 dialogBox.ShowIcon("register");
                 logInForm.overlayForm(this, dialogBox);
                 logInForm.Show();
@@ -191,6 +194,19 @@ namespace NEXUS.Forms
             pnlPlate.Visible = true;
             label4.Visible = false;
             pnlClassification.Visible = false;
+            lblAttachment.Visible = true;
+            lblFileName.Visible = true;
+            pnlAttach.Visible = true;
+            btnAttach.Visible = true;
+            this.Size = new System.Drawing.Size(506, 590);
+            lblNote.Location = new System.Drawing.Point(46, 500);
+            btnSignUp.Location = new System.Drawing.Point(157, 533);
+            btnBack.Location = new System.Drawing.Point(15, 534);
+            if (!increase)
+            {
+                this.Location = new System.Drawing.Point(this.Location.X, this.Location.Y - 47);
+                increase = true;
+            }
         }
 
         private void rbtnPassenger_CheckedChanged(object sender, EventArgs e)
@@ -200,6 +216,19 @@ namespace NEXUS.Forms
             pnlPlate.Visible = false;
             label4.Visible = true;
             pnlClassification.Visible = true;
+            lblAttachment.Visible = false;
+            lblFileName.Visible = false;
+            pnlAttach.Visible = false;
+            btnAttach.Visible = false;
+            this.Size = new System.Drawing.Size(504, 495);
+            lblNote.Location = new System.Drawing.Point(41, 406);
+            btnSignUp.Location = new System.Drawing.Point(152, 439);
+            btnBack.Location = new System.Drawing.Point(15, 440);
+            if (increase)
+            {
+                this.Location = new System.Drawing.Point(this.Location.X, this.Location.Y + 47);
+                increase = false;
+            }
         }
     }
 }

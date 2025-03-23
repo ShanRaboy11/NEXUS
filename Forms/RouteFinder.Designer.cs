@@ -66,7 +66,7 @@
             cmbxJeepCodes.Font = new Font("Inter", 15.25F);
             cmbxJeepCodes.ForeColor = Color.FromArgb(24, 60, 114);
             cmbxJeepCodes.FormattingEnabled = true;
-            cmbxJeepCodes.Items.AddRange(new object[] { "01C", "01K", "02B", "03A", "03B", "03L", "03Q", "04B", "04H", "04I", "04L", "04M", "06B", "06C", "06G", "06H", "07B", "08F", "08G", "09C", "09F", "09G", "10F", "10G", "10H", "10M", "11A", "12D", "12I", "12L", "13B", "13C", "13H", "14D", "17B", "17C", "17D", "20A", "21A", "22A", "22D", "22I", "23", "23D", "62B", "MI-01A", "MI-02B", "MI-03A", "MI-03B", "MI-04A", "MI-04B", "MI-05A" });
+            cmbxJeepCodes.Items.AddRange(new object[] { "01C", "01K", "02B", "03A", "03B", "03L", "03Q", "04B", "04H", "04I", "04L", "04M", "06B", "06C", "06G", "06H", "07B", "08F", "08G", "09C", "09F", "09G", "10F", "10G", "10H", "10M", "11A", "12D", "12G", "12I", "12L", "13B", "13C", "13H", "14D", "17B", "17C", "17D", "20A", "21A", "22A", "22D", "22I", "23", "23D", "62B", "MI-01A", "MI-02B", "MI-03A", "MI-03B" });
             cmbxJeepCodes.Location = new Point(312, 216);
             cmbxJeepCodes.Name = "cmbxJeepCodes";
             cmbxJeepCodes.Size = new Size(186, 36);
