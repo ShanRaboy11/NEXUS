@@ -41,7 +41,7 @@ namespace NEXUS.Forms
         private void btnSubmitReport_Click(object sender, EventArgs e)
         {
             DialogBox dialogBox = new DialogBox();
-            Scan scan = new Scan();
+            Scan scan = new Scan(null);
 
             if (dtIncidentDate == null || cmbxNature == null ||
                 string.IsNullOrEmpty(tbxLocation.Text) || string.IsNullOrEmpty(rtbxIncidentDescription.Text))

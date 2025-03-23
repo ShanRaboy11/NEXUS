@@ -26,7 +26,7 @@ namespace NEXUS.Forms
 
         private void btnQRGenerate_Click(object sender, EventArgs e)
         {
-            Scan scan = new Scan();
+            Scan scan = new Scan(null);
             string data = "https://github.com/ShanRaboy11/NEXUS";
             ProgressBar progressBar = new ProgressBar();
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NEXUS.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,7 @@ namespace NEXUS.Forms
 {
     public partial class Scan : Form
     {
-        Dashboard dashboard = new Dashboard(null);
-        public Scan()
+        public Scan(string currentUser)
         {
             InitializeComponent();
         }

@@ -55,7 +55,7 @@ namespace NEXUS.Forms
         private void rateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Rate rate = new Rate();
-            Scan scan = new Scan();
+            Scan scan = new Scan(null);
 
             scan.ShowOverlay(rate, null);
             scan.FormClosed += (s, args) => this.Show();

@@ -28,7 +28,7 @@ namespace NEXUS.Forms
             this.DoubleBuffered = true;
             this.Load += (s, e) => btnHome_Click(btnHome, EventArgs.Empty);
             //btnHome_Click(btnHome, EventArgs.Empty);
-            string currentName = currentPassenger.Name;
+            string currentName = currentPassenger.Name.Split(' ')[0] + "!";
             lblUserFName.Text = currentName;
         }
         
@@ -63,7 +63,7 @@ namespace NEXUS.Forms
         private void pbAbout_Click(object sender, EventArgs e)
         {
             About about = new About();
-            Scan scan = new Scan();
+            Scan scan = new Scan(passenger.Username);
 
             scan.ShowOverlay(about, null);
             about.FormClosed += (s, args) => this.Show();
@@ -72,7 +72,7 @@ namespace NEXUS.Forms
 
         private void btnScan_Click(object sender, EventArgs e)
         {
-            Scan scan = new Scan();
+            Scan scan = new Scan(passenger.Username);
             OpenChildForm(scan);
             SelectButton(btnScan);
         }
@@ -269,7 +269,7 @@ namespace NEXUS.Forms
         private void pbWheelPoints_Click(object sender, EventArgs e)
         {
             WheelTokens wheelTokens = new WheelTokens();
-            Scan scan = new Scan();
+            Scan scan = new Scan(passenger.Username);
             scan.ShowOverlay(wheelTokens, null);
             wheelTokens.FormClosed += (s, args) => this.Show();
             wheelTokens.Owner = this;
@@ -278,7 +278,7 @@ namespace NEXUS.Forms
         private void pbProfile_Click(object sender, EventArgs e)
         {
             Profile profile = new Profile();
-            Scan scan = new Scan();
+            Scan scan = new Scan(passenger.Username);
             scan.ShowOverlay(profile, null);
         }
     }

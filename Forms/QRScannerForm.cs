@@ -82,7 +82,7 @@ namespace NEXUS.Forms
                 picCam.Image = (Bitmap)eventArgs.Frame.Clone();
             }
         }
-        Scan scan = new Scan();
+        Scan scan = new Scan(null);
         private void scanTimer_Tick(object sender, EventArgs e)
         {
             
