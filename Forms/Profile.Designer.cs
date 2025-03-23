@@ -32,7 +32,7 @@
             pbProfilePicture = new PictureBox();
             pbBackground = new PictureBox();
             panel1 = new Panel();
-            lblClassification = new Label();
+            lblGender = new Label();
             label6 = new Label();
             lblUserType = new Label();
             label4 = new Label();
@@ -40,7 +40,7 @@
             label3 = new Label();
             lblTokens = new Label();
             lblUserName = new Label();
-            label1 = new Label();
+            lblClassification = new Label();
             panel2 = new Panel();
             pictureBox7 = new PictureBox();
             pictureBox4 = new PictureBox();
@@ -100,7 +100,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(38, 36, 68);
-            panel1.Controls.Add(lblClassification);
+            panel1.Controls.Add(lblGender);
             panel1.Controls.Add(label6);
             panel1.Controls.Add(lblUserType);
             panel1.Controls.Add(label4);
@@ -112,16 +112,16 @@
             panel1.Size = new Size(420, 95);
             panel1.TabIndex = 2;
             // 
-            // lblClassification
+            // lblGender
             // 
-            lblClassification.Font = new Font("Inter SemiBold", 15.25F, FontStyle.Bold);
-            lblClassification.ForeColor = Color.White;
-            lblClassification.Location = new Point(6, 14);
-            lblClassification.Name = "lblClassification";
-            lblClassification.Size = new Size(126, 34);
-            lblClassification.TabIndex = 40;
-            lblClassification.Text = "Male";
-            lblClassification.TextAlign = ContentAlignment.MiddleCenter;
+            lblGender.Font = new Font("Inter SemiBold", 15.25F, FontStyle.Bold);
+            lblGender.ForeColor = Color.White;
+            lblGender.Location = new Point(6, 14);
+            lblGender.Name = "lblGender";
+            lblGender.Size = new Size(126, 34);
+            lblGender.TabIndex = 40;
+            lblGender.Text = "Male";
+            lblGender.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label6
             // 
@@ -198,17 +198,17 @@
             lblUserName.Text = "Angelo Rivera";
             lblUserName.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // lblClassification
             // 
-            label1.BackColor = Color.FromArgb(0, 229, 255);
-            label1.Font = new Font("Inter Medium", 13.75F, FontStyle.Bold);
-            label1.ForeColor = Color.FromArgb(64, 64, 64);
-            label1.Location = new Point(89, 225);
-            label1.Name = "label1";
-            label1.Size = new Size(405, 44);
-            label1.TabIndex = 33;
-            label1.Text = "Student";
-            label1.TextAlign = ContentAlignment.TopCenter;
+            lblClassification.BackColor = Color.FromArgb(0, 229, 255);
+            lblClassification.Font = new Font("Inter Medium", 13.75F, FontStyle.Bold);
+            lblClassification.ForeColor = Color.FromArgb(64, 64, 64);
+            lblClassification.Location = new Point(89, 225);
+            lblClassification.Name = "lblClassification";
+            lblClassification.Size = new Size(405, 44);
+            lblClassification.TabIndex = 33;
+            lblClassification.Text = "Student";
+            lblClassification.TextAlign = ContentAlignment.TopCenter;
             // 
             // panel2
             // 
@@ -491,7 +491,7 @@
             Controls.Add(label8);
             Controls.Add(panel4);
             Controls.Add(panel2);
-            Controls.Add(label1);
+            Controls.Add(lblClassification);
             Controls.Add(lblUserName);
             Controls.Add(panel1);
             Controls.Add(pbProfilePicture);
@@ -525,7 +525,7 @@
         private PictureBox pbBackground;
         private Panel panel1;
         private Label lblUserName;
-        private Label label1;
+        private Label lblClassification;
         private Panel panel2;
         private PictureBox pictureBox4;
         private PictureBox pictureBox3;
@@ -539,7 +539,7 @@
         private Panel panel3;
         private Label label3;
         private Label lblTokens;
-        private Label lblClassification;
+        private Label lblGender;
         private Label label6;
         private Label lblUserType;
         private Label label4;

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Security.Cryptography;
 using NEXUS.Properties;
 using System.Data.OleDb;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace NEXUS.Classes
 {
@@ -71,6 +72,47 @@ namespace NEXUS.Classes
                 }
             }
             return null; 
+        }
+
+        public static UserInformation GetUserInfo(string Username)
+        {
+            string query = "SELECT Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Classification, Attachment " +
+                   "FROM Accounts WHERE Username = ?";
+
+
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            using (OleDbCommand cmd = new OleDbCommand(query, conn))
+            {
+                conn.Open();
+                cmd.Parameters.AddWithValue("?", Username);
+
+                using (OleDbDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read()) 
+                    {
+                        string username = reader.GetString(0);
+                        string password = reader.GetString(1);
+                        string fullName = reader.GetString(2);
+                        string email = reader.GetString(3);
+                        string gender = reader.GetString(4);
+                        string userType = reader.GetString(5);
+                        string birthday = reader.GetString(6);
+                        string classification = reader.IsDBNull(7) ? null : reader.GetString(7);
+                        string attachment = reader.IsDBNull(8) ? null : reader.GetString(8);
+
+                        if (userType == "Passenger")
+                        {
+                            return new Passenger(fullName, email, username, password, gender, userType, birthday, classification, attachment);
+                        }
+                        else
+                        {
+                            string plateNumber = reader.IsDBNull(9) ? null : reader.GetString(9);
+                            return new Driver(fullName, email, username, password, gender, userType, birthday, plateNumber, attachment);
+                        }
+                    }
+                }
+            }
+            return null;
         }
     }
 }

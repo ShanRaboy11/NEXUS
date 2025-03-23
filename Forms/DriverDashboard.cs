@@ -251,7 +251,7 @@ namespace NEXUS.Forms
 
         private void pbProfile1_Click(object sender, EventArgs e)
         {
-            Profile profile = new Profile();
+            Profile profile = new Profile(driver.Username);
             Scan scan = new Scan(driver.Username);
 
             scan.ShowOverlay(profile, null);
