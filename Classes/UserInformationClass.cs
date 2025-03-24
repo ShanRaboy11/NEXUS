@@ -29,9 +29,10 @@ namespace NEXUS.Classes
         public string Birthday { get; set; }
         public string Attachment {  get; set; }
         public double WalletAmount { get; set; }
+        public int Points { get; set; }
 
         // Constructor
-        protected UserInformation(int  userID, string name,  string email, string username, string password, string gender, string userType, string birthday, string attachment)
+        protected UserInformation(int  userID, string name,  string email, string username, string password, string gender, string userType, string birthday, string attachment, double wallet, int points)
         {
             UserID = userID;
             Name = name;
@@ -42,6 +43,8 @@ namespace NEXUS.Classes
             UserType = userType;
             Birthday = birthday;
             Attachment = attachment;
+            WalletAmount = wallet;
+            Points = points;
         }
     }
 
@@ -62,16 +65,16 @@ namespace NEXUS.Classes
         private string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Shan Michael\OneDrive\文档\2nd Year 2nd Sem\OOP2\NEXUS\NEXUS.accdb";
 
         // Constructor
-        public Passenger(int userId, string name, string email, string username, string password, string gender, string userType, string birthday, string classification, string attachment)
-            : base(userId, name, email, username, password, gender, userType, birthday, attachment)
+        public Passenger(int userId, string name, string email, string username, string password, string gender, string userType, string birthday, string classification, string attachment, double wallet, int points)
+            : base(userId, name, email, username, password, gender, userType, birthday, attachment, wallet, points)
         {
             Classification = classification;
         }
 
         public void SaveToDatabase()
         {
-            string query = "INSERT INTO Accounts (Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Classification, Attachment) " +
-                           "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            string query = "INSERT INTO Accounts (Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Classification, Attachment, Wallet, Points) " +
+                           "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             using (OleDbConnection conn = new OleDbConnection(connectionString))
             using (OleDbCommand cmd = new OleDbCommand(query, conn))
@@ -87,6 +90,8 @@ namespace NEXUS.Classes
                 cmd.Parameters.AddWithValue("?", this.Birthday);
                 cmd.Parameters.AddWithValue("?", Classification);
                 cmd.Parameters.AddWithValue("?", string.IsNullOrEmpty(this.Attachment) ? DBNull.Value : this.Attachment);
+                cmd.Parameters.AddWithValue("?", this.WalletAmount);
+                cmd.Parameters.AddWithValue("?", this.Points);
 
                 cmd.ExecuteNonQuery();
             }
@@ -108,15 +113,15 @@ namespace NEXUS.Classes
         public string PlateNumber { get; set; }
 
         // Constructor
-        public Driver(int userId, string name,  string email, string username, string password, string gender, string userType, string birthday,  string plateNumber, string attachment)
-            : base(userId, name, email, username, password, gender, userType, birthday, attachment)
+        public Driver(int userId, string name,  string email, string username, string password, string gender, string userType, string birthday,  string plateNumber, string attachment, double wallet, int points)
+            : base(userId, name, email, username, password, gender, userType, birthday, attachment, wallet, points)
         {
             PlateNumber = plateNumber;
         }
 
         public void SaveToDatabase()
         {
-            string query = "INSERT INTO Accounts (Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, [Plate Number], Attachment) " +
+            string query = "INSERT INTO Accounts (Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, [Plate Number], Attachment, Wallet, Points) " +
                            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             using (OleDbConnection conn = new OleDbConnection(connectionString))
@@ -133,6 +138,8 @@ namespace NEXUS.Classes
                 cmd.Parameters.AddWithValue("?", this.Birthday);
                 cmd.Parameters.AddWithValue("?", PlateNumber);
                 cmd.Parameters.AddWithValue("?", this.Attachment);
+                cmd.Parameters.AddWithValue("?", this.WalletAmount);
+                cmd.Parameters.AddWithValue("?", this.Points);
 
                 cmd.ExecuteNonQuery();
             }

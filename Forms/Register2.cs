@@ -86,7 +86,7 @@ namespace NEXUS.Forms
                     0, fullName, userData.Email, userData.UserName, userData.Password,
                     userData.Gender, rbtnPassenger.Text, birthday,
                     (rbtnStudent.Checked ? rbtnStudent.Text : rbtnSenior.Checked ? rbtnSenior.Text : rbtnRegular.Checked ? rbtnRegular.Text : "None"),
-                    (rbtnStudent.Checked || rbtnSenior.Checked ? lblFileName.Text : rbtnRegular.Checked ? "" : "None")
+                    (rbtnStudent.Checked || rbtnSenior.Checked ? lblFileName.Text : rbtnRegular.Checked ? "" : "None"), 0, 0
                 );
                 newPassenger.SaveToDatabase();
             }
@@ -96,7 +96,7 @@ namespace NEXUS.Forms
                 (
                     0, fullName, userData.Email, userData.UserName, userData.Password,
                     userData.Gender, rbtnDriver.Text, birthday, tbxPlateNumber.Text,
-                    lblFileName.Text
+                    lblFileName.Text, 0, 0
                 );
                 newDriver.SaveToDatabase();
             }

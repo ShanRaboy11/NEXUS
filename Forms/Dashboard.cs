@@ -30,8 +30,10 @@ namespace NEXUS.Forms
             //btnHome_Click(btnHome, EventArgs.Empty);
             string currentName = currentPassenger.Name.Split(' ')[0] + "!";
             lblUserFName.Text = currentName;
+            lblBalance.Text = currentPassenger.WalletAmount.ToString();
+            lblPoints.Text = currentPassenger.Points.ToString();
         }
-        
+     
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
