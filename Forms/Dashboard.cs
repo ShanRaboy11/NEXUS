@@ -30,7 +30,7 @@ namespace NEXUS.Forms
             //btnHome_Click(btnHome, EventArgs.Empty);
             string currentName = currentPassenger.Name.Split(' ')[0] + "!";
             lblUserFName.Text = currentName;
-            lblBalance.Text = currentPassenger.WalletAmount.ToString();
+            lblBalance.Text = "₱ " + currentPassenger.WalletAmount.ToString("F2");
             lblPoints.Text = currentPassenger.Points.ToString();
         }
      
