@@ -83,20 +83,22 @@ namespace NEXUS.Forms
             {
                 Passenger newPassenger = new Passenger
                 (
-                    fullName, userData.Email, userData.UserName, userData.Password,
+                    0, fullName, userData.Email, userData.UserName, userData.Password,
                     userData.Gender, rbtnPassenger.Text, birthday,
                     (rbtnStudent.Checked ? rbtnStudent.Text : rbtnSenior.Checked ? rbtnSenior.Text : rbtnRegular.Checked ? rbtnRegular.Text : "None"),
                     (rbtnStudent.Checked || rbtnSenior.Checked ? lblFileName.Text : rbtnRegular.Checked ? "" : "None")
                 );
+                newPassenger.SaveToDatabase();
             }
             else if (rbtnDriver.Checked)
             {
                 Driver newDriver = new Driver
                 (
-                    fullName, userData.Email, userData.UserName, userData.Password,
+                    0, fullName, userData.Email, userData.UserName, userData.Password,
                     userData.Gender, rbtnDriver.Text, birthday, tbxPlateNumber.Text,
                     lblFileName.Text
                 );
+                newDriver.SaveToDatabase();
             }
 
             dialogBox.ShowIcon("register");

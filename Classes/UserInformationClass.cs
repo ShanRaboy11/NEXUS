@@ -19,6 +19,7 @@ namespace NEXUS.Classes
 
     public abstract class UserInformation
     {
+        public int UserID { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string Username { get; set; }
@@ -30,8 +31,9 @@ namespace NEXUS.Classes
         public double WalletAmount { get; set; }
 
         // Constructor
-        protected UserInformation(string name,  string email, string username, string password, string gender, string userType, string birthday, string attachment)
+        protected UserInformation(int  userID, string name,  string email, string username, string password, string gender, string userType, string birthday, string attachment)
         {
+            UserID = userID;
             Name = name;
             Email = email;
             Username = username;
@@ -60,14 +62,13 @@ namespace NEXUS.Classes
         private string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Shan Michael\OneDrive\文档\2nd Year 2nd Sem\OOP2\NEXUS\NEXUS.accdb";
 
         // Constructor
-        public Passenger(string name, string email, string username, string password, string gender, string userType, string birthday, string classification, string attachment)
-            : base(name, email, username, password, gender, userType, birthday, attachment)
+        public Passenger(int userId, string name, string email, string username, string password, string gender, string userType, string birthday, string classification, string attachment)
+            : base(userId, name, email, username, password, gender, userType, birthday, attachment)
         {
             Classification = classification;
-            SaveToDatabase();
         }
 
-        private void SaveToDatabase()
+        public void SaveToDatabase()
         {
             string query = "INSERT INTO Accounts (Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Classification, Attachment) " +
                            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -107,14 +108,13 @@ namespace NEXUS.Classes
         public string PlateNumber { get; set; }
 
         // Constructor
-        public Driver(string name,  string email, string username, string password, string gender, string userType, string birthday,  string plateNumber, string attachment)
-            : base(name, email, username, password, gender, userType, birthday, attachment)
+        public Driver(int userId, string name,  string email, string username, string password, string gender, string userType, string birthday,  string plateNumber, string attachment)
+            : base(userId, name, email, username, password, gender, userType, birthday, attachment)
         {
             PlateNumber = plateNumber;
-            SaveToDatabase();
         }
 
-        private void SaveToDatabase()
+        public void SaveToDatabase()
         {
             string query = "INSERT INTO Accounts (Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, [Plate Number], Attachment) " +
                            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";

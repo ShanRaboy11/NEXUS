@@ -71,11 +71,11 @@
             label2.AutoSize = true;
             label2.Font = new Font("Inter Medium", 16.25F, FontStyle.Bold);
             label2.ForeColor = Color.FromArgb(24, 60, 114);
-            label2.Location = new Point(258, 189);
+            label2.Location = new Point(256, 189);
             label2.Name = "label2";
-            label2.Size = new Size(222, 31);
+            label2.Size = new Size(246, 31);
             label2.TabIndex = 2;
-            label2.Text = "1 Wheel Token = 1 ₱";
+            label2.Text = "1 Wheel Token = 0.5 ₱";
             // 
             // label3
             // 
