@@ -30,7 +30,7 @@ namespace NEXUS.Classes
 
         public static UserInformation VerifyPassword(string userName, string enteredPassword)
         {
-            string query = "SELECT ID, Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Classification, Attachment, Wallet, Points " +
+            string query = "SELECT ID, Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Classification, Attachment, [Profile picture], Wallet, Points " +
                    "FROM Accounts WHERE Username = ?";
 
             string enteredHash = ToSHA256(enteredPassword);
@@ -59,17 +59,18 @@ namespace NEXUS.Classes
                             string birthday = reader.GetString(7);
                             string classification = reader.IsDBNull(8) ? null : reader.GetString(8);
                             string attachment = reader.IsDBNull(9) ? null : reader.GetString(9);
-                            double wallet = reader.IsDBNull(10) ? 0.0 : Convert.ToDouble(reader.GetValue(10));
-                            int points = reader.IsDBNull(11) ? 0 : Convert.ToInt32(reader.GetValue(11));
+                            string profilepic = reader.GetString(10);
+                            double wallet = reader.IsDBNull(11) ? 0.0 : Convert.ToDouble(reader.GetValue(11));
+                            int points = reader.IsDBNull(12) ? 0 : Convert.ToInt32(reader.GetValue(12));
 
                             if (userType == "Passenger")
                             {
-                                return new Passenger(userID, fullName, email, username, password, gender, userType, birthday, classification, attachment, wallet, points);
+                                return new Passenger(userID, fullName, email, username, password, gender, userType, birthday, classification, attachment, profilepic, wallet, points);
                             }
                             else
                             {
                                 string plateNumber = reader.IsDBNull(10) ? null : reader.GetString(10);
-                                return new Driver(userID, fullName, email, username, password, gender, userType, birthday, plateNumber, attachment, wallet, points);
+                                return new Driver(userID, fullName, email, username, password, gender, userType, birthday, attachment, plateNumber, profilepic, wallet, points);
                             }
                         }
                     }
@@ -104,17 +105,18 @@ namespace NEXUS.Classes
                         string birthday = reader.GetString(7);
                         string classification = reader.IsDBNull(8) ? null : reader.GetString(8);
                         string attachment = reader.IsDBNull(9) ? null : reader.GetString(9);
-                        double wallet = reader.GetDouble(11);
-                        int points = reader.GetInt32(12);
+                        string profilepic = reader.GetString(10);
+                        double wallet = reader.IsDBNull(11) ? 0.0 : Convert.ToDouble(reader.GetValue(10));
+                        int points = reader.IsDBNull(12) ? 0 : Convert.ToInt32(reader.GetValue(11));
 
                         if (userType == "Passenger")
                         {
-                            return new Passenger(userID, fullName, email, username, password, gender, userType, birthday, classification, attachment, wallet, points);
+                            return new Passenger(userID, fullName, email, username, password, gender, userType, birthday, classification, attachment, profilepic, wallet, points);
                         }
                         else
                         {
                             string plateNumber = reader.IsDBNull(10) ? null : reader.GetString(10);
-                            return new Driver(userID, fullName, email, username, password, gender, userType, birthday, plateNumber, attachment, wallet, points);
+                            return new Driver(userID, fullName, email, username, password, gender, userType, birthday, attachment, plateNumber, profilepic, wallet, points);
                         }
                     }
                 }

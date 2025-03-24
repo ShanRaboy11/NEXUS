@@ -34,6 +34,7 @@ namespace NEXUS.Forms
                 lblUser.Text = passenger.Username;
                 //lblPassword.Text = passenger.
                 lblBirthday.Text = passenger.Birthday;
+                lblTokens.Text = passenger.Points.ToString();
             }
             else if(userInformation is Driver driver)
             {
@@ -45,6 +46,7 @@ namespace NEXUS.Forms
                 lblUser.Text = driver.Username;
                 //lblPassword.Text = passenger.
                 lblBirthday.Text = driver.Birthday;
+                lblTokens.Text = "₱ " + driver.WalletAmount.ToString("F2");
             }
         }
 

@@ -86,7 +86,10 @@ namespace NEXUS.Forms
                     0, fullName, userData.Email, userData.UserName, userData.Password,
                     userData.Gender, rbtnPassenger.Text, birthday,
                     (rbtnStudent.Checked ? rbtnStudent.Text : rbtnSenior.Checked ? rbtnSenior.Text : rbtnRegular.Checked ? rbtnRegular.Text : "None"),
-                    (rbtnStudent.Checked || rbtnSenior.Checked ? lblFileName.Text : rbtnRegular.Checked ? "" : "None"), 0, 0
+                    (rbtnStudent.Checked || rbtnSenior.Checked ? lblFileName.Text : rbtnRegular.Checked ? "" : "None"),
+                    (userData.Gender == "Male" ? @"C:\Users\Shan Michael\source\repos\NEXUS\Resources\default_male.png" :
+                    userData.Gender == "Female" ? @"C:\Users\Shan Michael\source\repos\NEXUS\Resources\defaullt_female.png" :
+                    @"C:\Users\Shan Michael\source\repos\NEXUS\Resources\default_User.png"), 0, 0
                 );
                 newPassenger.SaveToDatabase();
             }
@@ -95,8 +98,10 @@ namespace NEXUS.Forms
                 Driver newDriver = new Driver
                 (
                     0, fullName, userData.Email, userData.UserName, userData.Password,
-                    userData.Gender, rbtnDriver.Text, birthday, tbxPlateNumber.Text,
-                    lblFileName.Text, 0, 0
+                    userData.Gender, rbtnDriver.Text, birthday, lblFileName.Text, tbxPlateNumber.Text, 
+                    (userData.Gender == "Male" ? @"C:\Users\Shan Michael\source\repos\NEXUS\Resources\driver_Default.png" :
+                    userData.Gender == "Female" ? @"C:\Users\Shan Michael\source\repos\NEXUS\Resources\driver_FemaleDefault.jpg" :
+                    @"C:\Users\Shan Michael\source\repos\NEXUS\Resources\default_User.png"), 0, 0
                 );
                 newDriver.SaveToDatabase();
             }

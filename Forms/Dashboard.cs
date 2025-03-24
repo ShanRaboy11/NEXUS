@@ -32,6 +32,7 @@ namespace NEXUS.Forms
             lblUserFName.Text = currentName;
             lblBalance.Text = "₱ " + currentPassenger.WalletAmount.ToString("F2");
             lblPoints.Text = currentPassenger.Points.ToString();
+            pbProfilePicture.Image = Image.FromFile(currentPassenger.ProfilePicture);
         }
      
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
