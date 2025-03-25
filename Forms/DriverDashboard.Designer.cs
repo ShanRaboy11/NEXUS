@@ -54,10 +54,10 @@
             label26 = new Label();
             label27 = new Label();
             cyberButton7 = new ReaLTaiizor.Controls.CyberButton();
-            label28 = new Label();
+            lblWallet = new Label();
             label29 = new Label();
             label30 = new Label();
-            pictureBox8 = new PictureBox();
+            pbProfilePic = new PictureBox();
             pbProfile1 = new PictureBox();
             pictureBox10 = new PictureBox();
             cyberButton8 = new ReaLTaiizor.Controls.CyberButton();
@@ -74,7 +74,7 @@
             pnlDesktop1.SuspendLayout();
             pnlTop.SuspendLayout();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbProfilePic).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbProfile1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             SuspendLayout();
@@ -359,10 +359,10 @@
             panel1.Controls.Add(label26);
             panel1.Controls.Add(label27);
             panel1.Controls.Add(cyberButton7);
-            panel1.Controls.Add(label28);
+            panel1.Controls.Add(lblWallet);
             panel1.Controls.Add(label29);
             panel1.Controls.Add(label30);
-            panel1.Controls.Add(pictureBox8);
+            panel1.Controls.Add(pbProfilePic);
             panel1.Controls.Add(pbProfile1);
             panel1.Controls.Add(pictureBox10);
             panel1.Controls.Add(cyberButton8);
@@ -476,17 +476,17 @@
             cyberButton7.Timer_Effect_1 = 5;
             cyberButton7.Timer_RGB = 300;
             // 
-            // label28
+            // lblWallet
             // 
-            label28.AutoSize = true;
-            label28.BackColor = Color.FromArgb(38, 36, 68);
-            label28.Font = new Font("Inter", 32F, FontStyle.Bold);
-            label28.ForeColor = Color.White;
-            label28.Location = new Point(37, 254);
-            label28.Name = "label28";
-            label28.Size = new Size(177, 62);
-            label28.TabIndex = 0;
-            label28.Text = "₱  0.00";
+            lblWallet.AutoSize = true;
+            lblWallet.BackColor = Color.FromArgb(38, 36, 68);
+            lblWallet.Font = new Font("Inter", 32F, FontStyle.Bold);
+            lblWallet.ForeColor = Color.White;
+            lblWallet.Location = new Point(37, 254);
+            lblWallet.Name = "lblWallet";
+            lblWallet.Size = new Size(177, 62);
+            lblWallet.TabIndex = 0;
+            lblWallet.Text = "₱  0.00";
             // 
             // label29
             // 
@@ -510,16 +510,16 @@
             label30.TabIndex = 34;
             label30.Text = "Balance";
             // 
-            // pictureBox8
+            // pbProfilePic
             // 
-            pictureBox8.BackColor = Color.FromArgb(38, 36, 68);
-            pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
-            pictureBox8.Location = new Point(37, 25);
-            pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(58, 60);
-            pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox8.TabIndex = 31;
-            pictureBox8.TabStop = false;
+            pbProfilePic.BackColor = Color.FromArgb(38, 36, 68);
+            pbProfilePic.Image = (Image)resources.GetObject("pbProfilePic.Image");
+            pbProfilePic.Location = new Point(37, 25);
+            pbProfilePic.Name = "pbProfilePic";
+            pbProfilePic.Size = new Size(58, 60);
+            pbProfilePic.SizeMode = PictureBoxSizeMode.Zoom;
+            pbProfilePic.TabIndex = 31;
+            pbProfilePic.TabStop = false;
             // 
             // pbProfile1
             // 
@@ -621,7 +621,7 @@
             pnlTop.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbProfilePic).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbProfile1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             ResumeLayout(false);
@@ -652,10 +652,10 @@
         private Label label26;
         private Label label27;
         private ReaLTaiizor.Controls.CyberButton cyberButton7;
-        private Label label28;
+        private Label lblWallet;
         private Label label29;
         private Label label30;
-        private PictureBox pictureBox8;
+        private PictureBox pbProfilePic;
         private PictureBox pbProfile1;
         private PictureBox pictureBox10;
         private ReaLTaiizor.Controls.CyberButton cyberButton8;

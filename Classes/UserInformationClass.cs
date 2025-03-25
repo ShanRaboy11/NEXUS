@@ -76,7 +76,7 @@ namespace NEXUS.Classes
 
         public void SaveToDatabase()
         {
-            string query = "INSERT INTO Passengers (Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Classification, Attachment, [Profile Picture], Wallet, Points) " +
+            string query = "INSERT INTO Accounts (Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Classification, Attachment, [Profile Picture], Wallet, Points) " +
                            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             using (OleDbConnection conn = new OleDbConnection(connectionString))
@@ -101,7 +101,7 @@ namespace NEXUS.Classes
             }
         }
 
-        // Method to add trip history
+
         public void AddTrip(string tripDetails)
         {
             if (!string.IsNullOrWhiteSpace(tripDetails))
@@ -125,7 +125,7 @@ namespace NEXUS.Classes
 
         public void SaveToDatabase()
         {
-            string query = "INSERT INTO Drivers (Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Attachment, [Plate Number], [Profile Picture],  Wallet) " +
+            string query = "INSERT INTO Accounts (Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Attachment, [Plate Number], [Profile Picture],  Wallet) " +
                            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             using (OleDbConnection conn = new OleDbConnection(connectionString))

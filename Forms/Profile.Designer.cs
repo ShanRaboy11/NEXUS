@@ -107,16 +107,16 @@
             panel1.Controls.Add(panel5);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(lblTokens);
-            panel1.Location = new Point(75, 274);
+            panel1.Location = new Point(55, 274);
             panel1.Name = "panel1";
-            panel1.Size = new Size(420, 95);
+            panel1.Size = new Size(469, 95);
             panel1.TabIndex = 2;
             // 
             // lblGender
             // 
             lblGender.Font = new Font("Inter SemiBold", 15.25F, FontStyle.Bold);
             lblGender.ForeColor = Color.White;
-            lblGender.Location = new Point(6, 14);
+            lblGender.Location = new Point(3, 14);
             lblGender.Name = "lblGender";
             lblGender.Size = new Size(126, 34);
             lblGender.TabIndex = 40;
@@ -127,7 +127,7 @@
             // 
             label6.Font = new Font("Inter", 12.25F);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(4, 54);
+            label6.Location = new Point(0, 54);
             label6.Name = "label6";
             label6.Size = new Size(131, 23);
             label6.TabIndex = 39;
@@ -138,7 +138,7 @@
             // 
             lblUserType.Font = new Font("Inter SemiBold", 15.25F, FontStyle.Bold);
             lblUserType.ForeColor = Color.White;
-            lblUserType.Location = new Point(162, 14);
+            lblUserType.Location = new Point(166, 14);
             lblUserType.Name = "lblUserType";
             lblUserType.Size = new Size(128, 34);
             lblUserType.TabIndex = 38;
@@ -149,7 +149,7 @@
             // 
             label4.Font = new Font("Inter", 12.25F);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(171, 55);
+            label4.Location = new Point(174, 55);
             label4.Name = "label4";
             label4.Size = new Size(111, 23);
             label4.TabIndex = 37;
@@ -168,7 +168,7 @@
             // 
             label3.Font = new Font("Inter", 12.25F);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(326, 55);
+            label3.Location = new Point(356, 54);
             label3.Name = "label3";
             label3.Size = new Size(83, 23);
             label3.TabIndex = 1;
@@ -179,9 +179,9 @@
             // 
             lblTokens.Font = new Font("Inter SemiBold", 15.25F, FontStyle.Bold);
             lblTokens.ForeColor = Color.White;
-            lblTokens.Location = new Point(331, 14);
+            lblTokens.Location = new Point(335, 14);
             lblTokens.Name = "lblTokens";
-            lblTokens.Size = new Size(70, 34);
+            lblTokens.Size = new Size(131, 34);
             lblTokens.TabIndex = 0;
             lblTokens.Text = "8";
             lblTokens.TextAlign = ContentAlignment.MiddleCenter;
@@ -331,9 +331,9 @@
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(80, 15, 13, 40);
-            panel3.Location = new Point(71, 279);
+            panel3.Location = new Point(51, 279);
             panel3.Name = "panel3";
-            panel3.Size = new Size(420, 95);
+            panel3.Size = new Size(469, 95);
             panel3.TabIndex = 3;
             // 
             // panel4

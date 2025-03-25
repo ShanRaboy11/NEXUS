@@ -23,6 +23,10 @@ namespace NEXUS.Forms
         {
             InitializeComponent();
             this.driver = currentDriver;
+            this.Load += (s, e) => btnHome_Click(btnHome1, EventArgs.Empty);
+            lblUserFName.Text = currentDriver.Name.Split(' ')[0] + "!";
+            lblWallet.Text = "₱ " + currentDriver.WalletAmount.ToString("F2");
+            pbProfilePic.Image = Image.FromFile(currentDriver.ProfilePicture);
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]

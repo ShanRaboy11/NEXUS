@@ -25,6 +25,7 @@ namespace NEXUS.Forms
 
             if(userInformation is Passenger passenger)
             {
+                pbProfilePicture.Image = Image.FromFile(userInformation.ProfilePicture);
                 lblUserName.Text = passenger.Name;
                 lblClassification.Text = passenger.Classification;
                 lblGender.Text = passenger.Gender;
@@ -37,6 +38,7 @@ namespace NEXUS.Forms
             }
             else if(userInformation is Driver driver)
             {
+                pbProfilePicture.Image = Image.FromFile(userInformation.ProfilePicture);
                 lblUserName.Text = driver.Name;
                 lblClassification.Text = driver.PlateNumber;
                 lblGender.Text = driver.Gender;
@@ -46,6 +48,7 @@ namespace NEXUS.Forms
                 //lblPassword.Text = passenger.
                 lblBirthday.Text = driver.Birthday;
                 lblTokens.Text = "₱ " + driver.WalletAmount.ToString("F2");
+                label3.Text = "Walltet";
             }
         }
 

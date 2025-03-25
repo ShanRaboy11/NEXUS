@@ -146,12 +146,12 @@ namespace NEXUS.Classes
                             string profilepic = reader.GetString(10);
                             double wallet = reader.IsDBNull(11) ? 0.0 : Convert.ToDouble(reader.GetValue(11));
 
-                            return new Driver(userID, username, password, fullName, email, gender, userType, birthday, attachment, plateNumber, profilepic, wallet);
+                            return new Driver(userID, fullName, email, username, password, gender, userType, birthday, attachment, plateNumber, profilepic, wallet);
                         }
                     }
                 }
                 return null;
             }
-        }  
+        }
     }
 }
