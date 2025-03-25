@@ -13,16 +13,15 @@ namespace NEXUS.Forms
 {
     public partial class Profile : Form
     {
-        public Profile(string currentUser)
+        public Profile(string currentUser, string userType)
         {
             InitializeComponent();
-            DisplayInfo(currentUser);
+            DisplayInfo(currentUser, userType);
         }
 
-        private void DisplayInfo(string userName)
+        private void DisplayInfo(string userName, string type)
         {
-            UserInformation userInformation = Cryptography.GetUserInfo(userName);
-
+            UserInformation userInformation = Cryptography.GetUserInfo(userName, type);
 
             if(userInformation is Passenger passenger)
             {

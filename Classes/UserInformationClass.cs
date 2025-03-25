@@ -30,10 +30,9 @@ namespace NEXUS.Classes
         public string Attachment {  get; set; }
         public string ProfilePicture { get; set; }
         public double WalletAmount { get; set; }
-        public int Points { get; set; }
 
         // Constructor
-        protected UserInformation(int  userID, string name,  string email, string username, string password, string gender, string userType, string birthday, string attachment, string profilepic, double wallet, int points)
+        protected UserInformation(int  userID, string name,  string email, string username, string password, string gender, string userType, string birthday, string attachment, string profilepic, double wallet)
         {
             UserID = userID;
             Name = name;
@@ -46,7 +45,6 @@ namespace NEXUS.Classes
             Attachment = attachment;
             ProfilePicture = profilepic;
             WalletAmount = wallet;
-            Points = points;
         }
     }
 
@@ -63,14 +61,17 @@ namespace NEXUS.Classes
     public class Passenger : UserInformation
     {
         public List<string> TripHistory { get; private set; }
-        public string Classification { get; set;}
+        public string Classification { get; set; }
+        public int Points { get; set; }
+
         private string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Shan Michael\OneDrive\文档\2nd Year 2nd Sem\OOP2\NEXUS\NEXUS.accdb";
 
         // Constructor
         public Passenger(int userId, string name, string email, string username, string password, string gender, string userType, string birthday, string classification, string attachment, string profilepic, double wallet, int points)
-            : base(userId, name, email, username, password, gender, userType, birthday, attachment, profilepic, wallet, points)
+            : base(userId, name, email, username, password, gender, userType, birthday, attachment, profilepic, wallet)
         {
             Classification = classification;
+            Points = points;
         }
 
         public void SaveToDatabase()
@@ -116,15 +117,15 @@ namespace NEXUS.Classes
         public string PlateNumber { get; set; }
 
         // Constructor
-        public Driver(int userId, string name,  string email, string username, string password, string gender, string userType, string birthday, string attachment, string plateNumber, string profilepic, double wallet, int points)
-            : base(userId, name, email, username, password, gender, userType, birthday, attachment, profilepic, wallet, points)
+        public Driver(int userId, string name,  string email, string username, string password, string gender, string userType, string birthday, string attachment, string plateNumber, string profilepic, double wallet)
+            : base(userId, name, email, username, password, gender, userType, birthday, attachment, profilepic, wallet)
         {
             PlateNumber = plateNumber;
         }
 
         public void SaveToDatabase()
         {
-            string query = "INSERT INTO Accounts (Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Attachment, [Plate Number], [Profile Picture],  Wallet, Points) " +
+            string query = "INSERT INTO Accounts (Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Attachment, [Plate Number], [Profile Picture],  Wallet) " +
                            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             using (OleDbConnection conn = new OleDbConnection(connectionString))
@@ -143,7 +144,6 @@ namespace NEXUS.Classes
                 cmd.Parameters.AddWithValue("?", PlateNumber);
                 cmd.Parameters.AddWithValue("?", this.ProfilePicture);
                 cmd.Parameters.AddWithValue("?", this.WalletAmount);
-                cmd.Parameters.AddWithValue("?", this.Points);
 
                 cmd.ExecuteNonQuery();
             }

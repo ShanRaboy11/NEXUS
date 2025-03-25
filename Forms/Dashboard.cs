@@ -280,7 +280,7 @@ namespace NEXUS.Forms
 
         private void pbProfile_Click(object sender, EventArgs e)
         {
-            Profile profile = new Profile(passenger.Username);
+            Profile profile = new Profile(passenger.Username, passenger.UserType);
             Scan scan = new Scan(passenger.Username);
             scan.ShowOverlay(profile, null);
         }
