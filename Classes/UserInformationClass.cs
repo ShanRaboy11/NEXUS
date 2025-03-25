@@ -13,8 +13,9 @@ namespace NEXUS.Classes
 
     public interface Users
     {
-        float ProcessPayment();
-        double CheckBalance();
+        void SaveToDatabase();
+        //float ProcessPayment();
+        //double CheckBalance();
     }
 
     public abstract class UserInformation
@@ -58,7 +59,7 @@ namespace NEXUS.Classes
         public string Gender { get; set; }
     }
 
-    public class Passenger : UserInformation
+    public class Passenger : UserInformation, Users
     {
         public List<string> TripHistory { get; private set; }
         public string Classification { get; set; }
@@ -74,7 +75,7 @@ namespace NEXUS.Classes
             Points = points;
         }
 
-        public void SaveToDatabase()
+        public  void SaveToDatabase()
         {
             string query = "INSERT INTO Accounts (Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Classification, Attachment, [Profile Picture], Wallet, Points) " +
                            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -111,7 +112,7 @@ namespace NEXUS.Classes
         }
     }
 
-    public class Driver : UserInformation
+    public class Driver : UserInformation, Users
     {
         private string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Shan Michael\OneDrive\文档\2nd Year 2nd Sem\OOP2\NEXUS\NEXUS.accdb";
         public string PlateNumber { get; set; }
