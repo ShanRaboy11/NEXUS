@@ -30,33 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashboard));
             pnlDesktop = new Panel();
+            pnlContainer = new Panel();
             pnlTop = new Panel();
             lblUserFName = new Label();
             label1 = new Label();
-            panel3 = new Panel();
-            label13 = new Label();
-            label12 = new Label();
-            label11 = new Label();
-            label10 = new Label();
-            label9 = new Label();
-            label8 = new Label();
-            label7 = new Label();
-            cyberButton4 = new ReaLTaiizor.Controls.CyberButton();
-            label6 = new Label();
-            lblTime = new Label();
-            lblPlateNum = new Label();
-            lblJeepCode = new Label();
-            cyberButton3 = new ReaLTaiizor.Controls.CyberButton();
-            label4 = new Label();
-            label5 = new Label();
-            cyberButton1 = new ReaLTaiizor.Controls.CyberButton();
-            lblBalance = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            pbProfilePicture = new PictureBox();
-            pbProfile = new PictureBox();
-            pictureBox5 = new PictureBox();
-            cyberButton2 = new ReaLTaiizor.Controls.CyberButton();
             pnlSidebar = new Panel();
             btnLogout = new FontAwesome.Sharp.IconButton();
             btnHistory = new FontAwesome.Sharp.IconButton();
@@ -71,10 +48,6 @@
             pictureBox1 = new PictureBox();
             pnlDesktop.SuspendLayout();
             pnlTop.SuspendLayout();
-            panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pbProfilePicture).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbProfile).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             pnlSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbAbout).BeginInit();
             panel2.SuspendLayout();
@@ -85,22 +58,32 @@
             // 
             // pnlDesktop
             // 
+            pnlDesktop.Controls.Add(pnlContainer);
             pnlDesktop.Controls.Add(pnlTop);
-            pnlDesktop.Controls.Add(panel3);
             pnlDesktop.Dock = DockStyle.Fill;
             pnlDesktop.Location = new Point(88, 28);
             pnlDesktop.Name = "pnlDesktop";
             pnlDesktop.Size = new Size(1312, 879);
             pnlDesktop.TabIndex = 22;
             // 
+            // pnlContainer
+            // 
+            pnlContainer.BackColor = Color.FromArgb(230, 249, 255);
+            pnlContainer.Dock = DockStyle.Fill;
+            pnlContainer.Location = new Point(0, 112);
+            pnlContainer.Name = "pnlContainer";
+            pnlContainer.Size = new Size(1312, 767);
+            pnlContainer.TabIndex = 1;
+            // 
             // pnlTop
             // 
+            pnlTop.BackColor = Color.FromArgb(230, 249, 255);
             pnlTop.Controls.Add(lblUserFName);
             pnlTop.Controls.Add(label1);
             pnlTop.Dock = DockStyle.Top;
             pnlTop.Location = new Point(0, 0);
             pnlTop.Name = "pnlTop";
-            pnlTop.Size = new Size(988, 145);
+            pnlTop.Size = new Size(1312, 112);
             pnlTop.TabIndex = 0;
             // 
             // lblUserFName
@@ -110,9 +93,9 @@
             lblUserFName.ForeColor = Color.FromArgb(24, 60, 114);
             lblUserFName.Location = new Point(103, 21);
             lblUserFName.Name = "lblUserFName";
-            lblUserFName.Size = new Size(141, 44);
+            lblUserFName.Size = new Size(131, 44);
             lblUserFName.TabIndex = 33;
-            lblUserFName.Text = "Angelo!";
+            lblUserFName.Text = "Admin!";
             // 
             // label1
             // 
@@ -124,426 +107,6 @@
             label1.Size = new Size(95, 44);
             label1.TabIndex = 32;
             label1.Text = "Hello";
-            // 
-            // panel3
-            // 
-            panel3.BackColor = Color.White;
-            panel3.Controls.Add(label13);
-            panel3.Controls.Add(label12);
-            panel3.Controls.Add(label11);
-            panel3.Controls.Add(label10);
-            panel3.Controls.Add(label9);
-            panel3.Controls.Add(label8);
-            panel3.Controls.Add(label7);
-            panel3.Controls.Add(cyberButton4);
-            panel3.Controls.Add(label6);
-            panel3.Controls.Add(lblTime);
-            panel3.Controls.Add(lblPlateNum);
-            panel3.Controls.Add(lblJeepCode);
-            panel3.Controls.Add(cyberButton3);
-            panel3.Controls.Add(label4);
-            panel3.Controls.Add(label5);
-            panel3.Controls.Add(cyberButton1);
-            panel3.Controls.Add(lblBalance);
-            panel3.Controls.Add(label2);
-            panel3.Controls.Add(label3);
-            panel3.Controls.Add(pbProfilePicture);
-            panel3.Controls.Add(pbProfile);
-            panel3.Controls.Add(pictureBox5);
-            panel3.Controls.Add(cyberButton2);
-            panel3.Dock = DockStyle.Right;
-            panel3.Location = new Point(988, 0);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(324, 879);
-            panel3.TabIndex = 32;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.BackColor = Color.FromArgb(38, 36, 68);
-            label13.Font = new Font("Inter", 18F, FontStyle.Bold);
-            label13.ForeColor = Color.White;
-            label13.Location = new Point(184, 793);
-            label13.Name = "label13";
-            label13.Size = new Size(92, 35);
-            label13.TabIndex = 53;
-            label13.Text = "₱ 8.00";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.BackColor = Color.FromArgb(38, 36, 68);
-            label12.Font = new Font("Inter", 18F, FontStyle.Bold);
-            label12.ForeColor = Color.White;
-            label12.Location = new Point(184, 751);
-            label12.Name = "label12";
-            label12.Size = new Size(107, 35);
-            label12.TabIndex = 52;
-            label12.Text = "₱ 20.00";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.BackColor = Color.FromArgb(38, 36, 68);
-            label11.Font = new Font("Inter", 18F, FontStyle.Bold);
-            label11.ForeColor = Color.White;
-            label11.Location = new Point(46, 793);
-            label11.Name = "label11";
-            label11.Size = new Size(132, 35);
-            label11.TabIndex = 51;
-            label11.Text = "Change   :";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.BackColor = Color.FromArgb(38, 36, 68);
-            label10.Font = new Font("Inter", 18F, FontStyle.Bold);
-            label10.ForeColor = Color.White;
-            label10.Location = new Point(46, 751);
-            label10.Name = "label10";
-            label10.Size = new Size(133, 35);
-            label10.TabIndex = 50;
-            label10.Text = "Payment :";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.BackColor = Color.FromArgb(38, 36, 68);
-            label9.Font = new Font("Inter", 18F, FontStyle.Bold);
-            label9.ForeColor = Color.White;
-            label9.Location = new Point(215, 709);
-            label9.Name = "label9";
-            label9.RightToLeft = RightToLeft.No;
-            label9.Size = new Size(84, 35);
-            label9.TabIndex = 49;
-            label9.Text = "CIT-U";
-            label9.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.BackColor = Color.FromArgb(38, 36, 68);
-            label8.Font = new Font("Inter", 18F, FontStyle.Bold);
-            label8.ForeColor = Color.White;
-            label8.Location = new Point(154, 709);
-            label8.Name = "label8";
-            label8.Size = new Size(38, 35);
-            label8.TabIndex = 48;
-            label8.Text = "->";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.BackColor = Color.FromArgb(38, 36, 68);
-            label7.Font = new Font("Inter", 18F, FontStyle.Bold);
-            label7.ForeColor = Color.White;
-            label7.Location = new Point(46, 709);
-            label7.Name = "label7";
-            label7.Size = new Size(86, 35);
-            label7.TabIndex = 47;
-            label7.Text = "Basak";
-            // 
-            // cyberButton4
-            // 
-            cyberButton4.Alpha = 20;
-            cyberButton4.BackColor = Color.Transparent;
-            cyberButton4.Background = true;
-            cyberButton4.Background_WidthPen = 4F;
-            cyberButton4.BackgroundPen = true;
-            cyberButton4.ColorBackground = Color.FromArgb(38, 36, 68);
-            cyberButton4.ColorBackground_1 = Color.FromArgb(38, 36, 68);
-            cyberButton4.ColorBackground_2 = Color.FromArgb(41, 63, 86);
-            cyberButton4.ColorBackground_Pen = Color.FromArgb(153, 229, 255);
-            cyberButton4.ColorLighting = Color.FromArgb(153, 229, 255);
-            cyberButton4.ColorPen_1 = Color.FromArgb(37, 52, 68);
-            cyberButton4.ColorPen_2 = Color.FromArgb(41, 63, 86);
-            cyberButton4.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            cyberButton4.Effect_1 = true;
-            cyberButton4.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
-            cyberButton4.Effect_1_Transparency = 25;
-            cyberButton4.Effect_2 = true;
-            cyberButton4.Effect_2_ColorBackground = Color.White;
-            cyberButton4.Effect_2_Transparency = 20;
-            cyberButton4.Enabled = false;
-            cyberButton4.Font = new Font("Inter", 12F);
-            cyberButton4.ForeColor = Color.FromArgb(38, 36, 68);
-            cyberButton4.Lighting = false;
-            cyberButton4.LinearGradient_Background = false;
-            cyberButton4.LinearGradientPen = false;
-            cyberButton4.Location = new Point(20, 683);
-            cyberButton4.Name = "cyberButton4";
-            cyberButton4.PenWidth = 15;
-            cyberButton4.Rounding = true;
-            cyberButton4.RoundingInt = 70;
-            cyberButton4.Size = new Size(292, 167);
-            cyberButton4.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            cyberButton4.TabIndex = 46;
-            cyberButton4.Tag = "Cyber";
-            cyberButton4.TextButton = "";
-            cyberButton4.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            cyberButton4.Timer_Effect_1 = 5;
-            cyberButton4.Timer_RGB = 300;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.BackColor = Color.FromArgb(153, 229, 255);
-            label6.Font = new Font("Inter", 15F, FontStyle.Bold);
-            label6.ForeColor = Color.FromArgb(24, 60, 114);
-            label6.Location = new Point(84, 511);
-            label6.Name = "label6";
-            label6.Size = new Size(164, 28);
-            label6.TabIndex = 45;
-            label6.Text = "March 13, 2025";
-            // 
-            // lblTime
-            // 
-            lblTime.AutoSize = true;
-            lblTime.BackColor = Color.FromArgb(153, 229, 255);
-            lblTime.Font = new Font("Inter", 18F, FontStyle.Bold);
-            lblTime.ForeColor = Color.FromArgb(24, 60, 114);
-            lblTime.Location = new Point(177, 591);
-            lblTime.Name = "lblTime";
-            lblTime.Size = new Size(116, 35);
-            lblTime.TabIndex = 44;
-            lblTime.Text = "8:34 AM";
-            // 
-            // lblPlateNum
-            // 
-            lblPlateNum.AutoSize = true;
-            lblPlateNum.BackColor = Color.FromArgb(153, 229, 255);
-            lblPlateNum.Font = new Font("Inter", 18F, FontStyle.Bold);
-            lblPlateNum.ForeColor = Color.FromArgb(24, 60, 114);
-            lblPlateNum.Location = new Point(179, 555);
-            lblPlateNum.Name = "lblPlateNum";
-            lblPlateNum.Size = new Size(107, 35);
-            lblPlateNum.TabIndex = 43;
-            lblPlateNum.Text = "481HOF";
-            // 
-            // lblJeepCode
-            // 
-            lblJeepCode.AutoSize = true;
-            lblJeepCode.BackColor = Color.FromArgb(153, 229, 255);
-            lblJeepCode.Font = new Font("Inter", 50F, FontStyle.Bold);
-            lblJeepCode.ForeColor = Color.FromArgb(24, 60, 114);
-            lblJeepCode.Location = new Point(32, 541);
-            lblJeepCode.Name = "lblJeepCode";
-            lblJeepCode.Size = new Size(153, 96);
-            lblJeepCode.TabIndex = 42;
-            lblJeepCode.Text = "10F";
-            // 
-            // cyberButton3
-            // 
-            cyberButton3.Alpha = 20;
-            cyberButton3.BackColor = Color.Transparent;
-            cyberButton3.Background = true;
-            cyberButton3.Background_WidthPen = 4F;
-            cyberButton3.BackgroundPen = true;
-            cyberButton3.ColorBackground = Color.FromArgb(153, 229, 255);
-            cyberButton3.ColorBackground_1 = Color.FromArgb(38, 36, 68);
-            cyberButton3.ColorBackground_2 = Color.FromArgb(41, 63, 86);
-            cyberButton3.ColorBackground_Pen = Color.FromArgb(153, 229, 255);
-            cyberButton3.ColorLighting = Color.FromArgb(153, 229, 255);
-            cyberButton3.ColorPen_1 = Color.FromArgb(37, 52, 68);
-            cyberButton3.ColorPen_2 = Color.FromArgb(41, 63, 86);
-            cyberButton3.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            cyberButton3.Effect_1 = true;
-            cyberButton3.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
-            cyberButton3.Effect_1_Transparency = 25;
-            cyberButton3.Effect_2 = true;
-            cyberButton3.Effect_2_ColorBackground = Color.White;
-            cyberButton3.Effect_2_Transparency = 20;
-            cyberButton3.Enabled = false;
-            cyberButton3.Font = new Font("Inter", 12F);
-            cyberButton3.ForeColor = Color.FromArgb(38, 36, 68);
-            cyberButton3.Lighting = false;
-            cyberButton3.LinearGradient_Background = false;
-            cyberButton3.LinearGradientPen = false;
-            cyberButton3.Location = new Point(19, 494);
-            cyberButton3.Name = "cyberButton3";
-            cyberButton3.PenWidth = 15;
-            cyberButton3.Rounding = true;
-            cyberButton3.RoundingInt = 70;
-            cyberButton3.Size = new Size(292, 167);
-            cyberButton3.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            cyberButton3.TabIndex = 41;
-            cyberButton3.Tag = "Cyber";
-            cyberButton3.TextButton = "";
-            cyberButton3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            cyberButton3.Timer_Effect_1 = 5;
-            cyberButton3.Timer_RGB = 300;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Inter ExtraBold", 21F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.FromArgb(24, 60, 114);
-            label4.Location = new Point(15, 433);
-            label4.Name = "label4";
-            label4.Size = new Size(104, 40);
-            label4.TabIndex = 40;
-            label4.Text = "Latest";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Inter SemiBold", 21F, FontStyle.Bold);
-            label5.ForeColor = SystemColors.ControlDarkDark;
-            label5.Location = new Point(113, 433);
-            label5.Name = "label5";
-            label5.Size = new Size(175, 40);
-            label5.TabIndex = 39;
-            label5.Text = "Transaction";
-            // 
-            // cyberButton1
-            // 
-            cyberButton1.Alpha = 20;
-            cyberButton1.BackColor = Color.Transparent;
-            cyberButton1.Background = true;
-            cyberButton1.Background_WidthPen = 4F;
-            cyberButton1.BackgroundPen = true;
-            cyberButton1.ColorBackground = Color.FromArgb(153, 229, 255);
-            cyberButton1.ColorBackground_1 = Color.FromArgb(153, 229, 255);
-            cyberButton1.ColorBackground_2 = Color.FromArgb(41, 63, 86);
-            cyberButton1.ColorBackground_Pen = Color.FromArgb(153, 229, 255);
-            cyberButton1.ColorLighting = Color.FromArgb(153, 229, 255);
-            cyberButton1.ColorPen_1 = Color.FromArgb(37, 52, 68);
-            cyberButton1.ColorPen_2 = Color.FromArgb(41, 63, 86);
-            cyberButton1.Cursor = Cursors.Hand;
-            cyberButton1.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            cyberButton1.Effect_1 = true;
-            cyberButton1.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
-            cyberButton1.Effect_1_Transparency = 25;
-            cyberButton1.Effect_2 = true;
-            cyberButton1.Effect_2_ColorBackground = Color.White;
-            cyberButton1.Effect_2_Transparency = 20;
-            cyberButton1.Font = new Font("Inter", 12F);
-            cyberButton1.ForeColor = Color.FromArgb(38, 36, 68);
-            cyberButton1.Lighting = false;
-            cyberButton1.LinearGradient_Background = false;
-            cyberButton1.LinearGradientPen = false;
-            cyberButton1.Location = new Point(183, 339);
-            cyberButton1.Name = "cyberButton1";
-            cyberButton1.PenWidth = 15;
-            cyberButton1.Rounding = true;
-            cyberButton1.RoundingInt = 70;
-            cyberButton1.Size = new Size(117, 43);
-            cyberButton1.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            cyberButton1.TabIndex = 37;
-            cyberButton1.Tag = "Cyber";
-            cyberButton1.TextButton = "+ Cash in";
-            cyberButton1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            cyberButton1.Timer_Effect_1 = 5;
-            cyberButton1.Timer_RGB = 300;
-            // 
-            // lblBalance
-            // 
-            lblBalance.AutoSize = true;
-            lblBalance.BackColor = Color.FromArgb(38, 36, 68);
-            lblBalance.Font = new Font("Inter", 32F, FontStyle.Bold);
-            lblBalance.ForeColor = Color.White;
-            lblBalance.Location = new Point(37, 254);
-            lblBalance.Name = "lblBalance";
-            lblBalance.Size = new Size(177, 62);
-            lblBalance.TabIndex = 0;
-            lblBalance.Text = "₱  0.00";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Inter ExtraBold", 21F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.FromArgb(24, 60, 114);
-            label2.Location = new Point(7, 178);
-            label2.Name = "label2";
-            label2.Size = new Size(126, 40);
-            label2.TabIndex = 35;
-            label2.Text = "Current";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Inter SemiBold", 21F, FontStyle.Bold);
-            label3.ForeColor = SystemColors.ControlDarkDark;
-            label3.Location = new Point(127, 178);
-            label3.Name = "label3";
-            label3.Size = new Size(124, 40);
-            label3.TabIndex = 34;
-            label3.Text = "Balance";
-            // 
-            // pbProfilePicture
-            // 
-            pbProfilePicture.BackColor = Color.FromArgb(38, 36, 68);
-            pbProfilePicture.Image = (Image)resources.GetObject("pbProfilePicture.Image");
-            pbProfilePicture.Location = new Point(37, 25);
-            pbProfilePicture.Name = "pbProfilePicture";
-            pbProfilePicture.Size = new Size(58, 60);
-            pbProfilePicture.SizeMode = PictureBoxSizeMode.Zoom;
-            pbProfilePicture.TabIndex = 31;
-            pbProfilePicture.TabStop = false;
-            // 
-            // pbProfile
-            // 
-            pbProfile.BackColor = Color.FromArgb(38, 36, 68);
-            pbProfile.Cursor = Cursors.Hand;
-            pbProfile.Image = (Image)resources.GetObject("pbProfile.Image");
-            pbProfile.Location = new Point(256, 29);
-            pbProfile.Name = "pbProfile";
-            pbProfile.Size = new Size(48, 50);
-            pbProfile.SizeMode = PictureBoxSizeMode.CenterImage;
-            pbProfile.TabIndex = 33;
-            pbProfile.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            pictureBox5.BackColor = Color.White;
-            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(-15, 0);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(341, 145);
-            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox5.TabIndex = 0;
-            pictureBox5.TabStop = false;
-            // 
-            // cyberButton2
-            // 
-            cyberButton2.Alpha = 20;
-            cyberButton2.BackColor = Color.Transparent;
-            cyberButton2.Background = true;
-            cyberButton2.Background_WidthPen = 4F;
-            cyberButton2.BackgroundPen = true;
-            cyberButton2.ColorBackground = Color.FromArgb(38, 36, 68);
-            cyberButton2.ColorBackground_1 = Color.FromArgb(38, 36, 68);
-            cyberButton2.ColorBackground_2 = Color.FromArgb(41, 63, 86);
-            cyberButton2.ColorBackground_Pen = Color.FromArgb(153, 229, 255);
-            cyberButton2.ColorLighting = Color.FromArgb(153, 229, 255);
-            cyberButton2.ColorPen_1 = Color.FromArgb(37, 52, 68);
-            cyberButton2.ColorPen_2 = Color.FromArgb(41, 63, 86);
-            cyberButton2.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            cyberButton2.Effect_1 = true;
-            cyberButton2.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
-            cyberButton2.Effect_1_Transparency = 25;
-            cyberButton2.Effect_2 = true;
-            cyberButton2.Effect_2_ColorBackground = Color.White;
-            cyberButton2.Effect_2_Transparency = 20;
-            cyberButton2.Enabled = false;
-            cyberButton2.Font = new Font("Inter", 12F);
-            cyberButton2.ForeColor = Color.FromArgb(38, 36, 68);
-            cyberButton2.Lighting = false;
-            cyberButton2.LinearGradient_Background = false;
-            cyberButton2.LinearGradientPen = false;
-            cyberButton2.Location = new Point(15, 239);
-            cyberButton2.Name = "cyberButton2";
-            cyberButton2.PenWidth = 15;
-            cyberButton2.Rounding = true;
-            cyberButton2.RoundingInt = 70;
-            cyberButton2.Size = new Size(292, 93);
-            cyberButton2.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            cyberButton2.TabIndex = 38;
-            cyberButton2.Tag = "Cyber";
-            cyberButton2.TextButton = "";
-            cyberButton2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            cyberButton2.Timer_Effect_1 = 5;
-            cyberButton2.Timer_RGB = 300;
             // 
             // pnlSidebar
             // 
@@ -639,6 +202,7 @@
             btnHome.TabIndex = 33;
             btnHome.Text = "     Home";
             btnHome.UseVisualStyleBackColor = true;
+            btnHome.Click += btnHome_Click;
             // 
             // btnScan
             // 
@@ -734,11 +298,6 @@
             pnlDesktop.ResumeLayout(false);
             pnlTop.ResumeLayout(false);
             pnlTop.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pbProfilePicture).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbProfile).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             pnlSidebar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbAbout).EndInit();
             panel2.ResumeLayout(false);
@@ -754,30 +313,6 @@
         private Panel pnlTop;
         private Label lblUserFName;
         private Label label1;
-        private Panel panel3;
-        private Label label13;
-        private Label label12;
-        private Label label11;
-        private Label label10;
-        private Label label9;
-        private Label label8;
-        private Label label7;
-        private ReaLTaiizor.Controls.CyberButton cyberButton4;
-        private Label label6;
-        private Label lblTime;
-        private Label lblPlateNum;
-        private Label lblJeepCode;
-        private ReaLTaiizor.Controls.CyberButton cyberButton3;
-        private Label label4;
-        private Label label5;
-        private ReaLTaiizor.Controls.CyberButton cyberButton1;
-        private Label lblBalance;
-        private Label label2;
-        private Label label3;
-        private PictureBox pbProfilePicture;
-        private PictureBox pbProfile;
-        private PictureBox pictureBox5;
-        private ReaLTaiizor.Controls.CyberButton cyberButton2;
         private Panel pnlSidebar;
         private FontAwesome.Sharp.IconButton btnLogout;
         private FontAwesome.Sharp.IconButton btnHistory;
@@ -790,5 +325,6 @@
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
+        private Panel pnlContainer;
     }
 }

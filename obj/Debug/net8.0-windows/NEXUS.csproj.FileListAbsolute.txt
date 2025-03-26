@@ -70,3 +70,5 @@ C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\runtimes\win\l
 C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.Messages.dll
 C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
 C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.PerformanceCounter.dll
+C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.AdminDashboard.resources
+C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.User_Controls.HomeAdmin.resources

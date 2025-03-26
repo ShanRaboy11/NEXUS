@@ -76,5 +76,8 @@
     <Compile Update="Forms\WheelTokens.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="User Controls\HomeAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

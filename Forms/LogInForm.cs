@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NEXUS.Classes;
+using System.Windows.Documents;
 
 namespace NEXUS.Forms
 {
@@ -181,40 +182,60 @@ namespace NEXUS.Forms
             
             string username = tbxEnterUsername.Text;
             string password = tbxEnterPassword.Text;
-            if (string.IsNullOrEmpty(tbxEnterUsername.Text) || string.IsNullOrEmpty(tbxEnterPassword.Text) ||
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password) ||
                 tbxEnterPassword.Text == "Username" || tbxEnterPassword.Text == "Password")
             {
                 dialogBox.ShowIcon("blank");
                 overlayForm(this, dialogBox);
                 return;
             }
-            UserInformation user = Cryptography.VerifyPassword(username, password);
 
-            if (user == null)
+            if (username == "admin")
             {
-                dialogBox.ShowIcon("fail");
-                overlayForm(this, dialogBox);
-                return;
+                if (Cryptography.VerifyAdminPassword(password))
+                {
+                    dialogBox.ShowIcon("login");
+                    overlayForm(this, dialogBox);
+                    AdminDashboard adminDashboard = new AdminDashboard();
+                    adminDashboard.Show();
+                    this.Close();
+                }
+                else
+                {
+                    dialogBox.ShowIcon("fail");
+                    overlayForm(this, dialogBox);
+                    return;
+                }
             }
+            else
+            {
+                UserInformation user = Cryptography.VerifyPassword(username, password);
 
-            if (user is Passenger passenger)
-            {
-                dialogBox.ShowIcon("login");
-                overlayForm(this, dialogBox);
-                Dashboard dashboard = new Dashboard(passenger);
-                //Home home = new Home(passenger);
-                dashboard.Show();
-                this.Close();
-            }
-            else if (user is Driver driver)
-            {
-                dialogBox.ShowIcon("login");
-                overlayForm(this, dialogBox);
-                DriverDashboard driverDashboard = new DriverDashboard(driver);
-                driverDashboard.Show();
-                this.Close();
-            }
+                if (user == null)
+                {
+                    dialogBox.ShowIcon("fail");
+                    overlayForm(this, dialogBox);
+                    return;
+                }
 
+                if (user is Passenger passenger)
+                {
+                    dialogBox.ShowIcon("login");
+                    overlayForm(this, dialogBox);
+                    Dashboard dashboard = new Dashboard(passenger);
+                    //Home home = new Home(passenger);
+                    dashboard.Show();
+                    this.Close();
+                }
+                else if (user is Driver driver)
+                {
+                    dialogBox.ShowIcon("login");
+                    overlayForm(this, dialogBox);
+                    DriverDashboard driverDashboard = new DriverDashboard(driver);
+                    driverDashboard.Show();
+                    this.Close();
+                }
+            } 
         }
 
         private void CheckCredentials(string username, string password)

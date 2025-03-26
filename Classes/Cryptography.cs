@@ -153,5 +153,44 @@ namespace NEXUS.Classes
                 return null;
             }
         }
+
+        public static void AdminPassword(string password)
+        {
+            string hashedPassword = ToSHA256(password);
+            string query = "UPDATE Accounts SET [Password] = ? WHERE Username = 'admin'";
+
+            using (OleDbConnection connect = DatabaseManagement.GetConnection())
+            {
+                using (OleDbCommand cmd = new OleDbCommand(query, connect))
+                {
+                    connect.Open();
+                    cmd.Parameters.AddWithValue("?", hashedPassword);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public static bool VerifyAdminPassword(string password)
+        {
+            string enteredHash = ToSHA256(password); // Hash only once
+            string query = "SELECT [Password] FROM Accounts WHERE Username = 'admin'";
+
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            using (OleDbCommand cmd = new OleDbCommand(query, conn))
+            {
+                conn.Open();
+
+                using (OleDbDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read()) // If a record is found
+                    {
+                        string storedHash = reader.GetString(0);
+                        return enteredHash.Equals(storedHash, StringComparison.OrdinalIgnoreCase);
+                    }
+                }
+            }
+            return false;
+        }
+
     }
 }

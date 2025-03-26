@@ -56,9 +56,7 @@
             label8 = new Label();
             btnSubmitReport = new ReaLTaiizor.Controls.CyberButton();
             label9 = new Label();
-            label10 = new Label();
             lblEmail = new Label();
-            lblPassword = new Label();
             lblBirthday = new Label();
             lblUser = new Label();
             label5 = new Label();
@@ -349,7 +347,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Inter SemiBold", 16F, FontStyle.Bold);
             label8.ForeColor = SystemColors.ControlDarkDark;
-            label8.Location = new Point(55, 452);
+            label8.Location = new Point(55, 468);
             label8.Name = "label8";
             label8.Size = new Size(85, 31);
             label8.TabIndex = 33;
@@ -383,12 +381,12 @@
             btnSubmitReport.Lighting = false;
             btnSubmitReport.LinearGradient_Background = false;
             btnSubmitReport.LinearGradientPen = false;
-            btnSubmitReport.Location = new Point(220, 606);
+            btnSubmitReport.Location = new Point(210, 599);
             btnSubmitReport.Name = "btnSubmitReport";
             btnSubmitReport.PenWidth = 15;
             btnSubmitReport.Rounding = true;
             btnSubmitReport.RoundingInt = 70;
-            btnSubmitReport.Size = new Size(131, 45);
+            btnSubmitReport.Size = new Size(159, 45);
             btnSubmitReport.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             btnSubmitReport.TabIndex = 36;
             btnSubmitReport.Tag = "Cyber";
@@ -402,50 +400,28 @@
             label9.AutoSize = true;
             label9.Font = new Font("Inter SemiBold", 16F, FontStyle.Bold);
             label9.ForeColor = SystemColors.ControlDarkDark;
-            label9.Location = new Point(57, 552);
+            label9.Location = new Point(57, 534);
             label9.Name = "label9";
             label9.Size = new Size(118, 31);
             label9.TabIndex = 37;
             label9.Text = "Birthday :";
             // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Inter SemiBold", 16F, FontStyle.Bold);
-            label10.ForeColor = SystemColors.ControlDarkDark;
-            label10.Location = new Point(55, 502);
-            label10.Name = "label10";
-            label10.Size = new Size(132, 31);
-            label10.TabIndex = 38;
-            label10.Text = "Password :";
-            // 
             // lblEmail
             // 
             lblEmail.Font = new Font("Inter Medium", 17F, FontStyle.Bold);
             lblEmail.ForeColor = Color.FromArgb(24, 60, 114);
-            lblEmail.Location = new Point(210, 444);
+            lblEmail.Location = new Point(210, 460);
             lblEmail.Name = "lblEmail";
             lblEmail.Size = new Size(327, 44);
             lblEmail.TabIndex = 40;
             lblEmail.Text = "angelorivera@gmail.com";
             lblEmail.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // lblPassword
-            // 
-            lblPassword.Font = new Font("Inter Medium", 17F, FontStyle.Bold);
-            lblPassword.ForeColor = Color.FromArgb(24, 60, 114);
-            lblPassword.Location = new Point(210, 494);
-            lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(327, 44);
-            lblPassword.TabIndex = 41;
-            lblPassword.Text = "angelorivera@gmail.com";
-            lblPassword.TextAlign = ContentAlignment.MiddleLeft;
-            // 
             // lblBirthday
             // 
             lblBirthday.Font = new Font("Inter Medium", 17F, FontStyle.Bold);
             lblBirthday.ForeColor = Color.FromArgb(24, 60, 114);
-            lblBirthday.Location = new Point(210, 544);
+            lblBirthday.Location = new Point(210, 526);
             lblBirthday.Name = "lblBirthday";
             lblBirthday.Size = new Size(327, 44);
             lblBirthday.TabIndex = 43;
@@ -483,9 +459,7 @@
             Controls.Add(lblUser);
             Controls.Add(label5);
             Controls.Add(lblBirthday);
-            Controls.Add(lblPassword);
             Controls.Add(lblEmail);
-            Controls.Add(label10);
             Controls.Add(label9);
             Controls.Add(btnSubmitReport);
             Controls.Add(label8);
@@ -548,9 +522,7 @@
         private Label label8;
         private ReaLTaiizor.Controls.CyberButton btnSubmitReport;
         private Label label9;
-        private Label label10;
         private Label lblEmail;
-        private Label lblPassword;
         private Label lblBirthday;
         private Label lblUser;
         private Label label5;

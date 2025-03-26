@@ -1,5 +1,6 @@
 using NEXUS.Forms;
 using System.Runtime.InteropServices;
+using NEXUS.Classes;
 
 namespace NEXUS
 {
@@ -8,6 +9,7 @@ namespace NEXUS
         public WelcomeForm()
         {
             InitializeComponent();
+            //Cryptography.AdminPassword("admin123");
             //Uncomment when using sizable
             //this.Text = string.Empty;
             //this.ControlBox = false;
