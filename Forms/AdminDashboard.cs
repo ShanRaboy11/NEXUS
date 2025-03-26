@@ -17,6 +17,7 @@ namespace NEXUS.Forms
     {
         private FontAwesome.Sharp.IconButton selectedButton = null;
         private FontAwesome.Sharp.IconButton currentBtn;
+        bool sidebarExpand = false;
         public AdminDashboard()
         {
             InitializeComponent();
@@ -68,7 +69,7 @@ namespace NEXUS.Forms
         private void pbAbout_Click(object sender, EventArgs e)
         {
             About about = new About();
-            Scan scan = new Scan(passenger.Username);
+            Scan scan = new Scan("admin");
 
             scan.ShowOverlay(about, null);
             about.FormClosed += (s, args) => this.Show();
@@ -174,6 +175,66 @@ namespace NEXUS.Forms
             button.IconColor = Color.FromArgb(0, 229, 255);
             button.ForeColor = Color.White;
             button.Size = new Size(190, 60);
+        }
+
+        private void btnHome_MouseHover(object sender, EventArgs e)
+        {
+            HighlightButton(btnHome);
+        }
+
+        private void btnHome_MouseLeave(object sender, EventArgs e)
+        {
+            ResetButton(btnHome);
+        }
+
+        private void btnPassengers_MouseHover(object sender, EventArgs e)
+        {
+            HighlightButton(btnPassengers);
+        }
+
+        private void btnPassengers_MouseLeave(object sender, EventArgs e)
+        {
+            ResetButton(btnPassengers);
+        }
+
+        private void btnDrivers_MouseHover(object sender, EventArgs e)
+        {
+            HighlightButton(btnDrivers);
+        }
+
+        private void btnDrivers_MouseLeave(object sender, EventArgs e)
+        {
+            ResetButton(btnDrivers);
+        }
+
+        private void btnReport_MouseHover(object sender, EventArgs e)
+        {
+            HighlightButton(btnReport);
+        }
+
+        private void btnReport_MouseLeave(object sender, EventArgs e)
+        {
+            ResetButton(btnReport);
+        }
+
+        private void btnTransactions_MouseHover(object sender, EventArgs e)
+        {
+            HighlightButton(btnTransactions);
+        }
+
+        private void btnTransactions_MouseLeave(object sender, EventArgs e)
+        {
+            ResetButton(btnTransactions);
+        }
+
+        private void btnLogout_MouseHover(object sender, EventArgs e)
+        {
+            HighlightButton(btnLogout);
+        }
+
+        private void btnLogout_MouseLeave(object sender, EventArgs e)
+        {
+            ResetButton(btnLogout);
         }
     }
 }

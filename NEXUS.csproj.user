@@ -76,7 +76,19 @@
     <Compile Update="Forms\WheelTokens.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="User Controls\DriversAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="User Controls\HomeAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="User Controls\PassengersAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="User Controls\ReportsAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="User Controls\TransactionsAdmin.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashboard));
             pnlDesktop = new Panel();
             pnlContainer = new Panel();
@@ -43,23 +44,24 @@
             btnDrivers = new FontAwesome.Sharp.IconButton();
             btnPassengers = new FontAwesome.Sharp.IconButton();
             panel2 = new Panel();
-            pictureBox3 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox1 = new PictureBox();
             pictureBox4 = new PictureBox();
             pictureBox5 = new PictureBox();
             pictureBox6 = new PictureBox();
+            pictureBox3 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            pictureBox1 = new PictureBox();
+            SidebarTransition = new System.Windows.Forms.Timer(components);
             pnlDesktop.SuspendLayout();
             pnlTop.SuspendLayout();
             pnlSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbAbout).BeginInit();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // pnlDesktop
@@ -129,9 +131,11 @@
             pnlSidebar.Name = "pnlSidebar";
             pnlSidebar.Size = new Size(88, 879);
             pnlSidebar.TabIndex = 21;
+            pnlSidebar.Click += pnlSidebar_Click;
             // 
             // btnLogout
             // 
+            btnLogout.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnLogout.FlatAppearance.BorderSize = 0;
             btnLogout.FlatStyle = FlatStyle.Flat;
             btnLogout.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -147,6 +151,8 @@
             btnLogout.Text = "      Logout";
             btnLogout.UseVisualStyleBackColor = true;
             btnLogout.Click += btnLogout_Click;
+            btnLogout.MouseLeave += btnLogout_MouseLeave;
+            btnLogout.MouseHover += btnLogout_MouseHover;
             // 
             // btnTransactions
             // 
@@ -162,9 +168,11 @@
             btnTransactions.Padding = new Padding(15, 0, 0, 0);
             btnTransactions.Size = new Size(185, 43);
             btnTransactions.TabIndex = 38;
-            btnTransactions.Text = "       History";
+            btnTransactions.Text = "            Transactions";
             btnTransactions.UseVisualStyleBackColor = true;
             btnTransactions.Click += btnTransactions_Click;
+            btnTransactions.MouseLeave += btnTransactions_MouseLeave;
+            btnTransactions.MouseHover += btnTransactions_MouseHover;
             // 
             // pbAbout
             // 
@@ -195,6 +203,8 @@
             btnReport.Text = "      Report";
             btnReport.UseVisualStyleBackColor = true;
             btnReport.Click += btnReport_Click;
+            btnReport.MouseLeave += btnReport_MouseLeave;
+            btnReport.MouseHover += btnReport_MouseHover;
             // 
             // btnHome
             // 
@@ -213,6 +223,8 @@
             btnHome.Text = "     Home";
             btnHome.UseVisualStyleBackColor = true;
             btnHome.Click += btnHome_Click;
+            btnHome.MouseLeave += btnHome_MouseLeave;
+            btnHome.MouseHover += btnHome_MouseHover;
             // 
             // btnDrivers
             // 
@@ -228,9 +240,11 @@
             btnDrivers.Padding = new Padding(15, 0, 0, 0);
             btnDrivers.Size = new Size(185, 43);
             btnDrivers.TabIndex = 35;
-            btnDrivers.Text = "    Scan";
+            btnDrivers.Text = "       Drivers";
             btnDrivers.UseVisualStyleBackColor = true;
             btnDrivers.Click += btnDrivers_Click;
+            btnDrivers.MouseLeave += btnDrivers_MouseLeave;
+            btnDrivers.MouseHover += btnDrivers_MouseHover;
             // 
             // btnPassengers
             // 
@@ -246,9 +260,11 @@
             btnPassengers.Padding = new Padding(15, 0, 0, 0);
             btnPassengers.Size = new Size(185, 43);
             btnPassengers.TabIndex = 34;
-            btnPassengers.Text = "     Route";
+            btnPassengers.Text = "             Passengers";
             btnPassengers.UseVisualStyleBackColor = true;
             btnPassengers.Click += btnPassengers_Click;
+            btnPassengers.MouseLeave += btnPassengers_MouseLeave;
+            btnPassengers.MouseHover += btnPassengers_MouseHover;
             // 
             // panel2
             // 
@@ -264,6 +280,42 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1400, 28);
             panel2.TabIndex = 20;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(1347, 8);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(14, 14);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 5;
+            pictureBox4.TabStop = false;
+            pictureBox4.Click += Maximize;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Location = new Point(1316, 6);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(19, 19);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 4;
+            pictureBox5.TabStop = false;
+            pictureBox5.Click += Minimize;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
+            pictureBox6.Location = new Point(1374, 6);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(18, 18);
+            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox6.TabIndex = 3;
+            pictureBox6.TabStop = false;
+            pictureBox6.Click += Close;
             // 
             // pictureBox3
             // 
@@ -298,38 +350,10 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // pictureBox4
+            // SidebarTransition
             // 
-            pictureBox4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(1347, 8);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(14, 14);
-            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox4.TabIndex = 5;
-            pictureBox4.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            pictureBox5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(1316, 6);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(19, 19);
-            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox5.TabIndex = 4;
-            pictureBox5.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            pictureBox6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(1374, 6);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(18, 18);
-            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox6.TabIndex = 3;
-            pictureBox6.TabStop = false;
+            SidebarTransition.Interval = 10;
+            SidebarTransition.Tick += SidebarTransition_Tick;
             // 
             // AdminDashboard
             // 
@@ -342,19 +366,21 @@
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AdminDashboard";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminDashboard";
+            MouseDown += AdminDashboard_MouseDown;
             pnlDesktop.ResumeLayout(false);
             pnlTop.ResumeLayout(false);
             pnlTop.PerformLayout();
             pnlSidebar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbAbout).EndInit();
             panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -380,5 +406,6 @@
         private PictureBox pictureBox4;
         private PictureBox pictureBox5;
         private PictureBox pictureBox6;
+        private System.Windows.Forms.Timer SidebarTransition;
     }
 }
