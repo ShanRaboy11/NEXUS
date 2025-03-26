@@ -60,6 +60,8 @@
             lblBirthday = new Label();
             lblUser = new Label();
             label5 = new Label();
+            label1 = new Label();
+            lblStatus = new Label();
             ((System.ComponentModel.ISupportInitialize)pbProfilePicture).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbBackground).BeginInit();
             panel1.SuspendLayout();
@@ -347,7 +349,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Inter SemiBold", 16F, FontStyle.Bold);
             label8.ForeColor = SystemColors.ControlDarkDark;
-            label8.Location = new Point(55, 468);
+            label8.Location = new Point(94, 448);
             label8.Name = "label8";
             label8.Size = new Size(85, 31);
             label8.TabIndex = 33;
@@ -381,7 +383,7 @@
             btnSubmitReport.Lighting = false;
             btnSubmitReport.LinearGradient_Background = false;
             btnSubmitReport.LinearGradientPen = false;
-            btnSubmitReport.Location = new Point(210, 599);
+            btnSubmitReport.Location = new Point(210, 601);
             btnSubmitReport.Name = "btnSubmitReport";
             btnSubmitReport.PenWidth = 15;
             btnSubmitReport.Rounding = true;
@@ -400,7 +402,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Inter SemiBold", 16F, FontStyle.Bold);
             label9.ForeColor = SystemColors.ControlDarkDark;
-            label9.Location = new Point(57, 534);
+            label9.Location = new Point(96, 499);
             label9.Name = "label9";
             label9.Size = new Size(118, 31);
             label9.TabIndex = 37;
@@ -410,7 +412,7 @@
             // 
             lblEmail.Font = new Font("Inter Medium", 17F, FontStyle.Bold);
             lblEmail.ForeColor = Color.FromArgb(24, 60, 114);
-            lblEmail.Location = new Point(210, 460);
+            lblEmail.Location = new Point(249, 440);
             lblEmail.Name = "lblEmail";
             lblEmail.Size = new Size(327, 44);
             lblEmail.TabIndex = 40;
@@ -421,7 +423,7 @@
             // 
             lblBirthday.Font = new Font("Inter Medium", 17F, FontStyle.Bold);
             lblBirthday.ForeColor = Color.FromArgb(24, 60, 114);
-            lblBirthday.Location = new Point(210, 526);
+            lblBirthday.Location = new Point(249, 491);
             lblBirthday.Name = "lblBirthday";
             lblBirthday.Size = new Size(327, 44);
             lblBirthday.TabIndex = 43;
@@ -432,7 +434,7 @@
             // 
             lblUser.Font = new Font("Inter Medium", 17F, FontStyle.Bold);
             lblUser.ForeColor = Color.FromArgb(24, 60, 114);
-            lblUser.Location = new Point(210, 394);
+            lblUser.Location = new Point(249, 389);
             lblUser.Name = "lblUser";
             lblUser.Size = new Size(327, 44);
             lblUser.TabIndex = 45;
@@ -444,11 +446,33 @@
             label5.AutoSize = true;
             label5.Font = new Font("Inter SemiBold", 16F, FontStyle.Bold);
             label5.ForeColor = SystemColors.ControlDarkDark;
-            label5.Location = new Point(57, 402);
+            label5.Location = new Point(96, 397);
             label5.Name = "label5";
             label5.Size = new Size(136, 31);
             label5.TabIndex = 44;
             label5.Text = "Username :";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Inter SemiBold", 16F, FontStyle.Bold);
+            label1.ForeColor = SystemColors.ControlDarkDark;
+            label1.Location = new Point(97, 550);
+            label1.Name = "label1";
+            label1.Size = new Size(95, 31);
+            label1.TabIndex = 46;
+            label1.Text = "Status :";
+            // 
+            // lblStatus
+            // 
+            lblStatus.Font = new Font("Inter Medium", 17F, FontStyle.Bold);
+            lblStatus.ForeColor = Color.FromArgb(24, 60, 114);
+            lblStatus.Location = new Point(251, 542);
+            lblStatus.Name = "lblStatus";
+            lblStatus.Size = new Size(327, 44);
+            lblStatus.TabIndex = 47;
+            lblStatus.Text = "angelorivera@gmail.com";
+            lblStatus.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // Profile
             // 
@@ -456,6 +480,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
             ClientSize = new Size(577, 667);
+            Controls.Add(lblStatus);
+            Controls.Add(label1);
             Controls.Add(lblUser);
             Controls.Add(label5);
             Controls.Add(lblBirthday);
@@ -526,5 +552,7 @@
         private Label lblBirthday;
         private Label lblUser;
         private Label label5;
+        private Label label1;
+        private Label lblStatus;
     }
 }

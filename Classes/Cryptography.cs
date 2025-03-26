@@ -30,7 +30,7 @@ namespace NEXUS.Classes
 
         public static UserInformation VerifyPassword(string userName, string enteredPassword)
         {
-            string query = "SELECT ID, Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Classification, Attachment, [Profile picture], Wallet, Points " +
+            string query = "SELECT ID, Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Classification, Attachment, [Profile picture], Wallet, Points, [Status] " +
                    "FROM Accounts WHERE Username = ?";
 
             string enteredHash = ToSHA256(enteredPassword);
@@ -62,15 +62,16 @@ namespace NEXUS.Classes
                             string profilepic = reader.GetString(10);
                             double wallet = reader.IsDBNull(11) ? 0.0 : Convert.ToDouble(reader.GetValue(11));
                             int points = reader.IsDBNull(12) ? 0 : Convert.ToInt32(reader.GetValue(12));
+                            string status = reader.GetString(13);
 
                             if (userType == "Passenger")
                             {
-                                return new Passenger(userID, fullName, email, username, password, gender, userType, birthday, classification, attachment, profilepic, wallet, points);
+                                return new Passenger(userID, fullName, email, username, password, gender, userType, birthday, classification, attachment, profilepic, wallet, points, status);
                             }
                             else
                             {
                                 string plateNumber = reader.IsDBNull(10) ? null : reader.GetString(10);
-                                return new Driver(userID, fullName, email, username, password, gender, userType, birthday, attachment, plateNumber, profilepic, wallet);
+                                return new Driver(userID, fullName, email, username, password, gender, userType, birthday, attachment, plateNumber, profilepic, wallet, status);
                             }
                         }
                     }
@@ -83,7 +84,7 @@ namespace NEXUS.Classes
         {
             if(Usertype == "Passenger")
             {
-                string query = "SELECT ID, Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Classification, Attachment, [Profile Picture], Wallet, Points " +
+                string query = "SELECT ID, Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Classification, Attachment, [Profile Picture], Wallet, Points, [Status] " +
                    "FROM Accounts WHERE Username = ?";
 
 
@@ -110,8 +111,9 @@ namespace NEXUS.Classes
                             string profilepic = reader.GetString(10);
                             double wallet = reader.IsDBNull(11) ? 0.0 : Convert.ToDouble(reader.GetValue(11));
                             int points = reader.IsDBNull(12) ? 0 : Convert.ToInt32(reader.GetValue(12));
+                            string status = reader.GetString(13);
 
-                            return new Passenger(userID, fullName, email, username, password, gender, userType, birthday, classification, attachment, profilepic, wallet, points);
+                            return new Passenger(userID, fullName, email, username, password, gender, userType, birthday, classification, attachment, profilepic, wallet, points, status);
                         }
                     }
                 }
@@ -119,7 +121,7 @@ namespace NEXUS.Classes
             }
             else
             {
-                string query = "SELECT ID, Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Attachment, [Plate Number], [Profile Picture], Wallet " +
+                string query = "SELECT ID, Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Attachment, [Plate Number], [Profile Picture], Wallet, [Status] " +
                    "FROM Accounts WHERE Username = ?";
 
 
@@ -145,8 +147,9 @@ namespace NEXUS.Classes
                             string plateNumber = reader.GetString(9);
                             string profilepic = reader.GetString(10);
                             double wallet = reader.IsDBNull(11) ? 0.0 : Convert.ToDouble(reader.GetValue(11));
+                            string status = reader.GetString(12);
 
-                            return new Driver(userID, fullName, email, username, password, gender, userType, birthday, attachment, plateNumber, profilepic, wallet);
+                            return new Driver(userID, fullName, email, username, password, gender, userType, birthday, attachment, plateNumber, profilepic, wallet, status);
                         }
                     }
                 }

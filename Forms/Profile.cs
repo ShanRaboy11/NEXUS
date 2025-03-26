@@ -32,9 +32,9 @@ namespace NEXUS.Forms
                 lblUserType.Text = passenger.UserType;
                 lblEmail.Text = passenger.Email;
                 lblUser.Text = passenger.Username;
-                //lblPassword.Text = passenger.
                 lblBirthday.Text = passenger.Birthday;
                 lblTokens.Text = passenger.Points.ToString();
+                lblStatus.Text = passenger.Status;
             }
             else if(userInformation is Driver driver)
             {
@@ -45,10 +45,10 @@ namespace NEXUS.Forms
                 lblUserType.Text = driver.UserType;
                 lblEmail.Text = driver.Email;
                 lblUser.Text = driver.Username;
-                //lblPassword.Text = passenger.
                 lblBirthday.Text = driver.Birthday;
                 lblTokens.Text = "₱ " + driver.WalletAmount.ToString("F2");
                 label3.Text = "Walltet";
+                lblStatus.Text = driver.Status;
             }
         }
 
