@@ -89,7 +89,7 @@ namespace NEXUS.Forms
                     (rbtnStudent.Checked || rbtnSenior.Checked ? lblFileName.Text : rbtnRegular.Checked ? "" : "None"),
                     (userData.Gender == "Male" ? @"C:\Users\Shan Michael\source\repos\NEXUS\Resources\default_male.png" :
                     userData.Gender == "Female" ? @"C:\Users\Shan Michael\source\repos\NEXUS\Resources\defaullt_female.png" :
-                    @"C:\Users\Shan Michael\source\repos\NEXUS\Resources\default_User.png"), 0, 0, "Pending"
+                    @"C:\Users\Shan Michael\source\repos\NEXUS\Resources\default_User.png"), 0, 0, (rbtnStudent.Checked || rbtnSenior.Checked ? "Pending" : "Verified")
                 );
                 newPassenger.SaveToDatabase();
             }

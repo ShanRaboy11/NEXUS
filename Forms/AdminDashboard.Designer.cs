@@ -36,16 +36,19 @@
             label1 = new Label();
             pnlSidebar = new Panel();
             btnLogout = new FontAwesome.Sharp.IconButton();
-            btnHistory = new FontAwesome.Sharp.IconButton();
+            btnTransactions = new FontAwesome.Sharp.IconButton();
             pbAbout = new PictureBox();
             btnReport = new FontAwesome.Sharp.IconButton();
             btnHome = new FontAwesome.Sharp.IconButton();
-            btnScan = new FontAwesome.Sharp.IconButton();
-            btnRoute = new FontAwesome.Sharp.IconButton();
+            btnDrivers = new FontAwesome.Sharp.IconButton();
+            btnPassengers = new FontAwesome.Sharp.IconButton();
             panel2 = new Panel();
             pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
+            pictureBox4 = new PictureBox();
+            pictureBox5 = new PictureBox();
+            pictureBox6 = new PictureBox();
             pnlDesktop.SuspendLayout();
             pnlTop.SuspendLayout();
             pnlSidebar.SuspendLayout();
@@ -54,6 +57,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             SuspendLayout();
             // 
             // pnlDesktop
@@ -112,12 +118,12 @@
             // 
             pnlSidebar.BackColor = Color.White;
             pnlSidebar.Controls.Add(btnLogout);
-            pnlSidebar.Controls.Add(btnHistory);
+            pnlSidebar.Controls.Add(btnTransactions);
             pnlSidebar.Controls.Add(pbAbout);
             pnlSidebar.Controls.Add(btnReport);
             pnlSidebar.Controls.Add(btnHome);
-            pnlSidebar.Controls.Add(btnScan);
-            pnlSidebar.Controls.Add(btnRoute);
+            pnlSidebar.Controls.Add(btnDrivers);
+            pnlSidebar.Controls.Add(btnPassengers);
             pnlSidebar.Dock = DockStyle.Left;
             pnlSidebar.Location = new Point(0, 28);
             pnlSidebar.Name = "pnlSidebar";
@@ -140,23 +146,25 @@
             btnLogout.TabIndex = 39;
             btnLogout.Text = "      Logout";
             btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
             // 
-            // btnHistory
+            // btnTransactions
             // 
-            btnHistory.FlatAppearance.BorderSize = 0;
-            btnHistory.FlatStyle = FlatStyle.Flat;
-            btnHistory.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnHistory.IconChar = FontAwesome.Sharp.IconChar.ClockRotateLeft;
-            btnHistory.IconColor = Color.Black;
-            btnHistory.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnHistory.ImageAlign = ContentAlignment.MiddleLeft;
-            btnHistory.Location = new Point(0, 570);
-            btnHistory.Name = "btnHistory";
-            btnHistory.Padding = new Padding(15, 0, 0, 0);
-            btnHistory.Size = new Size(185, 43);
-            btnHistory.TabIndex = 38;
-            btnHistory.Text = "       History";
-            btnHistory.UseVisualStyleBackColor = true;
+            btnTransactions.FlatAppearance.BorderSize = 0;
+            btnTransactions.FlatStyle = FlatStyle.Flat;
+            btnTransactions.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnTransactions.IconChar = FontAwesome.Sharp.IconChar.Receipt;
+            btnTransactions.IconColor = Color.Black;
+            btnTransactions.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnTransactions.ImageAlign = ContentAlignment.MiddleLeft;
+            btnTransactions.Location = new Point(0, 570);
+            btnTransactions.Name = "btnTransactions";
+            btnTransactions.Padding = new Padding(15, 0, 0, 0);
+            btnTransactions.Size = new Size(185, 43);
+            btnTransactions.TabIndex = 38;
+            btnTransactions.Text = "       History";
+            btnTransactions.UseVisualStyleBackColor = true;
+            btnTransactions.Click += btnTransactions_Click;
             // 
             // pbAbout
             // 
@@ -168,6 +176,7 @@
             pbAbout.SizeMode = PictureBoxSizeMode.Zoom;
             pbAbout.TabIndex = 6;
             pbAbout.TabStop = false;
+            pbAbout.Click += pbAbout_Click;
             // 
             // btnReport
             // 
@@ -185,6 +194,7 @@
             btnReport.TabIndex = 36;
             btnReport.Text = "      Report";
             btnReport.UseVisualStyleBackColor = true;
+            btnReport.Click += btnReport_Click;
             // 
             // btnHome
             // 
@@ -204,43 +214,48 @@
             btnHome.UseVisualStyleBackColor = true;
             btnHome.Click += btnHome_Click;
             // 
-            // btnScan
+            // btnDrivers
             // 
-            btnScan.FlatAppearance.BorderSize = 0;
-            btnScan.FlatStyle = FlatStyle.Flat;
-            btnScan.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnScan.IconChar = FontAwesome.Sharp.IconChar.Qrcode;
-            btnScan.IconColor = Color.Black;
-            btnScan.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnScan.ImageAlign = ContentAlignment.MiddleLeft;
-            btnScan.Location = new Point(0, 370);
-            btnScan.Name = "btnScan";
-            btnScan.Padding = new Padding(15, 0, 0, 0);
-            btnScan.Size = new Size(185, 43);
-            btnScan.TabIndex = 35;
-            btnScan.Text = "    Scan";
-            btnScan.UseVisualStyleBackColor = true;
+            btnDrivers.FlatAppearance.BorderSize = 0;
+            btnDrivers.FlatStyle = FlatStyle.Flat;
+            btnDrivers.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnDrivers.IconChar = FontAwesome.Sharp.IconChar.Car;
+            btnDrivers.IconColor = Color.Black;
+            btnDrivers.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnDrivers.ImageAlign = ContentAlignment.MiddleLeft;
+            btnDrivers.Location = new Point(0, 370);
+            btnDrivers.Name = "btnDrivers";
+            btnDrivers.Padding = new Padding(15, 0, 0, 0);
+            btnDrivers.Size = new Size(185, 43);
+            btnDrivers.TabIndex = 35;
+            btnDrivers.Text = "    Scan";
+            btnDrivers.UseVisualStyleBackColor = true;
+            btnDrivers.Click += btnDrivers_Click;
             // 
-            // btnRoute
+            // btnPassengers
             // 
-            btnRoute.FlatAppearance.BorderSize = 0;
-            btnRoute.FlatStyle = FlatStyle.Flat;
-            btnRoute.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnRoute.IconChar = FontAwesome.Sharp.IconChar.Route;
-            btnRoute.IconColor = Color.Black;
-            btnRoute.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnRoute.ImageAlign = ContentAlignment.MiddleLeft;
-            btnRoute.Location = new Point(0, 270);
-            btnRoute.Name = "btnRoute";
-            btnRoute.Padding = new Padding(15, 0, 0, 0);
-            btnRoute.Size = new Size(185, 43);
-            btnRoute.TabIndex = 34;
-            btnRoute.Text = "     Route";
-            btnRoute.UseVisualStyleBackColor = true;
+            btnPassengers.FlatAppearance.BorderSize = 0;
+            btnPassengers.FlatStyle = FlatStyle.Flat;
+            btnPassengers.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnPassengers.IconChar = FontAwesome.Sharp.IconChar.Users;
+            btnPassengers.IconColor = Color.Black;
+            btnPassengers.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnPassengers.ImageAlign = ContentAlignment.MiddleLeft;
+            btnPassengers.Location = new Point(0, 270);
+            btnPassengers.Name = "btnPassengers";
+            btnPassengers.Padding = new Padding(15, 0, 0, 0);
+            btnPassengers.Size = new Size(185, 43);
+            btnPassengers.TabIndex = 34;
+            btnPassengers.Text = "     Route";
+            btnPassengers.UseVisualStyleBackColor = true;
+            btnPassengers.Click += btnPassengers_Click;
             // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(153, 229, 255);
+            panel2.Controls.Add(pictureBox4);
+            panel2.Controls.Add(pictureBox5);
+            panel2.Controls.Add(pictureBox6);
             panel2.Controls.Add(pictureBox3);
             panel2.Controls.Add(pictureBox2);
             panel2.Controls.Add(pictureBox1);
@@ -283,6 +298,39 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
+            // pictureBox4
+            // 
+            pictureBox4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(1347, 8);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(14, 14);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 5;
+            pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Location = new Point(1316, 6);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(19, 19);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 4;
+            pictureBox5.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
+            pictureBox6.Location = new Point(1374, 6);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(18, 18);
+            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox6.TabIndex = 3;
+            pictureBox6.TabStop = false;
+            // 
             // AdminDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -304,6 +352,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ResumeLayout(false);
         }
 
@@ -315,16 +366,19 @@
         private Label label1;
         private Panel pnlSidebar;
         private FontAwesome.Sharp.IconButton btnLogout;
-        private FontAwesome.Sharp.IconButton btnHistory;
+        private FontAwesome.Sharp.IconButton btnTransactions;
         private PictureBox pbAbout;
         private FontAwesome.Sharp.IconButton btnReport;
         private FontAwesome.Sharp.IconButton btnHome;
-        private FontAwesome.Sharp.IconButton btnScan;
-        private FontAwesome.Sharp.IconButton btnRoute;
+        private FontAwesome.Sharp.IconButton btnDrivers;
+        private FontAwesome.Sharp.IconButton btnPassengers;
         private Panel panel2;
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
         private Panel pnlContainer;
+        private PictureBox pictureBox4;
+        private PictureBox pictureBox5;
+        private PictureBox pictureBox6;
     }
 }
