@@ -87,61 +87,53 @@ namespace NEXUS.User_Controls
                 TextButton = "Approve",
                 //Dock = DockStyle.Fill,
                 ColorBackground = Color.LightGreen,
+                ColorBackground_Pen = Color.FromArgb(230, 249, 255),
                 Font = new Font("Inter", 17F, FontStyle.Regular),
                 ForeColor = Color.FromArgb(24, 60, 114),
-                Cursor = Cursors.Hand
+                Cursor = Cursors.Hand,
+                Anchor = AnchorStyles.Right
             };
+
+            CyberButton btnReject = new CyberButton
+            {
+                TextButton = "Reject",
+                //Dock = DockStyle.Fill,
+                ColorBackground = Color.Red,
+                ColorBackground_Pen = Color.FromArgb(230, 249, 255),
+                Font = new Font("Inter", 17F, FontStyle.Regular),
+                ForeColor = Color.White,
+                Cursor = Cursors.Hand,
+                Anchor = AnchorStyles.Left
+            };
+
             btnApprove.Click += (sender, e) => ApprovePassenger(passengerName);
+            btnReject.Click += (sender, e) => RejectPassenger(passengerName);
 
             tblVerification.Controls.Add(lblName, 0, rowIndex);
             tblVerification.Controls.Add(lblAttachment, 1, rowIndex);
             tblVerification.Controls.Add(btnApprove, 2, rowIndex);
+            tblVerification.Controls.Add(btnReject, 3, rowIndex);
         }
-
-        private void RemovePassengerRow(string passengerName)
-        {
-            if (!(pnlContainer.Tag is TableLayoutPanel tblVerification))
-                return;
-
-            // Find and remove the row with the given passenger name
-            foreach (Control control in tblVerification.Controls.Cast<Control>().ToList())
-            {
-                if (control is Label lbl && lbl.Text == passengerName)
-                {
-                    int rowIndex = tblVerification.GetRow(lbl);
-
-                    // Remove all controls from the found row
-                    for (int i = 0; i < tblVerification.ColumnCount; i++)
-                    {
-                        Control cellControl = tblVerification.GetControlFromPosition(i, rowIndex);
-                        if (cellControl != null)
-                            tblVerification.Controls.Remove(cellControl);
-                    }
-
-                    // Shift rows upwards
-                    for (int i = rowIndex + 1; i < tblVerification.RowCount; i++)
-                    {
-                        for (int j = 0; j < tblVerification.ColumnCount; j++)
-                        {
-                            Control movingControl = tblVerification.GetControlFromPosition(j, i);
-                            if (movingControl != null)
-                                tblVerification.SetRow(movingControl, i - 1);
-                        }
-                    }
-
-                    // Reduce row count
-                    tblVerification.RowCount--;
-                    break;
-                }
-            }
-
-            tblVerification.Refresh();
-        }
-        //RemovePassengerRow(passengerName);
 
         private void ApprovePassenger(string passengerName)
         {
             string query = "UPDATE Accounts SET Status = 'Approved' WHERE [Full Name] = ?";
+
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            using (OleDbCommand cmd = new OleDbCommand(query, conn))
+            {
+                conn.Open();
+                cmd.Parameters.AddWithValue("?", passengerName);
+
+                int rowsAffected = cmd.ExecuteNonQuery();
+            }
+
+            LoadPendingPassengers();
+        }
+
+        private void RejectPassenger(string passengerName)
+        {
+            string query = "UPDATE Accounts SET Status = 'Rejected' WHERE [Full Name] = ?";
 
             using (OleDbConnection conn = DatabaseManagement.GetConnection())
             using (OleDbCommand cmd = new OleDbCommand(query, conn))

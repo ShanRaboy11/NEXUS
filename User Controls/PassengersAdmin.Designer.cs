@@ -31,9 +31,8 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             panel1 = new Panel();
             tblVerification = new TableLayoutPanel();
-            label1 = new Label();
             label2 = new Label();
-            label3 = new Label();
+            label1 = new Label();
             pnlContainer = new Panel();
             panel1.SuspendLayout();
             tblVerification.SuspendLayout();
@@ -66,11 +65,11 @@
             // 
             tblVerification.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tblVerification.AutoScroll = true;
-            tblVerification.ColumnCount = 3;
+            tblVerification.ColumnCount = 4;
             tblVerification.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 48.0916F));
             tblVerification.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 51.9083977F));
-            tblVerification.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 384F));
-            tblVerification.Controls.Add(label3, 2, 0);
+            tblVerification.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 156F));
+            tblVerification.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 141F));
             tblVerification.Controls.Add(label2, 1, 0);
             tblVerification.Controls.Add(label1, 0, 0);
             tblVerification.Location = new Point(-2, 72);
@@ -101,6 +100,19 @@
             tblVerification.Size = new Size(1312, 767);
             tblVerification.TabIndex = 0;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Dock = DockStyle.Fill;
+            label2.Font = new Font("Inter SemiBold", 20F, FontStyle.Bold);
+            label2.ForeColor = Color.FromArgb(24, 60, 114);
+            label2.Location = new Point(483, 5);
+            label2.Name = "label2";
+            label2.Size = new Size(506, 45);
+            label2.TabIndex = 1;
+            label2.Text = "Attachment";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -109,36 +121,10 @@
             label1.ForeColor = Color.FromArgb(24, 60, 114);
             label1.Location = new Point(8, 5);
             label1.Name = "label1";
-            label1.Size = new Size(427, 45);
+            label1.Size = new Size(469, 45);
             label1.TabIndex = 0;
             label1.Text = "Name";
             label1.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Dock = DockStyle.Fill;
-            label2.Font = new Font("Inter SemiBold", 20F, FontStyle.Bold);
-            label2.ForeColor = Color.FromArgb(24, 60, 114);
-            label2.Location = new Point(441, 5);
-            label2.Name = "label2";
-            label2.Size = new Size(461, 45);
-            label2.TabIndex = 1;
-            label2.Text = "Attachment";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Dock = DockStyle.Fill;
-            label3.Font = new Font("Inter SemiBold", 20F, FontStyle.Bold);
-            label3.ForeColor = Color.FromArgb(24, 60, 114);
-            label3.Location = new Point(908, 5);
-            label3.Name = "label3";
-            label3.Size = new Size(379, 45);
-            label3.TabIndex = 2;
-            label3.Text = "Status";
-            label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pnlContainer
             // 
@@ -171,7 +157,6 @@
         private TableLayoutPanel tableLayoutPanel1;
         private Panel panel1;
         private TableLayoutPanel tblVerification;
-        private Label label3;
         private Label label2;
         private Label label1;
         private Panel pnlContainer;
