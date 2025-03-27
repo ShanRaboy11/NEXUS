@@ -66,10 +66,10 @@
             tblVerification.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tblVerification.AutoScroll = true;
             tblVerification.ColumnCount = 4;
-            tblVerification.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 48.0916F));
-            tblVerification.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 51.9083977F));
-            tblVerification.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 156F));
-            tblVerification.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 141F));
+            tblVerification.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 41.3318024F));
+            tblVerification.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 58.6681976F));
+            tblVerification.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 222F));
+            tblVerification.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 217F));
             tblVerification.Controls.Add(label2, 1, 0);
             tblVerification.Controls.Add(label1, 0, 0);
             tblVerification.Location = new Point(-2, 72);
@@ -106,9 +106,9 @@
             label2.Dock = DockStyle.Fill;
             label2.Font = new Font("Inter SemiBold", 20F, FontStyle.Bold);
             label2.ForeColor = Color.FromArgb(24, 60, 114);
-            label2.Location = new Point(483, 5);
+            label2.Location = new Point(357, 5);
             label2.Name = "label2";
-            label2.Size = new Size(506, 45);
+            label2.Size = new Size(490, 45);
             label2.TabIndex = 1;
             label2.Text = "Attachment";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -121,7 +121,7 @@
             label1.ForeColor = Color.FromArgb(24, 60, 114);
             label1.Location = new Point(8, 5);
             label1.Name = "label1";
-            label1.Size = new Size(469, 45);
+            label1.Size = new Size(343, 45);
             label1.TabIndex = 0;
             label1.Text = "Name";
             label1.TextAlign = ContentAlignment.MiddleCenter;

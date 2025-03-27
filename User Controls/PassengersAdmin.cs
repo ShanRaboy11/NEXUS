@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using NEXUS.Classes;
+using NEXUS.Forms;
 using ReaLTaiizor.Controls;
 
 namespace NEXUS.User_Controls
@@ -79,7 +80,7 @@ namespace NEXUS.User_Controls
                 Dock = DockStyle.Fill,
                 ForeColor = Color.FromArgb(24, 60, 114),
                 TextAlign = ContentAlignment.MiddleCenter,
-                Font = new Font("Inter", 17F, FontStyle.Regular)
+                Font = new Font("Inter", 17F, FontStyle.Underline)
             };
 
             CyberButton btnApprove = new CyberButton
@@ -108,6 +109,7 @@ namespace NEXUS.User_Controls
 
             btnApprove.Click += (sender, e) => ApprovePassenger(passengerName);
             btnReject.Click += (sender, e) => RejectPassenger(passengerName);
+            lblAttachment.Click += (sender, e) => DisplayAttachment(attachment);
 
             tblVerification.Controls.Add(lblName, 0, rowIndex);
             tblVerification.Controls.Add(lblAttachment, 1, rowIndex);
@@ -145,6 +147,14 @@ namespace NEXUS.User_Controls
             }
 
             LoadPendingPassengers();
+        }
+
+        private void DisplayAttachment(string attachment)
+        {
+            Image image = Image.FromFile(attachment);
+            DisplayImage display = new DisplayImage(image, null);
+
+
         }
     }
 }
