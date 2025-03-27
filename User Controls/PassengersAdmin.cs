@@ -18,28 +18,23 @@ namespace NEXUS.User_Controls
         public PassengersAdmin()
         {
             InitializeComponent();
-           // pnlContainer.Tag = tblVerification;
-            LoadPendingPassengers(); // Ensure loading happens after initialization
+            pnlContainer.Tag = tblVerification;
+            LoadPendingPassengers(); 
         }
 
         private void LoadPendingPassengers()
         {
-            if (!(pnlContainer.Tag is TableLayoutPanel tblVerification))
-                return;
-
-            // Remove only data rows, not headers
-            while (tblVerification.RowCount > 1)
+            for (int i = tblVerification.Controls.Count - 1; i >= 0; i--)
             {
-                for (int i = tblVerification.ColumnCount - 1; i >= 0; i--)
+                Control control = tblVerification.Controls[i];
+                int rowIndex = tblVerification.GetRow(control);
+                if (rowIndex >= 1) // Skip headers (row 0)
                 {
-                    Control control = tblVerification.GetControlFromPosition(i, 1);
-                    if (control != null)
-                        tblVerification.Controls.Remove(control);
+                    tblVerification.Controls.RemoveAt(i);
                 }
-                tblVerification.RowCount--;
             }
 
-            string query = "SELECT [Full Name], Attachment FROM Accounts WHERE Status = 'Pending' AND [User Type] = 'Passenger' ";
+            string query = "SELECT [Full Name], Attachment FROM Accounts WHERE Status = 'Pending' AND [User Type] = 'Passenger'";
 
             using (OleDbConnection conn = DatabaseManagement.GetConnection())
             {
@@ -48,45 +43,23 @@ namespace NEXUS.User_Controls
                     conn.Open();
                     using (OleDbDataReader reader = cmd.ExecuteReader())
                     {
+                        int rowIndex = 1; // Start adding passengers from the second row
+
                         while (reader.Read())
                         {
                             string passengerName = reader["Full Name"].ToString();
                             string attachment = reader["Attachment"].ToString();
-                            AddPassengerRow(tblVerification, passengerName, attachment);
+                            AddPassengerRow(tblVerification, passengerName, attachment, rowIndex++);
                         }
                     }
                 }
             }
         }
 
-        private void AddPassengerRow(TableLayoutPanel tblVerification, string passengerName, string attachment)
+        private void AddPassengerRow(TableLayoutPanel tblVerification, string passengerName, string attachment, int rowIndex)
         {
-            int rowIndex = -1;
-
-            // Find the first available empty row (starting from row 1)
-            for (int i = 1; i < tblVerification.RowCount; i++)
+            if (rowIndex >= tblVerification.RowCount)
             {
-                bool rowOccupied = false;
-                foreach (Control control in tblVerification.Controls)
-                {
-                    if (tblVerification.GetRow(control) == i)
-                    {
-                        rowOccupied = true;
-                        break;
-                    }
-                }
-
-                if (!rowOccupied)
-                {
-                    rowIndex = i;
-                    break;
-                }
-            }
-
-            // If no empty row is found, add a new row dynamically
-            if (rowIndex == -1)
-            {
-                rowIndex = tblVerification.RowCount;
                 tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 35));
                 tblVerification.RowCount++;
             }
@@ -96,7 +69,8 @@ namespace NEXUS.User_Controls
                 Text = passengerName,
                 Dock = DockStyle.Fill,
                 TextAlign = ContentAlignment.MiddleCenter,
-                Font = new Font("Inter", 17F, FontStyle.Regular)
+                Font = new Font("Inter", 17F, FontStyle.Regular),
+                ForeColor = Color.FromArgb(24, 60, 114)
             };
 
             Label lblAttachment = new Label
@@ -110,10 +84,11 @@ namespace NEXUS.User_Controls
 
             CyberButton btnApprove = new CyberButton
             {
-                Text = "Approve",
-                Dock = DockStyle.Fill,
-                BackColor = Color.LightGreen,
+                TextButton = "Approve",
+                //Dock = DockStyle.Fill,
+                ColorBackground = Color.LightGreen,
                 Font = new Font("Inter", 17F, FontStyle.Regular),
+                ForeColor = Color.FromArgb(24, 60, 114),
                 Cursor = Cursors.Hand
             };
             btnApprove.Click += (sender, e) => ApprovePassenger(passengerName, btnApprove);
@@ -122,6 +97,7 @@ namespace NEXUS.User_Controls
             tblVerification.Controls.Add(lblAttachment, 1, rowIndex);
             tblVerification.Controls.Add(btnApprove, 2, rowIndex);
         }
+
 
 
 

@@ -28,27 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pnlContainer = new Panel();
-            tblVerification = new TableLayoutPanel();
-            label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
-            panel1 = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
-            pnlContainer.SuspendLayout();
-            tblVerification.SuspendLayout();
+            panel1 = new Panel();
+            tblVerification = new TableLayoutPanel();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            pnlContainer = new Panel();
             panel1.SuspendLayout();
+            tblVerification.SuspendLayout();
+            pnlContainer.SuspendLayout();
             SuspendLayout();
             // 
-            // pnlContainer
+            // tableLayoutPanel1
             // 
-            pnlContainer.AutoScroll = true;
-            pnlContainer.Controls.Add(tblVerification);
-            pnlContainer.Dock = DockStyle.Fill;
-            pnlContainer.Location = new Point(0, 0);
-            pnlContainer.Name = "pnlContainer";
-            pnlContainer.Size = new Size(1312, 767);
-            pnlContainer.TabIndex = 0;
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Size = new Size(1312, 70);
+            tableLayoutPanel1.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(tableLayoutPanel1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1312, 70);
+            panel1.TabIndex = 1;
             // 
             // tblVerification
             // 
@@ -66,54 +78,28 @@
             tblVerification.Padding = new Padding(5);
             tblVerification.RowCount = 21;
             tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
-            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
-            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
-            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
-            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
-            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
-            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
-            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
-            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
-            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
-            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
-            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
-            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
-            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
-            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
-            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
-            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
-            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
-            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
-            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
-            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
+            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
+            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
+            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
+            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
+            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
+            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
+            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
+            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
+            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
+            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
+            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
+            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
+            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
+            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
+            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
+            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
+            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
+            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
+            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
+            tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
             tblVerification.Size = new Size(1312, 767);
             tblVerification.TabIndex = 0;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Dock = DockStyle.Fill;
-            label3.Font = new Font("Inter SemiBold", 20F, FontStyle.Bold);
-            label3.ForeColor = Color.FromArgb(24, 60, 114);
-            label3.Location = new Point(925, 5);
-            label3.Name = "label3";
-            label3.Size = new Size(379, 45);
-            label3.TabIndex = 2;
-            label3.Text = "Status";
-            label3.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Dock = DockStyle.Fill;
-            label2.Font = new Font("Inter SemiBold", 20F, FontStyle.Bold);
-            label2.ForeColor = Color.FromArgb(24, 60, 114);
-            label2.Location = new Point(449, 5);
-            label2.Name = "label2";
-            label2.Size = new Size(470, 45);
-            label2.TabIndex = 1;
-            label2.Text = "Attachment";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -123,32 +109,46 @@
             label1.ForeColor = Color.FromArgb(24, 60, 114);
             label1.Location = new Point(8, 5);
             label1.Name = "label1";
-            label1.Size = new Size(435, 45);
+            label1.Size = new Size(427, 45);
             label1.TabIndex = 0;
             label1.Text = "Name";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // panel1
+            // label2
             // 
-            panel1.Controls.Add(tableLayoutPanel1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1312, 70);
-            panel1.TabIndex = 1;
+            label2.AutoSize = true;
+            label2.Dock = DockStyle.Fill;
+            label2.Font = new Font("Inter SemiBold", 20F, FontStyle.Bold);
+            label2.ForeColor = Color.FromArgb(24, 60, 114);
+            label2.Location = new Point(441, 5);
+            label2.Name = "label2";
+            label2.Size = new Size(461, 45);
+            label2.TabIndex = 1;
+            label2.Text = "Attachment";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // tableLayoutPanel1
+            // label3
             // 
-            tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(0, 0);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 1;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(1312, 70);
-            tableLayoutPanel1.TabIndex = 0;
+            label3.AutoSize = true;
+            label3.Dock = DockStyle.Fill;
+            label3.Font = new Font("Inter SemiBold", 20F, FontStyle.Bold);
+            label3.ForeColor = Color.FromArgb(24, 60, 114);
+            label3.Location = new Point(908, 5);
+            label3.Name = "label3";
+            label3.Size = new Size(379, 45);
+            label3.TabIndex = 2;
+            label3.Text = "Status";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // pnlContainer
+            // 
+            pnlContainer.AutoScroll = true;
+            pnlContainer.Controls.Add(tblVerification);
+            pnlContainer.Dock = DockStyle.Fill;
+            pnlContainer.Location = new Point(0, 0);
+            pnlContainer.Name = "pnlContainer";
+            pnlContainer.Size = new Size(1312, 767);
+            pnlContainer.TabIndex = 0;
             // 
             // PassengersAdmin
             // 
@@ -159,21 +159,21 @@
             Controls.Add(pnlContainer);
             Name = "PassengersAdmin";
             Size = new Size(1312, 767);
-            pnlContainer.ResumeLayout(false);
+            panel1.ResumeLayout(false);
             tblVerification.ResumeLayout(false);
             tblVerification.PerformLayout();
-            panel1.ResumeLayout(false);
+            pnlContainer.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel pnlContainer;
-        private TableLayoutPanel tblVerification;
-        private Panel panel1;
         private TableLayoutPanel tableLayoutPanel1;
-        private Label label1;
+        private Panel panel1;
+        private TableLayoutPanel tblVerification;
         private Label label3;
         private Label label2;
+        private Label label1;
+        private Panel pnlContainer;
     }
 }
