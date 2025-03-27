@@ -22,6 +22,7 @@ namespace NEXUS.Forms
         {
             InitializeComponent();
             LoadHomeAdmin();
+            btnHome_Click(btnHome, EventArgs.Empty);
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -78,6 +79,11 @@ namespace NEXUS.Forms
 
         private void btnPassengers_Click(object sender, EventArgs e)
         {
+            PassengersAdmin passengersAdmin = new PassengersAdmin();
+
+            passengersAdmin.Dock = DockStyle.Fill;
+            pnlContainer.Controls.Clear();
+            pnlContainer.Controls.Add(passengersAdmin);
             SelectButton(btnPassengers);
         }
 

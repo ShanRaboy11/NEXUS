@@ -30,7 +30,11 @@
         {
             cyberButton3 = new ReaLTaiizor.Controls.CyberButton();
             tableLayoutPanel1 = new TableLayoutPanel();
+            panel1 = new Panel();
+            label1 = new Label();
+            lblUserFName = new Label();
             tableLayoutPanel1.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // cyberButton3
@@ -61,12 +65,12 @@
             cyberButton3.Lighting = false;
             cyberButton3.LinearGradient_Background = false;
             cyberButton3.LinearGradientPen = false;
-            cyberButton3.Location = new Point(3, 3);
+            cyberButton3.Location = new Point(0, 0);
             cyberButton3.Name = "cyberButton3";
             cyberButton3.PenWidth = 15;
             cyberButton3.Rounding = true;
             cyberButton3.RoundingInt = 70;
-            cyberButton3.Size = new Size(434, 402);
+            cyberButton3.Size = new Size(428, 331);
             cyberButton3.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             cyberButton3.TabIndex = 42;
             cyberButton3.Tag = "Cyber";
@@ -74,22 +78,63 @@
             cyberButton3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             cyberButton3.Timer_Effect_1 = 5;
             cyberButton3.Timer_RGB = 300;
+            cyberButton3.Click += cyberButton3_Click;
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.ColumnCount = 3;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 431F));
-            tableLayoutPanel1.Controls.Add(cyberButton3, 0, 0);
+            tableLayoutPanel1.ColumnCount = 5;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 2.9069767F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 97.0930252F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 452F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 392F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.Controls.Add(panel1, 1, 2);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 53.1942635F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 46.8057365F));
+            tableLayoutPanel1.RowCount = 4;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 4.132231F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 95.86777F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 337F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Size = new Size(1312, 767);
             tableLayoutPanel1.TabIndex = 43;
+            tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(lblUserFName);
+            panel1.Controls.Add(cyberButton3);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(16, 412);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(428, 331);
+            panel1.TabIndex = 45;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.FromArgb(153, 229, 255);
+            label1.Font = new Font("Inter ExtraBold", 25F, FontStyle.Bold);
+            label1.ForeColor = Color.FromArgb(24, 60, 114);
+            label1.Location = new Point(139, 233);
+            label1.Name = "label1";
+            label1.Size = new Size(135, 49);
+            label1.TabIndex = 44;
+            label1.Text = "USERS";
+            // 
+            // lblUserFName
+            // 
+            lblUserFName.BackColor = Color.FromArgb(153, 229, 255);
+            lblUserFName.Font = new Font("Inter ExtraBold", 90F, FontStyle.Bold);
+            lblUserFName.ForeColor = Color.White;
+            lblUserFName.Location = new Point(55, 33);
+            lblUserFName.Name = "lblUserFName";
+            lblUserFName.Size = new Size(317, 200);
+            lblUserFName.TabIndex = 43;
+            lblUserFName.Text = "0";
+            lblUserFName.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // HomeAdmin
             // 
@@ -100,6 +145,8 @@
             Name = "HomeAdmin";
             Size = new Size(1312, 767);
             tableLayoutPanel1.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -107,5 +154,8 @@
 
         private ReaLTaiizor.Controls.CyberButton cyberButton3;
         private TableLayoutPanel tableLayoutPanel1;
+        private Panel panel1;
+        private Label label1;
+        private Label lblUserFName;
     }
 }
