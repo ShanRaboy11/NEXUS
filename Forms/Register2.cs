@@ -185,6 +185,7 @@ namespace NEXUS.Forms
 
         private Image attachedImage;
         private string attachedFileName; // Store file name separately
+        private readonly Attachment attachmentHandler = new Attachment(); // Create instance
 
         private void btnAttach_Click(object sender, EventArgs e)
         {
@@ -198,10 +199,9 @@ namespace NEXUS.Forms
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    Attachment attachment = new Attachment();
-                    attachedImage = attachment.UploadAndSaveImage(openFileDialog.FileName); // Pass file path
-
+                    attachedImage = attachmentHandler.UploadAndSaveImage(openFileDialog.FileName); // Pass file path
                     attachedFileName = Path.GetFileName(openFileDialog.FileName); // Extract only the file name
+
                     lblFileName.Text = attachedFileName; // Display the file name
                     lblFileName.ForeColor = Color.Blue; // Make it look clickable
                     lblFileName.Cursor = Cursors.Hand; // Change cursor to indicate clickability
@@ -217,6 +217,7 @@ namespace NEXUS.Forms
                 DisplayImage displayImage = new DisplayImage(attachedImage, "register");
             }
         }
+
 
         private void btnBack_Click(object sender, EventArgs e)
         {

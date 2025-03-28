@@ -232,58 +232,44 @@ namespace NEXUS.Classes
         }
     }
 
-    public class Attachment()
+    public class Attachment
     {
-        public Image UploadAndSaveImage(string filePath)
+        private readonly string uploadFolder;
+
+        public Attachment()
         {
-            if (string.IsNullOrEmpty(filePath) || !File.Exists(filePath))
-                return null; // Return null if the file path is invalid
+            // Use AppContext.BaseDirectory and append the correct folder
+            uploadFolder = Path.Combine(AppContext.BaseDirectory, "Attachments");
 
-            byte[] imageBytes = File.ReadAllBytes(filePath); // Read image as bytes
-            SaveImageToDatabase(imageBytes); // Save to database
-
-            using (MemoryStream ms = new MemoryStream(imageBytes))
+            // Ensure the directory exists
+            if (!Directory.Exists(uploadFolder))
             {
-                return Image.FromStream(ms); // Convert bytes to Image
+                Directory.CreateDirectory(uploadFolder);
             }
         }
 
-
-        private void SaveImageToDatabase(byte[] imageBytes)
+        public Image UploadAndSaveImage(string sourcePath)
         {
-            string query = "INSERT INTO Accounts (Attachment) VALUES (?)";
-
-            using (OleDbConnection conn = DatabaseManagement.GetConnection())
-            using (OleDbCommand cmd = new OleDbCommand(query, conn))
-            {
-                conn.Open();
-                cmd.Parameters.AddWithValue("?", imageBytes);
-                cmd.ExecuteNonQuery();
-            }
-        }
-
-        public Image ConvertBytesToImage(byte[] imageBytes)
-        {
-            if (imageBytes == null || imageBytes.Length == 0)
-                return null; // Return null if empty or invalid data
+            string fileName = Path.GetFileName(sourcePath); // Extract the file name only
+            string destinationPath = Path.Combine(uploadFolder, fileName); // Full destination path
 
             try
             {
-                // Debugging: Save the byte array to a file to check if it's a valid image
-                File.WriteAllBytes("debug_image.jpg", imageBytes);
-
-                using (MemoryStream ms = new MemoryStream(imageBytes))
-                {
-                    return Image.FromStream(ms);
-                }
+                File.Copy(sourcePath, destinationPath, true); // Overwrite if exists
+                return Image.FromFile(destinationPath); // Return the saved image
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error loading image: " + ex.Message);
+                MessageBox.Show("Error saving image: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }
 
-
+        public string GetSavedFilePath(string fileName)
+        {
+            return Path.Combine(uploadFolder, fileName); // Return full path of stored image
+        }
     }
+
+
 }

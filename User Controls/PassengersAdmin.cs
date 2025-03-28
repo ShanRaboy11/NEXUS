@@ -51,15 +51,16 @@ namespace NEXUS.User_Controls
                         while (reader.Read())
                         {
                             string passengerName = reader["Full Name"].ToString();
-                            byte[] attachment = (byte[])reader["Attachment"]; // Explicit cast to byte[]
-                            AddPassengerRow(tblVerification, passengerName, attachment, rowIndex++);
+                            string attachmentPath = reader["Attachment"].ToString();
+
+                            AddPassengerRow(tblVerification, passengerName, attachmentPath, rowIndex++);
                         }
                     }
                 }
             }
         }
 
-        private void AddPassengerRow(TableLayoutPanel tblVerification, string passengerName, byte[] attachment, int rowIndex)
+        private void AddPassengerRow(TableLayoutPanel tblVerification, string passengerName, string attachment, int rowIndex)
         {
             if (rowIndex >= tblVerification.RowCount)
             {
@@ -155,13 +156,27 @@ namespace NEXUS.User_Controls
             LoadPendingPassengers();
         }
 
-        private void DisplayAttachment(byte[] attachment)
+        private void DisplayAttachment(string fileName)
         {
-            Attachment attachment1 = new Attachment();
-            Image image = attachment1.ConvertBytesToImage(attachment);
-            DisplayImage display = new DisplayImage(image, null);
+            if (string.IsNullOrEmpty(fileName))
+            {
+                MessageBox.Show("No attachment found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            // Construct the full path using AppContext.BaseDirectory
+            string filePath = Path.Combine(AppContext.BaseDirectory, "Attachments", fileName);
 
+            if (File.Exists(filePath))
+            {
+                Image image = Image.FromFile(filePath);
+                DisplayImage display = new DisplayImage(image, "register");
+            }
+            else
+            {
+                MessageBox.Show("Attachment not found at: " + filePath, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
     }
 }
