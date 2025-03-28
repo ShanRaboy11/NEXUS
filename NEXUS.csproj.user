@@ -76,6 +76,9 @@
     <Compile Update="Forms\WheelTokens.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="User Controls\DataGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="User Controls\DriversAdmin.cs">
       <SubType>UserControl</SubType>
     </Compile>

@@ -184,14 +184,14 @@ namespace NEXUS.Forms
         }
 
         private Image attachedImage;
-        private string attachedFileName; // Store file name separately
-        private readonly Attachment attachmentHandler = new Attachment(); // Create instance
+        private string attachedFileName; 
+        private readonly Attachment attachmentHandler = new Attachment(); 
 
         private void btnAttach_Click(object sender, EventArgs e)
         {
             lblFileName.Text = "";
             lblFileName.ForeColor = Color.Black;
-            lblFileName.Font = new Font(lblFileName.Font, FontStyle.Underline); // Underline text
+            lblFileName.Font = new Font(lblFileName.Font, FontStyle.Underline); 
 
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
@@ -199,12 +199,12 @@ namespace NEXUS.Forms
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    attachedImage = attachmentHandler.UploadAndSaveImage(openFileDialog.FileName); // Pass file path
-                    attachedFileName = Path.GetFileName(openFileDialog.FileName); // Extract only the file name
+                    attachedImage = attachmentHandler.UploadAndSaveImage(openFileDialog.FileName); 
+                    attachedFileName = Path.GetFileName(openFileDialog.FileName); 
 
-                    lblFileName.Text = attachedFileName; // Display the file name
-                    lblFileName.ForeColor = Color.Blue; // Make it look clickable
-                    lblFileName.Cursor = Cursors.Hand; // Change cursor to indicate clickability
+                    lblFileName.Text = attachedFileName; 
+                    lblFileName.ForeColor = Color.Blue; 
+                    lblFileName.Cursor = Cursors.Hand; 
                     lblFileName.Font = new Font(lblFileName.Font, FontStyle.Underline);
                 }
             }

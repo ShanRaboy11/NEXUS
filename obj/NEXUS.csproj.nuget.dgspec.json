@@ -57,6 +57,10 @@
               "target": "Package",
               "version": "[6.6.0, )"
             },
+            "Krypton.Toolkit": {
+              "target": "Package",
+              "version": "[90.25.2.55, )"
+            },
             "Microsoft.Web.WebView2": {
               "target": "Package",
               "version": "[1.0.3124.44, )"

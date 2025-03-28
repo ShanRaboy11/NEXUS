@@ -52,6 +52,14 @@
           }
         }
       },
+      "Krypton.Toolkit/90.25.2.55": {
+        "runtime": {
+          "lib/net8.0-windows7.0/Krypton.Toolkit.dll": {
+            "assemblyVersion": "90.25.2.55",
+            "fileVersion": "90.25.2.55"
+          }
+        }
+      },
       "Microsoft.Web.WebView2/1.0.3124.44": {
         "runtimeTargets": {
           "runtimes/win-arm64/native/WebView2Loader.dll": {
@@ -263,6 +271,13 @@
       "sha512": "sha512-bJCb2x73UC1nD9+9iMLaUy6Ujf9Pf+buL6FHwVnaoDYT4CQNLazz59hO5gQ0+SMSW0G+ZXmjjShOYr3Jn2UZiw==",
       "path": "fontawesome.sharp/6.6.0",
       "hashPath": "fontawesome.sharp.6.6.0.nupkg.sha512"
+    },
+    "Krypton.Toolkit/90.25.2.55": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FaAMlKtIoCwZqQHjsyd6PzF/KdSYdLrv8IwvepyHenES59MVUGcwBJDWRM949KWhq8mky3icT5Xkq7qwnyQFCA==",
+      "path": "krypton.toolkit/90.25.2.55",
+      "hashPath": "krypton.toolkit.90.25.2.55.nupkg.sha512"
     },
     "Microsoft.Web.WebView2/1.0.3124.44": {
       "type": "package",

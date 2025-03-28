@@ -22,8 +22,27 @@ namespace NEXUS.User_Controls
         {
             InitializeComponent();
             pnlContainer.Tag = tblVerification;
-            LoadPendingPassengers();
+            //LoadPendingPassengers();
+            DisplayAllPassengers();
         }
+
+        private void DisplayAllPassengers()
+        {
+            // Clear any existing controls in pnlContainer
+            pnlContainer.Controls.Clear();
+
+            // Create an instance of the PassengersAdmin UserControl
+            DataGrid dataGrid = new DataGrid("Passenger")
+            {
+                Dock = DockStyle.Fill
+            };
+
+            // Add the user control to the panel
+            pnlContainer.Controls.Add(dataGrid);
+        }
+
+
+
 
         private void LoadPendingPassengers()
         {
@@ -81,19 +100,18 @@ namespace NEXUS.User_Controls
 
             Label lblAttachment = new Label
             {
-                Text = passengerName + "attachment.png",
+                Text = attachment,
                 Dock = DockStyle.Fill,
                 ForeColor = Color.FromArgb(24, 60, 114),
                 TextAlign = ContentAlignment.MiddleCenter,
                 Font = new Font("Inter", 17F, FontStyle.Underline),
-                Anchor = AnchorStyles.None,
+                //Anchor = AnchorStyles.None,
                 Cursor = Cursors.Hand
             };
 
             CyberButton btnApprove = new CyberButton
             {
                 TextButton = "Approve",
-                //Dock = DockStyle.Fill,
                 ColorBackground = Color.LightGreen,
                 ColorBackground_Pen = Color.FromArgb(230, 249, 255),
                 Font = new Font("Inter", 17F, FontStyle.Regular),
@@ -105,7 +123,6 @@ namespace NEXUS.User_Controls
             CyberButton btnReject = new CyberButton
             {
                 TextButton = "Reject",
-                //Dock = DockStyle.Fill,
                 ColorBackground = Color.Red,
                 ColorBackground_Pen = Color.FromArgb(230, 249, 255),
                 Font = new Font("Inter", 17F, FontStyle.Regular),
@@ -164,7 +181,6 @@ namespace NEXUS.User_Controls
                 return;
             }
 
-            // Construct the full path using AppContext.BaseDirectory
             string filePath = Path.Combine(AppContext.BaseDirectory, "Attachments", fileName);
 
             if (File.Exists(filePath))
@@ -177,6 +193,5 @@ namespace NEXUS.User_Controls
                 MessageBox.Show("Attachment not found at: " + filePath, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
     }
 }

@@ -41,14 +41,16 @@
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.ColumnCount = 4;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 190F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 190F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 190F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 745F));
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Size = new Size(1312, 70);
             tableLayoutPanel1.TabIndex = 0;
             // 
@@ -63,7 +65,6 @@
             // 
             // tblVerification
             // 
-            tblVerification.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tblVerification.AutoScroll = true;
             tblVerification.ColumnCount = 4;
             tblVerification.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 41.3318024F));
@@ -72,7 +73,8 @@
             tblVerification.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 217F));
             tblVerification.Controls.Add(label2, 1, 0);
             tblVerification.Controls.Add(label1, 0, 0);
-            tblVerification.Location = new Point(-2, 72);
+            tblVerification.Dock = DockStyle.Fill;
+            tblVerification.Location = new Point(0, 0);
             tblVerification.Name = "tblVerification";
             tblVerification.Padding = new Padding(5);
             tblVerification.RowCount = 21;
@@ -97,7 +99,7 @@
             tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
             tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
             tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
-            tblVerification.Size = new Size(1312, 767);
+            tblVerification.Size = new Size(1312, 691);
             tblVerification.TabIndex = 0;
             // 
             // label2
@@ -130,10 +132,10 @@
             // 
             pnlContainer.AutoScroll = true;
             pnlContainer.Controls.Add(tblVerification);
-            pnlContainer.Dock = DockStyle.Fill;
-            pnlContainer.Location = new Point(0, 0);
+            pnlContainer.Dock = DockStyle.Bottom;
+            pnlContainer.Location = new Point(0, 76);
             pnlContainer.Name = "pnlContainer";
-            pnlContainer.Size = new Size(1312, 767);
+            pnlContainer.Size = new Size(1312, 691);
             pnlContainer.TabIndex = 0;
             // 
             // PassengersAdmin

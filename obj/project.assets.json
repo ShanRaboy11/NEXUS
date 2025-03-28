@@ -60,6 +60,22 @@
           "Microsoft.WindowsDesktop.App"
         ]
       },
+      "Krypton.Toolkit/90.25.2.55": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-windows7.0/Krypton.Toolkit.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Krypton.Toolkit.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
       "Microsoft.Web.WebView2/1.0.3124.44": {
         "type": "package",
         "build": {
@@ -393,6 +409,36 @@
         "lib/net7.0-windows7.0/FontAwesome.Sharp.dll",
         "lib/net8.0-windows7.0/FontAwesome.Sharp.dll",
         "lib/netcoreapp3.1/FontAwesome.Sharp.dll"
+      ]
+    },
+    "Krypton.Toolkit/90.25.2.55": {
+      "sha512": "FaAMlKtIoCwZqQHjsyd6PzF/KdSYdLrv8IwvepyHenES59MVUGcwBJDWRM949KWhq8mky3icT5Xkq7qwnyQFCA==",
+      "type": "package",
+      "path": "krypton.toolkit/90.25.2.55",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Krypton Stable.png",
+        "License.md",
+        "README.md",
+        "krypton.toolkit.90.25.2.55.nupkg.sha512",
+        "krypton.toolkit.nuspec",
+        "lib/net462/Krypton.Toolkit.dll",
+        "lib/net462/Krypton.Toolkit.xml",
+        "lib/net47/Krypton.Toolkit.dll",
+        "lib/net47/Krypton.Toolkit.xml",
+        "lib/net471/Krypton.Toolkit.dll",
+        "lib/net471/Krypton.Toolkit.xml",
+        "lib/net472/Krypton.Toolkit.dll",
+        "lib/net472/Krypton.Toolkit.xml",
+        "lib/net48/Krypton.Toolkit.dll",
+        "lib/net48/Krypton.Toolkit.xml",
+        "lib/net481/Krypton.Toolkit.dll",
+        "lib/net481/Krypton.Toolkit.xml",
+        "lib/net8.0-windows7.0/Krypton.Toolkit.dll",
+        "lib/net8.0-windows7.0/Krypton.Toolkit.xml",
+        "lib/net9.0-windows7.0/Krypton.Toolkit.dll",
+        "lib/net9.0-windows7.0/Krypton.Toolkit.xml"
       ]
     },
     "Microsoft.Web.WebView2/1.0.3124.44": {
@@ -930,6 +976,7 @@
       "AForge.Video.DirectShow >= 2.2.5",
       "BCrypt.Net-Next >= 4.0.3",
       "FontAwesome.Sharp >= 6.6.0",
+      "Krypton.Toolkit >= 90.25.2.55",
       "Microsoft.Web.WebView2 >= 1.0.3124.44",
       "Newtonsoft.Json >= 13.0.3",
       "QRCoder >= 1.6.0",
@@ -994,6 +1041,10 @@
           "FontAwesome.Sharp": {
             "target": "Package",
             "version": "[6.6.0, )"
+          },
+          "Krypton.Toolkit": {
+            "target": "Package",
+            "version": "[90.25.2.55, )"
           },
           "Microsoft.Web.WebView2": {
             "target": "Package",
