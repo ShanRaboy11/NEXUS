@@ -267,11 +267,23 @@ namespace NEXUS.Classes
             if (imageBytes == null || imageBytes.Length == 0)
                 return null; // Return null if empty or invalid data
 
-            using (MemoryStream ms = new MemoryStream(imageBytes))
+            try
             {
-                return Image.FromStream(ms);
+                // Debugging: Save the byte array to a file to check if it's a valid image
+                File.WriteAllBytes("debug_image.jpg", imageBytes);
+
+                using (MemoryStream ms = new MemoryStream(imageBytes))
+                {
+                    return Image.FromStream(ms);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading image: " + ex.Message);
+                return null;
             }
         }
+
 
     }
 }

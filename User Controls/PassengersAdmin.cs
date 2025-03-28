@@ -11,6 +11,8 @@ using System.Data.OleDb;
 using NEXUS.Classes;
 using NEXUS.Forms;
 using ReaLTaiizor.Controls;
+using NEXUS.Properties;
+using System.Security.Cryptography;
 
 namespace NEXUS.User_Controls
 {
@@ -49,7 +51,7 @@ namespace NEXUS.User_Controls
                         while (reader.Read())
                         {
                             string passengerName = reader["Full Name"].ToString();
-                            string attachment = reader["Attachment"].ToString();
+                            byte[] attachment = (byte[])reader["Attachment"]; // Explicit cast to byte[]
                             AddPassengerRow(tblVerification, passengerName, attachment, rowIndex++);
                         }
                     }
@@ -57,7 +59,7 @@ namespace NEXUS.User_Controls
             }
         }
 
-        private void AddPassengerRow(TableLayoutPanel tblVerification, string passengerName, string attachment, int rowIndex)
+        private void AddPassengerRow(TableLayoutPanel tblVerification, string passengerName, byte[] attachment, int rowIndex)
         {
             if (rowIndex >= tblVerification.RowCount)
             {
@@ -74,13 +76,17 @@ namespace NEXUS.User_Controls
                 ForeColor = Color.FromArgb(24, 60, 114)
             };
 
+
+
             Label lblAttachment = new Label
             {
-                Text = attachment,
+                Text = passengerName + "attachment.png",
                 Dock = DockStyle.Fill,
                 ForeColor = Color.FromArgb(24, 60, 114),
                 TextAlign = ContentAlignment.MiddleCenter,
-                Font = new Font("Inter", 17F, FontStyle.Underline)
+                Font = new Font("Inter", 17F, FontStyle.Underline),
+                Anchor = AnchorStyles.None,
+                Cursor = Cursors.Hand
             };
 
             CyberButton btnApprove = new CyberButton
@@ -149,9 +155,10 @@ namespace NEXUS.User_Controls
             LoadPendingPassengers();
         }
 
-        private void DisplayAttachment(string attachment)
+        private void DisplayAttachment(byte[] attachment)
         {
-            Image image = Image.FromFile(attachment);
+            Attachment attachment1 = new Attachment();
+            Image image = attachment1.ConvertBytesToImage(attachment);
             DisplayImage display = new DisplayImage(image, null);
 
 
