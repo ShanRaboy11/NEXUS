@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BCrypt.Net;
 using NEXUS.Classes;
+using NEXUS.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace NEXUS.Classes
@@ -229,5 +230,48 @@ namespace NEXUS.Classes
                    $"Fare Paid: {FarePaid:C}\n" +
                    $"Date: {TripTimeStamp:yyyy-MM-dd HH:mm:ss}\n";
         }
+    }
+
+    public class Attachment()
+    {
+        public Image UploadAndSaveImage(string filePath)
+        {
+            if (string.IsNullOrEmpty(filePath) || !File.Exists(filePath))
+                return null; // Return null if the file path is invalid
+
+            byte[] imageBytes = File.ReadAllBytes(filePath); // Read image as bytes
+            SaveImageToDatabase(imageBytes); // Save to database
+
+            using (MemoryStream ms = new MemoryStream(imageBytes))
+            {
+                return Image.FromStream(ms); // Convert bytes to Image
+            }
+        }
+
+
+        private void SaveImageToDatabase(byte[] imageBytes)
+        {
+            string query = "INSERT INTO Accounts (Attachment) VALUES (?)";
+
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            using (OleDbCommand cmd = new OleDbCommand(query, conn))
+            {
+                conn.Open();
+                cmd.Parameters.AddWithValue("?", imageBytes);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public Image ConvertBytesToImage(byte[] imageBytes)
+        {
+            if (imageBytes == null || imageBytes.Length == 0)
+                return null; // Return null if empty or invalid data
+
+            using (MemoryStream ms = new MemoryStream(imageBytes))
+            {
+                return Image.FromStream(ms);
+            }
+        }
+
     }
 }

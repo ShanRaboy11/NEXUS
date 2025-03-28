@@ -484,7 +484,7 @@
             pnlAttach.Controls.Add(lblFileName);
             pnlAttach.Location = new Point(32, 430);
             pnlAttach.Name = "pnlAttach";
-            pnlAttach.Size = new Size(266, 46);
+            pnlAttach.Size = new Size(302, 46);
             pnlAttach.TabIndex = 89;
             pnlAttach.Visible = false;
             // 
@@ -494,7 +494,7 @@
             btnAttach.IconColor = Color.Black;
             btnAttach.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnAttach.IconSize = 30;
-            btnAttach.Location = new Point(208, 6);
+            btnAttach.Location = new Point(247, 5);
             btnAttach.Name = "btnAttach";
             btnAttach.Size = new Size(46, 35);
             btnAttach.TabIndex = 32;
@@ -521,7 +521,7 @@
             lblFileName.ForeColor = Color.Gray;
             lblFileName.Location = new Point(15, 11);
             lblFileName.Name = "lblFileName";
-            lblFileName.Size = new Size(187, 23);
+            lblFileName.Size = new Size(226, 23);
             lblFileName.TabIndex = 31;
             lblFileName.Text = "Attach ID";
             lblFileName.Visible = false;
