@@ -30,22 +30,30 @@
         {
             tableLayoutPanel1 = new TableLayoutPanel();
             panel1 = new Panel();
+            pnlContainer = new Panel();
             tblVerification = new TableLayoutPanel();
             label2 = new Label();
             label1 = new Label();
-            pnlContainer = new Panel();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
+            iconButton2 = new FontAwesome.Sharp.IconButton();
+            iconButton3 = new FontAwesome.Sharp.IconButton();
+            tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
-            tblVerification.SuspendLayout();
             pnlContainer.SuspendLayout();
+            tblVerification.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
+            tableLayoutPanel1.BackColor = Color.White;
             tableLayoutPanel1.ColumnCount = 4;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 190F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 190F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 190F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 268F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 268F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 268F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 745F));
+            tableLayoutPanel1.Controls.Add(iconButton3, 2, 0);
+            tableLayoutPanel1.Controls.Add(iconButton2, 1, 0);
+            tableLayoutPanel1.Controls.Add(iconButton1, 0, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -62,6 +70,15 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1312, 70);
             panel1.TabIndex = 1;
+            // 
+            // pnlContainer
+            // 
+            pnlContainer.Controls.Add(tblVerification);
+            pnlContainer.Dock = DockStyle.Fill;
+            pnlContainer.Location = new Point(0, 70);
+            pnlContainer.Name = "pnlContainer";
+            pnlContainer.Size = new Size(1312, 697);
+            pnlContainer.TabIndex = 2;
             // 
             // tblVerification
             // 
@@ -99,8 +116,8 @@
             tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
             tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
             tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
-            tblVerification.Size = new Size(1312, 691);
-            tblVerification.TabIndex = 0;
+            tblVerification.Size = new Size(1312, 697);
+            tblVerification.TabIndex = 1;
             // 
             // label2
             // 
@@ -128,29 +145,71 @@
             label1.Text = "Name";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // pnlContainer
+            // iconButton1
             // 
-            pnlContainer.AutoScroll = true;
-            pnlContainer.Controls.Add(tblVerification);
-            pnlContainer.Dock = DockStyle.Bottom;
-            pnlContainer.Location = new Point(0, 76);
-            pnlContainer.Name = "pnlContainer";
-            pnlContainer.Size = new Size(1312, 691);
-            pnlContainer.TabIndex = 0;
+            iconButton1.BackColor = Color.White;
+            iconButton1.Dock = DockStyle.Fill;
+            iconButton1.FlatStyle = FlatStyle.Flat;
+            iconButton1.Font = new Font("Inter Medium", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            iconButton1.ForeColor = Color.Black;
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconButton1.IconColor = Color.Black;
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.Location = new Point(3, 3);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Size = new Size(262, 64);
+            iconButton1.TabIndex = 0;
+            iconButton1.Text = "Passengers";
+            iconButton1.UseVisualStyleBackColor = false;
+            // 
+            // iconButton2
+            // 
+            iconButton2.BackColor = Color.White;
+            iconButton2.Dock = DockStyle.Fill;
+            iconButton2.FlatStyle = FlatStyle.Flat;
+            iconButton2.Font = new Font("Inter Medium", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            iconButton2.ForeColor = Color.Black;
+            iconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconButton2.IconColor = Color.Black;
+            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton2.Location = new Point(271, 3);
+            iconButton2.Name = "iconButton2";
+            iconButton2.Size = new Size(262, 64);
+            iconButton2.TabIndex = 1;
+            iconButton2.Text = "Verification";
+            iconButton2.UseVisualStyleBackColor = false;
+            // 
+            // iconButton3
+            // 
+            iconButton3.BackColor = Color.White;
+            iconButton3.Dock = DockStyle.Fill;
+            iconButton3.FlatStyle = FlatStyle.Flat;
+            iconButton3.Font = new Font("Inter Medium", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            iconButton3.ForeColor = Color.Black;
+            iconButton3.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconButton3.IconColor = Color.Black;
+            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton3.Location = new Point(539, 3);
+            iconButton3.Name = "iconButton3";
+            iconButton3.Size = new Size(262, 64);
+            iconButton3.TabIndex = 2;
+            iconButton3.Text = "Cash In";
+            iconButton3.UseVisualStyleBackColor = false;
             // 
             // PassengersAdmin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
-            Controls.Add(panel1);
             Controls.Add(pnlContainer);
+            Controls.Add(panel1);
             Name = "PassengersAdmin";
             Size = new Size(1312, 767);
+            tableLayoutPanel1.ResumeLayout(false);
             panel1.ResumeLayout(false);
+            pnlContainer.ResumeLayout(false);
             tblVerification.ResumeLayout(false);
             tblVerification.PerformLayout();
-            pnlContainer.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -158,9 +217,12 @@
 
         private TableLayoutPanel tableLayoutPanel1;
         private Panel panel1;
+        private Panel pnlContainer;
         private TableLayoutPanel tblVerification;
         private Label label2;
         private Label label1;
-        private Panel pnlContainer;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton iconButton3;
+        private FontAwesome.Sharp.IconButton iconButton2;
     }
 }
