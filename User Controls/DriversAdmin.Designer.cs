@@ -29,13 +29,16 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            panel2 = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
+            btnVerification = new FontAwesome.Sharp.IconButton();
+            btnDrivers = new FontAwesome.Sharp.IconButton();
+            pnlDisplay = new Panel();
             tblVerification = new TableLayoutPanel();
             label2 = new Label();
             label1 = new Label();
             panel1.SuspendLayout();
-            panel2.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
+            pnlDisplay.SuspendLayout();
             tblVerification.SuspendLayout();
             SuspendLayout();
             // 
@@ -48,22 +51,16 @@
             panel1.Size = new Size(1312, 70);
             panel1.TabIndex = 0;
             // 
-            // panel2
-            // 
-            panel2.Controls.Add(tblVerification);
-            panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 70);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1312, 697);
-            panel2.TabIndex = 1;
-            // 
             // tableLayoutPanel1
             // 
+            tableLayoutPanel1.BackColor = Color.FromArgb(230, 249, 255);
             tableLayoutPanel1.ColumnCount = 4;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 190F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 190F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 190F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 268F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 268F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 268F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 745F));
+            tableLayoutPanel1.Controls.Add(btnVerification, 0, 0);
+            tableLayoutPanel1.Controls.Add(btnDrivers, 0, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -71,6 +68,53 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Size = new Size(1312, 70);
             tableLayoutPanel1.TabIndex = 1;
+            // 
+            // btnVerification
+            // 
+            btnVerification.Dock = DockStyle.Fill;
+            btnVerification.FlatAppearance.BorderSize = 0;
+            btnVerification.FlatStyle = FlatStyle.Flat;
+            btnVerification.Font = new Font("Inter Medium", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnVerification.ForeColor = Color.Black;
+            btnVerification.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnVerification.IconColor = Color.Black;
+            btnVerification.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnVerification.ImageAlign = ContentAlignment.MiddleLeft;
+            btnVerification.Location = new Point(271, 3);
+            btnVerification.Name = "btnVerification";
+            btnVerification.Size = new Size(262, 64);
+            btnVerification.TabIndex = 35;
+            btnVerification.Text = "Verification";
+            btnVerification.UseVisualStyleBackColor = true;
+            btnVerification.Click += btnVerification_Click;
+            // 
+            // btnDrivers
+            // 
+            btnDrivers.Dock = DockStyle.Fill;
+            btnDrivers.FlatAppearance.BorderSize = 0;
+            btnDrivers.FlatStyle = FlatStyle.Flat;
+            btnDrivers.Font = new Font("Inter Medium", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnDrivers.ForeColor = Color.Black;
+            btnDrivers.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnDrivers.IconColor = Color.Black;
+            btnDrivers.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnDrivers.ImageAlign = ContentAlignment.MiddleLeft;
+            btnDrivers.Location = new Point(3, 3);
+            btnDrivers.Name = "btnDrivers";
+            btnDrivers.Size = new Size(262, 64);
+            btnDrivers.TabIndex = 34;
+            btnDrivers.Text = "Drivers";
+            btnDrivers.UseVisualStyleBackColor = true;
+            btnDrivers.Click += btnDrivers_Click;
+            // 
+            // pnlDisplay
+            // 
+            pnlDisplay.Controls.Add(tblVerification);
+            pnlDisplay.Dock = DockStyle.Fill;
+            pnlDisplay.Location = new Point(0, 70);
+            pnlDisplay.Name = "pnlDisplay";
+            pnlDisplay.Size = new Size(1312, 697);
+            pnlDisplay.TabIndex = 1;
             // 
             // tblVerification
             // 
@@ -142,12 +186,13 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
-            Controls.Add(panel2);
+            Controls.Add(pnlDisplay);
             Controls.Add(panel1);
             Name = "DriversAdmin";
             Size = new Size(1312, 767);
             panel1.ResumeLayout(false);
-            panel2.ResumeLayout(false);
+            tableLayoutPanel1.ResumeLayout(false);
+            pnlDisplay.ResumeLayout(false);
             tblVerification.ResumeLayout(false);
             tblVerification.PerformLayout();
             ResumeLayout(false);
@@ -156,10 +201,12 @@
         #endregion
 
         private Panel panel1;
-        private Panel panel2;
-        private TableLayoutPanel tableLayoutPanel1;
+        private Panel pnlDisplay;
         private TableLayoutPanel tblVerification;
         private Label label2;
         private Label label1;
+        private TableLayoutPanel tableLayoutPanel1;
+        private FontAwesome.Sharp.IconButton btnVerification;
+        private FontAwesome.Sharp.IconButton btnDrivers;
     }
 }

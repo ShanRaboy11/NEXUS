@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             tableLayoutPanel1 = new TableLayoutPanel();
+            btnCashIn = new FontAwesome.Sharp.IconButton();
+            btnVerification = new FontAwesome.Sharp.IconButton();
+            btnPassengers = new FontAwesome.Sharp.IconButton();
             panel1 = new Panel();
             pnlContainer = new Panel();
             tblVerification = new TableLayoutPanel();
             label2 = new Label();
             label1 = new Label();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
-            iconButton2 = new FontAwesome.Sharp.IconButton();
-            iconButton3 = new FontAwesome.Sharp.IconButton();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             pnlContainer.SuspendLayout();
@@ -45,15 +45,15 @@
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.BackColor = Color.White;
+            tableLayoutPanel1.BackColor = Color.FromArgb(230, 249, 255);
             tableLayoutPanel1.ColumnCount = 4;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 268F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 268F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 268F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 745F));
-            tableLayoutPanel1.Controls.Add(iconButton3, 2, 0);
-            tableLayoutPanel1.Controls.Add(iconButton2, 1, 0);
-            tableLayoutPanel1.Controls.Add(iconButton1, 0, 0);
+            tableLayoutPanel1.Controls.Add(btnCashIn, 0, 0);
+            tableLayoutPanel1.Controls.Add(btnVerification, 0, 0);
+            tableLayoutPanel1.Controls.Add(btnPassengers, 0, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -61,6 +61,63 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Size = new Size(1312, 70);
             tableLayoutPanel1.TabIndex = 0;
+            // 
+            // btnCashIn
+            // 
+            btnCashIn.Dock = DockStyle.Fill;
+            btnCashIn.FlatAppearance.BorderSize = 0;
+            btnCashIn.FlatStyle = FlatStyle.Flat;
+            btnCashIn.Font = new Font("Inter Medium", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCashIn.ForeColor = Color.Black;
+            btnCashIn.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnCashIn.IconColor = Color.Black;
+            btnCashIn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnCashIn.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCashIn.Location = new Point(539, 3);
+            btnCashIn.Name = "btnCashIn";
+            btnCashIn.Size = new Size(262, 64);
+            btnCashIn.TabIndex = 36;
+            btnCashIn.Text = "Cash In";
+            btnCashIn.UseVisualStyleBackColor = true;
+            btnCashIn.Click += btnCashIn_Click;
+            // 
+            // btnVerification
+            // 
+            btnVerification.Dock = DockStyle.Fill;
+            btnVerification.FlatAppearance.BorderSize = 0;
+            btnVerification.FlatStyle = FlatStyle.Flat;
+            btnVerification.Font = new Font("Inter Medium", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnVerification.ForeColor = Color.Black;
+            btnVerification.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnVerification.IconColor = Color.Black;
+            btnVerification.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnVerification.ImageAlign = ContentAlignment.MiddleLeft;
+            btnVerification.Location = new Point(271, 3);
+            btnVerification.Name = "btnVerification";
+            btnVerification.Size = new Size(262, 64);
+            btnVerification.TabIndex = 35;
+            btnVerification.Text = "Verification";
+            btnVerification.UseVisualStyleBackColor = true;
+            btnVerification.Click += btnVerification_Click;
+            // 
+            // btnPassengers
+            // 
+            btnPassengers.Dock = DockStyle.Fill;
+            btnPassengers.FlatAppearance.BorderSize = 0;
+            btnPassengers.FlatStyle = FlatStyle.Flat;
+            btnPassengers.Font = new Font("Inter Medium", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPassengers.ForeColor = Color.Black;
+            btnPassengers.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnPassengers.IconColor = Color.Black;
+            btnPassengers.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnPassengers.ImageAlign = ContentAlignment.MiddleLeft;
+            btnPassengers.Location = new Point(3, 3);
+            btnPassengers.Name = "btnPassengers";
+            btnPassengers.Size = new Size(262, 64);
+            btnPassengers.TabIndex = 34;
+            btnPassengers.Text = "Passengers";
+            btnPassengers.UseVisualStyleBackColor = true;
+            btnPassengers.Click += btnPassengers_Click;
             // 
             // panel1
             // 
@@ -83,6 +140,7 @@
             // tblVerification
             // 
             tblVerification.AutoScroll = true;
+            tblVerification.BackColor = Color.FromArgb(230, 249, 255);
             tblVerification.ColumnCount = 4;
             tblVerification.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 41.3318024F));
             tblVerification.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 58.6681976F));
@@ -145,57 +203,6 @@
             label1.Text = "Name";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // iconButton1
-            // 
-            iconButton1.BackColor = Color.White;
-            iconButton1.Dock = DockStyle.Fill;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.Font = new Font("Inter Medium", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            iconButton1.ForeColor = Color.Black;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconButton1.IconColor = Color.Black;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.Location = new Point(3, 3);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(262, 64);
-            iconButton1.TabIndex = 0;
-            iconButton1.Text = "Passengers";
-            iconButton1.UseVisualStyleBackColor = false;
-            // 
-            // iconButton2
-            // 
-            iconButton2.BackColor = Color.White;
-            iconButton2.Dock = DockStyle.Fill;
-            iconButton2.FlatStyle = FlatStyle.Flat;
-            iconButton2.Font = new Font("Inter Medium", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            iconButton2.ForeColor = Color.Black;
-            iconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconButton2.IconColor = Color.Black;
-            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton2.Location = new Point(271, 3);
-            iconButton2.Name = "iconButton2";
-            iconButton2.Size = new Size(262, 64);
-            iconButton2.TabIndex = 1;
-            iconButton2.Text = "Verification";
-            iconButton2.UseVisualStyleBackColor = false;
-            // 
-            // iconButton3
-            // 
-            iconButton3.BackColor = Color.White;
-            iconButton3.Dock = DockStyle.Fill;
-            iconButton3.FlatStyle = FlatStyle.Flat;
-            iconButton3.Font = new Font("Inter Medium", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            iconButton3.ForeColor = Color.Black;
-            iconButton3.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconButton3.IconColor = Color.Black;
-            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton3.Location = new Point(539, 3);
-            iconButton3.Name = "iconButton3";
-            iconButton3.Size = new Size(262, 64);
-            iconButton3.TabIndex = 2;
-            iconButton3.Text = "Cash In";
-            iconButton3.UseVisualStyleBackColor = false;
-            // 
             // PassengersAdmin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -221,8 +228,8 @@
         private TableLayoutPanel tblVerification;
         private Label label2;
         private Label label1;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton iconButton3;
-        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton btnPassengers;
+        private FontAwesome.Sharp.IconButton btnCashIn;
+        private FontAwesome.Sharp.IconButton btnVerification;
     }
 }

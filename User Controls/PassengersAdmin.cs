@@ -18,34 +18,38 @@ namespace NEXUS.User_Controls
 {
     public partial class PassengersAdmin : UserControl
     {
+        private FontAwesome.Sharp.IconButton selectedButton = null;
+        private FontAwesome.Sharp.IconButton currentBtn;
         public PassengersAdmin()
         {
             InitializeComponent();
             pnlContainer.Tag = tblVerification;
-            //LoadPendingPassengers();
             DisplayAllPassengers();
+            btnPassengers_Click(btnPassengers, EventArgs.Empty);
         }
 
         private void DisplayAllPassengers()
         {
-            // Clear any existing controls in pnlContainer
             pnlContainer.Controls.Clear();
 
-            // Create an instance of the PassengersAdmin UserControl
             DataGrid dataGrid = new DataGrid("Passenger")
             {
                 Dock = DockStyle.Fill
             };
 
-            // Add the user control to the panel
             pnlContainer.Controls.Add(dataGrid);
         }
 
-
-
-
         private void LoadPendingPassengers()
         {
+            pnlContainer.Controls.Clear();
+
+            if (!pnlContainer.Controls.Contains(tblVerification))
+            {
+                tblVerification.Dock = DockStyle.Fill;
+                pnlContainer.Controls.Add(tblVerification);
+            }
+
             for (int i = tblVerification.Controls.Count - 1; i >= 0; i--)
             {
                 Control control = tblVerification.Controls[i];
@@ -192,6 +196,38 @@ namespace NEXUS.User_Controls
             {
                 MessageBox.Show("Attachment not found at: " + filePath, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void SelectButton(FontAwesome.Sharp.IconButton button)
+        {
+            if (selectedButton != null)
+            {
+                selectedButton.BackColor = Color.FromArgb(230, 249, 255);
+                selectedButton.ForeColor = Color.Black;
+                button.Font = new(button.Font.FontFamily, 18, button.Font.Style);
+            }
+
+            selectedButton = button;
+            button.BackColor = Color.FromArgb(0, 229, 255);
+            button.Font = new (button.Font.FontFamily, 20, button.Font.Style);
+            button.ForeColor = Color.White;
+        }
+
+        private void btnPassengers_Click(object sender, EventArgs e)
+        {
+            SelectButton(btnPassengers);
+            DisplayAllPassengers();
+        }
+
+        private void btnVerification_Click(object sender, EventArgs e)
+        {
+            SelectButton(btnVerification);
+            LoadPendingPassengers();
+        }
+
+        private void btnCashIn_Click(object sender, EventArgs e)
+        {
+            SelectButton(btnCashIn);
         }
     }
 }

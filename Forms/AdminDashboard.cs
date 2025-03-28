@@ -89,16 +89,31 @@ namespace NEXUS.Forms
 
         private void btnDrivers_Click(object sender, EventArgs e)
         {
+            DriversAdmin driversAdmin = new DriversAdmin();
+
+            driversAdmin.Dock = DockStyle.Fill;
+            pnlContainer.Controls.Clear();
+            pnlContainer.Controls.Add(driversAdmin);
             SelectButton(btnDrivers);
         }
 
         private void btnReport_Click(object sender, EventArgs e)
         {
+            ReportsAdmin reportsAdmin = new ReportsAdmin();
+
+            reportsAdmin.Dock = DockStyle.Fill;
+            pnlContainer.Controls.Clear();
+            pnlContainer.Controls.Add(reportsAdmin);
             SelectButton(btnReport);
         }
 
         private void btnTransactions_Click(object sender, EventArgs e)
         {
+            TransactionsAdmin transactionsAdmin = new TransactionsAdmin();
+
+            transactionsAdmin.Dock = DockStyle.Fill;
+            pnlContainer.Controls.Clear();
+            pnlContainer.Controls.Add(transactionsAdmin);
             SelectButton(btnTransactions);
         }
 

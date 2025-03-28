@@ -16,23 +16,46 @@ namespace NEXUS.User_Controls
 {
     public partial class DriversAdmin : UserControl
     {
+        private FontAwesome.Sharp.IconButton selectedButton = null;
+        private FontAwesome.Sharp.IconButton currentBtn;
         public DriversAdmin()
         {
             InitializeComponent();
+            pnlDisplay.Tag = tblVerification;
+            DisplayAllDrivers();
+            btnDrivers_Click(btnDrivers, EventArgs.Empty);
+
         }
 
-        private void DisplayDrivers()
+         private void DisplayAllDrivers()
         {
+            // Clear any existing controls in pnlContainer
+            pnlDisplay.Controls.Clear();
 
+            // Create an instance of the PassengersAdmin UserControl
+            DataGrid dataGrid = new DataGrid("Driver")
+            {
+                Dock = DockStyle.Fill
+            };
+
+            // Add the user control to the panel
+            pnlDisplay.Controls.Add(dataGrid);
         }
-        /*
+        
         private void LoadPendingDrivers()
         {
+            pnlDisplay.Controls.Clear();
+
+            if (!pnlDisplay.Controls.Contains(tblVerification))
+            {
+                tblVerification.Dock = DockStyle.Fill;
+                pnlDisplay.Controls.Add(tblVerification);
+            }
             for (int i = tblVerification.Controls.Count - 1; i >= 0; i--)
             {
                 Control control = tblVerification.Controls[i];
                 int rowIndex = tblVerification.GetRow(control);
-                if (rowIndex >= 1) // Skip headers (row 0)
+                if (rowIndex >= 1) 
                 {
                     tblVerification.Controls.RemoveAt(i);
                 }
@@ -47,21 +70,21 @@ namespace NEXUS.User_Controls
                     conn.Open();
                     using (OleDbDataReader reader = cmd.ExecuteReader())
                     {
-                        int rowIndex = 1; // Start adding passengers from the second row
+                        int rowIndex = 1; 
 
                         while (reader.Read())
                         {
-                            string passengerName = reader["Full Name"].ToString();
+                            string driverName = reader["Full Name"].ToString();
                             string attachmentPath = reader["Attachment"].ToString();
 
-                            AddPassengerRow(tblVerification, passengerName, attachmentPath, rowIndex++);
+                            AddDriverRow(tblVerification, driverName, attachmentPath, rowIndex++);
                         }
                     }
                 }
             }
         }
 
-        private void AddPassengerRow(TableLayoutPanel tblVerification, string passengerName, string attachment, int rowIndex)
+        private void AddDriverRow(TableLayoutPanel tblVerification, string driverName, string attachment, int rowIndex)
         {
             if (rowIndex >= tblVerification.RowCount)
             {
@@ -71,7 +94,7 @@ namespace NEXUS.User_Controls
 
             Label lblName = new Label
             {
-                Text = passengerName,
+                Text = driverName,
                 Dock = DockStyle.Fill,
                 TextAlign = ContentAlignment.MiddleCenter,
                 Font = new Font("Inter", 17F, FontStyle.Regular),
@@ -87,7 +110,6 @@ namespace NEXUS.User_Controls
                 ForeColor = Color.FromArgb(24, 60, 114),
                 TextAlign = ContentAlignment.MiddleCenter,
                 Font = new Font("Inter", 17F, FontStyle.Underline),
-                //Anchor = AnchorStyles.None,
                 Cursor = Cursors.Hand
             };
 
@@ -113,8 +135,8 @@ namespace NEXUS.User_Controls
                 Anchor = AnchorStyles.Left
             };
 
-            btnApprove.Click += (sender, e) => ApprovePassenger(passengerName);
-            btnReject.Click += (sender, e) => RejectPassenger(passengerName);
+            btnApprove.Click += (sender, e) => ApproveDriver(driverName);
+            btnReject.Click += (sender, e) => RejectDriver(driverName);
             lblAttachment.Click += (sender, e) => DisplayAttachment(attachment);
 
             tblVerification.Controls.Add(lblName, 0, rowIndex);
@@ -123,7 +145,7 @@ namespace NEXUS.User_Controls
             tblVerification.Controls.Add(btnReject, 3, rowIndex);
         }
 
-        private void ApprovePassenger(string passengerName)
+        private void ApproveDriver(string driverName)
         {
             string query = "UPDATE Accounts SET Status = 'Approved' WHERE [Full Name] = ?";
 
@@ -131,15 +153,15 @@ namespace NEXUS.User_Controls
             using (OleDbCommand cmd = new OleDbCommand(query, conn))
             {
                 conn.Open();
-                cmd.Parameters.AddWithValue("?", passengerName);
+                cmd.Parameters.AddWithValue("?", driverName);
 
                 int rowsAffected = cmd.ExecuteNonQuery();
             }
 
-            LoadPendingPassengers();
+            LoadPendingDrivers();
         }
 
-        private void RejectPassenger(string passengerName)
+        private void RejectDriver(string driverName)
         {
             string query = "UPDATE Accounts SET Status = 'Rejected' WHERE [Full Name] = ?";
 
@@ -147,12 +169,12 @@ namespace NEXUS.User_Controls
             using (OleDbCommand cmd = new OleDbCommand(query, conn))
             {
                 conn.Open();
-                cmd.Parameters.AddWithValue("?", passengerName);
+                cmd.Parameters.AddWithValue("?", driverName);
 
                 int rowsAffected = cmd.ExecuteNonQuery();
             }
 
-            LoadPendingPassengers();
+            LoadPendingDrivers();
         }
 
         private void DisplayAttachment(string fileName)
@@ -175,6 +197,34 @@ namespace NEXUS.User_Controls
             {
                 MessageBox.Show("Attachment not found at: " + filePath, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }*/
+        }
+
+        private void SelectButton(FontAwesome.Sharp.IconButton button)
+        {
+            if (selectedButton != null)
+            {
+                selectedButton.BackColor = Color.FromArgb(230, 249, 255);
+                selectedButton.ForeColor = Color.Black;
+                button.Font = new(button.Font.FontFamily, 18, button.Font.Style);
+            }
+
+            selectedButton = button;
+            button.BackColor = Color.FromArgb(0, 229, 255);
+            button.Font = new(button.Font.FontFamily, 20, button.Font.Style);
+            button.ForeColor = Color.White;
+        }
+
+        private void btnDrivers_Click(object sender, EventArgs e)
+        {
+            SelectButton(btnDrivers);
+            DisplayAllDrivers();
+        }
+
+        private void btnVerification_Click(object sender, EventArgs e)
+        {
+            SelectButton(btnVerification);
+            LoadPendingDrivers();
+        }
+
     }
 }
