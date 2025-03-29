@@ -37,11 +37,11 @@
             iconButton1 = new FontAwesome.Sharp.IconButton();
             label2 = new Label();
             cmbxFilter = new Krypton.Toolkit.KryptonComboBox();
+            kryptonDateTimePicker1 = new Krypton.Toolkit.KryptonDateTimePicker();
             pnlContainer = new Panel();
             tblVerification = new TableLayoutPanel();
             lblHeader2 = new Label();
             label1 = new Label();
-            kryptonDateTimePicker1 = new Krypton.Toolkit.KryptonDateTimePicker();
             panel1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -95,6 +95,7 @@
             btnTrips.TabIndex = 35;
             btnTrips.Text = "Trips";
             btnTrips.UseVisualStyleBackColor = true;
+            btnTrips.Click += btnTrips_Click;
             // 
             // btnTransactions
             // 
@@ -113,6 +114,7 @@
             btnTransactions.TabIndex = 34;
             btnTransactions.Text = "Transactions";
             btnTransactions.UseVisualStyleBackColor = true;
+            btnTransactions.Click += btnTransactions_Click;
             // 
             // panel2
             // 
@@ -120,7 +122,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 70);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1312, 55);
+            panel2.Size = new Size(1312, 38);
             panel2.TabIndex = 4;
             // 
             // tableLayoutPanel2
@@ -129,8 +131,8 @@
             tableLayoutPanel2.ColumnCount = 6;
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 154F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 814F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 481F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 786F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 509F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             tableLayoutPanel2.Controls.Add(iconButton1, 2, 0);
@@ -142,7 +144,7 @@
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(1312, 55);
+            tableLayoutPanel2.Size = new Size(1312, 38);
             tableLayoutPanel2.TabIndex = 0;
             // 
             // iconButton1
@@ -154,10 +156,10 @@
             iconButton1.IconChar = FontAwesome.Sharp.IconChar.Calendar;
             iconButton1.IconColor = Color.Black;
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 38;
-            iconButton1.Location = new Point(1009, 3);
+            iconButton1.IconSize = 35;
+            iconButton1.Location = new Point(981, 3);
             iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(56, 49);
+            iconButton1.Size = new Size(56, 32);
             iconButton1.TabIndex = 4;
             iconButton1.UseVisualStyleBackColor = false;
             // 
@@ -169,7 +171,7 @@
             label2.ForeColor = Color.FromArgb(24, 60, 114);
             label2.Location = new Point(3, 0);
             label2.Name = "label2";
-            label2.Size = new Size(94, 55);
+            label2.Size = new Size(94, 38);
             label2.TabIndex = 1;
             label2.Text = "Filter:";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -182,7 +184,7 @@
             cmbxFilter.Items.AddRange(new object[] { "Cash In", "Payments" });
             cmbxFilter.Location = new Point(103, 3);
             cmbxFilter.Name = "cmbxFilter";
-            cmbxFilter.Size = new Size(148, 49);
+            cmbxFilter.Size = new Size(148, 32);
             cmbxFilter.StateCommon.ComboBox.Back.Color1 = Color.FromArgb(153, 229, 255);
             cmbxFilter.StateCommon.ComboBox.Content.Font = new Font("Inter", 13F);
             cmbxFilter.StateCommon.ComboBox.Content.Padding = new Padding(1);
@@ -197,14 +199,33 @@
             cmbxFilter.StateNormal.Item.Content.ShortText.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbxFilter.TabIndex = 2;
             cmbxFilter.TabStop = false;
+            cmbxFilter.SelectedValueChanged += cmbxFilter_SelectedValueChanged;
+            // 
+            // kryptonDateTimePicker1
+            // 
+            kryptonDateTimePicker1.Dock = DockStyle.Left;
+            kryptonDateTimePicker1.DropButtonStyle = Krypton.Toolkit.ButtonStyle.NavigatorOverflow;
+            kryptonDateTimePicker1.Location = new Point(1043, 3);
+            kryptonDateTimePicker1.Name = "kryptonDateTimePicker1";
+            kryptonDateTimePicker1.Size = new Size(266, 32);
+            kryptonDateTimePicker1.StateActive.Back.Color1 = Color.FromArgb(153, 229, 255);
+            kryptonDateTimePicker1.StateCommon.Back.Color1 = Color.FromArgb(153, 229, 255);
+            kryptonDateTimePicker1.StateCommon.Border.Color1 = Color.FromArgb(24, 60, 114);
+            kryptonDateTimePicker1.StateCommon.Content.Font = new Font("Inter Medium", 12F, FontStyle.Bold);
+            kryptonDateTimePicker1.StateCommon.Content.Padding = new Padding(1);
+            kryptonDateTimePicker1.StateNormal.Back.Color1 = Color.FromArgb(153, 229, 255);
+            kryptonDateTimePicker1.TabIndex = 5;
+            kryptonDateTimePicker1.TabStop = false;
+            kryptonDateTimePicker1.UpDownButtonStyle = Krypton.Toolkit.ButtonStyle.CalendarDay;
+            kryptonDateTimePicker1.ValueChanged += kryptonDateTimePicker1_ValueChanged;
             // 
             // pnlContainer
             // 
             pnlContainer.Controls.Add(tblVerification);
             pnlContainer.Dock = DockStyle.Fill;
-            pnlContainer.Location = new Point(0, 125);
+            pnlContainer.Location = new Point(0, 108);
             pnlContainer.Name = "pnlContainer";
-            pnlContainer.Size = new Size(1312, 642);
+            pnlContainer.Size = new Size(1312, 659);
             pnlContainer.TabIndex = 5;
             // 
             // tblVerification
@@ -244,7 +265,7 @@
             tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
             tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
             tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
-            tblVerification.Size = new Size(1312, 642);
+            tblVerification.Size = new Size(1312, 659);
             tblVerification.TabIndex = 1;
             // 
             // lblHeader2
@@ -272,17 +293,6 @@
             label1.TabIndex = 0;
             label1.Text = "Name";
             label1.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // kryptonDateTimePicker1
-            // 
-            kryptonDateTimePicker1.Dock = DockStyle.Left;
-            kryptonDateTimePicker1.Location = new Point(1071, 3);
-            kryptonDateTimePicker1.Name = "kryptonDateTimePicker1";
-            kryptonDateTimePicker1.Size = new Size(238, 49);
-            kryptonDateTimePicker1.StateCommon.Back.Color1 = Color.FromArgb(153, 229, 255);
-            kryptonDateTimePicker1.StateCommon.Content.Font = new Font("Inter Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            kryptonDateTimePicker1.TabIndex = 5;
-            kryptonDateTimePicker1.UpDownButtonStyle = Krypton.Toolkit.ButtonStyle.CalendarDay;
             // 
             // TransactionsAdmin
             // 

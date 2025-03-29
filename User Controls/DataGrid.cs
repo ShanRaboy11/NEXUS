@@ -46,6 +46,9 @@ namespace NEXUS.User_Controls
                     break;
                 case "Rate":
                     break;
+                case "Transaction":
+                    query = "SELECT * FROM Transactions";
+                    break;
             }
 
             dgvUsers.DataSource = null;

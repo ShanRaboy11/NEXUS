@@ -21,36 +21,56 @@ namespace NEXUS.Classes
 
     public abstract class UserInformation
     {
-        public int UserID { get; set; }
-        public string Name { get; set; }
-        public string Email { get; set; }
-        public string Username { get; set; }
+        // Private fields for encapsulation
+        private int userID;
+        private string name;
+        private string email;
+        private string username;
+        private string gender;
+        private string userType;
+        private string birthday;
+        private string attachment;
+        private string profilePicture;
+        private double walletAmount;
+        private string status;
+
+        // Public properties with encapsulated private fields
+        public int UserID { get => userID; set => userID = value; }
+        public string Name { get => name; set => name = value; }
+        public string Email { get => email; set => email = value; }
+        public string Username { get => username; set => username = value; }
+        public string Gender { get => gender; set => gender = value; }
+        public string UserType { get => userType; set => userType = value; }
+        public string Birthday { get => birthday; set => birthday = value; }
+        public string Attachment { get => attachment; set => attachment = value; }
+        public string ProfilePicture { get => profilePicture; set => profilePicture = value; }
+        public double WalletAmount { get => walletAmount; set => walletAmount = value; }
+        public string Status { get => status; set => status = value; }
+
+        // Protected property for password (Only accessible within derived classes)
         protected string HashedPassword { get; set; }
-        public string Gender { get; set; }
-        public string UserType { get; set; }
-        public string Birthday { get; set; }
-        public string Attachment {  get; set; }
-        public string ProfilePicture { get; set; }
-        public double WalletAmount { get; set; }
-        public string Status { get; set; }
+
+        // Protected field for database connection string
+        protected string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Shan Michael\OneDrive\文档\2nd Year 2nd Sem\OOP2\NEXUS\NEXUS.accdb";
 
         // Constructor
-        protected UserInformation(int  userID, string name,  string email, string username, string password, string gender, string userType, string birthday, string attachment, string profilepic, double wallet, string status)
+        protected UserInformation(int userID, string name, string email, string username, string password, string gender, string userType, string birthday, string attachment, string profilepic, double wallet, string status)
         {
-            UserID = userID;
-            Name = name;
-            Email = email;
-            Username = username;
+            this.userID = userID;
+            this.name = name;
+            this.email = email;
+            this.username = username;
             HashedPassword = Cryptography.ToSHA256(password);
-            Gender = gender;
-            UserType = userType;
-            Birthday = birthday;
-            Attachment = attachment;
-            ProfilePicture = profilepic;
-            WalletAmount = wallet;
-            Status = status;
+            this.gender = gender;
+            this.userType = userType;
+            this.birthday = birthday;
+            this.attachment = attachment;
+            this.profilePicture = profilepic;
+            this.walletAmount = wallet;
+            this.status = status;
         }
     }
+
 
     public class UserRegistrationData
     {
@@ -68,7 +88,6 @@ namespace NEXUS.Classes
         public string Classification { get; set; }
         public int Points { get; set; }
 
-        private string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Shan Michael\OneDrive\文档\2nd Year 2nd Sem\OOP2\NEXUS\NEXUS.accdb";
 
         // Constructor
         public Passenger(int userId, string name, string email, string username, string password, string gender, string userType, string birthday, string classification, string attachment, string profilepic, double wallet, int points, string status)
@@ -119,7 +138,6 @@ namespace NEXUS.Classes
 
     public class Driver : UserInformation, Users
     {
-        private string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Shan Michael\OneDrive\文档\2nd Year 2nd Sem\OOP2\NEXUS\NEXUS.accdb";
         public string PlateNumber { get; set; }
         public string QRCode { get; set; }
         public string Route { get; set; }
