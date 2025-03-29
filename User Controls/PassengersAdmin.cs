@@ -13,6 +13,7 @@ using NEXUS.Forms;
 using ReaLTaiizor.Controls;
 using NEXUS.Properties;
 using System.Security.Cryptography;
+using System.Net.Mail;
 
 namespace NEXUS.User_Controls
 {
@@ -228,6 +229,167 @@ namespace NEXUS.User_Controls
         private void btnCashIn_Click(object sender, EventArgs e)
         {
             SelectButton(btnCashIn);
+            DisplayCashInRequests();
         }
+
+        private void DisplayCashInRequests()
+        {
+            pnlContainer.Controls.Clear();
+
+            if (!pnlContainer.Controls.Contains(tblVerification))
+            {
+                tblVerification.Dock = DockStyle.Fill;
+                pnlContainer.Controls.Add(tblVerification);
+            }
+
+            for (int i = tblVerification.Controls.Count - 1; i >= 0; i--)
+            {
+                Control control = tblVerification.Controls[i];
+                int rowIndex = tblVerification.GetRow(control);
+                if (rowIndex >= 1) // Skip headers (row 0)
+                {
+                    tblVerification.Controls.RemoveAt(i);
+                }
+            }
+
+            string query = "SELECT [Full Name], Amount FROM [Cash In]";
+
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            {
+                using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                {
+                    conn.Open();
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        int rowIndex = 1;
+
+                        while (reader.Read())
+                        {
+                            string passengerName = reader["Full Name"].ToString();
+
+                            // Properly cast Amount to double
+                            double amount = Convert.ToDouble(reader["Amount"]);
+
+                            AddCashInRequests(tblVerification, passengerName, amount, rowIndex++);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void AddCashInRequests(TableLayoutPanel tblVerification, string passengerName, double amount, int rowIndex)
+        {
+            lblHeader2.Text = "Amount";
+            if (rowIndex >= tblVerification.RowCount)
+            {
+                tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 35));
+                tblVerification.RowCount++;
+            }
+
+            Label lblName = new Label
+            {
+                Text = passengerName,
+                Dock = DockStyle.Fill,
+                TextAlign = ContentAlignment.MiddleCenter,
+                Font = new Font("Inter", 17F, FontStyle.Regular),
+                ForeColor = Color.FromArgb(24, 60, 114)
+            };
+
+            Label lblAmount = new Label
+            {
+                Text = amount.ToString("N2"), // Format as currency
+                Dock = DockStyle.Fill,
+                ForeColor = Color.FromArgb(24, 60, 114),
+                TextAlign = ContentAlignment.MiddleCenter,
+                Font = new Font("Inter", 17F, FontStyle.Regular),
+            };
+
+            CyberButton btnApprove = new CyberButton
+            {
+                TextButton = "Approve",
+                ColorBackground = Color.LightGreen,
+                ColorBackground_Pen = Color.FromArgb(230, 249, 255),
+                Font = new Font("Inter", 17F, FontStyle.Regular),
+                ForeColor = Color.FromArgb(24, 60, 114),
+                Cursor = Cursors.Hand,
+                Anchor = AnchorStyles.Right
+            };
+
+            CyberButton btnReject = new CyberButton
+            {
+                TextButton = "Reject",
+                ColorBackground = Color.Red,
+                ColorBackground_Pen = Color.FromArgb(230, 249, 255),
+                Font = new Font("Inter", 17F, FontStyle.Regular),
+                ForeColor = Color.White,
+                Cursor = Cursors.Hand,
+                Anchor = AnchorStyles.Left
+            };
+
+            btnApprove.Click += (sender, e) => ApproveCashIn(passengerName);
+            btnReject.Click += (sender, e) => RejectCashIn(passengerName);
+
+            tblVerification.Controls.Add(lblName, 0, rowIndex);
+            tblVerification.Controls.Add(lblAmount, 1, rowIndex);
+            tblVerification.Controls.Add(btnApprove, 2, rowIndex);
+            tblVerification.Controls.Add(btnReject, 3, rowIndex);
+        }
+
+
+        private void ApproveCashIn(string passengerName)
+        {
+
+        }
+
+        private void RejectCashIn(string passengerName)
+        {
+
+        }
+
+        private void DeleteSelectedRecord(DataGridView dgv, string tableName)
+        {
+            if (dgv.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a row to delete.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Identify the Primary Key (Assuming it's the first column)
+            string primaryKeyColumn = dgv.Columns[0].Name;
+            object selectedID = dgv.SelectedRows[0].Cells[primaryKeyColumn].Value;
+
+            if (selectedID == null)
+            {
+                MessageBox.Show("Invalid selection. No ID found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Confirm deletion
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this record?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                string query = $"DELETE FROM {tableName} WHERE {primaryKeyColumn} = ?";
+
+                using (OleDbConnection conn = DatabaseManagement.GetConnection())
+                using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                {
+                    conn.Open();
+                    cmd.Parameters.AddWithValue("?", selectedID);
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Record deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        dgv.Rows.RemoveAt(dgv.SelectedRows[0].Index); // Remove from DataGridView
+                    }
+                    else
+                    {
+                        MessageBox.Show("Deletion failed. Record may not exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
     }
 }

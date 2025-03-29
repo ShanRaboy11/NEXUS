@@ -35,7 +35,7 @@
             panel1 = new Panel();
             pnlContainer = new Panel();
             tblVerification = new TableLayoutPanel();
-            label2 = new Label();
+            lblHeader2 = new Label();
             label1 = new Label();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
@@ -146,7 +146,7 @@
             tblVerification.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 58.6681976F));
             tblVerification.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 222F));
             tblVerification.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 217F));
-            tblVerification.Controls.Add(label2, 1, 0);
+            tblVerification.Controls.Add(lblHeader2, 1, 0);
             tblVerification.Controls.Add(label1, 0, 0);
             tblVerification.Dock = DockStyle.Fill;
             tblVerification.Location = new Point(0, 0);
@@ -177,18 +177,18 @@
             tblVerification.Size = new Size(1312, 697);
             tblVerification.TabIndex = 1;
             // 
-            // label2
+            // lblHeader2
             // 
-            label2.AutoSize = true;
-            label2.Dock = DockStyle.Fill;
-            label2.Font = new Font("Inter SemiBold", 20F, FontStyle.Bold);
-            label2.ForeColor = Color.FromArgb(24, 60, 114);
-            label2.Location = new Point(357, 5);
-            label2.Name = "label2";
-            label2.Size = new Size(490, 45);
-            label2.TabIndex = 1;
-            label2.Text = "Attachment";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
+            lblHeader2.AutoSize = true;
+            lblHeader2.Dock = DockStyle.Fill;
+            lblHeader2.Font = new Font("Inter SemiBold", 20F, FontStyle.Bold);
+            lblHeader2.ForeColor = Color.FromArgb(24, 60, 114);
+            lblHeader2.Location = new Point(357, 5);
+            lblHeader2.Name = "lblHeader2";
+            lblHeader2.Size = new Size(490, 45);
+            lblHeader2.TabIndex = 1;
+            lblHeader2.Text = "Attachment";
+            lblHeader2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -226,7 +226,7 @@
         private Panel panel1;
         private Panel pnlContainer;
         private TableLayoutPanel tblVerification;
-        private Label label2;
+        private Label lblHeader2;
         private Label label1;
         private FontAwesome.Sharp.IconButton btnPassengers;
         private FontAwesome.Sharp.IconButton btnCashIn;
