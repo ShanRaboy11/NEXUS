@@ -62,7 +62,7 @@ namespace NEXUS.Forms
             else if(rbtnDriver.Checked)
             {
                 if(string.IsNullOrEmpty(tbxPlateNumber.Text) || cmbxMonth.Text == "Month" ||
-                    cmbxDay.Text == "Day" || cmbxYear.Text == "Year" || lblFileName.Text == "Attach ID")
+                    cmbxDay.Text == "Day" || cmbxYear.Text == "Year" || lblFileName.Text == "Attach ID" || tbxRoute.Text == "")
                 {
                     dialogBox.ShowIcon("blank");
                     logInForm.overlayForm(this, dialogBox);
@@ -101,7 +101,7 @@ namespace NEXUS.Forms
                     userData.Gender, rbtnDriver.Text, birthday, lblFileName.Text, tbxPlateNumber.Text, 
                     (userData.Gender == "Male" ? @"C:\Users\Shan Michael\source\repos\NEXUS\Resources\driver_Default.png" :
                     userData.Gender == "Female" ? @"C:\Users\Shan Michael\source\repos\NEXUS\Resources\driver_FemaleDefault.jpg" :
-                    @"C:\Users\Shan Michael\source\repos\NEXUS\Resources\default_User.png"), 0, "Pending"
+                    @"C:\Users\Shan Michael\source\repos\NEXUS\Resources\default_User.png"), 0, "", tbxRoute.SelectedItem.ToString(), "Pending"
                 );
                 newDriver.SaveToDatabase();
             }
@@ -240,6 +240,9 @@ namespace NEXUS.Forms
             lblFileName.Visible = true;
             pnlAttach.Visible = true;
             btnAttach.Visible = true;
+            lblRoute.Visible = true;
+            panel1.Visible = true;
+            tbxRoute.Visible = true;
             this.Size = new System.Drawing.Size(506, 590);
             lblNote.Location = new System.Drawing.Point(46, 500);
             btnSignUp.Location = new System.Drawing.Point(157, 533);
@@ -262,6 +265,9 @@ namespace NEXUS.Forms
             lblFileName.Visible = false;
             pnlAttach.Visible = false;
             btnAttach.Visible = false;
+            lblRoute.Visible = false;
+            panel1.Visible = false;
+            tbxRoute.Visible = false;
             this.Size = new System.Drawing.Size(504, 495);
             lblNote.Location = new System.Drawing.Point(41, 406);
             btnSignUp.Location = new System.Drawing.Point(152, 439);

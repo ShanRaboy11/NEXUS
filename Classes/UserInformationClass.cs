@@ -121,17 +121,21 @@ namespace NEXUS.Classes
     {
         private string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Shan Michael\OneDrive\文档\2nd Year 2nd Sem\OOP2\NEXUS\NEXUS.accdb";
         public string PlateNumber { get; set; }
+        public string QRCode { get; set; }
+        public string Route { get; set; }
 
         // Constructor
-        public Driver(int userId, string name,  string email, string username, string password, string gender, string userType, string birthday, string attachment, string plateNumber, string profilepic, double wallet, string status)
+        public Driver(int userId, string name,  string email, string username, string password, string gender, string userType, string birthday, string attachment, string plateNumber, string profilepic, double wallet, string qrcode, string route, string status)
             : base(userId, name, email, username, password, gender, userType, birthday, attachment, profilepic, wallet, status)
         {
             PlateNumber = plateNumber;
+            QRCode = qrcode;
+            Route = route;
         }
 
         public void SaveToDatabase()
         {
-            string query = "INSERT INTO Accounts (Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Attachment, [Plate Number], [Profile Picture],  Wallet, [Status]) " +
+            string query = "INSERT INTO Accounts (Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Attachment, [Plate Number], [Profile Picture],  Wallet, Route, [Status]) " +
                            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             using (OleDbConnection conn = new OleDbConnection(connectionString))
@@ -150,6 +154,7 @@ namespace NEXUS.Classes
                 cmd.Parameters.AddWithValue("?", PlateNumber);
                 cmd.Parameters.AddWithValue("?", this.ProfilePicture);
                 cmd.Parameters.AddWithValue("?", this.WalletAmount);
+                cmd.Parameters.AddWithValue("?", this.Route);
                 cmd.Parameters.AddWithValue("?", this.Status);
 
                 cmd.ExecuteNonQuery();

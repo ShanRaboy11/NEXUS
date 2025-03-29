@@ -46,8 +46,8 @@ namespace NEXUS.Forms
                 lblEmail.Text = driver.Email;
                 lblUser.Text = driver.Username;
                 lblBirthday.Text = driver.Birthday;
-                lblTokens.Text = "₱ " + driver.WalletAmount.ToString("F2");
-                label3.Text = "Walltet";
+                lblTokens.Text = driver.Route;
+                label3.Text = "Route";
                 lblStatus.Text = driver.Status;
             }
         }

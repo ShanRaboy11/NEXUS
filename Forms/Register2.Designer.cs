@@ -65,6 +65,9 @@
             lblFileName = new Label();
             btnBack = new FontAwesome.Sharp.IconButton();
             label6 = new Label();
+            lblRoute = new Label();
+            panel1 = new Panel();
+            tbxRoute = new ComboBox();
             pnlRole.SuspendLayout();
             pnlClassification.SuspendLayout();
             panel7.SuspendLayout();
@@ -74,6 +77,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnlAttach.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // label5
@@ -552,12 +556,50 @@
             label6.Text = "Plate Number: ";
             label6.Visible = false;
             // 
+            // lblRoute
+            // 
+            lblRoute.AutoSize = true;
+            lblRoute.Font = new Font("Inter", 10.55F);
+            lblRoute.ForeColor = Color.FromArgb(24, 60, 114);
+            lblRoute.Location = new Point(352, 399);
+            lblRoute.Name = "lblRoute";
+            lblRoute.Size = new Size(56, 22);
+            lblRoute.TabIndex = 91;
+            lblRoute.Text = "Route:";
+            lblRoute.Visible = false;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(176, 233, 255);
+            panel1.BackgroundImageLayout = ImageLayout.None;
+            panel1.Controls.Add(tbxRoute);
+            panel1.Location = new Point(356, 431);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(137, 46);
+            panel1.TabIndex = 90;
+            panel1.Visible = false;
+            // 
+            // tbxRoute
+            // 
+            tbxRoute.BackColor = Color.FromArgb(176, 233, 255);
+            tbxRoute.Font = new Font("Inter", 11.25F);
+            tbxRoute.ForeColor = Color.FromArgb(24, 60, 114);
+            tbxRoute.FormattingEnabled = true;
+            tbxRoute.Items.AddRange(new object[] { "01C", "01K", "02B", "03A", "03B", "03L", "03Q", "04B", "04H", "04I", "04L", "04M", "06B", "06C", "06G", "06H", "07B", "08F", "08G", "09C", "09F", "09G", "10F", "10G", "10H", "10M", "11A", "12D", "12G", "12I", "12L", "13B", "13C", "13H", "14D", "17B", "17C", "17D", "20A", "21A", "22A", "22D", "22I", "23", "23D", "62B", "MI-01A", "MI-02B", "MI-03A", "MI-03B" });
+            tbxRoute.Location = new Point(7, 7);
+            tbxRoute.Name = "tbxRoute";
+            tbxRoute.Size = new Size(123, 30);
+            tbxRoute.TabIndex = 92;
+            tbxRoute.TabStop = false;
+            // 
             // Register2
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
             ClientSize = new Size(506, 590);
+            Controls.Add(panel1);
+            Controls.Add(lblRoute);
             Controls.Add(label6);
             Controls.Add(btnBack);
             Controls.Add(pnlAttach);
@@ -596,6 +638,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             pnlAttach.ResumeLayout(false);
             pnlAttach.PerformLayout();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -638,5 +681,8 @@
         private Label label6;
         private Panel pnlPlate;
         private TextBox tbxPlateNumber;
+        private Label lblRoute;
+        private Panel panel1;
+        private ComboBox tbxRoute;
     }
 }

@@ -30,7 +30,7 @@ namespace NEXUS.Classes
 
         public static UserInformation VerifyPassword(string userName, string enteredPassword)
         {
-            string query = "SELECT ID, Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Classification, Attachment, [Profile picture], Wallet, Points, [Status] " +
+            string query = "SELECT ID, Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Classification, Attachment, [Profile picture], Wallet, Points, [QR Code], Route, [Status] " +
                    "FROM Accounts WHERE Username = ?";
 
             string enteredHash = ToSHA256(enteredPassword);
@@ -62,7 +62,9 @@ namespace NEXUS.Classes
                             string profilepic = reader.GetString(10);
                             double wallet = reader.IsDBNull(11) ? 0.0 : Convert.ToDouble(reader.GetValue(11));
                             int points = reader.IsDBNull(12) ? 0 : Convert.ToInt32(reader.GetValue(12));
-                            string status = reader.GetString(13);
+                            string qrcode = reader.IsDBNull(13) ? null : reader.GetString(13);
+                            string route = reader.IsDBNull(14) ? null : reader.GetString(14);
+                            string status = reader.GetString(15);
 
                             if (userType == "Passenger")
                             {
@@ -71,7 +73,7 @@ namespace NEXUS.Classes
                             else
                             {
                                 string plateNumber = reader.IsDBNull(10) ? null : reader.GetString(10);
-                                return new Driver(userID, fullName, email, username, password, gender, userType, birthday, attachment, plateNumber, profilepic, wallet, status);
+                                return new Driver(userID, fullName, email, username, password, gender, userType, birthday, attachment, plateNumber, profilepic, wallet, qrcode, route, status);
                             }
                         }
                     }
@@ -121,7 +123,7 @@ namespace NEXUS.Classes
             }
             else
             {
-                string query = "SELECT ID, Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Attachment, [Plate Number], [Profile Picture], Wallet, [Status] " +
+                string query = "SELECT ID, Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Attachment, [Plate Number], [Profile Picture], Wallet, [QR Code], Route, Status " +
                    "FROM Accounts WHERE Username = ?";
 
 
@@ -135,7 +137,7 @@ namespace NEXUS.Classes
                     {
                         if (reader.Read())
                         {
-                            int userID = reader.GetInt32(0);  // Retrieve UserID
+                            int userID = reader.GetInt32(0);  
                             string username = reader.GetString(1);
                             string password = reader.GetString(2);
                             string fullName = reader.GetString(3);
@@ -147,9 +149,11 @@ namespace NEXUS.Classes
                             string plateNumber = reader.GetString(9);
                             string profilepic = reader.GetString(10);
                             double wallet = reader.IsDBNull(11) ? 0.0 : Convert.ToDouble(reader.GetValue(11));
-                            string status = reader.GetString(12);
+                            string qrcode = reader.IsDBNull(12) ? null : reader.GetString(12);
+                            string route = reader.IsDBNull(13) ? null : reader.GetString(13); 
+                            string status = reader.IsDBNull(14) ? "Pending" : reader.GetString(14);
 
-                            return new Driver(userID, fullName, email, username, password, gender, userType, birthday, attachment, plateNumber, profilepic, wallet, status);
+                            return new Driver(userID, fullName, email, username, password, gender, userType, birthday, attachment, plateNumber, profilepic, wallet, qrcode, route, status);
                         }
                     }
                 }
