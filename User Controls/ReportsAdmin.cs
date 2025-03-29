@@ -17,13 +17,7 @@ namespace NEXUS.User_Controls
         public ReportsAdmin()
         {
             InitializeComponent();
-            
-        }
-
-        private void btnReports_Click(object sender, EventArgs e)
-        {
-            DataGrid dataGrid = new DataGrid("Report");
-
+            btnReport_Click(btnReports, EventArgs.Empty);
         }
 
         private void DisplayReports()

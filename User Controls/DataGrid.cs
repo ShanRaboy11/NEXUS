@@ -40,6 +40,7 @@ namespace NEXUS.User_Controls
                     query = "SELECT * FROM DriversQuery";
                     break;
                 case "Report":
+                    query = "SELECT * FROM Reports";
                     break;
                 case "ReportDate":
                     break;
