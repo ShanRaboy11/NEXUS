@@ -252,7 +252,7 @@ namespace NEXUS.User_Controls
                 }
             }
 
-            string query = "SELECT [Full Name], Amount FROM [Cash In]";
+            string query = "SELECT UserID, [Full Name], Amount FROM [Cash In]";
 
             using (OleDbConnection conn = DatabaseManagement.GetConnection())
             {
@@ -265,19 +265,20 @@ namespace NEXUS.User_Controls
 
                         while (reader.Read())
                         {
+                            int userID = Convert.ToInt32(reader["UserID"]);
                             string passengerName = reader["Full Name"].ToString();
 
                             // Properly cast Amount to double
                             double amount = Convert.ToDouble(reader["Amount"]);
 
-                            AddCashInRequests(tblVerification, passengerName, amount, rowIndex++);
+                            AddCashInRequests(tblVerification, userID, passengerName, amount, rowIndex++);
                         }
                     }
                 }
             }
         }
 
-        private void AddCashInRequests(TableLayoutPanel tblVerification, string passengerName, double amount, int rowIndex)
+        private void AddCashInRequests(TableLayoutPanel tblVerification, int userID, string passengerName, double amount, int rowIndex)
         {
             lblHeader2.Text = "Amount";
             if (rowIndex >= tblVerification.RowCount)
@@ -326,8 +327,8 @@ namespace NEXUS.User_Controls
                 Anchor = AnchorStyles.Left
             };
 
-            btnApprove.Click += (sender, e) => ApproveCashIn(passengerName);
-            btnReject.Click += (sender, e) => RejectCashIn(passengerName);
+            btnApprove.Click += (sender, e) => ApproveCashIn(userID, passengerName);
+            btnReject.Click += (sender, e) => RejectCashIn(userID, passengerName);
 
             tblVerification.Controls.Add(lblName, 0, rowIndex);
             tblVerification.Controls.Add(lblAmount, 1, rowIndex);
@@ -336,12 +337,81 @@ namespace NEXUS.User_Controls
         }
 
 
-        private void ApproveCashIn(string passengerName)
+        private void ApproveCashIn(int UserID, string name)
         {
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            {
+                conn.Open();
+                OleDbTransaction transaction = conn.BeginTransaction(); 
 
+
+                double amount = 0;
+                string getAmountQuery = "SELECT Amount FROM [Cash In] WHERE UserID = ?";
+                using (OleDbCommand cmd = new OleDbCommand(getAmountQuery, conn, transaction))
+                {
+                    cmd.Parameters.AddWithValue("?", UserID);
+                    object result = cmd.ExecuteScalar();
+                    if (result != null)
+                    {
+                        amount = Convert.ToDouble(result);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error: Cash-in request not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+
+                double currentWallet = 0;
+                string getWalletQuery = "SELECT Wallet FROM Accounts WHERE ID = ?";
+                using (OleDbCommand cmd = new OleDbCommand(getWalletQuery, conn, transaction))
+                {
+                    cmd.Parameters.AddWithValue("?", UserID);
+                    object result = cmd.ExecuteScalar();
+                    if (result != null)
+                    {
+                        currentWallet = Convert.ToDouble(result);
+                    }
+                }
+
+                double newBalance = currentWallet + amount;
+                string updateWalletQuery = "UPDATE Accounts SET Wallet = ? WHERE ID = ?";
+                using (OleDbCommand cmd = new OleDbCommand(updateWalletQuery, conn, transaction))
+                {
+                    cmd.Parameters.AddWithValue("?", newBalance);
+                    cmd.Parameters.AddWithValue("?", UserID);
+                    cmd.ExecuteNonQuery();
+                }
+
+                string insertTransactionQuery = "INSERT INTO Transactions (UserID, TransactionDate, [Full Name], Amount, [Type]) VALUES (?, ?, ?, ?, ?)";
+                using (OleDbCommand cmd = new OleDbCommand(insertTransactionQuery, conn, transaction))
+                {
+                    cmd.Parameters.Add("?", OleDbType.Integer).Value = UserID;  
+                    cmd.Parameters.Add("?", OleDbType.Date).Value = DateTime.Now; 
+                    cmd.Parameters.Add("?", OleDbType.VarChar).Value = name;  
+                    cmd.Parameters.Add("?", OleDbType.Double).Value = amount; 
+                    cmd.Parameters.Add("?", OleDbType.VarChar).Value = "Cash In";  
+
+                    cmd.ExecuteNonQuery();
+                }
+
+                string deleteQuery = "DELETE FROM [Cash In] WHERE UserID = ?";
+                using (OleDbCommand cmd = new OleDbCommand(deleteQuery, conn, transaction))
+                {
+                    cmd.Parameters.AddWithValue("?", UserID);
+                    cmd.ExecuteNonQuery();
+                }
+
+                transaction.Commit();
+
+                DisplayCashInRequests();
+
+            }
         }
 
-        private void RejectCashIn(string passengerName)
+
+
+        private void RejectCashIn(int UserID, string name)
         {
 
         }
