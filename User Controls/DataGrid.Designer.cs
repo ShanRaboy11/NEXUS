@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             dgvUsers = new Krypton.Toolkit.KryptonDataGridView();
             contextMenuStrip1 = new ContextMenuStrip(components);
             deleteToolStripMenuItem = new ToolStripMenuItem();
@@ -38,6 +39,8 @@
             // 
             // dgvUsers
             // 
+            dataGridViewCellStyle1.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dgvUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvUsers.BorderStyle = BorderStyle.None;
             dgvUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvUsers.ContextMenuStrip = contextMenuStrip1;
@@ -65,6 +68,8 @@
             dgvUsers.StateCommon.HeaderColumn.Border.Color2 = Color.White;
             dgvUsers.StateCommon.HeaderColumn.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             dgvUsers.StateCommon.HeaderColumn.Content.TextV = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            dgvUsers.StateSelected.DataCell.Back.Color1 = Color.FromArgb(0, 229, 255);
+            dgvUsers.StateSelected.DataCell.Back.Color2 = Color.FromArgb(0, 229, 255);
             dgvUsers.TabIndex = 0;
             // 
             // contextMenuStrip1
@@ -72,12 +77,12 @@
             contextMenuStrip1.Font = new Font("Segoe UI", 9F);
             contextMenuStrip1.Items.AddRange(new ToolStripItem[] { deleteToolStripMenuItem });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(181, 48);
+            contextMenuStrip1.Size = new Size(108, 26);
             // 
             // deleteToolStripMenuItem
             // 
             deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            deleteToolStripMenuItem.Size = new Size(180, 22);
+            deleteToolStripMenuItem.Size = new Size(107, 22);
             deleteToolStripMenuItem.Text = "Delete";
             deleteToolStripMenuItem.Click += deleteToolStripMenuItem_Click;
             // 
@@ -89,6 +94,7 @@
             Controls.Add(dgvUsers);
             Name = "DataGrid";
             Size = new Size(1312, 697);
+            Load += DataGrid_Load;
             ((System.ComponentModel.ISupportInitialize)dgvUsers).EndInit();
             contextMenuStrip1.ResumeLayout(false);
             ResumeLayout(false);

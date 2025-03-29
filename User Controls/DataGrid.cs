@@ -19,10 +19,10 @@ namespace NEXUS.User_Controls
             InitializeComponent();
             DataGridDetailsDisplay(UserType);
         }
-        
+
         private void DataGridDetailsDisplay(string userType)
         {
-            // Ensure valid input
+            
             if (string.IsNullOrEmpty(userType)) return;
 
             // Select the correct query based on user type
@@ -101,6 +101,12 @@ namespace NEXUS.User_Controls
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //DeleteSelectedRecord(dgvUsers, Use)
+        }
+
+        private void DataGrid_Load(object sender, EventArgs e)
+        {
+            dgvUsers.ClearSelection();
+            dgvUsers.CurrentCell = null;
         }
     }
 }
