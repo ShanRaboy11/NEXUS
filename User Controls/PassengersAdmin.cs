@@ -14,6 +14,7 @@ using ReaLTaiizor.Controls;
 using NEXUS.Properties;
 using System.Security.Cryptography;
 using System.Net.Mail;
+using System.Transactions;
 
 namespace NEXUS.User_Controls
 {
@@ -344,7 +345,6 @@ namespace NEXUS.User_Controls
                 conn.Open();
                 OleDbTransaction transaction = conn.BeginTransaction(); 
 
-
                 double amount = 0;
                 string getAmountQuery = "SELECT Amount FROM [Cash In] WHERE UserID = ?";
                 using (OleDbCommand cmd = new OleDbCommand(getAmountQuery, conn, transaction))
@@ -354,11 +354,6 @@ namespace NEXUS.User_Controls
                     if (result != null)
                     {
                         amount = Convert.ToDouble(result);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error: Cash-in request not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
                     }
                 }
 
@@ -405,15 +400,23 @@ namespace NEXUS.User_Controls
                 transaction.Commit();
 
                 DisplayCashInRequests();
-
             }
         }
 
-
-
         private void RejectCashIn(int UserID, string name)
         {
+            string deleteQuery = "DELETE FROM [Cash In] WHERE UserID = ?";
 
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            {
+                conn.Open();
+                using (OleDbCommand cmd = new OleDbCommand(deleteQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("?", UserID);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            DisplayCashInRequests();
         }
 
         private void DeleteSelectedRecord(DataGridView dgv, string tableName)
