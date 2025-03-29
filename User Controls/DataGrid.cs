@@ -14,9 +14,11 @@ namespace NEXUS.User_Controls
 {
     public partial class DataGrid : UserControl
     {
+        string userType1;
         public DataGrid(string UserType)
         {
             InitializeComponent();
+            this.userType1 = UserType;
             DataGridDetailsDisplay(UserType);
         }
 
@@ -53,55 +55,64 @@ namespace NEXUS.User_Controls
             }
         }
 
-        private void DeleteSelectedRecord(DataGridView dgv, string tableName)
-        {
-            if (dgv.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Please select a row to delete.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
 
-            // Identify the Primary Key (Assuming it's the first column)
-            string primaryKeyColumn = dgv.Columns[0].Name;
-            object selectedID = dgv.SelectedRows[0].Cells[primaryKeyColumn].Value;
-
-            if (selectedID == null)
-            {
-                MessageBox.Show("Invalid selection. No ID found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // Confirm deletion
-            DialogResult result = MessageBox.Show("Are you sure you want to delete this record?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-            if (result == DialogResult.Yes)
-            {
-                string query = $"DELETE FROM {tableName} WHERE {primaryKeyColumn} = ?";
-
-                using (OleDbConnection conn = DatabaseManagement.GetConnection())
-                using (OleDbCommand cmd = new OleDbCommand(query, conn))
-                {
-                    conn.Open();
-                    cmd.Parameters.AddWithValue("?", selectedID);
-                    int rowsAffected = cmd.ExecuteNonQuery();
-
-                    if (rowsAffected > 0)
-                    {
-                        MessageBox.Show("Record deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        dgv.Rows.RemoveAt(dgv.SelectedRows[0].Index); // Remove from DataGridView
-                    }
-                    else
-                    {
-                        MessageBox.Show("Deletion failed. Record may not exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-        }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //DeleteSelectedRecord(dgvUsers, Use)
+            if (dgvUsers.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a record to delete.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this record?",
+                                                  "Confirm Delete",
+                                                  MessageBoxButtons.YesNo,
+                                                  MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                using (OleDbConnection conn = DatabaseManagement.GetConnection())
+                {
+                    try
+                    {
+                        conn.Open();
+
+                        int userIdColumnIndex = -1;
+                        foreach (DataGridViewColumn col in dgvUsers.Columns)
+                        {
+                            if (col.Name.Equals("ID", StringComparison.OrdinalIgnoreCase))
+                            {
+                                userIdColumnIndex = col.Index;
+                                break;
+                            }
+                        }
+
+                        // Get UserID value
+                        object userIdValue = dgvUsers.SelectedRows[0].Cells[userIdColumnIndex].Value;
+
+
+                        string query = "DELETE FROM Accounts WHERE ID = ?";
+                        using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                        {
+                            cmd.Parameters.AddWithValue("?", userIdValue);
+                            cmd.ExecuteNonQuery();
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error deleting record: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            DataGridDetailsDisplay(userType1);
+            dgvUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+            dgvUsers.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
         }
+
+
+
 
         private void DataGrid_Load(object sender, EventArgs e)
         {

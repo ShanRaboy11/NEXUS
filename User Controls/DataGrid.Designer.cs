@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             dgvUsers = new Krypton.Toolkit.KryptonDataGridView();
             contextMenuStrip1 = new ContextMenuStrip(components);
             deleteToolStripMenuItem = new ToolStripMenuItem();
@@ -39,8 +38,6 @@
             // 
             // dgvUsers
             // 
-            dataGridViewCellStyle1.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dgvUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvUsers.BorderStyle = BorderStyle.None;
             dgvUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvUsers.ContextMenuStrip = contextMenuStrip1;
@@ -77,12 +74,14 @@
             contextMenuStrip1.Font = new Font("Segoe UI", 9F);
             contextMenuStrip1.Items.AddRange(new ToolStripItem[] { deleteToolStripMenuItem });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(108, 26);
+            contextMenuStrip1.Size = new Size(120, 30);
             // 
             // deleteToolStripMenuItem
             // 
+            deleteToolStripMenuItem.Font = new Font("Inter", 10F);
+            deleteToolStripMenuItem.Image = Properties.Resources.close__1_;
             deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            deleteToolStripMenuItem.Size = new Size(107, 22);
+            deleteToolStripMenuItem.Size = new Size(119, 26);
             deleteToolStripMenuItem.Text = "Delete";
             deleteToolStripMenuItem.Click += deleteToolStripMenuItem_Click;
             // 
