@@ -159,6 +159,7 @@
             btnTransactions.FlatAppearance.BorderSize = 0;
             btnTransactions.FlatStyle = FlatStyle.Flat;
             btnTransactions.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnTransactions.ForeColor = Color.Black;
             btnTransactions.IconChar = FontAwesome.Sharp.IconChar.Receipt;
             btnTransactions.IconColor = Color.Black;
             btnTransactions.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -166,7 +167,7 @@
             btnTransactions.Location = new Point(0, 570);
             btnTransactions.Name = "btnTransactions";
             btnTransactions.Padding = new Padding(15, 0, 0, 0);
-            btnTransactions.Size = new Size(185, 43);
+            btnTransactions.Size = new Size(199, 43);
             btnTransactions.TabIndex = 38;
             btnTransactions.Text = "            Transactions";
             btnTransactions.UseVisualStyleBackColor = true;

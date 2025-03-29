@@ -32,5 +32,45 @@ namespace NEXUS.Forms
         {
             this.Close();
         }
+
+        private int Overlay(Form form)
+        {
+            AdminDashboard adminDashboard = new AdminDashboard();
+            var overlayForm = new Form();
+            overlayForm.StartPosition = FormStartPosition.CenterScreen;
+            overlayForm.FormBorderStyle = FormBorderStyle.None;
+            overlayForm.Opacity = 0.5d;
+            overlayForm.BackColor = Color.Black;
+            if (adminDashboard.maximized)
+            {
+                overlayForm.StartPosition = FormStartPosition.Manual; // Ensure manual positioning
+                overlayForm.Bounds = Screen.FromControl(adminDashboard).WorkingArea; // Adjust to working area (excludes taskbar)
+                overlayForm.FormBorderStyle = FormBorderStyle.None; // Remove borders if needed
+                overlayForm.WindowState = FormWindowState.Normal; // Reset first to ensure proper resize
+                overlayForm.WindowState = FormWindowState.Maximized; // Then maximize
+            }
+            else
+            {
+                overlayForm.WindowState = FormWindowState.Normal;
+            }
+
+
+            overlayForm.Size = adminDashboard.Size;
+            overlayForm.Location = this.Location;
+            overlayForm.ShowInTaskbar = false;
+            overlayForm.Show();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                form.Close();
+                overlayForm.Close();
+                return 1;
+            }
+            else
+            {
+                form.Close();
+                overlayForm.Close();
+                return 0;
+            }
+        }
     }
 }

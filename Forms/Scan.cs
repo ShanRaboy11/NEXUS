@@ -41,12 +41,9 @@ namespace NEXUS.Forms
             else
             {
                 overlayForm.Show();
-                newForm.FormClosed += (s, args) =>
-                {
-                    newForm.DialogResult = DialogResult.OK; // ✅ Set DialogResult when the form is completely closed
-                    overlayForm.Close();
-                };
+                newForm.FormClosed += (s, args) => overlayForm.Close();
                 newForm.Show();
+                newForm.BringToFront();
             }
         }
 

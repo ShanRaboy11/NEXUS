@@ -38,12 +38,13 @@ namespace NEXUS.Forms
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
+            this.DialogResult = DialogResult.Yes;
             this.Close();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
     }

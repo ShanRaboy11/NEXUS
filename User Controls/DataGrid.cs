@@ -10,6 +10,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NEXUS.Forms;
+using System.Security.Cryptography;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
+using System.Windows;
 
 namespace NEXUS.User_Controls
 {
@@ -46,65 +49,95 @@ namespace NEXUS.User_Controls
                 adapter.Fill(dt); // Load data into DataTable
                 dgvUsers.DataSource = dt; // Bind DataTable to DataGridView
 
-                // Formatting (Optional)
+
                 dgvUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; // Adjust column width
-                dgvUsers.DefaultCellStyle.Font = new Font("Inter", 14F, FontStyle.Regular); // Set font
-                dgvUsers.ColumnHeadersDefaultCellStyle.Font = new Font("Inter", 16F, FontStyle.Bold); // Header font
-                dgvUsers.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(24, 60, 114); // Header background color
-                dgvUsers.ColumnHeadersDefaultCellStyle.ForeColor = Color.White; // Header text color
+                dgvUsers.DefaultCellStyle.Font = new System.Drawing.Font(new System.Drawing.FontFamily("Inter"), 14F, System.Drawing.FontStyle.Regular); // Set font
+                dgvUsers.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font(new System.Drawing.FontFamily("Inter"), 16F, System.Drawing.FontStyle.Bold); // Header font
+                dgvUsers.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(24, 60, 114); // Header background color
+                dgvUsers.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.White; // Header text color
                 dgvUsers.EnableHeadersVisualStyles = false; // Apply custom styling
+
             }
         }
 
+        private int Overlay(Form form)
+        {
+            AdminDashboard adminDashboard = new AdminDashboard();
+            var overlayForm = new Form();
+            overlayForm.StartPosition = FormStartPosition.CenterScreen;
+            overlayForm.FormBorderStyle = FormBorderStyle.None;
+            overlayForm.Opacity = 0.5d;
+            overlayForm.BackColor = Color.Black;
+            if (adminDashboard.maximized)
+            {
+                overlayForm.StartPosition = FormStartPosition.Manual; // Ensure manual positioning
+                overlayForm.Bounds = Screen.FromControl(adminDashboard).WorkingArea; // Adjust to working area (excludes taskbar)
+                overlayForm.FormBorderStyle = FormBorderStyle.None; // Remove borders if needed
+                overlayForm.WindowState = FormWindowState.Normal; // Reset first to ensure proper resize
+                overlayForm.WindowState = FormWindowState.Maximized; // Then maximize
+            }
+            else
+            {
+                overlayForm.WindowState = FormWindowState.Normal;
+            }
 
+
+            overlayForm.Size = adminDashboard.Size;
+            overlayForm.Location = this.Location;
+            overlayForm.ShowInTaskbar = false;
+            overlayForm.Show();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                form.Close();
+                overlayForm.Close();
+                return 1;
+            }
+            else
+            {
+                form.Close();
+                overlayForm.Close();
+                return 0;
+            }
+        }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Scan scan = new Scan(null);
-
+            int num;
             if (dgvUsers.SelectedRows.Count == 0)
             {
                 NEXUS.Forms.Message message1 = new NEXUS.Forms.Message("select");
 
-                scan.ShowOverlay(message1, null);
+                num = Overlay(message1);
                 return;
             }
 
             NEXUS.Forms.Message message = new NEXUS.Forms.Message("question");
-            scan.ShowOverlay(message, null);
-            if (message.DialogResult == DialogResult.OK)
+            num = Overlay(message);
+            if (num == 0)
             {
                 using (OleDbConnection conn = DatabaseManagement.GetConnection())
                 {
-                    try
+                    conn.Open();
+
+                    int userIdColumnIndex = -1;
+                    foreach (DataGridViewColumn col in dgvUsers.Columns)
                     {
-                        conn.Open();
-
-                        int userIdColumnIndex = -1;
-                        foreach (DataGridViewColumn col in dgvUsers.Columns)
+                        if (col.Name.Equals("ID", StringComparison.OrdinalIgnoreCase))
                         {
-                            if (col.Name.Equals("ID", StringComparison.OrdinalIgnoreCase))
-                            {
-                                userIdColumnIndex = col.Index;
-                                break;
-                            }
+                            userIdColumnIndex = col.Index;
+                            break;
                         }
-
-                        // Get UserID value
-                        object userIdValue = dgvUsers.SelectedRows[0].Cells[userIdColumnIndex].Value;
-
-
-                        string query = "DELETE FROM Accounts WHERE ID = ?";
-                        using (OleDbCommand cmd = new OleDbCommand(query, conn))
-                        {
-                            cmd.Parameters.AddWithValue("?", userIdValue);
-                            cmd.ExecuteNonQuery();
-                        }
-
                     }
-                    catch (Exception ex)
+
+                    // Get UserID value
+                    object userIdValue = dgvUsers.SelectedRows[0].Cells[userIdColumnIndex].Value;
+
+
+                    string query = "DELETE FROM Accounts WHERE ID = ?";
+                    using (OleDbCommand cmd = new OleDbCommand(query, conn))
                     {
-                        MessageBox.Show("Error deleting record: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        cmd.Parameters.AddWithValue("?", userIdValue);
+                        cmd.ExecuteNonQuery();
                     }
                 }
             }

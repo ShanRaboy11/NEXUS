@@ -179,6 +179,7 @@ namespace NEXUS.User_Controls
 
         private void DisplayAttachment(string fileName)
         {
+            Scan scan = new Scan(null);
             if (string.IsNullOrEmpty(fileName))
             {
                 MessageBox.Show("No attachment found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -192,6 +193,7 @@ namespace NEXUS.User_Controls
             {
                 Image image = Image.FromFile(filePath);
                 DisplayImage display = new DisplayImage(image, "register");
+                scan.ShowOverlay(display, null);
             }
             else
             {

@@ -18,6 +18,8 @@ namespace NEXUS.Forms
         private FontAwesome.Sharp.IconButton selectedButton = null;
         private FontAwesome.Sharp.IconButton currentBtn;
         bool sidebarExpand = false;
+        public bool maximized = false;
+
         public AdminDashboard()
         {
             InitializeComponent();
@@ -38,9 +40,16 @@ namespace NEXUS.Forms
         private void Maximize(object sender, EventArgs e)
         {
             if (WindowState == FormWindowState.Normal)
+            {
+                this.MaximumSize = Screen.FromControl(this).WorkingArea.Size;
                 this.WindowState = FormWindowState.Maximized;
+                this.maximized = true;
+            }
             else
+            {
                 this.WindowState = FormWindowState.Normal;
+                this.maximized = false;
+            }
         }
 
         private void Minimize(object sender, EventArgs e)
