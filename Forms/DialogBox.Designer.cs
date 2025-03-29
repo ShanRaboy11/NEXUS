@@ -78,7 +78,7 @@
             btnOK.ColorBackground = Color.FromArgb(24, 60, 114);
             btnOK.ColorBackground_1 = Color.FromArgb(24, 60, 114);
             btnOK.ColorBackground_2 = Color.FromArgb(24, 60, 114);
-            btnOK.ColorBackground_Pen = Color.FromArgb(128, 223, 255);
+            btnOK.ColorBackground_Pen = Color.FromArgb(153, 229, 255);
             btnOK.ColorLighting = Color.FromArgb(24, 60, 114);
             btnOK.ColorPen_1 = Color.FromArgb(24, 60, 114);
             btnOK.ColorPen_2 = Color.FromArgb(24, 60, 114);

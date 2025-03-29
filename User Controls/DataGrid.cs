@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NEXUS.Forms;
 
 namespace NEXUS.User_Controls
 {
@@ -59,18 +60,19 @@ namespace NEXUS.User_Controls
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Scan scan = new Scan(null);
+
             if (dgvUsers.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Please select a record to delete.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                NEXUS.Forms.Message message1 = new NEXUS.Forms.Message("select");
+
+                scan.ShowOverlay(message1, null);
                 return;
             }
 
-            DialogResult result = MessageBox.Show("Are you sure you want to delete this record?",
-                                                  "Confirm Delete",
-                                                  MessageBoxButtons.YesNo,
-                                                  MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
+            NEXUS.Forms.Message message = new NEXUS.Forms.Message("question");
+            scan.ShowOverlay(message, null);
+            if (message.DialogResult == DialogResult.OK)
             {
                 using (OleDbConnection conn = DatabaseManagement.GetConnection())
                 {
@@ -105,6 +107,10 @@ namespace NEXUS.User_Controls
                         MessageBox.Show("Error deleting record: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
+            }
+            else
+            {
+                return;
             }
             DataGridDetailsDisplay(userType1);
             dgvUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;

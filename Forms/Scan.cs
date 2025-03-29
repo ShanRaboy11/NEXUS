@@ -41,11 +41,16 @@ namespace NEXUS.Forms
             else
             {
                 overlayForm.Show();
-                newForm.FormClosed += (s, args) => overlayForm.Close();
+                newForm.FormClosed += (s, args) =>
+                {
+                    newForm.DialogResult = DialogResult.OK; // ✅ Set DialogResult when the form is completely closed
+                    overlayForm.Close();
+                };
                 newForm.Show();
             }
         }
 
+        
         private void btnOpenQRScan_Click(object sender, EventArgs e)
         {
             QRScannerForm qRScannerForm = new QRScannerForm();
