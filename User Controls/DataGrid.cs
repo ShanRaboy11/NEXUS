@@ -28,16 +28,25 @@ namespace NEXUS.User_Controls
 
         private void DataGridDetailsDisplay(string userType)
         {
-            
+            string query = null;
             if (string.IsNullOrEmpty(userType)) return;
 
-            // Select the correct query based on user type
-            string query = userType == "Passenger" ? "SELECT * FROM PassengersQuery" :
-                           userType == "Driver" ? "SELECT * FROM DriversQuery" : "";
+            switch(userType)
+            {
+                case "Passenger":
+                    query = "SELECT * FROM PassengersQuery";
+                    break;
+                case "Driver":
+                    query = "SELECT * FROM DriversQuery";
+                    break;
+                case "Report":
+                    break;
+                case "ReportDate":
+                    break;
+                case "Rate":
+                    break;
+            }
 
-            if (string.IsNullOrEmpty(query)) return; // Exit if the userType is invalid
-
-            // Clear existing data in DataGridView
             dgvUsers.DataSource = null;
             dgvUsers.Rows.Clear();
             dgvUsers.Columns.Clear();
