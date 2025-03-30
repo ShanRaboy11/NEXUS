@@ -21,47 +21,52 @@ namespace NEXUS.Forms
 {
     public partial class QRCodeGeneratorform : Form
     {
+        Driver userInfo;
         int UserID;
+        bool qrSaved = false;
         public QRCodeGeneratorform(int userID)
         {
             InitializeComponent();
             this.UserID = userID;
-            pbQRCode.Image = null;
+            this.userInfo = GetUserInfoByID(UserID);
+
+            if (this.userInfo.QRCode != "")
+            {
+                qrSaved = true;
+                LoadSavedQRCode(this.userInfo.QRCode);
+            }
+
+            // Hide buttons if QR code already exists
+            btnQRGenerate.Visible = !qrSaved;
+            btnSaveQR.Visible = !qrSaved;
+
         }
 
         private void btnQRGenerate_Click(object sender, EventArgs e)
         {
             btnSaveQR.Visible = true;
-            UserInformation userInfo = GetUserInfoByID(UserID);
 
-            if (userInfo is Driver driver)
-            {
-                string fullName = driver.Name;
-                string plateNumber = driver.PlateNumber;
-                string route = driver.Route;
-                string status = driver.Status;
+            string fullName = userInfo.Name;
+            string plateNumber = userInfo.PlateNumber;
+            string route = userInfo.Route;
+            string status = userInfo.Status;
 
-                // Create a structured QR Code data string
-                string qrData = $"UserID:{driver.UserID};Name:{fullName};" +
-                                $"Plate:{plateNumber};Route:{route};Status:{status}";
+            // Create a structured QR Code data string
+            string qrData = $"UserID:{userInfo.UserID};Name:{fullName};" +
+                            $"Plate:{plateNumber};Route:{route};Status:{status}";
 
-                // Generate the QR code
-                QRCodeGenerator qrGenerator = new QRCodeGenerator();
-                QRCodeData qrCodeData = qrGenerator.CreateQrCode(qrData, QRCodeGenerator.ECCLevel.Q);
-                QRCode qrCode = new QRCode(qrCodeData);
-                Bitmap qrCodeImage = qrCode.GetGraphic(20);
+            // Generate the QR code
+            QRCodeGenerator qrGenerator = new QRCodeGenerator();
+            QRCodeData qrCodeData = qrGenerator.CreateQrCode(qrData, QRCodeGenerator.ECCLevel.Q);
+            QRCode qrCode = new QRCode(qrCodeData);
+            Bitmap qrCodeImage = qrCode.GetGraphic(20);
 
-                // Display the QR code in the picture box
-                pbQRCode.Image = qrCodeImage;
-            }
-            else
-            {
-                MessageBox.Show("Driver information not found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            // Display the QR code in the picture box
+            pbQRCode.Image = qrCodeImage;
         }
 
 
-        private UserInformation GetUserInfoByID(int userID)
+        private Driver GetUserInfoByID(int userID)
         {
             string query = "SELECT ID, Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Attachment, [Plate Number], [Profile Picture], Wallet, [QR Code], Route, Status " +
                     "FROM Accounts WHERE ID = ?";
@@ -148,20 +153,29 @@ namespace NEXUS.Forms
 
         private void btnSaveQR_Click(object sender, EventArgs e)
         {
-            if (pbQRCode.Image != null) // Ensure there's a QR code
-            {
-                QRCodeManager qrManager = new QRCodeManager();
-                string filePath = qrManager.SaveQrCode(pbQRCode.Image, UserID);
+            QRCodeManager qrManager = new QRCodeManager();
+            Scan scan = new Scan(null);
+            DialogBox dialogBox = new DialogBox();
+            string filePath = qrManager.SaveQrCode(pbQRCode.Image, UserID);
 
-                if (filePath != null) // Only save to database if file saving is successful
-                {
-                    DatabaseManagement.SaveQrCode(UserID, filePath);
-                }
-            }
-            else
+            if (filePath != null) // Only save to database if file saving is successful
             {
-                MessageBox.Show("No QR code to save!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                DatabaseManagement.SaveQrCode(UserID, filePath);
             }
+            btnQRGenerate.Visible = false;
+            btnSaveQR.Visible = false;
+            dialogBox.ShowIcon("qr save");
+            scan.ShowOverlay(this, dialogBox);
+            LoadSavedQRCode(userInfo.QRCode);
+        }
+
+        private void LoadSavedQRCode(string filePath)
+        {
+            lblNoteQR.Text = "Your QR code is set! Use it for seamless trip logging and secure transactions.";
+            pnlBG.Location = new Point(136, 152);
+            pbQRCode.Location = new Point(167, 175);
+
+            pbQRCode.Image = Image.FromFile(filePath);
         }
     }
 }

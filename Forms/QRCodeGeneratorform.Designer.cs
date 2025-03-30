@@ -33,10 +33,11 @@
             pbQRCode = new PictureBox();
             cmxSave = new ContextMenuStrip(components);
             saveToolStripMenuItem = new ToolStripMenuItem();
-            airButton1 = new ReaLTaiizor.Controls.AirButton();
             btnQRGenerate = new ReaLTaiizor.Controls.CyberButton();
-            panel1 = new Panel();
+            pnlBG = new Panel();
             btnSaveQR = new ReaLTaiizor.Controls.CyberButton();
+            lblNoteQR = new Label();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)pbQRCode).BeginInit();
             cmxSave.SuspendLayout();
             SuspendLayout();
@@ -44,9 +45,9 @@
             // pbQRCode
             // 
             pbQRCode.ContextMenuStrip = cmxSave;
-            pbQRCode.Location = new Point(147, 77);
+            pbQRCode.Location = new Point(167, 125);
             pbQRCode.Name = "pbQRCode";
-            pbQRCode.Size = new Size(661, 472);
+            pbQRCode.Size = new Size(614, 449);
             pbQRCode.SizeMode = PictureBoxSizeMode.Zoom;
             pbQRCode.TabIndex = 20;
             pbQRCode.TabStop = false;
@@ -65,19 +66,6 @@
             saveToolStripMenuItem.Size = new Size(106, 22);
             saveToolStripMenuItem.Text = "Save";
             saveToolStripMenuItem.Click += save_Click;
-            // 
-            // airButton1
-            // 
-            airButton1.Customization = "7e3t//Ly8v/r6+v/5ubm/+vr6//f39//p6en/zw8PP8UFBT/gICA/w==";
-            airButton1.Font = new Font("Segoe UI", 9F);
-            airButton1.Image = null;
-            airButton1.Location = new Point(235, 434);
-            airButton1.Name = "airButton1";
-            airButton1.NoRounding = false;
-            airButton1.Size = new Size(8, 9);
-            airButton1.TabIndex = 21;
-            airButton1.Text = "airButton1";
-            airButton1.Transparent = false;
             // 
             // btnQRGenerate
             // 
@@ -106,7 +94,7 @@
             btnQRGenerate.Lighting = false;
             btnQRGenerate.LinearGradient_Background = false;
             btnQRGenerate.LinearGradientPen = false;
-            btnQRGenerate.Location = new Point(319, 607);
+            btnQRGenerate.Location = new Point(319, 626);
             btnQRGenerate.Name = "btnQRGenerate";
             btnQRGenerate.PenWidth = 15;
             btnQRGenerate.Rounding = true;
@@ -121,13 +109,13 @@
             btnQRGenerate.Timer_RGB = 300;
             btnQRGenerate.Click += btnQRGenerate_Click;
             // 
-            // panel1
+            // pnlBG
             // 
-            panel1.BackColor = Color.FromArgb(153, 229, 255);
-            panel1.Location = new Point(117, 55);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(722, 523);
-            panel1.TabIndex = 23;
+            pnlBG.BackColor = Color.FromArgb(153, 229, 255);
+            pnlBG.Location = new Point(136, 102);
+            pnlBG.Name = "pnlBG";
+            pnlBG.Size = new Size(675, 500);
+            pnlBG.TabIndex = 23;
             // 
             // btnSaveQR
             // 
@@ -156,7 +144,7 @@
             btnSaveQR.Lighting = false;
             btnSaveQR.LinearGradient_Background = false;
             btnSaveQR.LinearGradientPen = false;
-            btnSaveQR.Location = new Point(319, 667);
+            btnSaveQR.Location = new Point(319, 681);
             btnSaveQR.Name = "btnSaveQR";
             btnSaveQR.PenWidth = 15;
             btnSaveQR.Rounding = true;
@@ -172,17 +160,40 @@
             btnSaveQR.Visible = false;
             btnSaveQR.Click += btnSaveQR_Click;
             // 
+            // lblNoteQR
+            // 
+            lblNoteQR.AutoSize = true;
+            lblNoteQR.BackColor = Color.FromArgb(230, 249, 255);
+            lblNoteQR.Font = new Font("Inter", 14F);
+            lblNoteQR.ForeColor = Color.Black;
+            lblNoteQR.Location = new Point(54, 54);
+            lblNoteQR.Name = "lblNoteQR";
+            lblNoteQR.Size = new Size(849, 27);
+            lblNoteQR.TabIndex = 156;
+            lblNoteQR.Text = "Generate your unique QR code to streamline trip logging and secure hassle-free transactions.";
+            // 
+            // label1
+            // 
+            label1.Font = new Font("Inter ExtraBold", 21F, FontStyle.Bold);
+            label1.ForeColor = Color.FromArgb(38, 36, 68);
+            label1.Location = new Point(12, 1);
+            label1.Name = "label1";
+            label1.Size = new Size(511, 44);
+            label1.TabIndex = 155;
+            label1.Text = "QR Code";
+            // 
             // QRCodeGeneratorform
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
             ClientSize = new Size(988, 739);
+            Controls.Add(lblNoteQR);
+            Controls.Add(label1);
             Controls.Add(btnSaveQR);
             Controls.Add(btnQRGenerate);
-            Controls.Add(airButton1);
             Controls.Add(pbQRCode);
-            Controls.Add(panel1);
+            Controls.Add(pnlBG);
             Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -192,15 +203,17 @@
             ((System.ComponentModel.ISupportInitialize)pbQRCode).EndInit();
             cmxSave.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
         private PictureBox pbQRCode;
-        private ReaLTaiizor.Controls.AirButton airButton1;
         private ReaLTaiizor.Controls.CyberButton btnQRGenerate;
         private ContextMenuStrip cmxSave;
         private ToolStripMenuItem saveToolStripMenuItem;
-        private Panel panel1;
+        private Panel pnlBG;
         private ReaLTaiizor.Controls.CyberButton btnSaveQR;
+        protected internal Label lblNoteQR;
+        private Label label1;
     }
 }

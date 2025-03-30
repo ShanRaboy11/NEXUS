@@ -153,8 +153,8 @@ namespace NEXUS.Classes
 
         public void SaveToDatabase()
         {
-            string query = "INSERT INTO Accounts (Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Attachment, [Plate Number], [Profile Picture],  Wallet, Route, [Status]) " +
-                           "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            string query = "INSERT INTO Accounts (Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Attachment, [Plate Number], [Profile Picture],  Wallet, [QR Code], Route, [Status]) " +
+                           "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             using (OleDbConnection conn = new OleDbConnection(connectionString))
             using (OleDbCommand cmd = new OleDbCommand(query, conn))
@@ -172,6 +172,7 @@ namespace NEXUS.Classes
                 cmd.Parameters.AddWithValue("?", PlateNumber);
                 cmd.Parameters.AddWithValue("?", this.ProfilePicture);
                 cmd.Parameters.AddWithValue("?", this.WalletAmount);
+                cmd.Parameters.AddWithValue("?", this.QRCode);
                 cmd.Parameters.AddWithValue("?", this.Route);
                 cmd.Parameters.AddWithValue("?", this.Status);
 

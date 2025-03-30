@@ -61,6 +61,11 @@ namespace NEXUS.Forms
                 pbDialogIcon.Image = Resources.Animation___1739885779319;
                 lblMessage.Text = "Report Submitted";
             }
+            else if (message == "qr save")
+            {
+                pbDialogIcon.Image = Resources.Animation___1739885779319;
+                lblMessage.Text = "QR Code Saved Successfully";
+            }
             else
             {
                 Pausetimer.Enabled = false;
