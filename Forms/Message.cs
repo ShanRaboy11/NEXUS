@@ -34,6 +34,12 @@ namespace NEXUS.Forms
                 lblMessage.Text = "Please select a record to delete.";
                 btnOK.TextButton = "OK";
             }
+            else if (message == "cash in")
+            {
+                pbDialogIcon.Image = Resources.Animation___1739885779319;
+                lblMessage.Text = "Your deposit has been successfully processed.";
+                btnOK.TextButton = "OK";
+            }
         }
 
         private void btnOK_Click(object sender, EventArgs e)

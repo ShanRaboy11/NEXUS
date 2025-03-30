@@ -143,11 +143,11 @@
             // 
             tbxAmount.BackColor = Color.FromArgb(230, 249, 255);
             tbxAmount.BorderStyle = BorderStyle.None;
-            tbxAmount.Font = new Font("Inter ExtraBold", 70F, FontStyle.Bold);
+            tbxAmount.Font = new Font("Inter ExtraBold", 75F, FontStyle.Bold);
             tbxAmount.ForeColor = Color.FromArgb(24, 60, 114);
             tbxAmount.Location = new Point(45, 149);
             tbxAmount.Name = "tbxAmount";
-            tbxAmount.Size = new Size(424, 113);
+            tbxAmount.Size = new Size(424, 121);
             tbxAmount.TabIndex = 39;
             tbxAmount.TabStop = false;
             tbxAmount.Text = "0";
@@ -183,7 +183,7 @@
             btnConfirm.Lighting = false;
             btnConfirm.LinearGradient_Background = false;
             btnConfirm.LinearGradientPen = false;
-            btnConfirm.Location = new Point(143, 364);
+            btnConfirm.Location = new Point(154, 367);
             btnConfirm.Name = "btnConfirm";
             btnConfirm.PenWidth = 15;
             btnConfirm.Rounding = true;

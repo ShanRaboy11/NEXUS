@@ -42,9 +42,9 @@
             // 
             // lblMessage
             // 
-            lblMessage.Font = new Font("Inter Medium", 12F, FontStyle.Bold);
+            lblMessage.Font = new Font("Inter Medium", 12.5F, FontStyle.Bold);
             lblMessage.ForeColor = Color.FromArgb(24, 60, 114);
-            lblMessage.Location = new Point(12, 137);
+            lblMessage.Location = new Point(12, 140);
             lblMessage.Name = "lblMessage";
             lblMessage.Size = new Size(422, 40);
             lblMessage.TabIndex = 2;
@@ -78,7 +78,7 @@
             btnOK.Lighting = false;
             btnOK.LinearGradient_Background = false;
             btnOK.LinearGradientPen = false;
-            btnOK.Location = new Point(144, 190);
+            btnOK.Location = new Point(144, 196);
             btnOK.Name = "btnOK";
             btnOK.PenWidth = 15;
             btnOK.Rounding = true;
@@ -96,7 +96,7 @@
             // pbDialogIcon
             // 
             pbDialogIcon.Image = Properties.Resources.Animation___1743240515087;
-            pbDialogIcon.Location = new Point(124, 12);
+            pbDialogIcon.Location = new Point(124, 14);
             pbDialogIcon.Name = "pbDialogIcon";
             pbDialogIcon.Size = new Size(186, 124);
             pbDialogIcon.SizeMode = PictureBoxSizeMode.Zoom;
@@ -107,7 +107,7 @@
             // 
             panel4.BackColor = Color.FromArgb(24, 60, 114);
             panel4.Dock = DockStyle.Bottom;
-            panel4.Location = new Point(4, 241);
+            panel4.Location = new Point(4, 252);
             panel4.Name = "panel4";
             panel4.Size = new Size(438, 4);
             panel4.TabIndex = 10;
@@ -118,7 +118,7 @@
             panel3.Dock = DockStyle.Right;
             panel3.Location = new Point(442, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(4, 241);
+            panel3.Size = new Size(4, 252);
             panel3.TabIndex = 12;
             // 
             // panel2
@@ -127,7 +127,7 @@
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(4, 241);
+            panel2.Size = new Size(4, 252);
             panel2.TabIndex = 11;
             // 
             // panel1
@@ -161,7 +161,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
-            ClientSize = new Size(446, 245);
+            ClientSize = new Size(446, 256);
             Controls.Add(btnClose);
             Controls.Add(panel4);
             Controls.Add(panel3);

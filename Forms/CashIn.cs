@@ -4,18 +4,24 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NEXUS.Classes;
 
 namespace NEXUS.Forms
 {
     public partial class CashIn : Form
     {
+        int userID;
+        string Name;
         private bool isClicked = false;
-        public CashIn(int ID)
+        public CashIn(int ID, string name)
         {
             InitializeComponent();
+            this.userID = ID;
+            this.Name = name;
         }
 
         private void tbxAmount_TextChanged(object sender, EventArgs e)
@@ -53,10 +59,16 @@ namespace NEXUS.Forms
         {
             this.Close();
         }
-
+       
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+            Message message = new Message("cash in");
+            Scan scan = new Scan(null);
 
+            double amount = double.Parse(tbxAmount.Text);
+            DatabaseManagement.CashInLoad(this.userID, this.Name, amount);
+            scan.ShowOverlay(message, null);
+            this.Close();
         }
     }
 }

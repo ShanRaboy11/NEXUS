@@ -287,7 +287,7 @@ namespace NEXUS.Forms
 
         private void btnCashIn_Click(object sender, EventArgs e)
         {
-            CashIn cashIn = new CashIn(passenger.UserID);
+            CashIn cashIn = new CashIn(passenger.UserID, passenger.Name);
             Scan scan = new Scan(passenger.Username);
             scan.ShowOverlay(cashIn, null);
         }

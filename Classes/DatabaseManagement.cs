@@ -17,10 +17,28 @@ namespace NEXUS.Classes
 
         private static string connectionString = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\Users\Shan Michael\OneDrive\文档\2nd Year 2nd Sem\OOP2\NEXUS\NEXUS.accdb";
 
-        //Get Database Connection
         public static OleDbConnection GetConnection()
         {
             return new OleDbConnection(connectionString);
+        }
+
+        public static void CashInLoad(int userId, string name, double amount)
+        {
+            string query = "INSERT INTO [Cash In] ([Request Date], UserID, [Full Name], Amount)" +
+                "VALUES (?, ?, ?, ?)";
+
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            using (OleDbCommand cmd = new OleDbCommand(query, conn))
+            {
+                conn.Open();
+
+                cmd.Parameters.Add("?", OleDbType.Date).Value = DateTime.Now;
+                cmd.Parameters.AddWithValue("?", userId);
+                cmd.Parameters.AddWithValue("?", name);
+                cmd.Parameters.AddWithValue("?", amount);
+
+                cmd.ExecuteNonQuery();
+            }
         }
 
         public static OleDbConnection Connect()
