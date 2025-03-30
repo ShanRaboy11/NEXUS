@@ -97,7 +97,7 @@ namespace NEXUS.Classes
             Points = points;
         }
 
-        public  void SaveToDatabase()
+        public void SaveToDatabase()
         {
 
             string query = "INSERT INTO Accounts (Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Classification, Attachment, [Profile Picture], Wallet, Points, [Status]) " +
@@ -294,5 +294,39 @@ namespace NEXUS.Classes
         }
     }
 
+    public class QRCodeManager
+    {
+        private readonly string qrCodeFolder;
 
+        public QRCodeManager()
+        {
+            // Define folder for QR codes
+            qrCodeFolder = Path.Combine(AppContext.BaseDirectory, "QR Codes");
+
+            // Ensure the directory exists
+            if (!Directory.Exists(qrCodeFolder))
+            {
+                Directory.CreateDirectory(qrCodeFolder);
+            }
+        }
+
+        public string SaveQrCode(Image qrImage, int userID)
+        {
+            // Define file name (Example: QR_123.png where 123 is UserID)
+            string fileName = $"QR_{userID}.png";
+            string filePath = Path.Combine(qrCodeFolder, fileName);
+
+            try
+            {
+                // Save the QR code image
+                qrImage.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
+                return filePath; // Return the file path to be stored in the database
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error saving QR code: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+    }
 }

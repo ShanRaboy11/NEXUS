@@ -421,51 +421,5 @@ namespace NEXUS.User_Controls
             }
             DisplayCashInRequests();
         }
-
-        private void DeleteSelectedRecord(DataGridView dgv, string tableName)
-        {
-            if (dgv.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Please select a row to delete.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            // Identify the Primary Key (Assuming it's the first column)
-            string primaryKeyColumn = dgv.Columns[0].Name;
-            object selectedID = dgv.SelectedRows[0].Cells[primaryKeyColumn].Value;
-
-            if (selectedID == null)
-            {
-                MessageBox.Show("Invalid selection. No ID found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // Confirm deletion
-            DialogResult result = MessageBox.Show("Are you sure you want to delete this record?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-            if (result == DialogResult.Yes)
-            {
-                string query = $"DELETE FROM {tableName} WHERE {primaryKeyColumn} = ?";
-
-                using (OleDbConnection conn = DatabaseManagement.GetConnection())
-                using (OleDbCommand cmd = new OleDbCommand(query, conn))
-                {
-                    conn.Open();
-                    cmd.Parameters.AddWithValue("?", selectedID);
-                    int rowsAffected = cmd.ExecuteNonQuery();
-
-                    if (rowsAffected > 0)
-                    {
-                        MessageBox.Show("Record deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        dgv.Rows.RemoveAt(dgv.SelectedRows[0].Index); // Remove from DataGridView
-                    }
-                    else
-                    {
-                        MessageBox.Show("Deletion failed. Record may not exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-        }
-
     }
 }

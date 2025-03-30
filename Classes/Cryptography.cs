@@ -179,7 +179,7 @@ namespace NEXUS.Classes
 
         public static bool VerifyAdminPassword(string password)
         {
-            string enteredHash = ToSHA256(password); // Hash only once
+            string enteredHash = ToSHA256(password); 
             string query = "SELECT [Password] FROM Accounts WHERE Username = 'admin'";
 
             using (OleDbConnection conn = DatabaseManagement.GetConnection())
@@ -189,7 +189,7 @@ namespace NEXUS.Classes
 
                 using (OleDbDataReader reader = cmd.ExecuteReader())
                 {
-                    if (reader.Read()) // If a record is found
+                    if (reader.Read()) 
                     {
                         string storedHash = reader.GetString(0);
                         return enteredHash.Equals(storedHash, StringComparison.OrdinalIgnoreCase);

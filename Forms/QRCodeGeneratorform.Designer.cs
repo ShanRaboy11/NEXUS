@@ -36,6 +36,7 @@
             airButton1 = new ReaLTaiizor.Controls.AirButton();
             btnQRGenerate = new ReaLTaiizor.Controls.CyberButton();
             panel1 = new Panel();
+            btnSaveQR = new ReaLTaiizor.Controls.CyberButton();
             ((System.ComponentModel.ISupportInitialize)pbQRCode).BeginInit();
             cmxSave.SuspendLayout();
             SuspendLayout();
@@ -105,7 +106,7 @@
             btnQRGenerate.Lighting = false;
             btnQRGenerate.LinearGradient_Background = false;
             btnQRGenerate.LinearGradientPen = false;
-            btnQRGenerate.Location = new Point(319, 613);
+            btnQRGenerate.Location = new Point(319, 607);
             btnQRGenerate.Name = "btnQRGenerate";
             btnQRGenerate.PenWidth = 15;
             btnQRGenerate.Rounding = true;
@@ -128,12 +129,56 @@
             panel1.Size = new Size(722, 523);
             panel1.TabIndex = 23;
             // 
+            // btnSaveQR
+            // 
+            btnSaveQR.Alpha = 20;
+            btnSaveQR.BackColor = Color.Transparent;
+            btnSaveQR.Background = true;
+            btnSaveQR.Background_WidthPen = 4F;
+            btnSaveQR.BackgroundPen = true;
+            btnSaveQR.ColorBackground = Color.FromArgb(24, 60, 114);
+            btnSaveQR.ColorBackground_1 = Color.FromArgb(24, 60, 114);
+            btnSaveQR.ColorBackground_2 = Color.FromArgb(24, 60, 114);
+            btnSaveQR.ColorBackground_Pen = Color.FromArgb(153, 229, 255);
+            btnSaveQR.ColorLighting = Color.FromArgb(24, 60, 114);
+            btnSaveQR.ColorPen_1 = Color.FromArgb(24, 60, 114);
+            btnSaveQR.ColorPen_2 = Color.FromArgb(24, 60, 114);
+            btnSaveQR.Cursor = Cursors.Hand;
+            btnSaveQR.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            btnSaveQR.Effect_1 = true;
+            btnSaveQR.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            btnSaveQR.Effect_1_Transparency = 25;
+            btnSaveQR.Effect_2 = true;
+            btnSaveQR.Effect_2_ColorBackground = Color.White;
+            btnSaveQR.Effect_2_Transparency = 20;
+            btnSaveQR.Font = new Font("Inter", 12.25F);
+            btnSaveQR.ForeColor = Color.FromArgb(245, 245, 245);
+            btnSaveQR.Lighting = false;
+            btnSaveQR.LinearGradient_Background = false;
+            btnSaveQR.LinearGradientPen = false;
+            btnSaveQR.Location = new Point(319, 667);
+            btnSaveQR.Name = "btnSaveQR";
+            btnSaveQR.PenWidth = 15;
+            btnSaveQR.Rounding = true;
+            btnSaveQR.RoundingInt = 70;
+            btnSaveQR.Size = new Size(311, 44);
+            btnSaveQR.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            btnSaveQR.TabIndex = 24;
+            btnSaveQR.Tag = "Cyber";
+            btnSaveQR.TextButton = "Save your QR Code";
+            btnSaveQR.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            btnSaveQR.Timer_Effect_1 = 5;
+            btnSaveQR.Timer_RGB = 300;
+            btnSaveQR.Visible = false;
+            btnSaveQR.Click += btnSaveQR_Click;
+            // 
             // QRCodeGeneratorform
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
             ClientSize = new Size(988, 739);
+            Controls.Add(btnSaveQR);
             Controls.Add(btnQRGenerate);
             Controls.Add(airButton1);
             Controls.Add(pbQRCode);
@@ -156,5 +201,6 @@
         private ContextMenuStrip cmxSave;
         private ToolStripMenuItem saveToolStripMenuItem;
         private Panel panel1;
+        private ReaLTaiizor.Controls.CyberButton btnSaveQR;
     }
 }

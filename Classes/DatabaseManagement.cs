@@ -41,6 +41,22 @@ namespace NEXUS.Classes
             }
         }
 
+        public static void SaveQrCode(int userID, string filePath)
+        {
+            string query = "UPDATE Accounts SET [QR Code] = ? WHERE ID = ?";
+
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            using (OleDbCommand cmd = new OleDbCommand(query, conn))
+            {
+                conn.Open();
+                cmd.Parameters.AddWithValue("?", filePath);
+                cmd.Parameters.AddWithValue("?", userID);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+
         public static OleDbConnection Connect()
         {
             try
