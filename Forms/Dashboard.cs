@@ -34,7 +34,7 @@ namespace NEXUS.Forms
             lblPoints.Text = currentPassenger.Points.ToString();
             pbProfilePicture.Image = Image.FromFile(currentPassenger.ProfilePicture);
         }
-     
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -283,6 +283,11 @@ namespace NEXUS.Forms
             Profile profile = new Profile(passenger.Username, passenger.UserType);
             Scan scan = new Scan(passenger.Username);
             scan.ShowOverlay(profile, null);
+        }
+
+        private void btnCashIn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

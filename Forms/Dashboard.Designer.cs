@@ -67,7 +67,7 @@
             cyberButton3 = new ReaLTaiizor.Controls.CyberButton();
             label4 = new Label();
             label5 = new Label();
-            cyberButton1 = new ReaLTaiizor.Controls.CyberButton();
+            btnCashIn = new ReaLTaiizor.Controls.CyberButton();
             lblBalance = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -406,7 +406,7 @@
             panel3.Controls.Add(cyberButton3);
             panel3.Controls.Add(label4);
             panel3.Controls.Add(label5);
-            panel3.Controls.Add(cyberButton1);
+            panel3.Controls.Add(btnCashIn);
             panel3.Controls.Add(lblBalance);
             panel3.Controls.Add(label2);
             panel3.Controls.Add(label3);
@@ -658,58 +658,59 @@
             label5.TabIndex = 39;
             label5.Text = "Transaction";
             // 
-            // cyberButton1
+            // btnCashIn
             // 
-            cyberButton1.Alpha = 20;
-            cyberButton1.BackColor = Color.Transparent;
-            cyberButton1.Background = true;
-            cyberButton1.Background_WidthPen = 4F;
-            cyberButton1.BackgroundPen = true;
-            cyberButton1.ColorBackground = Color.FromArgb(153, 229, 255);
-            cyberButton1.ColorBackground_1 = Color.FromArgb(153, 229, 255);
-            cyberButton1.ColorBackground_2 = Color.FromArgb(41, 63, 86);
-            cyberButton1.ColorBackground_Pen = Color.FromArgb(153, 229, 255);
-            cyberButton1.ColorLighting = Color.FromArgb(153, 229, 255);
-            cyberButton1.ColorPen_1 = Color.FromArgb(37, 52, 68);
-            cyberButton1.ColorPen_2 = Color.FromArgb(41, 63, 86);
-            cyberButton1.Cursor = Cursors.Hand;
-            cyberButton1.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            cyberButton1.Effect_1 = true;
-            cyberButton1.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
-            cyberButton1.Effect_1_Transparency = 25;
-            cyberButton1.Effect_2 = true;
-            cyberButton1.Effect_2_ColorBackground = Color.White;
-            cyberButton1.Effect_2_Transparency = 20;
-            cyberButton1.Font = new Font("Inter", 12F);
-            cyberButton1.ForeColor = Color.FromArgb(38, 36, 68);
-            cyberButton1.Lighting = false;
-            cyberButton1.LinearGradient_Background = false;
-            cyberButton1.LinearGradientPen = false;
-            cyberButton1.Location = new Point(183, 339);
-            cyberButton1.Name = "cyberButton1";
-            cyberButton1.PenWidth = 15;
-            cyberButton1.Rounding = true;
-            cyberButton1.RoundingInt = 70;
-            cyberButton1.Size = new Size(117, 43);
-            cyberButton1.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            cyberButton1.TabIndex = 37;
-            cyberButton1.Tag = "Cyber";
-            cyberButton1.TextButton = "+ Cash in";
-            cyberButton1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            cyberButton1.Timer_Effect_1 = 5;
-            cyberButton1.Timer_RGB = 300;
+            btnCashIn.Alpha = 20;
+            btnCashIn.BackColor = Color.Transparent;
+            btnCashIn.Background = true;
+            btnCashIn.Background_WidthPen = 4F;
+            btnCashIn.BackgroundPen = true;
+            btnCashIn.ColorBackground = Color.FromArgb(153, 229, 255);
+            btnCashIn.ColorBackground_1 = Color.FromArgb(153, 229, 255);
+            btnCashIn.ColorBackground_2 = Color.FromArgb(41, 63, 86);
+            btnCashIn.ColorBackground_Pen = Color.FromArgb(153, 229, 255);
+            btnCashIn.ColorLighting = Color.FromArgb(153, 229, 255);
+            btnCashIn.ColorPen_1 = Color.FromArgb(37, 52, 68);
+            btnCashIn.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            btnCashIn.Cursor = Cursors.Hand;
+            btnCashIn.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            btnCashIn.Effect_1 = true;
+            btnCashIn.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            btnCashIn.Effect_1_Transparency = 25;
+            btnCashIn.Effect_2 = true;
+            btnCashIn.Effect_2_ColorBackground = Color.White;
+            btnCashIn.Effect_2_Transparency = 20;
+            btnCashIn.Font = new Font("Inter", 12F);
+            btnCashIn.ForeColor = Color.FromArgb(38, 36, 68);
+            btnCashIn.Lighting = false;
+            btnCashIn.LinearGradient_Background = false;
+            btnCashIn.LinearGradientPen = false;
+            btnCashIn.Location = new Point(183, 339);
+            btnCashIn.Name = "btnCashIn";
+            btnCashIn.PenWidth = 15;
+            btnCashIn.Rounding = true;
+            btnCashIn.RoundingInt = 70;
+            btnCashIn.Size = new Size(117, 43);
+            btnCashIn.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            btnCashIn.TabIndex = 37;
+            btnCashIn.Tag = "Cyber";
+            btnCashIn.TextButton = "+ Cash in";
+            btnCashIn.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            btnCashIn.Timer_Effect_1 = 5;
+            btnCashIn.Timer_RGB = 300;
+            btnCashIn.Click += btnCashIn_Click;
             // 
             // lblBalance
             // 
-            lblBalance.AutoSize = true;
             lblBalance.BackColor = Color.FromArgb(38, 36, 68);
             lblBalance.Font = new Font("Inter", 32F, FontStyle.Bold);
             lblBalance.ForeColor = Color.White;
             lblBalance.Location = new Point(37, 254);
             lblBalance.Name = "lblBalance";
-            lblBalance.Size = new Size(177, 62);
+            lblBalance.Size = new Size(251, 62);
             lblBalance.TabIndex = 0;
             lblBalance.Text = "₱  0.00";
+            lblBalance.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label2
             // 
@@ -868,7 +869,7 @@
         private Label label2;
         private Label label3;
         private Label lblBalance;
-        private ReaLTaiizor.Controls.CyberButton cyberButton1;
+        private ReaLTaiizor.Controls.CyberButton btnCashIn;
         private ReaLTaiizor.Controls.CyberButton cyberButton2;
         private ReaLTaiizor.Controls.CyberButton cyberButton3;
         private Label label4;
