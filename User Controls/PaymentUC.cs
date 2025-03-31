@@ -7,19 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NEXUS.Classes;
 
 namespace NEXUS.User_Controls
 {
     public partial class PaymentUC : UserControl
     {
+        Driver currentDriver;
+        DatabaseManagement Databasemanagement;
         public PaymentUC(string qrInfo)
         {
             InitializeComponent();
+            DecodeQRCode(qrInfo);
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void DecodeQRCode(string QRInfo)
         {
-
+            int driverID = int.Parse(QRInfo);
+            this.currentDriver = Databasemanagement.GetUserInfoByID(driverID);
+            
         }
     }
 }

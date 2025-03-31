@@ -56,6 +56,44 @@ namespace NEXUS.Classes
             }
         }
 
+        public Driver GetUserInfoByID(int userID)
+        {
+            string query = "SELECT ID, Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Attachment, [Plate Number], [Profile Picture], Wallet, [QR Code], Route, Status " +
+                    "FROM Accounts WHERE ID = ?";
+
+
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            using (OleDbCommand cmd = new OleDbCommand(query, conn))
+            {
+                conn.Open();
+                cmd.Parameters.AddWithValue("?", userID);
+
+                using (OleDbDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        int UserID = reader.GetInt32(0);
+                        string username = reader.GetString(1);
+                        string password = reader.GetString(2);
+                        string fullName = reader.GetString(3);
+                        string email = reader.GetString(4);
+                        string gender = reader.GetString(5);
+                        string userType = reader.GetString(6);
+                        string birthday = reader.GetString(7);
+                        string attachment = reader.GetString(8);
+                        string plateNumber = reader.GetString(9);
+                        string profilepic = reader.GetString(10);
+                        double wallet = reader.IsDBNull(11) ? 0.0 : Convert.ToDouble(reader.GetValue(11));
+                        string qrcode = reader.IsDBNull(12) ? null : reader.GetString(12);
+                        string route = reader.IsDBNull(13) ? null : reader.GetString(13);
+                        string status = reader.IsDBNull(14) ? "Pending" : reader.GetString(14);
+
+                        return new Driver(UserID, fullName, email, username, password, gender, userType, birthday, attachment, plateNumber, profilepic, wallet, qrcode, route, status);
+                    }
+                }
+            }
+            return null;
+        }
 
         public static OleDbConnection Connect()
         {

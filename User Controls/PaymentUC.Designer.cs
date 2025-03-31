@@ -33,8 +33,13 @@
             tableLayoutPanel2 = new TableLayoutPanel();
             tableLayoutPanel3 = new TableLayoutPanel();
             pbDriverPicture = new PictureBox();
+            lblPlateNum = new Label();
+            lblDriverRoute = new Label();
+            lblDriverName = new Label();
+            lblDriverStatus = new Label();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
+            tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbDriverPicture).BeginInit();
             SuspendLayout();
             // 
@@ -56,7 +61,6 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
             tableLayoutPanel1.Size = new Size(700, 650);
             tableLayoutPanel1.TabIndex = 1;
-            tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
             // 
             // label2
             // 
@@ -78,6 +82,7 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 68.0851059F));
             tableLayoutPanel2.Controls.Add(tableLayoutPanel3, 1, 0);
             tableLayoutPanel2.Controls.Add(pbDriverPicture, 0, 0);
+            tableLayoutPanel2.Controls.Add(lblPlateNum, 0, 1);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(43, 72);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -92,6 +97,9 @@
             // 
             tableLayoutPanel3.ColumnCount = 1;
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel3.Controls.Add(lblDriverStatus, 0, 2);
+            tableLayoutPanel3.Controls.Add(lblDriverRoute, 0, 0);
+            tableLayoutPanel3.Controls.Add(lblDriverName, 0, 1);
             tableLayoutPanel3.Dock = DockStyle.Fill;
             tableLayoutPanel3.Location = new Point(197, 3);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -111,6 +119,60 @@
             pbDriverPicture.TabIndex = 1;
             pbDriverPicture.TabStop = false;
             // 
+            // lblPlateNum
+            // 
+            lblPlateNum.AutoSize = true;
+            lblPlateNum.Dock = DockStyle.Fill;
+            lblPlateNum.Font = new Font("Inter Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPlateNum.ForeColor = Color.FromArgb(24, 60, 114);
+            lblPlateNum.Location = new Point(3, 172);
+            lblPlateNum.Name = "lblPlateNum";
+            lblPlateNum.Size = new Size(188, 51);
+            lblPlateNum.TabIndex = 2;
+            lblPlateNum.Text = "Plate Number";
+            lblPlateNum.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblDriverRoute
+            // 
+            lblDriverRoute.AutoSize = true;
+            lblDriverRoute.Dock = DockStyle.Fill;
+            lblDriverRoute.Font = new Font("Inter", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDriverRoute.ForeColor = Color.FromArgb(24, 60, 114);
+            lblDriverRoute.Location = new Point(3, 0);
+            lblDriverRoute.Name = "lblDriverRoute";
+            lblDriverRoute.Size = new Size(405, 55);
+            lblDriverRoute.TabIndex = 3;
+            lblDriverRoute.Text = "Route";
+            lblDriverRoute.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblDriverName
+            // 
+            lblDriverName.AutoSize = true;
+            lblDriverName.Dock = DockStyle.Fill;
+            lblDriverName.Font = new Font("Inter Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDriverName.ForeColor = Color.FromArgb(24, 60, 114);
+            lblDriverName.Location = new Point(3, 55);
+            lblDriverName.Name = "lblDriverName";
+            lblDriverName.Padding = new Padding(15, 0, 0, 0);
+            lblDriverName.Size = new Size(405, 57);
+            lblDriverName.TabIndex = 4;
+            lblDriverName.Text = "Name";
+            lblDriverName.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // lblDriverStatus
+            // 
+            lblDriverStatus.AutoSize = true;
+            lblDriverStatus.Dock = DockStyle.Fill;
+            lblDriverStatus.Font = new Font("Inter Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDriverStatus.ForeColor = Color.FromArgb(24, 60, 114);
+            lblDriverStatus.Location = new Point(3, 112);
+            lblDriverStatus.Name = "lblDriverStatus";
+            lblDriverStatus.Padding = new Padding(15, 0, 0, 0);
+            lblDriverStatus.Size = new Size(405, 54);
+            lblDriverStatus.TabIndex = 5;
+            lblDriverStatus.Text = "Status";
+            lblDriverStatus.TextAlign = ContentAlignment.MiddleLeft;
+            // 
             // PaymentUC
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -121,6 +183,9 @@
             Size = new Size(700, 650);
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
+            tableLayoutPanel2.PerformLayout();
+            tableLayoutPanel3.ResumeLayout(false);
+            tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbDriverPicture).EndInit();
             ResumeLayout(false);
         }
@@ -132,5 +197,9 @@
         private TableLayoutPanel tableLayoutPanel2;
         private TableLayoutPanel tableLayoutPanel3;
         private PictureBox pbDriverPicture;
+        private Label lblPlateNum;
+        public Label lblDriverName;
+        public Label lblDriverRoute;
+        public Label lblDriverStatus;
     }
 }
