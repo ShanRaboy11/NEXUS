@@ -28,10 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            tableLayoutPanel1 = new TableLayoutPanel();
+            picCam = new PictureBox();
+            label2 = new Label();
+            tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picCam).BeginInit();
+            SuspendLayout();
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 3;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 617F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel1.Controls.Add(picCam, 1, 1);
+            tableLayoutPanel1.Controls.Add(label2, 1, 0);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 3;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 11.32812F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 88.67188F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel1.Size = new Size(700, 650);
+            tableLayoutPanel1.TabIndex = 1;
+            // 
+            // picCam
+            // 
+            picCam.Dock = DockStyle.Fill;
+            picCam.Location = new Point(43, 72);
+            picCam.Name = "picCam";
+            picCam.Size = new Size(611, 534);
+            picCam.SizeMode = PictureBoxSizeMode.Zoom;
+            picCam.TabIndex = 21;
+            picCam.TabStop = false;
+            // 
+            // label2
+            // 
+            label2.BackColor = Color.FromArgb(230, 249, 255);
+            label2.Dock = DockStyle.Fill;
+            label2.Font = new Font("Inter ExtraBold", 24F, FontStyle.Bold);
+            label2.ForeColor = Color.FromArgb(38, 36, 68);
+            label2.Location = new Point(43, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(611, 69);
+            label2.TabIndex = 20;
+            label2.Text = "PAYMENT SECTION";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // PaymentUC
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(230, 249, 255);
+            Controls.Add(tableLayoutPanel1);
+            Name = "PaymentUC";
+            Size = new Size(700, 650);
+            tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)picCam).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private TableLayoutPanel tableLayoutPanel1;
+        private PictureBox picCam;
+        private Label label2;
     }
 }

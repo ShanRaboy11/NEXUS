@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using AForge.Video;
 using AForge.Video.DirectShow;
@@ -13,6 +14,7 @@ namespace NEXUS.User_Controls
         private FilterInfoCollection videoDevices;
         private VideoCaptureDevice videoCaptureDevice;
         private Panel containerPanel;
+        private bool isProcessing = false; // Prevent multiple scans at once
 
         public QRScanUC(Panel pnlContainer)
         {
@@ -58,9 +60,11 @@ namespace NEXUS.User_Controls
             }
         }
 
-        private void ScanTimer_Tick(object sender, EventArgs e)
+        private async void ScanTimer_Tick(object sender, EventArgs e)
         {
-            if (picCam.Image == null) return;
+            if (picCam.Image == null || isProcessing) return;
+
+            isProcessing = true; // Prevent multiple scans at the same time
 
             using (Bitmap bitmap = new Bitmap(picCam.Image))
             {
@@ -74,8 +78,10 @@ namespace NEXUS.User_Controls
 
                 if (result != null && !string.IsNullOrEmpty(result.Text))
                 {
-                    StopCamera();
                     string decoded = result.Text.Trim();
+
+                    // Stop camera asynchronously to avoid UI freeze
+                    await Task.Run(() => StopCamera());
 
                     this.BeginInvoke(new Action(() =>
                     {
@@ -88,6 +94,8 @@ namespace NEXUS.User_Controls
                     }));
                 }
             }
+
+            isProcessing = false; // Allow scanning again if needed
         }
 
         private void StopCamera()
@@ -95,6 +103,7 @@ namespace NEXUS.User_Controls
             if (videoCaptureDevice != null && videoCaptureDevice.IsRunning)
             {
                 scanTimer?.Stop();
+                videoCaptureDevice.NewFrame -= FinalFrame_NewFrame; // Unsubscribe event
                 videoCaptureDevice.SignalToStop();
                 videoCaptureDevice.WaitForStop();
                 videoCaptureDevice = null;

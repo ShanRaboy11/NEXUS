@@ -30,8 +30,8 @@
         {
             components = new System.ComponentModel.Container();
             tableLayoutPanel1 = new TableLayoutPanel();
-            label2 = new Label();
             picCam = new PictureBox();
+            label2 = new Label();
             scanTimer = new System.Windows.Forms.Timer(components);
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picCam).BeginInit();
@@ -52,8 +52,18 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 11.32812F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 88.67188F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
-            tableLayoutPanel1.Size = new Size(700, 512);
+            tableLayoutPanel1.Size = new Size(700, 650);
             tableLayoutPanel1.TabIndex = 0;
+            // 
+            // picCam
+            // 
+            picCam.Dock = DockStyle.Fill;
+            picCam.Location = new Point(43, 72);
+            picCam.Name = "picCam";
+            picCam.Size = new Size(611, 534);
+            picCam.SizeMode = PictureBoxSizeMode.Zoom;
+            picCam.TabIndex = 21;
+            picCam.TabStop = false;
             // 
             // label2
             // 
@@ -63,19 +73,10 @@
             label2.ForeColor = Color.FromArgb(38, 36, 68);
             label2.Location = new Point(43, 0);
             label2.Name = "label2";
-            label2.Size = new Size(611, 53);
+            label2.Size = new Size(611, 69);
             label2.TabIndex = 20;
             label2.Text = "SCAN QR CODE";
             label2.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // picCam
-            // 
-            picCam.Dock = DockStyle.Fill;
-            picCam.Location = new Point(43, 56);
-            picCam.Name = "picCam";
-            picCam.Size = new Size(611, 412);
-            picCam.TabIndex = 21;
-            picCam.TabStop = false;
             // 
             // scanTimer
             // 
@@ -88,7 +89,7 @@
             BackColor = Color.FromArgb(230, 249, 255);
             Controls.Add(tableLayoutPanel1);
             Name = "QRScanUC";
-            Size = new Size(700, 512);
+            Size = new Size(700, 650);
             tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)picCam).EndInit();
             ResumeLayout(false);

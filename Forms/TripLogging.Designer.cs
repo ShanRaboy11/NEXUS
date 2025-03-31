@@ -105,7 +105,7 @@
             pnlContainerScan.Dock = DockStyle.Fill;
             pnlContainerScan.Location = new Point(0, 28);
             pnlContainerScan.Name = "pnlContainerScan";
-            pnlContainerScan.Size = new Size(700, 512);
+            pnlContainerScan.Size = new Size(700, 650);
             pnlContainerScan.TabIndex = 19;
             // 
             // TripLogging
@@ -113,7 +113,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
-            ClientSize = new Size(700, 540);
+            ClientSize = new Size(700, 678);
             Controls.Add(pnlContainerScan);
             Controls.Add(panel2);
             FormBorderStyle = FormBorderStyle.None;
