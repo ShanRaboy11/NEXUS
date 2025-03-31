@@ -23,9 +23,14 @@ namespace NEXUS.User_Controls
 
         private void DecodeQRCode(string QRInfo)
         {
-            int driverID = int.Parse(QRInfo);
-            this.currentDriver = Databasemanagement.GetUserInfoByID(driverID);
-            
+            //int driverID = int.Parse(QRInfo);
+            //this.currentDriver = Databasemanagement.GetUserInfoByID(driverID);
+
+        }
+
+        private void tableLayoutPanel5_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
