@@ -3,6 +3,26 @@
   "WorkspaceRootPath": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|c:\\users\\shan michael\\source\\repos\\nexus\\user controls\\qrscanuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:user controls\\qrscanuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|c:\\users\\shan michael\\source\\repos\\nexus\\user controls\\qrscanuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:user controls\\qrscanuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\user controls\\paymentuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:user controls\\paymentuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|c:\\users\\shan michael\\source\\repos\\nexus\\forms\\qrscannerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:forms\\qrscannerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|c:\\users\\shan michael\\source\\repos\\nexus\\user controls\\paymentuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:user controls\\paymentuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\forms\\triplogging.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:forms\\triplogging.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
@@ -11,32 +31,12 @@
       "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:forms\\triplogging.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|c:\\users\\shan michael\\source\\repos\\nexus\\user controls\\qrscanuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:user controls\\qrscanuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\user controls\\paymentuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:user controls\\paymentuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|c:\\users\\shan michael\\source\\repos\\nexus\\user controls\\paymentuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:user controls\\paymentuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\user controls\\reportsadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:user controls\\reportsadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|c:\\users\\shan michael\\source\\repos\\nexus\\user controls\\qrscanuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:user controls\\qrscanuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\forms\\driverdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:forms\\driverdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|c:\\users\\shan michael\\source\\repos\\nexus\\forms\\qrscannerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:forms\\qrscannerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|c:\\users\\shan michael\\source\\repos\\nexus\\forms\\scan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -178,7 +178,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 16,
+          "SelectedChildIndex": 14,
           "Children": [
             {
               "$type": "Document",
@@ -301,26 +301,25 @@
               "RelativeDocumentMoniker": "User Controls\\PaymentUC.cs",
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\PaymentUC.cs",
               "RelativeToolTip": "User Controls\\PaymentUC.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAYAAAA",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAMwBUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-31T11:23:05.743Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "PaymentUC.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\PaymentUC.cs",
               "RelativeDocumentMoniker": "User Controls\\PaymentUC.cs",
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\PaymentUC.cs [Design]",
               "RelativeToolTip": "User Controls\\PaymentUC.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T11:22:38.737Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-03-31T11:22:38.737Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 3,
               "Title": "QRScannerForm.cs",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\QRScannerForm.cs",
               "RelativeDocumentMoniker": "Forms\\QRScannerForm.cs",
@@ -328,12 +327,11 @@
               "RelativeToolTip": "Forms\\QRScannerForm.cs",
               "ViewState": "AQIAADYAAAAAAAAAAAAuwFQAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T11:19:22.267Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T11:19:22.267Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "QRScanUC.cs",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\QRScanUC.cs",
               "RelativeDocumentMoniker": "User Controls\\QRScanUC.cs",
@@ -346,7 +344,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "QRScanUC.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\QRScanUC.cs",
               "RelativeDocumentMoniker": "User Controls\\QRScanUC.cs",
@@ -358,7 +356,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "TripLogging.cs",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\TripLogging.cs",
               "RelativeDocumentMoniker": "Forms\\TripLogging.cs",
@@ -371,15 +369,14 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "TripLogging.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\TripLogging.cs",
               "RelativeDocumentMoniker": "Forms\\TripLogging.cs",
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\TripLogging.cs [Design]",
               "RelativeToolTip": "Forms\\TripLogging.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T11:03:27.295Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-03-31T11:03:27.295Z"
             },
             {
               "$type": "Document",
@@ -419,15 +416,14 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "DriverDashboard.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\DriverDashboard.cs",
               "RelativeDocumentMoniker": "Forms\\DriverDashboard.cs",
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\DriverDashboard.cs [Design]",
               "RelativeToolTip": "Forms\\DriverDashboard.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T06:11:54.242Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-03-30T06:11:54.242Z"
             },
             {
               "$type": "Document",
@@ -541,15 +537,14 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "ReportsAdmin.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\ReportsAdmin.cs",
               "RelativeDocumentMoniker": "User Controls\\ReportsAdmin.cs",
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\ReportsAdmin.cs [Design]",
               "RelativeToolTip": "User Controls\\ReportsAdmin.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T15:26:19.041Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-03-26T15:26:19.041Z"
             },
             {
               "$type": "Document",

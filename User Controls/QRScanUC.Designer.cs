@@ -43,24 +43,25 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 40F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 617F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 40F));
-            tableLayoutPanel1.Controls.Add(picCam, 1, 1);
-            tableLayoutPanel1.Controls.Add(label2, 1, 0);
+            tableLayoutPanel1.Controls.Add(picCam, 1, 2);
+            tableLayoutPanel1.Controls.Add(label2, 1, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 3;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 11.32812F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 88.67188F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel1.RowCount = 4;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 64F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 36F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 458F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 51F));
             tableLayoutPanel1.Size = new Size(700, 650);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // picCam
             // 
             picCam.Dock = DockStyle.Fill;
-            picCam.Location = new Point(43, 72);
+            picCam.Location = new Point(43, 143);
             picCam.Name = "picCam";
-            picCam.Size = new Size(611, 534);
+            picCam.Size = new Size(611, 452);
             picCam.SizeMode = PictureBoxSizeMode.Zoom;
             picCam.TabIndex = 21;
             picCam.TabStop = false;
@@ -71,9 +72,9 @@
             label2.Dock = DockStyle.Fill;
             label2.Font = new Font("Inter ExtraBold", 24F, FontStyle.Bold);
             label2.ForeColor = Color.FromArgb(38, 36, 68);
-            label2.Location = new Point(43, 0);
+            label2.Location = new Point(43, 90);
             label2.Name = "label2";
-            label2.Size = new Size(611, 69);
+            label2.Size = new Size(611, 50);
             label2.TabIndex = 20;
             label2.Text = "SCAN QR CODE";
             label2.TextAlign = ContentAlignment.MiddleCenter;
