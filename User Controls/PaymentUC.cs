@@ -28,7 +28,7 @@ namespace NEXUS.User_Controls
 
         }
 
-        private void tableLayoutPanel5_Paint(object sender, PaintEventArgs e)
+        private void btnPay_Click(object sender, EventArgs e)
         {
 
         }

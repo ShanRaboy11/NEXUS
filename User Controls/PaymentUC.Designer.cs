@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaymentUC));
             tableLayoutPanel1 = new TableLayoutPanel();
             label2 = new Label();
+            tableLayoutPanel4 = new TableLayoutPanel();
+            lblDateTime = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
             lblDriverRoute = new Label();
             tableLayoutPanel3 = new TableLayoutPanel();
@@ -38,14 +41,23 @@
             lblDriverName = new Label();
             lblPlateNum = new Label();
             pbDriverPicture = new PictureBox();
-            tableLayoutPanel4 = new TableLayoutPanel();
             tableLayoutPanel5 = new TableLayoutPanel();
-            lblDateTime = new Label();
+            btnPay = new ReaLTaiizor.Controls.CyberButton();
+            panel1 = new Panel();
+            comboBox1 = new ComboBox();
+            cmbxNature = new ComboBox();
+            pictureBox1 = new PictureBox();
+            panel2 = new Panel();
+            lblAmount = new Label();
             tableLayoutPanel1.SuspendLayout();
+            tableLayoutPanel4.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbDriverPicture).BeginInit();
-            tableLayoutPanel4.SuspendLayout();
+            tableLayoutPanel5.SuspendLayout();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -79,6 +91,37 @@
             label2.TabIndex = 20;
             label2.Text = "PAYMENT SECTION";
             label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel4
+            // 
+            tableLayoutPanel4.ColumnCount = 1;
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel4.Controls.Add(lblDateTime, 0, 1);
+            tableLayoutPanel4.Controls.Add(tableLayoutPanel2, 0, 0);
+            tableLayoutPanel4.Controls.Add(tableLayoutPanel5, 0, 2);
+            tableLayoutPanel4.Dock = DockStyle.Fill;
+            tableLayoutPanel4.Location = new Point(43, 72);
+            tableLayoutPanel4.Name = "tableLayoutPanel4";
+            tableLayoutPanel4.RowCount = 3;
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 86.31179F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 13.6882133F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 270F));
+            tableLayoutPanel4.Size = new Size(611, 534);
+            tableLayoutPanel4.TabIndex = 25;
+            // 
+            // lblDateTime
+            // 
+            lblDateTime.AutoSize = true;
+            lblDateTime.BackColor = Color.FromArgb(230, 249, 255);
+            lblDateTime.Dock = DockStyle.Fill;
+            lblDateTime.Font = new Font("Inter SemiBold", 16.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDateTime.ForeColor = Color.FromArgb(38, 36, 68);
+            lblDateTime.Location = new Point(3, 227);
+            lblDateTime.Name = "lblDateTime";
+            lblDateTime.Size = new Size(605, 36);
+            lblDateTime.TabIndex = 24;
+            lblDateTime.Text = "DATE";
+            lblDateTime.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel2
             // 
@@ -201,50 +244,137 @@
             pbDriverPicture.TabIndex = 1;
             pbDriverPicture.TabStop = false;
             // 
-            // tableLayoutPanel4
-            // 
-            tableLayoutPanel4.ColumnCount = 1;
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel4.Controls.Add(lblDateTime, 0, 1);
-            tableLayoutPanel4.Controls.Add(tableLayoutPanel2, 0, 0);
-            tableLayoutPanel4.Controls.Add(tableLayoutPanel5, 0, 2);
-            tableLayoutPanel4.Dock = DockStyle.Fill;
-            tableLayoutPanel4.Location = new Point(43, 72);
-            tableLayoutPanel4.Name = "tableLayoutPanel4";
-            tableLayoutPanel4.RowCount = 3;
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 86.31179F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 13.6882133F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 270F));
-            tableLayoutPanel4.Size = new Size(611, 534);
-            tableLayoutPanel4.TabIndex = 25;
-            // 
             // tableLayoutPanel5
             // 
-            tableLayoutPanel5.ColumnCount = 2;
+            tableLayoutPanel5.ColumnCount = 1;
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel5.Controls.Add(panel1, 0, 0);
+            tableLayoutPanel5.Controls.Add(panel2, 0, 1);
             tableLayoutPanel5.Dock = DockStyle.Fill;
             tableLayoutPanel5.Location = new Point(3, 266);
             tableLayoutPanel5.Name = "tableLayoutPanel5";
             tableLayoutPanel5.RowCount = 2;
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 59.24528F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 40.75472F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel5.Size = new Size(605, 265);
             tableLayoutPanel5.TabIndex = 23;
             // 
-            // lblDateTime
+            // btnPay
             // 
-            lblDateTime.AutoSize = true;
-            lblDateTime.BackColor = Color.FromArgb(230, 249, 255);
-            lblDateTime.Dock = DockStyle.Fill;
-            lblDateTime.Font = new Font("Inter SemiBold", 16.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblDateTime.ForeColor = Color.FromArgb(38, 36, 68);
-            lblDateTime.Location = new Point(3, 227);
-            lblDateTime.Name = "lblDateTime";
-            lblDateTime.Size = new Size(605, 36);
-            lblDateTime.TabIndex = 24;
-            lblDateTime.Text = "DATE";
-            lblDateTime.TextAlign = ContentAlignment.MiddleCenter;
+            btnPay.Alpha = 20;
+            btnPay.BackColor = Color.Transparent;
+            btnPay.Background = true;
+            btnPay.Background_WidthPen = 4F;
+            btnPay.BackgroundPen = true;
+            btnPay.ColorBackground = Color.FromArgb(24, 60, 114);
+            btnPay.ColorBackground_1 = Color.FromArgb(24, 60, 114);
+            btnPay.ColorBackground_2 = Color.FromArgb(24, 60, 114);
+            btnPay.ColorBackground_Pen = Color.FromArgb(153, 229, 255);
+            btnPay.ColorLighting = Color.FromArgb(24, 60, 114);
+            btnPay.ColorPen_1 = Color.FromArgb(24, 60, 114);
+            btnPay.ColorPen_2 = Color.FromArgb(24, 60, 114);
+            btnPay.Cursor = Cursors.Hand;
+            btnPay.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            btnPay.Effect_1 = true;
+            btnPay.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            btnPay.Effect_1_Transparency = 25;
+            btnPay.Effect_2 = true;
+            btnPay.Effect_2_ColorBackground = Color.White;
+            btnPay.Effect_2_Transparency = 20;
+            btnPay.Font = new Font("Inter", 12.25F);
+            btnPay.ForeColor = Color.FromArgb(245, 245, 245);
+            btnPay.Lighting = false;
+            btnPay.LinearGradient_Background = false;
+            btnPay.LinearGradientPen = false;
+            btnPay.Location = new Point(472, 51);
+            btnPay.Name = "btnPay";
+            btnPay.PenWidth = 15;
+            btnPay.Rounding = true;
+            btnPay.RoundingInt = 70;
+            btnPay.Size = new Size(132, 51);
+            btnPay.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            btnPay.TabIndex = 34;
+            btnPay.Tag = "Cyber";
+            btnPay.TextButton = "Confirm";
+            btnPay.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            btnPay.Timer_Effect_1 = 5;
+            btnPay.Timer_RGB = 300;
+            btnPay.Click += btnPay_Click;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(comboBox1);
+            panel1.Controls.Add(cmbxNature);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(3, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(599, 151);
+            panel1.TabIndex = 27;
+            // 
+            // comboBox1
+            // 
+            comboBox1.BackColor = Color.White;
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.Font = new Font("Inter", 12.25F);
+            comboBox1.ForeColor = Color.FromArgb(24, 60, 114);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Traffic Accident", "Mechanical Breakdown", "Theft", "Lost", "Assaults", "Sexual Harassment" });
+            comboBox1.Location = new Point(406, 102);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(179, 31);
+            comboBox1.TabIndex = 29;
+            comboBox1.TabStop = false;
+            // 
+            // cmbxNature
+            // 
+            cmbxNature.BackColor = Color.White;
+            cmbxNature.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbxNature.Font = new Font("Inter", 12.25F);
+            cmbxNature.ForeColor = Color.FromArgb(24, 60, 114);
+            cmbxNature.FormattingEnabled = true;
+            cmbxNature.Items.AddRange(new object[] { "Traffic Accident", "Mechanical Breakdown", "Theft", "Lost", "Assaults", "Sexual Harassment" });
+            cmbxNature.Location = new Point(15, 102);
+            cmbxNature.Name = "cmbxNature";
+            cmbxNature.Size = new Size(179, 31);
+            cmbxNature.TabIndex = 28;
+            cmbxNature.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(599, 151);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(lblAmount);
+            panel2.Controls.Add(btnPay);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(3, 160);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(599, 102);
+            panel2.TabIndex = 26;
+            // 
+            // lblAmount
+            // 
+            lblAmount.AutoSize = true;
+            lblAmount.BackColor = Color.FromArgb(230, 249, 255);
+            lblAmount.Dock = DockStyle.Left;
+            lblAmount.Font = new Font("Inter", 39.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAmount.ForeColor = Color.FromArgb(38, 36, 68);
+            lblAmount.Location = new Point(0, 0);
+            lblAmount.Name = "lblAmount";
+            lblAmount.Size = new Size(145, 76);
+            lblAmount.TabIndex = 35;
+            lblAmount.Text = "Php ";
+            lblAmount.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // PaymentUC
             // 
@@ -255,13 +385,18 @@
             Name = "PaymentUC";
             Size = new Size(700, 650);
             tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel4.ResumeLayout(false);
+            tableLayoutPanel4.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
             tableLayoutPanel3.ResumeLayout(false);
             tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbDriverPicture).EndInit();
-            tableLayoutPanel4.ResumeLayout(false);
-            tableLayoutPanel4.PerformLayout();
+            tableLayoutPanel5.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -280,5 +415,12 @@
         private TableLayoutPanel tableLayoutPanel4;
         private TableLayoutPanel tableLayoutPanel5;
         public Label lblDateTime;
+        private PictureBox pictureBox1;
+        private Panel panel1;
+        private ComboBox comboBox1;
+        private ComboBox cmbxNature;
+        private ReaLTaiizor.Controls.CyberButton btnPay;
+        private Panel panel2;
+        public Label lblAmount;
     }
 }
