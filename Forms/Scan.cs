@@ -13,8 +13,10 @@ namespace NEXUS.Forms
 {
     public partial class Scan : Form
     {
-        public Scan(string currentUser)
+        public int userID;
+        public Scan(int UserID)
         {
+            this.userID = UserID;
             InitializeComponent();
         }
 
@@ -50,9 +52,10 @@ namespace NEXUS.Forms
         
         private void btnOpenQRScan_Click(object sender, EventArgs e)
         {
-            QRScannerForm qRScannerForm = new QRScannerForm();
-            ShowOverlay(qRScannerForm, null);
-            qRScannerForm.FormClosed += (s, args) => this.Show();
+            //QRScannerForm qRScannerForm = new QRScannerForm();
+            TripLogging tripLogging = new TripLogging(userID);
+            ShowOverlay(tripLogging, null);
+            tripLogging.FormClosed += (s, args) => this.Show();
         }
 
         private void btnUploadQR_Click(object sender, EventArgs e)

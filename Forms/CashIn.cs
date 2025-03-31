@@ -63,7 +63,7 @@ namespace NEXUS.Forms
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             Message message = new Message("cash in");
-            Scan scan = new Scan(null);
+            Scan scan = new Scan(0);
 
             double amount = double.Parse(tbxAmount.Text);
             DatabaseManagement.CashInLoad(this.userID, this.Name, amount);

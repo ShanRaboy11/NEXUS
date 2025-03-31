@@ -79,7 +79,7 @@ namespace NEXUS.Forms
         private void pbAbout_Click(object sender, EventArgs e)
         {
             About about = new About();
-            Scan scan = new Scan("admin");
+            Scan scan = new Scan(0);
 
             scan.ShowOverlay(about, null);
             about.FormClosed += (s, args) => this.Show();

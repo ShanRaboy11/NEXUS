@@ -182,7 +182,7 @@ namespace NEXUS.User_Controls
 
         private void DisplayAttachment(string fileName)
         {
-            Scan scan = new Scan(null);
+            Scan scan = new Scan(0);
             if (string.IsNullOrEmpty(fileName))
             {
                 MessageBox.Show("No attachment found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);

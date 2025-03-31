@@ -12,7 +12,7 @@ namespace NEXUS.Forms
 {
     public partial class DisplayImage : Form
     {
-        Scan scan = new Scan(null);
+        Scan scan = new Scan(0);
         public DisplayImage(Image image,string message)
         {
             InitializeComponent();

@@ -154,7 +154,7 @@ namespace NEXUS.Forms
         private void btnSaveQR_Click(object sender, EventArgs e)
         {
             QRCodeManager qrManager = new QRCodeManager();
-            Scan scan = new Scan(null);
+            Scan scan = new Scan(0);
             DialogBox dialogBox = new DialogBox();
             string filePath = qrManager.SaveQrCode(pbQRCode.Image, UserID);
 

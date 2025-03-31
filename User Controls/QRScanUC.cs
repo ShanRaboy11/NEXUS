@@ -1,47 +1,25 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 using AForge.Video;
 using AForge.Video.DirectShow;
-using Microsoft.Win32;
 using ZXing;
 using ZXing.Windows.Compatibility;
 
-namespace NEXUS.Forms
+namespace NEXUS.User_Controls
 {
-    public partial class QRScannerForm : Form
+    public partial class QRScanUC : UserControl
     {
-        //Dashboard dashboardFrom = new Dashboard();
-        private VideoCaptureDevice videoCaptureDevice;
         private FilterInfoCollection videoDevices;
-        private Dashboard dashboard;
-        
+        private VideoCaptureDevice videoCaptureDevice;
+        private Panel containerPanel;
 
-        //Dashboard dashboardRef
-        public QRScannerForm()
+        public QRScanUC(Panel pnlContainer)
         {
             InitializeComponent();
+            containerPanel = pnlContainer;
             InitializeCamera();
-            //this.dashboard = dashboardRef;
-        }
-
-        private void Maximize(object sender, EventArgs e)
-        {
-            if (WindowState == FormWindowState.Normal)
-                this.WindowState = FormWindowState.Maximized;
-            else
-                this.WindowState = FormWindowState.Normal;
-        }
-
-        private void Minimize(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void Close(object sender, EventArgs e)
-        {
-            this.Close();
+            this.Disposed += QRScanUC_Disposed;
         }
 
         private void InitializeCamera()
@@ -55,7 +33,7 @@ namespace NEXUS.Forms
                 try
                 {
                     videoCaptureDevice.Start();
-                    scanTimer.Start(); 
+                    scanTimer.Start();
                 }
                 catch (Exception ex)
                 {
@@ -70,22 +48,18 @@ namespace NEXUS.Forms
 
         private void FinalFrame_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
-            if (picCam == null || picCam.IsDisposed)
-                StopCamera();
-
             if (picCam.InvokeRequired)
             {
-                picCam.Invoke(new MethodInvoker(delegate { picCam.Image = (Bitmap)eventArgs.Frame.Clone(); }));
+                picCam.Invoke(new MethodInvoker(() => picCam.Image = (Bitmap)eventArgs.Frame.Clone()));
             }
             else
             {
                 picCam.Image = (Bitmap)eventArgs.Frame.Clone();
             }
         }
-        Scan scan = new Scan(0);
-        private void scanTimer_Tick(object sender, EventArgs e)
+
+        private void ScanTimer_Tick(object sender, EventArgs e)
         {
-            
             if (picCam.Image == null) return;
 
             using (Bitmap bitmap = new Bitmap(picCam.Image))
@@ -100,16 +74,17 @@ namespace NEXUS.Forms
 
                 if (result != null && !string.IsNullOrEmpty(result.Text))
                 {
-                    StopCamera(); 
+                    StopCamera();
                     string decoded = result.Text.Trim();
 
                     this.BeginInvoke(new Action(() =>
                     {
-                        this.Hide(); 
-                        PaymentForm paymentForm = new PaymentForm(decoded);
-                        //paymentForm.Show();
-                        scan.ShowOverlay(paymentForm, null);
-                        this.Close(); // Close properly to prevent freezing
+                        containerPanel.Controls.Clear();
+                        PaymentUC paymentUC = new PaymentUC(decoded)
+                        {
+                            Dock = DockStyle.Fill
+                        };
+                        containerPanel.Controls.Add(paymentUC);
                     }));
                 }
             }
@@ -119,28 +94,16 @@ namespace NEXUS.Forms
         {
             if (videoCaptureDevice != null && videoCaptureDevice.IsRunning)
             {
-                scanTimer.Stop();
+                scanTimer?.Stop();
                 videoCaptureDevice.SignalToStop();
                 videoCaptureDevice.WaitForStop();
                 videoCaptureDevice = null;
             }
         }
 
-        private void QRScannerForm_FormClosing(object sender, FormClosingEventArgs e)
+        private void QRScanUC_Disposed(object sender, EventArgs e)
         {
-            if (videoCaptureDevice != null && videoCaptureDevice.IsRunning)
-            {
-                videoCaptureDevice.SignalToStop();
-                videoCaptureDevice.WaitForStop();
-            }
-        }
-
-        private void pbClose_Click(object sender, EventArgs e)
-        {
-            FormClosingEventArgs args = new FormClosingEventArgs(CloseReason.UserClosing, false);
-            QRScannerForm_FormClosing(this, args);
-
-            this.Close();
+            StopCamera();
         }
     }
 }

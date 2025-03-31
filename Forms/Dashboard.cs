@@ -66,7 +66,7 @@ namespace NEXUS.Forms
         private void pbAbout_Click(object sender, EventArgs e)
         {
             About about = new About();
-            Scan scan = new Scan(passenger.Username);
+            Scan scan = new Scan(passenger.UserID);
 
             scan.ShowOverlay(about, null);
             about.FormClosed += (s, args) => this.Show();
@@ -75,7 +75,7 @@ namespace NEXUS.Forms
 
         private void btnScan_Click(object sender, EventArgs e)
         {
-            Scan scan = new Scan(passenger.Username);
+            Scan scan = new Scan(passenger.UserID);
             OpenChildForm(scan);
             SelectButton(btnScan);
         }
@@ -272,7 +272,7 @@ namespace NEXUS.Forms
         private void pbWheelPoints_Click(object sender, EventArgs e)
         {
             WheelTokens wheelTokens = new WheelTokens();
-            Scan scan = new Scan(passenger.Username);
+            Scan scan = new Scan(passenger.UserID);
             scan.ShowOverlay(wheelTokens, null);
             wheelTokens.FormClosed += (s, args) => this.Show();
             wheelTokens.Owner = this;
@@ -281,14 +281,14 @@ namespace NEXUS.Forms
         private void pbProfile_Click(object sender, EventArgs e)
         {
             Profile profile = new Profile(passenger.Username, passenger.UserType);
-            Scan scan = new Scan(passenger.Username);
+            Scan scan = new Scan(passenger.UserID);
             scan.ShowOverlay(profile, null);
         }
 
         private void btnCashIn_Click(object sender, EventArgs e)
         {
             CashIn cashIn = new CashIn(passenger.UserID, passenger.Name);
-            Scan scan = new Scan(passenger.Username);
+            Scan scan = new Scan(passenger.UserID);
             scan.ShowOverlay(cashIn, null);
         }
     }

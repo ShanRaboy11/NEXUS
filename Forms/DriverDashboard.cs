@@ -60,7 +60,7 @@ namespace NEXUS.Forms
         private void pbAbout_Click(object sender, EventArgs e)
         {
             About about = new About();
-            Scan scan = new Scan(driver.Username);
+            Scan scan = new Scan(driver.UserID);
 
             scan.ShowOverlay(about, null);
             about.FormClosed += (s, args) => this.Show();
@@ -256,7 +256,7 @@ namespace NEXUS.Forms
         private void pbProfile1_Click(object sender, EventArgs e)
         {
             Profile profile = new Profile(driver.Username, driver.UserType);
-            Scan scan = new Scan(driver.Username);
+            Scan scan = new Scan(driver.UserID);
 
             scan.ShowOverlay(profile, null);
         }
