@@ -42,12 +42,12 @@
             lblPlateNum = new Label();
             pbDriverPicture = new PictureBox();
             tableLayoutPanel5 = new TableLayoutPanel();
-            btnPay = new ReaLTaiizor.Controls.CyberButton();
             panel1 = new Panel();
-            comboBox1 = new ComboBox();
-            cmbxNature = new ComboBox();
+            cmbxDestination = new ComboBox();
+            cmbxLocation = new ComboBox();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
+            btnPay = new ReaLTaiizor.Controls.CyberButton();
             lblAmount = new Label();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel4.SuspendLayout();
@@ -75,7 +75,7 @@
             tableLayoutPanel1.RowCount = 3;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 11.32812F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 88.67188F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 12F));
             tableLayoutPanel1.Size = new Size(700, 650);
             tableLayoutPanel1.TabIndex = 1;
             // 
@@ -87,7 +87,7 @@
             label2.ForeColor = Color.FromArgb(38, 36, 68);
             label2.Location = new Point(43, 0);
             label2.Name = "label2";
-            label2.Size = new Size(611, 69);
+            label2.Size = new Size(611, 72);
             label2.TabIndex = 20;
             label2.Text = "PAYMENT SECTION";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -100,13 +100,13 @@
             tableLayoutPanel4.Controls.Add(tableLayoutPanel2, 0, 0);
             tableLayoutPanel4.Controls.Add(tableLayoutPanel5, 0, 2);
             tableLayoutPanel4.Dock = DockStyle.Fill;
-            tableLayoutPanel4.Location = new Point(43, 72);
+            tableLayoutPanel4.Location = new Point(43, 75);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
             tableLayoutPanel4.RowCount = 3;
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 86.31179F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 13.6882133F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 270F));
-            tableLayoutPanel4.Size = new Size(611, 534);
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 84.55882F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 15.4411764F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 286F));
+            tableLayoutPanel4.Size = new Size(611, 559);
             tableLayoutPanel4.TabIndex = 25;
             // 
             // lblDateTime
@@ -116,9 +116,9 @@
             lblDateTime.Dock = DockStyle.Fill;
             lblDateTime.Font = new Font("Inter SemiBold", 16.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblDateTime.ForeColor = Color.FromArgb(38, 36, 68);
-            lblDateTime.Location = new Point(3, 227);
+            lblDateTime.Location = new Point(3, 230);
             lblDateTime.Name = "lblDateTime";
-            lblDateTime.Size = new Size(605, 36);
+            lblDateTime.Size = new Size(605, 42);
             lblDateTime.TabIndex = 24;
             lblDateTime.Text = "DATE";
             lblDateTime.TextAlign = ContentAlignment.MiddleCenter;
@@ -139,7 +139,7 @@
             tableLayoutPanel2.RowCount = 2;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 77.13004F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 22.8699551F));
-            tableLayoutPanel2.Size = new Size(605, 221);
+            tableLayoutPanel2.Size = new Size(605, 224);
             tableLayoutPanel2.TabIndex = 22;
             // 
             // lblDriverRoute
@@ -149,10 +149,10 @@
             lblDriverRoute.Dock = DockStyle.Fill;
             lblDriverRoute.Font = new Font("Inter Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblDriverRoute.ForeColor = Color.FromArgb(24, 60, 114);
-            lblDriverRoute.Location = new Point(196, 170);
+            lblDriverRoute.Location = new Point(196, 172);
             lblDriverRoute.Name = "lblDriverRoute";
             lblDriverRoute.Padding = new Padding(15, 0, 0, 0);
-            lblDriverRoute.Size = new Size(406, 51);
+            lblDriverRoute.Size = new Size(406, 52);
             lblDriverRoute.TabIndex = 6;
             lblDriverRoute.Text = "Route";
             lblDriverRoute.TextAlign = ContentAlignment.MiddleLeft;
@@ -173,7 +173,7 @@
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 50.8928566F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 54F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel3.Size = new Size(406, 164);
+            tableLayoutPanel3.Size = new Size(406, 166);
             tableLayoutPanel3.TabIndex = 0;
             // 
             // lblDriverStatus
@@ -183,10 +183,10 @@
             lblDriverStatus.Dock = DockStyle.Fill;
             lblDriverStatus.Font = new Font("Inter Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblDriverStatus.ForeColor = Color.FromArgb(24, 60, 114);
-            lblDriverStatus.Location = new Point(3, 109);
+            lblDriverStatus.Location = new Point(3, 112);
             lblDriverStatus.Name = "lblDriverStatus";
             lblDriverStatus.Padding = new Padding(15, 0, 0, 0);
-            lblDriverStatus.Size = new Size(400, 55);
+            lblDriverStatus.Size = new Size(400, 54);
             lblDriverStatus.TabIndex = 5;
             lblDriverStatus.Text = "Status";
             lblDriverStatus.TextAlign = ContentAlignment.MiddleLeft;
@@ -200,7 +200,7 @@
             lbl.ForeColor = Color.FromArgb(24, 60, 114);
             lbl.Location = new Point(3, 0);
             lbl.Name = "lbl";
-            lbl.Size = new Size(400, 54);
+            lbl.Size = new Size(400, 55);
             lbl.TabIndex = 3;
             lbl.Text = "DRIVER";
             lbl.TextAlign = ContentAlignment.MiddleCenter;
@@ -212,10 +212,10 @@
             lblDriverName.Dock = DockStyle.Fill;
             lblDriverName.Font = new Font("Inter Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblDriverName.ForeColor = Color.FromArgb(24, 60, 114);
-            lblDriverName.Location = new Point(3, 54);
+            lblDriverName.Location = new Point(3, 55);
             lblDriverName.Name = "lblDriverName";
             lblDriverName.Padding = new Padding(15, 0, 0, 0);
-            lblDriverName.Size = new Size(400, 55);
+            lblDriverName.Size = new Size(400, 57);
             lblDriverName.TabIndex = 4;
             lblDriverName.Text = "Name";
             lblDriverName.TextAlign = ContentAlignment.MiddleLeft;
@@ -227,9 +227,9 @@
             lblPlateNum.Dock = DockStyle.Fill;
             lblPlateNum.Font = new Font("Inter Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblPlateNum.ForeColor = Color.FromArgb(24, 60, 114);
-            lblPlateNum.Location = new Point(3, 170);
+            lblPlateNum.Location = new Point(3, 172);
             lblPlateNum.Name = "lblPlateNum";
-            lblPlateNum.Size = new Size(187, 51);
+            lblPlateNum.Size = new Size(187, 52);
             lblPlateNum.TabIndex = 2;
             lblPlateNum.Text = "Plate Number";
             lblPlateNum.TextAlign = ContentAlignment.MiddleCenter;
@@ -239,7 +239,7 @@
             pbDriverPicture.Dock = DockStyle.Fill;
             pbDriverPicture.Location = new Point(3, 3);
             pbDriverPicture.Name = "pbDriverPicture";
-            pbDriverPicture.Size = new Size(187, 164);
+            pbDriverPicture.Size = new Size(187, 166);
             pbDriverPicture.SizeMode = PictureBoxSizeMode.Zoom;
             pbDriverPicture.TabIndex = 1;
             pbDriverPicture.TabStop = false;
@@ -251,14 +251,74 @@
             tableLayoutPanel5.Controls.Add(panel1, 0, 0);
             tableLayoutPanel5.Controls.Add(panel2, 0, 1);
             tableLayoutPanel5.Dock = DockStyle.Fill;
-            tableLayoutPanel5.Location = new Point(3, 266);
+            tableLayoutPanel5.Location = new Point(3, 275);
             tableLayoutPanel5.Name = "tableLayoutPanel5";
             tableLayoutPanel5.RowCount = 2;
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 59.24528F));
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 40.75472F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 55.8718872F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 44.1281128F));
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel5.Size = new Size(605, 265);
+            tableLayoutPanel5.Size = new Size(605, 281);
             tableLayoutPanel5.TabIndex = 23;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(cmbxDestination);
+            panel1.Controls.Add(cmbxLocation);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(3, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(599, 151);
+            panel1.TabIndex = 27;
+            // 
+            // cmbxDestination
+            // 
+            cmbxDestination.BackColor = Color.White;
+            cmbxDestination.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbxDestination.Font = new Font("Inter", 12.25F);
+            cmbxDestination.ForeColor = Color.FromArgb(24, 60, 114);
+            cmbxDestination.FormattingEnabled = true;
+            cmbxDestination.Items.AddRange(new object[] { "Traffic Accident", "Mechanical Breakdown", "Theft", "Lost", "Assaults", "Sexual Harassment" });
+            cmbxDestination.Location = new Point(397, 97);
+            cmbxDestination.Name = "cmbxDestination";
+            cmbxDestination.Size = new Size(179, 31);
+            cmbxDestination.TabIndex = 29;
+            cmbxDestination.TabStop = false;
+            // 
+            // cmbxLocation
+            // 
+            cmbxLocation.BackColor = Color.White;
+            cmbxLocation.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbxLocation.Font = new Font("Inter", 12.25F);
+            cmbxLocation.ForeColor = Color.FromArgb(24, 60, 114);
+            cmbxLocation.FormattingEnabled = true;
+            cmbxLocation.Items.AddRange(new object[] { "Traffic Accident", "Mechanical Breakdown", "Theft", "Lost", "Assaults", "Sexual Harassment" });
+            cmbxLocation.Location = new Point(23, 97);
+            cmbxLocation.Name = "cmbxLocation";
+            cmbxLocation.Size = new Size(179, 31);
+            cmbxLocation.TabIndex = 28;
+            cmbxLocation.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(599, 151);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(btnPay);
+            panel2.Controls.Add(lblAmount);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(3, 160);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(599, 118);
+            panel2.TabIndex = 26;
             // 
             // btnPay
             // 
@@ -287,12 +347,12 @@
             btnPay.Lighting = false;
             btnPay.LinearGradient_Background = false;
             btnPay.LinearGradientPen = false;
-            btnPay.Location = new Point(472, 51);
+            btnPay.Location = new Point(465, 68);
             btnPay.Name = "btnPay";
             btnPay.PenWidth = 15;
             btnPay.Rounding = true;
             btnPay.RoundingInt = 70;
-            btnPay.Size = new Size(132, 51);
+            btnPay.Size = new Size(135, 53);
             btnPay.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             btnPay.TabIndex = 34;
             btnPay.Tag = "Cyber";
@@ -302,76 +362,15 @@
             btnPay.Timer_RGB = 300;
             btnPay.Click += btnPay_Click;
             // 
-            // panel1
-            // 
-            panel1.Controls.Add(comboBox1);
-            panel1.Controls.Add(cmbxNature);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(3, 3);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(599, 151);
-            panel1.TabIndex = 27;
-            // 
-            // comboBox1
-            // 
-            comboBox1.BackColor = Color.White;
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.Font = new Font("Inter", 12.25F);
-            comboBox1.ForeColor = Color.FromArgb(24, 60, 114);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Traffic Accident", "Mechanical Breakdown", "Theft", "Lost", "Assaults", "Sexual Harassment" });
-            comboBox1.Location = new Point(406, 102);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(179, 31);
-            comboBox1.TabIndex = 29;
-            comboBox1.TabStop = false;
-            // 
-            // cmbxNature
-            // 
-            cmbxNature.BackColor = Color.White;
-            cmbxNature.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbxNature.Font = new Font("Inter", 12.25F);
-            cmbxNature.ForeColor = Color.FromArgb(24, 60, 114);
-            cmbxNature.FormattingEnabled = true;
-            cmbxNature.Items.AddRange(new object[] { "Traffic Accident", "Mechanical Breakdown", "Theft", "Lost", "Assaults", "Sexual Harassment" });
-            cmbxNature.Location = new Point(15, 102);
-            cmbxNature.Name = "cmbxNature";
-            cmbxNature.Size = new Size(179, 31);
-            cmbxNature.TabIndex = 28;
-            cmbxNature.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(599, 151);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            // 
-            // panel2
-            // 
-            panel2.Controls.Add(lblAmount);
-            panel2.Controls.Add(btnPay);
-            panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(3, 160);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(599, 102);
-            panel2.TabIndex = 26;
-            // 
             // lblAmount
             // 
             lblAmount.AutoSize = true;
             lblAmount.BackColor = Color.FromArgb(230, 249, 255);
-            lblAmount.Dock = DockStyle.Left;
-            lblAmount.Font = new Font("Inter", 39.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAmount.Font = new Font("Inter", 41.75F, FontStyle.Bold);
             lblAmount.ForeColor = Color.FromArgb(38, 36, 68);
-            lblAmount.Location = new Point(0, 0);
+            lblAmount.Location = new Point(0, 16);
             lblAmount.Name = "lblAmount";
-            lblAmount.Size = new Size(145, 76);
+            lblAmount.Size = new Size(153, 80);
             lblAmount.TabIndex = 35;
             lblAmount.Text = "Php ";
             lblAmount.TextAlign = ContentAlignment.MiddleCenter;
@@ -417,8 +416,8 @@
         public Label lblDateTime;
         private PictureBox pictureBox1;
         private Panel panel1;
-        private ComboBox comboBox1;
-        private ComboBox cmbxNature;
+        private ComboBox cmbxDestination;
+        private ComboBox cmbxLocation;
         private ReaLTaiizor.Controls.CyberButton btnPay;
         private Panel panel2;
         public Label lblAmount;

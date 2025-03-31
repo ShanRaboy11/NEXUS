@@ -35,16 +35,16 @@
             spaceSeparatorHorizontal1 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
             dtDate = new ReaLTaiizor.Controls.PoisonDateTime();
             label2 = new Label();
-            dgvHistory = new DataGridView();
             cmsDataGrid = new ContextMenuStrip(components);
             displayToolStripMenuItem = new ToolStripMenuItem();
             rateToolStripMenuItem = new ToolStripMenuItem();
             cmbxFilter = new ComboBox();
             pbIcon = new PictureBox();
             tbxJeepCode = new TextBox();
-            ((System.ComponentModel.ISupportInitialize)dgvHistory).BeginInit();
+            dgvHistory = new Krypton.Toolkit.KryptonDataGridView();
             cmsDataGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbIcon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvHistory).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -86,7 +86,7 @@
             // 
             dtDate.CalendarFont = new Font("Inter", 16.25F);
             dtDate.CalendarMonthBackground = Color.FromArgb(176, 233, 255);
-            dtDate.Location = new Point(699, 150);
+            dtDate.Location = new Point(693, 150);
             dtDate.MinimumSize = new Size(0, 29);
             dtDate.Name = "dtDate";
             dtDate.Size = new Size(239, 29);
@@ -99,41 +99,31 @@
             label2.BackColor = Color.FromArgb(230, 249, 255);
             label2.Font = new Font("Inter SemiBold", 17F, FontStyle.Bold);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(41, 147);
+            label2.Location = new Point(35, 147);
             label2.Name = "label2";
             label2.Size = new Size(78, 32);
             label2.TabIndex = 51;
             label2.Text = "Filter:";
-            // 
-            // dgvHistory
-            // 
-            dgvHistory.BackgroundColor = Color.FromArgb(153, 229, 255);
-            dgvHistory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvHistory.ContextMenuStrip = cmsDataGrid;
-            dgvHistory.Location = new Point(41, 211);
-            dgvHistory.Name = "dgvHistory";
-            dgvHistory.Size = new Size(897, 470);
-            dgvHistory.TabIndex = 52;
             // 
             // cmsDataGrid
             // 
             cmsDataGrid.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmsDataGrid.Items.AddRange(new ToolStripItem[] { displayToolStripMenuItem, rateToolStripMenuItem });
             cmsDataGrid.Name = "contextMenuStrip1";
-            cmsDataGrid.Size = new Size(181, 82);
+            cmsDataGrid.Size = new Size(137, 60);
             // 
             // displayToolStripMenuItem
             // 
             displayToolStripMenuItem.Image = Properties.Resources._9104142_fullscreen_expand_maximize_enlarge_screen_icon;
             displayToolStripMenuItem.Name = "displayToolStripMenuItem";
-            displayToolStripMenuItem.Size = new Size(180, 28);
+            displayToolStripMenuItem.Size = new Size(136, 28);
             displayToolStripMenuItem.Text = "Display";
             // 
             // rateToolStripMenuItem
             // 
             rateToolStripMenuItem.Image = Properties.Resources.rate_hover;
             rateToolStripMenuItem.Name = "rateToolStripMenuItem";
-            rateToolStripMenuItem.Size = new Size(180, 28);
+            rateToolStripMenuItem.Size = new Size(136, 28);
             rateToolStripMenuItem.Text = "Rate";
             rateToolStripMenuItem.Click += rateToolStripMenuItem_Click;
             // 
@@ -145,7 +135,7 @@
             cmbxFilter.ForeColor = Color.FromArgb(24, 60, 114);
             cmbxFilter.FormattingEnabled = true;
             cmbxFilter.Items.AddRange(new object[] { "Date", "Jeep Code" });
-            cmbxFilter.Location = new Point(127, 146);
+            cmbxFilter.Location = new Point(121, 146);
             cmbxFilter.Name = "cmbxFilter";
             cmbxFilter.Size = new Size(219, 35);
             cmbxFilter.TabIndex = 53;
@@ -156,7 +146,7 @@
             // 
             pbIcon.BackColor = Color.FromArgb(230, 249, 255);
             pbIcon.Image = Properties.Resources.jeepcode;
-            pbIcon.Location = new Point(627, 144);
+            pbIcon.Location = new Point(621, 144);
             pbIcon.Name = "pbIcon";
             pbIcon.Size = new Size(58, 43);
             pbIcon.SizeMode = PictureBoxSizeMode.Zoom;
@@ -169,7 +159,7 @@
             tbxJeepCode.BorderStyle = BorderStyle.None;
             tbxJeepCode.Font = new Font("Inter", 16.25F);
             tbxJeepCode.ForeColor = Color.Silver;
-            tbxJeepCode.Location = new Point(699, 154);
+            tbxJeepCode.Location = new Point(693, 154);
             tbxJeepCode.Name = "tbxJeepCode";
             tbxJeepCode.Size = new Size(239, 27);
             tbxJeepCode.TabIndex = 150;
@@ -177,16 +167,47 @@
             tbxJeepCode.Visible = false;
             tbxJeepCode.Click += tbxJeepCode_Click;
             // 
+            // dgvHistory
+            // 
+            dgvHistory.BorderStyle = BorderStyle.None;
+            dgvHistory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvHistory.HideOuterBorders = true;
+            dgvHistory.Location = new Point(35, 211);
+            dgvHistory.Name = "dgvHistory";
+            dgvHistory.PaletteMode = Krypton.Toolkit.PaletteMode.Office2007BlueLightMode;
+            dgvHistory.ReadOnly = true;
+            dgvHistory.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvHistory.ShowEditingIcon = false;
+            dgvHistory.Size = new Size(897, 452);
+            dgvHistory.StateCommon.Background.Color1 = Color.FromArgb(230, 249, 255);
+            dgvHistory.StateCommon.Background.Color2 = Color.FromArgb(153, 229, 255);
+            dgvHistory.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
+            dgvHistory.StateCommon.DataCell.Back.Color1 = Color.FromArgb(153, 229, 255);
+            dgvHistory.StateCommon.DataCell.Border.Color1 = Color.White;
+            dgvHistory.StateCommon.DataCell.Border.Color2 = Color.White;
+            dgvHistory.StateCommon.DataCell.Content.Color1 = Color.FromArgb(24, 60, 114);
+            dgvHistory.StateCommon.DataCell.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            dgvHistory.StateCommon.DataCell.Content.TextV = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            dgvHistory.StateCommon.HeaderColumn.Back.Color1 = Color.FromArgb(38, 36, 68);
+            dgvHistory.StateCommon.HeaderColumn.Back.Color2 = Color.FromArgb(38, 36, 68);
+            dgvHistory.StateCommon.HeaderColumn.Border.Color1 = Color.White;
+            dgvHistory.StateCommon.HeaderColumn.Border.Color2 = Color.White;
+            dgvHistory.StateCommon.HeaderColumn.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            dgvHistory.StateCommon.HeaderColumn.Content.TextV = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            dgvHistory.StateSelected.DataCell.Back.Color1 = Color.FromArgb(0, 229, 255);
+            dgvHistory.StateSelected.DataCell.Back.Color2 = Color.FromArgb(0, 229, 255);
+            dgvHistory.TabIndex = 151;
+            // 
             // History
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
             ClientSize = new Size(972, 700);
+            Controls.Add(dgvHistory);
             Controls.Add(tbxJeepCode);
             Controls.Add(pbIcon);
             Controls.Add(cmbxFilter);
-            Controls.Add(dgvHistory);
             Controls.Add(label2);
             Controls.Add(dtDate);
             Controls.Add(spaceSeparatorHorizontal1);
@@ -196,9 +217,9 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "History";
             Text = "History";
-            ((System.ComponentModel.ISupportInitialize)dgvHistory).EndInit();
             cmsDataGrid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbIcon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvHistory).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -210,12 +231,12 @@
         private ReaLTaiizor.Controls.SpaceSeparatorHorizontal spaceSeparatorHorizontal1;
         private ReaLTaiizor.Controls.PoisonDateTime dtDate;
         private Label label2;
-        private DataGridView dgvHistory;
         private ComboBox cmbxFilter;
         private PictureBox pbIcon;
         private TextBox tbxJeepCode;
         private ContextMenuStrip cmsDataGrid;
         private ToolStripMenuItem displayToolStripMenuItem;
         private ToolStripMenuItem rateToolStripMenuItem;
+        private Krypton.Toolkit.KryptonDataGridView dgvHistory;
     }
 }

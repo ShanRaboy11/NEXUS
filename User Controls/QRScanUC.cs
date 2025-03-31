@@ -26,6 +26,7 @@ namespace NEXUS.User_Controls
 
         private void InitializeCamera()
         {
+
             videoDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
             if (videoDevices.Count > 0)
             {

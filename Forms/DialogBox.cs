@@ -66,6 +66,11 @@ namespace NEXUS.Forms
                 pbDialogIcon.Image = Resources.Animation___1739885779319;
                 lblMessage.Text = "QR Code Saved Successfully";
             }
+            else if (message == "successful payment")
+            {
+                pbDialogIcon.Image = Resources.Animation___1739885779319;
+                lblMessage.Text = "Payment Successful!";
+            }
             else
             {
                 Pausetimer.Enabled = false;
