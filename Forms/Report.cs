@@ -66,7 +66,7 @@ namespace NEXUS.Forms
         {
             if (attachedImage != null)
             {
-                DisplayImage displayImage = new DisplayImage(attachedImage, "report");
+                //DisplayImage displayImage = new DisplayImage(attachedImage, "report");
             }
         }
     }

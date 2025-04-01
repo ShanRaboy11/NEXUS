@@ -56,9 +56,9 @@
             // 
             // pbImageUploaded
             // 
-            pbImageUploaded.Location = new Point(70, 117);
+            pbImageUploaded.Location = new Point(40, 107);
             pbImageUploaded.Name = "pbImageUploaded";
-            pbImageUploaded.Size = new Size(610, 310);
+            pbImageUploaded.Size = new Size(706, 442);
             pbImageUploaded.SizeMode = PictureBoxSizeMode.Zoom;
             pbImageUploaded.TabIndex = 0;
             pbImageUploaded.TabStop = false;
@@ -67,7 +67,7 @@
             // 
             label1.Font = new Font("Inter ExtraBold", 18F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(38, 36, 68);
-            label1.Location = new Point(59, 46);
+            label1.Location = new Point(17, 46);
             label1.Name = "label1";
             label1.Size = new Size(315, 44);
             label1.TabIndex = 22;
@@ -88,14 +88,14 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(748, 28);
+            panel2.Size = new Size(788, 28);
             panel2.TabIndex = 23;
             // 
             // pictureBox6
             // 
             pictureBox6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(692, 7);
+            pictureBox6.Location = new Point(732, 7);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(14, 14);
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
@@ -106,7 +106,7 @@
             // 
             pictureBox7.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(661, 5);
+            pictureBox7.Location = new Point(701, 5);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(19, 19);
             pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
@@ -117,7 +117,7 @@
             // 
             pbClose1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pbClose1.Image = (Image)resources.GetObject("pbClose1.Image");
-            pbClose1.Location = new Point(718, 5);
+            pbClose1.Location = new Point(758, 5);
             pbClose1.Name = "pbClose1";
             pbClose1.Size = new Size(18, 18);
             pbClose1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -129,7 +129,7 @@
             // 
             pictureBox4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(1339, 6);
+            pictureBox4.Location = new Point(1379, 6);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(14, 14);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
@@ -140,7 +140,7 @@
             // 
             pictureBox3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(2534, 6);
+            pictureBox3.Location = new Point(2574, 6);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(14, 14);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -151,7 +151,7 @@
             // 
             pictureBox5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(1308, 4);
+            pictureBox5.Location = new Point(1348, 4);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(19, 19);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
@@ -162,7 +162,7 @@
             // 
             pbClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pbClose.Image = (Image)resources.GetObject("pbClose.Image");
-            pbClose.Location = new Point(1366, 4);
+            pbClose.Location = new Point(1406, 4);
             pbClose.Name = "pbClose";
             pbClose.Size = new Size(18, 18);
             pbClose.SizeMode = PictureBoxSizeMode.Zoom;
@@ -173,7 +173,7 @@
             // 
             pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(2503, 4);
+            pictureBox2.Location = new Point(2543, 4);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(19, 19);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -184,7 +184,7 @@
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(2561, 4);
+            pictureBox1.Location = new Point(2601, 4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(18, 18);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -196,7 +196,7 @@
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
-            ClientSize = new Size(748, 477);
+            ClientSize = new Size(788, 585);
             Controls.Add(panel2);
             Controls.Add(label1);
             Controls.Add(pbImageUploaded);

@@ -15,6 +15,7 @@ namespace NEXUS.Classes
     public interface Users
     {
         void SaveToDatabase();
+        void SaveImageToDatabase(byte[] imageBytes, int userID);
         //float ProcessPayment();
         //double CheckBalance();
     }
@@ -29,7 +30,7 @@ namespace NEXUS.Classes
         private string gender;
         private string userType;
         private string birthday;
-        private string attachment;
+        private byte[] attachment;
         private string profilePicture;
         private double walletAmount;
         private string status;
@@ -42,7 +43,7 @@ namespace NEXUS.Classes
         public string Gender { get => gender; set => gender = value; }
         public string UserType { get => userType; set => userType = value; }
         public string Birthday { get => birthday; set => birthday = value; }
-        public string Attachment { get => attachment; set => attachment = value; }
+        public byte[] Attachment { get => attachment; set => attachment = value; }
         public string ProfilePicture { get => profilePicture; set => profilePicture = value; }
         public double WalletAmount { get => walletAmount; set => walletAmount = value; }
         public string Status { get => status; set => status = value; }
@@ -54,7 +55,7 @@ namespace NEXUS.Classes
         protected string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Shan Michael\OneDrive\文档\2nd Year 2nd Sem\OOP2\NEXUS\NEXUS.accdb";
 
         // Constructor
-        protected UserInformation(int userID, string name, string email, string username, string password, string gender, string userType, string birthday, string attachment, string profilepic, double wallet, string status)
+        protected UserInformation(int userID, string name, string email, string username, string password, string gender, string userType, string birthday, byte[] attachment, string profilepic, double wallet, string status)
         {
             this.userID = userID;
             this.name = name;
@@ -90,7 +91,7 @@ namespace NEXUS.Classes
 
 
         // Constructor
-        public Passenger(int userId, string name, string email, string username, string password, string gender, string userType, string birthday, string classification, string attachment, string profilepic, double wallet, int points, string status)
+        public Passenger(int userId, string name, string email, string username, string password, string gender, string userType, string birthday, string classification, byte[] attachment, string profilepic, double wallet, int points, string status)
             : base(userId, name, email, username, password, gender, userType, birthday, attachment, profilepic, wallet, status)
         {
             Classification = classification;
@@ -103,7 +104,7 @@ namespace NEXUS.Classes
             string query = "INSERT INTO Accounts (Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Classification, Attachment, [Profile Picture], Wallet, Points, [Status]) " +
                            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-            using (OleDbConnection conn = new OleDbConnection(connectionString))
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
             using (OleDbCommand cmd = new OleDbCommand(query, conn))
             {
                 conn.Open();
@@ -116,7 +117,7 @@ namespace NEXUS.Classes
                 cmd.Parameters.AddWithValue("?", this.UserType);
                 cmd.Parameters.AddWithValue("?", this.Birthday);
                 cmd.Parameters.AddWithValue("?", Classification);
-                cmd.Parameters.AddWithValue("?", string.IsNullOrEmpty(this.Attachment) ? DBNull.Value : this.Attachment);
+                cmd.Parameters.AddWithValue("?", (this.Attachment == null || this.Attachment.Length == 0) ? DBNull.Value : (object)this.Attachment);
                 cmd.Parameters.AddWithValue("?", this.ProfilePicture);
                 cmd.Parameters.AddWithValue("?", this.WalletAmount);
                 cmd.Parameters.AddWithValue("?", this.Points);
@@ -126,6 +127,26 @@ namespace NEXUS.Classes
             }
         }
 
+        public void SaveImageToDatabase(byte[] imageBytes, int userID)
+        {
+            string query = "INSERT INTO Accounts (Attachment) VALUES (?)";
+
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            using (OleDbCommand command = new OleDbCommand(query, conn))
+            {
+                command.Parameters.Add("?", OleDbType.VarBinary).Value = imageBytes;
+
+                try
+                {
+                    conn.Open();
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error saving image to database: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
 
         public void AddTrip(string tripDetails)
         {
@@ -143,7 +164,7 @@ namespace NEXUS.Classes
         public string Route { get; set; }
 
         // Constructor
-        public Driver(int userId, string name,  string email, string username, string password, string gender, string userType, string birthday, string attachment, string plateNumber, string profilepic, double wallet, string qrcode, string route, string status)
+        public Driver(int userId, string name,  string email, string username, string password, string gender, string userType, string birthday, byte[] attachment, string plateNumber, string profilepic, double wallet, string qrcode, string route, string status)
             : base(userId, name, email, username, password, gender, userType, birthday, attachment, profilepic, wallet, status)
         {
             PlateNumber = plateNumber;
@@ -156,7 +177,7 @@ namespace NEXUS.Classes
             string query = "INSERT INTO Accounts (Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Attachment, [Plate Number], [Profile Picture],  Wallet, [QR Code], Route, [Status]) " +
                            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-            using (OleDbConnection conn = new OleDbConnection(connectionString))
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
             using (OleDbCommand cmd = new OleDbCommand(query, conn))
             {
                 conn.Open();
@@ -179,6 +200,29 @@ namespace NEXUS.Classes
                 cmd.ExecuteNonQuery();
             }
         }
+
+        public void SaveImageToDatabase(byte[] imageBytes, int userID)
+        {
+            string query = "INSERT INTO Accounts ([QR Code]) VALUES (?) WHERE ID = ?";
+
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            using (OleDbCommand command = new OleDbCommand(query, conn))
+            {
+                command.Parameters.AddWithValue("?", userID);
+                command.Parameters.Add("?", OleDbType.VarBinary).Value = imageBytes;
+
+                try
+                {
+                    conn.Open();
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error saving image to database: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
     }
 
     public class EmergencyReport
@@ -258,40 +302,13 @@ namespace NEXUS.Classes
 
     public class Attachment
     {
-        private readonly string uploadFolder;
-
-        public Attachment()
+        public byte[] ConvertImageToByteArray(Image attachment)
         {
-            // Use AppContext.BaseDirectory and append the correct folder
-            uploadFolder = Path.Combine(AppContext.BaseDirectory, "Attachments");
-
-            // Ensure the directory exists
-            if (!Directory.Exists(uploadFolder))
+            using (MemoryStream convertImageMemoryStream = new MemoryStream())
             {
-                Directory.CreateDirectory(uploadFolder);
+                attachment.Save(convertImageMemoryStream, attachment.RawFormat);
+                return convertImageMemoryStream.ToArray();
             }
-        }
-
-        public Image UploadAndSaveImage(string sourcePath)
-        {
-            string fileName = Path.GetFileName(sourcePath); // Extract the file name only
-            string destinationPath = Path.Combine(uploadFolder, fileName); // Full destination path
-
-            try
-            {
-                File.Copy(sourcePath, destinationPath, true); // Overwrite if exists
-                return Image.FromFile(destinationPath); // Return the saved image
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error saving image: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
-            }
-        }
-
-        public string GetSavedFilePath(string fileName)
-        {
-            return Path.Combine(uploadFolder, fileName); // Return full path of stored image
         }
     }
 

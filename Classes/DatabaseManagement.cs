@@ -80,7 +80,7 @@ namespace NEXUS.Classes
                         string gender = reader.GetString(5);
                         string userType = reader.GetString(6);
                         string birthday = reader.GetString(7);
-                        string attachment = reader.GetString(8);
+                        byte[] attachment = reader.GetFieldValue<byte[]>(8);
                         string plateNumber = reader.GetString(9);
                         string profilepic = reader.GetString(10);
                         double wallet = reader.IsDBNull(11) ? 0.0 : Convert.ToDouble(reader.GetValue(11));

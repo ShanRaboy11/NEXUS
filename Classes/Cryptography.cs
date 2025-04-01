@@ -58,7 +58,7 @@ namespace NEXUS.Classes
                             string userType = reader.GetString(6);
                             string birthday = reader.GetString(7);
                             string classification = reader.IsDBNull(8) ? null : reader.GetString(8);
-                            string attachment = reader.IsDBNull(9) ? null : reader.GetString(9);
+                            byte[] attachment = reader.IsDBNull(9) ? null : reader.GetFieldValue<byte[]>(9);
                             string profilepic = reader.GetString(10);
                             double wallet = reader.IsDBNull(11) ? 0.0 : Convert.ToDouble(reader.GetValue(11));
                             int points = reader.IsDBNull(12) ? 0 : Convert.ToInt32(reader.GetValue(12));
@@ -109,7 +109,7 @@ namespace NEXUS.Classes
                             string userType = reader.GetString(6);
                             string birthday = reader.GetString(7);
                             string classification = reader.IsDBNull(8) ? null : reader.GetString(8);
-                            string attachment = reader.IsDBNull(9) ? null : reader.GetString(9);
+                            byte[] attachment = reader.IsDBNull(9) ? null : reader.GetFieldValue<byte[]>(9);
                             string profilepic = reader.GetString(10);
                             double wallet = reader.IsDBNull(11) ? 0.0 : Convert.ToDouble(reader.GetValue(11));
                             int points = reader.IsDBNull(12) ? 0 : Convert.ToInt32(reader.GetValue(12));
@@ -145,7 +145,7 @@ namespace NEXUS.Classes
                             string gender = reader.GetString(5);
                             string userType = reader.GetString(6);
                             string birthday = reader.GetString(7);
-                            string attachment = reader.GetString(8);
+                            byte[] attachment = reader.GetFieldValue<byte[]>(8);
                             string plateNumber = reader.GetString(9);
                             string profilepic = reader.GetString(10);
                             double wallet = reader.IsDBNull(11) ? 0.0 : Convert.ToDouble(reader.GetValue(11));

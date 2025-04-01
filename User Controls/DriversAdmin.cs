@@ -75,7 +75,7 @@ namespace NEXUS.User_Controls
                         while (reader.Read())
                         {
                             string driverName = reader["Full Name"].ToString();
-                            string attachmentPath = reader["Attachment"].ToString();
+                            byte[] attachmentPath = reader["Attachment"] as byte[];
 
                             AddDriverRow(tblVerification, driverName, attachmentPath, rowIndex++);
                         }
@@ -84,7 +84,7 @@ namespace NEXUS.User_Controls
             }
         }
 
-        private void AddDriverRow(TableLayoutPanel tblVerification, string driverName, string attachment, int rowIndex)
+        private void AddDriverRow(TableLayoutPanel tblVerification, string driverName, byte[] attachment, int rowIndex)
         {
             if (rowIndex >= tblVerification.RowCount)
             {
@@ -105,7 +105,7 @@ namespace NEXUS.User_Controls
 
             Label lblAttachment = new Label
             {
-                Text = attachment,
+                Text = driverName.Split(' ')[0] + "Attachment",
                 Dock = DockStyle.Fill,
                 ForeColor = Color.FromArgb(24, 60, 114),
                 TextAlign = ContentAlignment.MiddleCenter,
@@ -177,28 +177,12 @@ namespace NEXUS.User_Controls
             LoadPendingDrivers();
         }
 
-        private void DisplayAttachment(string fileName)
+        private void DisplayAttachment(byte[] fileName)
         {
             Scan scan = new Scan(0);
-            if (string.IsNullOrEmpty(fileName))
-            {
-                MessageBox.Show("No attachment found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
 
-            // Construct the full path using AppContext.BaseDirectory
-            string filePath = Path.Combine(AppContext.BaseDirectory, "Attachments", fileName);
-
-            if (File.Exists(filePath))
-            {
-                Image image = Image.FromFile(filePath);
-                DisplayImage display = new DisplayImage(image, "register");
-                scan.ShowOverlay(display, null);
-            }
-            else
-            {
-                MessageBox.Show("Attachment not found at: " + filePath, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            DisplayImage displayImage = new DisplayImage(fileName, "register");
+            scan.ShowOverlay(displayImage, null);
         }
 
         private void SelectButton(FontAwesome.Sharp.IconButton button)

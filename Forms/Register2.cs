@@ -86,7 +86,7 @@ namespace NEXUS.Forms
                     0, fullName, userData.Email, userData.UserName, userData.Password,
                     userData.Gender, rbtnPassenger.Text, birthday,
                     (rbtnStudent.Checked ? rbtnStudent.Text : rbtnSenior.Checked ? rbtnSenior.Text : rbtnRegular.Checked ? rbtnRegular.Text : "None"),
-                    (rbtnStudent.Checked || rbtnSenior.Checked ? lblFileName.Text : rbtnRegular.Checked ? "" : "None"),
+                    (rbtnStudent.Checked || rbtnSenior.Checked ? attachedImageBytes : rbtnRegular.Checked ? null : new byte[0]),
                     (userData.Gender == "Male" ? @"C:\Users\Shan Michael\source\repos\NEXUS\Resources\default_male.png" :
                     userData.Gender == "Female" ? @"C:\Users\Shan Michael\source\repos\NEXUS\Resources\defaullt_female.png" :
                     @"C:\Users\Shan Michael\source\repos\NEXUS\Resources\default_User.png"), 0, 0, (rbtnStudent.Checked || rbtnSenior.Checked ? "Pending" : "Verified")
@@ -98,7 +98,7 @@ namespace NEXUS.Forms
                 Driver newDriver = new Driver
                 (
                     0, fullName, userData.Email, userData.UserName, userData.Password,
-                    userData.Gender, rbtnDriver.Text, birthday, lblFileName.Text, tbxPlateNumber.Text, 
+                    userData.Gender, rbtnDriver.Text, birthday, attachedImageBytes, tbxPlateNumber.Text, 
                     (userData.Gender == "Male" ? @"C:\Users\Shan Michael\source\repos\NEXUS\Resources\driver_Default.png" :
                     userData.Gender == "Female" ? @"C:\Users\Shan Michael\source\repos\NEXUS\Resources\driver_FemaleDefault.jpg" :
                     @"C:\Users\Shan Michael\source\repos\NEXUS\Resources\default_User.png"), 0, "", tbxRoute.SelectedItem.ToString(), "Pending"
@@ -184,14 +184,15 @@ namespace NEXUS.Forms
         }
 
         private Image attachedImage;
-        private string attachedFileName; 
-        private readonly Attachment attachmentHandler = new Attachment(); 
+        private byte[] attachedImageBytes;
+        private readonly Attachment attachmentHandler = new Attachment();
 
         private void btnAttach_Click(object sender, EventArgs e)
         {
+            Passenger passenger = new Passenger(0, null, null, null, userData.Password, null, null, null, null, null, null, 0.0, 0, null);
             lblFileName.Text = "";
             lblFileName.ForeColor = Color.Black;
-            lblFileName.Font = new Font(lblFileName.Font, FontStyle.Underline); 
+            lblFileName.Font = new Font(lblFileName.Font, FontStyle.Underline);
 
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
@@ -199,13 +200,16 @@ namespace NEXUS.Forms
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    attachedImage = attachmentHandler.UploadAndSaveImage(openFileDialog.FileName); 
-                    attachedFileName = Path.GetFileName(openFileDialog.FileName); 
+                    attachedImage = Image.FromFile(openFileDialog.FileName);
+                    attachedImageBytes = attachmentHandler.ConvertImageToByteArray(attachedImage);
 
-                    lblFileName.Text = attachedFileName; 
-                    lblFileName.ForeColor = Color.Blue; 
-                    lblFileName.Cursor = Cursors.Hand; 
+                    lblFileName.Text = Path.GetFileName(openFileDialog.FileName);
+                    lblFileName.ForeColor = Color.Blue;
+                    lblFileName.Cursor = Cursors.Hand;
                     lblFileName.Font = new Font(lblFileName.Font, FontStyle.Underline);
+
+                    // Save to database
+                    passenger.SaveImageToDatabase(attachedImageBytes, 0);
                 }
             }
         }
@@ -214,7 +218,7 @@ namespace NEXUS.Forms
         {
             if (attachedImage != null)
             {
-                DisplayImage displayImage = new DisplayImage(attachedImage, "register");
+                DisplayImage displayImage = new DisplayImage(attachedImageBytes, "register");
             }
         }
 
