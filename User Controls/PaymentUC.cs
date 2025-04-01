@@ -20,6 +20,7 @@ namespace NEXUS.User_Controls
         {
             InitializeComponent();
             DecodeQRCode(qrInfo);
+            SetBaseAmount(13);//temporary
         }
 
         private void DecodeQRCode(string QRInfo)
@@ -43,6 +44,24 @@ namespace NEXUS.User_Controls
 
             dialogBox.ShowIcon("successful payment");
             scan.ShowOverlay(dialogBox, null);
+        }
+
+        private decimal baseAmount; // Stores the initial value dynamically
+
+        private void SetBaseAmount(decimal amount)
+        {
+            baseAmount = amount; // Assign the base amount dynamically
+            numericMultiplier.Value = 1; // Reset the multiplier to 1
+            lblAmount.Text = baseAmount.ToString("N2"); // Display initial amount
+        }
+
+        private void numericMultiplier_ValueChanged(object sender, EventArgs e)
+        {
+            if (baseAmount > 0) // Ensure base amount is set
+            {
+                decimal newAmount = baseAmount * numericMultiplier.Value;
+                lblAmount.Text = newAmount.ToString("N2");
+            }
         }
     }
 }
