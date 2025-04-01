@@ -22,7 +22,6 @@ namespace NEXUS.Classes
 
     public abstract class UserInformation
     {
-        // Private fields for encapsulation
         private int userID;
         private string name;
         private string email;
@@ -35,18 +34,17 @@ namespace NEXUS.Classes
         private double walletAmount;
         private string status;
 
-        // Public properties with encapsulated private fields
-        public int UserID { get => userID; set => userID = value; }
-        public string Name { get => name; set => name = value; }
-        public string Email { get => email; set => email = value; }
-        public string Username { get => username; set => username = value; }
-        public string Gender { get => gender; set => gender = value; }
-        public string UserType { get => userType; set => userType = value; }
-        public string Birthday { get => birthday; set => birthday = value; }
-        public byte[] Attachment { get => attachment; set => attachment = value; }
-        public string ProfilePicture { get => profilePicture; set => profilePicture = value; }
-        public double WalletAmount { get => walletAmount; set => walletAmount = value; }
-        public string Status { get => status; set => status = value; }
+        public int UserID { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Username { get; set; }
+        public string Gender { get; set; }
+        public string UserType { get; set; }
+        public string Birthday { get; set; }
+        public byte[] Attachment { get; set; }
+        public string ProfilePicture { get; set; }
+        public double WalletAmount { get; set; }
+        public string Status { get; set; }
 
         // Protected property for password (Only accessible within derived classes)
         protected string HashedPassword { get; set; }
@@ -85,6 +83,8 @@ namespace NEXUS.Classes
 
     public class Passenger : UserInformation, Users
     {
+        private string classification;
+        private int points;
         public List<string> TripHistory { get; private set; }
         public string Classification { get; set; }
         public int Points { get; set; }
@@ -159,6 +159,9 @@ namespace NEXUS.Classes
 
     public class Driver : UserInformation, Users
     {
+        private string plateNumber;
+        private byte[] qrCode;
+        private string route;
         public string PlateNumber { get; set; }
         public string QRCode { get; set; }
         public string Route { get; set; }
