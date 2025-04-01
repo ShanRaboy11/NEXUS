@@ -34,10 +34,10 @@ namespace NEXUS.User_Controls
             switch(userType)
             {
                 case "Passenger":
-                    query = "SELECT * FROM PassengersQuery";
+                    query = "SELECT ID, Username, [Password], [Full Name], [Email Address], Gender, Birthday, Classification, Wallet, Points, Status FROM PassengersQuery";
                     break;
                 case "Driver":
-                    query = "SELECT * FROM DriversQuery";
+                    query = "SELECT ID, Username, [Password], [Full Name], [Email Address], Gender, Birthday, [Plate Number], Wallet, Route, Status FROM DriversQuery";
                     break;
                 case "Report":
                     query = "SELECT * FROM Reports";
