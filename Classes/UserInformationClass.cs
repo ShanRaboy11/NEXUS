@@ -31,7 +31,7 @@ namespace NEXUS.Classes
         private string userType;
         private string birthday;
         private byte[] attachment;
-        private string profilePicture;
+        private byte[] profilePicture;
         private double walletAmount;
         private string status;
 
@@ -43,7 +43,7 @@ namespace NEXUS.Classes
         public string UserType { get => userType; set => userType = value; }
         public string Birthday { get => birthday; set => birthday = value; }
         public byte[] Attachment { get => attachment; set => attachment = value; }
-        public string ProfilePicture { get => profilePicture; set => profilePicture = value; }
+        public byte[] ProfilePicture { get => profilePicture; set => profilePicture = value; }
         public double WalletAmount { get => walletAmount; set => walletAmount = value; }
         public string Status { get => status; set => status = value; }
 
@@ -54,7 +54,7 @@ namespace NEXUS.Classes
         protected string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Shan Michael\OneDrive\文档\2nd Year 2nd Sem\OOP2\NEXUS\NEXUS.accdb";
 
         // Constructor
-        protected UserInformation(int userID, string name, string email, string username, string password, string gender, string userType, string birthday, byte[] attachment, string profilepic, double wallet, string status)
+        protected UserInformation(int userID, string name, string email, string username, string password, string gender, string userType, string birthday, byte[] attachment, byte[] profilepic, double wallet, string status)
         {
             this.userID = userID;
             this.name = name;
@@ -91,7 +91,7 @@ namespace NEXUS.Classes
         public int Points { get => points; set => points = value; }
 
         // Constructor
-        public Passenger(int userId, string name, string email, string username, string password, string gender, string userType, string birthday, string classification, byte[] attachment, string profilepic, double wallet, int points, string status)
+        public Passenger(int userId, string name, string email, string username, string password, string gender, string userType, string birthday, string classification, byte[] attachment, byte[] profilepic, double wallet, int points, string status)
             : base(userId, name, email, username, password, gender, userType, birthday, attachment, profilepic, wallet, status)
         {
             Classification = classification;
@@ -197,7 +197,7 @@ namespace NEXUS.Classes
         public string Route { get => route; set => route = value; }
 
         // Constructor
-        public Driver(int userId, string name,  string email, string username, string password, string gender, string userType, string birthday, byte[] attachment, string plateNumber, string profilepic, double wallet, byte[] qrcode, string route, string status)
+        public Driver(int userId, string name,  string email, string username, string password, string gender, string userType, string birthday, byte[] attachment, string plateNumber, byte[] profilepic, double wallet, byte[] qrcode, string route, string status)
             : base(userId, name, email, username, password, gender, userType, birthday, attachment, profilepic, wallet, status)
         {
             PlateNumber = plateNumber;

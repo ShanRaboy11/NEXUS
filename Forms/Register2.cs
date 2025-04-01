@@ -77,31 +77,32 @@ namespace NEXUS.Forms
         {
             DialogBox dialogBox = new DialogBox();
             LogInForm logInForm = new LogInForm();
+            Passenger passenger = new Passenger(0, null, null, null, "i", null, null, null, null, null, null, 0.0, 0, null);
+            Driver driver = new Driver(0, null, null, null, "i", null, null, null, null, null, null, 0.0, null, null, null);
             string fullName = userData.FName + " " + userData.LName;
             string birthday = cmbxMonth.Text + " " + cmbxDay.Text + ", " + cmbxYear.Text;
+            byte[] userphoto = null;
             if (rbtnPassenger.Checked)
             {
+                userphoto = passenger.DefaultProfilePicture(userData.Gender);
                 Passenger newPassenger = new Passenger
                 (
                     0, fullName, userData.Email, userData.UserName, userData.Password,
                     userData.Gender, rbtnPassenger.Text, birthday,
                     (rbtnStudent.Checked ? rbtnStudent.Text : rbtnSenior.Checked ? rbtnSenior.Text : rbtnRegular.Checked ? rbtnRegular.Text : "None"),
-                    (rbtnStudent.Checked || rbtnSenior.Checked ? attachedImageBytes : rbtnRegular.Checked ? null : new byte[0]),
-                    (userData.Gender == "Male" ? @"C:\Users\Shan Michael\source\repos\NEXUS\Resources\default_male.png" :
-                    userData.Gender == "Female" ? @"C:\Users\Shan Michael\source\repos\NEXUS\Resources\defaullt_female.png" :
-                    @"C:\Users\Shan Michael\source\repos\NEXUS\Resources\default_User.png"), 0, 0, (rbtnStudent.Checked || rbtnSenior.Checked ? "Pending" : "Verified")
+                    (rbtnStudent.Checked || rbtnSenior.Checked ? attachedImageBytes : rbtnRegular.Checked ? null : new byte[0]), 
+                    userphoto, 0, 0, (rbtnStudent.Checked || rbtnSenior.Checked ? "Pending" : "Verified")
                 );
                 newPassenger.SaveToDatabase();
             }
             else if (rbtnDriver.Checked)
             {
+                userphoto = driver.DefaultProfilePicture(userData.Gender);
                 Driver newDriver = new Driver
                 (
                     0, fullName, userData.Email, userData.UserName, userData.Password,
                     userData.Gender, rbtnDriver.Text, birthday, attachedImageBytes, tbxPlateNumber.Text, 
-                    (userData.Gender == "Male" ? @"C:\Users\Shan Michael\source\repos\NEXUS\Resources\driver_Default.png" :
-                    userData.Gender == "Female" ? @"C:\Users\Shan Michael\source\repos\NEXUS\Resources\driver_FemaleDefault.jpg" :
-                    @"C:\Users\Shan Michael\source\repos\NEXUS\Resources\default_User.png"), 0, null, tbxRoute.SelectedItem.ToString(), "Pending"
+                    userphoto, 0, null, tbxRoute.SelectedItem.ToString(), "Pending"
                 );
                 newDriver.SaveToDatabase();
             }
