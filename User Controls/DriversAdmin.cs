@@ -147,7 +147,7 @@ namespace NEXUS.User_Controls
 
         private void ApproveDriver(string driverName)
         {
-            string query = "UPDATE Accounts SET Status = 'Approved' WHERE [Full Name] = ?";
+            string query = "UPDATE Accounts SET Status = 'Verified' WHERE [Full Name] = ?";
 
             using (OleDbConnection conn = DatabaseManagement.GetConnection())
             using (OleDbCommand cmd = new OleDbCommand(query, conn))

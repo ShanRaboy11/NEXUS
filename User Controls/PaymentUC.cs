@@ -15,7 +15,7 @@ namespace NEXUS.User_Controls
     public partial class PaymentUC : UserControl
     {
         Driver currentDriver;
-        DatabaseManagement Databasemanagement;
+        DatabaseManagement databasemanagement = new DatabaseManagement();
         public PaymentUC(string qrInfo)
         {
             InitializeComponent();
@@ -25,9 +25,18 @@ namespace NEXUS.User_Controls
 
         private void DecodeQRCode(string QRInfo)
         {
-            //int driverID = int.Parse(QRInfo);
-            //this.currentDriver = Databasemanagement.GetUserInfoByID(driverID);
+            int driverID = int.Parse(QRInfo);
+            this.currentDriver = databasemanagement.GetUserInfoByID(driverID);
 
+            using (MemoryStream ms = new MemoryStream(currentDriver.ProfilePicture))
+            {
+                pbDriverPicture.Image = Image.FromStream(ms);
+            }
+            lblDriverName.Text = currentDriver.Name;
+            lblDriverRoute.Text = currentDriver.Route;
+            lblDriverStatus.Text = currentDriver.Status;
+            lblPlateNum.Text = currentDriver.PlateNumber;
+            lblDateTime.Text = DateTime.Now.ToString("f");
         }
 
         private void btnPay_Click(object sender, EventArgs e)

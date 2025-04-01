@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AForge.Video;
 using AForge.Video.DirectShow;
+using NEXUS.Classes;
+using NEXUS.Forms;
 using ZXing;
 using ZXing.Windows.Compatibility;
 
@@ -14,8 +17,8 @@ namespace NEXUS.User_Controls
         private FilterInfoCollection videoDevices;
         private VideoCaptureDevice videoCaptureDevice;
         private Panel containerPanel;
-        private bool isProcessing = false; // Prevent multiple scans at once
-
+        private bool isProcessing = false; 
+        bool cameraInitialized = false;
         public QRScanUC(Panel pnlContainer)
         {
             InitializeComponent();
@@ -86,12 +89,44 @@ namespace NEXUS.User_Controls
 
                     this.BeginInvoke(new Action(() =>
                     {
-                        containerPanel.Controls.Clear();
-                        PaymentUC paymentUC = new PaymentUC(decoded)
+                        try
                         {
-                            Dock = DockStyle.Fill
-                        };
-                        containerPanel.Controls.Add(paymentUC);
+                            if (int.TryParse(decoded, out int driverID))
+                            {
+                                containerPanel.Controls.Clear();
+                                PaymentUC paymentUC = new PaymentUC(decoded)
+                                {
+                                    Dock = DockStyle.Fill
+                                };
+                                containerPanel.Controls.Add(paymentUC);
+                                StopCamera();
+                                scanTimer.Stop();
+                            }
+                            else
+                            {
+                                throw new System.FormatException("Invalid QR code");
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            DialogBox dialogBox = new DialogBox();
+                            Scan scan = new Scan(0);
+                            dialogBox.ShowIcon("invalid qr code");
+
+                            scan.ShowOverlay(dialogBox, null);
+
+                            if (!cameraInitialized)
+                            {
+                                Task.Run(() => InitializeCamera());
+                                cameraInitialized = true;  
+                                isProcessing = false;
+                            }
+                            containerPanel.Controls.Clear(); 
+
+                            QRScanUC newQRScanUC = new QRScanUC(containerPanel);
+
+                            containerPanel.Controls.Add(newQRScanUC);
+                        }
                     }));
                 }
             }

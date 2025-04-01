@@ -47,11 +47,12 @@
             cmbxLocation = new ComboBox();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
+            lblAmount = new Label();
+            numericMultiplier = new NumericUpDown();
+            label1 = new Label();
             btnPay = new ReaLTaiizor.Controls.CyberButton();
             lbl1 = new Label();
-            label1 = new Label();
-            numericMultiplier = new NumericUpDown();
-            lblAmount = new Label();
+            tableLayoutPanel6 = new TableLayoutPanel();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel4.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
@@ -62,6 +63,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericMultiplier).BeginInit();
+            tableLayoutPanel6.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -107,8 +109,8 @@
             tableLayoutPanel4.Location = new Point(43, 80);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
             tableLayoutPanel4.RowCount = 3;
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 88.19188F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 11.8081179F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 87.45387F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5461254F));
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 332F));
             tableLayoutPanel4.Size = new Size(611, 604);
             tableLayoutPanel4.TabIndex = 25;
@@ -120,9 +122,9 @@
             lblDateTime.Dock = DockStyle.Fill;
             lblDateTime.Font = new Font("Inter SemiBold", 16.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblDateTime.ForeColor = Color.FromArgb(38, 36, 68);
-            lblDateTime.Location = new Point(3, 239);
+            lblDateTime.Location = new Point(3, 237);
             lblDateTime.Name = "lblDateTime";
-            lblDateTime.Size = new Size(605, 32);
+            lblDateTime.Size = new Size(605, 34);
             lblDateTime.TabIndex = 24;
             lblDateTime.Text = "DATE";
             lblDateTime.TextAlign = ContentAlignment.MiddleCenter;
@@ -131,19 +133,19 @@
             // 
             tableLayoutPanel2.BackColor = Color.White;
             tableLayoutPanel2.ColumnCount = 2;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 31.91489F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 68.0851059F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 32.727272F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 67.27273F));
             tableLayoutPanel2.Controls.Add(lblDriverRoute, 1, 1);
             tableLayoutPanel2.Controls.Add(tableLayoutPanel3, 1, 0);
             tableLayoutPanel2.Controls.Add(lblPlateNum, 0, 1);
-            tableLayoutPanel2.Controls.Add(pbDriverPicture, 0, 0);
+            tableLayoutPanel2.Controls.Add(tableLayoutPanel6, 0, 0);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(3, 3);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 2;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 70.67954F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 29.32046F));
-            tableLayoutPanel2.Size = new Size(605, 233);
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 79.39914F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 20.6008587F));
+            tableLayoutPanel2.Size = new Size(605, 231);
             tableLayoutPanel2.TabIndex = 22;
             // 
             // lblDriverRoute
@@ -153,10 +155,10 @@
             lblDriverRoute.Dock = DockStyle.Fill;
             lblDriverRoute.Font = new Font("Inter Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblDriverRoute.ForeColor = Color.FromArgb(24, 60, 114);
-            lblDriverRoute.Location = new Point(196, 164);
+            lblDriverRoute.Location = new Point(201, 183);
             lblDriverRoute.Name = "lblDriverRoute";
-            lblDriverRoute.Padding = new Padding(15, 0, 0, 0);
-            lblDriverRoute.Size = new Size(406, 69);
+            lblDriverRoute.Padding = new Padding(20, 0, 0, 0);
+            lblDriverRoute.Size = new Size(401, 48);
             lblDriverRoute.TabIndex = 6;
             lblDriverRoute.Text = "Route";
             lblDriverRoute.TextAlign = ContentAlignment.MiddleLeft;
@@ -170,14 +172,14 @@
             tableLayoutPanel3.Controls.Add(lbl, 0, 0);
             tableLayoutPanel3.Controls.Add(lblDriverName, 0, 1);
             tableLayoutPanel3.Dock = DockStyle.Fill;
-            tableLayoutPanel3.Location = new Point(196, 3);
+            tableLayoutPanel3.Location = new Point(201, 3);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 3;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 49.1071434F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 50.8928566F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 54F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel3.Size = new Size(406, 158);
+            tableLayoutPanel3.Size = new Size(401, 177);
             tableLayoutPanel3.TabIndex = 0;
             // 
             // lblDriverStatus
@@ -187,10 +189,10 @@
             lblDriverStatus.Dock = DockStyle.Fill;
             lblDriverStatus.Font = new Font("Inter Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblDriverStatus.ForeColor = Color.FromArgb(24, 60, 114);
-            lblDriverStatus.Location = new Point(3, 103);
+            lblDriverStatus.Location = new Point(3, 122);
             lblDriverStatus.Name = "lblDriverStatus";
             lblDriverStatus.Padding = new Padding(15, 0, 0, 0);
-            lblDriverStatus.Size = new Size(400, 55);
+            lblDriverStatus.Size = new Size(395, 55);
             lblDriverStatus.TabIndex = 5;
             lblDriverStatus.Text = "Status";
             lblDriverStatus.TextAlign = ContentAlignment.MiddleLeft;
@@ -204,7 +206,7 @@
             lbl.ForeColor = Color.FromArgb(24, 60, 114);
             lbl.Location = new Point(3, 0);
             lbl.Name = "lbl";
-            lbl.Size = new Size(400, 51);
+            lbl.Size = new Size(395, 60);
             lbl.TabIndex = 3;
             lbl.Text = "DRIVER";
             lbl.TextAlign = ContentAlignment.MiddleCenter;
@@ -216,10 +218,10 @@
             lblDriverName.Dock = DockStyle.Fill;
             lblDriverName.Font = new Font("Inter Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblDriverName.ForeColor = Color.FromArgb(24, 60, 114);
-            lblDriverName.Location = new Point(3, 51);
+            lblDriverName.Location = new Point(3, 60);
             lblDriverName.Name = "lblDriverName";
             lblDriverName.Padding = new Padding(15, 0, 0, 0);
-            lblDriverName.Size = new Size(400, 52);
+            lblDriverName.Size = new Size(395, 62);
             lblDriverName.TabIndex = 4;
             lblDriverName.Text = "Name";
             lblDriverName.TextAlign = ContentAlignment.MiddleLeft;
@@ -231,9 +233,9 @@
             lblPlateNum.Dock = DockStyle.Fill;
             lblPlateNum.Font = new Font("Inter Medium", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblPlateNum.ForeColor = Color.FromArgb(24, 60, 114);
-            lblPlateNum.Location = new Point(3, 164);
+            lblPlateNum.Location = new Point(3, 183);
             lblPlateNum.Name = "lblPlateNum";
-            lblPlateNum.Size = new Size(187, 69);
+            lblPlateNum.Size = new Size(192, 48);
             lblPlateNum.TabIndex = 2;
             lblPlateNum.Text = "Plate Number";
             lblPlateNum.TextAlign = ContentAlignment.MiddleCenter;
@@ -241,9 +243,9 @@
             // pbDriverPicture
             // 
             pbDriverPicture.Dock = DockStyle.Fill;
-            pbDriverPicture.Location = new Point(3, 3);
+            pbDriverPicture.Location = new Point(23, 22);
             pbDriverPicture.Name = "pbDriverPicture";
-            pbDriverPicture.Size = new Size(187, 158);
+            pbDriverPicture.Size = new Size(146, 152);
             pbDriverPicture.SizeMode = PictureBoxSizeMode.Zoom;
             pbDriverPicture.TabIndex = 1;
             pbDriverPicture.TabStop = false;
@@ -327,6 +329,45 @@
             panel2.Size = new Size(599, 166);
             panel2.TabIndex = 26;
             // 
+            // lblAmount
+            // 
+            lblAmount.AutoSize = true;
+            lblAmount.BackColor = Color.FromArgb(230, 249, 255);
+            lblAmount.Font = new Font("Inter", 41.75F, FontStyle.Bold);
+            lblAmount.ForeColor = Color.FromArgb(38, 36, 68);
+            lblAmount.Location = new Point(150, 54);
+            lblAmount.Name = "lblAmount";
+            lblAmount.Size = new Size(187, 80);
+            lblAmount.TabIndex = 38;
+            lblAmount.Text = "13.00";
+            lblAmount.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // numericMultiplier
+            // 
+            numericMultiplier.Font = new Font("Inter Medium", 14.75F, FontStyle.Bold);
+            numericMultiplier.ForeColor = Color.FromArgb(38, 36, 68);
+            numericMultiplier.Location = new Point(224, 4);
+            numericMultiplier.Maximum = new decimal(new int[] { 16, 0, 0, 0 });
+            numericMultiplier.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericMultiplier.Name = "numericMultiplier";
+            numericMultiplier.Size = new Size(120, 31);
+            numericMultiplier.TabIndex = 37;
+            numericMultiplier.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            numericMultiplier.ValueChanged += numericMultiplier_ValueChanged;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.FromArgb(230, 249, 255);
+            label1.Font = new Font("Inter", 14.75F, FontStyle.Bold);
+            label1.ForeColor = Color.FromArgb(38, 36, 68);
+            label1.Location = new Point(5, 3);
+            label1.Name = "label1";
+            label1.Size = new Size(209, 28);
+            label1.TabIndex = 36;
+            label1.Text = "No. of Passenger/s :";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // btnPay
             // 
             btnPay.Alpha = 20;
@@ -382,44 +423,21 @@
             lbl1.Text = "₱";
             lbl1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // tableLayoutPanel6
             // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.FromArgb(230, 249, 255);
-            label1.Font = new Font("Inter", 14.75F, FontStyle.Bold);
-            label1.ForeColor = Color.FromArgb(38, 36, 68);
-            label1.Location = new Point(5, 3);
-            label1.Name = "label1";
-            label1.Size = new Size(209, 28);
-            label1.TabIndex = 36;
-            label1.Text = "No. of Passenger/s :";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // numericMultiplier
-            // 
-            numericMultiplier.Font = new Font("Inter Medium", 14.75F, FontStyle.Bold);
-            numericMultiplier.ForeColor = Color.FromArgb(38, 36, 68);
-            numericMultiplier.Location = new Point(224, 4);
-            numericMultiplier.Maximum = new decimal(new int[] { 16, 0, 0, 0 });
-            numericMultiplier.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
-            numericMultiplier.Name = "numericMultiplier";
-            numericMultiplier.Size = new Size(120, 31);
-            numericMultiplier.TabIndex = 37;
-            numericMultiplier.Value = new decimal(new int[] { 1, 0, 0, 0 });
-            numericMultiplier.ValueChanged += numericMultiplier_ValueChanged;
-            // 
-            // lblAmount
-            // 
-            lblAmount.AutoSize = true;
-            lblAmount.BackColor = Color.FromArgb(230, 249, 255);
-            lblAmount.Font = new Font("Inter", 41.75F, FontStyle.Bold);
-            lblAmount.ForeColor = Color.FromArgb(38, 36, 68);
-            lblAmount.Location = new Point(150, 54);
-            lblAmount.Name = "lblAmount";
-            lblAmount.Size = new Size(187, 80);
-            lblAmount.TabIndex = 38;
-            lblAmount.Text = "13.00";
-            lblAmount.TextAlign = ContentAlignment.MiddleCenter;
+            tableLayoutPanel6.ColumnCount = 3;
+            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 152F));
+            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel6.Controls.Add(pbDriverPicture, 1, 1);
+            tableLayoutPanel6.Dock = DockStyle.Fill;
+            tableLayoutPanel6.Location = new Point(3, 3);
+            tableLayoutPanel6.Name = "tableLayoutPanel6";
+            tableLayoutPanel6.RowCount = 2;
+            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 10.7594938F));
+            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 89.24051F));
+            tableLayoutPanel6.Size = new Size(192, 177);
+            tableLayoutPanel6.TabIndex = 7;
             // 
             // PaymentUC
             // 
@@ -443,6 +461,7 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericMultiplier).EndInit();
+            tableLayoutPanel6.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -471,5 +490,6 @@
         public Label label1;
         private NumericUpDown numericMultiplier;
         public Label lblAmount;
+        private TableLayoutPanel tableLayoutPanel6;
     }
 }
