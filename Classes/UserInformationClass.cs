@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.OleDb;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using BCrypt.Net;
@@ -17,8 +18,7 @@ namespace NEXUS.Classes
     {
         void SaveToDatabase();
         void SaveImageToDatabase(byte[] imageBytes, int userID);
-        //float ProcessPayment();
-        //double CheckBalance();
+        byte[] DefaultProfilePicture(string gender);
     }
 
     public abstract class UserInformation
@@ -148,6 +148,36 @@ namespace NEXUS.Classes
             }
         }
 
+        public byte[] DefaultProfilePicture(string gender)
+        {
+            byte[] profilePicture = null;
+            Image photo = null;
+            if(gender == "Male")
+            {
+                photo = Image.FromFile(@"C:\Users\Shan Michael\source\repos\NEXUS\Resources\default_male.png");
+            }
+            else if(gender == "Female")
+            {
+                photo = Image.FromFile(@"C:\Users\Shan Michael\source\repos\NEXUS\Resources\defaullt_female.png");
+            }
+            else
+            {
+                photo = Image.FromFile(@"C:\Users\Shan Michael\source\repos\NEXUS\Resources\default_User.png");
+            }
+
+            if (photo != null)
+            {
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    photo.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+
+                    return ms.ToArray();
+                }
+            }
+
+            return null;
+        }
+
         public void AddTrip(string tripDetails)
         {
             if (!string.IsNullOrWhiteSpace(tripDetails))
@@ -227,8 +257,43 @@ namespace NEXUS.Classes
                 }
             }
         }
+                    
+        public byte[] DefaultProfilePicture(string gender)
+        {
+            byte[] profilePicture = null;
+            Image photo = null;
+            if (gender == "Male")
+            {
+                photo = Image.FromFile(@"C:\Users\Shan Michael\source\repos\NEXUS\Resources\driver_Default.png");
+            }
+            else if (gender == "Female")
+            {
+                photo = Image.FromFile(@"C:\Users\Shan Michael\source\repos\NEXUS\Resources\driver_FemaleDefault.jpg");
+            }
+            else
+            {
+                photo = Image.FromFile(@"C:\Users\Shan Michael\source\repos\NEXUS\Resources\default_User.png");
+            }
 
+            if (photo != null)
+            {
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    if (photo.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Jpeg))
+                    {
+                        photo.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    }
+                    else
+                    {
+                        photo.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                    }
 
+                    return ms.ToArray();
+                }
+            }
+
+            return null;
+        }
     }
 
     public class EmergencyReport
