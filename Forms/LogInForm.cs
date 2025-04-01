@@ -223,7 +223,6 @@ namespace NEXUS.Forms
                     dialogBox.ShowIcon("login");
                     overlayForm(this, dialogBox);
                     Dashboard dashboard = new Dashboard(passenger);
-                    //Home home = new Home(passenger);
                     dashboard.Show();
                     this.Close();
                 }

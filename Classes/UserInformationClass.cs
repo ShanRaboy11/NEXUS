@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using BCrypt.Net;
 using NEXUS.Classes;
 using NEXUS.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace NEXUS.Classes
@@ -34,17 +35,17 @@ namespace NEXUS.Classes
         private double walletAmount;
         private string status;
 
-        public int UserID { get; set; }
-        public string Name { get; set; }
-        public string Email { get; set; }
-        public string Username { get; set; }
-        public string Gender { get; set; }
-        public string UserType { get; set; }
-        public string Birthday { get; set; }
-        public byte[] Attachment { get; set; }
-        public string ProfilePicture { get; set; }
-        public double WalletAmount { get; set; }
-        public string Status { get; set; }
+        public int UserID { get => userID; set => userID = value; }
+        public string Name { get => name; set => name = value; }
+        public string Email { get => email; set => email = value; }
+        public string Username { get => username; set => username = value; }
+        public string Gender { get => gender; set => gender = value; }
+        public string UserType { get => userType; set => userType = value; }
+        public string Birthday { get => birthday; set => birthday = value; }
+        public byte[] Attachment { get => attachment; set => attachment = value; }
+        public string ProfilePicture { get => profilePicture; set => profilePicture = value; }
+        public double WalletAmount { get => walletAmount; set => walletAmount = value; }
+        public string Status { get => status; set => status = value; }
 
         // Protected property for password (Only accessible within derived classes)
         protected string HashedPassword { get; set; }
@@ -86,9 +87,8 @@ namespace NEXUS.Classes
         private string classification;
         private int points;
         public List<string> TripHistory { get; private set; }
-        public string Classification { get; set; }
-        public int Points { get; set; }
-
+        public string Classification { get => classification; set => classification = value; }
+        public int Points { get => points; set => points = value; }
 
         // Constructor
         public Passenger(int userId, string name, string email, string username, string password, string gender, string userType, string birthday, string classification, byte[] attachment, string profilepic, double wallet, int points, string status)
@@ -162,12 +162,12 @@ namespace NEXUS.Classes
         private string plateNumber;
         private byte[] qrCode;
         private string route;
-        public string PlateNumber { get; set; }
-        public string QRCode { get; set; }
-        public string Route { get; set; }
+        public string PlateNumber { get => plateNumber; set => plateNumber = value; }
+        public byte[] QRCode { get => qrCode; set => qrCode = value; }
+        public string Route { get => route; set => route = value; }
 
         // Constructor
-        public Driver(int userId, string name,  string email, string username, string password, string gender, string userType, string birthday, byte[] attachment, string plateNumber, string profilepic, double wallet, string qrcode, string route, string status)
+        public Driver(int userId, string name,  string email, string username, string password, string gender, string userType, string birthday, byte[] attachment, string plateNumber, string profilepic, double wallet, byte[] qrcode, string route, string status)
             : base(userId, name, email, username, password, gender, userType, birthday, attachment, profilepic, wallet, status)
         {
             PlateNumber = plateNumber;
@@ -206,13 +206,15 @@ namespace NEXUS.Classes
 
         public void SaveImageToDatabase(byte[] imageBytes, int userID)
         {
-            string query = "INSERT INTO Accounts ([QR Code]) VALUES (?) WHERE ID = ?";
+            // Corrected SQL query to update the QR code for the specified user
+            string query = "UPDATE Accounts SET [QR Code] = ? WHERE ID = ?";
 
             using (OleDbConnection conn = DatabaseManagement.GetConnection())
             using (OleDbCommand command = new OleDbCommand(query, conn))
             {
-                command.Parameters.AddWithValue("?", userID);
+                // Add parameters: First is the image data for the QR Code, then the user ID
                 command.Parameters.Add("?", OleDbType.VarBinary).Value = imageBytes;
+                command.Parameters.AddWithValue("?", userID);
 
                 try
                 {
@@ -225,6 +227,7 @@ namespace NEXUS.Classes
                 }
             }
         }
+
 
     }
 
@@ -331,7 +334,7 @@ namespace NEXUS.Classes
             }
         }
 
-        public string SaveQrCode(Image qrImage, int userID)
+        public string SaveQrCode(byte[] qrCodeBytes, int userID)
         {
             // Define file name (Example: QR_123.png where 123 is UserID)
             string fileName = $"QR_{userID}.png";
@@ -339,8 +342,8 @@ namespace NEXUS.Classes
 
             try
             {
-                // Save the QR code image
-                qrImage.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
+                // Save the byte array as an image to the file path
+                File.WriteAllBytes(filePath, qrCodeBytes);
                 return filePath; // Return the file path to be stored in the database
             }
             catch (Exception ex)
@@ -349,5 +352,17 @@ namespace NEXUS.Classes
                 return null;
             }
         }
+
+        // Convert Image to byte[]
+        public byte[] ConvertImageToByteArray(Image image)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                // Save the image to the memory stream in PNG format
+                image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                return ms.ToArray(); // Return the byte array
+            }
+        }
     }
+
 }

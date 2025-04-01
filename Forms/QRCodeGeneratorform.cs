@@ -14,25 +14,23 @@ using System.Windows.Forms;
 using ZXing;
 using ZXing.Common;
 using ZXing.QrCode;
-using NEXUS.Classes;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace NEXUS.Forms
 {
     public partial class QRCodeGeneratorform : Form
     {
-        DatabaseManagement databaseManagement;
+        DatabaseManagement databaseManagement = new DatabaseManagement();
         Driver userInfo;
         int UserID;
         bool qrSaved = false;
+
         public QRCodeGeneratorform(int userID)
         {
             InitializeComponent();
             this.UserID = userID;
             this.userInfo = databaseManagement.GetUserInfoByID(UserID);
 
-            if (this.userInfo.QRCode != "")
+            if (this.userInfo.QRCode != null)
             {
                 qrSaved = true;
                 LoadSavedQRCode(this.userInfo.QRCode);
@@ -40,7 +38,6 @@ namespace NEXUS.Forms
 
             btnQRGenerate.Visible = !qrSaved;
             btnSaveQR.Visible = !qrSaved;
-
         }
 
         private void btnQRGenerate_Click(object sender, EventArgs e)
@@ -81,7 +78,6 @@ namespace NEXUS.Forms
                     if (saveFileDialog.ShowDialog() == DialogResult.OK)
                     {
                         pbQRCode.Image.Save(saveFileDialog.FileName);
-
                     }
                 }
             }
@@ -106,36 +102,60 @@ namespace NEXUS.Forms
         private void Close(object sender, EventArgs e)
         {
             Dashboard dashboard = new Dashboard(null);
-
             this.Close();
             dashboard.Show();
         }
 
         private void btnSaveQR_Click(object sender, EventArgs e)
         {
-            QRCodeManager qrManager = new QRCodeManager();
-            Scan scan = new Scan(0);
-            DialogBox dialogBox = new DialogBox();
-            string filePath = qrManager.SaveQrCode(pbQRCode.Image, UserID);
+            // Convert the QR code image to a byte array
+            byte[] qrCodeBytes = ImageToByteArray(pbQRCode.Image);
 
-            if (filePath != null) // Only save to database if file saving is successful
+            if (qrCodeBytes != null)
             {
-                DatabaseManagement.SaveQrCode(UserID, filePath);
+                // Call the method to save the image to the database
+                userInfo.SaveImageToDatabase(qrCodeBytes, UserID);
+
+                // Hide the buttons after saving the QR code
+                btnQRGenerate.Visible = false;
+                btnSaveQR.Visible = false;
+
+                // Display a dialog box indicating the save was successful
+                DialogBox dialogBox = new DialogBox();
+                dialogBox.ShowIcon("qr save");
+                dialogBox.ShowDialog();
+
+                // Load the saved QR code (or refresh the UI as needed)
+                LoadSavedQRCode(userInfo.QRCode);
             }
-            btnQRGenerate.Visible = false;
-            btnSaveQR.Visible = false;
-            dialogBox.ShowIcon("qr save");
-            scan.ShowOverlay(this, dialogBox);
-            LoadSavedQRCode(userInfo.QRCode);
+            else
+            {
+                MessageBox.Show("Failed to convert image to byte array.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void LoadSavedQRCode(string filePath)
+        byte[] ImageToByteArray(Image image)
+        {
+            using (System.IO.MemoryStream ms = new System.IO.MemoryStream())
+            {
+                image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                return ms.ToArray();
+            }
+        }
+
+        private void LoadSavedQRCode(byte[] qrCodeData)
         {
             lblNoteQR.Text = "Your QR code is set! Use it for seamless trip logging and secure transactions.";
             pnlBG.Location = new Point(136, 152);
             pbQRCode.Location = new Point(167, 175);
 
-            pbQRCode.Image = Image.FromFile(filePath);
+            if (qrCodeData != null)
+            {
+                using (System.IO.MemoryStream ms = new System.IO.MemoryStream(qrCodeData))
+                {
+                    pbQRCode.Image = Image.FromStream(ms);
+                }
+            }
         }
     }
 }

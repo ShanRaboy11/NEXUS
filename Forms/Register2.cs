@@ -101,7 +101,7 @@ namespace NEXUS.Forms
                     userData.Gender, rbtnDriver.Text, birthday, attachedImageBytes, tbxPlateNumber.Text, 
                     (userData.Gender == "Male" ? @"C:\Users\Shan Michael\source\repos\NEXUS\Resources\driver_Default.png" :
                     userData.Gender == "Female" ? @"C:\Users\Shan Michael\source\repos\NEXUS\Resources\driver_FemaleDefault.jpg" :
-                    @"C:\Users\Shan Michael\source\repos\NEXUS\Resources\default_User.png"), 0, "", tbxRoute.SelectedItem.ToString(), "Pending"
+                    @"C:\Users\Shan Michael\source\repos\NEXUS\Resources\default_User.png"), 0, null, tbxRoute.SelectedItem.ToString(), "Pending"
                 );
                 newDriver.SaveToDatabase();
             }

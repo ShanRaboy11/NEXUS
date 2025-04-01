@@ -84,7 +84,7 @@ namespace NEXUS.Classes
                         string plateNumber = reader.GetString(9);
                         string profilepic = reader.GetString(10);
                         double wallet = reader.IsDBNull(11) ? 0.0 : Convert.ToDouble(reader.GetValue(11));
-                        string qrcode = reader.IsDBNull(12) ? null : reader.GetString(12);
+                        byte[] qrcode = reader.IsDBNull(12) ? null : reader.GetFieldValue<byte[]>(12);
                         string route = reader.IsDBNull(13) ? null : reader.GetString(13);
                         string status = reader.IsDBNull(14) ? "Pending" : reader.GetString(14);
 
