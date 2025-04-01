@@ -59,7 +59,7 @@ namespace NEXUS.Classes
                             string birthday = reader.GetString(7);
                             string classification = reader.IsDBNull(8) ? null : reader.GetString(8);
                             byte[] attachment = reader.IsDBNull(9) ? null : reader.GetFieldValue<byte[]>(9);
-                            string profilepic = reader.GetString(10);
+                            byte[] profilepic = reader.GetFieldValue<byte[]>(10);
                             double wallet = reader.IsDBNull(11) ? 0.0 : Convert.ToDouble(reader.GetValue(11));
                             int points = reader.IsDBNull(12) ? 0 : Convert.ToInt32(reader.GetValue(12));
                             byte[] qrcode = reader.IsDBNull(13) ? null : reader.GetFieldValue<byte[]>(13);
@@ -110,7 +110,7 @@ namespace NEXUS.Classes
                             string birthday = reader.GetString(7);
                             string classification = reader.IsDBNull(8) ? null : reader.GetString(8);
                             byte[] attachment = reader.IsDBNull(9) ? null : reader.GetFieldValue<byte[]>(9);
-                            string profilepic = reader.GetString(10);
+                            byte[] profilepic = reader.GetFieldValue<byte[]>(10);
                             double wallet = reader.IsDBNull(11) ? 0.0 : Convert.ToDouble(reader.GetValue(11));
                             int points = reader.IsDBNull(12) ? 0 : Convert.ToInt32(reader.GetValue(12));
                             string status = reader.GetString(13);
@@ -147,7 +147,7 @@ namespace NEXUS.Classes
                             string birthday = reader.GetString(7);
                             byte[] attachment = reader.GetFieldValue<byte[]>(8);
                             string plateNumber = reader.GetString(9);
-                            string profilepic = reader.GetString(10);
+                            byte[] profilepic = reader.GetFieldValue<byte[]>(10);
                             double wallet = reader.IsDBNull(11) ? 0.0 : Convert.ToDouble(reader.GetValue(11));
                             byte[] qrcode = reader.IsDBNull(12) ? null : reader.GetFieldValue<byte[]>(12);
                             string route = reader.IsDBNull(13) ? null : reader.GetString(13); 

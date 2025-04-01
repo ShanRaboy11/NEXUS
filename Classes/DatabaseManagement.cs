@@ -82,7 +82,7 @@ namespace NEXUS.Classes
                         string birthday = reader.GetString(7);
                         byte[] attachment = reader.GetFieldValue<byte[]>(8);
                         string plateNumber = reader.GetString(9);
-                        string profilepic = reader.GetString(10);
+                        byte[] profilepic = reader.GetFieldValue<byte[]>(10);
                         double wallet = reader.IsDBNull(11) ? 0.0 : Convert.ToDouble(reader.GetValue(11));
                         byte[] qrcode = reader.IsDBNull(12) ? null : reader.GetFieldValue<byte[]>(12);
                         string route = reader.IsDBNull(13) ? null : reader.GetString(13);

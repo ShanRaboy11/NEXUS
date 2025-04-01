@@ -25,7 +25,10 @@ namespace NEXUS.Forms
 
             if(userInformation is Passenger passenger)
             {
-                pbProfilePicture.Image = Image.FromFile(userInformation.ProfilePicture);
+                using (MemoryStream ms = new MemoryStream(passenger.ProfilePicture))
+                {
+                    pbProfilePicture.Image = Image.FromStream(ms);
+                }
                 lblUserName.Text = passenger.Name;
                 lblClassification.Text = passenger.Classification;
                 lblGender.Text = passenger.Gender;
@@ -38,7 +41,10 @@ namespace NEXUS.Forms
             }
             else if(userInformation is Driver driver)
             {
-                pbProfilePicture.Image = Image.FromFile(userInformation.ProfilePicture);
+                using (MemoryStream ms = new MemoryStream(driver.ProfilePicture))
+                {
+                    pbProfilePicture.Image = Image.FromStream(ms);
+                }
                 lblUserName.Text = driver.Name;
                 lblClassification.Text = driver.PlateNumber;
                 lblGender.Text = driver.Gender;
