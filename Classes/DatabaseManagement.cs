@@ -95,6 +95,44 @@ namespace NEXUS.Classes
             return null;
         }
 
+        public Passenger GetPassengerInfoByID(int userID)
+        {
+            string query = "SELECT ID, Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Classification, Attachment, [Profile Picture], Wallet, Points , Status " +
+                    "FROM Accounts WHERE ID = ?";
+
+
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            using (OleDbCommand cmd = new OleDbCommand(query, conn))
+            {
+                conn.Open();
+                cmd.Parameters.AddWithValue("?", userID);
+
+                using (OleDbDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        int UserID = reader.GetInt32(0);
+                        string username = reader.GetString(1);
+                        string password = reader.GetString(2);
+                        string fullName = reader.GetString(3);
+                        string email = reader.GetString(4);
+                        string gender = reader.GetString(5);
+                        string userType = reader.GetString(6);
+                        string birthday = reader.GetString(7);
+                        string classification = reader.GetString(8);
+                        byte[] attachment = reader.GetFieldValue<byte[]>(9);
+                        byte[] profilepic = reader.GetFieldValue<byte[]>(10);
+                        double wallet = reader.IsDBNull(11) ? 0.0 : Convert.ToDouble(reader.GetValue(11));
+                        int points = reader.IsDBNull(12) ? 0 : Convert.ToInt32(reader.GetValue(12));
+                        string status = reader.IsDBNull(14) ? "Pending" : reader.GetString(13);
+
+                        return new Passenger(userID, fullName, email, username, password, gender, userType, birthday, classification, attachment, profilepic, wallet, points, status);
+                    }
+                }
+            }
+            return null;
+        }
+
         public static OleDbConnection Connect()
         {
             try

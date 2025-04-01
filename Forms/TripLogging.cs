@@ -25,12 +25,12 @@ namespace NEXUS.Forms
         {
             pnlContainerScan.Controls.Clear();
 
-            QRScanUC qRScanUC = new QRScanUC(pnlContainerScan)
+            QRScanUC qRScanUC = new QRScanUC(pnlContainerScan, UserID)
             {
                 Dock = DockStyle.Fill
             };
 
-            pnlContainerScan.Controls.Add(qRScanUC, UserID);
+            pnlContainerScan.Controls.Add(qRScanUC);
         }
 
         private void pbClose_Click(object sender, EventArgs e)

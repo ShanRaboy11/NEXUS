@@ -125,7 +125,7 @@ namespace NEXUS.User_Controls
                             }
                             containerPanel.Controls.Clear(); 
 
-                            QRScanUC newQRScanUC = new QRScanUC(containerPanel);
+                            QRScanUC newQRScanUC = new QRScanUC(containerPanel, PassengerID);
 
                             containerPanel.Controls.Add(newQRScanUC);
                         }

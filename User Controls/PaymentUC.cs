@@ -17,6 +17,7 @@ namespace NEXUS.User_Controls
         Driver currentDriver;
         DatabaseManagement databasemanagement = new DatabaseManagement();
         private int CurrentPassenger;
+        Passenger passemger;
         public PaymentUC(string qrInfo, int currentPassenger)
         {
             InitializeComponent();
@@ -45,6 +46,7 @@ namespace NEXUS.User_Controls
         {
             DialogBox dialogBox = new DialogBox();
             Scan scan = new Scan(0); //change to userid
+            passemger = databasemanagement.GetPassengerInfoByID(CurrentPassenger);
 
             if (cmbxDestination.SelectedItem == null || cmbxLocation.SelectedItem == null)
             {
@@ -52,7 +54,7 @@ namespace NEXUS.User_Controls
                 scan.ShowOverlay(dialogBox, null);
                 return;
             }
-            Trip trip = new Trip(currentDriver.UserID, CurrentPassenger, DateTime.Now, ,currentDriver.Name, currentDriver.Route, cmbxLocation.SelectedItem.ToString()
+            Trip trip = new Trip(currentDriver.UserID, CurrentPassenger, DateTime.Now, passemger.Name,currentDriver.Name, currentDriver.Route, cmbxLocation.SelectedItem.ToString()
                 , cmbxDestination.SelectedItem.ToString(), double.Parse(lblAmount.Text));
 
             dialogBox.ShowIcon("successful payment");
