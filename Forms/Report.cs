@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NEXUS.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,26 +15,37 @@ namespace NEXUS.Forms
     public partial class Report : Form
     {
         private Image attachedImage;
+        private byte[] attachedImageBytes;
+        private readonly Attachment attachmentHandler = new Attachment();
         public Report()
         {
             InitializeComponent();
         }
 
+
         private void btnAttach_Click(object sender, EventArgs e)
         {
+            Passenger passenger = new Passenger(0, null, null, null, "i", null, null, null, null, null, null, 0.0, 0, null);
             lblFileName.Text = "";
             lblFileName.ForeColor = Color.Black;
+            lblFileName.Font = new Font(lblFileName.Font, FontStyle.Underline);
+
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
-                openFileDialog.Title = "Select an Image";
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     attachedImage = Image.FromFile(openFileDialog.FileName);
+                    attachedImageBytes = attachmentHandler.ConvertImageToByteArray(attachedImage);
 
                     lblFileName.Text = Path.GetFileName(openFileDialog.FileName);
+                    lblFileName.ForeColor = Color.Blue;
+                    lblFileName.Cursor = Cursors.Hand;
                     lblFileName.Font = new Font(lblFileName.Font, FontStyle.Underline);
+
+                    // Save to database
+                    passenger.SaveImageToDatabase(attachedImageBytes, 0);
                 }
             }
         }
@@ -66,7 +78,7 @@ namespace NEXUS.Forms
         {
             if (attachedImage != null)
             {
-                //DisplayImage displayImage = new DisplayImage(attachedImage, "report");
+                DisplayImage displayImage = new DisplayImage(attachedImageBytes, "report");
             }
         }
     }

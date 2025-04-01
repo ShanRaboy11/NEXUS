@@ -257,7 +257,7 @@
             lblFileName.ForeColor = Color.Gray;
             lblFileName.Location = new Point(15, 12);
             lblFileName.Name = "lblFileName";
-            lblFileName.Size = new Size(187, 23);
+            lblFileName.Size = new Size(194, 23);
             lblFileName.TabIndex = 31;
             lblFileName.Text = "Optional";
             lblFileName.Click += lblFileName_Click;
