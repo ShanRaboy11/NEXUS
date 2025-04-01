@@ -17,12 +17,14 @@ namespace NEXUS.User_Controls
         private FilterInfoCollection videoDevices;
         private VideoCaptureDevice videoCaptureDevice;
         private Panel containerPanel;
+        private int PassengerID;
         private bool isProcessing = false; 
         bool cameraInitialized = false;
-        public QRScanUC(Panel pnlContainer)
+        public QRScanUC(Panel pnlContainer, int passengerID)
         {
             InitializeComponent();
             containerPanel = pnlContainer;
+            this.PassengerID = passengerID;
             InitializeCamera();
             this.Disposed += QRScanUC_Disposed;
         }
@@ -94,7 +96,7 @@ namespace NEXUS.User_Controls
                             if (int.TryParse(decoded, out int driverID))
                             {
                                 containerPanel.Controls.Clear();
-                                PaymentUC paymentUC = new PaymentUC(decoded)
+                                PaymentUC paymentUC = new PaymentUC(decoded, PassengerID)
                                 {
                                     Dock = DockStyle.Fill
                                 };

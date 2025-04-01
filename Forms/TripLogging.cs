@@ -13,10 +13,12 @@ namespace NEXUS.Forms
 {
     public partial class TripLogging : Form
     {
+        private int UserID;
         public TripLogging(int userID)
         {
             InitializeComponent();
             DisplayScanner();
+            this.UserID = userID;
         }
 
         private void DisplayScanner()
@@ -28,7 +30,7 @@ namespace NEXUS.Forms
                 Dock = DockStyle.Fill
             };
 
-            pnlContainerScan.Controls.Add(qRScanUC);
+            pnlContainerScan.Controls.Add(qRScanUC, UserID);
         }
 
         private void pbClose_Click(object sender, EventArgs e)

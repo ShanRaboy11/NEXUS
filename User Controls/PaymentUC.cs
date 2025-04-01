@@ -16,11 +16,13 @@ namespace NEXUS.User_Controls
     {
         Driver currentDriver;
         DatabaseManagement databasemanagement = new DatabaseManagement();
-        public PaymentUC(string qrInfo)
+        private int CurrentPassenger;
+        public PaymentUC(string qrInfo, int currentPassenger)
         {
             InitializeComponent();
             DecodeQRCode(qrInfo);
             SetBaseAmount(13);//temporary
+            this.CurrentPassenger = currentPassenger;
         }
 
         private void DecodeQRCode(string QRInfo)
@@ -50,6 +52,8 @@ namespace NEXUS.User_Controls
                 scan.ShowOverlay(dialogBox, null);
                 return;
             }
+            Trip trip = new Trip(currentDriver.UserID, CurrentPassenger, DateTime.Now, ,currentDriver.Name, currentDriver.Route, cmbxLocation.SelectedItem.ToString()
+                , cmbxDestination.SelectedItem.ToString(), double.Parse(lblAmount.Text));
 
             dialogBox.ShowIcon("successful payment");
             scan.ShowOverlay(dialogBox, null);
