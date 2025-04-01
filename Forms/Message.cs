@@ -40,6 +40,15 @@ namespace NEXUS.Forms
                 lblMessage.Text = "Your deposit has been successfully processed.";
                 btnOK.TextButton = "OK";
             }
+            else if (message == "wait")
+            {
+                pbDialogIcon.Image = Resources.Animation___1739888639577;
+                lblMessage.Location = new Point(12, 125);
+                lblMessage.Font = new Font(lblMessage.Font.FontFamily, 11.5f);
+                lblMesage1.Visible = true;
+                lblMessage.Text = "Your account is currently being verified.";
+                btnOK.TextButton = "OK";
+            }
         }
 
         private void btnOK_Click(object sender, EventArgs e)

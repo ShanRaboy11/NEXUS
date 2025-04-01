@@ -49,6 +49,15 @@ namespace NEXUS.Forms
             string route = userInfo.Route;
             string status = userInfo.Status;
 
+            if(status == "Pending")
+            {
+                Scan scan = new Scan(userInfo.UserID);
+                Message message = new Message("wait");
+
+                scan.ShowOverlay(message, null);
+                return;
+            }
+
             // Create a structured QR Code data string
             string qrData = this.UserID.ToString();
 

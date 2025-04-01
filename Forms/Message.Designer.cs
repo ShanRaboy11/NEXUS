@@ -37,6 +37,7 @@
             panel2 = new Panel();
             panel1 = new Panel();
             btnClose = new FontAwesome.Sharp.IconButton();
+            lblMesage1 = new Label();
             ((System.ComponentModel.ISupportInitialize)pbDialogIcon).BeginInit();
             SuspendLayout();
             // 
@@ -44,7 +45,7 @@
             // 
             lblMessage.Font = new Font("Inter Medium", 12.5F, FontStyle.Bold);
             lblMessage.ForeColor = Color.FromArgb(24, 60, 114);
-            lblMessage.Location = new Point(12, 140);
+            lblMessage.Location = new Point(12, 145);
             lblMessage.Name = "lblMessage";
             lblMessage.Size = new Size(422, 40);
             lblMessage.TabIndex = 2;
@@ -78,7 +79,7 @@
             btnOK.Lighting = false;
             btnOK.LinearGradient_Background = false;
             btnOK.LinearGradientPen = false;
-            btnOK.Location = new Point(144, 196);
+            btnOK.Location = new Point(155, 196);
             btnOK.Name = "btnOK";
             btnOK.PenWidth = 15;
             btnOK.Rounding = true;
@@ -156,6 +157,18 @@
             btnClose.UseVisualStyleBackColor = true;
             btnClose.Click += btnClose_Click;
             // 
+            // lblMesage1
+            // 
+            lblMesage1.Font = new Font("Inter Medium", 11.5F, FontStyle.Bold);
+            lblMesage1.ForeColor = Color.FromArgb(24, 60, 114);
+            lblMesage1.Location = new Point(12, 155);
+            lblMesage1.Name = "lblMesage1";
+            lblMesage1.Size = new Size(422, 40);
+            lblMesage1.TabIndex = 35;
+            lblMesage1.Text = "Please wait until the verification process is complete.";
+            lblMesage1.TextAlign = ContentAlignment.MiddleCenter;
+            lblMesage1.Visible = false;
+            // 
             // Message
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -170,6 +183,7 @@
             Controls.Add(pbDialogIcon);
             Controls.Add(btnOK);
             Controls.Add(lblMessage);
+            Controls.Add(lblMesage1);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Message";
@@ -189,5 +203,6 @@
         private Panel panel2;
         private Panel panel1;
         private FontAwesome.Sharp.IconButton btnClose;
+        private Label lblMesage1;
     }
 }
