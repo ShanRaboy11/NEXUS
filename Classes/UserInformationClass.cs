@@ -226,7 +226,7 @@ namespace NEXUS.Classes
                 cmd.Parameters.AddWithValue("?", PlateNumber);
                 cmd.Parameters.AddWithValue("?", this.ProfilePicture);
                 cmd.Parameters.AddWithValue("?", this.WalletAmount);
-                cmd.Parameters.AddWithValue("?", this.QRCode);
+                cmd.Parameters.AddWithValue("?", (object)this.QRCode ?? DBNull.Value);
                 cmd.Parameters.AddWithValue("?", this.Route);
                 cmd.Parameters.AddWithValue("?", this.Status);
 

@@ -30,8 +30,8 @@ namespace NEXUS.Classes
 
         public static UserInformation VerifyPassword(string userName, string enteredPassword)
         {
-            string query = "SELECT ID, Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Classification, Attachment, [Profile picture], Wallet, Points, [QR Code], Route, [Status] " +
-                   "FROM Accounts WHERE Username = ?";
+            string query = "SELECT ID, Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Classification, Attachment, [Plate Number], [Profile picture], Wallet, Points, [QR Code], Route, [Status] " +
+                           "FROM Accounts WHERE Username = ?";
 
             string enteredHash = ToSHA256(enteredPassword);
 
@@ -49,7 +49,7 @@ namespace NEXUS.Classes
 
                         if (enteredHash.Equals(storedHash, StringComparison.OrdinalIgnoreCase))
                         {
-                            int userID = reader.GetInt32(0);  // Retrieve UserID
+                            int userID = reader.GetInt32(0);
                             string username = reader.GetString(1);
                             string password = reader.GetString(2);
                             string fullName = reader.GetString(3);
@@ -59,12 +59,13 @@ namespace NEXUS.Classes
                             string birthday = reader.GetString(7);
                             string classification = reader.IsDBNull(8) ? null : reader.GetString(8);
                             byte[] attachment = reader.IsDBNull(9) ? null : reader.GetFieldValue<byte[]>(9);
-                            byte[] profilepic = reader.GetFieldValue<byte[]>(10);
-                            double wallet = reader.IsDBNull(11) ? 0.0 : Convert.ToDouble(reader.GetValue(11));
-                            int points = reader.IsDBNull(12) ? 0 : Convert.ToInt32(reader.GetValue(12));
-                            byte[] qrcode = reader.IsDBNull(13) ? null : reader.GetFieldValue<byte[]>(13);
-                            string route = reader.IsDBNull(14) ? null : reader.GetString(14);
-                            string status = reader.GetString(15);
+                            string plateNumber = reader.IsDBNull(10) ? null : reader.GetString(10);
+                            byte[] profilepic = reader.IsDBNull(11) ? null : reader.GetFieldValue<byte[]>(11);
+                            double wallet = reader.IsDBNull(12) ? 0.0 : Convert.ToDouble(reader.GetValue(12)); 
+                            int points = reader.IsDBNull(13) ? 0 : Convert.ToInt32(reader.GetValue(13));  
+                            byte[] qrcode = reader.IsDBNull(14) ? null : reader.GetFieldValue<byte[]>(14);  
+                            string route = reader.IsDBNull(15) ? null : reader.GetString(15); 
+                            string status = reader.GetString(16);
 
                             if (userType == "Passenger")
                             {
@@ -72,15 +73,15 @@ namespace NEXUS.Classes
                             }
                             else
                             {
-                                string plateNumber = reader.IsDBNull(10) ? null : reader.GetString(10);
                                 return new Driver(userID, fullName, email, username, password, gender, userType, birthday, attachment, plateNumber, profilepic, wallet, qrcode, route, status);
                             }
                         }
                     }
                 }
             }
-            return null; 
+            return null;
         }
+
 
         public static UserInformation GetUserInfo(string Username, string Usertype)
         {
