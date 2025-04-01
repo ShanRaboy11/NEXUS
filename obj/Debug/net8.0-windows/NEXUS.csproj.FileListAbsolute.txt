@@ -31,7 +31,6 @@ C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\AForge.Video.d
 C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\AForge.Video.DirectShow.dll
 C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\zxing.dll
 C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.PaymentForm.resources
-C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.QRScannerForm.resources
 C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\System.Drawing.Common.dll
 C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\ZXing.Windows.Compatibility.dll
 C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.QRCodeGeneratorform.resources

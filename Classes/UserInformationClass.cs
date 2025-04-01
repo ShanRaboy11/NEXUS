@@ -6,6 +6,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using BCrypt.Net;
+using Microsoft.VisualBasic;
 using NEXUS.Classes;
 using NEXUS.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -86,7 +87,6 @@ namespace NEXUS.Classes
     {
         private string classification;
         private int points;
-        public List<string> TripHistory { get; private set; }
         public string Classification { get => classification; set => classification = value; }
         public int Points { get => points; set => points = value; }
 
@@ -176,14 +176,6 @@ namespace NEXUS.Classes
             }
 
             return null;
-        }
-
-        public void AddTrip(string tripDetails)
-        {
-            if (!string.IsNullOrWhiteSpace(tripDetails))
-            {
-                TripHistory.Add(tripDetails);
-            }
         }
     }
 
@@ -296,6 +288,43 @@ namespace NEXUS.Classes
         }
     }
 
+    public class Trip
+    {
+        private int driverID;
+        private int passengerID;
+        private DateTime tripDate;
+        private string passengerName;
+        private string driverName;
+        private string route;
+        private string location;
+        private string destination;
+        private double fareAmount;
+
+        public int DriverID { get => driverID; set => driverID = value; }
+        public int PassengerID { get => passengerID; set => passengerID = value; }
+        public DateTime TripDate { get => tripDate; set => tripDate = value; }
+        public string PassengerName { get => passengerName; set => passengerName = value; }
+        public string DriverName { get => driverName; set => driverName = value; }
+        public string Route { get => route; set => route = value; }
+        public string Location { get => location; set => location = value; }
+        public string Destination { get => destination; set => destination = value; }
+        public double FareAmount { get => fareAmount; set => fareAmount = value; }
+
+        public Trip(int driverID, int passengerID, DateTime tripDate, string passengerName,
+                string driverName, string route, string location, string destination, double fareAmount)
+        {
+            this.driverID = driverID;
+            this.passengerID = passengerID;
+            this.tripDate = tripDate;
+            this.passengerName = passengerName;
+            this.driverName = driverName;
+            this.route = route;
+            this.location = location;
+            this.destination = destination;
+            this.fareAmount = fareAmount;
+        }
+    }
+
     public class EmergencyReport
     {
         public int PassengerID { get; private set; }
@@ -336,38 +365,6 @@ namespace NEXUS.Classes
                 throw new ArgumentException("Rating must be between 1 and 5.");
             }
             Rating = rating;
-        }
-    }
-
-
-    public class Trip
-    {
-        public string RouteTaken { get; private set; }
-        public double FarePaid { get; private set; }
-        public DateTime TripTimeStamp { get; private set; }
-
-        // Constructor (exclude TripID since it's DB-generated)
-        public Trip(string routeTaken, double farePaid)
-        {
-            if (string.IsNullOrWhiteSpace(routeTaken))
-                throw new ArgumentException("RouteTaken cannot be empty.");
-
-            if (farePaid < 0)
-                throw new ArgumentException("Fare cannot be negative.");
-
-            RouteTaken = routeTaken;
-            FarePaid = farePaid;
-            TripTimeStamp = DateTime.Now;
-        }
-
-        // Generate a receipt string
-        public string GenerateReceipt()
-        {
-            return $"Trip Receipt\n" +
-                   $"-----------------------\n" +
-                   $"Route: {RouteTaken}\n" +
-                   $"Fare Paid: {FarePaid:C}\n" +
-                   $"Date: {TripTimeStamp:yyyy-MM-dd HH:mm:ss}\n";
         }
     }
 

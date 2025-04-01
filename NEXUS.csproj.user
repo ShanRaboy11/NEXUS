@@ -46,9 +46,6 @@
     <Compile Update="Forms\QRCodeGeneratorform.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\QRScannerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Forms\PaymentForm.cs">
       <SubType>Form</SubType>
     </Compile>

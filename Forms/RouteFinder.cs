@@ -34,7 +34,7 @@ namespace NEXUS.Forms
 
         private void JeepCodeDestinations(string jeepCode)
         {
-            string query = "SELECT [Image Path] FROM [Routes] WHERE [Route Number] = ?";  
+            string query = "SELECT [Image Path] FROM [Routes Images] WHERE [Route Number] = ?";  
 
             string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Shan Michael\OneDrive\文档\2nd Year 2nd Sem\OOP2\NEXUS\NEXUS.accdb";
 
