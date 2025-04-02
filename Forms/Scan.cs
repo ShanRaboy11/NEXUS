@@ -52,7 +52,6 @@ namespace NEXUS.Forms
         
         private void btnOpenQRScan_Click(object sender, EventArgs e)
         {
-            //QRScannerForm qRScannerForm = new QRScannerForm();
             TripLogging tripLogging = new TripLogging(userID);
             ShowOverlay(tripLogging, null);
             tripLogging.FormClosed += (s, args) => this.Show();

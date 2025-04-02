@@ -125,9 +125,9 @@ namespace NEXUS.Classes
                         byte[] profilepic = reader.GetFieldValue<byte[]>(10);
                         double wallet = reader.IsDBNull(11) ? 0.0 : Convert.ToDouble(reader.GetValue(11));
                         int points = reader.IsDBNull(12) ? 0 : Convert.ToInt32(reader.GetValue(12));
-                        string status = reader.IsDBNull(14) ? "Pending" : reader.GetString(13);
+                        string status = reader.IsDBNull(13) ? "Pending" : reader.GetString(13);
 
-                        return new Passenger(userID, fullName, email, username, password, gender, userType, birthday, classification, attachment, profilepic, wallet, points, status);
+                        return new Passenger(UserID, fullName, email, username, password, gender, userType, birthday, classification, attachment, profilepic, wallet, points, status);
                     }
                 }
             }

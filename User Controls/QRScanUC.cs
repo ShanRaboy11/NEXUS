@@ -18,7 +18,7 @@ namespace NEXUS.User_Controls
         private VideoCaptureDevice videoCaptureDevice;
         private Panel containerPanel;
         private int PassengerID;
-        private bool isProcessing = false; 
+        private bool isProcessing = false;
         bool cameraInitialized = false;
         public QRScanUC(Panel pnlContainer, int passengerID)
         {
@@ -120,10 +120,10 @@ namespace NEXUS.User_Controls
                             if (!cameraInitialized)
                             {
                                 Task.Run(() => InitializeCamera());
-                                cameraInitialized = true;  
+                                cameraInitialized = true;
                                 isProcessing = false;
                             }
-                            containerPanel.Controls.Clear(); 
+                            containerPanel.Controls.Clear();
 
                             QRScanUC newQRScanUC = new QRScanUC(containerPanel, PassengerID);
 

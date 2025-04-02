@@ -90,5 +90,34 @@ namespace NEXUS.Forms
             this.DialogResult = DialogResult.OK; 
             this.Close();
         }
+
+        public void ShowOverlay(Form newForm, Form dialog)
+        {
+            var overlayForm = new Form();
+            overlayForm.StartPosition = FormStartPosition.CenterScreen;
+            overlayForm.FormBorderStyle = FormBorderStyle.None;
+            overlayForm.Opacity = 0.5d;
+            overlayForm.BackColor = Color.Black;
+            overlayForm.Size = new Size(1400, 907);
+            overlayForm.Location = this.Location;
+            overlayForm.ShowInTaskbar = false;
+
+            if (dialog != null)
+            {
+                overlayForm.Show();
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    dialog.Close();
+                    overlayForm.Close();
+                }
+            }
+            else
+            {
+                overlayForm.Show();
+                newForm.FormClosed += (s, args) => overlayForm.Close();
+                newForm.Show();
+                newForm.BringToFront();
+            }
+        }
     }
 }

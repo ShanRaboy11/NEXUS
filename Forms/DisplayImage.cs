@@ -12,7 +12,7 @@ namespace NEXUS.Forms
 {
     public partial class DisplayImage : Form
     {
-        Scan scan = new Scan(0);
+        DialogBox dialog = new DialogBox();
 
         // Modify constructor to accept byte[] instead of Image
         public DisplayImage(byte[] imageBytes, string message)
@@ -35,7 +35,7 @@ namespace NEXUS.Forms
             // Handle the message and display overlay if needed
             if (message == "report")
             {
-                scan.ShowOverlay(this, null);
+                dialog.ShowOverlay(this, null);
             }
             else
             {

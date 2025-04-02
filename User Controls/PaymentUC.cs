@@ -27,16 +27,12 @@ namespace NEXUS.User_Controls
             this.CurrentPassenger = currentPassenger;
         }
 
+
         private void DecodeQRCode(string QRInfo)
         {
             int driverID = int.Parse(QRInfo);
             this.currentDriver = databasemanagement.GetUserInfoByID(driverID);
-            this.passenger = databasemanagement.GetPassengerInfoByID(CurrentPassenger);
-            if (this.passenger == null)
-            {
-                MessageBox.Show($"Passenger information not found [{CurrentPassenger}].", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; // Exit the method if the passenger is null
-            }
+            
             using (MemoryStream ms = new MemoryStream(currentDriver.ProfilePicture))
             {
                 pbDriverPicture.Image = Image.FromStream(ms);
@@ -135,7 +131,9 @@ namespace NEXUS.User_Controls
 
         private bool CheckDiscountEligibility()
         {
-            if(passenger.Classification != "Regular")
+            passenger = databasemanagement.GetPassengerInfoByID(CurrentPassenger);
+
+            if (passenger.Classification != "Regular")
             {
                 return true;
             }
@@ -149,8 +147,12 @@ namespace NEXUS.User_Controls
         {
             DialogBox dialogBox = new DialogBox();
             Scan scan = new Scan(CurrentPassenger); //change to userid
-            passenger = databasemanagement.GetPassengerInfoByID(CurrentPassenger);
 
+            if (this.passenger == null)
+            {
+                MessageBox.Show($"Passenger information not found [{CurrentPassenger}].", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Exit the method if the passenger is null
+            }
             if (cmbxDestination.SelectedItem == null || cmbxLocation.SelectedItem == null)
             {
                 dialogBox.ShowIcon("blank");
@@ -162,6 +164,14 @@ namespace NEXUS.User_Controls
 
             dialogBox.ShowIcon("successful payment");
             scan.ShowOverlay(dialogBox, null);
+            this.Parent?.Controls.Remove(this);
+
+            Form parentForm = this.FindForm();
+            if (parentForm != null)
+            {
+                parentForm.Close();
+                parentForm.Dispose();  // Forcefully dispose of the form
+            }
         }
 
         private decimal baseAmount; // Stores the initial value dynamically

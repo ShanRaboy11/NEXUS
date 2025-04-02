@@ -17,9 +17,11 @@ namespace NEXUS.Forms
         private Image attachedImage;
         private byte[] attachedImageBytes;
         private readonly Attachment attachmentHandler = new Attachment();
-        public Report()
+        private int UserID;
+        public Report(int userID)
         {
             InitializeComponent();
+            this.UserID = userID;
         }
 
 
@@ -53,7 +55,7 @@ namespace NEXUS.Forms
         private void btnSubmitReport_Click(object sender, EventArgs e)
         {
             DialogBox dialogBox = new DialogBox();
-            Scan scan = new Scan(0);
+            Scan scan = new Scan(UserID);
 
             if (dtIncidentDate == null || cmbxNature == null ||
                 string.IsNullOrEmpty(tbxLocation.Text) || string.IsNullOrEmpty(rtbxIncidentDescription.Text))

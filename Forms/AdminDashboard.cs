@@ -79,9 +79,9 @@ namespace NEXUS.Forms
         private void pbAbout_Click(object sender, EventArgs e)
         {
             About about = new About();
-            Scan scan = new Scan(0);
+            DialogBox dialogBox = new DialogBox();
 
-            scan.ShowOverlay(about, null);
+            dialogBox.ShowOverlay(about, null);
             about.FormClosed += (s, args) => this.Show();
             about.Owner = this;
         }

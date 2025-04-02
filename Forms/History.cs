@@ -14,9 +14,11 @@ namespace NEXUS.Forms
     public partial class History : Form
     {
         private string Filter;
-        public History()
+        int UserID;
+        public History(int userID)
         {
             InitializeComponent();
+            this.UserID = userID;
         }
 
         private void cmbxFilter_SelectedIndexChanged(object sender, EventArgs e)
@@ -55,7 +57,7 @@ namespace NEXUS.Forms
         private void rateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Rate rate = new Rate();
-            Scan scan = new Scan(0);
+            Scan scan = new Scan(UserID);
 
             scan.ShowOverlay(rate, null);
             scan.FormClosed += (s, args) => this.Show();

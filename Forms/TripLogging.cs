@@ -17,8 +17,8 @@ namespace NEXUS.Forms
         public TripLogging(int userID)
         {
             InitializeComponent();
-            DisplayScanner();
             this.UserID = userID;
+            DisplayScanner();
         }
 
         private void DisplayScanner()

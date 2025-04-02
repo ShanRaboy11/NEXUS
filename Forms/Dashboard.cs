@@ -99,14 +99,14 @@ namespace NEXUS.Forms
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            Report report = new Report();
+            Report report = new Report(passenger.UserID);
             SelectButton(btnReport);
             OpenChildForm(report);
         }
 
         private void btnHistory_Click(object sender, EventArgs e)
         {
-            History history = new History();
+            History history = new History(passenger.UserID);
             SelectButton(btnHistory);
             OpenChildForm(history);
         }

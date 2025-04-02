@@ -182,10 +182,10 @@ namespace NEXUS.User_Controls
 
         private void DisplayAttachment(byte[] fileName)
         {
-            Scan scan = new Scan(0);
+            DialogBox dialog = new DialogBox();
 
             DisplayImage displayImage = new DisplayImage(fileName, "register");
-            scan.ShowOverlay(displayImage, null);
+            dialog.ShowOverlay(displayImage, null);
         }
 
         private void SelectButton(FontAwesome.Sharp.IconButton button)

@@ -86,7 +86,7 @@ namespace NEXUS.Forms
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            Report report = new Report();
+            Report report = new Report(driver.UserID);
             SelectButton(btnReport1);
             OpenChildForm(report);
         }
