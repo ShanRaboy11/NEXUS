@@ -565,7 +565,7 @@
             lblJeep.AutoSize = true;
             lblJeep.Font = new Font("Inter", 10.55F);
             lblJeep.ForeColor = Color.FromArgb(24, 60, 114);
-            lblJeep.Location = new Point(334, 302);
+            lblJeep.Location = new Point(323, 302);
             lblJeep.Name = "lblJeep";
             lblJeep.Size = new Size(89, 22);
             lblJeep.TabIndex = 91;
@@ -577,7 +577,7 @@
             pnlJeep.BackColor = Color.FromArgb(176, 233, 255);
             pnlJeep.BackgroundImageLayout = ImageLayout.None;
             pnlJeep.Controls.Add(tbxJeep);
-            pnlJeep.Location = new Point(361, 334);
+            pnlJeep.Location = new Point(350, 334);
             pnlJeep.Name = "pnlJeep";
             pnlJeep.Size = new Size(137, 46);
             pnlJeep.TabIndex = 90;

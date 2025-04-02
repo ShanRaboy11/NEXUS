@@ -112,7 +112,7 @@ namespace NEXUS.User_Controls
                         catch (Exception ex)
                         {
                             DialogBox dialogBox = new DialogBox();
-                            Scan scan = new Scan(0);
+                            Scan scan = new Scan(PassengerID);
                             dialogBox.ShowIcon("invalid qr code");
 
                             scan.ShowOverlay(dialogBox, null);

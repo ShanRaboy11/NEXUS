@@ -28,7 +28,7 @@ namespace NEXUS.Forms
             rbtnRegular.Parent = pnlClassification;
             rbtnRegular.BringToFront();
             rbtnRegular.Location = new Point(357, 16);
-            this.Size = new System.Drawing.Size(504, 495);
+            this.Size = new System.Drawing.Size(524, 495);
             lblNote.Location = new System.Drawing.Point(41, 406);
             btnSignUp.Location = new System.Drawing.Point(152, 439);
             pnlPlate.Parent = this;
@@ -251,7 +251,7 @@ namespace NEXUS.Forms
             lblRoute.Visible = true;
             tbxRoute.Visible = true;
             panel1.Visible = true;
-            this.Size = new System.Drawing.Size(506, 590);
+            this.Size = new System.Drawing.Size(526, 590);
             lblNote.Location = new System.Drawing.Point(46, 500);
             btnSignUp.Location = new System.Drawing.Point(157, 533);
             btnBack.Location = new System.Drawing.Point(15, 534);
@@ -276,7 +276,10 @@ namespace NEXUS.Forms
             lblJeep.Visible = false;
             pnlJeep.Visible = false;
             tbxJeep.Visible = false;
-            this.Size = new System.Drawing.Size(504, 495);
+            lblRoute.Visible = false;
+            tbxRoute.Visible = false;
+            panel1.Visible = false;
+            this.Size = new System.Drawing.Size(524, 495);
             lblNote.Location = new System.Drawing.Point(41, 406);
             btnSignUp.Location = new System.Drawing.Point(152, 439);
             btnBack.Location = new System.Drawing.Point(15, 440);
