@@ -51,6 +51,7 @@ namespace NEXUS.User_Controls
 
             cmbxLocation.Items.Clear();
             cmbxDestination.Items.Clear();
+            List<string> locationsList = new List<string>();
 
             using (OleDbConnection conn = DatabaseManagement.GetConnection())
             {
@@ -66,14 +67,33 @@ namespace NEXUS.User_Controls
                         string location = row[jeepCode].ToString().Trim();
                         if (!string.IsNullOrEmpty(location) && !location.StartsWith("MSys"))
                         {
-                            cmbxLocation.Items.Add(location);
-                            cmbxDestination.Items.Add(location);
+                            locationsList.Add(location);
                         }
                     }
                 }
             }
-        }
 
+            cmbxLocation.Items.AddRange(locationsList.ToArray());
+            cmbxDestination.Items.AddRange(locationsList.ToArray());
+
+            cmbxLocation.SelectedIndexChanged += (s, e) =>
+            {
+                string selectedLocation = cmbxLocation.SelectedItem?.ToString();
+                if (!string.IsNullOrEmpty(selectedLocation))
+                {
+                    cmbxDestination.Items.Remove(selectedLocation);
+                }
+            };
+
+            cmbxDestination.SelectedIndexChanged += (s, e) =>
+            {
+                string selectedDestination = cmbxDestination.SelectedItem?.ToString();
+                if (!string.IsNullOrEmpty(selectedDestination))
+                {
+                    cmbxLocation.Items.Remove(selectedDestination);
+                }
+            };
+        }
 
 
         private void btnPay_Click(object sender, EventArgs e)
