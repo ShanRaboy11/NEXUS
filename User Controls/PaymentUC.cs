@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NEXUS.Forms;
 using NEXUS.Classes;
+using System.Data.OleDb;
 
 namespace NEXUS.User_Controls
 {
@@ -40,7 +41,40 @@ namespace NEXUS.User_Controls
             lblDriverStatus.Text = currentDriver.Status;
             lblPlateNum.Text = currentDriver.PlateNumber;
             lblDateTime.Text = DateTime.Now.ToString("f");
+            ComboBoxList(currentDriver.Route);
         }
+
+
+        private void ComboBoxList(string jeepCode)
+        {
+            string query = $"SELECT [{jeepCode}] FROM Routes";
+
+            cmbxLocation.Items.Clear();
+            cmbxDestination.Items.Clear();
+
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            {
+                conn.Open();
+                using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                using (OleDbDataAdapter adapter = new OleDbDataAdapter(cmd))
+                {
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+
+                    foreach (DataRow row in table.Rows)
+                    {
+                        string location = row[jeepCode].ToString().Trim();
+                        if (!string.IsNullOrEmpty(location) && !location.StartsWith("MSys"))
+                        {
+                            cmbxLocation.Items.Add(location);
+                            cmbxDestination.Items.Add(location);
+                        }
+                    }
+                }
+            }
+        }
+
+
 
         private void btnPay_Click(object sender, EventArgs e)
         {
