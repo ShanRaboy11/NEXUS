@@ -65,9 +65,12 @@
             lblFileName = new Label();
             btnBack = new FontAwesome.Sharp.IconButton();
             label6 = new Label();
-            lblRoute = new Label();
+            lblJeep = new Label();
+            pnlJeep = new Panel();
+            tbxJeep = new ComboBox();
             panel1 = new Panel();
             tbxRoute = new ComboBox();
+            lblRoute = new Label();
             pnlRole.SuspendLayout();
             pnlClassification.SuspendLayout();
             panel7.SuspendLayout();
@@ -77,6 +80,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnlAttach.SuspendLayout();
+            pnlJeep.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -99,9 +103,9 @@
             pnlRole.Controls.Add(rbtnPassenger);
             pnlRole.Controls.Add(panel12);
             pnlRole.Controls.Add(panel10);
-            pnlRole.Location = new Point(12, 152);
+            pnlRole.Location = new Point(2, 152);
             pnlRole.Name = "pnlRole";
-            pnlRole.Size = new Size(390, 55);
+            pnlRole.Size = new Size(340, 55);
             pnlRole.TabIndex = 82;
             // 
             // rbtnDriver
@@ -117,7 +121,7 @@
             rbtnDriver.EnabledUncheckedColor = Color.FromArgb(156, 158, 161);
             rbtnDriver.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rbtnDriver.ForeColor = Color.FromArgb(24, 60, 114);
-            rbtnDriver.Location = new Point(240, 16);
+            rbtnDriver.Location = new Point(210, 16);
             rbtnDriver.Name = "rbtnDriver";
             rbtnDriver.Size = new Size(81, 20);
             rbtnDriver.TabIndex = 28;
@@ -161,9 +165,9 @@
             // 
             panel10.BackColor = Color.FromArgb(176, 233, 255);
             panel10.BackgroundImageLayout = ImageLayout.None;
-            panel10.Location = new Point(223, 3);
+            panel10.Location = new Point(193, 3);
             panel10.Name = "panel10";
-            panel10.Size = new Size(153, 46);
+            panel10.Size = new Size(140, 46);
             panel10.TabIndex = 69;
             // 
             // btnSignUp
@@ -191,7 +195,7 @@
             lblNote.AutoSize = true;
             lblNote.Font = new Font("Inter", 10F);
             lblNote.ForeColor = Color.DimGray;
-            lblNote.Location = new Point(41, 406);
+            lblNote.Location = new Point(42, 406);
             lblNote.Name = "lblNote";
             lblNote.Size = new Size(425, 21);
             lblNote.TabIndex = 80;
@@ -215,7 +219,7 @@
             cmbxYear.ForeColor = Color.FromArgb(24, 60, 114);
             cmbxYear.FormattingEnabled = true;
             cmbxYear.Items.AddRange(new object[] { "2025", "2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990", "1989", "1988", "1987", "1986", "1985", "1984", "1983", "1982", "1981", "1980", "1979", "1978", "1977", "1976", "1975", "1974", "1973", "1972", "1971", "1970", "1969", "1968", "1967", "1966", "1965", "1964", "1963", "1962", "1961", "1960", "1959", "1958", "1957", "1956", "1955", "1954", "1953", "1952", "1951", "1950" });
-            cmbxYear.Location = new Point(348, 252);
+            cmbxYear.Location = new Point(345, 252);
             cmbxYear.Name = "cmbxYear";
             cmbxYear.Size = new Size(145, 30);
             cmbxYear.TabIndex = 77;
@@ -229,7 +233,7 @@
             cmbxDay.ForeColor = Color.FromArgb(24, 60, 114);
             cmbxDay.FormattingEnabled = true;
             cmbxDay.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" });
-            cmbxDay.Location = new Point(211, 252);
+            cmbxDay.Location = new Point(208, 252);
             cmbxDay.Name = "cmbxDay";
             cmbxDay.Size = new Size(123, 30);
             cmbxDay.TabIndex = 76;
@@ -243,7 +247,7 @@
             cmbxMonth.ForeColor = Color.FromArgb(24, 60, 114);
             cmbxMonth.FormattingEnabled = true;
             cmbxMonth.Items.AddRange(new object[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" });
-            cmbxMonth.Location = new Point(27, 252);
+            cmbxMonth.Location = new Point(24, 252);
             cmbxMonth.Name = "cmbxMonth";
             cmbxMonth.Size = new Size(168, 30);
             cmbxMonth.TabIndex = 75;
@@ -396,7 +400,7 @@
             separator1.LineColor = Color.Gray;
             separator1.Location = new Point(12, 99);
             separator1.Name = "separator1";
-            separator1.Size = new Size(469, 20);
+            separator1.Size = new Size(493, 20);
             separator1.TabIndex = 87;
             separator1.Text = "separator1";
             // 
@@ -431,13 +435,13 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(506, 28);
+            panel2.Size = new Size(524, 28);
             panel2.TabIndex = 84;
             // 
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(455, 6);
+            pictureBox3.Location = new Point(475, 6);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(14, 14);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -448,7 +452,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(424, 4);
+            pictureBox2.Location = new Point(444, 4);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(19, 19);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -459,7 +463,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(482, 4);
+            pictureBox1.Location = new Point(502, 4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(18, 18);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -556,27 +560,51 @@
             label6.Text = "Plate Number: ";
             label6.Visible = false;
             // 
-            // lblRoute
+            // lblJeep
             // 
-            lblRoute.AutoSize = true;
-            lblRoute.Font = new Font("Inter", 10.55F);
-            lblRoute.ForeColor = Color.FromArgb(24, 60, 114);
-            lblRoute.Location = new Point(352, 399);
-            lblRoute.Name = "lblRoute";
-            lblRoute.Size = new Size(56, 22);
-            lblRoute.TabIndex = 91;
-            lblRoute.Text = "Route:";
-            lblRoute.Visible = false;
+            lblJeep.AutoSize = true;
+            lblJeep.Font = new Font("Inter", 10.55F);
+            lblJeep.ForeColor = Color.FromArgb(24, 60, 114);
+            lblJeep.Location = new Point(334, 302);
+            lblJeep.Name = "lblJeep";
+            lblJeep.Size = new Size(89, 22);
+            lblJeep.TabIndex = 91;
+            lblJeep.Text = "Jeep Type:";
+            lblJeep.Visible = false;
+            // 
+            // pnlJeep
+            // 
+            pnlJeep.BackColor = Color.FromArgb(176, 233, 255);
+            pnlJeep.BackgroundImageLayout = ImageLayout.None;
+            pnlJeep.Controls.Add(tbxJeep);
+            pnlJeep.Location = new Point(361, 334);
+            pnlJeep.Name = "pnlJeep";
+            pnlJeep.Size = new Size(137, 46);
+            pnlJeep.TabIndex = 90;
+            pnlJeep.Visible = false;
+            // 
+            // tbxJeep
+            // 
+            tbxJeep.BackColor = Color.FromArgb(176, 233, 255);
+            tbxJeep.Font = new Font("Inter", 11.25F);
+            tbxJeep.ForeColor = Color.FromArgb(24, 60, 114);
+            tbxJeep.FormattingEnabled = true;
+            tbxJeep.Items.AddRange(new object[] { "Traditional", "Modern" });
+            tbxJeep.Location = new Point(7, 7);
+            tbxJeep.Name = "tbxJeep";
+            tbxJeep.Size = new Size(123, 30);
+            tbxJeep.TabIndex = 92;
+            tbxJeep.TabStop = false;
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(176, 233, 255);
             panel1.BackgroundImageLayout = ImageLayout.None;
             panel1.Controls.Add(tbxRoute);
-            panel1.Location = new Point(356, 431);
+            panel1.Location = new Point(376, 156);
             panel1.Name = "panel1";
-            panel1.Size = new Size(137, 46);
-            panel1.TabIndex = 90;
+            panel1.Size = new Size(128, 46);
+            panel1.TabIndex = 92;
             panel1.Visible = false;
             // 
             // tbxRoute
@@ -586,20 +614,34 @@
             tbxRoute.ForeColor = Color.FromArgb(24, 60, 114);
             tbxRoute.FormattingEnabled = true;
             tbxRoute.Items.AddRange(new object[] { "01C", "01K", "02B", "03A", "03B", "03L", "03Q", "04B", "04H", "04I", "04L", "04M", "06B", "06C", "06G", "06H", "07B", "08F", "08G", "09C", "09F", "09G", "10F", "10G", "10H", "10M", "11A", "12D", "12G", "12I", "12L", "13B", "13C", "13H", "14D", "17B", "17C", "17D", "20A", "21A", "22A", "22D", "22I", "23", "23D", "62B", "MI-01A", "MI-02B", "MI-03A", "MI-03B" });
-            tbxRoute.Location = new Point(7, 7);
+            tbxRoute.Location = new Point(8, 7);
             tbxRoute.Name = "tbxRoute";
-            tbxRoute.Size = new Size(123, 30);
+            tbxRoute.Size = new Size(115, 30);
             tbxRoute.TabIndex = 92;
             tbxRoute.TabStop = false;
+            // 
+            // lblRoute
+            // 
+            lblRoute.AutoSize = true;
+            lblRoute.Font = new Font("Inter", 10.55F);
+            lblRoute.ForeColor = Color.FromArgb(24, 60, 114);
+            lblRoute.Location = new Point(358, 123);
+            lblRoute.Name = "lblRoute";
+            lblRoute.Size = new Size(56, 22);
+            lblRoute.TabIndex = 93;
+            lblRoute.Text = "Route:";
+            lblRoute.Visible = false;
             // 
             // Register2
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
-            ClientSize = new Size(506, 590);
+            ClientSize = new Size(524, 590);
             Controls.Add(panel1);
             Controls.Add(lblRoute);
+            Controls.Add(pnlJeep);
+            Controls.Add(lblJeep);
             Controls.Add(label6);
             Controls.Add(btnBack);
             Controls.Add(pnlAttach);
@@ -638,6 +680,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             pnlAttach.ResumeLayout(false);
             pnlAttach.PerformLayout();
+            pnlJeep.ResumeLayout(false);
             panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
@@ -681,8 +724,11 @@
         private Label label6;
         private Panel pnlPlate;
         private TextBox tbxPlateNumber;
-        private Label lblRoute;
+        private Label lblJeep;
+        private Panel pnlJeep;
+        private ComboBox tbxJeep;
         private Panel panel1;
         private ComboBox tbxRoute;
+        private Label lblRoute;
     }
 }

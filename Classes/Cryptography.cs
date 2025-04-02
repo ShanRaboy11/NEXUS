@@ -30,7 +30,7 @@ namespace NEXUS.Classes
 
         public static UserInformation VerifyPassword(string userName, string enteredPassword)
         {
-            string query = "SELECT ID, Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Classification, Attachment, [Plate Number], [Profile picture], Wallet, Points, [QR Code], Route, [Status] " +
+            string query = "SELECT ID, Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Classification, Attachment, [Plate Number], [Profile picture], Wallet, Points, [QR Code], Route, [Jeep Type], [Status] " +
                            "FROM Accounts WHERE Username = ?";
 
             string enteredHash = ToSHA256(enteredPassword);
@@ -64,8 +64,9 @@ namespace NEXUS.Classes
                             double wallet = reader.IsDBNull(12) ? 0.0 : Convert.ToDouble(reader.GetValue(12)); 
                             int points = reader.IsDBNull(13) ? 0 : Convert.ToInt32(reader.GetValue(13));  
                             byte[] qrcode = reader.IsDBNull(14) ? null : reader.GetFieldValue<byte[]>(14);  
-                            string route = reader.IsDBNull(15) ? null : reader.GetString(15); 
-                            string status = reader.GetString(16);
+                            string route = reader.IsDBNull(15) ? null : reader.GetString(15);
+                            string jeepType = reader.IsDBNull(16) ? null : reader.GetString(16);
+                            string status = reader.GetString(17);
 
                             if (userType == "Passenger")
                             {
@@ -73,7 +74,7 @@ namespace NEXUS.Classes
                             }
                             else
                             {
-                                return new Driver(userID, fullName, email, username, password, gender, userType, birthday, attachment, plateNumber, profilepic, wallet, qrcode, route, status);
+                                return new Driver(userID, fullName, email, username, password, gender, userType, birthday, attachment, plateNumber, profilepic, wallet, qrcode, route, jeepType, status);
                             }
                         }
                     }
@@ -124,7 +125,7 @@ namespace NEXUS.Classes
             }
             else
             {
-                string query = "SELECT ID, Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Attachment, [Plate Number], [Profile Picture], Wallet, [QR Code], Route, Status " +
+                string query = "SELECT ID, Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Attachment, [Plate Number], [Profile Picture], Wallet, [QR Code], Route, [Jeep Type], Status " +
                    "FROM Accounts WHERE Username = ?";
 
 
@@ -151,10 +152,11 @@ namespace NEXUS.Classes
                             byte[] profilepic = reader.GetFieldValue<byte[]>(10);
                             double wallet = reader.IsDBNull(11) ? 0.0 : Convert.ToDouble(reader.GetValue(11));
                             byte[] qrcode = reader.IsDBNull(12) ? null : reader.GetFieldValue<byte[]>(12);
-                            string route = reader.IsDBNull(13) ? null : reader.GetString(13); 
-                            string status = reader.IsDBNull(14) ? "Pending" : reader.GetString(14);
+                            string route = reader.IsDBNull(13) ? null : reader.GetString(13);
+                            string jeepType = reader.GetString(14);
+                            string status = reader.IsDBNull(15) ? "Pending" : reader.GetString(15);
 
-                            return new Driver(userID, fullName, email, username, password, gender, userType, birthday, attachment, plateNumber, profilepic, wallet, qrcode, route, status);
+                            return new Driver(userID, fullName, email, username, password, gender, userType, birthday, attachment, plateNumber, profilepic, wallet, qrcode, route, jeepType, status);
                         }
                     }
                 }

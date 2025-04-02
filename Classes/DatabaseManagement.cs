@@ -58,7 +58,7 @@ namespace NEXUS.Classes
 
         public Driver GetUserInfoByID(int userID)
         {
-            string query = "SELECT ID, Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Attachment, [Plate Number], [Profile Picture], Wallet, [QR Code], Route, Status " +
+            string query = "SELECT ID, Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Attachment, [Plate Number], [Profile Picture], Wallet, [QR Code], Route, [Jeep Type], Status " +
                     "FROM Accounts WHERE ID = ?";
 
 
@@ -86,9 +86,10 @@ namespace NEXUS.Classes
                         double wallet = reader.IsDBNull(11) ? 0.0 : Convert.ToDouble(reader.GetValue(11));
                         byte[] qrcode = reader.IsDBNull(12) ? null : reader.GetFieldValue<byte[]>(12);
                         string route = reader.IsDBNull(13) ? null : reader.GetString(13);
-                        string status = reader.IsDBNull(14) ? "Pending" : reader.GetString(14);
+                        string jeepType = reader.GetString(14);
+                        string status = reader.IsDBNull(15) ? "Pending" : reader.GetString(15);
 
-                        return new Driver(UserID, fullName, email, username, password, gender, userType, birthday, attachment, plateNumber, profilepic, wallet, qrcode, route, status);
+                        return new Driver(UserID, fullName, email, username, password, gender, userType, birthday, attachment, plateNumber, profilepic, wallet, qrcode, route, jeepType, status);
                     }
                 }
             }

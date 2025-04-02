@@ -62,7 +62,7 @@ namespace NEXUS.Forms
             else if(rbtnDriver.Checked)
             {
                 if(string.IsNullOrEmpty(tbxPlateNumber.Text) || cmbxMonth.Text == "Month" ||
-                    cmbxDay.Text == "Day" || cmbxYear.Text == "Year" || lblFileName.Text == "Attach ID" || tbxRoute.Text == "")
+                    cmbxDay.Text == "Day" || cmbxYear.Text == "Year" || lblFileName.Text == "Attach ID" || tbxJeep.Text == "")
                 {
                     dialogBox.ShowIcon("blank");
                     logInForm.overlayForm(this, dialogBox);
@@ -78,7 +78,7 @@ namespace NEXUS.Forms
             DialogBox dialogBox = new DialogBox();
             LogInForm logInForm = new LogInForm();
             Passenger passenger = new Passenger(0, null, null, null, "i", null, null, null, null, null, null, 0.0, 0, null);
-            Driver driver = new Driver(0, null, null, null, "i", null, null, null, null, null, null, 0.0, null, null, null);
+            Driver driver = new Driver(0, null, null, null, "i", null, null, null, null, null, null, 0.0, null, null, null, null);
             string fullName = userData.FName + " " + userData.LName;
             string birthday = cmbxMonth.Text + " " + cmbxDay.Text + ", " + cmbxYear.Text;
             byte[] userphoto = null;
@@ -102,7 +102,7 @@ namespace NEXUS.Forms
                 (
                     0, fullName, userData.Email, userData.UserName, userData.Password,
                     userData.Gender, rbtnDriver.Text, birthday, attachedImageBytes, tbxPlateNumber.Text, 
-                    userphoto, 0, null, tbxRoute.SelectedItem.ToString(), "Pending"
+                    userphoto, 0, null, tbxRoute.SelectedItem.ToString(), tbxJeep.SelectedItem.ToString(), "Pending"
                 );
                 newDriver.SaveToDatabase();
             }
@@ -245,9 +245,12 @@ namespace NEXUS.Forms
             lblFileName.Visible = true;
             pnlAttach.Visible = true;
             btnAttach.Visible = true;
+            lblJeep.Visible = true;
+            pnlJeep.Visible = true;
+            tbxJeep.Visible = true;
             lblRoute.Visible = true;
-            panel1.Visible = true;
             tbxRoute.Visible = true;
+            panel1.Visible = true;
             this.Size = new System.Drawing.Size(506, 590);
             lblNote.Location = new System.Drawing.Point(46, 500);
             btnSignUp.Location = new System.Drawing.Point(157, 533);
@@ -270,9 +273,9 @@ namespace NEXUS.Forms
             lblFileName.Visible = false;
             pnlAttach.Visible = false;
             btnAttach.Visible = false;
-            lblRoute.Visible = false;
-            panel1.Visible = false;
-            tbxRoute.Visible = false;
+            lblJeep.Visible = false;
+            pnlJeep.Visible = false;
+            tbxJeep.Visible = false;
             this.Size = new System.Drawing.Size(504, 495);
             lblNote.Location = new System.Drawing.Point(41, 406);
             btnSignUp.Location = new System.Drawing.Point(152, 439);

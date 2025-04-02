@@ -184,23 +184,25 @@ namespace NEXUS.Classes
         private string plateNumber;
         private byte[] qrCode;
         private string route;
+        private string jeepType;
         public string PlateNumber { get => plateNumber; set => plateNumber = value; }
         public byte[] QRCode { get => qrCode; set => qrCode = value; }
         public string Route { get => route; set => route = value; }
-
+        public string JeepType { get => jeepType; set => jeepType = value; }
         // Constructor
-        public Driver(int userId, string name,  string email, string username, string password, string gender, string userType, string birthday, byte[] attachment, string plateNumber, byte[] profilepic, double wallet, byte[] qrcode, string route, string status)
+        public Driver(int userId, string name,  string email, string username, string password, string gender, string userType, string birthday, byte[] attachment, string plateNumber, byte[] profilepic, double wallet, byte[] qrcode, string route, string jeeptype, string status)
             : base(userId, name, email, username, password, gender, userType, birthday, attachment, profilepic, wallet, status)
         {
             PlateNumber = plateNumber;
             QRCode = qrcode;
             Route = route;
+            JeepType = jeeptype;
         }
 
         public void SaveToDatabase()
         {
-            string query = "INSERT INTO Accounts (Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Attachment, [Plate Number], [Profile Picture],  Wallet, [QR Code], Route, [Status]) " +
-                           "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            string query = "INSERT INTO Accounts (Username, [Password], [Full Name], [Email Address], Gender, [User Type], Birthday, Attachment, [Plate Number], [Profile Picture],  Wallet, [QR Code], Route, [Jeep Type], [Status]) " +
+                           "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             using (OleDbConnection conn = DatabaseManagement.GetConnection())
             using (OleDbCommand cmd = new OleDbCommand(query, conn))
@@ -220,6 +222,7 @@ namespace NEXUS.Classes
                 cmd.Parameters.AddWithValue("?", this.WalletAmount);
                 cmd.Parameters.AddWithValue("?", (object)this.QRCode ?? DBNull.Value);
                 cmd.Parameters.AddWithValue("?", this.Route);
+                cmd.Parameters.AddWithValue("?", this.JeepType);
                 cmd.Parameters.AddWithValue("?", this.Status);
 
                 cmd.ExecuteNonQuery();
