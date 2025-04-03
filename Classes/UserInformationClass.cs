@@ -354,6 +354,7 @@ namespace NEXUS.Classes
 
                 cmd.ExecuteNonQuery();
             }
+            SaveTransaction();
         }
 
         public void SaveTransaction()
@@ -372,6 +373,7 @@ namespace NEXUS.Classes
 
                 cmd.ExecuteNonQuery();
             }
+            PayDriver();
         }
 
         public void PayDriver()

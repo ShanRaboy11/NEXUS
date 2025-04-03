@@ -77,6 +77,12 @@ namespace NEXUS.Forms
                 pbDialogIcon.Image = Resources.Animation___1739888639577;
                 lblMessage.Text = "Invalid QR Code";
             }
+            else if(message == "not enough")
+            {
+                Pausetimer.Enabled = false;
+                pbDialogIcon.Image = Resources.Animation___1739888639577;
+                lblMessage.Text = "Insufficient balance!";
+            }
             else
             {
                 Pausetimer.Enabled = false;

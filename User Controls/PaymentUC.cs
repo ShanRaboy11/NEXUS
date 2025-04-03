@@ -20,6 +20,7 @@ namespace NEXUS.User_Controls
         private int CurrentPassenger;
         Passenger passenger;
         private int baseAmount;
+        private decimal farePrice;
 
         public PaymentUC(string qrInfo, int currentPassenger)
         {
@@ -162,11 +163,15 @@ namespace NEXUS.User_Controls
                 scan.ShowOverlay(dialogBox, null);
                 return;
             }
+            else if(databasemanagement.PaymentValid(farePrice, CurrentPassenger))
+            {
+                dialogBox.ShowIcon("not enough");
+                scan.ShowOverlay(dialogBox, null);
+                return;
+            }
             Trip trip = new Trip(currentDriver.UserID, CurrentPassenger, DateTime.Now, passenger.Name,currentDriver.Name, currentDriver.Route, cmbxLocation.SelectedItem.ToString()
                 , cmbxDestination.SelectedItem.ToString(), double.Parse(lblAmount.Text));
             trip.SaveTripToDatabase();
-            trip.SaveTransaction();
-            trip.PayDriver();
 
             dialogBox.ShowIcon("successful payment");
             scan.ShowOverlay(dialogBox, null);
@@ -184,8 +189,8 @@ namespace NEXUS.User_Controls
         {
             if (this.baseAmount > 0) 
             {
-                decimal newAmount = this.baseAmount * numericMultiplier.Value;
-                lblAmount.Text = newAmount.ToString("N2");
+                this.farePrice = this.baseAmount * numericMultiplier.Value;
+                lblAmount.Text = this.farePrice.ToString("N2");
             }
         }
     }

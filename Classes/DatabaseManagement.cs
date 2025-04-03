@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.OleDb;
 using System.Data;
+using Microsoft.VisualBasic.ApplicationServices;
+using System.Collections;
 
 namespace NEXUS.Classes
 {
@@ -133,6 +135,31 @@ namespace NEXUS.Classes
             }
             return null;
         }
+
+        public bool PaymentValid(decimal amount, int passengerID)
+        {
+            string queryChecker = "SELECT Wallet FROM Accounts WHERE ID = ?";
+            double wallet = 0.0;  // Ensure it's initialized
+
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            using (OleDbCommand cmd = new OleDbCommand(queryChecker, conn))
+            {
+                conn.Open();
+                cmd.Parameters.AddWithValue("?", passengerID);
+
+                using (OleDbDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        wallet = reader.IsDBNull(0) ? 0.0 : Convert.ToDouble(reader.GetValue(0));
+                    }
+                }
+            }
+
+            return wallet >= (double)amount;  // Ensure correct logic
+        }
+
+
 
         public static OleDbConnection Connect()
         {
