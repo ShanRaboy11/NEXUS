@@ -357,7 +357,7 @@ namespace NEXUS.Classes
             SaveTransaction();
         }
 
-        public void SaveTransaction()
+        private void SaveTransaction()
         {
             string insertTransactionQuery = "INSERT INTO Transactions (UserID, TransactionDate, [Full Name], Amount, [Type]) VALUES (?, ?, ?, ?, ?)";
             using (OleDbConnection conn = DatabaseManagement.GetConnection())
@@ -376,7 +376,7 @@ namespace NEXUS.Classes
             PayDriver();
         }
 
-        public void PayDriver()
+        private void PayDriver()
         {
             using (OleDbConnection conn = DatabaseManagement.GetConnection())
             {
@@ -402,6 +402,35 @@ namespace NEXUS.Classes
                     cmd.ExecuteNonQuery();
                 }
             }
+        }
+
+        public double DeductFareAmountToWallet()
+        {
+            double passengerWallet = 0;
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            {
+                conn.Open();
+                string walletQuery = "SELECT Wallet FROM ACCOUNTS WHERE ID = ?";
+                using (OleDbCommand cmd = new OleDbCommand(walletQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("?", this.PassengerID);
+                    object result = cmd.ExecuteScalar();
+                    if (result != null)
+                    {
+                        passengerWallet = Convert.ToDouble(result);
+                    }
+                }
+
+                double newBalance = passengerWallet - this.FareAmount;
+                string updateQuery = "UPDATE Accounts SET Wallet = ? WHERE ID = ?";
+                using (OleDbCommand cmd = new OleDbCommand(updateQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("?", newBalance);
+                    cmd.Parameters.AddWithValue("?", this.PassengerID);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            return passengerWallet;
         }
     }
 

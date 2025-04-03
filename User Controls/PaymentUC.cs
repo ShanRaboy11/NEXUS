@@ -155,15 +155,16 @@ namespace NEXUS.User_Controls
         private void btnPay_Click(object sender, EventArgs e)
         {
             DialogBox dialogBox = new DialogBox();
-            Scan scan = new Scan(CurrentPassenger); 
-
+            Scan scan = new Scan(CurrentPassenger);
+            //Dashboard dashboard = new Dashboard(passenger);
+            double passengerWallet;
             if (cmbxDestination.SelectedItem == null || cmbxLocation.SelectedItem == null)
             {
                 dialogBox.ShowIcon("blank");
                 scan.ShowOverlay(dialogBox, null);
                 return;
             }
-            else if(databasemanagement.PaymentValid(farePrice, CurrentPassenger))
+            else if(!databasemanagement.PaymentValid(farePrice, CurrentPassenger))
             {
                 dialogBox.ShowIcon("not enough");
                 scan.ShowOverlay(dialogBox, null);
@@ -172,7 +173,12 @@ namespace NEXUS.User_Controls
             Trip trip = new Trip(currentDriver.UserID, CurrentPassenger, DateTime.Now, passenger.Name,currentDriver.Name, currentDriver.Route, cmbxLocation.SelectedItem.ToString()
                 , cmbxDestination.SelectedItem.ToString(), double.Parse(lblAmount.Text));
             trip.SaveTripToDatabase();
-
+            passengerWallet = trip.DeductFareAmountToWallet();
+            Form existingDashboard = Application.OpenForms["Dashboard"];
+            if (existingDashboard != null && existingDashboard is Dashboard dashboard)
+            {
+                dashboard.UpdateBalance(passengerWallet);
+            }
             dialogBox.ShowIcon("successful payment");
             scan.ShowOverlay(dialogBox, null);
             this.Parent?.Controls.Remove(this);

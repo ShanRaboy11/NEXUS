@@ -868,7 +868,6 @@
         private Label lblUserFName;
         private Label label2;
         private Label label3;
-        private Label lblBalance;
         private ReaLTaiizor.Controls.CyberButton btnCashIn;
         private ReaLTaiizor.Controls.CyberButton cyberButton2;
         private ReaLTaiizor.Controls.CyberButton cyberButton3;
@@ -890,5 +889,6 @@
         private PictureBox pbWheelPoints;
         private Label label15;
         private ReaLTaiizor.Controls.SpaceSeparatorHorizontal spaceSeparatorHorizontal1;
+        public Label lblBalance;
     }
 }

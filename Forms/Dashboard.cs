@@ -294,5 +294,10 @@ namespace NEXUS.Forms
             Scan scan = new Scan(passenger.UserID);
             scan.ShowOverlay(cashIn, null);
         }
+
+        public void UpdateBalance(double newBalance)
+        {
+            lblBalance.Text = "₱ " + newBalance.ToString("F2");
+        }
     }
 }
