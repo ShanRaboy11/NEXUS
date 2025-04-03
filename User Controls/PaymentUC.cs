@@ -174,11 +174,15 @@ namespace NEXUS.User_Controls
                 , cmbxDestination.SelectedItem.ToString(), double.Parse(lblAmount.Text));
             trip.SaveTripToDatabase();
             passengerWallet = trip.DeductFareAmountToWallet();
-            Form existingDashboard = Application.OpenForms["Dashboard"];
-            if (existingDashboard != null && existingDashboard is Dashboard dashboard)
+            Form dashboardForm = Application.OpenForms.OfType<Dashboard>().FirstOrDefault();
+            if (dashboardForm != null)
             {
-                dashboard.UpdateBalance(passengerWallet);
+                dashboardForm.Close();
             }
+
+            // Create and open a new instance of Dashboard
+            Dashboard newDashboard = new Dashboard(passenger); // Pass the necessary info
+            newDashboard.Show();
             dialogBox.ShowIcon("successful payment");
             scan.ShowOverlay(dialogBox, null);
             this.Parent?.Controls.Remove(this);
