@@ -161,7 +161,7 @@ namespace NEXUS.User_Controls
             }
             Trip trip = new Trip(currentDriver.UserID, CurrentPassenger, DateTime.Now, passenger.Name,currentDriver.Name, currentDriver.Route, cmbxLocation.SelectedItem.ToString()
                 , cmbxDestination.SelectedItem.ToString(), double.Parse(lblAmount.Text));
-
+            trip.SaveTripToDatabase();
             dialogBox.ShowIcon("successful payment");
             scan.ShowOverlay(dialogBox, null);
             this.Parent?.Controls.Remove(this);
@@ -170,17 +170,17 @@ namespace NEXUS.User_Controls
             if (parentForm != null)
             {
                 parentForm.Close();
-                parentForm.Dispose();  // Forcefully dispose of the form
+                parentForm.Dispose(); 
             }
         }
 
-        private decimal baseAmount; // Stores the initial value dynamically
+        private decimal baseAmount; 
 
         private void SetBaseAmount(decimal amount)
         {
-            baseAmount = amount; // Assign the base amount dynamically
-            numericMultiplier.Value = 1; // Reset the multiplier to 1
-            lblAmount.Text = baseAmount.ToString("N2"); // Display initial amount
+            baseAmount = amount; 
+            numericMultiplier.Value = 1; 
+            lblAmount.Text = baseAmount.ToString("N2"); 
         }
 
         private void numericMultiplier_ValueChanged(object sender, EventArgs e)

@@ -326,6 +326,31 @@ namespace NEXUS.Classes
             this.destination = destination;
             this.fareAmount = fareAmount;
         }
+
+        public void SaveTripToDatabase()
+        {
+
+            string query = "INSERT INTO Trips ([Trip Date], PassengerID, Passenger, DriverID, Driver, Route, Location, Destination, [Fare Amount]) " +
+                           "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            using (OleDbCommand cmd = new OleDbCommand(query, conn))
+            {
+                conn.Open();
+
+                cmd.Parameters.Add("?", OleDbType.Date).Value = this.TripDate; 
+                cmd.Parameters.AddWithValue("?", this.PassengerID);
+                cmd.Parameters.AddWithValue("?", this.PassengerName);
+                cmd.Parameters.AddWithValue("?", this.DriverID);
+                cmd.Parameters.AddWithValue("?", this.DriverName);
+                cmd.Parameters.AddWithValue("?", this.Route);
+                cmd.Parameters.AddWithValue("?", this.Location);
+                cmd.Parameters.AddWithValue("?", this.Destination);
+                cmd.Parameters.AddWithValue("?", this.FareAmount);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
     }
 
     public class EmergencyReport
