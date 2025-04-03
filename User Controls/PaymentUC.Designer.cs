@@ -40,6 +40,7 @@
             lbl = new Label();
             lblDriverName = new Label();
             lblPlateNum = new Label();
+            tableLayoutPanel6 = new TableLayoutPanel();
             pbDriverPicture = new PictureBox();
             tableLayoutPanel5 = new TableLayoutPanel();
             panel1 = new Panel();
@@ -52,18 +53,17 @@
             label1 = new Label();
             btnPay = new ReaLTaiizor.Controls.CyberButton();
             lbl1 = new Label();
-            tableLayoutPanel6 = new TableLayoutPanel();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel4.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
+            tableLayoutPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbDriverPicture).BeginInit();
             tableLayoutPanel5.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericMultiplier).BeginInit();
-            tableLayoutPanel6.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -240,6 +240,22 @@
             lblPlateNum.Text = "Plate Number";
             lblPlateNum.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // tableLayoutPanel6
+            // 
+            tableLayoutPanel6.ColumnCount = 3;
+            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 152F));
+            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel6.Controls.Add(pbDriverPicture, 1, 1);
+            tableLayoutPanel6.Dock = DockStyle.Fill;
+            tableLayoutPanel6.Location = new Point(3, 3);
+            tableLayoutPanel6.Name = "tableLayoutPanel6";
+            tableLayoutPanel6.RowCount = 2;
+            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 10.7594938F));
+            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 89.24051F));
+            tableLayoutPanel6.Size = new Size(192, 177);
+            tableLayoutPanel6.TabIndex = 7;
+            // 
             // pbDriverPicture
             // 
             pbDriverPicture.Dock = DockStyle.Fill;
@@ -337,9 +353,9 @@
             lblAmount.ForeColor = Color.FromArgb(38, 36, 68);
             lblAmount.Location = new Point(150, 54);
             lblAmount.Name = "lblAmount";
-            lblAmount.Size = new Size(187, 80);
+            lblAmount.Size = new Size(165, 80);
             lblAmount.TabIndex = 38;
-            lblAmount.Text = "13.00";
+            lblAmount.Text = "0.00";
             lblAmount.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // numericMultiplier
@@ -423,22 +439,6 @@
             lbl1.Text = "₱";
             lbl1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // tableLayoutPanel6
-            // 
-            tableLayoutPanel6.ColumnCount = 3;
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 152F));
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel6.Controls.Add(pbDriverPicture, 1, 1);
-            tableLayoutPanel6.Dock = DockStyle.Fill;
-            tableLayoutPanel6.Location = new Point(3, 3);
-            tableLayoutPanel6.Name = "tableLayoutPanel6";
-            tableLayoutPanel6.RowCount = 2;
-            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 10.7594938F));
-            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 89.24051F));
-            tableLayoutPanel6.Size = new Size(192, 177);
-            tableLayoutPanel6.TabIndex = 7;
-            // 
             // PaymentUC
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -454,6 +454,7 @@
             tableLayoutPanel2.PerformLayout();
             tableLayoutPanel3.ResumeLayout(false);
             tableLayoutPanel3.PerformLayout();
+            tableLayoutPanel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbDriverPicture).EndInit();
             tableLayoutPanel5.ResumeLayout(false);
             panel1.ResumeLayout(false);
@@ -461,7 +462,6 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericMultiplier).EndInit();
-            tableLayoutPanel6.ResumeLayout(false);
             ResumeLayout(false);
         }
 

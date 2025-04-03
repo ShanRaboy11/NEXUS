@@ -19,11 +19,13 @@ namespace NEXUS.User_Controls
         DatabaseManagement databasemanagement = new DatabaseManagement();
         private int CurrentPassenger;
         Passenger passenger;
+        private int baseAmount;
+
         public PaymentUC(string qrInfo, int currentPassenger)
         {
             InitializeComponent();
             DecodeQRCode(qrInfo);
-            SetBaseAmount(13);//temporary
+            SetBaseAmount();
             this.CurrentPassenger = currentPassenger;
         }
 
@@ -98,9 +100,19 @@ namespace NEXUS.User_Controls
             };
         }
 
+        private void SetBaseAmount()
+        {
+            if (currentDriver.JeepType == "Traditional")
+                baseAmount = 13;
+            else
+                baseAmount = 15;
+            numericMultiplier.Value = 1;
+            lblAmount.Text = baseAmount.ToString("N2");
+        }
+
         private void CalculateFare()
         {
-            int fare;
+            int fare = this.baseAmount;
             if (cmbxLocation.SelectedIndex != -1 && cmbxDestination.SelectedIndex != -1)
             {
                 int locationIndex = cmbxLocation.SelectedIndex;
@@ -108,10 +120,6 @@ namespace NEXUS.User_Controls
 
                 int indexDifference = Math.Abs(locationIndex - destinationIndex);
 
-                if (currentDriver.JeepType == "Traditional")
-                    fare = 13;
-                else
-                    fare = 15;
 
                 if (indexDifference > 5)
                 {
@@ -124,8 +132,8 @@ namespace NEXUS.User_Controls
                 {
                     fare = (int)(fare * 0.8);  
                 }
-
-                lblAmount.Text = fare.ToString();
+                this.baseAmount = fare;
+                lblAmount.Text = fare.ToString("N2");
             }
         }
 
@@ -146,13 +154,8 @@ namespace NEXUS.User_Controls
         private void btnPay_Click(object sender, EventArgs e)
         {
             DialogBox dialogBox = new DialogBox();
-            Scan scan = new Scan(CurrentPassenger); //change to userid
+            Scan scan = new Scan(CurrentPassenger); 
 
-            if (this.passenger == null)
-            {
-                MessageBox.Show($"Passenger information not found [{CurrentPassenger}].", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; // Exit the method if the passenger is null
-            }
             if (cmbxDestination.SelectedItem == null || cmbxLocation.SelectedItem == null)
             {
                 dialogBox.ShowIcon("blank");
@@ -177,20 +180,11 @@ namespace NEXUS.User_Controls
             }
         }
 
-        private decimal baseAmount; 
-
-        private void SetBaseAmount(decimal amount)
-        {
-            baseAmount = amount; 
-            numericMultiplier.Value = 1; 
-            lblAmount.Text = baseAmount.ToString("N2"); 
-        }
-
         private void numericMultiplier_ValueChanged(object sender, EventArgs e)
         {
-            if (baseAmount > 0) // Ensure base amount is set
+            if (this.baseAmount > 0) 
             {
-                decimal newAmount = baseAmount * numericMultiplier.Value;
+                decimal newAmount = this.baseAmount * numericMultiplier.Value;
                 lblAmount.Text = newAmount.ToString("N2");
             }
         }
