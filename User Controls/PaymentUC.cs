@@ -163,6 +163,7 @@ namespace NEXUS.User_Controls
                 , cmbxDestination.SelectedItem.ToString(), double.Parse(lblAmount.Text));
             trip.SaveTripToDatabase();
             trip.SaveTransaction();
+            trip.PayDriver();
 
             dialogBox.ShowIcon("successful payment");
             scan.ShowOverlay(dialogBox, null);

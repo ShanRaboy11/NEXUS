@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Data.OleDb;
 using System.Linq;
 using System.Security.Cryptography;
@@ -370,6 +371,34 @@ namespace NEXUS.Classes
                 cmd.Parameters.AddWithValue("?", "Trip Payment");
 
                 cmd.ExecuteNonQuery();
+            }
+        }
+
+        public void PayDriver()
+        {
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            {
+                conn.Open();
+                double currentWallet = 0;
+                string getWalletQuery = "SELECT Wallet FROM Accounts WHERE ID = ?";
+                using (OleDbCommand cmd = new OleDbCommand(getWalletQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("?", this.DriverID);
+                    object result = cmd.ExecuteScalar();
+                    if (result != null)
+                    {
+                        currentWallet = Convert.ToDouble(result);
+                    }
+                }
+
+                double newBalance = currentWallet + this.FareAmount;
+                string updateWalletQuery = "UPDATE Accounts SET Wallet = ? WHERE ID = ?";
+                using (OleDbCommand cmd = new OleDbCommand(updateWalletQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("?", newBalance);
+                    cmd.Parameters.AddWithValue("?", DriverID);
+                    cmd.ExecuteNonQuery();
+                }
             }
         }
     }
