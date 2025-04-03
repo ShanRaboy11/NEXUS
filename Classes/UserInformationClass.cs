@@ -79,12 +79,18 @@ namespace NEXUS.Classes
 
     public class UserRegistrationData
     {
-        public string FName { get; set; }
-        public string LName { get; set; }
-        public string UserName { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
-        public string Gender { get; set; }
+        private string FirstName;
+        private string LastName;
+        private string userName;
+        private string email;
+        private string password;
+        private string gender;
+        public string FName { get => FirstName; set => FirstName = value; }
+        public string LName { get => LastName; set => LastName = value; }
+        public string UserName { get => userName; set => userName = value; }
+        public string Email { get => email; set => email = value; }
+        public string Password { get => password; set => password = value; }
+        public string Gender { get => gender; set => gender = value; }
     }
 
     public class Passenger : UserInformation, Users

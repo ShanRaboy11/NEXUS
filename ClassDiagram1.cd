@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="NEXUS.Classes.Attachment">
-    <Position X="1.5" Y="8.75" Width="2" />
+    <Position X="1.25" Y="8.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\UserInformationClass.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="NEXUS.Classes.Cryptography">
-    <Position X="12.5" Y="8" Width="2" />
+    <Position X="12.5" Y="8" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAQAAQAAAAAAAAACAAAAAAAAABAACAAAAAAAAAA=</HashCode>
       <FileName>Classes\Cryptography.cs</FileName>
@@ -23,14 +23,14 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="NEXUS.Classes.EmergencyReport">
-    <Position X="16" Y="7.75" Width="2.25" />
+    <Position X="16" Y="7.75" Width="2.5" />
     <TypeIdentifier>
       <HashCode>ABEAAACAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\UserInformationClass.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="NEXUS.Classes.Passenger">
-    <Position X="4.5" Y="3.25" Width="2" />
+    <Position X="4.5" Y="3.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAACAAEAAhAAAAAQAAAAAAAAAAAAAAAAJAAAAAAA=</HashCode>
       <FileName>Classes\UserInformationClass.cs</FileName>
@@ -38,21 +38,21 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="NEXUS.Classes.DatabaseManagement">
-    <Position X="1.5" Y="1" Width="2" />
+    <Position X="1.25" Y="0.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AACgAAAAAAAAAAwAAAAAAIAAAIAABEAEAAACABAAAQA=</HashCode>
       <FileName>Classes\DatabaseManagement.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="NEXUS.Classes.RatingSystem">
-    <Position X="4.5" Y="7.5" Width="2" />
+    <Position X="4.5" Y="7.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>ABEAAQAAAAAAAAAAAAACAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\UserInformationClass.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="NEXUS.Classes.Trip">
-    <Position X="16" Y="1" Width="2.25" />
+    <Position X="16" Y="0.75" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AHEAAAgQACAIAAAgAEIAAEBCAAgACAAMAAAABAAhAAA=</HashCode>
       <FileName>Classes\UserInformationClass.cs</FileName>
@@ -66,9 +66,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="NEXUS.Classes.UserRegistrationData">
-    <Position X="1.5" Y="5.75" Width="2" />
+    <Position X="1.25" Y="4.75" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAABCAAAAAAAAEAAAAAAACAQAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAEAAACAAABCgAAAAgAAEAAAAAAACAQAAAgEAAAg=</HashCode>
       <FileName>Classes\UserInformationClass.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -96,7 +96,7 @@
   <Class Name="NEXUS.Forms.Dashboard">
     <Position X="32.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>9yhAgFACBCAETJAgCKiCQgYaMAEIBpRCGAM0ESjQCgA=</HashCode>
+      <HashCode>8wgAABAAACAEDJAACAiAQgQCEAEAAhACAAEwAShAAgA=</HashCode>
       <FileName>Forms\Dashboard.cs</FileName>
     </TypeIdentifier>
   </Class>
