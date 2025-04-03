@@ -1,12 +1,15 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.OleDb;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 using BCrypt.Net;
 using Microsoft.VisualBasic;
+using Microsoft.VisualBasic.ApplicationServices;
 using NEXUS.Classes;
 using NEXUS.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -347,6 +350,24 @@ namespace NEXUS.Classes
                 cmd.Parameters.AddWithValue("?", this.Location);
                 cmd.Parameters.AddWithValue("?", this.Destination);
                 cmd.Parameters.AddWithValue("?", this.FareAmount);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public void SaveTransaction()
+        {
+            string insertTransactionQuery = "INSERT INTO Transactions (UserID, TransactionDate, [Full Name], Amount, [Type]) VALUES (?, ?, ?, ?, ?)";
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            using (OleDbCommand cmd = new OleDbCommand(insertTransactionQuery, conn))
+            {
+                conn.Open();
+
+                cmd.Parameters.AddWithValue("?", this.PassengerID);
+                cmd.Parameters.Add("?", OleDbType.Date).Value = this.TripDate; 
+                cmd.Parameters.AddWithValue("?", this.PassengerName);
+                cmd.Parameters.AddWithValue("?", this.FareAmount);
+                cmd.Parameters.AddWithValue("?", "Trip Payment");
 
                 cmd.ExecuteNonQuery();
             }

@@ -162,6 +162,8 @@ namespace NEXUS.User_Controls
             Trip trip = new Trip(currentDriver.UserID, CurrentPassenger, DateTime.Now, passenger.Name,currentDriver.Name, currentDriver.Route, cmbxLocation.SelectedItem.ToString()
                 , cmbxDestination.SelectedItem.ToString(), double.Parse(lblAmount.Text));
             trip.SaveTripToDatabase();
+            trip.SaveTransaction();
+
             dialogBox.ShowIcon("successful payment");
             scan.ShowOverlay(dialogBox, null);
             this.Parent?.Controls.Remove(this);
