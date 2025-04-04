@@ -52,13 +52,10 @@ namespace NEXUS.Classes
         public double WalletAmount { get => walletAmount; set => walletAmount = value; }
         public string Status { get => status; set => status = value; }
 
-        // Protected property for password (Only accessible within derived classes)
         protected string HashedPassword { get; set; }
 
-        // Protected field for database connection string
         protected string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Shan Michael\OneDrive\文档\2nd Year 2nd Sem\OOP2\NEXUS\NEXUS.accdb";
 
-        // Constructor
         protected UserInformation(int userID, string name, string email, string username, string password, string gender, string userType, string birthday, byte[] attachment, byte[] profilepic, double wallet, string status)
         {
             this.userID = userID;
@@ -100,7 +97,6 @@ namespace NEXUS.Classes
         public string Classification { get => classification; set => classification = value; }
         public int Points { get => points; set => points = value; }
 
-        // Constructor
         public Passenger(int userId, string name, string email, string username, string password, string gender, string userType, string birthday, string classification, byte[] attachment, byte[] profilepic, double wallet, int points, string status)
             : base(userId, name, email, username, password, gender, userType, birthday, attachment, profilepic, wallet, status)
         {
@@ -199,7 +195,7 @@ namespace NEXUS.Classes
         public byte[] QRCode { get => qrCode; set => qrCode = value; }
         public string Route { get => route; set => route = value; }
         public string JeepType { get => jeepType; set => jeepType = value; }
-        // Constructor
+
         public Driver(int userId, string name,  string email, string username, string password, string gender, string userType, string birthday, byte[] attachment, string plateNumber, byte[] profilepic, double wallet, byte[] qrcode, string route, string jeeptype, string status)
             : base(userId, name, email, username, password, gender, userType, birthday, attachment, profilepic, wallet, status)
         {
@@ -241,7 +237,6 @@ namespace NEXUS.Classes
 
         public void SaveImageToDatabase(byte[] imageBytes, int userID)
         {
-            // Corrected SQL query to update the QR code for the specified user
             string query = "UPDATE Accounts SET [QR Code] = ? WHERE ID = ?";
 
             using (OleDbConnection conn = DatabaseManagement.GetConnection())
@@ -447,7 +442,7 @@ namespace NEXUS.Classes
         public string IncidentDetails { get; private set; }
         public DateTime TimeStamp { get; private set; }
 
-        // Constructor
+        
         public EmergencyReport(int passengerID, int driverID, string incidentDetails)
         {
             PassengerID = passengerID;
@@ -464,7 +459,7 @@ namespace NEXUS.Classes
         public int Rating { get; private set; }
         public string Feedback { get; private set; }
 
-        // Constructor
+       
         public RatingSystem(int passengerID, int driverID, int rating, string feedback)
         {
             PassengerID = passengerID;
