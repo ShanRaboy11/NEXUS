@@ -52,6 +52,7 @@
             lblUserFName = new Label();
             label1 = new Label();
             panel3 = new Panel();
+            pbTransLogo = new PictureBox();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             lblFare = new Label();
             label10 = new Label();
@@ -83,6 +84,7 @@
             pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbWheelPoints).BeginInit();
             panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbTransLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbProfilePicture).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbProfile).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -389,6 +391,7 @@
             // panel3
             // 
             panel3.BackColor = Color.White;
+            panel3.Controls.Add(pbTransLogo);
             panel3.Controls.Add(iconButton1);
             panel3.Controls.Add(lblFare);
             panel3.Controls.Add(label10);
@@ -415,6 +418,17 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(324, 879);
             panel3.TabIndex = 32;
+            // 
+            // pbTransLogo
+            // 
+            pbTransLogo.Image = (Image)resources.GetObject("pbTransLogo.Image");
+            pbTransLogo.Location = new Point(52, 720);
+            pbTransLogo.Name = "pbTransLogo";
+            pbTransLogo.Size = new Size(227, 129);
+            pbTransLogo.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbTransLogo.TabIndex = 54;
+            pbTransLogo.TabStop = false;
+            pbTransLogo.Visible = false;
             // 
             // iconButton1
             // 
@@ -811,6 +825,7 @@
             ((System.ComponentModel.ISupportInitialize)pbWheelPoints).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pbTransLogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbProfilePicture).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbProfile).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
@@ -862,5 +877,6 @@
         private ReaLTaiizor.Controls.SpaceSeparatorHorizontal spaceSeparatorHorizontal1;
         public Label lblBalance;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private PictureBox pbTransLogo;
     }
 }

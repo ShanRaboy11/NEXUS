@@ -351,10 +351,14 @@ namespace NEXUS.Forms
                         lblFrom.Text = location;
                         lblTo.Text = destination;
                         lblFare.Text = fare.ToString("C");
+                        iconButton1.Visible = true;
                     }
                     else
                     {
-                        lblTripDate.Text = "No recent trips";
+                        pbTransLogo.Visible = true;
+                        lblTripDate.Text = "No recent trip";
+                        lblTripDate.Location = new Point(52, 570);
+                        iconButton1.Visible = false;
                         lblTripTime.Text = "";
                         lblPlate.Text = "";
                         lblRoute.Text = "";
