@@ -369,6 +369,27 @@ namespace NEXUS.Forms
                     }
                 }
             }
+            UpdatePoints(passengerID);
+        }
+
+        private void UpdatePoints(int PassengerID)
+        {
+            double points = 0;
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            {
+                conn.Open();
+                string pointQuery = "SELECT Points FROM Accounts WHERE ID = ?";
+                using (OleDbCommand cmd = new OleDbCommand(pointQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("?", PassengerID);
+                    object result = cmd.ExecuteScalar();
+                    if (result != null)
+                    {
+                        points = Convert.ToDouble(result);
+                    }
+                }
+            }
+            lblPoints.Text = points.ToString();
         }
     }
 }

@@ -307,10 +307,10 @@
             // 
             pnlTop.Controls.Add(spaceSeparatorHorizontal1);
             pnlTop.Controls.Add(label15);
-            pnlTop.Controls.Add(lblPoints);
             pnlTop.Controls.Add(pbWheelPoints);
             pnlTop.Controls.Add(lblUserFName);
             pnlTop.Controls.Add(label1);
+            pnlTop.Controls.Add(lblPoints);
             pnlTop.Dock = DockStyle.Top;
             pnlTop.Location = new Point(0, 0);
             pnlTop.Name = "pnlTop";
@@ -322,10 +322,10 @@
             spaceSeparatorHorizontal1.Customization = "Kioq/yoqKv8jIyP/Kioq/w==";
             spaceSeparatorHorizontal1.Font = new Font("Verdana", 8F);
             spaceSeparatorHorizontal1.Image = null;
-            spaceSeparatorHorizontal1.Location = new Point(667, 122);
+            spaceSeparatorHorizontal1.Location = new Point(638, 122);
             spaceSeparatorHorizontal1.Name = "spaceSeparatorHorizontal1";
             spaceSeparatorHorizontal1.NoRounding = false;
-            spaceSeparatorHorizontal1.Size = new Size(325, 4);
+            spaceSeparatorHorizontal1.Size = new Size(375, 4);
             spaceSeparatorHorizontal1.TabIndex = 33;
             spaceSeparatorHorizontal1.Text = "spaceSeparatorHorizontal1";
             spaceSeparatorHorizontal1.Transparent = false;
@@ -336,7 +336,7 @@
             label15.BackColor = Color.FromArgb(230, 249, 255);
             label15.Font = new Font("Inter", 21F, FontStyle.Bold);
             label15.ForeColor = Color.FromArgb(38, 36, 68);
-            label15.Location = new Point(694, 66);
+            label15.Location = new Point(667, 66);
             label15.Name = "label15";
             label15.Size = new Size(141, 40);
             label15.TabIndex = 55;
@@ -344,21 +344,21 @@
             // 
             // lblPoints
             // 
-            lblPoints.AutoSize = true;
             lblPoints.BackColor = Color.FromArgb(230, 249, 255);
             lblPoints.Font = new Font("Inter", 31F, FontStyle.Bold);
             lblPoints.ForeColor = Color.FromArgb(38, 36, 68);
-            lblPoints.Location = new Point(837, 52);
+            lblPoints.Location = new Point(806, 52);
             lblPoints.Name = "lblPoints";
-            lblPoints.Size = new Size(55, 61);
+            lblPoints.Size = new Size(94, 61);
             lblPoints.TabIndex = 54;
             lblPoints.Text = "0";
+            lblPoints.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pbWheelPoints
             // 
             pbWheelPoints.Cursor = Cursors.Hand;
             pbWheelPoints.Image = (Image)resources.GetObject("pbWheelPoints.Image");
-            pbWheelPoints.Location = new Point(890, 55);
+            pbWheelPoints.Location = new Point(895, 55);
             pbWheelPoints.Name = "pbWheelPoints";
             pbWheelPoints.Size = new Size(66, 58);
             pbWheelPoints.SizeMode = PictureBoxSizeMode.Zoom;

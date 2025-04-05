@@ -406,6 +406,7 @@ namespace NEXUS.Classes
                     cmd.ExecuteNonQuery();
                 }
             }
+            IncrementPoint();
         }
 
         public double DeductFareAmountToWallet()
@@ -443,6 +444,7 @@ namespace NEXUS.Classes
             using (OleDbConnection conn = DatabaseManagement.GetConnection())
             {
                 conn.Open();
+
                 string pointQuery = "SELECT Points FROM Accounts WHERE ID = ?";
                 using (OleDbCommand cmd = new OleDbCommand(pointQuery, conn))
                 {
@@ -453,8 +455,10 @@ namespace NEXUS.Classes
                         points = Convert.ToDouble(result);
                     }
                 }
+
                 points += 0.50;
-                string updateQuery = "UPDATE Accounts SET Point = ? WHERE ID = ?";
+
+                string updateQuery = "UPDATE Accounts SET Points = ? WHERE ID = ?";
                 using (OleDbCommand cmd = new OleDbCommand(updateQuery, conn))
                 {
                     cmd.Parameters.AddWithValue("?", points);
@@ -463,6 +467,7 @@ namespace NEXUS.Classes
                 }
             }
         }
+
     }
 
     public class EmergencyReport

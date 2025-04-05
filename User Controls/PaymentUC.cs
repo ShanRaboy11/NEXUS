@@ -20,7 +20,7 @@ namespace NEXUS.User_Controls
         DatabaseManagement databasemanagement = new DatabaseManagement();
         private int CurrentPassenger;
         Passenger passenger;
-        private int baseAmount;
+        private decimal baseAmount;
         private decimal farePrice;
 
         public PaymentUC(string qrInfo, int currentPassenger)
@@ -147,9 +147,9 @@ namespace NEXUS.User_Controls
                         fare *= 0.8m;
                     }
 
-                    this.farePrice = fare * numericMultiplier.Value;
-                    this.farePrice = Math.Round(this.farePrice); //rounds to the nearest whole number
-                    lblAmount.Text = this.farePrice.ToString("N2");
+                    this.baseAmount = fare * numericMultiplier.Value;
+                    this.baseAmount = Math.Round(this.baseAmount); //rounds to the nearest whole number
+                    lblAmount.Text = this.baseAmount.ToString("N2");
                 }
                 catch (Exception ex)
                 {
