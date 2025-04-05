@@ -1,4 +1,5 @@
 ﻿using FontAwesome.Sharp;
+using Microsoft.VisualBasic;
 using NEXUS.Classes;
 using NEXUS.Properties;
 using System;
@@ -315,11 +316,55 @@ namespace NEXUS.Forms
                 }
                 lblBalance.Text = "₱ " + passengerWallet.ToString("F2");
             }
+            UpdateTransaction(userID);
         }
 
-        private void UpdateTransaction()
+        private void UpdateTransaction(int passengerID)
         {
+            string tripQuery = @"
+                    SELECT TOP 1 [Trip Date], [Plate Number], Route, Location, Destination, [Fare Amount]
+                    FROM Trips
+                    WHERE PassengerID = ?
+                    ORDER BY [Trip Date] DESC";
 
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            using (OleDbCommand cmd = new OleDbCommand(tripQuery, conn))
+            {
+                cmd.Parameters.AddWithValue("?", passengerID);
+                conn.Open();
+
+                using (OleDbDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        DateTime tripDate = Convert.ToDateTime(reader["Trip Date"]);
+                        string plate = reader["Plate Number"].ToString();
+                        string route = reader["Route"].ToString();
+                        string location = reader["Location"].ToString();
+                        string destination = reader["Destination"].ToString();
+                        double fare = Convert.ToDouble(reader["Fare Amount"]);
+
+                        lblTripDate.Text = tripDate.ToString("MMMM d, yyyy");
+                        lblTripTime.Text = tripDate.ToString("h:mm tt");
+                        lblPlate.Text = plate;
+                        lblRoute.Text = route;
+                        lblFrom.Text = location;
+                        lblTo.Text = destination;
+                        lblFare.Text = fare.ToString("C");
+                    }
+                    else
+                    {
+                        lblTripDate.Text = "No recent trips";
+                        lblTripTime.Text = "";
+                        lblPlate.Text = "";
+                        lblRoute.Text = "";
+                        lblFrom.Text = "";
+                        lblTo.Text = "";
+                        lblFare.Text = "";
+                        label10.Text = "";
+                    }
+                }
+            }
         }
     }
 }

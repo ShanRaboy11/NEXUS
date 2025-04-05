@@ -307,6 +307,7 @@ namespace NEXUS.Classes
         private string location;
         private string destination;
         private double fareAmount;
+        private string plateNumber;
 
         public int DriverID { get => driverID; set => driverID = value; }
         public int PassengerID { get => passengerID; set => passengerID = value; }
@@ -317,15 +318,17 @@ namespace NEXUS.Classes
         public string Location { get => location; set => location = value; }
         public string Destination { get => destination; set => destination = value; }
         public double FareAmount { get => fareAmount; set => fareAmount = value; }
+        public string PlateNumber { get => plateNumber; set => plateNumber = value; }
 
         public Trip(int driverID, int passengerID, DateTime tripDate, string passengerName,
-                string driverName, string route, string location, string destination, double fareAmount)
+                string driverName, string PlateNumber, string route, string location, string destination, double fareAmount)
         {
             this.driverID = driverID;
             this.passengerID = passengerID;
             this.tripDate = tripDate;
             this.passengerName = passengerName;
             this.driverName = driverName;
+            this.plateNumber = PlateNumber;
             this.route = route;
             this.location = location;
             this.destination = destination;

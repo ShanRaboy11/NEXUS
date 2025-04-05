@@ -177,8 +177,8 @@ namespace NEXUS.User_Controls
         {
             DialogBox dialogBox = new DialogBox();
             Scan scan = new Scan(CurrentPassenger);
-            //Dashboard dashboard = new Dashboard(passenger);
             double passengerWallet;
+
             if (cmbxDestination.SelectedItem == null || cmbxLocation.SelectedItem == null)
             {
                 dialogBox.ShowIcon("blank");
@@ -191,15 +191,11 @@ namespace NEXUS.User_Controls
                 scan.ShowOverlay(dialogBox, null);
                 return;
             }
-            Trip trip = new Trip(currentDriver.UserID, CurrentPassenger, DateTime.Now, passenger.Name, currentDriver.Name, currentDriver.Route, cmbxLocation.SelectedItem.ToString()
+            Trip trip = new Trip(currentDriver.UserID, CurrentPassenger, DateTime.Now, passenger.Name, currentDriver.Name, currentDriver.PlateNumber, currentDriver.Route, cmbxLocation.SelectedItem.ToString()
                 , cmbxDestination.SelectedItem.ToString(), double.Parse(lblAmount.Text));
+            
             trip.SaveTripToDatabase();
             passengerWallet = trip.DeductFareAmountToWallet();
-            //Form dashboardForm = Application.OpenForms.OfType<Dashboard>().FirstOrDefault();
-            //if (dashboardForm != null)
-            //{
-            //    dashboardForm.Close();
-            //}
 
             dialogBox.ShowIcon("successful payment");
             var overlayForm = new Form();

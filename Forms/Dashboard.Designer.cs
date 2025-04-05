@@ -52,18 +52,16 @@
             lblUserFName = new Label();
             label1 = new Label();
             panel3 = new Panel();
-            label13 = new Label();
-            label12 = new Label();
-            label11 = new Label();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
+            lblFare = new Label();
             label10 = new Label();
-            label9 = new Label();
-            label8 = new Label();
-            label7 = new Label();
+            lblTo = new Label();
+            lblFrom = new Label();
             cyberButton4 = new ReaLTaiizor.Controls.CyberButton();
-            label6 = new Label();
-            lblTime = new Label();
-            lblPlateNum = new Label();
-            lblJeepCode = new Label();
+            lblTripDate = new Label();
+            lblTripTime = new Label();
+            lblPlate = new Label();
+            lblRoute = new Label();
             cyberButton3 = new ReaLTaiizor.Controls.CyberButton();
             label4 = new Label();
             label5 = new Label();
@@ -391,18 +389,16 @@
             // panel3
             // 
             panel3.BackColor = Color.White;
-            panel3.Controls.Add(label13);
-            panel3.Controls.Add(label12);
-            panel3.Controls.Add(label11);
+            panel3.Controls.Add(iconButton1);
+            panel3.Controls.Add(lblFare);
             panel3.Controls.Add(label10);
-            panel3.Controls.Add(label9);
-            panel3.Controls.Add(label8);
-            panel3.Controls.Add(label7);
+            panel3.Controls.Add(lblTo);
+            panel3.Controls.Add(lblFrom);
             panel3.Controls.Add(cyberButton4);
-            panel3.Controls.Add(label6);
-            panel3.Controls.Add(lblTime);
-            panel3.Controls.Add(lblPlateNum);
-            panel3.Controls.Add(lblJeepCode);
+            panel3.Controls.Add(lblTripDate);
+            panel3.Controls.Add(lblTripTime);
+            panel3.Controls.Add(lblPlate);
+            panel3.Controls.Add(lblRoute);
             panel3.Controls.Add(cyberButton3);
             panel3.Controls.Add(label4);
             panel3.Controls.Add(label5);
@@ -420,91 +416,69 @@
             panel3.Size = new Size(324, 879);
             panel3.TabIndex = 32;
             // 
-            // label13
+            // iconButton1
             // 
-            label13.AutoSize = true;
-            label13.BackColor = Color.FromArgb(38, 36, 68);
-            label13.Font = new Font("Inter", 18F, FontStyle.Bold);
-            label13.ForeColor = Color.White;
-            label13.Location = new Point(184, 793);
-            label13.Name = "label13";
-            label13.Size = new Size(92, 35);
-            label13.TabIndex = 53;
-            label13.Text = "₱ 8.00";
+            iconButton1.BackColor = Color.FromArgb(38, 36, 68);
+            iconButton1.FlatStyle = FlatStyle.Flat;
+            iconButton1.Font = new Font("Microsoft Sans Serif", 8.25F);
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.ArrowDown;
+            iconButton1.IconColor = Color.White;
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.IconSize = 36;
+            iconButton1.Location = new Point(149, 764);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Size = new Size(32, 36);
+            iconButton1.TabIndex = 53;
+            iconButton1.UseVisualStyleBackColor = false;
             // 
-            // label12
+            // lblFare
             // 
-            label12.AutoSize = true;
-            label12.BackColor = Color.FromArgb(38, 36, 68);
-            label12.Font = new Font("Inter", 18F, FontStyle.Bold);
-            label12.ForeColor = Color.White;
-            label12.Location = new Point(184, 751);
-            label12.Name = "label12";
-            label12.Size = new Size(107, 35);
-            label12.TabIndex = 52;
-            label12.Text = "₱ 20.00";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.BackColor = Color.FromArgb(38, 36, 68);
-            label11.Font = new Font("Inter", 18F, FontStyle.Bold);
-            label11.ForeColor = Color.White;
-            label11.Location = new Point(46, 793);
-            label11.Name = "label11";
-            label11.Size = new Size(132, 35);
-            label11.TabIndex = 51;
-            label11.Text = "Change   :";
+            lblFare.AutoSize = true;
+            lblFare.BackColor = Color.FromArgb(153, 229, 255);
+            lblFare.Font = new Font("Inter", 18F, FontStyle.Bold);
+            lblFare.ForeColor = Color.FromArgb(24, 60, 114);
+            lblFare.Location = new Point(177, 631);
+            lblFare.Name = "lblFare";
+            lblFare.Size = new Size(107, 35);
+            lblFare.TabIndex = 52;
+            lblFare.Text = "₱ 20.00";
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.BackColor = Color.FromArgb(38, 36, 68);
+            label10.BackColor = Color.FromArgb(153, 229, 255);
             label10.Font = new Font("Inter", 18F, FontStyle.Bold);
-            label10.ForeColor = Color.White;
-            label10.Location = new Point(46, 751);
+            label10.ForeColor = Color.FromArgb(24, 60, 114);
+            label10.Location = new Point(52, 631);
             label10.Name = "label10";
             label10.Size = new Size(133, 35);
             label10.TabIndex = 50;
             label10.Text = "Payment :";
             // 
-            // label9
+            // lblTo
             // 
-            label9.AutoSize = true;
-            label9.BackColor = Color.FromArgb(38, 36, 68);
-            label9.Font = new Font("Inter", 18F, FontStyle.Bold);
-            label9.ForeColor = Color.White;
-            label9.Location = new Point(215, 709);
-            label9.Name = "label9";
-            label9.RightToLeft = RightToLeft.No;
-            label9.Size = new Size(84, 35);
-            label9.TabIndex = 49;
-            label9.Text = "CIT-U";
-            label9.TextAlign = ContentAlignment.MiddleRight;
+            lblTo.BackColor = Color.FromArgb(38, 36, 68);
+            lblTo.Font = new Font("Inter", 19F, FontStyle.Bold);
+            lblTo.ForeColor = Color.White;
+            lblTo.Location = new Point(48, 807);
+            lblTo.Name = "lblTo";
+            lblTo.RightToLeft = RightToLeft.No;
+            lblTo.Size = new Size(237, 37);
+            lblTo.TabIndex = 49;
+            lblTo.Text = "CIT-U";
+            lblTo.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label8
+            // lblFrom
             // 
-            label8.AutoSize = true;
-            label8.BackColor = Color.FromArgb(38, 36, 68);
-            label8.Font = new Font("Inter", 18F, FontStyle.Bold);
-            label8.ForeColor = Color.White;
-            label8.Location = new Point(154, 709);
-            label8.Name = "label8";
-            label8.Size = new Size(38, 35);
-            label8.TabIndex = 48;
-            label8.Text = "->";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.BackColor = Color.FromArgb(38, 36, 68);
-            label7.Font = new Font("Inter", 18F, FontStyle.Bold);
-            label7.ForeColor = Color.White;
-            label7.Location = new Point(46, 709);
-            label7.Name = "label7";
-            label7.Size = new Size(86, 35);
-            label7.TabIndex = 47;
-            label7.Text = "Basak";
+            lblFrom.BackColor = Color.FromArgb(38, 36, 68);
+            lblFrom.Font = new Font("Inter", 19F, FontStyle.Bold);
+            lblFrom.ForeColor = Color.White;
+            lblFrom.Location = new Point(50, 714);
+            lblFrom.Name = "lblFrom";
+            lblFrom.Size = new Size(234, 37);
+            lblFrom.TabIndex = 47;
+            lblFrom.Text = "Basak";
+            lblFrom.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // cyberButton4
             // 
@@ -533,12 +507,12 @@
             cyberButton4.Lighting = false;
             cyberButton4.LinearGradient_Background = false;
             cyberButton4.LinearGradientPen = false;
-            cyberButton4.Location = new Point(20, 683);
+            cyberButton4.Location = new Point(20, 702);
             cyberButton4.Name = "cyberButton4";
             cyberButton4.PenWidth = 15;
             cyberButton4.Rounding = true;
             cyberButton4.RoundingInt = 70;
-            cyberButton4.Size = new Size(292, 167);
+            cyberButton4.Size = new Size(292, 160);
             cyberButton4.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             cyberButton4.TabIndex = 46;
             cyberButton4.Tag = "Cyber";
@@ -547,53 +521,53 @@
             cyberButton4.Timer_Effect_1 = 5;
             cyberButton4.Timer_RGB = 300;
             // 
-            // label6
+            // lblTripDate
             // 
-            label6.AutoSize = true;
-            label6.BackColor = Color.FromArgb(153, 229, 255);
-            label6.Font = new Font("Inter", 15F, FontStyle.Bold);
-            label6.ForeColor = Color.FromArgb(24, 60, 114);
-            label6.Location = new Point(84, 511);
-            label6.Name = "label6";
-            label6.Size = new Size(164, 28);
-            label6.TabIndex = 45;
-            label6.Text = "March 13, 2025";
+            lblTripDate.BackColor = Color.FromArgb(153, 229, 255);
+            lblTripDate.Font = new Font("Inter", 18F, FontStyle.Bold);
+            lblTripDate.ForeColor = Color.FromArgb(24, 60, 114);
+            lblTripDate.Location = new Point(52, 508);
+            lblTripDate.Name = "lblTripDate";
+            lblTripDate.Size = new Size(228, 51);
+            lblTripDate.TabIndex = 45;
+            lblTripDate.Text = "March 13, 2025";
+            lblTripDate.TextAlign = ContentAlignment.TopCenter;
             // 
-            // lblTime
+            // lblTripTime
             // 
-            lblTime.AutoSize = true;
-            lblTime.BackColor = Color.FromArgb(153, 229, 255);
-            lblTime.Font = new Font("Inter", 18F, FontStyle.Bold);
-            lblTime.ForeColor = Color.FromArgb(24, 60, 114);
-            lblTime.Location = new Point(177, 591);
-            lblTime.Name = "lblTime";
-            lblTime.Size = new Size(116, 35);
-            lblTime.TabIndex = 44;
-            lblTime.Text = "8:34 AM";
+            lblTripTime.AutoSize = true;
+            lblTripTime.BackColor = Color.FromArgb(153, 229, 255);
+            lblTripTime.Font = new Font("Inter", 18F, FontStyle.Bold);
+            lblTripTime.ForeColor = Color.FromArgb(24, 60, 114);
+            lblTripTime.Location = new Point(177, 591);
+            lblTripTime.Name = "lblTripTime";
+            lblTripTime.Size = new Size(116, 35);
+            lblTripTime.TabIndex = 44;
+            lblTripTime.Text = "8:34 AM";
             // 
-            // lblPlateNum
+            // lblPlate
             // 
-            lblPlateNum.AutoSize = true;
-            lblPlateNum.BackColor = Color.FromArgb(153, 229, 255);
-            lblPlateNum.Font = new Font("Inter", 18F, FontStyle.Bold);
-            lblPlateNum.ForeColor = Color.FromArgb(24, 60, 114);
-            lblPlateNum.Location = new Point(179, 555);
-            lblPlateNum.Name = "lblPlateNum";
-            lblPlateNum.Size = new Size(107, 35);
-            lblPlateNum.TabIndex = 43;
-            lblPlateNum.Text = "481HOF";
+            lblPlate.AutoSize = true;
+            lblPlate.BackColor = Color.FromArgb(153, 229, 255);
+            lblPlate.Font = new Font("Inter", 18F, FontStyle.Bold);
+            lblPlate.ForeColor = Color.FromArgb(24, 60, 114);
+            lblPlate.Location = new Point(179, 555);
+            lblPlate.Name = "lblPlate";
+            lblPlate.Size = new Size(107, 35);
+            lblPlate.TabIndex = 43;
+            lblPlate.Text = "481HOF";
             // 
-            // lblJeepCode
+            // lblRoute
             // 
-            lblJeepCode.AutoSize = true;
-            lblJeepCode.BackColor = Color.FromArgb(153, 229, 255);
-            lblJeepCode.Font = new Font("Inter", 50F, FontStyle.Bold);
-            lblJeepCode.ForeColor = Color.FromArgb(24, 60, 114);
-            lblJeepCode.Location = new Point(32, 541);
-            lblJeepCode.Name = "lblJeepCode";
-            lblJeepCode.Size = new Size(153, 96);
-            lblJeepCode.TabIndex = 42;
-            lblJeepCode.Text = "10F";
+            lblRoute.AutoSize = true;
+            lblRoute.BackColor = Color.FromArgb(153, 229, 255);
+            lblRoute.Font = new Font("Inter", 50F, FontStyle.Bold);
+            lblRoute.ForeColor = Color.FromArgb(24, 60, 114);
+            lblRoute.Location = new Point(32, 541);
+            lblRoute.Name = "lblRoute";
+            lblRoute.Size = new Size(153, 96);
+            lblRoute.TabIndex = 42;
+            lblRoute.Text = "10F";
             // 
             // cyberButton3
             // 
@@ -627,7 +601,7 @@
             cyberButton3.PenWidth = 15;
             cyberButton3.Rounding = true;
             cyberButton3.RoundingInt = 70;
-            cyberButton3.Size = new Size(292, 167);
+            cyberButton3.Size = new Size(292, 193);
             cyberButton3.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             cyberButton3.TabIndex = 41;
             cyberButton3.Tag = "Cyber";
@@ -873,22 +847,20 @@
         private ReaLTaiizor.Controls.CyberButton cyberButton3;
         private Label label4;
         private Label label5;
-        private Label label6;
-        private Label lblTime;
-        private Label lblPlateNum;
-        private Label lblJeepCode;
-        private Label label11;
+        private Label lblTripDate;
+        private Label lblTripTime;
+        private Label lblPlate;
+        private Label lblRoute;
         private Label label10;
-        private Label label9;
-        private Label label8;
-        private Label label7;
+        private Label lblTo;
+        private Label lblFrom;
         private ReaLTaiizor.Controls.CyberButton cyberButton4;
-        private Label label13;
-        private Label label12;
+        private Label lblFare;
         private Label lblPoints;
         private PictureBox pbWheelPoints;
         private Label label15;
         private ReaLTaiizor.Controls.SpaceSeparatorHorizontal spaceSeparatorHorizontal1;
         public Label lblBalance;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }
