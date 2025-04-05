@@ -338,8 +338,8 @@ namespace NEXUS.Classes
         public void SaveTripToDatabase()
         {
 
-            string query = "INSERT INTO Trips ([Trip Date], PassengerID, Passenger, DriverID, Driver, Route, Location, Destination, [Fare Amount]) " +
-                           "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            string query = "INSERT INTO Trips ([Trip Date], PassengerID, Passenger, DriverID, Driver, [Plate Number], Route, Location, Destination, [Fare Amount]) " +
+                           "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             using (OleDbConnection conn = DatabaseManagement.GetConnection())
             using (OleDbCommand cmd = new OleDbCommand(query, conn))
@@ -351,6 +351,7 @@ namespace NEXUS.Classes
                 cmd.Parameters.AddWithValue("?", this.PassengerName);
                 cmd.Parameters.AddWithValue("?", this.DriverID);
                 cmd.Parameters.AddWithValue("?", this.DriverName);
+                cmd.Parameters.AddWithValue("?", this.PlateNumber);
                 cmd.Parameters.AddWithValue("?", this.Route);
                 cmd.Parameters.AddWithValue("?", this.Location);
                 cmd.Parameters.AddWithValue("?", this.Destination);

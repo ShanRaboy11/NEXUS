@@ -345,6 +345,8 @@ namespace NEXUS.Forms
                         double fare = Convert.ToDouble(reader["Fare Amount"]);
 
                         lblTripDate.Text = tripDate.ToString("MMMM d, yyyy");
+                        lblTripDate.Location = new Point(52, 508);
+                        pbTransLogo.Visible = false;
                         lblTripTime.Text = tripDate.ToString("h:mm tt");
                         lblPlate.Text = plate;
                         lblRoute.Text = route;
@@ -389,7 +391,8 @@ namespace NEXUS.Forms
                     }
                 }
             }
-            lblPoints.Text = points.ToString();
+            //lblPoints.Text = points.ToString("F1");
+            lblPoints.Text = "0.5";
         }
     }
 }

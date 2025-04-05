@@ -47,7 +47,6 @@
             pnlTop = new Panel();
             spaceSeparatorHorizontal1 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
             label15 = new Label();
-            lblPoints = new Label();
             pbWheelPoints = new PictureBox();
             lblUserFName = new Label();
             label1 = new Label();
@@ -74,6 +73,7 @@
             pbProfile = new PictureBox();
             pictureBox5 = new PictureBox();
             cyberButton2 = new ReaLTaiizor.Controls.CyberButton();
+            lblPoints = new Label();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -336,29 +336,17 @@
             label15.BackColor = Color.FromArgb(230, 249, 255);
             label15.Font = new Font("Inter", 21F, FontStyle.Bold);
             label15.ForeColor = Color.FromArgb(38, 36, 68);
-            label15.Location = new Point(667, 66);
+            label15.Location = new Point(671, 66);
             label15.Name = "label15";
             label15.Size = new Size(141, 40);
             label15.TabIndex = 55;
             label15.Text = "You have";
             // 
-            // lblPoints
-            // 
-            lblPoints.BackColor = Color.FromArgb(230, 249, 255);
-            lblPoints.Font = new Font("Inter", 31F, FontStyle.Bold);
-            lblPoints.ForeColor = Color.FromArgb(38, 36, 68);
-            lblPoints.Location = new Point(806, 52);
-            lblPoints.Name = "lblPoints";
-            lblPoints.Size = new Size(94, 61);
-            lblPoints.TabIndex = 54;
-            lblPoints.Text = "0";
-            lblPoints.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // pbWheelPoints
             // 
             pbWheelPoints.Cursor = Cursors.Hand;
             pbWheelPoints.Image = (Image)resources.GetObject("pbWheelPoints.Image");
-            pbWheelPoints.Location = new Point(895, 55);
+            pbWheelPoints.Location = new Point(896, 55);
             pbWheelPoints.Name = "pbWheelPoints";
             pbWheelPoints.Size = new Size(66, 58);
             pbWheelPoints.SizeMode = PictureBoxSizeMode.Zoom;
@@ -549,27 +537,27 @@
             // 
             // lblTripTime
             // 
-            lblTripTime.AutoSize = true;
             lblTripTime.BackColor = Color.FromArgb(153, 229, 255);
             lblTripTime.Font = new Font("Inter", 18F, FontStyle.Bold);
             lblTripTime.ForeColor = Color.FromArgb(24, 60, 114);
-            lblTripTime.Location = new Point(177, 591);
+            lblTripTime.Location = new Point(165, 591);
             lblTripTime.Name = "lblTripTime";
-            lblTripTime.Size = new Size(116, 35);
+            lblTripTime.Size = new Size(142, 35);
             lblTripTime.TabIndex = 44;
             lblTripTime.Text = "8:34 AM";
+            lblTripTime.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblPlate
             // 
-            lblPlate.AutoSize = true;
             lblPlate.BackColor = Color.FromArgb(153, 229, 255);
             lblPlate.Font = new Font("Inter", 18F, FontStyle.Bold);
             lblPlate.ForeColor = Color.FromArgb(24, 60, 114);
-            lblPlate.Location = new Point(179, 555);
+            lblPlate.Location = new Point(165, 555);
             lblPlate.Name = "lblPlate";
-            lblPlate.Size = new Size(107, 35);
+            lblPlate.Size = new Size(139, 35);
             lblPlate.TabIndex = 43;
             lblPlate.Text = "481HOF";
+            lblPlate.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblRoute
             // 
@@ -798,6 +786,18 @@
             cyberButton2.Timer_Effect_1 = 5;
             cyberButton2.Timer_RGB = 300;
             // 
+            // lblPoints
+            // 
+            lblPoints.BackColor = Color.FromArgb(230, 249, 255);
+            lblPoints.Font = new Font("Inter", 31F, FontStyle.Bold);
+            lblPoints.ForeColor = Color.FromArgb(38, 36, 68);
+            lblPoints.Location = new Point(801, 54);
+            lblPoints.Name = "lblPoints";
+            lblPoints.Size = new Size(111, 61);
+            lblPoints.TabIndex = 55;
+            lblPoints.Text = "0";
+            lblPoints.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -871,12 +871,12 @@
         private Label lblFrom;
         private ReaLTaiizor.Controls.CyberButton cyberButton4;
         private Label lblFare;
-        private Label lblPoints;
         private PictureBox pbWheelPoints;
         private Label label15;
         private ReaLTaiizor.Controls.SpaceSeparatorHorizontal spaceSeparatorHorizontal1;
         public Label lblBalance;
         private FontAwesome.Sharp.IconButton iconButton1;
         private PictureBox pbTransLogo;
+        private Label lblPoints;
     }
 }
