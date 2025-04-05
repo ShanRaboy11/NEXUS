@@ -22,6 +22,9 @@ namespace NEXUS.Forms
         {
             InitializeComponent();
             this.UserID = userID;
+            IncidentTime.Format = DateTimePickerFormat.Custom;
+            IncidentTime.CustomFormat = "hh:mm tt"; // or "HH:mm" for 24-hour format
+            IncidentTime.ShowUpDown = true;
         }
 
 

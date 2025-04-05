@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Transactions;
 using BCrypt.Net;
+using Krypton.Toolkit;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.ApplicationServices;
 using NEXUS.Classes;
@@ -471,20 +472,34 @@ namespace NEXUS.Classes
 
     }
 
-    public class EmergencyReport
+    public class IncidentReport
     {
-        public int PassengerID { get; private set; }
-        public int DriverID { get; private set; }
-        public string IncidentDetails { get; private set; }
-        public DateTime TimeStamp { get; private set; }
+        private int userID;
+        private string name;
+        private DateTime incidentDate;
+        private string location;
+        private string description;
+        private byte[] attachment;
+        private string status;
+
+        public int UserID { get => userID; set => userID = value; }
+        public string Name {  get => name; set => name = value; }
+        public DateTime TimeStamp { get => incidentDate; set => incidentDate = value; }
+        public string Location {  get => location; set => location = value; }
+        public string Description { get => description; set => description = value;  }
+        public byte[] Attachment {  get => attachment; set => attachment = value; }
+        public string Status {  get => status; set => status = value; }
 
         
-        public EmergencyReport(int passengerID, int driverID, string incidentDetails)
+        public IncidentReport(int userID, string name, DateTime dateIncident, string location, string description, byte[] attachment, string status)
         {
-            PassengerID = passengerID;
-            DriverID = driverID;
-            IncidentDetails = !string.IsNullOrWhiteSpace(incidentDetails) ? incidentDetails : "No details provided";
-            TimeStamp = DateTime.Now;
+            this.userID = userID;
+            this.name = name;
+            this.incidentDate = dateIncident;
+            this.location = location;
+            this.description = description;
+            this.attachment = attachment;
+            this.status = status;
         }
     }
 

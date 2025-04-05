@@ -43,20 +43,16 @@
             label5 = new Label();
             panel3 = new Panel();
             rtbxIncidentDescription = new RichTextBox();
-            label6 = new Label();
             label7 = new Label();
             panel4 = new Panel();
             btnAttach = new FontAwesome.Sharp.IconButton();
             lblFileName = new Label();
             btnSubmitReport = new ReaLTaiizor.Controls.CyberButton();
-            panel5 = new Panel();
-            poisonDateTime3 = new ReaLTaiizor.Controls.PoisonDateTime();
             pnlUsername.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
-            panel5.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -205,16 +201,6 @@
             rtbxIncidentDescription.TabIndex = 0;
             rtbxIncidentDescription.Text = "";
             // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Inter Medium", 15F, FontStyle.Bold);
-            label6.Location = new Point(589, 83);
-            label6.Name = "label6";
-            label6.Size = new Size(173, 28);
-            label6.TabIndex = 29;
-            label6.Text = "Time of Incident:";
-            // 
             // label7
             // 
             label7.AutoSize = true;
@@ -304,38 +290,15 @@
             btnSubmitReport.Timer_RGB = 300;
             btnSubmitReport.Click += btnSubmitReport_Click;
             // 
-            // panel5
-            // 
-            panel5.BackColor = Color.White;
-            panel5.BackgroundImageLayout = ImageLayout.None;
-            panel5.Controls.Add(poisonDateTime3);
-            panel5.Location = new Point(617, 123);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(267, 48);
-            panel5.TabIndex = 27;
-            // 
-            // poisonDateTime3
-            // 
-            poisonDateTime3.CalendarFont = new Font("Inter", 12.25F);
-            poisonDateTime3.CalendarMonthBackground = Color.FromArgb(176, 233, 255);
-            poisonDateTime3.Format = DateTimePickerFormat.Time;
-            poisonDateTime3.Location = new Point(15, 8);
-            poisonDateTime3.MinimumSize = new Size(0, 29);
-            poisonDateTime3.Name = "poisonDateTime3";
-            poisonDateTime3.Size = new Size(239, 29);
-            poisonDateTime3.TabIndex = 22;
-            // 
             // Report
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
             ClientSize = new Size(988, 739);
-            Controls.Add(panel5);
             Controls.Add(btnSubmitReport);
             Controls.Add(panel4);
             Controls.Add(label7);
-            Controls.Add(label6);
             Controls.Add(panel3);
             Controls.Add(label5);
             Controls.Add(panel2);
@@ -356,7 +319,6 @@
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
-            panel5.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -376,14 +338,11 @@
         private Panel panel3;
         private RichTextBox rtbxIncidentDescription;
         private ComboBox cmbxNature;
-        private Label label6;
         private Label label7;
         private Panel panel4;
         private Label lblFileName;
         private FontAwesome.Sharp.IconButton btnAttach;
         private ReaLTaiizor.Controls.CyberButton btnSubmitReport;
-        private Panel panel5;
-        private ReaLTaiizor.Controls.PoisonDateTime poisonDateTime3;
         private TextBox tbxLocation;
     }
 }
