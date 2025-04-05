@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using NEXUS.Forms;
 using NEXUS.Classes;
 using System.Data.OleDb;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace NEXUS.User_Controls
 {
@@ -184,34 +185,50 @@ namespace NEXUS.User_Controls
                 scan.ShowOverlay(dialogBox, null);
                 return;
             }
-            else if(!databasemanagement.PaymentValid(farePrice, CurrentPassenger))
+            else if (!databasemanagement.PaymentValid(farePrice, CurrentPassenger))
             {
                 dialogBox.ShowIcon("not enough");
                 scan.ShowOverlay(dialogBox, null);
                 return;
             }
-            Trip trip = new Trip(currentDriver.UserID, CurrentPassenger, DateTime.Now, passenger.Name,currentDriver.Name, currentDriver.Route, cmbxLocation.SelectedItem.ToString()
+            Trip trip = new Trip(currentDriver.UserID, CurrentPassenger, DateTime.Now, passenger.Name, currentDriver.Name, currentDriver.Route, cmbxLocation.SelectedItem.ToString()
                 , cmbxDestination.SelectedItem.ToString(), double.Parse(lblAmount.Text));
             trip.SaveTripToDatabase();
             passengerWallet = trip.DeductFareAmountToWallet();
-            Form dashboardForm = Application.OpenForms.OfType<Dashboard>().FirstOrDefault();
-            if (dashboardForm != null)
-            {
-                dashboardForm.Close();
-            }
+            //Form dashboardForm = Application.OpenForms.OfType<Dashboard>().FirstOrDefault();
+            //if (dashboardForm != null)
+            //{
+            //    dashboardForm.Close();
+            //}
 
-            // Create and open a new instance of Dashboard
-            Dashboard newDashboard = new Dashboard(passenger); // Pass the necessary info
-            newDashboard.Show();
             dialogBox.ShowIcon("successful payment");
-            scan.ShowOverlay(dialogBox, null);
-            this.Parent?.Controls.Remove(this);
+            var overlayForm = new Form();
+            overlayForm.StartPosition = FormStartPosition.CenterScreen;
+            overlayForm.FormBorderStyle = FormBorderStyle.None;
+            overlayForm.Opacity = 0.5d;
+            overlayForm.BackColor = Color.Black;
+            overlayForm.Size = new Size(1400, 907);
+            overlayForm.Location = this.Location;
+            overlayForm.ShowInTaskbar = false;
 
             Form parentForm = this.FindForm();
             if (parentForm != null)
             {
-                parentForm.Close();
-                parentForm.Dispose(); 
+                parentForm.FormClosed += (s, args) =>
+                {
+                    Dashboard existingDashboard = Application.OpenForms.OfType<Dashboard>().FirstOrDefault();
+                    if (existingDashboard != null)
+                    {
+                        existingDashboard.UpdateBalance(passenger.UserID);
+                    }
+                };
+                overlayForm.Show();
+                if (dialogBox.ShowDialog() == DialogResult.OK)
+                {
+                    dialogBox.Close();
+                    overlayForm.Close();
+                    parentForm.Close();
+                }
             }
         }
 

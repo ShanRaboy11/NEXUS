@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -30,7 +31,8 @@ namespace NEXUS.Forms
             //btnHome_Click(btnHome, EventArgs.Empty);
             string currentName = currentPassenger.Name.Split(' ')[0] + "!";
             lblUserFName.Text = currentName;
-            lblBalance.Text = "₱ " + currentPassenger.WalletAmount.ToString("F2");
+            UpdateBalance(currentPassenger.UserID);
+            //lblBalance.Text = "₱ " + currentPassenger.WalletAmount.ToString("F2");
             lblPoints.Text = currentPassenger.Points.ToString();
             using (MemoryStream ms = new MemoryStream(currentPassenger.ProfilePicture))
             {
@@ -295,9 +297,29 @@ namespace NEXUS.Forms
             scan.ShowOverlay(cashIn, null);
         }
 
-        public void UpdateBalance(double newBalance)
+        public void UpdateBalance(int userID)
         {
-            lblBalance.Text = "₱ " + newBalance.ToString("F2");
+            double passengerWallet = 0;
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            {
+                conn.Open();
+                string walletQuery = "SELECT Wallet FROM ACCOUNTS WHERE ID = ?";
+                using (OleDbCommand cmd = new OleDbCommand(walletQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("?", userID);
+                    object result = cmd.ExecuteScalar();
+                    if (result != null)
+                    {
+                        passengerWallet = Convert.ToDouble(result);
+                    }
+                }
+                lblBalance.Text = "₱ " + passengerWallet.ToString("F2");
+            }
+        }
+
+        private void UpdateTransaction()
+        {
+
         }
     }
 }
