@@ -91,7 +91,7 @@ namespace NEXUS.Forms
                     userData.Gender, rbtnPassenger.Text, birthday,
                     (rbtnStudent.Checked ? rbtnStudent.Text : rbtnSenior.Checked ? rbtnSenior.Text : rbtnRegular.Checked ? rbtnRegular.Text : "None"),
                     (rbtnStudent.Checked || rbtnSenior.Checked ? attachedImageBytes : rbtnRegular.Checked ? null : new byte[0]), 
-                    userphoto, 0, 0, (rbtnStudent.Checked || rbtnSenior.Checked ? "Pending" : "Verified")
+                    userphoto, 0, 0.0, (rbtnStudent.Checked || rbtnSenior.Checked ? "Pending" : "Verified")
                 );
                 newPassenger.SaveToDatabase();
             }

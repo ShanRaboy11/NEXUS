@@ -93,11 +93,11 @@ namespace NEXUS.Classes
     public class Passenger : UserInformation, Users
     {
         private string classification;
-        private int points;
+        private double points;
         public string Classification { get => classification; set => classification = value; }
-        public int Points { get => points; set => points = value; }
+        public double Points { get => points; set => points = value; }
 
-        public Passenger(int userId, string name, string email, string username, string password, string gender, string userType, string birthday, string classification, byte[] attachment, byte[] profilepic, double wallet, int points, string status)
+        public Passenger(int userId, string name, string email, string username, string password, string gender, string userType, string birthday, string classification, byte[] attachment, byte[] profilepic, double wallet, double points, string status)
             : base(userId, name, email, username, password, gender, userType, birthday, attachment, profilepic, wallet, status)
         {
             Classification = classification;
@@ -346,7 +346,7 @@ namespace NEXUS.Classes
             {
                 conn.Open();
 
-                cmd.Parameters.Add("?", OleDbType.Date).Value = this.TripDate; 
+                cmd.Parameters.Add("?", OleDbType.Date).Value = this.TripDate;
                 cmd.Parameters.AddWithValue("?", this.PassengerID);
                 cmd.Parameters.AddWithValue("?", this.PassengerName);
                 cmd.Parameters.AddWithValue("?", this.DriverID);
@@ -370,7 +370,7 @@ namespace NEXUS.Classes
                 conn.Open();
 
                 cmd.Parameters.AddWithValue("?", this.PassengerID);
-                cmd.Parameters.Add("?", OleDbType.Date).Value = this.TripDate; 
+                cmd.Parameters.Add("?", OleDbType.Date).Value = this.TripDate;
                 cmd.Parameters.AddWithValue("?", this.PassengerName);
                 cmd.Parameters.AddWithValue("?", this.FareAmount);
                 cmd.Parameters.AddWithValue("?", "Trip Payment");
@@ -435,6 +435,33 @@ namespace NEXUS.Classes
                 }
             }
             return passengerWallet;
+        }
+
+        private void IncrementPoint()
+        {
+            double points = 0;
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            {
+                conn.Open();
+                string pointQuery = "SELECT Points FROM Accounts WHERE ID = ?";
+                using (OleDbCommand cmd = new OleDbCommand(pointQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("?", this.PassengerID);
+                    object result = cmd.ExecuteScalar();
+                    if (result != null)
+                    {
+                        points = Convert.ToDouble(result);
+                    }
+                }
+                points += 0.50;
+                string updateQuery = "UPDATE Accounts SET Point = ? WHERE ID = ?";
+                using (OleDbCommand cmd = new OleDbCommand(updateQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("?", points);
+                    cmd.Parameters.AddWithValue("?", this.PassengerID);
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
     }
 
