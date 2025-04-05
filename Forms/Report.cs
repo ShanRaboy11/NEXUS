@@ -22,9 +22,7 @@ namespace NEXUS.Forms
         {
             InitializeComponent();
             this.UserID = userID;
-            IncidentTime.Format = DateTimePickerFormat.Custom;
-            IncidentTime.CustomFormat = "hh:mm tt"; // or "HH:mm" for 24-hour format
-            IncidentTime.ShowUpDown = true;
+            
         }
 
 
@@ -70,13 +68,13 @@ namespace NEXUS.Forms
             {
                 dialogBox.ShowIcon("report");
                 scan.ShowOverlay(this,dialogBox);
-
-                dtIncidentDate.Value = DateTime.Now;
-                lblFileName.Text = string.Empty;
-                tbxLocation.Text = string.Empty;
-                rtbxIncidentDescription.Text = string.Empty;
-                cmbxNature.SelectedIndex = -1;
+                //IncidentReport incidentReport = new IncidentReport(UserID, )
             }
+            dtIncidentDate.Value = DateTime.Now;
+            lblFileName.Text = string.Empty;
+            tbxLocation.Text = string.Empty;
+            rtbxIncidentDescription.Text = string.Empty;
+            cmbxNature.SelectedIndex = -1;
         }
 
         private void lblFileName_Click(object sender, EventArgs e)

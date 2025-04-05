@@ -475,7 +475,6 @@ namespace NEXUS.Classes
     public class IncidentReport
     {
         private int userID;
-        private string name;
         private DateTime incidentDate;
         private string location;
         private string description;
@@ -483,18 +482,15 @@ namespace NEXUS.Classes
         private string status;
 
         public int UserID { get => userID; set => userID = value; }
-        public string Name {  get => name; set => name = value; }
         public DateTime TimeStamp { get => incidentDate; set => incidentDate = value; }
         public string Location {  get => location; set => location = value; }
         public string Description { get => description; set => description = value;  }
         public byte[] Attachment {  get => attachment; set => attachment = value; }
         public string Status {  get => status; set => status = value; }
 
-        
-        public IncidentReport(int userID, string name, DateTime dateIncident, string location, string description, byte[] attachment, string status)
+        public IncidentReport(int userID, DateTime dateIncident, string location, string description, byte[] attachment, string status)
         {
             this.userID = userID;
-            this.name = name;
             this.incidentDate = dateIncident;
             this.location = location;
             this.description = description;
