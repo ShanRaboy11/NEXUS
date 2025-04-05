@@ -107,23 +107,23 @@
             // 
             // cmsDataGrid
             // 
-            cmsDataGrid.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmsDataGrid.Font = new Font("Segoe UI", 9F);
             cmsDataGrid.Items.AddRange(new ToolStripItem[] { displayToolStripMenuItem, rateToolStripMenuItem });
             cmsDataGrid.Name = "contextMenuStrip1";
-            cmsDataGrid.Size = new Size(137, 60);
+            cmsDataGrid.Size = new Size(113, 48);
             // 
             // displayToolStripMenuItem
             // 
             displayToolStripMenuItem.Image = Properties.Resources._9104142_fullscreen_expand_maximize_enlarge_screen_icon;
             displayToolStripMenuItem.Name = "displayToolStripMenuItem";
-            displayToolStripMenuItem.Size = new Size(136, 28);
+            displayToolStripMenuItem.Size = new Size(112, 22);
             displayToolStripMenuItem.Text = "Display";
             // 
             // rateToolStripMenuItem
             // 
             rateToolStripMenuItem.Image = Properties.Resources.rate_hover;
             rateToolStripMenuItem.Name = "rateToolStripMenuItem";
-            rateToolStripMenuItem.Size = new Size(136, 28);
+            rateToolStripMenuItem.Size = new Size(112, 22);
             rateToolStripMenuItem.Text = "Rate";
             rateToolStripMenuItem.Click += rateToolStripMenuItem_Click;
             // 
@@ -171,6 +171,7 @@
             // 
             dgvHistory.BorderStyle = BorderStyle.None;
             dgvHistory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvHistory.ContextMenuStrip = cmsDataGrid;
             dgvHistory.HideOuterBorders = true;
             dgvHistory.Location = new Point(35, 211);
             dgvHistory.Name = "dgvHistory";

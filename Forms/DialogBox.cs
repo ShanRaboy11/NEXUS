@@ -83,6 +83,11 @@ namespace NEXUS.Forms
                 pbDialogIcon.Image = Resources.Animation___1739888639577;
                 lblMessage.Text = "Insufficient balance!";
             }
+            else if(message == "rate")
+            {
+                pbDialogIcon.Image = Resources.Animation___1739885779319;
+                lblMessage.Text = "Ratings Submitted";
+            }
             else
             {
                 Pausetimer.Enabled = false;

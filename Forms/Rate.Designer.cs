@@ -153,7 +153,6 @@
             label4.Size = new Size(786, 26);
             label4.TabIndex = 42;
             label4.Text = "Rate your driver and the trip to ensure a better and more comfortable journey for everyone.";
-            label4.Click += label4_Click;
             // 
             // label3
             // 
@@ -878,6 +877,7 @@
             btnSubmitReport.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             btnSubmitReport.Timer_Effect_1 = 5;
             btnSubmitReport.Timer_RGB = 300;
+            btnSubmitReport.Click += btnSubmitReport_Click;
             // 
             // Rate
             // 

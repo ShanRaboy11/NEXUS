@@ -13,14 +13,10 @@ namespace NEXUS.Forms
 {
     public partial class Rate : Form
     {
+        private int[] category = new int[6];
         public Rate()
         {
             InitializeComponent();
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -38,6 +34,7 @@ namespace NEXUS.Forms
             lblSafety.Visible = true;
             lblSafety.Text = "Very Unsafe";
             lblSafety.ForeColor = Color.Red;
+            this.category[0] = 1;
         }
 
         private void pbSafety2_Click(object sender, EventArgs e)
@@ -50,6 +47,7 @@ namespace NEXUS.Forms
             lblSafety.Visible = true;
             lblSafety.Text = "Unsafe";
             lblSafety.ForeColor = Color.OrangeRed;
+            this.category[0] = 2;
         }
 
         private void pbSafety3_Click(object sender, EventArgs e)
@@ -62,6 +60,7 @@ namespace NEXUS.Forms
             lblSafety.Visible = true;
             lblSafety.Text = "Neutral";
             lblSafety.ForeColor = Color.DarkGreen;
+            this.category[0] = 3;
         }
 
         private void pbSafety4_Click(object sender, EventArgs e)
@@ -74,6 +73,7 @@ namespace NEXUS.Forms
             lblSafety.Visible = true;
             lblSafety.Text = "Mostly Safe";
             lblSafety.ForeColor = Color.Green;
+            this.category[0] = 4;
         }
 
         private void pbSafety5_Click(object sender, EventArgs e)
@@ -86,6 +86,7 @@ namespace NEXUS.Forms
             lblSafety.Visible = true;
             lblSafety.Text = "Extremely Safe";
             lblSafety.ForeColor = Color.Blue;
+            this.category[0] = 5;
         }
 
         private void pbSmoothness1_Click(object sender, EventArgs e)
@@ -98,6 +99,7 @@ namespace NEXUS.Forms
             lblSmoothness.Visible = true;
             lblSmoothness.Text = "Very Rough";
             lblSmoothness.ForeColor = Color.Red;
+            this.category[1] = 1;
         }
 
         private void pbSmoothness2_Click(object sender, EventArgs e)
@@ -110,6 +112,7 @@ namespace NEXUS.Forms
             lblSmoothness.Visible = true;
             lblSmoothness.Text = "Rough";
             lblSmoothness.ForeColor = Color.OrangeRed;
+            this.category[1] = 2;
         }
 
         private void pbSmoothness3_Click(object sender, EventArgs e)
@@ -122,6 +125,7 @@ namespace NEXUS.Forms
             lblSmoothness.Visible = true;
             lblSmoothness.Text = "Average";
             lblSmoothness.ForeColor = Color.DarkGreen;
+            this.category[1] = 3;
         }
 
         private void pbSmoothness4_Click(object sender, EventArgs e)
@@ -134,6 +138,7 @@ namespace NEXUS.Forms
             lblSmoothness.Visible = true;
             lblSmoothness.Text = "Mostly Smooth";
             lblSmoothness.ForeColor = Color.Green;
+            this.category[1] = 4;
         }
 
         private void pbSmoothness5_Click(object sender, EventArgs e)
@@ -146,6 +151,7 @@ namespace NEXUS.Forms
             lblSmoothness.Visible = true;
             lblSmoothness.Text = "Very Smooth";
             lblSmoothness.ForeColor = Color.Blue;
+            this.category[1] = 5;
         }
 
         private void pbSpeed1_Click(object sender, EventArgs e)
@@ -158,6 +164,7 @@ namespace NEXUS.Forms
             lblSpeed.Visible = true;
             lblSpeed.Text = "Dangerous";
             lblSpeed.ForeColor = Color.Red;
+            this.category[2] = 1;
         }
 
         private void pbSpeed2_Click(object sender, EventArgs e)
@@ -170,6 +177,7 @@ namespace NEXUS.Forms
             lblSpeed.Visible = true;
             lblSpeed.Text = "Too Fast";
             lblSpeed.ForeColor = Color.OrangeRed;
+            this.category[2] = 2;
         }
 
         private void pbSpeed3_Click(object sender, EventArgs e)
@@ -182,6 +190,7 @@ namespace NEXUS.Forms
             lblSpeed.Visible = true;
             lblSpeed.Text = "Average";
             lblSpeed.ForeColor = Color.DarkGreen;
+            this.category[2] = 3;
         }
 
         private void pbSpeed4_Click(object sender, EventArgs e)
@@ -194,6 +203,7 @@ namespace NEXUS.Forms
             lblSpeed.Visible = true;
             lblSpeed.Text = "Slightly Fast or Slow";
             lblSpeed.ForeColor = Color.Green;
+            this.category[2] = 4;
         }
 
         private void pbSpeed5_Click(object sender, EventArgs e)
@@ -206,6 +216,7 @@ namespace NEXUS.Forms
             lblSpeed.Visible = true;
             lblSpeed.Text = "Perfect";
             lblSpeed.ForeColor = Color.Blue;
+            this.category[2] = 5;
         }
 
         private void pbComfortability1_Click(object sender, EventArgs e)
@@ -218,6 +229,7 @@ namespace NEXUS.Forms
             lblComfortability.Visible = true;
             lblComfortability.Text = "Very Uncomfortable";
             lblComfortability.ForeColor = Color.Red;
+            this.category[3] = 1;
         }
 
         private void pbComfortability2_Click(object sender, EventArgs e)
@@ -230,6 +242,7 @@ namespace NEXUS.Forms
             lblComfortability.Visible = true;
             lblComfortability.Text = "Uncomfortable";
             lblComfortability.ForeColor = Color.OrangeRed;
+            this.category[3] = 2;
         }
 
         private void pbComfortability3_Click(object sender, EventArgs e)
@@ -242,6 +255,7 @@ namespace NEXUS.Forms
             lblComfortability.Visible = true;
             lblComfortability.Text = "Neutral";
             lblComfortability.ForeColor = Color.DarkGreen;
+            this.category[3] = 3;
         }
 
         private void pbComfortability4_Click(object sender, EventArgs e)
@@ -254,6 +268,7 @@ namespace NEXUS.Forms
             lblComfortability.Visible = true;
             lblComfortability.Text = "Comfortable";
             lblComfortability.ForeColor = Color.Green;
+            this.category[3] = 4;
         }
 
         private void pbComfortability5_Click(object sender, EventArgs e)
@@ -266,6 +281,7 @@ namespace NEXUS.Forms
             lblComfortability.Visible = true;
             lblComfortability.Text = "Very Comfortable";
             lblComfortability.ForeColor = Color.Blue;
+            this.category[3] = 5;
         }
 
         private void pbCleanliness1_Click(object sender, EventArgs e)
@@ -278,6 +294,7 @@ namespace NEXUS.Forms
             lblCleanliness.Visible = true;
             lblCleanliness.Text = "Very Dirty";
             lblCleanliness.ForeColor = Color.Red;
+            this.category[4] = 1;
         }
 
         private void pbCleanliness2_Click(object sender, EventArgs e)
@@ -290,6 +307,7 @@ namespace NEXUS.Forms
             lblCleanliness.Visible = true;
             lblCleanliness.Text = "Dirty";
             lblCleanliness.ForeColor = Color.OrangeRed;
+            this.category[4] = 2;
         }
 
         private void pbCleanliness3_Click(object sender, EventArgs e)
@@ -302,6 +320,7 @@ namespace NEXUS.Forms
             lblCleanliness.Visible = true;
             lblCleanliness.Text = "Acceptable";
             lblCleanliness.ForeColor = Color.DarkGreen;
+            this.category[4] = 3;
         }
 
         private void pbCleanliness4_Click(object sender, EventArgs e)
@@ -314,6 +333,7 @@ namespace NEXUS.Forms
             lblCleanliness.Visible = true;
             lblCleanliness.Text = "Comfortable";
             lblCleanliness.ForeColor = Color.Green;
+            this.category[4] = 4;
         }
 
         private void pbCleanliness5_Click(object sender, EventArgs e)
@@ -326,6 +346,7 @@ namespace NEXUS.Forms
             lblCleanliness.Visible = true;
             lblCleanliness.Text = "Very Clean";
             lblCleanliness.ForeColor = Color.Blue;
+            this.category[4] = 5;
         }
 
         private void pbSatisfaction1_Click(object sender, EventArgs e)
@@ -338,6 +359,7 @@ namespace NEXUS.Forms
             lblSatisfaction.Visible = true;
             lblSatisfaction.Text = "Very Dissatisfied";
             lblSatisfaction.ForeColor = Color.Red;
+            this.category[5] = 1;
         }
 
         private void pbSatisfaction2_Click(object sender, EventArgs e)
@@ -350,6 +372,7 @@ namespace NEXUS.Forms
             lblSatisfaction.Visible = true;
             lblSatisfaction.Text = "Dissatisfied";
             lblSatisfaction.ForeColor = Color.OrangeRed;
+            this.category[5] = 2;
         }
 
         private void pbSatisfaction3_Click(object sender, EventArgs e)
@@ -362,6 +385,7 @@ namespace NEXUS.Forms
             lblSatisfaction.Visible = true;
             lblSatisfaction.Text = "Neutral";
             lblSatisfaction.ForeColor = Color.DarkGreen;
+            this.category[5] = 3;
         }
 
         private void pbSatisfaction4_Click(object sender, EventArgs e)
@@ -374,6 +398,7 @@ namespace NEXUS.Forms
             lblSatisfaction.Visible = true;
             lblSatisfaction.Text = "Satisfied";
             lblSatisfaction.ForeColor = Color.Green;
+            this.category[5] = 4;
         }
         private void pbSatisfaction5_Click(object sender, EventArgs e)
         {
@@ -385,6 +410,24 @@ namespace NEXUS.Forms
             lblSatisfaction.Visible = true;
             lblSatisfaction.Text = "Very Satisfied";
             lblSatisfaction.ForeColor = Color.Blue;
+            this.category[5] = 5;
+        }
+
+        private void btnSubmitReport_Click(object sender, EventArgs e)
+        {
+            DialogBox dialogBox = new DialogBox();
+            for(int i = 0; i < category.Length; i++)
+            {
+                if (category[i] == 0 || string.IsNullOrEmpty(rtbxComment.Text))
+                {
+                    dialogBox.ShowIcon("blank");
+                    dialogBox.ShowOverlay(dialogBox, null);
+                    return;
+                }
+            }
+            dialogBox.ShowIcon("rate");
+            dialogBox.ShowOverlay(dialogBox, null);
+            this.Close();
         }
     }
 }
