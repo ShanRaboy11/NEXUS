@@ -111,32 +111,46 @@ namespace NEXUS.User_Controls
             lblAmount.Text = baseAmount.ToString("N2");
         }
 
-        private void CalculateFare()
+        private async void CalculateFare()
         {
-            int fare = this.baseAmount;
             if (cmbxLocation.SelectedIndex != -1 && cmbxDestination.SelectedIndex != -1)
             {
-                int locationIndex = cmbxLocation.SelectedIndex;
-                int destinationIndex = cmbxDestination.SelectedIndex;
+                string origin = cmbxLocation.SelectedItem.ToString();
+                string destination = cmbxDestination.SelectedItem.ToString();
+                string jeepCode = currentDriver.Route;
 
-                int indexDifference = Math.Abs(locationIndex - destinationIndex);
-
-
-                if (indexDifference > 5)
+                try
                 {
-                    fare += indexDifference - 5;  
+                    double distance = await OpenRouteService.CalculateDistance(jeepCode, origin, destination);
+
+                    // Pricing logic
+                    decimal fare = baseAmount;
+                    if (distance > 4)
+                    {
+                        int kmBeyondMinimum = (int)Math.Floor(distance) - 4;  // This ensures you are only counting full km beyond 4
+                        if (kmBeyondMinimum >= 1)
+                        {
+                            fare += kmBeyondMinimum;  // Add 1 peso per full km beyond 4
+                        }
+                    }
+
+                    // Apply discount if eligible
+                    bool isDiscountEligible = CheckDiscountEligibility();
+                    if (isDiscountEligible)
+                    {
+                        fare *= 0.8m;
+                    }
+
+                    this.farePrice = fare * numericMultiplier.Value;
+                    lblAmount.Text = this.farePrice.ToString("N2");
                 }
-
-                bool isDiscountEligible = CheckDiscountEligibility();  
-
-                if (isDiscountEligible)
+                catch (Exception ex)
                 {
-                    fare = (int)(fare * 0.8);  
+                    MessageBox.Show("Error calculating fare: " + ex.Message);
                 }
-                this.baseAmount = fare;
-                lblAmount.Text = fare.ToString("N2");
             }
         }
+
 
         private bool CheckDiscountEligibility()
         {
