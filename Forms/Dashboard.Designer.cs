@@ -50,6 +50,7 @@
             pbWheelPoints = new PictureBox();
             lblUserFName = new Label();
             label1 = new Label();
+            lblPoints1 = new Label();
             panel3 = new Panel();
             pbTransLogo = new PictureBox();
             iconButton1 = new FontAwesome.Sharp.IconButton();
@@ -73,7 +74,6 @@
             pbProfile = new PictureBox();
             pictureBox5 = new PictureBox();
             cyberButton2 = new ReaLTaiizor.Controls.CyberButton();
-            lblPoints = new Label();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -310,7 +310,7 @@
             pnlTop.Controls.Add(pbWheelPoints);
             pnlTop.Controls.Add(lblUserFName);
             pnlTop.Controls.Add(label1);
-            pnlTop.Controls.Add(lblPoints);
+            pnlTop.Controls.Add(lblPoints1);
             pnlTop.Dock = DockStyle.Top;
             pnlTop.Location = new Point(0, 0);
             pnlTop.Name = "pnlTop";
@@ -375,6 +375,18 @@
             label1.Size = new Size(95, 44);
             label1.TabIndex = 32;
             label1.Text = "Hello";
+            // 
+            // lblPoints1
+            // 
+            lblPoints1.BackColor = Color.FromArgb(230, 249, 255);
+            lblPoints1.Font = new Font("Inter", 31F, FontStyle.Bold);
+            lblPoints1.ForeColor = Color.FromArgb(38, 36, 68);
+            lblPoints1.Location = new Point(804, 54);
+            lblPoints1.Name = "lblPoints1";
+            lblPoints1.Size = new Size(108, 61);
+            lblPoints1.TabIndex = 55;
+            lblPoints1.Text = "0";
+            lblPoints1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panel3
             // 
@@ -786,18 +798,6 @@
             cyberButton2.Timer_Effect_1 = 5;
             cyberButton2.Timer_RGB = 300;
             // 
-            // lblPoints
-            // 
-            lblPoints.BackColor = Color.FromArgb(230, 249, 255);
-            lblPoints.Font = new Font("Inter", 31F, FontStyle.Bold);
-            lblPoints.ForeColor = Color.FromArgb(38, 36, 68);
-            lblPoints.Location = new Point(801, 54);
-            lblPoints.Name = "lblPoints";
-            lblPoints.Size = new Size(111, 61);
-            lblPoints.TabIndex = 55;
-            lblPoints.Text = "0";
-            lblPoints.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -877,6 +877,6 @@
         public Label lblBalance;
         private FontAwesome.Sharp.IconButton iconButton1;
         private PictureBox pbTransLogo;
-        private Label lblPoints;
+        private Label lblPoints1;
     }
 }

@@ -33,8 +33,6 @@ namespace NEXUS.Forms
             string currentName = currentPassenger.Name.Split(' ')[0] + "!";
             lblUserFName.Text = currentName;
             UpdateBalance(currentPassenger.UserID);
-            //lblBalance.Text = "₱ " + currentPassenger.WalletAmount.ToString("F2");
-            lblPoints.Text = currentPassenger.Points.ToString();
             using (MemoryStream ms = new MemoryStream(currentPassenger.ProfilePicture))
             {
                 pbProfilePicture.Image = Image.FromStream(ms);
@@ -391,8 +389,7 @@ namespace NEXUS.Forms
                     }
                 }
             }
-            //lblPoints.Text = points.ToString("F1");
-            lblPoints.Text = "0.5";
+            lblPoints1.Text = points.ToString("F1");
         }
     }
 }
