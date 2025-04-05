@@ -15,7 +15,7 @@ namespace NEXUS.Forms
 
         public static async Task<(double lon, double lat)> GetCoordinatesFromDatabase(string jeepCode, string location)
         {
-            const string query = "SELECT Latitude, Longitude FROM JeepStops WHERE [Jeep Code] = ? AND [Jeep Stop] = ?";
+            const string query = "SELECT Latitude, Longitude FROM Routes WHERE [Jeep Code] = ? AND [Jeep Stop] = ?";
 
             using (OleDbConnection conn = DatabaseManagement.GetConnection())
             using (OleDbCommand cmd = new OleDbCommand(query, conn))

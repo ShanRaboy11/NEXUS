@@ -51,7 +51,7 @@ namespace NEXUS.User_Controls
 
         private void ComboBoxList(string jeepCode)
         {
-            string query = $"SELECT [{jeepCode}] FROM Routes";
+            string query = $"SELECT [Jeep Stop] FROM Routes WHERE [Jeep Code] = ?";
 
             cmbxLocation.Items.Clear();
             cmbxDestination.Items.Clear();
@@ -59,19 +59,24 @@ namespace NEXUS.User_Controls
 
             using (OleDbConnection conn = DatabaseManagement.GetConnection())
             {
-                conn.Open();
+                conn.Open(); // Opening the connection synchronously
                 using (OleDbCommand cmd = new OleDbCommand(query, conn))
-                using (OleDbDataAdapter adapter = new OleDbDataAdapter(cmd))
                 {
-                    DataTable table = new DataTable();
-                    adapter.Fill(table);
+                    // Add jeepCode as a parameter to avoid SQL injection
+                    cmd.Parameters.AddWithValue("?", jeepCode);
 
-                    foreach (DataRow row in table.Rows)
+                    using (OleDbDataAdapter adapter = new OleDbDataAdapter(cmd))
                     {
-                        string location = row[jeepCode].ToString().Trim();
-                        if (!string.IsNullOrEmpty(location) && !location.StartsWith("MSys"))
+                        DataTable table = new DataTable();
+                        adapter.Fill(table);
+
+                        foreach (DataRow row in table.Rows)
                         {
-                            locationsList.Add(location);
+                            string location = row["Jeep Stop"].ToString().Trim();
+                            if (!string.IsNullOrEmpty(location) && !location.StartsWith("MSys"))
+                            {
+                                locationsList.Add(location);
+                            }
                         }
                     }
                 }
