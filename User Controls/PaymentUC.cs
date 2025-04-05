@@ -125,12 +125,12 @@ namespace NEXUS.User_Controls
 
                     // Pricing logic
                     decimal fare = baseAmount;
-                    if (distance > 4)
+                    if (distance >= 5)
                     {
-                        int kmBeyondMinimum = (int)Math.Floor(distance) - 4;  // This ensures you are only counting full km beyond 4
+                        int kmBeyondMinimum = (int)Math.Floor(distance) - 4; 
                         if (kmBeyondMinimum >= 1)
                         {
-                            fare += kmBeyondMinimum;  // Add 1 peso per full km beyond 4
+                            fare += kmBeyondMinimum;  
                         }
                     }
 
@@ -142,6 +142,7 @@ namespace NEXUS.User_Controls
                     }
 
                     this.farePrice = fare * numericMultiplier.Value;
+                    this.farePrice = Math.Round(this.farePrice); //rounds to the nearest whole number
                     lblAmount.Text = this.farePrice.ToString("N2");
                 }
                 catch (Exception ex)
