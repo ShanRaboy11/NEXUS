@@ -22,13 +22,6 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="NEXUS.Classes.EmergencyReport">
-    <Position X="16" Y="7.75" Width="2.5" />
-    <TypeIdentifier>
-      <HashCode>ABEAAACAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Classes\UserInformationClass.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="NEXUS.Classes.Passenger">
     <Position X="4.5" Y="3.25" Width="2.25" />
     <TypeIdentifier>
@@ -54,7 +47,7 @@
   <Class Name="NEXUS.Classes.Trip">
     <Position X="16" Y="0.75" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AHEAAAgQACAIAAAgAEIAAEBCAAgACAAMAAAABAAhAAA=</HashCode>
+      <HashCode>AHEQAAgQACAIAAAgAEIBAEBCAQgACAAMAAIABAAhAAA=</HashCode>
       <FileName>Classes\UserInformationClass.cs</FileName>
     </TypeIdentifier>
   </Class>

@@ -94,11 +94,21 @@ namespace NEXUS.Forms
 
         private void rateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Rate rate = new Rate();
             Scan scan = new Scan(UserID);
 
-            scan.ShowOverlay(rate, null);
-            scan.FormClosed += (s, args) => this.Show();
+            if (dgvHistory.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dgvHistory.SelectedRows[0];
+
+                int tripID = Convert.ToInt32(selectedRow.Cells["TripID"].Value);
+                int driverID = Convert.ToInt32(selectedRow.Cells["DriverID"].Value);
+                string driverName = selectedRow.Cells["Driver"].Value.ToString();
+
+                // Pass these details to your rate form
+                Rate rate = new Rate(tripID, driverID, driverName);
+                scan.ShowOverlay(rate, null);
+                scan.FormClosed += (s, args) => this.Show();
+            }
         }
 
         private void cmbxJeepCodes_SelectedIndexChanged(object sender, EventArgs e)

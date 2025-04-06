@@ -1,4 +1,5 @@
-﻿using NEXUS.Properties;
+﻿using Krypton.Toolkit;
+using NEXUS.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,15 +9,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NEXUS.Classes;
 
 namespace NEXUS.Forms
 {
     public partial class Rate : Form
     {
         private int[] category = new int[6];
-        public Rate()
+        private int PassengerID, DriverID;
+        public Rate(int passengerID, int driverID, string driverName)
         {
             InitializeComponent();
+            this.PassengerID = passengerID;
+            this.DriverID = driverID;
+            lblDriver.Text = driverName;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -425,6 +431,7 @@ namespace NEXUS.Forms
                     return;
                 }
             }
+            RatingSystem ratingSystem = new RatingSystem(PassengerID, DriverID, category, rtbxComment.Text);
             dialogBox.ShowIcon("rate");
             dialogBox.ShowOverlay(dialogBox, null);
             this.Close();

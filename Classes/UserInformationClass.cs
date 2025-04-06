@@ -569,27 +569,22 @@ namespace NEXUS.Classes
 
     public class RatingSystem
     {
-        public int PassengerID { get; private set; }
-        public int DriverID { get; private set; }
-        public int Rating { get; private set; }
-        public string Feedback { get; private set; }
+        private int passengerID;
+        private int driverID;
+        private int[] categoricalRatings;
+        private string comments;
+        public int PassengerID { get => passengerID; set => passengerID = value; }
+        public int DriverID { get => driverID; set => driverID = value; }
+        public int[] CategoricalRatings { get => categoricalRatings; set => categoricalRatings = value; } 
+        public string Comments {  get=> comments; set => comments = value; }
 
        
-        public RatingSystem(int passengerID, int driverID, int rating, string feedback)
+        public RatingSystem(int passengerID, int driverID, int[] ratings, string comments)
         {
             PassengerID = passengerID;
             DriverID = driverID;
-            SetRating(rating);
-            Feedback = !string.IsNullOrWhiteSpace(feedback) ? feedback : "No feedback provided";
-        }
-
-        public void SetRating(int rating)
-        {
-            if (rating < 1 || rating > 5)
-            {
-                throw new ArgumentException("Rating must be between 1 and 5.");
-            }
-            Rating = rating;
+            CategoricalRatings = ratings;
+            Comments = comments;
         }
     }
 
