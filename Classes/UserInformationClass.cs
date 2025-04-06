@@ -501,33 +501,37 @@ namespace NEXUS.Classes
             this.status = status;
         }
 
-        public static void SaveToDatabase()
+        public void SaveToDatabase()
         {
-
-        }
-
-        public static void SaveAttachmentToDatabase(byte[] attachment, int userID)
-        {
-            string query = "INSERT INTO Reports (UserID, Documentation) VALUES (?, ?)";
-            string insertTransactionQuery = "INSERT INTO Transactions (UserID, TransactionDate, [Full Name], Amount, [Type]) VALUES (?, ?, ?, ?, ?)";
+            string query = "INSERT INTO Reports (UserID, [Date of Incident], Location, Description, [Status], Documentation) " +
+                           "VALUES (?, ?, ?, ?, ?, ?)";
 
             using (OleDbConnection conn = DatabaseManagement.GetConnection())
-            using (OleDbCommand command = new OleDbCommand(query, conn))
+            using (OleDbCommand cmd = new OleDbCommand(query, conn))
             {
-                command.Parameters.Add("?", OleDbType.VarBinary).Value = attachment;
-                command.Parameters.AddWithValue("?", userID);
+                conn.Open();
 
-                try
+                cmd.Parameters.AddWithValue("?", this.userID);
+                cmd.Parameters.Add("?", OleDbType.Date).Value = this.incidentDate;
+                cmd.Parameters.AddWithValue("?", this.location);
+                cmd.Parameters.AddWithValue("?", this.description);
+                cmd.Parameters.AddWithValue("?", this.Status);
+
+                // Add documentation image, or null if not provided
+                if (this.attachment != null)
                 {
-                    conn.Open();
-                    command.ExecuteNonQuery();
+                    cmd.Parameters.Add("?", OleDbType.VarBinary).Value = this.attachment;
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("Error saving image to database: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    cmd.Parameters.Add("?", OleDbType.VarBinary).Value = DBNull.Value;
                 }
+
+                cmd.ExecuteNonQuery();
             }
         }
+
+
     }
 
     public class RatingSystem

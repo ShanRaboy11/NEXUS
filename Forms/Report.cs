@@ -39,13 +39,12 @@ namespace NEXUS.Forms
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     attachedImage = Image.FromFile(openFileDialog.FileName);
-                    attachedImageBytes = attachmentHandler.ConvertImageToByteArray(attachedImage);
+                    this.attachedImageBytes = attachmentHandler.ConvertImageToByteArray(attachedImage);
 
                     lblFileName.Text = Path.GetFileName(openFileDialog.FileName);
                     lblFileName.ForeColor = Color.Blue;
                     lblFileName.Cursor = Cursors.Hand;
                     lblFileName.Font = new Font(lblFileName.Font, FontStyle.Underline);
-                    IncidentReport.SaveAttachmentToDatabase(attachedImageBytes, UserID);
                 }
             }
         }
@@ -66,6 +65,7 @@ namespace NEXUS.Forms
                 dialogBox.ShowIcon("report");
                 scan.ShowOverlay(this,dialogBox);
                 IncidentReport incidentReport = new IncidentReport(UserID, dtIncidentDate.Value, tbxIncidentLocation.Text, cmbxNature.SelectedItem.ToString(), rtbxIncidentDescription.Text, attachedImageBytes, "Pending");
+                incidentReport.SaveToDatabase();
             }
             dtIncidentDate.Value = DateTime.Now;
             lblFileName.Text = string.Empty;
