@@ -30,29 +30,38 @@ namespace NEXUS.Forms
 
         private void DisplayDataGrid(string query)
         {
-
             dgvHistory.DataSource = null;
             dgvHistory.Rows.Clear();
             dgvHistory.Columns.Clear();
+            dgvHistory.ClearSelection();
+            dgvHistory.CurrentCell = null;
 
             using (OleDbConnection conn = DatabaseManagement.GetConnection())
             using (OleDbDataAdapter adapter = new OleDbDataAdapter(query, conn))
             {
                 DataTable dt = new DataTable();
-                adapter.Fill(dt); // Load data into DataTable
-                dgvHistory.DataSource = dt; // Bind DataTable to DataGridView
+                adapter.Fill(dt);
 
+                if (dt.Rows.Count == 0)
+                    pbEmpty.Visible = true;
+                else
+                    pbEmpty.Visible = false;
 
-                dgvHistory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells; // Adjust column width based on content length
-                dgvHistory.DefaultCellStyle.Font = new System.Drawing.Font(new System.Drawing.FontFamily("Inter"), 14F, System.Drawing.FontStyle.Regular); // Set font
-                dgvHistory.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font(new System.Drawing.FontFamily("Inter"), 16F, System.Drawing.FontStyle.Bold); // Header font
-                dgvHistory.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(24, 60, 114); // Header background color
-                dgvHistory.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.White; // Header text color
-                dgvHistory.EnableHeadersVisualStyles = false; // Apply custom styling
+                dgvHistory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+                dgvHistory.DataSource = dt;
 
+                dgvHistory.AutoResizeColumns();
+                dgvHistory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
+                dgvHistory.DefaultCellStyle.Font = new System.Drawing.Font("Inter", 14F, System.Drawing.FontStyle.Regular);
+                dgvHistory.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Inter", 16F, System.Drawing.FontStyle.Bold);
+                dgvHistory.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(24, 60, 114);
+                dgvHistory.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.White;
+                dgvHistory.EnableHeadersVisualStyles = false;
             }
         }
+
+
 
         private void cmbxFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -71,6 +80,7 @@ namespace NEXUS.Forms
                 dtDate.Visible = true;
                 pbIcon.Visible = true;
                 pbIcon.Image = Resources._115762_calendar_date_event_month_icon;
+                pbIcon.Size = new System.Drawing.Size(74, 51);
             }
             else
             {
@@ -78,13 +88,8 @@ namespace NEXUS.Forms
                 pbIcon.Visible = true;
                 cmbxJeepCodes.Visible = true;
                 pbIcon.Image = Resources.jeepcode;
+                pbIcon.Size = new System.Drawing.Size(79, 56);
             }
-        }
-
-        private void tbxJeepCode_Click(object sender, EventArgs e)
-        {
-            cmbxJeepCodes.Text = "";
-            cmbxJeepCodes.ForeColor = Color.Black;
         }
 
         private void rateToolStripMenuItem_Click(object sender, EventArgs e)
@@ -100,12 +105,22 @@ namespace NEXUS.Forms
         {
             if (cmbxJeepCodes.SelectedItem != null)
             {
-                string JeepCode = cmbxJeepCodes.SelectedItem.ToString();  // Get the selected JeepCode
+                string JeepCode = cmbxJeepCodes.SelectedItem.ToString(); 
                 this.filterQuery = $"SELECT TripID, [Trip Date], DriverID, Driver, [Plate Number], Location, " +
-                                   $"Destination, [Fare Amount] FROM Trips WHERE Route = '{JeepCode}'";
+                                   $"Destination, [Fare Amount] FROM Trips WHERE Route = '{JeepCode}' AND PassengerID = {UserID}";
                 DisplayDataGrid(this.filterQuery);
             }
         }
+
+        private void dtpTripDate_ValueChanged(object sender, EventArgs e)
+        {
+            string selectedDate = dtDate.Value.ToString("MM/dd/yyyy"); // Format selected date
+            this.filterQuery = $"SELECT TripID, [Trip Date], DriverID, Driver, [Plate Number], Location, " +
+                               $"Destination, [Fare Amount] FROM Trips WHERE Format([Trip Date], 'MM/dd/yyyy') = '{selectedDate}' AND PassengerID = {UserID}";
+
+            DisplayDataGrid(this.filterQuery);
+        }
+
 
         private void History_Load(object sender, EventArgs e)
         {

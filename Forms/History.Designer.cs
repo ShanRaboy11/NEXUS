@@ -42,9 +42,11 @@
             pbIcon = new PictureBox();
             dgvHistory = new Krypton.Toolkit.KryptonDataGridView();
             cmbxJeepCodes = new ComboBox();
+            pbEmpty = new PictureBox();
             cmsDataGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbIcon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvHistory).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbEmpty).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -84,14 +86,16 @@
             // 
             // dtDate
             // 
-            dtDate.CalendarFont = new Font("Inter", 16.25F);
+            dtDate.CalendarFont = new Font("Inter", 17.25F);
             dtDate.CalendarMonthBackground = Color.FromArgb(176, 233, 255);
-            dtDate.Location = new Point(731, 149);
-            dtDate.MinimumSize = new Size(0, 29);
+            dtDate.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Tall;
+            dtDate.Location = new Point(720, 144);
+            dtDate.MinimumSize = new Size(0, 35);
             dtDate.Name = "dtDate";
-            dtDate.Size = new Size(187, 29);
+            dtDate.Size = new Size(205, 35);
             dtDate.TabIndex = 50;
             dtDate.Visible = false;
+            dtDate.ValueChanged += dtpTripDate_ValueChanged;
             // 
             // label2
             // 
@@ -146,7 +150,7 @@
             // 
             pbIcon.BackColor = Color.FromArgb(230, 249, 255);
             pbIcon.Image = Properties.Resources.jeepcode;
-            pbIcon.Location = new Point(641, 136);
+            pbIcon.Location = new Point(639, 134);
             pbIcon.Name = "pbIcon";
             pbIcon.Size = new Size(74, 51);
             pbIcon.SizeMode = PictureBoxSizeMode.Zoom;
@@ -190,17 +194,27 @@
             // 
             cmbxJeepCodes.BackColor = Color.FromArgb(176, 233, 255);
             cmbxJeepCodes.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbxJeepCodes.Font = new Font("Inter", 15.25F);
+            cmbxJeepCodes.Font = new Font("Inter", 16F);
             cmbxJeepCodes.ForeColor = Color.FromArgb(24, 60, 114);
             cmbxJeepCodes.FormattingEnabled = true;
             cmbxJeepCodes.Items.AddRange(new object[] { "01C", "01K", "02B", "03A", "03B", "03L", "03Q", "04B", "04H", "04I", "04L", "04M", "06B", "06C", "06G", "06H", "07B", "08F", "08G", "09C", "09F", "09G", "10F", "10G", "10H", "10M", "11A", "12D", "12G", "12I", "12L", "13B", "13C", "13H", "14D", "17B", "17C", "17D", "20A", "21A", "22A", "22D", "22I", "23", "23D", "62B", "MI-01A", "MI-02B", "MI-03A", "MI-03B" });
-            cmbxJeepCodes.Location = new Point(732, 145);
+            cmbxJeepCodes.Location = new Point(730, 142);
             cmbxJeepCodes.Name = "cmbxJeepCodes";
-            cmbxJeepCodes.Size = new Size(186, 36);
+            cmbxJeepCodes.Size = new Size(186, 38);
             cmbxJeepCodes.TabIndex = 152;
             cmbxJeepCodes.TabStop = false;
             cmbxJeepCodes.Visible = false;
             cmbxJeepCodes.SelectedIndexChanged += cmbxJeepCodes_SelectedIndexChanged;
+            // 
+            // pbEmpty
+            // 
+            pbEmpty.Image = (Image)resources.GetObject("pbEmpty.Image");
+            pbEmpty.Location = new Point(35, 211);
+            pbEmpty.Name = "pbEmpty";
+            pbEmpty.Size = new Size(897, 452);
+            pbEmpty.TabIndex = 153;
+            pbEmpty.TabStop = false;
+            pbEmpty.Visible = false;
             // 
             // History
             // 
@@ -208,6 +222,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
             ClientSize = new Size(972, 700);
+            Controls.Add(pbEmpty);
             Controls.Add(cmbxJeepCodes);
             Controls.Add(dgvHistory);
             Controls.Add(pbIcon);
@@ -225,6 +240,7 @@
             cmsDataGrid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbIcon).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvHistory).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbEmpty).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -243,5 +259,6 @@
         private ToolStripMenuItem rateToolStripMenuItem;
         private Krypton.Toolkit.KryptonDataGridView dgvHistory;
         private ComboBox cmbxJeepCodes;
+        private PictureBox pbEmpty;
     }
 }

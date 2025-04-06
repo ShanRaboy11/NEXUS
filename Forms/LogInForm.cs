@@ -59,7 +59,7 @@ namespace NEXUS.Forms
         {
             isPasswordVisible = !isPasswordVisible;
 
-            if(tbxEnterPassword.Text == "Password")
+            if (tbxEnterPassword.Text == "Password")
             {
                 tbxEnterPassword.Text = "";
             }
@@ -75,7 +75,7 @@ namespace NEXUS.Forms
             {
                 pbPrivacy.Image = Resources._3844443_disable_eye_inactive_see_show_icon;
                 tbxEnterPassword.UseSystemPasswordChar = true;
-                tbxEnterPassword.Font = new Font("Inter" , 9, FontStyle.Regular);
+                tbxEnterPassword.Font = new Font("Inter", 9, FontStyle.Regular);
             }
         }
 
@@ -134,7 +134,7 @@ namespace NEXUS.Forms
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true;
-                btnLogin_Click(sender, EventArgs.Empty);            
+                btnLogin_Click(sender, EventArgs.Empty);
             }
         }
 
@@ -170,7 +170,7 @@ namespace NEXUS.Forms
             overlay.Show();
             newForm.FormClosed += (s, args) => overlay.Close();
             newForm.Show();
-            if(dialog.ShowDialog() == DialogResult.OK)
+            if (dialog.ShowDialog() == DialogResult.OK)
             {
                 overlay.Close();
             }
@@ -179,7 +179,7 @@ namespace NEXUS.Forms
         private void btnLogin_Click(object sender, EventArgs e)
         {
             DialogBox dialogBox = new DialogBox();
-            
+
             string username = tbxEnterUsername.Text;
             string password = tbxEnterPassword.Text;
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password) ||
@@ -234,12 +234,7 @@ namespace NEXUS.Forms
                     driverDashboard.Show();
                     this.Close();
                 }
-            } 
-        }
-
-        private void CheckCredentials(string username, string password)
-        {
-            
+            }
         }
     }
 }
