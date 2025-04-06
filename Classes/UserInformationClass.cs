@@ -571,20 +571,49 @@ namespace NEXUS.Classes
     {
         private int passengerID;
         private int driverID;
+        private int tripID;
         private int[] categoricalRatings;
         private string comments;
         public int PassengerID { get => passengerID; set => passengerID = value; }
         public int DriverID { get => driverID; set => driverID = value; }
+        public int TripID { get => tripID; set => tripID = value; }
         public int[] CategoricalRatings { get => categoricalRatings; set => categoricalRatings = value; } 
         public string Comments {  get=> comments; set => comments = value; }
 
        
-        public RatingSystem(int passengerID, int driverID, int[] ratings, string comments)
+        public RatingSystem(int passengerID, int driverID, int tripID, int[] ratings, string comments)
         {
             PassengerID = passengerID;
             DriverID = driverID;
+            TripID = tripID;
             CategoricalRatings = ratings;
             Comments = comments;
+        }
+
+        public void SaveToDatabase()
+        {
+            string query = "INSERT INTO Rate (UserID, TripID, DriverID, [Date Rated], Safety, Smoothness, Speed, Comfortability, Cleanliness, [Overall Satisfaction], Comments) " +
+                           "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            using (OleDbCommand cmd = new OleDbCommand(query, conn))
+            {
+                conn.Open();
+
+                cmd.Parameters.AddWithValue("?", this.PassengerID);
+                cmd.Parameters.AddWithValue("?", this.TripID);
+                cmd.Parameters.AddWithValue("?", this.DriverID);
+                cmd.Parameters.Add("?", OleDbType.Date).Value = DateTime.Now;
+                cmd.Parameters.AddWithValue("?", this.CategoricalRatings[0]);
+                cmd.Parameters.AddWithValue("?", this.CategoricalRatings[1]);
+                cmd.Parameters.AddWithValue("?", this.CategoricalRatings[2]);
+                cmd.Parameters.AddWithValue("?", this.CategoricalRatings[3]);
+                cmd.Parameters.AddWithValue("?", this.CategoricalRatings[4]);
+                cmd.Parameters.AddWithValue("?", this.CategoricalRatings[5]);
+                cmd.Parameters.AddWithValue("?", this.Comments);
+
+                cmd.ExecuteNonQuery();
+            }
         }
     }
 

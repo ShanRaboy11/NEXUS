@@ -105,7 +105,7 @@ namespace NEXUS.Forms
                 string driverName = selectedRow.Cells["Driver"].Value.ToString();
 
                 // Pass these details to your rate form
-                Rate rate = new Rate(tripID, driverID, driverName);
+                Rate rate = new Rate(UserID, driverID, driverName, tripID);
                 scan.ShowOverlay(rate, null);
                 scan.FormClosed += (s, args) => this.Show();
             }

@@ -16,12 +16,13 @@ namespace NEXUS.Forms
     public partial class Rate : Form
     {
         private int[] category = new int[6];
-        private int PassengerID, DriverID;
-        public Rate(int passengerID, int driverID, string driverName)
+        private int PassengerID, DriverID, TripID;
+        public Rate(int passengerID, int driverID, string driverName, int tripID)
         {
             InitializeComponent();
             this.PassengerID = passengerID;
             this.DriverID = driverID;
+            this.TripID = tripID;
             lblDriver.Text = driverName;
         }
 
@@ -431,7 +432,8 @@ namespace NEXUS.Forms
                     return;
                 }
             }
-            RatingSystem ratingSystem = new RatingSystem(PassengerID, DriverID, category, rtbxComment.Text);
+            RatingSystem ratingSystem = new RatingSystem(PassengerID, DriverID, TripID, category, rtbxComment.Text);
+            ratingSystem.SaveToDatabase();
             dialogBox.ShowIcon("rate");
             dialogBox.ShowOverlay(dialogBox, null);
             this.Close();
