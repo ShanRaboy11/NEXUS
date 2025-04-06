@@ -1,4 +1,5 @@
-﻿using NEXUS.Classes;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using NEXUS.Classes;
 using NEXUS.Properties;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,8 @@ namespace NEXUS.Forms
 {
     public partial class History : Form
     {
-        private string Filter;
+        private string Filter, JeepCode;
+        string filterQuery;
         int UserID;
         public History(int userID)
         {
@@ -41,12 +43,13 @@ namespace NEXUS.Forms
                 dgvHistory.DataSource = dt; // Bind DataTable to DataGridView
 
 
-                dgvHistory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; // Adjust column width
+                dgvHistory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells; // Adjust column width based on content length
                 dgvHistory.DefaultCellStyle.Font = new System.Drawing.Font(new System.Drawing.FontFamily("Inter"), 14F, System.Drawing.FontStyle.Regular); // Set font
                 dgvHistory.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font(new System.Drawing.FontFamily("Inter"), 16F, System.Drawing.FontStyle.Bold); // Header font
                 dgvHistory.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(24, 60, 114); // Header background color
                 dgvHistory.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.White; // Header text color
                 dgvHistory.EnableHeadersVisualStyles = false; // Apply custom styling
+
 
             }
         }
@@ -64,7 +67,7 @@ namespace NEXUS.Forms
         {
             if (tool == "Date")
             {
-                tbxJeepCode.Visible = false;
+                cmbxJeepCodes.Visible = false;
                 dtDate.Visible = true;
                 pbIcon.Visible = true;
                 pbIcon.Image = Resources._115762_calendar_date_event_month_icon;
@@ -73,15 +76,15 @@ namespace NEXUS.Forms
             {
                 dtDate.Visible = false;
                 pbIcon.Visible = true;
-                tbxJeepCode.Visible = true;
+                cmbxJeepCodes.Visible = true;
                 pbIcon.Image = Resources.jeepcode;
             }
         }
 
         private void tbxJeepCode_Click(object sender, EventArgs e)
         {
-            tbxJeepCode.Text = "";
-            tbxJeepCode.ForeColor = Color.Black;
+            cmbxJeepCodes.Text = "";
+            cmbxJeepCodes.ForeColor = Color.Black;
         }
 
         private void rateToolStripMenuItem_Click(object sender, EventArgs e)
@@ -91,6 +94,23 @@ namespace NEXUS.Forms
 
             scan.ShowOverlay(rate, null);
             scan.FormClosed += (s, args) => this.Show();
+        }
+
+        private void cmbxJeepCodes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbxJeepCodes.SelectedItem != null)
+            {
+                string JeepCode = cmbxJeepCodes.SelectedItem.ToString();  // Get the selected JeepCode
+                this.filterQuery = $"SELECT TripID, [Trip Date], DriverID, Driver, [Plate Number], Location, " +
+                                   $"Destination, [Fare Amount] FROM Trips WHERE Route = '{JeepCode}'";
+                DisplayDataGrid(this.filterQuery);
+            }
+        }
+
+        private void History_Load(object sender, EventArgs e)
+        {
+            dgvHistory.ClearSelection();
+            dgvHistory.CurrentCell = null;
         }
     }
 }
