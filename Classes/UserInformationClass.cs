@@ -470,11 +470,41 @@ namespace NEXUS.Classes
             }
         }
 
+        public static int GetLatestTripIDForUser(int userID)
+        {
+            int latestTripID = 0;
+            string query = "SELECT TOP 1 TripID FROM Trips WHERE PassengerID = ? ORDER BY [Trip Date] DESC";
+
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            using (OleDbCommand cmd = new OleDbCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("?", userID);
+
+                try
+                {
+                    conn.Open();
+                    var result = cmd.ExecuteScalar();
+                    if (result != null && result != DBNull.Value)
+                    {
+                        latestTripID = Convert.ToInt32(result);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error getting latest trip: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            return latestTripID;
+        }
+
+
     }
 
     public class IncidentReport
     {
         private int userID;
+        private int tripID;
         private DateTime incidentDate;
         private string location;
         private string nature;
@@ -483,6 +513,7 @@ namespace NEXUS.Classes
         private string status;
 
         public int UserID { get => userID; set => userID = value; }
+        public int TripID { get => tripID; set => tripID = value; }
         public DateTime TimeStamp { get => incidentDate; set => incidentDate = value; }
         public string Location {  get => location; set => location = value; }
         public string Nature {  get=> nature; set => nature = value; }
@@ -490,9 +521,10 @@ namespace NEXUS.Classes
         public byte[] Attachment {  get => attachment; set => attachment = value; }
         public string Status {  get => status; set => status = value; }
 
-        public IncidentReport(int userID, DateTime dateIncident, string location, string nature, string description, byte[] attachment, string status)
+        public IncidentReport(int userID, int tripID, DateTime dateIncident, string location, string nature, string description, byte[] attachment, string status)
         {
             this.userID = userID;
+            this.tripID = tripID;
             this.incidentDate = dateIncident;
             this.location = location;
             this.nature = nature;
@@ -503,8 +535,8 @@ namespace NEXUS.Classes
 
         public void SaveToDatabase()
         {
-            string query = "INSERT INTO Reports (UserID, [Date of Incident], Location, Description, [Status], Documentation) " +
-                           "VALUES (?, ?, ?, ?, ?, ?)";
+            string query = "INSERT INTO Reports (UserID, TripID, [Date of Incident], Location, Description, [Status], Documentation) " +
+                           "VALUES (?, ?, ?, ?, ?, ?, ?)";
 
             using (OleDbConnection conn = DatabaseManagement.GetConnection())
             using (OleDbCommand cmd = new OleDbCommand(query, conn))
@@ -512,12 +544,12 @@ namespace NEXUS.Classes
                 conn.Open();
 
                 cmd.Parameters.AddWithValue("?", this.userID);
+                cmd.Parameters.AddWithValue("?", this.tripID);
                 cmd.Parameters.Add("?", OleDbType.Date).Value = this.incidentDate;
                 cmd.Parameters.AddWithValue("?", this.location);
                 cmd.Parameters.AddWithValue("?", this.description);
                 cmd.Parameters.AddWithValue("?", this.Status);
 
-                // Add documentation image, or null if not provided
                 if (this.attachment != null)
                 {
                     cmd.Parameters.Add("?", OleDbType.VarBinary).Value = this.attachment;

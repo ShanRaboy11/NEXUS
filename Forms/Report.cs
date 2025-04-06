@@ -53,18 +53,26 @@ namespace NEXUS.Forms
         {
             DialogBox dialogBox = new DialogBox();
             Scan scan = new Scan(UserID);
+            int latestTripID = Trip.GetLatestTripIDForUser(UserID);
+
+            if (latestTripID == null)
+            {
+                MessageBox.Show("No trip found for this user. Cannot submit report.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             if (dtIncidentDate == null || cmbxNature == null ||
                 string.IsNullOrEmpty(tbxLocation.Text) || string.IsNullOrEmpty(rtbxIncidentDescription.Text))
             {
                 dialogBox.ShowIcon("blank");
                 scan.ShowOverlay(this,dialogBox);
+                return;
             }
             else
             {
                 dialogBox.ShowIcon("report");
                 scan.ShowOverlay(this,dialogBox);
-                IncidentReport incidentReport = new IncidentReport(UserID, dtIncidentDate.Value, tbxIncidentLocation.Text, cmbxNature.SelectedItem.ToString(), rtbxIncidentDescription.Text, attachedImageBytes, "Pending");
+                IncidentReport incidentReport = new IncidentReport(UserID, latestTripID, dtIncidentDate.Value, tbxLocation.Text, cmbxNature.SelectedItem.ToString(), rtbxIncidentDescription.Text, attachedImageBytes, "Pending");
                 incidentReport.SaveToDatabase();
             }
             dtIncidentDate.Value = DateTime.Now;
