@@ -1,8 +1,10 @@
-﻿using NEXUS.Properties;
+﻿using NEXUS.Classes;
+using NEXUS.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,6 +21,34 @@ namespace NEXUS.Forms
         {
             InitializeComponent();
             this.UserID = userID;
+            string historyQuery = $"SELECT TripID, [Trip Date], DriverID, Driver, [Plate Number], Route, Location, " +
+                $"Destination, [Fare Amount] FROM Trips WHERE PassengerID = {userID}";
+            DisplayDataGrid(historyQuery);
+        }
+
+        private void DisplayDataGrid(string query)
+        {
+
+            dgvHistory.DataSource = null;
+            dgvHistory.Rows.Clear();
+            dgvHistory.Columns.Clear();
+
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            using (OleDbDataAdapter adapter = new OleDbDataAdapter(query, conn))
+            {
+                DataTable dt = new DataTable();
+                adapter.Fill(dt); // Load data into DataTable
+                dgvHistory.DataSource = dt; // Bind DataTable to DataGridView
+
+
+                dgvHistory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; // Adjust column width
+                dgvHistory.DefaultCellStyle.Font = new System.Drawing.Font(new System.Drawing.FontFamily("Inter"), 14F, System.Drawing.FontStyle.Regular); // Set font
+                dgvHistory.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font(new System.Drawing.FontFamily("Inter"), 16F, System.Drawing.FontStyle.Bold); // Header font
+                dgvHistory.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(24, 60, 114); // Header background color
+                dgvHistory.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.White; // Header text color
+                dgvHistory.EnableHeadersVisualStyles = false; // Apply custom styling
+
+            }
         }
 
         private void cmbxFilter_SelectedIndexChanged(object sender, EventArgs e)

@@ -535,8 +535,8 @@ namespace NEXUS.Classes
 
         public void SaveToDatabase()
         {
-            string query = "INSERT INTO Reports (UserID, TripID, [Date of Incident], Location, Description, [Status], Documentation) " +
-                           "VALUES (?, ?, ?, ?, ?, ?, ?)";
+            string query = "INSERT INTO Reports (UserID, TripID, [Date of Incident], Location, Category, Description, [Status], Documentation) " +
+                           "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
             using (OleDbConnection conn = DatabaseManagement.GetConnection())
             using (OleDbCommand cmd = new OleDbCommand(query, conn))
@@ -547,6 +547,7 @@ namespace NEXUS.Classes
                 cmd.Parameters.AddWithValue("?", this.tripID);
                 cmd.Parameters.Add("?", OleDbType.Date).Value = this.incidentDate;
                 cmd.Parameters.AddWithValue("?", this.location);
+                cmd.Parameters.AddWithValue ("?", this.nature);
                 cmd.Parameters.AddWithValue("?", this.description);
                 cmd.Parameters.AddWithValue("?", this.Status);
 
