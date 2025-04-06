@@ -28,7 +28,6 @@ namespace NEXUS.Forms
 
         private void btnAttach_Click(object sender, EventArgs e)
         {
-            Passenger passenger = new Passenger(0, null, null, null, "i", null, null, null, null, null, null, 0.0, 0, null);
             lblFileName.Text = "";
             lblFileName.ForeColor = Color.Black;
             lblFileName.Font = new Font(lblFileName.Font, FontStyle.Underline);
@@ -46,9 +45,7 @@ namespace NEXUS.Forms
                     lblFileName.ForeColor = Color.Blue;
                     lblFileName.Cursor = Cursors.Hand;
                     lblFileName.Font = new Font(lblFileName.Font, FontStyle.Underline);
-
-                    // Save to database
-                    passenger.SaveImageToDatabase(attachedImageBytes, 0);
+                    IncidentReport.SaveAttachmentToDatabase(attachedImageBytes, UserID);
                 }
             }
         }
@@ -68,7 +65,7 @@ namespace NEXUS.Forms
             {
                 dialogBox.ShowIcon("report");
                 scan.ShowOverlay(this,dialogBox);
-                //IncidentReport incidentReport = new IncidentReport(UserID, )
+                IncidentReport incidentReport = new IncidentReport(UserID, dtIncidentDate.Value, tbxIncidentLocation.Text, cmbxNature.SelectedItem.ToString(), rtbxIncidentDescription.Text, attachedImageBytes, "Pending");
             }
             dtIncidentDate.Value = DateTime.Now;
             lblFileName.Text = string.Empty;

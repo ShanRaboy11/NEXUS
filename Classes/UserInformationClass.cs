@@ -477,6 +477,7 @@ namespace NEXUS.Classes
         private int userID;
         private DateTime incidentDate;
         private string location;
+        private string nature;
         private string description;
         private byte[] attachment;
         private string status;
@@ -484,18 +485,48 @@ namespace NEXUS.Classes
         public int UserID { get => userID; set => userID = value; }
         public DateTime TimeStamp { get => incidentDate; set => incidentDate = value; }
         public string Location {  get => location; set => location = value; }
+        public string Nature {  get=> nature; set => nature = value; }
         public string Description { get => description; set => description = value;  }
         public byte[] Attachment {  get => attachment; set => attachment = value; }
         public string Status {  get => status; set => status = value; }
 
-        public IncidentReport(int userID, DateTime dateIncident, string location, string description, byte[] attachment, string status)
+        public IncidentReport(int userID, DateTime dateIncident, string location, string nature, string description, byte[] attachment, string status)
         {
             this.userID = userID;
             this.incidentDate = dateIncident;
             this.location = location;
+            this.nature = nature;
             this.description = description;
             this.attachment = attachment;
             this.status = status;
+        }
+
+        public static void SaveToDatabase()
+        {
+
+        }
+
+        public static void SaveAttachmentToDatabase(byte[] attachment, int userID)
+        {
+            string query = "INSERT INTO Reports (UserID, Documentation) VALUES (?, ?)";
+            string insertTransactionQuery = "INSERT INTO Transactions (UserID, TransactionDate, [Full Name], Amount, [Type]) VALUES (?, ?, ?, ?, ?)";
+
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            using (OleDbCommand command = new OleDbCommand(query, conn))
+            {
+                command.Parameters.Add("?", OleDbType.VarBinary).Value = attachment;
+                command.Parameters.AddWithValue("?", userID);
+
+                try
+                {
+                    conn.Open();
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error saving image to database: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 
