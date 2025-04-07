@@ -259,7 +259,7 @@
             btnReport1.IconColor = Color.Black;
             btnReport1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnReport1.ImageAlign = ContentAlignment.MiddleLeft;
-            btnReport1.Location = new Point(0, 522);
+            btnReport1.Location = new Point(0, 532);
             btnReport1.Name = "btnReport1";
             btnReport1.Padding = new Padding(15, 0, 0, 0);
             btnReport1.Size = new Size(185, 43);

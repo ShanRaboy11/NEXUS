@@ -92,6 +92,7 @@
             cmbxFilter.Size = new Size(219, 35);
             cmbxFilter.TabIndex = 55;
             cmbxFilter.TabStop = false;
+            cmbxFilter.SelectedIndexChanged += cmbxFilter_SelectedIndexChanged;
             // 
             // label2
             // 
@@ -109,7 +110,7 @@
             // 
             pbIcon.BackColor = Color.FromArgb(230, 249, 255);
             pbIcon.Image = Properties.Resources._115762_calendar_date_event_month_icon;
-            pbIcon.Location = new Point(631, 156);
+            pbIcon.Location = new Point(631, 154);
             pbIcon.Name = "pbIcon";
             pbIcon.Size = new Size(58, 43);
             pbIcon.SizeMode = PictureBoxSizeMode.Zoom;
@@ -122,12 +123,13 @@
             dtDate.CalendarFont = new Font("Inter", 18.25F);
             dtDate.CalendarMonthBackground = Color.FromArgb(176, 233, 255);
             dtDate.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Tall;
-            dtDate.Location = new Point(703, 162);
+            dtDate.Location = new Point(703, 159);
             dtDate.MinimumSize = new Size(0, 35);
             dtDate.Name = "dtDate";
             dtDate.Size = new Size(226, 35);
             dtDate.TabIndex = 151;
             dtDate.Visible = false;
+            dtDate.ValueChanged += dtDate_ValueChanged;
             // 
             // label4
             // 

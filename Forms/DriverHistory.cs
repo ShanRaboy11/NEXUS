@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic.ApplicationServices;
 using NEXUS.Classes;
+using NEXUS.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -57,6 +58,46 @@ namespace NEXUS.Forms
                 dgvDriverHistory.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(24, 60, 114);
                 dgvDriverHistory.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.White;
                 dgvDriverHistory.EnableHeadersVisualStyles = false;
+            }
+        }
+
+        private void cmbxFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbxFilter.SelectedItem != null)
+            {
+                Filter = cmbxFilter.SelectedItem.ToString();
+                displayTools(Filter);
+            }
+        }
+
+        private void displayTools(string tool)
+        {
+            if (tool == "Date")
+            {
+                dtDate.Visible = true;
+                pbIcon.Visible = true;
+                pbIcon.Image = Resources._115762_calendar_date_event_month_icon;
+            }
+            else
+            {
+                pbIcon.Visible = true;
+                pbIcon.Image = Resources.rate_hover2;
+            }
+        }
+
+        private void dtDate_ValueChanged(object sender, EventArgs e)
+        {
+            if(Filter == "Date")
+            {
+                string selectedDate = dtDate.Value.ToString("MM/dd/yyyy");
+                this.filterQuery = $"SELECT TripID, [Trip Date], PassengerID, Passenger, [Plate Number], Location, " +
+                                   $"Destination, [Fare Amount] FROM Trips WHERE Format([Trip Date], 'MM/dd/yyyy') = '{selectedDate}' AND DriverID = {UserID}";
+
+                DisplayDataGrid(this.filterQuery);
+            }
+            else
+            {
+
             }
         }
 
