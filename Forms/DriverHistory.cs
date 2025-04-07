@@ -81,7 +81,11 @@ namespace NEXUS.Forms
             else
             {
                 pbIcon.Visible = true;
+                dtDate.Visible = true;
                 pbIcon.Image = Resources.rate_hover2;
+                this.filterQuery = $"SELECT RatingID, [Trip Date], [Full Name], Safety, Smoothness, Speed, Comfortability, Cleanliness, " +
+                    $"[Overall Satisfaction], Comments, [Date Rated] FROM RatingsQuery WHERE DriverID = {UserID}";
+                DisplayDataGrid(this.filterQuery);
             }
         }
 
@@ -92,12 +96,16 @@ namespace NEXUS.Forms
                 string selectedDate = dtDate.Value.ToString("MM/dd/yyyy");
                 this.filterQuery = $"SELECT TripID, [Trip Date], PassengerID, Passenger, [Plate Number], Location, " +
                                    $"Destination, [Fare Amount] FROM Trips WHERE Format([Trip Date], 'MM/dd/yyyy') = '{selectedDate}' AND DriverID = {UserID}";
-
+                
                 DisplayDataGrid(this.filterQuery);
             }
             else
             {
-
+                string selectedDateRate = dtDate.Value.ToString("MM/dd/yyyy");
+                this.filterQuery = $"SELECT RatingID, [Trip Date], [Full Name], Safety, Smoothness, Speed, Comfortability, Cleanliness, " +
+                    $"[Overall Satisfaction], Comments, [Date Rated] FROM RatingsQuery WHERE Format([Trip Date], 'MM/dd/yyyy') = '{selectedDateRate}' AND DriverID = {UserID}";
+                
+                DisplayDataGrid(this.filterQuery);
             }
         }
 
