@@ -1,4 +1,5 @@
-﻿using NEXUS.Classes;
+﻿using Microsoft.VisualBasic;
+using NEXUS.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -283,6 +284,49 @@ namespace NEXUS.Forms
                 }
                 lblWallet.Text = "₱ " + driverWallet.ToString("F2");
             }
+            UpdateRecentTrip();
         }
+
+        private void UpdateRecentTrip()
+        {
+            string query = @"
+        SELECT [Trip Date], SUM([Fare Amount]) AS TotalFare 
+        FROM Trips 
+        WHERE DriverID = ? 
+        AND [Trip Date] = (
+            SELECT MAX([Trip Date]) 
+            FROM Trips 
+            WHERE DriverID = ?
+        ) 
+        GROUP BY [Trip Date]";
+
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            {
+                conn.Open();
+                using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("?", driver.UserID); // 1st ?
+                    cmd.Parameters.AddWithValue("?", driver.UserID); // 2nd ?
+
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            DateTime recentTripDate = reader.GetDateTime(0);
+                            decimal totalFare = Convert.ToDecimal(reader[1]);
+
+                            lblTripDate.Text = recentTripDate.ToString("MMMM d, yyyy");
+                            lblTotalEarned.Text = totalFare.ToString("C");
+                        }
+                        else
+                        {
+                            lblTripDate.Text = "No trips found";
+                            lblTotalEarned.Text = "₱0.00";
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }
