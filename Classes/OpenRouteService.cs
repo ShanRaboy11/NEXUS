@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json.Linq;
-using NEXUS.Classes;
 using System;
 using System.Collections.Generic;
 using System.Data.OleDb;
@@ -7,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NEXUS.Forms
+namespace NEXUS.Classes
 {
     internal class OpenRouteService
     {
@@ -24,7 +23,7 @@ namespace NEXUS.Forms
                 cmd.Parameters.AddWithValue("?", location);
                 await conn.OpenAsync();
 
-                using (OleDbDataReader reader = cmd.ExecuteReader()) 
+                using (OleDbDataReader reader = cmd.ExecuteReader())
                 {
                     if (await reader.ReadAsync())
                     {
@@ -51,7 +50,7 @@ namespace NEXUS.Forms
 
 
         // Get distance between two places and return the value
-        public static async Task<double> CalculateDistance (string jeepCode, string location, string destination)
+        public static async Task<double> CalculateDistance(string jeepCode, string location, string destination)
         {
             var (startLon, startLat) = await GetCoordinatesFromDatabase(jeepCode, location);
             var (endLon, endLat) = await GetCoordinatesFromDatabase(jeepCode, destination);
