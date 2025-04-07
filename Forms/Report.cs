@@ -18,11 +18,12 @@ namespace NEXUS.Forms
         private byte[] attachedImageBytes;
         private readonly Attachment attachmentHandler = new Attachment();
         private int UserID;
-        public Report(int userID)
+        private string UserType;
+        public Report(int userID, string userType)
         {
             InitializeComponent();
             this.UserID = userID;
-            
+            this.UserType = userType;           
         }
 
 
@@ -72,8 +73,17 @@ namespace NEXUS.Forms
             {
                 dialogBox.ShowIcon("report");
                 scan.ShowOverlay(this,dialogBox);
-                IncidentReport incidentReport = new IncidentReport(UserID, latestTripID, dtIncidentDate.Value, tbxLocation.Text, cmbxNature.SelectedItem.ToString(), rtbxIncidentDescription.Text, attachedImageBytes, "Pending");
-                incidentReport.SaveToDatabase();
+                if(this.UserType == "Passenger")
+                {
+                    IncidentReport incidentReport = new IncidentReport(UserID, latestTripID, dtIncidentDate.Value, tbxLocation.Text, cmbxNature.SelectedItem.ToString(), rtbxIncidentDescription.Text, attachedImageBytes, "Pending");
+                    incidentReport.SaveToDatabase();
+                }
+                else
+                {
+                    int DriverTripID = Trip.GetLatestTripIDForDriver(UserID);
+                    IncidentReport incidentReport = new IncidentReport(UserID, DriverTripID, dtIncidentDate.Value, tbxLocation.Text, cmbxNature.SelectedItem.ToString(), rtbxIncidentDescription.Text, attachedImageBytes, "Pending");
+                    incidentReport.SaveToDatabase();
+                }
             }
             dtIncidentDate.Value = DateTime.Now;
             lblFileName.Text = string.Empty;

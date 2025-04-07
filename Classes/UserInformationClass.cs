@@ -498,6 +498,34 @@ namespace NEXUS.Classes
             return latestTripID;
         }
 
+        public static int GetLatestTripIDForDriver(int userID)
+        {
+            int latestTripID = 0;
+            string query = "SELECT TOP 1 TripID FROM Trips WHERE DriverID = ? ORDER BY [Trip Date] DESC";
+
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            using (OleDbCommand cmd = new OleDbCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("?", userID);
+
+                try
+                {
+                    conn.Open();
+                    var result = cmd.ExecuteScalar();
+                    if (result != null && result != DBNull.Value)
+                    {
+                        latestTripID = Convert.ToInt32(result);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error getting latest trip: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            return latestTripID;
+        }
+
 
     }
 

@@ -100,7 +100,7 @@ namespace NEXUS.Forms
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            Report report = new Report(passenger.UserID);
+            Report report = new Report(passenger.UserID, passenger.UserType);
             SelectButton(btnReport);
             OpenChildForm(report);
         }
