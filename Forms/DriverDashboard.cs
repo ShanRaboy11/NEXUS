@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -25,7 +26,7 @@ namespace NEXUS.Forms
             this.driver = currentDriver;
             this.Load += (s, e) => btnHome_Click(btnHome1, EventArgs.Empty);
             lblUserFName.Text = currentDriver.Name.Split(' ')[0] + "!";
-            lblWallet.Text = "₱ " + currentDriver.WalletAmount.ToString("F2");
+            UpdateBalance(driver.UserID);
             using (MemoryStream ms = new MemoryStream(currentDriver.ProfilePicture))
             {
                 pbProfilePic.Image = Image.FromStream(ms);
@@ -100,7 +101,7 @@ namespace NEXUS.Forms
 
         private void btnHistory_Click(object sender, EventArgs e)
         {
-            DriverHistory driverHistory = new DriverHistory();
+            DriverHistory driverHistory = new DriverHistory(driver.UserID);
             SelectButton(btnHistory1);
             OpenChildForm(driverHistory);
         }
@@ -262,6 +263,26 @@ namespace NEXUS.Forms
             Scan scan = new Scan(driver.UserID);
 
             scan.ShowOverlay(profile, null);
+        }
+
+        public void UpdateBalance(int userID)
+        {
+            double driverWallet = 0;
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            {
+                conn.Open();
+                string walletQuery = "SELECT Wallet FROM ACCOUNTS WHERE ID = ?";
+                using (OleDbCommand cmd = new OleDbCommand(walletQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("?", userID);
+                    object result = cmd.ExecuteScalar();
+                    if (result != null)
+                    {
+                        driverWallet = Convert.ToDouble(result);
+                    }
+                }
+                lblWallet.Text = "₱ " + driverWallet.ToString("F2");
+            }
         }
     }
 }

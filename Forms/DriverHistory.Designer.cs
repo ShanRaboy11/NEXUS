@@ -32,15 +32,16 @@
             spaceSeparatorHorizontal1 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
             label3 = new Label();
             label1 = new Label();
-            dgvHistory = new DataGridView();
             cmbxFilter = new ComboBox();
             label2 = new Label();
-            tbxJeepCode = new TextBox();
             pbIcon = new PictureBox();
             dtDate = new ReaLTaiizor.Controls.PoisonDateTime();
             label4 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dgvHistory).BeginInit();
+            pbEmpty = new PictureBox();
+            dgvDriverHistory = new Krypton.Toolkit.KryptonDataGridView();
             ((System.ComponentModel.ISupportInitialize)pbIcon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbEmpty).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDriverHistory).BeginInit();
             SuspendLayout();
             // 
             // spaceSeparatorHorizontal1
@@ -78,15 +79,6 @@
             label1.TabIndex = 50;
             label1.Text = "History";
             // 
-            // dgvHistory
-            // 
-            dgvHistory.BackgroundColor = Color.FromArgb(153, 229, 255);
-            dgvHistory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvHistory.Location = new Point(30, 214);
-            dgvHistory.Name = "dgvHistory";
-            dgvHistory.Size = new Size(897, 470);
-            dgvHistory.TabIndex = 53;
-            // 
             // cmbxFilter
             // 
             cmbxFilter.BackColor = Color.FromArgb(176, 233, 255);
@@ -113,23 +105,11 @@
             label2.TabIndex = 54;
             label2.Text = "Filter:";
             // 
-            // tbxJeepCode
-            // 
-            tbxJeepCode.BorderStyle = BorderStyle.None;
-            tbxJeepCode.Font = new Font("Inter", 16.25F);
-            tbxJeepCode.ForeColor = Color.Silver;
-            tbxJeepCode.Location = new Point(703, 161);
-            tbxJeepCode.Name = "tbxJeepCode";
-            tbxJeepCode.Size = new Size(239, 27);
-            tbxJeepCode.TabIndex = 153;
-            tbxJeepCode.Text = "Jeep Code";
-            tbxJeepCode.Visible = false;
-            // 
             // pbIcon
             // 
             pbIcon.BackColor = Color.FromArgb(230, 249, 255);
-            pbIcon.Image = Properties.Resources.jeepcode;
-            pbIcon.Location = new Point(631, 151);
+            pbIcon.Image = Properties.Resources._115762_calendar_date_event_month_icon;
+            pbIcon.Location = new Point(631, 156);
             pbIcon.Name = "pbIcon";
             pbIcon.Size = new Size(58, 43);
             pbIcon.SizeMode = PictureBoxSizeMode.Zoom;
@@ -139,12 +119,13 @@
             // 
             // dtDate
             // 
-            dtDate.CalendarFont = new Font("Inter", 16.25F);
+            dtDate.CalendarFont = new Font("Inter", 18.25F);
             dtDate.CalendarMonthBackground = Color.FromArgb(176, 233, 255);
-            dtDate.Location = new Point(703, 157);
-            dtDate.MinimumSize = new Size(0, 29);
+            dtDate.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Tall;
+            dtDate.Location = new Point(703, 162);
+            dtDate.MinimumSize = new Size(0, 35);
             dtDate.Name = "dtDate";
-            dtDate.Size = new Size(239, 29);
+            dtDate.Size = new Size(226, 35);
             dtDate.TabIndex = 151;
             dtDate.Visible = false;
             // 
@@ -160,22 +141,63 @@
             label4.TabIndex = 154;
             label4.Text = "helping you monitor your earnings and performance.";
             // 
+            // pbEmpty
+            // 
+            pbEmpty.Image = (Image)resources.GetObject("pbEmpty.Image");
+            pbEmpty.Location = new Point(32, 220);
+            pbEmpty.Name = "pbEmpty";
+            pbEmpty.Size = new Size(897, 452);
+            pbEmpty.TabIndex = 155;
+            pbEmpty.TabStop = false;
+            pbEmpty.Visible = false;
+            // 
+            // dgvDriverHistory
+            // 
+            dgvDriverHistory.BorderStyle = BorderStyle.None;
+            dgvDriverHistory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDriverHistory.HideOuterBorders = true;
+            dgvDriverHistory.Location = new Point(32, 220);
+            dgvDriverHistory.Name = "dgvDriverHistory";
+            dgvDriverHistory.PaletteMode = Krypton.Toolkit.PaletteMode.Office2007BlueLightMode;
+            dgvDriverHistory.ReadOnly = true;
+            dgvDriverHistory.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvDriverHistory.ShowEditingIcon = false;
+            dgvDriverHistory.Size = new Size(897, 452);
+            dgvDriverHistory.StateCommon.Background.Color1 = Color.FromArgb(230, 249, 255);
+            dgvDriverHistory.StateCommon.Background.Color2 = Color.FromArgb(153, 229, 255);
+            dgvDriverHistory.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
+            dgvDriverHistory.StateCommon.DataCell.Back.Color1 = Color.FromArgb(153, 229, 255);
+            dgvDriverHistory.StateCommon.DataCell.Border.Color1 = Color.White;
+            dgvDriverHistory.StateCommon.DataCell.Border.Color2 = Color.White;
+            dgvDriverHistory.StateCommon.DataCell.Content.Color1 = Color.FromArgb(24, 60, 114);
+            dgvDriverHistory.StateCommon.DataCell.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            dgvDriverHistory.StateCommon.DataCell.Content.TextV = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            dgvDriverHistory.StateCommon.HeaderColumn.Back.Color1 = Color.FromArgb(38, 36, 68);
+            dgvDriverHistory.StateCommon.HeaderColumn.Back.Color2 = Color.FromArgb(38, 36, 68);
+            dgvDriverHistory.StateCommon.HeaderColumn.Border.Color1 = Color.White;
+            dgvDriverHistory.StateCommon.HeaderColumn.Border.Color2 = Color.White;
+            dgvDriverHistory.StateCommon.HeaderColumn.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            dgvDriverHistory.StateCommon.HeaderColumn.Content.TextV = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            dgvDriverHistory.StateSelected.DataCell.Back.Color1 = Color.FromArgb(0, 229, 255);
+            dgvDriverHistory.StateSelected.DataCell.Back.Color2 = Color.FromArgb(0, 229, 255);
+            dgvDriverHistory.TabIndex = 156;
+            // 
             // DriverHistory
             // 
             AutoScaleDimensions = new SizeF(10F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
             ClientSize = new Size(972, 700);
+            Controls.Add(pbEmpty);
             Controls.Add(label4);
-            Controls.Add(tbxJeepCode);
             Controls.Add(pbIcon);
             Controls.Add(dtDate);
             Controls.Add(cmbxFilter);
             Controls.Add(label2);
-            Controls.Add(dgvHistory);
             Controls.Add(spaceSeparatorHorizontal1);
             Controls.Add(label3);
             Controls.Add(label1);
+            Controls.Add(dgvDriverHistory);
             Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -183,8 +205,10 @@
             Name = "DriverHistory";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "DriverReport";
-            ((System.ComponentModel.ISupportInitialize)dgvHistory).EndInit();
+            Load += DriverHistory_Load;
             ((System.ComponentModel.ISupportInitialize)pbIcon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbEmpty).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDriverHistory).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -193,13 +217,13 @@
 
         private ReaLTaiizor.Controls.SpaceSeparatorHorizontal spaceSeparatorHorizontal1;
         private Label label1;
-        private DataGridView dgvHistory;
         private ComboBox cmbxFilter;
         private Label label2;
-        private TextBox tbxJeepCode;
         private PictureBox pbIcon;
         private ReaLTaiizor.Controls.PoisonDateTime dtDate;
         protected internal Label label3;
         protected internal Label label4;
+        private PictureBox pbEmpty;
+        private Krypton.Toolkit.KryptonDataGridView dgvDriverHistory;
     }
 }
