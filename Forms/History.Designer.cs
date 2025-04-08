@@ -138,7 +138,7 @@
             cmbxFilter.Font = new Font("Inter", 14.25F);
             cmbxFilter.ForeColor = Color.FromArgb(24, 60, 114);
             cmbxFilter.FormattingEnabled = true;
-            cmbxFilter.Items.AddRange(new object[] { "Date", "Jeep Code" });
+            cmbxFilter.Items.AddRange(new object[] { "Date", "Jeep Code", "Rated Trips", "Unrated Trips" });
             cmbxFilter.Location = new Point(121, 146);
             cmbxFilter.Name = "cmbxFilter";
             cmbxFilter.Size = new Size(219, 35);
@@ -186,8 +186,12 @@
             dgvHistory.StateCommon.HeaderColumn.Border.Color2 = Color.White;
             dgvHistory.StateCommon.HeaderColumn.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             dgvHistory.StateCommon.HeaderColumn.Content.TextV = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            dgvHistory.StatePressed.HeaderColumn.Content.Color1 = Color.White;
+            dgvHistory.StatePressed.HeaderColumn.Content.Color2 = Color.White;
             dgvHistory.StateSelected.DataCell.Back.Color1 = Color.FromArgb(0, 229, 255);
             dgvHistory.StateSelected.DataCell.Back.Color2 = Color.FromArgb(0, 229, 255);
+            dgvHistory.StateSelected.HeaderColumn.Content.Color1 = Color.White;
+            dgvHistory.StateSelected.HeaderColumn.Content.Color2 = Color.White;
             dgvHistory.TabIndex = 151;
             // 
             // cmbxJeepCodes

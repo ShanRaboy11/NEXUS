@@ -35,6 +35,8 @@ namespace NEXUS.Forms
             dgvHistory.Columns.Clear();
             dgvHistory.ClearSelection();
             dgvHistory.CurrentCell = null;
+            dgvHistory.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvHistory.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
 
             using (OleDbConnection conn = DatabaseManagement.GetConnection())
             using (OleDbDataAdapter adapter = new OleDbDataAdapter(query, conn))
@@ -82,6 +84,24 @@ namespace NEXUS.Forms
                 pbIcon.Image = Resources._115762_calendar_date_event_month_icon;
                 pbIcon.Size = new System.Drawing.Size(74, 51);
             }
+            else if(tool == "Unrated Trips")
+            {
+                cmbxJeepCodes.Visible = false;
+                dtDate.Visible = true;
+                pbIcon.Visible = true;
+                pbIcon.Image = Resources._115762_calendar_date_event_month_icon;
+                pbIcon.Size = new System.Drawing.Size(74, 51);
+                DisplayUnrated();
+            }
+            else if(tool == "Rated Trips")
+            {
+                cmbxJeepCodes.Visible = false;
+                dtDate.Visible = true;
+                pbIcon.Visible = true;
+                pbIcon.Image = Resources._115762_calendar_date_event_month_icon;
+                pbIcon.Size = new System.Drawing.Size(74, 51);
+                DisplayRated();
+            }
             else
             {
                 dtDate.Visible = false;
@@ -124,18 +144,59 @@ namespace NEXUS.Forms
 
         private void dtpTripDate_ValueChanged(object sender, EventArgs e)
         {
-            string selectedDate = dtDate.Value.ToString("MM/dd/yyyy"); // Format selected date
-            this.filterQuery = $"SELECT TripID, [Trip Date], DriverID, Driver, [Plate Number], Location, " +
-                               $"Destination, [Fare Amount] FROM Trips WHERE Format([Trip Date], 'MM/dd/yyyy') = '{selectedDate}' AND PassengerID = {UserID}";
+            if(Filter == "Date")
+            {
+                string selectedDate = dtDate.Value.ToString("MM/dd/yyyy"); // Format selected date
+                this.filterQuery = $"SELECT TripID, [Trip Date], DriverID, Driver, [Plate Number], Location, " +
+                                   $"Destination, [Fare Amount] FROM Trips WHERE Format([Trip Date], 'MM/dd/yyyy') = '{selectedDate}' AND PassengerID = {UserID}";
+            }
+            else if(Filter == "Rated Trips")
+            {
+                string selectedDate = dtDate.Value.ToString("MM/dd/yyyy");
+
+                this.filterQuery = $"SELECT T.TripID, T.[Trip Date], T.DriverID, T.Driver, T.[Plate Number], " +
+                                   $"T.Location, T.Destination, T.[Fare Amount] " +
+                                   $"FROM Trips AS T INNER JOIN Rate AS R ON T.TripID = R.TripID " +
+                                   $"WHERE Format(R.[Date Rated], 'MM/dd/yyyy') = '{selectedDate}' " +
+                                   $"AND T.PassengerID = {UserID}";
+            }
+            else
+            {
+                string selectedDate = dtDate.Value.ToString("MM/dd/yyyy");
+
+                this.filterQuery = $"SELECT T.TripID, T.[Trip Date], T.DriverID, T.Driver, T.[Plate Number], " +
+                                   $"T.Location, T.Destination, T.[Fare Amount] " +
+                                   $"FROM Trips AS T " +
+                                   $"WHERE Format(T.[Trip Date], 'MM/dd/yyyy') = '{selectedDate}' " +
+                                   $"AND T.PassengerID = {UserID} " +
+                                   $"AND T.TripID NOT IN (SELECT R.TripID FROM Rate AS R WHERE R.TripID = T.TripID)";
+            }
 
             DisplayDataGrid(this.filterQuery);
         }
 
+        private void DisplayUnrated()
+        {
+            this.filterQuery = "SELECT TripID, [Trip Date], DriverID, Driver, [Plate Number], Route, Location, Destination, [Fare Amount] " +
+                $"FROM Trips WHERE PassengerID = {UserID} AND TripID NOT IN (SELECT TripID FROM Rate)";
+
+            DisplayDataGrid(this.filterQuery);
+        }
+
+        private void DisplayRated()
+        {
+            this.filterQuery = $"SELECT TripID, [Trip Date], Driver, Safety, Smoothness, Speed, Comfortability, Cleanliness, [Overall Satisfaction], " +
+                $"Comments, [Date Rated] FROM PassengerRatingsQuery WHERE UserID = {UserID}";
+
+            DisplayDataGrid(this.filterQuery);
+        }
 
         private void History_Load(object sender, EventArgs e)
         {
             dgvHistory.ClearSelection();
             dgvHistory.CurrentCell = null;
+            dgvHistory.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvHistory.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
         }
     }
 }
