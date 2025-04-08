@@ -32,6 +32,7 @@
             label3 = new Label();
             label1 = new Label();
             spaceSeparatorHorizontal1 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
+            plotViewDriverAnalytics = new OxyPlot.WindowsForms.PlotView();
             SuspendLayout();
             // 
             // label3
@@ -69,12 +70,25 @@
             spaceSeparatorHorizontal1.Text = "spaceSeparatorHorizontal1";
             spaceSeparatorHorizontal1.Transparent = false;
             // 
+            // plotViewDriverAnalytics
+            // 
+            plotViewDriverAnalytics.Location = new Point(21, 151);
+            plotViewDriverAnalytics.Name = "plotViewDriverAnalytics";
+            plotViewDriverAnalytics.PanCursor = Cursors.Hand;
+            plotViewDriverAnalytics.Size = new Size(566, 265);
+            plotViewDriverAnalytics.TabIndex = 51;
+            plotViewDriverAnalytics.Text = "plotView1";
+            plotViewDriverAnalytics.ZoomHorizontalCursor = Cursors.SizeWE;
+            plotViewDriverAnalytics.ZoomRectangleCursor = Cursors.SizeNWSE;
+            plotViewDriverAnalytics.ZoomVerticalCursor = Cursors.SizeNS;
+            // 
             // Analytics
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
             ClientSize = new Size(972, 700);
+            Controls.Add(plotViewDriverAnalytics);
             Controls.Add(spaceSeparatorHorizontal1);
             Controls.Add(label1);
             Controls.Add(label3);
@@ -94,5 +108,7 @@
         private Label label3;
         private Label label1;
         private ReaLTaiizor.Controls.SpaceSeparatorHorizontal spaceSeparatorHorizontal1;
+        private OxyPlot.WindowsForms.PlotView plotView1;
+        private OxyPlot.WindowsForms.PlotView plotViewDriverAnalytics;
     }
 }

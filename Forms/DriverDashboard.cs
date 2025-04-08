@@ -95,7 +95,7 @@ namespace NEXUS.Forms
 
         private void btnGraph_Click(object sender, EventArgs e)
         {
-            Analytics analytics = new Analytics();
+            Analytics analytics = new Analytics(driver.UserID);
             SelectButton(btnGraph);
             OpenChildForm(analytics);
         }
