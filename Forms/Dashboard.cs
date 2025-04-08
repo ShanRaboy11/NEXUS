@@ -354,6 +354,7 @@ namespace NEXUS.Forms
                         lblPlate.Text = plate;
                         lblRoute.Text = route;
                         lblFrom.Text = location;
+                        label10.Visible = true;
                         lblTo.Text = destination;
                         lblFare.Text = fare.ToString("C");
                         iconButton1.Visible = true;

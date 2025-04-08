@@ -123,7 +123,7 @@ namespace NEXUS.Classes
                         string userType = reader.GetString(6);
                         string birthday = reader.GetString(7);
                         string classification = reader.GetString(8);
-                        byte[] attachment = reader.GetFieldValue<byte[]>(9);
+                        byte[] attachment = reader.IsDBNull(9) ? null : reader.GetFieldValue<byte[]>(9);
                         byte[] profilepic = reader.GetFieldValue<byte[]>(10);
                         double wallet = reader.IsDBNull(11) ? 0.0 : Convert.ToDouble(reader.GetValue(11));
                         int points = reader.IsDBNull(12) ? 0 : Convert.ToInt32(reader.GetValue(12));
