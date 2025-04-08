@@ -88,6 +88,7 @@
             spaceSeparatorHorizontal10 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
             spaceSeparatorHorizontal9 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
             lblComfort = new Label();
+            panel13 = new Panel();
             tableLayoutPanel1.SuspendLayout();
             panel7.SuspendLayout();
             panel12.SuspendLayout();
@@ -1077,12 +1078,21 @@
             lblComfort.Text = "4.7";
             lblComfort.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // panel13
+            // 
+            panel13.BackColor = Color.White;
+            panel13.Location = new Point(602, 147);
+            panel13.Name = "panel13";
+            panel13.Size = new Size(345, 252);
+            panel13.TabIndex = 53;
+            // 
             // Analytics
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
             ClientSize = new Size(972, 700);
+            Controls.Add(panel13);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(plotViewDriverAnalytics);
             Controls.Add(spaceSeparatorHorizontal1);
@@ -1180,5 +1190,6 @@
         private Label lblComfort;
         public Label label13;
         private Label lblSpeed;
+        private Panel panel13;
     }
 }

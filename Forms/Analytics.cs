@@ -66,6 +66,7 @@ namespace NEXUS.Forms
         {
             var earnings = GetWeeklyEarnings(driverID);
 
+
             // Compute total earnings
             decimal totalEarnings = earnings.Values.Sum(); // Add this line
 
@@ -106,8 +107,18 @@ namespace NEXUS.Forms
             plotViewDriverAnalytics.Model = model;
 
             //lblTotalEarnings.Text = $"Total Earnings: ₱{totalEarnings:N2}"; // Make sure you have this label on your form
+            //lblWeekRange.Text = $"Week of {GetCurrentWeekDateRange()}";
         }
 
+        private string GetCurrentWeekDateRange()
+        {
+            DateTime today = DateTime.Today;
+            int diff = (7 + (today.DayOfWeek - DayOfWeek.Monday)) % 7;
+            DateTime monday = today.AddDays(-diff);
+            DateTime sunday = monday.AddDays(6);
+
+            return $"{monday:MMMM d, yyyy} – {sunday:MMMM d, yyyy}";
+        }
 
         private Dictionary<string, double> GetDriverAverageRatings(int driverID)
         {
