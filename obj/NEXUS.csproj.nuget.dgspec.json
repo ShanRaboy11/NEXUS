@@ -69,6 +69,14 @@
               "target": "Package",
               "version": "[13.0.3, )"
             },
+            "OxyPlot.Core": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "OxyPlot.WindowsForms": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "QRCoder": {
               "target": "Package",
               "version": "[1.6.0, )"
