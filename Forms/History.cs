@@ -115,6 +115,7 @@ namespace NEXUS.Forms
         private void rateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Scan scan = new Scan(UserID);
+            DialogBox dialogBox = new DialogBox();
 
             if (dgvHistory.SelectedRows.Count > 0)
             {
@@ -124,12 +125,32 @@ namespace NEXUS.Forms
                 int driverID = Convert.ToInt32(selectedRow.Cells["DriverID"].Value);
                 string driverName = selectedRow.Cells["Driver"].Value.ToString();
 
-                // Pass these details to your rate form
-                Rate rate = new Rate(UserID, driverID, driverName, tripID);
-                scan.ShowOverlay(rate, null);
-                scan.FormClosed += (s, args) => this.Show();
+                string checkRatingQuery = $@"SELECT COUNT(*) FROM Rate WHERE TripID = {tripID} AND UserID = {UserID}";
+
+                using (OleDbConnection conn = DatabaseManagement.GetConnection())
+                {
+                    conn.Open();
+                    using (OleDbCommand cmd = new OleDbCommand(checkRatingQuery, conn))
+                    {
+                        int ratingCount = Convert.ToInt32(cmd.ExecuteScalar());
+
+                        if (ratingCount > 0)
+                        {
+                            dialogBox.ShowIcon("already rated");
+                            scan.ShowOverlay(dialogBox, null);
+                        }
+                        else
+                        {
+                            // Pass the details to your rate form for rating
+                            Rate rate = new Rate(UserID, driverID, driverName, tripID);
+                            scan.ShowOverlay(rate, null);
+                            scan.FormClosed += (s, args) => this.Show();
+                        }
+                    }
+                }
             }
         }
+
 
         private void cmbxJeepCodes_SelectedIndexChanged(object sender, EventArgs e)
         {
