@@ -42,6 +42,7 @@
             spaceSeparatorVertical12 = new ReaLTaiizor.Controls.SpaceSeparatorVertical();
             spaceSeparatorHorizontal14 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
             spaceSeparatorHorizontal13 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
+            lblOverall = new Label();
             panel6 = new Panel();
             panel11 = new Panel();
             label6 = new Label();
@@ -50,15 +51,16 @@
             spaceSeparatorVertical10 = new ReaLTaiizor.Controls.SpaceSeparatorVertical();
             spaceSeparatorHorizontal12 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
             spaceSeparatorHorizontal11 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
+            lblClean = new Label();
             panel1 = new Panel();
             panel2 = new Panel();
-            lblSafety = new Label();
             lbl = new Label();
             cyberButton4 = new ReaLTaiizor.Controls.CyberButton();
             spaceSeparatorVertical2 = new ReaLTaiizor.Controls.SpaceSeparatorVertical();
             spaceSeparatorVertical1 = new ReaLTaiizor.Controls.SpaceSeparatorVertical();
             spaceSeparatorHorizontal4 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
             spaceSeparatorHorizontal3 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
+            lblSafety = new Label();
             panel3 = new Panel();
             panel8 = new Panel();
             label2 = new Label();
@@ -67,27 +69,25 @@
             spaceSeparatorVertical4 = new ReaLTaiizor.Controls.SpaceSeparatorVertical();
             spaceSeparatorHorizontal6 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
             spaceSeparatorHorizontal5 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
+            lblSmooth = new Label();
             panel4 = new Panel();
             panel9 = new Panel();
+            spaceSeparatorVertical5 = new ReaLTaiizor.Controls.SpaceSeparatorVertical();
             label4 = new Label();
             cyberButton2 = new ReaLTaiizor.Controls.CyberButton();
-            spaceSeparatorVertical5 = new ReaLTaiizor.Controls.SpaceSeparatorVertical();
             spaceSeparatorVertical6 = new ReaLTaiizor.Controls.SpaceSeparatorVertical();
             spaceSeparatorHorizontal8 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
             spaceSeparatorHorizontal7 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
+            lblSpeed = new Label();
             panel5 = new Panel();
             panel10 = new Panel();
+            label13 = new Label();
             cyberButton3 = new ReaLTaiizor.Controls.CyberButton();
             spaceSeparatorVertical7 = new ReaLTaiizor.Controls.SpaceSeparatorVertical();
             spaceSeparatorVertical8 = new ReaLTaiizor.Controls.SpaceSeparatorVertical();
             spaceSeparatorHorizontal10 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
             spaceSeparatorHorizontal9 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
-            lblSmooth = new Label();
-            lblSpeed = new Label();
             lblComfort = new Label();
-            lblClean = new Label();
-            lblOverall = new Label();
-            label13 = new Label();
             tableLayoutPanel1.SuspendLayout();
             panel7.SuspendLayout();
             panel12.SuspendLayout();
@@ -313,6 +313,20 @@
             spaceSeparatorHorizontal13.Text = "spaceSeparatorHorizontal13";
             spaceSeparatorHorizontal13.Transparent = false;
             // 
+            // lblOverall
+            // 
+            lblOverall.BackColor = Color.Transparent;
+            lblOverall.Font = new Font("Inter ExtraBold", 50F, FontStyle.Bold);
+            lblOverall.ForeColor = Color.Black;
+            lblOverall.Image = (Image)resources.GetObject("lblOverall.Image");
+            lblOverall.Location = new Point(-4, 23);
+            lblOverall.Margin = new Padding(0);
+            lblOverall.Name = "lblOverall";
+            lblOverall.Size = new Size(161, 132);
+            lblOverall.TabIndex = 64;
+            lblOverall.Text = "4.7";
+            lblOverall.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // panel6
             // 
             panel6.BackColor = Color.White;
@@ -449,6 +463,20 @@
             spaceSeparatorHorizontal11.Text = "spaceSeparatorHorizontal11";
             spaceSeparatorHorizontal11.Transparent = false;
             // 
+            // lblClean
+            // 
+            lblClean.BackColor = Color.Transparent;
+            lblClean.Font = new Font("Inter ExtraBold", 50F, FontStyle.Bold);
+            lblClean.ForeColor = Color.Black;
+            lblClean.Image = (Image)resources.GetObject("lblClean.Image");
+            lblClean.Location = new Point(-3, 23);
+            lblClean.Margin = new Padding(0);
+            lblClean.Name = "lblClean";
+            lblClean.Size = new Size(161, 132);
+            lblClean.TabIndex = 62;
+            lblClean.Text = "4.7";
+            lblClean.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // panel1
             // 
             panel1.BackColor = Color.White;
@@ -474,20 +502,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(149, 225);
             panel2.TabIndex = 1;
-            // 
-            // lblSafety
-            // 
-            lblSafety.BackColor = Color.Transparent;
-            lblSafety.Font = new Font("Inter ExtraBold", 50F, FontStyle.Bold);
-            lblSafety.ForeColor = Color.Black;
-            lblSafety.Image = (Image)resources.GetObject("lblSafety.Image");
-            lblSafety.Location = new Point(-4, 23);
-            lblSafety.Margin = new Padding(0);
-            lblSafety.Name = "lblSafety";
-            lblSafety.Size = new Size(161, 132);
-            lblSafety.TabIndex = 59;
-            lblSafety.Text = "4.7";
-            lblSafety.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbl
             // 
@@ -598,6 +612,20 @@
             spaceSeparatorHorizontal3.TabIndex = 54;
             spaceSeparatorHorizontal3.Text = "spaceSeparatorHorizontal3";
             spaceSeparatorHorizontal3.Transparent = false;
+            // 
+            // lblSafety
+            // 
+            lblSafety.BackColor = Color.Transparent;
+            lblSafety.Font = new Font("Inter ExtraBold", 50F, FontStyle.Bold);
+            lblSafety.ForeColor = Color.Black;
+            lblSafety.Image = (Image)resources.GetObject("lblSafety.Image");
+            lblSafety.Location = new Point(-4, 23);
+            lblSafety.Margin = new Padding(0);
+            lblSafety.Name = "lblSafety";
+            lblSafety.Size = new Size(161, 132);
+            lblSafety.TabIndex = 59;
+            lblSafety.Text = "4.7";
+            lblSafety.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panel3
             // 
@@ -735,6 +763,20 @@
             spaceSeparatorHorizontal5.Text = "spaceSeparatorHorizontal5";
             spaceSeparatorHorizontal5.Transparent = false;
             // 
+            // lblSmooth
+            // 
+            lblSmooth.BackColor = Color.Transparent;
+            lblSmooth.Font = new Font("Inter ExtraBold", 50F, FontStyle.Bold);
+            lblSmooth.ForeColor = Color.Black;
+            lblSmooth.Image = (Image)resources.GetObject("lblSmooth.Image");
+            lblSmooth.Location = new Point(-3, 23);
+            lblSmooth.Margin = new Padding(0);
+            lblSmooth.Name = "lblSmooth";
+            lblSmooth.Size = new Size(161, 132);
+            lblSmooth.TabIndex = 60;
+            lblSmooth.Text = "4.7";
+            lblSmooth.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // panel4
             // 
             panel4.BackColor = Color.White;
@@ -748,9 +790,9 @@
             // panel9
             // 
             panel9.BackColor = Color.FromArgb(153, 229, 255);
+            panel9.Controls.Add(spaceSeparatorVertical5);
             panel9.Controls.Add(label4);
             panel9.Controls.Add(cyberButton2);
-            panel9.Controls.Add(spaceSeparatorVertical5);
             panel9.Controls.Add(spaceSeparatorVertical6);
             panel9.Controls.Add(spaceSeparatorHorizontal8);
             panel9.Controls.Add(spaceSeparatorHorizontal7);
@@ -761,13 +803,27 @@
             panel9.Size = new Size(149, 225);
             panel9.TabIndex = 2;
             // 
+            // spaceSeparatorVertical5
+            // 
+            spaceSeparatorVertical5.Customization = "Kioq/yoqKv8jIyP/Kioq/w==";
+            spaceSeparatorVertical5.Dock = DockStyle.Left;
+            spaceSeparatorVertical5.Font = new Font("Verdana", 8F);
+            spaceSeparatorVertical5.Image = null;
+            spaceSeparatorVertical5.Location = new Point(0, 4);
+            spaceSeparatorVertical5.Name = "spaceSeparatorVertical5";
+            spaceSeparatorVertical5.NoRounding = false;
+            spaceSeparatorVertical5.Size = new Size(4, 217);
+            spaceSeparatorVertical5.TabIndex = 56;
+            spaceSeparatorVertical5.Text = "spaceSeparatorVertical5";
+            spaceSeparatorVertical5.Transparent = false;
+            // 
             // label4
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.FromArgb(38, 36, 68);
             label4.Font = new Font("Inter SemiBold", 14F, FontStyle.Bold);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(37, 179);
+            label4.Location = new Point(38, 179);
             label4.Name = "label4";
             label4.Size = new Size(70, 27);
             label4.TabIndex = 59;
@@ -801,7 +857,7 @@
             cyberButton2.Lighting = false;
             cyberButton2.LinearGradient_Background = false;
             cyberButton2.LinearGradientPen = false;
-            cyberButton2.Location = new Point(5, 171);
+            cyberButton2.Location = new Point(6, 171);
             cyberButton2.Name = "cyberButton2";
             cyberButton2.PenWidth = 15;
             cyberButton2.Rounding = true;
@@ -814,20 +870,6 @@
             cyberButton2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             cyberButton2.Timer_Effect_1 = 5;
             cyberButton2.Timer_RGB = 300;
-            // 
-            // spaceSeparatorVertical5
-            // 
-            spaceSeparatorVertical5.Customization = "Kioq/yoqKv8jIyP/Kioq/w==";
-            spaceSeparatorVertical5.Dock = DockStyle.Left;
-            spaceSeparatorVertical5.Font = new Font("Verdana", 8F);
-            spaceSeparatorVertical5.Image = null;
-            spaceSeparatorVertical5.Location = new Point(0, 4);
-            spaceSeparatorVertical5.Name = "spaceSeparatorVertical5";
-            spaceSeparatorVertical5.NoRounding = false;
-            spaceSeparatorVertical5.Size = new Size(4, 217);
-            spaceSeparatorVertical5.TabIndex = 56;
-            spaceSeparatorVertical5.Text = "spaceSeparatorVertical5";
-            spaceSeparatorVertical5.Transparent = false;
             // 
             // spaceSeparatorVertical6
             // 
@@ -871,6 +913,20 @@
             spaceSeparatorHorizontal7.Text = "spaceSeparatorHorizontal7";
             spaceSeparatorHorizontal7.Transparent = false;
             // 
+            // lblSpeed
+            // 
+            lblSpeed.BackColor = Color.Transparent;
+            lblSpeed.Font = new Font("Inter ExtraBold", 50F, FontStyle.Bold);
+            lblSpeed.ForeColor = Color.Black;
+            lblSpeed.Image = (Image)resources.GetObject("lblSpeed.Image");
+            lblSpeed.Location = new Point(-2, 23);
+            lblSpeed.Margin = new Padding(0);
+            lblSpeed.Name = "lblSpeed";
+            lblSpeed.Size = new Size(161, 132);
+            lblSpeed.TabIndex = 61;
+            lblSpeed.Text = "4.7";
+            lblSpeed.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // panel5
             // 
             panel5.BackColor = Color.White;
@@ -896,6 +952,19 @@
             panel10.Name = "panel10";
             panel10.Size = new Size(149, 225);
             panel10.TabIndex = 2;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.BackColor = Color.FromArgb(38, 36, 68);
+            label13.Font = new Font("Inter SemiBold", 14F, FontStyle.Bold);
+            label13.ForeColor = Color.White;
+            label13.Location = new Point(31, 179);
+            label13.Name = "label13";
+            label13.Size = new Size(88, 27);
+            label13.TabIndex = 63;
+            label13.Text = "Comfort";
+            label13.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // cyberButton3
             // 
@@ -994,34 +1063,6 @@
             spaceSeparatorHorizontal9.Text = "spaceSeparatorHorizontal9";
             spaceSeparatorHorizontal9.Transparent = false;
             // 
-            // lblSmooth
-            // 
-            lblSmooth.BackColor = Color.Transparent;
-            lblSmooth.Font = new Font("Inter ExtraBold", 50F, FontStyle.Bold);
-            lblSmooth.ForeColor = Color.Black;
-            lblSmooth.Image = (Image)resources.GetObject("lblSmooth.Image");
-            lblSmooth.Location = new Point(-3, 23);
-            lblSmooth.Margin = new Padding(0);
-            lblSmooth.Name = "lblSmooth";
-            lblSmooth.Size = new Size(161, 132);
-            lblSmooth.TabIndex = 60;
-            lblSmooth.Text = "4.7";
-            lblSmooth.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // lblSpeed
-            // 
-            lblSpeed.BackColor = Color.Transparent;
-            lblSpeed.Font = new Font("Inter ExtraBold", 50F, FontStyle.Bold);
-            lblSpeed.ForeColor = Color.Black;
-            lblSpeed.Image = (Image)resources.GetObject("lblSpeed.Image");
-            lblSpeed.Location = new Point(-2, 23);
-            lblSpeed.Margin = new Padding(0);
-            lblSpeed.Name = "lblSpeed";
-            lblSpeed.Size = new Size(161, 132);
-            lblSpeed.TabIndex = 61;
-            lblSpeed.Text = "4.7";
-            lblSpeed.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // lblComfort
             // 
             lblComfort.BackColor = Color.Transparent;
@@ -1035,47 +1076,6 @@
             lblComfort.TabIndex = 62;
             lblComfort.Text = "4.7";
             lblComfort.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // lblClean
-            // 
-            lblClean.BackColor = Color.Transparent;
-            lblClean.Font = new Font("Inter ExtraBold", 50F, FontStyle.Bold);
-            lblClean.ForeColor = Color.Black;
-            lblClean.Image = (Image)resources.GetObject("lblClean.Image");
-            lblClean.Location = new Point(-3, 23);
-            lblClean.Margin = new Padding(0);
-            lblClean.Name = "lblClean";
-            lblClean.Size = new Size(161, 132);
-            lblClean.TabIndex = 62;
-            lblClean.Text = "4.7";
-            lblClean.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // lblOverall
-            // 
-            lblOverall.BackColor = Color.Transparent;
-            lblOverall.Font = new Font("Inter ExtraBold", 50F, FontStyle.Bold);
-            lblOverall.ForeColor = Color.Black;
-            lblOverall.Image = (Image)resources.GetObject("lblOverall.Image");
-            lblOverall.Location = new Point(-4, 23);
-            lblOverall.Margin = new Padding(0);
-            lblOverall.Name = "lblOverall";
-            lblOverall.Size = new Size(161, 132);
-            lblOverall.TabIndex = 64;
-            lblOverall.Text = "4.7";
-            lblOverall.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.BackColor = Color.FromArgb(38, 36, 68);
-            label13.Font = new Font("Inter SemiBold", 14F, FontStyle.Bold);
-            label13.ForeColor = Color.White;
-            label13.Location = new Point(31, 179);
-            label13.Name = "label13";
-            label13.Size = new Size(88, 27);
-            label13.TabIndex = 63;
-            label13.Text = "Comfort";
-            label13.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // Analytics
             // 
@@ -1177,8 +1177,8 @@
         private Label lblOverall;
         private Label lblClean;
         private Label lblSmooth;
-        private Label lblSpeed;
         private Label lblComfort;
         public Label label13;
+        private Label lblSpeed;
     }
 }
