@@ -36,40 +36,58 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             panel7 = new Panel();
             panel12 = new Panel();
+            label7 = new Label();
+            cyberButton6 = new ReaLTaiizor.Controls.CyberButton();
             spaceSeparatorVertical11 = new ReaLTaiizor.Controls.SpaceSeparatorVertical();
             spaceSeparatorVertical12 = new ReaLTaiizor.Controls.SpaceSeparatorVertical();
             spaceSeparatorHorizontal14 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
             spaceSeparatorHorizontal13 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
             panel6 = new Panel();
             panel11 = new Panel();
+            label6 = new Label();
+            cyberButton5 = new ReaLTaiizor.Controls.CyberButton();
             spaceSeparatorVertical9 = new ReaLTaiizor.Controls.SpaceSeparatorVertical();
             spaceSeparatorVertical10 = new ReaLTaiizor.Controls.SpaceSeparatorVertical();
             spaceSeparatorHorizontal12 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
             spaceSeparatorHorizontal11 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
             panel1 = new Panel();
             panel2 = new Panel();
+            lblSafety = new Label();
+            lbl = new Label();
+            cyberButton4 = new ReaLTaiizor.Controls.CyberButton();
             spaceSeparatorVertical2 = new ReaLTaiizor.Controls.SpaceSeparatorVertical();
             spaceSeparatorVertical1 = new ReaLTaiizor.Controls.SpaceSeparatorVertical();
             spaceSeparatorHorizontal4 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
             spaceSeparatorHorizontal3 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
             panel3 = new Panel();
             panel8 = new Panel();
+            label2 = new Label();
+            cyberButton1 = new ReaLTaiizor.Controls.CyberButton();
             spaceSeparatorVertical3 = new ReaLTaiizor.Controls.SpaceSeparatorVertical();
             spaceSeparatorVertical4 = new ReaLTaiizor.Controls.SpaceSeparatorVertical();
             spaceSeparatorHorizontal6 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
             spaceSeparatorHorizontal5 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
             panel4 = new Panel();
             panel9 = new Panel();
+            label4 = new Label();
+            cyberButton2 = new ReaLTaiizor.Controls.CyberButton();
             spaceSeparatorVertical5 = new ReaLTaiizor.Controls.SpaceSeparatorVertical();
             spaceSeparatorVertical6 = new ReaLTaiizor.Controls.SpaceSeparatorVertical();
             spaceSeparatorHorizontal8 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
             spaceSeparatorHorizontal7 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
             panel5 = new Panel();
             panel10 = new Panel();
+            cyberButton3 = new ReaLTaiizor.Controls.CyberButton();
             spaceSeparatorVertical7 = new ReaLTaiizor.Controls.SpaceSeparatorVertical();
             spaceSeparatorVertical8 = new ReaLTaiizor.Controls.SpaceSeparatorVertical();
             spaceSeparatorHorizontal10 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
             spaceSeparatorHorizontal9 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
+            lblSmooth = new Label();
+            lblSpeed = new Label();
+            lblComfort = new Label();
+            lblClean = new Label();
+            lblOverall = new Label();
+            label13 = new Label();
             tableLayoutPanel1.SuspendLayout();
             panel7.SuspendLayout();
             panel12.SuspendLayout();
@@ -122,7 +140,7 @@
             // 
             // plotViewDriverAnalytics
             // 
-            plotViewDriverAnalytics.Location = new Point(21, 151);
+            plotViewDriverAnalytics.Location = new Point(21, 147);
             plotViewDriverAnalytics.Name = "plotViewDriverAnalytics";
             plotViewDriverAnalytics.PanCursor = Cursors.Hand;
             plotViewDriverAnalytics.Size = new Size(566, 265);
@@ -172,15 +190,72 @@
             // panel12
             // 
             panel12.BackColor = Color.FromArgb(153, 229, 255);
+            panel12.Controls.Add(label7);
+            panel12.Controls.Add(cyberButton6);
             panel12.Controls.Add(spaceSeparatorVertical11);
             panel12.Controls.Add(spaceSeparatorVertical12);
             panel12.Controls.Add(spaceSeparatorHorizontal14);
             panel12.Controls.Add(spaceSeparatorHorizontal13);
+            panel12.Controls.Add(lblOverall);
             panel12.Dock = DockStyle.Fill;
             panel12.Location = new Point(0, 0);
             panel12.Name = "panel12";
             panel12.Size = new Size(149, 225);
             panel12.TabIndex = 2;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.BackColor = Color.FromArgb(38, 36, 68);
+            label7.Font = new Font("Inter SemiBold", 14F, FontStyle.Bold);
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(34, 179);
+            label7.Name = "label7";
+            label7.Size = new Size(78, 27);
+            label7.TabIndex = 63;
+            label7.Text = "Overall";
+            label7.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // cyberButton6
+            // 
+            cyberButton6.Alpha = 20;
+            cyberButton6.BackColor = Color.Transparent;
+            cyberButton6.Background = true;
+            cyberButton6.Background_WidthPen = 4F;
+            cyberButton6.BackgroundPen = true;
+            cyberButton6.ColorBackground = Color.FromArgb(38, 36, 68);
+            cyberButton6.ColorBackground_1 = Color.FromArgb(38, 36, 68);
+            cyberButton6.ColorBackground_2 = Color.FromArgb(41, 63, 86);
+            cyberButton6.ColorBackground_Pen = Color.FromArgb(128, 223, 255);
+            cyberButton6.ColorLighting = Color.FromArgb(153, 229, 255);
+            cyberButton6.ColorPen_1 = Color.FromArgb(37, 52, 68);
+            cyberButton6.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            cyberButton6.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            cyberButton6.Effect_1 = true;
+            cyberButton6.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            cyberButton6.Effect_1_Transparency = 25;
+            cyberButton6.Effect_2 = true;
+            cyberButton6.Effect_2_ColorBackground = Color.White;
+            cyberButton6.Effect_2_Transparency = 20;
+            cyberButton6.Enabled = false;
+            cyberButton6.Font = new Font("Inter", 12F);
+            cyberButton6.ForeColor = Color.FromArgb(38, 36, 68);
+            cyberButton6.Lighting = false;
+            cyberButton6.LinearGradient_Background = false;
+            cyberButton6.LinearGradientPen = false;
+            cyberButton6.Location = new Point(7, 171);
+            cyberButton6.Name = "cyberButton6";
+            cyberButton6.PenWidth = 15;
+            cyberButton6.Rounding = true;
+            cyberButton6.RoundingInt = 70;
+            cyberButton6.Size = new Size(136, 44);
+            cyberButton6.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            cyberButton6.TabIndex = 62;
+            cyberButton6.Tag = "Cyber";
+            cyberButton6.TextButton = "";
+            cyberButton6.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            cyberButton6.Timer_Effect_1 = 5;
+            cyberButton6.Timer_RGB = 300;
             // 
             // spaceSeparatorVertical11
             // 
@@ -251,15 +326,72 @@
             // panel11
             // 
             panel11.BackColor = Color.FromArgb(153, 229, 255);
+            panel11.Controls.Add(label6);
+            panel11.Controls.Add(cyberButton5);
             panel11.Controls.Add(spaceSeparatorVertical9);
             panel11.Controls.Add(spaceSeparatorVertical10);
             panel11.Controls.Add(spaceSeparatorHorizontal12);
             panel11.Controls.Add(spaceSeparatorHorizontal11);
+            panel11.Controls.Add(lblClean);
             panel11.Dock = DockStyle.Fill;
             panel11.Location = new Point(0, 0);
             panel11.Name = "panel11";
             panel11.Size = new Size(149, 225);
             panel11.TabIndex = 2;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = Color.FromArgb(38, 36, 68);
+            label6.Font = new Font("Inter SemiBold", 14F, FontStyle.Bold);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(43, 179);
+            label6.Name = "label6";
+            label6.Size = new Size(65, 27);
+            label6.TabIndex = 61;
+            label6.Text = "Clean";
+            label6.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // cyberButton5
+            // 
+            cyberButton5.Alpha = 20;
+            cyberButton5.BackColor = Color.Transparent;
+            cyberButton5.Background = true;
+            cyberButton5.Background_WidthPen = 4F;
+            cyberButton5.BackgroundPen = true;
+            cyberButton5.ColorBackground = Color.FromArgb(38, 36, 68);
+            cyberButton5.ColorBackground_1 = Color.FromArgb(38, 36, 68);
+            cyberButton5.ColorBackground_2 = Color.FromArgb(41, 63, 86);
+            cyberButton5.ColorBackground_Pen = Color.FromArgb(128, 223, 255);
+            cyberButton5.ColorLighting = Color.FromArgb(153, 229, 255);
+            cyberButton5.ColorPen_1 = Color.FromArgb(37, 52, 68);
+            cyberButton5.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            cyberButton5.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            cyberButton5.Effect_1 = true;
+            cyberButton5.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            cyberButton5.Effect_1_Transparency = 25;
+            cyberButton5.Effect_2 = true;
+            cyberButton5.Effect_2_ColorBackground = Color.White;
+            cyberButton5.Effect_2_Transparency = 20;
+            cyberButton5.Enabled = false;
+            cyberButton5.Font = new Font("Inter", 12F);
+            cyberButton5.ForeColor = Color.FromArgb(38, 36, 68);
+            cyberButton5.Lighting = false;
+            cyberButton5.LinearGradient_Background = false;
+            cyberButton5.LinearGradientPen = false;
+            cyberButton5.Location = new Point(7, 171);
+            cyberButton5.Name = "cyberButton5";
+            cyberButton5.PenWidth = 15;
+            cyberButton5.Rounding = true;
+            cyberButton5.RoundingInt = 70;
+            cyberButton5.Size = new Size(136, 44);
+            cyberButton5.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            cyberButton5.TabIndex = 60;
+            cyberButton5.Tag = "Cyber";
+            cyberButton5.TextButton = "";
+            cyberButton5.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            cyberButton5.Timer_Effect_1 = 5;
+            cyberButton5.Timer_RGB = 300;
             // 
             // spaceSeparatorVertical9
             // 
@@ -330,15 +462,86 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(153, 229, 255);
+            panel2.Controls.Add(lbl);
+            panel2.Controls.Add(cyberButton4);
             panel2.Controls.Add(spaceSeparatorVertical2);
             panel2.Controls.Add(spaceSeparatorVertical1);
             panel2.Controls.Add(spaceSeparatorHorizontal4);
             panel2.Controls.Add(spaceSeparatorHorizontal3);
+            panel2.Controls.Add(lblSafety);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
             panel2.Size = new Size(149, 225);
             panel2.TabIndex = 1;
+            // 
+            // lblSafety
+            // 
+            lblSafety.BackColor = Color.Transparent;
+            lblSafety.Font = new Font("Inter ExtraBold", 50F, FontStyle.Bold);
+            lblSafety.ForeColor = Color.Black;
+            lblSafety.Image = (Image)resources.GetObject("lblSafety.Image");
+            lblSafety.Location = new Point(-4, 23);
+            lblSafety.Margin = new Padding(0);
+            lblSafety.Name = "lblSafety";
+            lblSafety.Size = new Size(161, 132);
+            lblSafety.TabIndex = 59;
+            lblSafety.Text = "4.7";
+            lblSafety.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lbl
+            // 
+            lbl.AutoSize = true;
+            lbl.BackColor = Color.FromArgb(38, 36, 68);
+            lbl.Font = new Font("Inter SemiBold", 14F, FontStyle.Bold);
+            lbl.ForeColor = Color.White;
+            lbl.Location = new Point(38, 179);
+            lbl.Name = "lbl";
+            lbl.Size = new Size(70, 27);
+            lbl.TabIndex = 57;
+            lbl.Text = "Safety";
+            lbl.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // cyberButton4
+            // 
+            cyberButton4.Alpha = 20;
+            cyberButton4.BackColor = Color.Transparent;
+            cyberButton4.Background = true;
+            cyberButton4.Background_WidthPen = 4F;
+            cyberButton4.BackgroundPen = true;
+            cyberButton4.ColorBackground = Color.FromArgb(38, 36, 68);
+            cyberButton4.ColorBackground_1 = Color.FromArgb(38, 36, 68);
+            cyberButton4.ColorBackground_2 = Color.FromArgb(41, 63, 86);
+            cyberButton4.ColorBackground_Pen = Color.FromArgb(128, 223, 255);
+            cyberButton4.ColorLighting = Color.FromArgb(153, 229, 255);
+            cyberButton4.ColorPen_1 = Color.FromArgb(37, 52, 68);
+            cyberButton4.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            cyberButton4.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            cyberButton4.Effect_1 = true;
+            cyberButton4.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            cyberButton4.Effect_1_Transparency = 25;
+            cyberButton4.Effect_2 = true;
+            cyberButton4.Effect_2_ColorBackground = Color.White;
+            cyberButton4.Effect_2_Transparency = 20;
+            cyberButton4.Enabled = false;
+            cyberButton4.Font = new Font("Inter", 12F);
+            cyberButton4.ForeColor = Color.FromArgb(38, 36, 68);
+            cyberButton4.Lighting = false;
+            cyberButton4.LinearGradient_Background = false;
+            cyberButton4.LinearGradientPen = false;
+            cyberButton4.Location = new Point(6, 171);
+            cyberButton4.Name = "cyberButton4";
+            cyberButton4.PenWidth = 15;
+            cyberButton4.Rounding = true;
+            cyberButton4.RoundingInt = 70;
+            cyberButton4.Size = new Size(136, 44);
+            cyberButton4.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            cyberButton4.TabIndex = 53;
+            cyberButton4.Tag = "Cyber";
+            cyberButton4.TextButton = "";
+            cyberButton4.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            cyberButton4.Timer_Effect_1 = 5;
+            cyberButton4.Timer_RGB = 300;
             // 
             // spaceSeparatorVertical2
             // 
@@ -409,15 +612,72 @@
             // panel8
             // 
             panel8.BackColor = Color.FromArgb(153, 229, 255);
+            panel8.Controls.Add(label2);
+            panel8.Controls.Add(cyberButton1);
             panel8.Controls.Add(spaceSeparatorVertical3);
             panel8.Controls.Add(spaceSeparatorVertical4);
             panel8.Controls.Add(spaceSeparatorHorizontal6);
             panel8.Controls.Add(spaceSeparatorHorizontal5);
+            panel8.Controls.Add(lblSmooth);
             panel8.Dock = DockStyle.Fill;
             panel8.Location = new Point(0, 0);
             panel8.Name = "panel8";
             panel8.Size = new Size(149, 225);
             panel8.TabIndex = 2;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.FromArgb(38, 36, 68);
+            label2.Font = new Font("Inter SemiBold", 13F, FontStyle.Bold);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(15, 179);
+            label2.Name = "label2";
+            label2.Size = new Size(121, 26);
+            label2.TabIndex = 59;
+            label2.Text = "Smoothness";
+            label2.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // cyberButton1
+            // 
+            cyberButton1.Alpha = 20;
+            cyberButton1.BackColor = Color.Transparent;
+            cyberButton1.Background = true;
+            cyberButton1.Background_WidthPen = 4F;
+            cyberButton1.BackgroundPen = true;
+            cyberButton1.ColorBackground = Color.FromArgb(38, 36, 68);
+            cyberButton1.ColorBackground_1 = Color.FromArgb(38, 36, 68);
+            cyberButton1.ColorBackground_2 = Color.FromArgb(41, 63, 86);
+            cyberButton1.ColorBackground_Pen = Color.FromArgb(128, 223, 255);
+            cyberButton1.ColorLighting = Color.FromArgb(153, 229, 255);
+            cyberButton1.ColorPen_1 = Color.FromArgb(37, 52, 68);
+            cyberButton1.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            cyberButton1.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            cyberButton1.Effect_1 = true;
+            cyberButton1.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            cyberButton1.Effect_1_Transparency = 25;
+            cyberButton1.Effect_2 = true;
+            cyberButton1.Effect_2_ColorBackground = Color.White;
+            cyberButton1.Effect_2_Transparency = 20;
+            cyberButton1.Enabled = false;
+            cyberButton1.Font = new Font("Inter", 12F);
+            cyberButton1.ForeColor = Color.FromArgb(38, 36, 68);
+            cyberButton1.Lighting = false;
+            cyberButton1.LinearGradient_Background = false;
+            cyberButton1.LinearGradientPen = false;
+            cyberButton1.Location = new Point(7, 171);
+            cyberButton1.Name = "cyberButton1";
+            cyberButton1.PenWidth = 15;
+            cyberButton1.Rounding = true;
+            cyberButton1.RoundingInt = 70;
+            cyberButton1.Size = new Size(136, 44);
+            cyberButton1.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            cyberButton1.TabIndex = 58;
+            cyberButton1.Tag = "Cyber";
+            cyberButton1.TextButton = "";
+            cyberButton1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            cyberButton1.Timer_Effect_1 = 5;
+            cyberButton1.Timer_RGB = 300;
             // 
             // spaceSeparatorVertical3
             // 
@@ -488,15 +748,72 @@
             // panel9
             // 
             panel9.BackColor = Color.FromArgb(153, 229, 255);
+            panel9.Controls.Add(label4);
+            panel9.Controls.Add(cyberButton2);
             panel9.Controls.Add(spaceSeparatorVertical5);
             panel9.Controls.Add(spaceSeparatorVertical6);
             panel9.Controls.Add(spaceSeparatorHorizontal8);
             panel9.Controls.Add(spaceSeparatorHorizontal7);
+            panel9.Controls.Add(lblSpeed);
             panel9.Dock = DockStyle.Fill;
             panel9.Location = new Point(0, 0);
             panel9.Name = "panel9";
             panel9.Size = new Size(149, 225);
             panel9.TabIndex = 2;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.FromArgb(38, 36, 68);
+            label4.Font = new Font("Inter SemiBold", 14F, FontStyle.Bold);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(37, 179);
+            label4.Name = "label4";
+            label4.Size = new Size(70, 27);
+            label4.TabIndex = 59;
+            label4.Text = "Speed";
+            label4.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // cyberButton2
+            // 
+            cyberButton2.Alpha = 20;
+            cyberButton2.BackColor = Color.Transparent;
+            cyberButton2.Background = true;
+            cyberButton2.Background_WidthPen = 4F;
+            cyberButton2.BackgroundPen = true;
+            cyberButton2.ColorBackground = Color.FromArgb(38, 36, 68);
+            cyberButton2.ColorBackground_1 = Color.FromArgb(38, 36, 68);
+            cyberButton2.ColorBackground_2 = Color.FromArgb(41, 63, 86);
+            cyberButton2.ColorBackground_Pen = Color.FromArgb(128, 223, 255);
+            cyberButton2.ColorLighting = Color.FromArgb(153, 229, 255);
+            cyberButton2.ColorPen_1 = Color.FromArgb(37, 52, 68);
+            cyberButton2.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            cyberButton2.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            cyberButton2.Effect_1 = true;
+            cyberButton2.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            cyberButton2.Effect_1_Transparency = 25;
+            cyberButton2.Effect_2 = true;
+            cyberButton2.Effect_2_ColorBackground = Color.White;
+            cyberButton2.Effect_2_Transparency = 20;
+            cyberButton2.Enabled = false;
+            cyberButton2.Font = new Font("Inter", 12F);
+            cyberButton2.ForeColor = Color.FromArgb(38, 36, 68);
+            cyberButton2.Lighting = false;
+            cyberButton2.LinearGradient_Background = false;
+            cyberButton2.LinearGradientPen = false;
+            cyberButton2.Location = new Point(5, 171);
+            cyberButton2.Name = "cyberButton2";
+            cyberButton2.PenWidth = 15;
+            cyberButton2.Rounding = true;
+            cyberButton2.RoundingInt = 70;
+            cyberButton2.Size = new Size(136, 44);
+            cyberButton2.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            cyberButton2.TabIndex = 58;
+            cyberButton2.Tag = "Cyber";
+            cyberButton2.TextButton = "";
+            cyberButton2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            cyberButton2.Timer_Effect_1 = 5;
+            cyberButton2.Timer_RGB = 300;
             // 
             // spaceSeparatorVertical5
             // 
@@ -567,15 +884,59 @@
             // panel10
             // 
             panel10.BackColor = Color.FromArgb(153, 229, 255);
+            panel10.Controls.Add(label13);
+            panel10.Controls.Add(cyberButton3);
             panel10.Controls.Add(spaceSeparatorVertical7);
             panel10.Controls.Add(spaceSeparatorVertical8);
             panel10.Controls.Add(spaceSeparatorHorizontal10);
             panel10.Controls.Add(spaceSeparatorHorizontal9);
+            panel10.Controls.Add(lblComfort);
             panel10.Dock = DockStyle.Fill;
             panel10.Location = new Point(0, 0);
             panel10.Name = "panel10";
             panel10.Size = new Size(149, 225);
             panel10.TabIndex = 2;
+            // 
+            // cyberButton3
+            // 
+            cyberButton3.Alpha = 20;
+            cyberButton3.BackColor = Color.Transparent;
+            cyberButton3.Background = true;
+            cyberButton3.Background_WidthPen = 4F;
+            cyberButton3.BackgroundPen = true;
+            cyberButton3.ColorBackground = Color.FromArgb(38, 36, 68);
+            cyberButton3.ColorBackground_1 = Color.FromArgb(38, 36, 68);
+            cyberButton3.ColorBackground_2 = Color.FromArgb(41, 63, 86);
+            cyberButton3.ColorBackground_Pen = Color.FromArgb(128, 223, 255);
+            cyberButton3.ColorLighting = Color.FromArgb(153, 229, 255);
+            cyberButton3.ColorPen_1 = Color.FromArgb(37, 52, 68);
+            cyberButton3.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            cyberButton3.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            cyberButton3.Effect_1 = true;
+            cyberButton3.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            cyberButton3.Effect_1_Transparency = 25;
+            cyberButton3.Effect_2 = true;
+            cyberButton3.Effect_2_ColorBackground = Color.White;
+            cyberButton3.Effect_2_Transparency = 20;
+            cyberButton3.Enabled = false;
+            cyberButton3.Font = new Font("Inter", 12F);
+            cyberButton3.ForeColor = Color.FromArgb(38, 36, 68);
+            cyberButton3.Lighting = false;
+            cyberButton3.LinearGradient_Background = false;
+            cyberButton3.LinearGradientPen = false;
+            cyberButton3.Location = new Point(6, 171);
+            cyberButton3.Name = "cyberButton3";
+            cyberButton3.PenWidth = 15;
+            cyberButton3.Rounding = true;
+            cyberButton3.RoundingInt = 70;
+            cyberButton3.Size = new Size(136, 44);
+            cyberButton3.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            cyberButton3.TabIndex = 58;
+            cyberButton3.Tag = "Cyber";
+            cyberButton3.TextButton = "";
+            cyberButton3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            cyberButton3.Timer_Effect_1 = 5;
+            cyberButton3.Timer_RGB = 300;
             // 
             // spaceSeparatorVertical7
             // 
@@ -633,6 +994,89 @@
             spaceSeparatorHorizontal9.Text = "spaceSeparatorHorizontal9";
             spaceSeparatorHorizontal9.Transparent = false;
             // 
+            // lblSmooth
+            // 
+            lblSmooth.BackColor = Color.Transparent;
+            lblSmooth.Font = new Font("Inter ExtraBold", 50F, FontStyle.Bold);
+            lblSmooth.ForeColor = Color.Black;
+            lblSmooth.Image = (Image)resources.GetObject("lblSmooth.Image");
+            lblSmooth.Location = new Point(-3, 23);
+            lblSmooth.Margin = new Padding(0);
+            lblSmooth.Name = "lblSmooth";
+            lblSmooth.Size = new Size(161, 132);
+            lblSmooth.TabIndex = 60;
+            lblSmooth.Text = "4.7";
+            lblSmooth.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblSpeed
+            // 
+            lblSpeed.BackColor = Color.Transparent;
+            lblSpeed.Font = new Font("Inter ExtraBold", 50F, FontStyle.Bold);
+            lblSpeed.ForeColor = Color.Black;
+            lblSpeed.Image = (Image)resources.GetObject("lblSpeed.Image");
+            lblSpeed.Location = new Point(-2, 23);
+            lblSpeed.Margin = new Padding(0);
+            lblSpeed.Name = "lblSpeed";
+            lblSpeed.Size = new Size(161, 132);
+            lblSpeed.TabIndex = 61;
+            lblSpeed.Text = "4.7";
+            lblSpeed.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblComfort
+            // 
+            lblComfort.BackColor = Color.Transparent;
+            lblComfort.Font = new Font("Inter ExtraBold", 50F, FontStyle.Bold);
+            lblComfort.ForeColor = Color.Black;
+            lblComfort.Image = (Image)resources.GetObject("lblComfort.Image");
+            lblComfort.Location = new Point(-3, 23);
+            lblComfort.Margin = new Padding(0);
+            lblComfort.Name = "lblComfort";
+            lblComfort.Size = new Size(161, 132);
+            lblComfort.TabIndex = 62;
+            lblComfort.Text = "4.7";
+            lblComfort.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblClean
+            // 
+            lblClean.BackColor = Color.Transparent;
+            lblClean.Font = new Font("Inter ExtraBold", 50F, FontStyle.Bold);
+            lblClean.ForeColor = Color.Black;
+            lblClean.Image = (Image)resources.GetObject("lblClean.Image");
+            lblClean.Location = new Point(-3, 23);
+            lblClean.Margin = new Padding(0);
+            lblClean.Name = "lblClean";
+            lblClean.Size = new Size(161, 132);
+            lblClean.TabIndex = 62;
+            lblClean.Text = "4.7";
+            lblClean.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblOverall
+            // 
+            lblOverall.BackColor = Color.Transparent;
+            lblOverall.Font = new Font("Inter ExtraBold", 50F, FontStyle.Bold);
+            lblOverall.ForeColor = Color.Black;
+            lblOverall.Image = (Image)resources.GetObject("lblOverall.Image");
+            lblOverall.Location = new Point(-4, 23);
+            lblOverall.Margin = new Padding(0);
+            lblOverall.Name = "lblOverall";
+            lblOverall.Size = new Size(161, 132);
+            lblOverall.TabIndex = 64;
+            lblOverall.Text = "4.7";
+            lblOverall.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.BackColor = Color.FromArgb(38, 36, 68);
+            label13.Font = new Font("Inter SemiBold", 14F, FontStyle.Bold);
+            label13.ForeColor = Color.White;
+            label13.Location = new Point(31, 179);
+            label13.Name = "label13";
+            label13.Size = new Size(88, 27);
+            label13.TabIndex = 63;
+            label13.Text = "Comfort";
+            label13.TextAlign = ContentAlignment.MiddleLeft;
+            // 
             // Analytics
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
@@ -654,16 +1098,22 @@
             tableLayoutPanel1.ResumeLayout(false);
             panel7.ResumeLayout(false);
             panel12.ResumeLayout(false);
+            panel12.PerformLayout();
             panel6.ResumeLayout(false);
             panel11.ResumeLayout(false);
+            panel11.PerformLayout();
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             panel3.ResumeLayout(false);
             panel8.ResumeLayout(false);
+            panel8.PerformLayout();
             panel4.ResumeLayout(false);
             panel9.ResumeLayout(false);
+            panel9.PerformLayout();
             panel5.ResumeLayout(false);
             panel10.ResumeLayout(false);
+            panel10.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -712,5 +1162,23 @@
         private ReaLTaiizor.Controls.SpaceSeparatorVertical spaceSeparatorVertical8;
         private ReaLTaiizor.Controls.SpaceSeparatorHorizontal spaceSeparatorHorizontal10;
         private ReaLTaiizor.Controls.SpaceSeparatorHorizontal spaceSeparatorHorizontal9;
+        private ReaLTaiizor.Controls.CyberButton cyberButton4;
+        public Label label7;
+        private ReaLTaiizor.Controls.CyberButton cyberButton6;
+        public Label label6;
+        private ReaLTaiizor.Controls.CyberButton cyberButton5;
+        public Label lbl;
+        public Label label2;
+        private ReaLTaiizor.Controls.CyberButton cyberButton1;
+        public Label label4;
+        private ReaLTaiizor.Controls.CyberButton cyberButton2;
+        private ReaLTaiizor.Controls.CyberButton cyberButton3;
+        private Label lblSafety;
+        private Label lblOverall;
+        private Label lblClean;
+        private Label lblSmooth;
+        private Label lblSpeed;
+        private Label lblComfort;
+        public Label label13;
     }
 }
