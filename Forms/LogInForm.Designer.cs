@@ -40,7 +40,7 @@
             tbxEnterUsername = new TextBox();
             btnLogin = new ReaLTaiizor.Controls.CyberButton();
             lblForgetPass = new Label();
-            checkBox1 = new CheckBox();
+            chkRememberMe = new CheckBox();
             pnlPassword = new Panel();
             tbxEnterPassword = new TextBox();
             pbPrivacy = new PictureBox();
@@ -190,15 +190,15 @@
             lblForgetPass.TabIndex = 8;
             lblForgetPass.Text = "Forget Password?";
             // 
-            // checkBox1
+            // chkRememberMe
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Cursor = Cursors.Hand;
-            checkBox1.Location = new Point(52, 344);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(15, 14);
-            checkBox1.TabIndex = 9;
-            checkBox1.UseVisualStyleBackColor = true;
+            chkRememberMe.AutoSize = true;
+            chkRememberMe.Cursor = Cursors.Hand;
+            chkRememberMe.Location = new Point(52, 344);
+            chkRememberMe.Name = "chkRememberMe";
+            chkRememberMe.Size = new Size(15, 14);
+            chkRememberMe.TabIndex = 9;
+            chkRememberMe.UseVisualStyleBackColor = true;
             // 
             // pnlPassword
             // 
@@ -350,7 +350,7 @@
             Controls.Add(btnRegister);
             Controls.Add(lblRemember);
             Controls.Add(pnlPassword);
-            Controls.Add(checkBox1);
+            Controls.Add(chkRememberMe);
             Controls.Add(lblForgetPass);
             Controls.Add(btnLogin);
             Controls.Add(pnlUsername);
@@ -360,6 +360,7 @@
             Name = "LogInForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "LogInForm";
+            Load += LogInForm_Load;
             MouseDown += Login_MouseDown;
             ((System.ComponentModel.ISupportInitialize)pbLogo).EndInit();
             pnlUsername.ResumeLayout(false);
@@ -383,7 +384,7 @@
         private ReaLTaiizor.Controls.CyberButton btnLogin;
         private Label lblUsername;
         private Label lblForgetPass;
-        private CheckBox checkBox1;
+        private CheckBox chkRememberMe;
         private Panel pnlPassword;
         private Label lblPassword;
         private Label lblRemember;

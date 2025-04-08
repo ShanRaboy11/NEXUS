@@ -234,6 +234,32 @@ namespace NEXUS.Forms
                     driverDashboard.Show();
                     this.Close();
                 }
+
+                if (chkRememberMe.Checked)
+                {
+                    Properties.Settings.Default.SavedUser = username;
+                    Properties.Settings.Default.SavedPass = password;
+                    Properties.Settings.Default.RememberMe = true;
+                }
+                else
+                {
+                    Properties.Settings.Default.SavedUser = "";
+                    Properties.Settings.Default.SavedPass = "";
+                    Properties.Settings.Default.RememberMe = false;
+                }
+
+                Properties.Settings.Default.Save(); 
+            }
+        }
+
+        private void LogInForm_Load(object sender, EventArgs e)
+        {
+            if (Properties.Settings.Default.RememberMe)
+            {
+                tbxEnterUsername.Text = Properties.Settings.Default.SavedUser;
+                tbxEnterPassword.UseSystemPasswordChar = true;
+                tbxEnterPassword.Text = Properties.Settings.Default.SavedPass;
+                chkRememberMe.Checked = true;
             }
         }
     }

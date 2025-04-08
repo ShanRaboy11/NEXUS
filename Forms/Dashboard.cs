@@ -116,6 +116,11 @@ namespace NEXUS.Forms
         {
             LogInForm logInForm = new LogInForm();
             SelectButton(btnLogout);
+
+            Properties.Settings.Default.SavedUser = "";
+            Properties.Settings.Default.SavedPass = "";
+            Properties.Settings.Default.RememberMe = false;
+            Properties.Settings.Default.Save();
             logInForm.Show();
             this.Close();
         }

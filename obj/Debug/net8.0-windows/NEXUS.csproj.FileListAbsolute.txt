@@ -82,3 +82,4 @@ C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.Ca
 C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.TripLogging.resources
 C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.User_Controls.PaymentUC.resources
 C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.User_Controls.QRScanUC.resources
+C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\NEXUS.dll.config
