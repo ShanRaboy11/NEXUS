@@ -109,6 +109,47 @@ namespace NEXUS.Forms
             }
         }
 
+        private Dictionary<string, double> GetDriverAverageRatings(int driverID)
+        {
+            Dictionary<string, double> averages = new Dictionary<string, double>();
+
+            string query = @"
+            SELECT 
+            AVG(Safety) AS AvgSafety,
+            AVG(Smoothness) AS AvgSmoothness,
+            AVG(Speed) AS AvgSpeed,
+            AVG(Comfortability) AS AvgComfort,
+            AVG(Cleanliness) AS AvgClean,
+            AVG([Overall Satisfaction]) AS AvgSatisfaction
+            FROM Rate
+            WHERE DriverID = ?";
+
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            {
+                conn.Open();
+                using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("?", driverID);
+
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            averages["Safety"] = reader["AvgSafety"] != DBNull.Value ? Convert.ToDouble(reader["AvgSafety"]) : 0;
+                            averages["Smoothness"] = reader["AvgSmoothness"] != DBNull.Value ? Convert.ToDouble(reader["AvgSmoothness"]) : 0;
+                            averages["Speed"] = reader["AvgSpeed"] != DBNull.Value ? Convert.ToDouble(reader["AvgSpeed"]) : 0;
+                            averages["Comfortability"] = reader["AvgComfort"] != DBNull.Value ? Convert.ToDouble(reader["AvgComfort"]) : 0;
+                            averages["Cleanliness"] = reader["AvgClean"] != DBNull.Value ? Convert.ToDouble(reader["AvgClean"]) : 0;
+                            averages["Overall Satisfaction"] = reader["AvgSatisfaction"] != DBNull.Value ? Convert.ToDouble(reader["AvgSatisfaction"]) : 0;
+                        }
+                    }
+                }
+            }
+
+            return averages;
+        }
+
+
         private void DriverHistory_Load(object sender, EventArgs e)
         {
             dgvDriverHistory.ClearSelection();

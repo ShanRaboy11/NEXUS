@@ -62,9 +62,8 @@ namespace NEXUS.Forms
 
         private void LoadDriverWeeklyEarningsChart(int driverID)
         {
-            var earnings = GetWeeklyEarnings(driverID); // Call GetWeeklyEarnings method to fetch data
+            var earnings = GetWeeklyEarnings(driverID); 
 
-            // Build the chart model
             var model = new PlotModel { Title = "Driver Weekly Earnings" };
 
             var series = new BarSeries
@@ -81,10 +80,9 @@ namespace NEXUS.Forms
                 series.Items.Add(new BarItem((double)earnings[day]));
             }
 
-            // FIXED: CategoryAxis must be on Y-axis for BarSeries
             model.Axes.Add(new CategoryAxis
             {
-                Position = AxisPosition.Left, // <-- Important
+                Position = AxisPosition.Left, 
                 ItemsSource = weekDays
             });
 
