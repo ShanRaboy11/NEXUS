@@ -64,15 +64,22 @@ namespace NEXUS.Forms
 
         private void LoadDriverWeeklyEarningsChart(int driverID)
         {
-            var earnings = GetWeeklyEarnings(driverID); 
+            var earnings = GetWeeklyEarnings(driverID);
 
-            var model = new PlotModel { Title = "Driver Weekly Earnings" };
+            // Compute total earnings
+            decimal totalEarnings = earnings.Values.Sum(); // Add this line
+
+            // Show in chart title (you can remove this if you prefer using a label instead)
+            var model = new PlotModel
+            {
+                Title = $"Driver Weekly Earnings - Total: ₱{totalEarnings:N2}"
+            };
 
             var series = new BarSeries
             {
                 LabelPlacement = LabelPlacement.Inside,
                 LabelFormatString = "₱{0:N0}",
-                FillColor = OxyColors.SteelBlue
+                FillColor = OxyColors.SteelBlue // 👈 Change color here if you want
             };
 
             string[] weekDays = { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" };
@@ -84,7 +91,7 @@ namespace NEXUS.Forms
 
             model.Axes.Add(new CategoryAxis
             {
-                Position = AxisPosition.Left, 
+                Position = AxisPosition.Left,
                 ItemsSource = weekDays
             });
 
@@ -98,7 +105,9 @@ namespace NEXUS.Forms
             model.Series.Add(series);
             plotViewDriverAnalytics.Model = model;
 
+            //lblTotalEarnings.Text = $"Total Earnings: ₱{totalEarnings:N2}"; // Make sure you have this label on your form
         }
+
 
         private Dictionary<string, double> GetDriverAverageRatings(int driverID)
         {
