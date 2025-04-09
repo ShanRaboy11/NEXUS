@@ -91,5 +91,28 @@ namespace NEXUS.User_Controls
             };
             pnlContainer.Controls.Add(dataGrid);
         }
+
+        private void cmbxFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cmbxFilter.SelectedItem == "Pending Reports")
+            {
+                dtDate.Visible = false;
+                pbDate.Visible = false;
+                string query = "SELECT * FROM TripReportQuery WHERE Status = 'Pending'";
+                pnlContainer.Controls.Clear();
+
+                DataGrid dataGrid = new DataGrid(query)
+                {
+                    Dock = DockStyle.Fill
+                };
+                pnlContainer.Controls.Add(dataGrid);
+            }
+            else
+            {
+                dtDate.Visible = true;
+                pbDate.Visible = true;
+            }
+
+        }
     }
 }

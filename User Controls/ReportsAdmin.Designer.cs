@@ -35,8 +35,10 @@
             btnReports = new FontAwesome.Sharp.IconButton();
             panel2 = new Panel();
             tableLayoutPanel2 = new TableLayoutPanel();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
             dtDate = new ReaLTaiizor.Controls.PoisonDateTime();
+            label2 = new Label();
+            cmbxFilter = new ComboBox();
+            pbDate = new FontAwesome.Sharp.IconButton();
             pnlContainer = new Panel();
             tblVerification = new TableLayoutPanel();
             lblHeader2 = new Label();
@@ -146,13 +148,17 @@
             // tableLayoutPanel2
             // 
             tableLayoutPanel2.BackColor = Color.FromArgb(230, 249, 255);
-            tableLayoutPanel2.ColumnCount = 4;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 55F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 247F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 813F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 434F));
-            tableLayoutPanel2.Controls.Add(iconButton1, 0, 0);
-            tableLayoutPanel2.Controls.Add(dtDate, 1, 0);
+            tableLayoutPanel2.ColumnCount = 6;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 121F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 867F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 52F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 509F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel2.Controls.Add(dtDate, 3, 0);
+            tableLayoutPanel2.Controls.Add(label2, 0, 0);
+            tableLayoutPanel2.Controls.Add(cmbxFilter, 1, 0);
+            tableLayoutPanel2.Controls.Add(pbDate, 2, 0);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(0, 0);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -161,34 +167,65 @@
             tableLayoutPanel2.Size = new Size(1312, 55);
             tableLayoutPanel2.TabIndex = 0;
             // 
-            // iconButton1
-            // 
-            iconButton1.BackColor = Color.FromArgb(230, 249, 255);
-            iconButton1.Dock = DockStyle.Bottom;
-            iconButton1.Enabled = false;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.Calendar;
-            iconButton1.IconColor = Color.Black;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 35;
-            iconButton1.Location = new Point(3, 20);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(49, 32);
-            iconButton1.TabIndex = 52;
-            iconButton1.UseVisualStyleBackColor = false;
-            // 
             // dtDate
             // 
+            dtDate.Anchor = AnchorStyles.Left;
             dtDate.CalendarFont = new Font("Inter", 17.25F);
             dtDate.CalendarMonthBackground = Color.FromArgb(176, 233, 255);
-            dtDate.Dock = DockStyle.Bottom;
             dtDate.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Tall;
-            dtDate.Location = new Point(58, 17);
+            dtDate.Location = new Point(1043, 10);
             dtDate.MinimumSize = new Size(0, 35);
             dtDate.Name = "dtDate";
-            dtDate.Size = new Size(241, 35);
+            dtDate.Size = new Size(242, 35);
             dtDate.TabIndex = 51;
+            dtDate.Visible = false;
             dtDate.ValueChanged += dtDate_ValueChanged;
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.Right;
+            label2.AutoSize = true;
+            label2.BackColor = Color.FromArgb(230, 249, 255);
+            label2.Font = new Font("Inter SemiBold", 17F, FontStyle.Bold);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(40, 11);
+            label2.Name = "label2";
+            label2.Size = new Size(78, 32);
+            label2.TabIndex = 55;
+            label2.Text = "Filter:";
+            // 
+            // cmbxFilter
+            // 
+            cmbxFilter.Anchor = AnchorStyles.Left;
+            cmbxFilter.BackColor = Color.FromArgb(176, 233, 255);
+            cmbxFilter.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbxFilter.Font = new Font("Inter", 14.25F);
+            cmbxFilter.ForeColor = Color.FromArgb(24, 60, 114);
+            cmbxFilter.FormattingEnabled = true;
+            cmbxFilter.Items.AddRange(new object[] { "Pending Reports", "Date" });
+            cmbxFilter.Location = new Point(124, 10);
+            cmbxFilter.Name = "cmbxFilter";
+            cmbxFilter.Size = new Size(186, 35);
+            cmbxFilter.TabIndex = 54;
+            cmbxFilter.TabStop = false;
+            cmbxFilter.SelectedIndexChanged += cmbxFilter_SelectedIndexChanged;
+            // 
+            // pbDate
+            // 
+            pbDate.Anchor = AnchorStyles.Left;
+            pbDate.BackColor = Color.FromArgb(230, 249, 255);
+            pbDate.Enabled = false;
+            pbDate.FlatStyle = FlatStyle.Flat;
+            pbDate.IconChar = FontAwesome.Sharp.IconChar.Calendar;
+            pbDate.IconColor = Color.Black;
+            pbDate.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            pbDate.IconSize = 35;
+            pbDate.Location = new Point(991, 11);
+            pbDate.Name = "pbDate";
+            pbDate.Size = new Size(46, 32);
+            pbDate.TabIndex = 52;
+            pbDate.UseVisualStyleBackColor = false;
+            pbDate.Visible = false;
             // 
             // pnlContainer
             // 
@@ -279,6 +316,7 @@
             tableLayoutPanel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
+            tableLayoutPanel2.PerformLayout();
             pnlContainer.ResumeLayout(false);
             tblVerification.ResumeLayout(false);
             tblVerification.PerformLayout();
@@ -299,6 +337,8 @@
         private Label lblHeader2;
         private Label label1;
         private ReaLTaiizor.Controls.PoisonDateTime dtDate;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton pbDate;
+        private ComboBox cmbxFilter;
+        private Label label2;
     }
 }
