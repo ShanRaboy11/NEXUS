@@ -45,12 +45,12 @@
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.BackColor = Color.FromArgb(230, 249, 255);
-            tableLayoutPanel1.ColumnCount = 4;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 268F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 268F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 268F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 745F));
+            tableLayoutPanel1.BackColor = Color.FromArgb(153, 229, 255);
+            tableLayoutPanel1.ColumnCount = 3;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Controls.Add(btnCashIn, 0, 0);
             tableLayoutPanel1.Controls.Add(btnVerification, 0, 0);
             tableLayoutPanel1.Controls.Add(btnPassengers, 0, 0);
@@ -73,9 +73,9 @@
             btnCashIn.IconColor = Color.Black;
             btnCashIn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnCashIn.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCashIn.Location = new Point(539, 3);
+            btnCashIn.Location = new Point(877, 3);
             btnCashIn.Name = "btnCashIn";
-            btnCashIn.Size = new Size(262, 64);
+            btnCashIn.Size = new Size(432, 64);
             btnCashIn.TabIndex = 36;
             btnCashIn.Text = "Cash In";
             btnCashIn.UseVisualStyleBackColor = true;
@@ -92,9 +92,9 @@
             btnVerification.IconColor = Color.Black;
             btnVerification.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnVerification.ImageAlign = ContentAlignment.MiddleLeft;
-            btnVerification.Location = new Point(271, 3);
+            btnVerification.Location = new Point(440, 3);
             btnVerification.Name = "btnVerification";
-            btnVerification.Size = new Size(262, 64);
+            btnVerification.Size = new Size(431, 64);
             btnVerification.TabIndex = 35;
             btnVerification.Text = "Verification";
             btnVerification.UseVisualStyleBackColor = true;
@@ -113,7 +113,7 @@
             btnPassengers.ImageAlign = ContentAlignment.MiddleLeft;
             btnPassengers.Location = new Point(3, 3);
             btnPassengers.Name = "btnPassengers";
-            btnPassengers.Size = new Size(262, 64);
+            btnPassengers.Size = new Size(431, 64);
             btnPassengers.TabIndex = 34;
             btnPassengers.Text = "Passengers";
             btnPassengers.UseVisualStyleBackColor = true;

@@ -61,12 +61,11 @@
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.BackColor = Color.FromArgb(230, 249, 255);
-            tableLayoutPanel1.ColumnCount = 4;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 268F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 268F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 268F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 745F));
+            tableLayoutPanel1.BackColor = Color.FromArgb(153, 229, 255);
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Controls.Add(btnTrips, 0, 0);
             tableLayoutPanel1.Controls.Add(btnTransactions, 0, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
@@ -88,9 +87,9 @@
             btnTrips.IconColor = Color.Black;
             btnTrips.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnTrips.ImageAlign = ContentAlignment.MiddleLeft;
-            btnTrips.Location = new Point(271, 3);
+            btnTrips.Location = new Point(659, 3);
             btnTrips.Name = "btnTrips";
-            btnTrips.Size = new Size(262, 64);
+            btnTrips.Size = new Size(650, 64);
             btnTrips.TabIndex = 35;
             btnTrips.Text = "Trips";
             btnTrips.UseVisualStyleBackColor = true;
@@ -109,7 +108,7 @@
             btnTransactions.ImageAlign = ContentAlignment.MiddleLeft;
             btnTransactions.Location = new Point(3, 3);
             btnTransactions.Name = "btnTransactions";
-            btnTransactions.Size = new Size(262, 64);
+            btnTransactions.Size = new Size(650, 64);
             btnTransactions.TabIndex = 34;
             btnTransactions.Text = "Transactions";
             btnTransactions.UseVisualStyleBackColor = true;

@@ -30,8 +30,9 @@
         {
             panel1 = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
-            btnVerification = new FontAwesome.Sharp.IconButton();
+            btnCashOut = new FontAwesome.Sharp.IconButton();
             btnDrivers = new FontAwesome.Sharp.IconButton();
+            btnVerification = new FontAwesome.Sharp.IconButton();
             pnlDisplay = new Panel();
             tblVerification = new TableLayoutPanel();
             label2 = new Label();
@@ -53,14 +54,14 @@
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.BackColor = Color.FromArgb(230, 249, 255);
-            tableLayoutPanel1.ColumnCount = 4;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 268F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 268F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 268F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 745F));
-            tableLayoutPanel1.Controls.Add(btnVerification, 0, 0);
+            tableLayoutPanel1.BackColor = Color.FromArgb(153, 229, 255);
+            tableLayoutPanel1.ColumnCount = 3;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.Controls.Add(btnCashOut, 0, 0);
             tableLayoutPanel1.Controls.Add(btnDrivers, 0, 0);
+            tableLayoutPanel1.Controls.Add(btnVerification, 2, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -69,24 +70,24 @@
             tableLayoutPanel1.Size = new Size(1312, 70);
             tableLayoutPanel1.TabIndex = 1;
             // 
-            // btnVerification
+            // btnCashOut
             // 
-            btnVerification.Dock = DockStyle.Fill;
-            btnVerification.FlatAppearance.BorderSize = 0;
-            btnVerification.FlatStyle = FlatStyle.Flat;
-            btnVerification.Font = new Font("Inter Medium", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnVerification.ForeColor = Color.Black;
-            btnVerification.IconChar = FontAwesome.Sharp.IconChar.None;
-            btnVerification.IconColor = Color.Black;
-            btnVerification.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnVerification.ImageAlign = ContentAlignment.MiddleLeft;
-            btnVerification.Location = new Point(271, 3);
-            btnVerification.Name = "btnVerification";
-            btnVerification.Size = new Size(262, 64);
-            btnVerification.TabIndex = 35;
-            btnVerification.Text = "Verification";
-            btnVerification.UseVisualStyleBackColor = true;
-            btnVerification.Click += btnVerification_Click;
+            btnCashOut.Dock = DockStyle.Fill;
+            btnCashOut.FlatAppearance.BorderSize = 0;
+            btnCashOut.FlatStyle = FlatStyle.Flat;
+            btnCashOut.Font = new Font("Inter Medium", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCashOut.ForeColor = Color.Black;
+            btnCashOut.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnCashOut.IconColor = Color.Black;
+            btnCashOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnCashOut.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCashOut.Location = new Point(440, 3);
+            btnCashOut.Name = "btnCashOut";
+            btnCashOut.Size = new Size(431, 64);
+            btnCashOut.TabIndex = 36;
+            btnCashOut.Text = "Cash Out";
+            btnCashOut.UseVisualStyleBackColor = true;
+            btnCashOut.Click += iconButton1_Click;
             // 
             // btnDrivers
             // 
@@ -101,11 +102,30 @@
             btnDrivers.ImageAlign = ContentAlignment.MiddleLeft;
             btnDrivers.Location = new Point(3, 3);
             btnDrivers.Name = "btnDrivers";
-            btnDrivers.Size = new Size(262, 64);
+            btnDrivers.Size = new Size(431, 64);
             btnDrivers.TabIndex = 34;
             btnDrivers.Text = "Drivers";
             btnDrivers.UseVisualStyleBackColor = true;
             btnDrivers.Click += btnDrivers_Click;
+            // 
+            // btnVerification
+            // 
+            btnVerification.Dock = DockStyle.Fill;
+            btnVerification.FlatAppearance.BorderSize = 0;
+            btnVerification.FlatStyle = FlatStyle.Flat;
+            btnVerification.Font = new Font("Inter Medium", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnVerification.ForeColor = Color.Black;
+            btnVerification.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnVerification.IconColor = Color.Black;
+            btnVerification.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnVerification.ImageAlign = ContentAlignment.MiddleLeft;
+            btnVerification.Location = new Point(877, 3);
+            btnVerification.Name = "btnVerification";
+            btnVerification.Size = new Size(432, 64);
+            btnVerification.TabIndex = 35;
+            btnVerification.Text = "Verification";
+            btnVerification.UseVisualStyleBackColor = true;
+            btnVerification.Click += btnVerification_Click;
             // 
             // pnlDisplay
             // 
@@ -208,5 +228,6 @@
         private TableLayoutPanel tableLayoutPanel1;
         private FontAwesome.Sharp.IconButton btnVerification;
         private FontAwesome.Sharp.IconButton btnDrivers;
+        private FontAwesome.Sharp.IconButton btnCashOut;
     }
 }

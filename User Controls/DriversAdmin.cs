@@ -27,7 +27,7 @@ namespace NEXUS.User_Controls
 
         }
 
-         private void DisplayAllDrivers()
+        private void DisplayAllDrivers()
         {
             // Clear any existing controls in pnlContainer
             pnlDisplay.Controls.Clear();
@@ -41,7 +41,7 @@ namespace NEXUS.User_Controls
             // Add the user control to the panel
             pnlDisplay.Controls.Add(dataGrid);
         }
-        
+
         private void LoadPendingDrivers()
         {
             pnlDisplay.Controls.Clear();
@@ -55,7 +55,7 @@ namespace NEXUS.User_Controls
             {
                 Control control = tblVerification.Controls[i];
                 int rowIndex = tblVerification.GetRow(control);
-                if (rowIndex >= 1) 
+                if (rowIndex >= 1)
                 {
                     tblVerification.Controls.RemoveAt(i);
                 }
@@ -70,7 +70,7 @@ namespace NEXUS.User_Controls
                     conn.Open();
                     using (OleDbDataReader reader = cmd.ExecuteReader())
                     {
-                        int rowIndex = 1; 
+                        int rowIndex = 1;
 
                         while (reader.Read())
                         {
@@ -189,16 +189,189 @@ namespace NEXUS.User_Controls
         {
             if (selectedButton != null)
             {
-                selectedButton.BackColor = Color.FromArgb(230, 249, 255);
+                selectedButton.BackColor = Color.FromArgb(153, 229, 255);
                 selectedButton.ForeColor = Color.Black;
-                button.Font = new(button.Font.FontFamily, 18, button.Font.Style);
+                selectedButton.Font = new(selectedButton.Font.FontFamily, 18, selectedButton.Font.Style);
             }
 
             selectedButton = button;
-            button.BackColor = Color.FromArgb(0, 229, 255);
-            button.Font = new(button.Font.FontFamily, 20, button.Font.Style);
-            button.ForeColor = Color.White;
+            selectedButton.BackColor = Color.FromArgb(0, 229, 255);
+            selectedButton.ForeColor = Color.FromArgb(24, 60, 114);
+            selectedButton.Font = new(selectedButton.Font.FontFamily, 24, selectedButton.Font.Style);
         }
+
+        private void DisplayCashOutRequests()
+        {
+            pnlDisplay.Controls.Clear();
+
+            if (!pnlDisplay.Controls.Contains(tblVerification))
+            {
+                tblVerification.Dock = DockStyle.Fill;
+                pnlDisplay.Controls.Add(tblVerification);
+            }
+
+            for (int i = tblVerification.Controls.Count - 1; i >= 0; i--)
+            {
+                Control control = tblVerification.Controls[i];
+                int rowIndex = tblVerification.GetRow(control);
+                if (rowIndex >= 1)
+                {
+                    tblVerification.Controls.RemoveAt(i);
+                }
+            }
+
+            string query = "SELECT UserID, [Full Name], Amount FROM [Cash Out]";
+
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            using (OleDbCommand cmd = new OleDbCommand(query, conn))
+            {
+                conn.Open();
+                using (OleDbDataReader reader = cmd.ExecuteReader())
+                {
+                    int rowIndex = 1;
+                    while (reader.Read())
+                    {
+                        int userID = Convert.ToInt32(reader["UserID"]);
+                        string passengerName = reader["Full Name"].ToString();
+                        double amount = Convert.ToDouble(reader["Amount"]);
+
+                        AddCashOutRequests(tblVerification, userID, passengerName, amount, rowIndex++);
+                    }
+                }
+            }
+        }
+
+        private void AddCashOutRequests(TableLayoutPanel tblVerification, int userID, string passengerName, double amount, int rowIndex)
+        {
+            //lblHeader2.Text = "Amount";
+            if (rowIndex >= tblVerification.RowCount)
+            {
+                tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 35));
+                tblVerification.RowCount++;
+            }
+
+            Label lblName = new Label
+            {
+                Text = passengerName,
+                Dock = DockStyle.Fill,
+                TextAlign = ContentAlignment.MiddleCenter,
+                Font = new Font("Inter", 17F, FontStyle.Regular),
+                ForeColor = Color.FromArgb(24, 60, 114)
+            };
+
+            Label lblAmount = new Label
+            {
+                Text = amount.ToString("N2"),
+                Dock = DockStyle.Fill,
+                ForeColor = Color.FromArgb(24, 60, 114),
+                TextAlign = ContentAlignment.MiddleCenter,
+                Font = new Font("Inter", 17F, FontStyle.Regular),
+            };
+
+            CyberButton btnApprove = new CyberButton
+            {
+                TextButton = "Approve",
+                ColorBackground = Color.LightGreen,
+                ColorBackground_Pen = Color.FromArgb(230, 249, 255),
+                Font = new Font("Inter", 17F, FontStyle.Regular),
+                ForeColor = Color.FromArgb(24, 60, 114),
+                Cursor = Cursors.Hand,
+                Anchor = AnchorStyles.Right
+            };
+
+            CyberButton btnReject = new CyberButton
+            {
+                TextButton = "Reject",
+                ColorBackground = Color.Red,
+                ColorBackground_Pen = Color.FromArgb(230, 249, 255),
+                Font = new Font("Inter", 17F, FontStyle.Regular),
+                ForeColor = Color.White,
+                Cursor = Cursors.Hand,
+                Anchor = AnchorStyles.Left
+            };
+
+            btnApprove.Click += (sender, e) => ApproveCashOut(userID, passengerName, amount);
+            btnReject.Click += (sender, e) => RejectCashOut(userID);
+
+            tblVerification.Controls.Add(lblName, 0, rowIndex);
+            tblVerification.Controls.Add(lblAmount, 1, rowIndex);
+            tblVerification.Controls.Add(btnApprove, 2, rowIndex);
+            tblVerification.Controls.Add(btnReject, 3, rowIndex);
+        }
+
+        private void ApproveCashOut(int userID, string name, double amount)
+        {
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            {
+                conn.Open();
+                OleDbTransaction transaction = conn.BeginTransaction();
+
+                // Get current wallet
+                double currentWallet = 0;
+                string getWalletQuery = "SELECT Wallet FROM Accounts WHERE ID = ?";
+                using (OleDbCommand cmd = new OleDbCommand(getWalletQuery, conn, transaction))
+                {
+                    cmd.Parameters.AddWithValue("?", userID);
+                    object result = cmd.ExecuteScalar();
+                    if (result != null)
+                    {
+                        currentWallet = Convert.ToDouble(result);
+                    }
+                }
+
+                // Deduct the amount
+                double newBalance = currentWallet - amount;
+                string updateWalletQuery = "UPDATE Accounts SET Wallet = ? WHERE ID = ?";
+                using (OleDbCommand cmd = new OleDbCommand(updateWalletQuery, conn, transaction))
+                {
+                    cmd.Parameters.AddWithValue("?", newBalance);
+                    cmd.Parameters.AddWithValue("?", userID);
+                    cmd.ExecuteNonQuery();
+                }
+
+                // Insert transaction log
+                string insertTransactionQuery = "INSERT INTO Transactions (UserID, TransactionDate, [Full Name], Amount, [Type]) VALUES (?, ?, ?, ?, ?)";
+                using (OleDbCommand cmd = new OleDbCommand(insertTransactionQuery, conn, transaction))
+                {
+                    cmd.Parameters.Add("?", OleDbType.Integer).Value = userID;
+                    cmd.Parameters.Add("?", OleDbType.Date).Value = DateTime.Now;
+                    cmd.Parameters.Add("?", OleDbType.VarChar).Value = name;
+                    cmd.Parameters.Add("?", OleDbType.Double).Value = amount;
+                    cmd.Parameters.Add("?", OleDbType.VarChar).Value = "Cash Out";
+
+                    cmd.ExecuteNonQuery();
+                }
+
+                // Delete from Cash Out table
+                string deleteQuery = "DELETE FROM [Cash Out] WHERE UserID = ?";
+                using (OleDbCommand cmd = new OleDbCommand(deleteQuery, conn, transaction))
+                {
+                    cmd.Parameters.AddWithValue("?", userID);
+                    cmd.ExecuteNonQuery();
+                }
+
+                transaction.Commit();
+                DisplayCashOutRequests();
+            }
+        }
+
+        private void RejectCashOut(int userID)
+        {
+            string deleteQuery = "DELETE FROM [Cash Out] WHERE UserID = ?";
+
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            {
+                conn.Open();
+                using (OleDbCommand cmd = new OleDbCommand(deleteQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("?", userID);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+            DisplayCashOutRequests();
+        }
+
 
         private void btnDrivers_Click(object sender, EventArgs e)
         {
@@ -212,5 +385,10 @@ namespace NEXUS.User_Controls
             LoadPendingDrivers();
         }
 
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            SelectButton(btnCashOut);
+            DisplayCashOutRequests();
+        }
     }
 }
