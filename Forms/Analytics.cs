@@ -127,7 +127,7 @@ namespace NEXUS.Forms
 
             // Update total and date range labels
             lblTotalEarnings.Text = $"₱ {totalEarnings:N2}";
-            lblWeekRange.Text = $"({DateTime.Today.AddDays(-6):MMMM d, yyyy} - {DateTime.Today:MMMM d, yyyy})";
+            lblWeekRange.Text = $"{DateTime.Today.AddDays(-6):MMMM d, yyyy} - {DateTime.Today:MMMM d, yyyy}";
         }
 
         private Dictionary<string, double> GetDriverAverageRatings(int driverID)

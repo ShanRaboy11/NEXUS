@@ -451,7 +451,7 @@
             lblFare.BackColor = Color.FromArgb(153, 229, 255);
             lblFare.Font = new Font("Inter", 18F, FontStyle.Bold);
             lblFare.ForeColor = Color.FromArgb(24, 60, 114);
-            lblFare.Location = new Point(177, 631);
+            lblFare.Location = new Point(177, 632);
             lblFare.Name = "lblFare";
             lblFare.Size = new Size(107, 35);
             lblFare.TabIndex = 52;
@@ -463,7 +463,7 @@
             label10.BackColor = Color.FromArgb(153, 229, 255);
             label10.Font = new Font("Inter", 18F, FontStyle.Bold);
             label10.ForeColor = Color.FromArgb(24, 60, 114);
-            label10.Location = new Point(52, 631);
+            label10.Location = new Point(47, 631);
             label10.Name = "label10";
             label10.Size = new Size(133, 35);
             label10.TabIndex = 50;

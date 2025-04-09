@@ -139,7 +139,7 @@ namespace NEXUS.Forms
             lblFileName.Visible = true;
             pnlAttach.Visible = true;
             btnAttach.Visible = true;
-            this.Size = new System.Drawing.Size(506, 590);
+            this.Size = new System.Drawing.Size(524, 590);
             lblNote.Location = new System.Drawing.Point(46, 500);
             btnSignUp.Location = new System.Drawing.Point(157, 533);
             btnBack.Location = new System.Drawing.Point(15, 534);
@@ -156,7 +156,7 @@ namespace NEXUS.Forms
             lblFileName.Visible = true;
             pnlAttach.Visible = true;
             btnAttach.Visible = true;
-            this.Size = new System.Drawing.Size(506, 590);
+            this.Size = new System.Drawing.Size(524, 590);
             lblNote.Location = new System.Drawing.Point(46, 500);
             btnSignUp.Location = new System.Drawing.Point(157, 533);
             btnBack.Location = new System.Drawing.Point(15, 534);
@@ -173,7 +173,7 @@ namespace NEXUS.Forms
             lblFileName.Visible = false;
             pnlAttach.Visible = false;
             btnAttach.Visible = false;
-            this.Size = new System.Drawing.Size(504, 495);
+            this.Size = new System.Drawing.Size(524, 495);
             lblNote.Location = new System.Drawing.Point(41, 406);
             btnSignUp.Location = new System.Drawing.Point(152, 439);
             btnBack.Location = new System.Drawing.Point(15, 440);

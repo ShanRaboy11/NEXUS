@@ -371,7 +371,7 @@ namespace NEXUS.Forms
                         lblFrom.Text = "";
                         lblTo.Text = "";
                         lblFare.Text = "";
-                        label10.Text = "";
+                        label10.Visible = false;
                     }
                 }
             }
