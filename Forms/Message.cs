@@ -40,6 +40,12 @@ namespace NEXUS.Forms
                 lblMessage.Text = "Your deposit has been successfully processed.";
                 btnOK.TextButton = "OK";
             }
+            else if (message == "cash out")
+            {
+                pbDialogIcon.Image = Resources.Animation___1739885779319;
+                lblMessage.Text = "Your withdrawal request completed successfully.";
+                btnOK.TextButton = "OK";
+            }
             else if (message == "wait")
             {
                 pbDialogIcon.Image = Resources.Animation___1739888639577;

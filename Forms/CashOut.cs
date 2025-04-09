@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NEXUS.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,10 +16,11 @@ namespace NEXUS.Forms
         int userID;
         string Name;
         private bool isClicked = false;
-        public CashOut(int UserID)
+        public CashOut(int UserID, string name)
         {
             InitializeComponent();
             this.userID = UserID;
+            this.Name = name;
         }
 
         private void tbxAmount_TextChanged(object sender, EventArgs e)
@@ -54,6 +56,17 @@ namespace NEXUS.Forms
 
         private void pbClose_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            Message message = new Message("cash out");
+            Scan scan = new Scan(userID);
+
+            double amount = double.Parse(tbxAmount.Text);
+            DatabaseManagement.CashOutRequest(this.userID, this.Name, amount);
+            scan.ShowOverlay(message, null);
             this.Close();
         }
     }

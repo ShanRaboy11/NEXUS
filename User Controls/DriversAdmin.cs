@@ -189,7 +189,7 @@ namespace NEXUS.User_Controls
         {
             if (selectedButton != null)
             {
-                selectedButton.BackColor = Color.FromArgb(153, 229, 255);
+                selectedButton.BackColor = Color.White;
                 selectedButton.ForeColor = Color.Black;
                 selectedButton.Font = new(selectedButton.Font.FontFamily, 18, selectedButton.Font.Style);
             }
@@ -243,7 +243,7 @@ namespace NEXUS.User_Controls
 
         private void AddCashOutRequests(TableLayoutPanel tblVerification, int userID, string passengerName, double amount, int rowIndex)
         {
-            //lblHeader2.Text = "Amount";
+            label2.Text = "Amount";
             if (rowIndex >= tblVerification.RowCount)
             {
                 tblVerification.RowStyles.Add(new RowStyle(SizeType.Absolute, 35));

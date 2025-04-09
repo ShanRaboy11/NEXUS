@@ -45,9 +45,9 @@
             // 
             lblMessage.Font = new Font("Inter Medium", 12.5F, FontStyle.Bold);
             lblMessage.ForeColor = Color.FromArgb(24, 60, 114);
-            lblMessage.Location = new Point(12, 145);
+            lblMessage.Location = new Point(3, 145);
             lblMessage.Name = "lblMessage";
-            lblMessage.Size = new Size(422, 40);
+            lblMessage.Size = new Size(439, 40);
             lblMessage.TabIndex = 2;
             lblMessage.Text = "Login Successful";
             lblMessage.TextAlign = ContentAlignment.MiddleCenter;

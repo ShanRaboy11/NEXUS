@@ -43,6 +43,25 @@ namespace NEXUS.Classes
             }
         }
 
+        public static void CashOutRequest(int userId, string name, double amount)
+        {
+            string query = "INSERT INTO [Cash Out] ([Request Date], UserID, [Full Name], Amount)" +
+                "VALUES (?, ?, ?, ?)";
+
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            using (OleDbCommand cmd = new OleDbCommand(query, conn))
+            {
+                conn.Open();
+
+                cmd.Parameters.Add("?", OleDbType.Date).Value = DateTime.Now;
+                cmd.Parameters.AddWithValue("?", userId);
+                cmd.Parameters.AddWithValue("?", name);
+                cmd.Parameters.AddWithValue("?", amount);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+
         public static void SaveQrCode(int userID, string filePath)
         {
             string query = "UPDATE Accounts SET [QR Code] = ? WHERE ID = ?";

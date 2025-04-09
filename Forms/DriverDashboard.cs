@@ -333,5 +333,11 @@ namespace NEXUS.Forms
             }
         }
 
+        private void btnCashOut_Click(object sender, EventArgs e)
+        {
+            CashOut cashOut = new CashOut(driver.UserID, driver.Name);
+            Scan scan = new Scan(driver.UserID);
+            scan.ShowOverlay(cashOut, null);
+        }
     }
 }

@@ -192,7 +192,7 @@ namespace NEXUS.User_Controls
         {
             if (selectedButton != null)
             {
-                selectedButton.BackColor = Color.FromArgb(153, 229, 255);
+                selectedButton.BackColor = Color.White;
                 selectedButton.ForeColor = Color.Black;
                 selectedButton.Font = new(selectedButton.Font.FontFamily, 18, selectedButton.Font.Style);
             }

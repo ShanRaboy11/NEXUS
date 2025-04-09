@@ -33,6 +33,7 @@
             btnConfirm = new ReaLTaiizor.Controls.CyberButton();
             pbAbout = new PictureBox();
             panel2 = new Panel();
+            pictureBox4 = new PictureBox();
             pbClose = new PictureBox();
             pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
@@ -40,14 +41,13 @@
             label1 = new Label();
             lblPhp = new Label();
             tbxAmount = new TextBox();
-            pictureBox4 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pbAbout).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
             // label2
@@ -71,7 +71,7 @@
             btnConfirm.ColorBackground = Color.FromArgb(24, 60, 114);
             btnConfirm.ColorBackground_1 = Color.FromArgb(24, 60, 114);
             btnConfirm.ColorBackground_2 = Color.FromArgb(24, 60, 114);
-            btnConfirm.ColorBackground_Pen = Color.FromArgb(128, 223, 255);
+            btnConfirm.ColorBackground_Pen = Color.FromArgb(153, 229, 255);
             btnConfirm.ColorLighting = Color.FromArgb(24, 60, 114);
             btnConfirm.ColorPen_1 = Color.FromArgb(24, 60, 114);
             btnConfirm.ColorPen_2 = Color.FromArgb(24, 60, 114);
@@ -101,6 +101,7 @@
             btnConfirm.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             btnConfirm.Timer_Effect_1 = 5;
             btnConfirm.Timer_RGB = 300;
+            btnConfirm.Click += btnConfirm_Click;
             // 
             // pbAbout
             // 
@@ -126,6 +127,18 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(516, 28);
             panel2.TabIndex = 84;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(492, 5);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(18, 18);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 90;
+            pictureBox4.TabStop = false;
+            pictureBox4.Click += pbClose_Click;
             // 
             // pbClose
             // 
@@ -178,9 +191,9 @@
             label1.ForeColor = SystemColors.ControlDarkDark;
             label1.Location = new Point(70, 48);
             label1.Name = "label1";
-            label1.Size = new Size(243, 37);
+            label1.Size = new Size(303, 37);
             label1.TabIndex = 83;
-            label1.Text = "Deposit to NEXUS";
+            label1.Text = "Withdraw from NEXUS";
             // 
             // lblPhp
             // 
@@ -206,17 +219,9 @@
             tbxAmount.TabStop = false;
             tbxAmount.Text = "0";
             tbxAmount.TextAlign = HorizontalAlignment.Center;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(492, 5);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(18, 18);
-            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox4.TabIndex = 90;
-            pictureBox4.TabStop = false;
+            tbxAmount.Click += tbxAmount_Click;
+            tbxAmount.TextChanged += tbxAmount_TextChanged;
+            tbxAmount.KeyPress += tbxAmount_KeyPress;
             // 
             // CashOut
             // 
@@ -238,11 +243,11 @@
             Text = "CashOut";
             ((System.ComponentModel.ISupportInitialize)pbAbout).EndInit();
             panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbClose).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }

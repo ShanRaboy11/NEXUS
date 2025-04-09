@@ -563,6 +563,7 @@
             btnCashOut.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             btnCashOut.Timer_Effect_1 = 5;
             btnCashOut.Timer_RGB = 300;
+            btnCashOut.Click += btnCashOut_Click;
             // 
             // lblWallet
             // 
