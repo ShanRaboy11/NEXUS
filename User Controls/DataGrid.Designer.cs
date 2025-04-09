@@ -36,6 +36,7 @@
             contextMenuStrip1 = new ContextMenuStrip(components);
             deleteToolStripMenuItem = new ToolStripMenuItem();
             pbEmpty = new PictureBox();
+            resolvedToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dgvUsers).BeginInit();
             cmsAttachment.SuspendLayout();
             contextMenuStrip1.SuspendLayout();
@@ -78,9 +79,9 @@
             // cmsAttachment
             // 
             cmsAttachment.Font = new Font("Segoe UI", 9F);
-            cmsAttachment.Items.AddRange(new ToolStripItem[] { attachmentToolStripMenuItem });
+            cmsAttachment.Items.AddRange(new ToolStripItem[] { attachmentToolStripMenuItem, resolvedToolStripMenuItem });
             cmsAttachment.Name = "cmsAttachment";
-            cmsAttachment.Size = new Size(181, 52);
+            cmsAttachment.Size = new Size(181, 78);
             // 
             // attachmentToolStripMenuItem
             // 
@@ -118,6 +119,15 @@
             pbEmpty.TabStop = false;
             pbEmpty.Visible = false;
             // 
+            // resolvedToolStripMenuItem
+            // 
+            resolvedToolStripMenuItem.Font = new Font("Inter", 10F);
+            resolvedToolStripMenuItem.Image = Properties.Resources._8665019_check_mark_icon;
+            resolvedToolStripMenuItem.Name = "resolvedToolStripMenuItem";
+            resolvedToolStripMenuItem.Size = new Size(180, 26);
+            resolvedToolStripMenuItem.Text = "Resolved";
+            resolvedToolStripMenuItem.Click += resolvedToolStripMenuItem_Click;
+            // 
             // DataGrid
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -143,5 +153,6 @@
         private PictureBox pbEmpty;
         private ContextMenuStrip cmsAttachment;
         private ToolStripMenuItem attachmentToolStripMenuItem;
+        private ToolStripMenuItem resolvedToolStripMenuItem;
     }
 }

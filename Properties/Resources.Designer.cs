@@ -263,6 +263,16 @@ namespace NEXUS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _8665019_check_mark_icon {
+            get {
+                object obj = ResourceManager.GetObject("8665019_check_mark_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _9104142_fullscreen_expand_maximize_enlarge_screen_icon {
             get {
                 object obj = ResourceManager.GetObject("9104142_fullscreen_expand_maximize_enlarge_screen_icon", resourceCulture);

@@ -31,7 +31,6 @@
             panel1 = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
             btnRate = new FontAwesome.Sharp.IconButton();
-            btnUpdates = new FontAwesome.Sharp.IconButton();
             btnReports = new FontAwesome.Sharp.IconButton();
             panel2 = new Panel();
             tableLayoutPanel2 = new TableLayoutPanel();
@@ -62,14 +61,11 @@
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.BackColor = Color.FromArgb(230, 249, 255);
-            tableLayoutPanel1.ColumnCount = 4;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 268F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 268F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 268F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 745F));
+            tableLayoutPanel1.BackColor = Color.FromArgb(153, 229, 255);
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.Controls.Add(btnRate, 0, 0);
-            tableLayoutPanel1.Controls.Add(btnUpdates, 0, 0);
             tableLayoutPanel1.Controls.Add(btnReports, 0, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
@@ -90,32 +86,13 @@
             btnRate.IconColor = Color.Black;
             btnRate.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnRate.ImageAlign = ContentAlignment.MiddleLeft;
-            btnRate.Location = new Point(539, 3);
+            btnRate.Location = new Point(659, 3);
             btnRate.Name = "btnRate";
-            btnRate.Size = new Size(262, 64);
+            btnRate.Size = new Size(650, 64);
             btnRate.TabIndex = 36;
             btnRate.Text = "Rates";
             btnRate.UseVisualStyleBackColor = true;
             btnRate.Click += btnRate_Click;
-            // 
-            // btnUpdates
-            // 
-            btnUpdates.Dock = DockStyle.Fill;
-            btnUpdates.FlatAppearance.BorderSize = 0;
-            btnUpdates.FlatStyle = FlatStyle.Flat;
-            btnUpdates.Font = new Font("Inter Medium", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnUpdates.ForeColor = Color.Black;
-            btnUpdates.IconChar = FontAwesome.Sharp.IconChar.None;
-            btnUpdates.IconColor = Color.Black;
-            btnUpdates.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnUpdates.ImageAlign = ContentAlignment.MiddleLeft;
-            btnUpdates.Location = new Point(271, 3);
-            btnUpdates.Name = "btnUpdates";
-            btnUpdates.Size = new Size(262, 64);
-            btnUpdates.TabIndex = 35;
-            btnUpdates.Text = "Update Report";
-            btnUpdates.UseVisualStyleBackColor = true;
-            btnUpdates.Click += btnUpdate_Click;
             // 
             // btnReports
             // 
@@ -130,7 +107,7 @@
             btnReports.ImageAlign = ContentAlignment.MiddleLeft;
             btnReports.Location = new Point(3, 3);
             btnReports.Name = "btnReports";
-            btnReports.Size = new Size(262, 64);
+            btnReports.Size = new Size(650, 64);
             btnReports.TabIndex = 34;
             btnReports.Text = "Reports";
             btnReports.UseVisualStyleBackColor = true;
@@ -328,7 +305,6 @@
         private Panel panel1;
         private TableLayoutPanel tableLayoutPanel1;
         private FontAwesome.Sharp.IconButton btnRate;
-        private FontAwesome.Sharp.IconButton btnUpdates;
         private FontAwesome.Sharp.IconButton btnReports;
         private Panel panel2;
         private TableLayoutPanel tableLayoutPanel2;

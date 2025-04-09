@@ -36,27 +36,21 @@ namespace NEXUS.User_Controls
         {
             if (selectedButton != null)
             {
-                selectedButton.BackColor = Color.FromArgb(230, 249, 255);
+                selectedButton.BackColor = Color.FromArgb(153, 229, 255);
                 selectedButton.ForeColor = Color.Black;
                 button.Font = new(button.Font.FontFamily, 18, button.Font.Style);
             }
 
             selectedButton = button;
             button.BackColor = Color.FromArgb(0, 229, 255);
-            button.Font = new(button.Font.FontFamily, 20, button.Font.Style);
-            button.ForeColor = Color.White;
+            button.Font = new(button.Font.FontFamily, 24, button.Font.Style);
+            button.ForeColor = Color.FromArgb(24, 60, 114);
         }
 
         private void btnReport_Click(object sender, EventArgs e)
         {
             SelectButton(btnReports);
             DisplayReports();
-        }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            SelectButton(btnUpdates);
-
         }
 
         private void btnRate_Click(object sender, EventArgs e)

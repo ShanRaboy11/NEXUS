@@ -18,7 +18,7 @@ namespace NEXUS.User_Controls
 {
     public partial class DataGrid : UserControl
     {
-        string userType1;
+        string userType1, current;
         public DataGrid(string UserType)
         {
             InitializeComponent();
@@ -28,6 +28,7 @@ namespace NEXUS.User_Controls
 
         private void DataGridDetailsDisplay(string userType)
         {
+            this.current = userType;
             string query = null;
             if (string.IsNullOrEmpty(userType)) return;
 
@@ -235,6 +236,44 @@ namespace NEXUS.User_Controls
             return imageBytes;
         }
 
+        private void resolvedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgvUsers.SelectedRows.Count == 0)
+                return;
+
+            var selectedRow = dgvUsers.SelectedRows[0];
+            var reportId = selectedRow.Cells["ReportID"].Value.ToString();
+
+            if (string.IsNullOrEmpty(reportId))
+                return;
+
+            // Update the status in the database
+            bool success = UpdateReportStatus(reportId, "Resolved");
+
+            if (success)
+            {
+                DataGridDetailsDisplay(current);
+            }
+        }
+
+        private bool UpdateReportStatus(string reportId, string newStatus)
+        {
+            string query = "UPDATE Reports SET [Status] = ? WHERE ReportID = ?";
+
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            using (OleDbCommand cmd = new OleDbCommand(query, conn))
+            {
+                // Add parameters explicitly to avoid type confusion
+                cmd.Parameters.Add("?", OleDbType.VarWChar).Value = newStatus;
+                cmd.Parameters.Add("?", OleDbType.VarWChar).Value = reportId;
+
+
+                conn.Open();
+                int rowsAffected = cmd.ExecuteNonQuery();
+
+                return rowsAffected > 0;
+            }
+        }
 
     }
 }
