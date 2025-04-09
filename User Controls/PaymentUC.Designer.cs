@@ -300,7 +300,6 @@
             cmbxDestination.Font = new Font("Inter", 12.25F);
             cmbxDestination.ForeColor = Color.FromArgb(24, 60, 114);
             cmbxDestination.FormattingEnabled = true;
-            cmbxDestination.Items.AddRange(new object[] { "Traffic Accident", "Mechanical Breakdown", "Theft", "Lost", "Assaults", "Sexual Harassment" });
             cmbxDestination.Location = new Point(397, 97);
             cmbxDestination.Name = "cmbxDestination";
             cmbxDestination.Size = new Size(179, 31);
@@ -314,7 +313,6 @@
             cmbxLocation.Font = new Font("Inter", 12.25F);
             cmbxLocation.ForeColor = Color.FromArgb(24, 60, 114);
             cmbxLocation.FormattingEnabled = true;
-            cmbxLocation.Items.AddRange(new object[] { "Traffic Accident", "Mechanical Breakdown", "Theft", "Lost", "Assaults", "Sexual Harassment" });
             cmbxLocation.Location = new Point(23, 97);
             cmbxLocation.Name = "cmbxLocation";
             cmbxLocation.Size = new Size(179, 31);

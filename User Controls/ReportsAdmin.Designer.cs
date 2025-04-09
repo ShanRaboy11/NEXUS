@@ -35,6 +35,8 @@
             btnReports = new FontAwesome.Sharp.IconButton();
             panel2 = new Panel();
             tableLayoutPanel2 = new TableLayoutPanel();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
+            dtDate = new ReaLTaiizor.Controls.PoisonDateTime();
             pnlContainer = new Panel();
             tblVerification = new TableLayoutPanel();
             lblHeader2 = new Label();
@@ -42,6 +44,7 @@
             panel1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             panel2.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
             pnlContainer.SuspendLayout();
             tblVerification.SuspendLayout();
             SuspendLayout();
@@ -144,17 +147,48 @@
             // 
             tableLayoutPanel2.BackColor = Color.FromArgb(230, 249, 255);
             tableLayoutPanel2.ColumnCount = 4;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 268F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 625F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 222F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 55F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 247F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 813F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 434F));
+            tableLayoutPanel2.Controls.Add(iconButton1, 0, 0);
+            tableLayoutPanel2.Controls.Add(dtDate, 1, 0);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(0, 0);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
             tableLayoutPanel2.Size = new Size(1312, 55);
             tableLayoutPanel2.TabIndex = 0;
+            // 
+            // iconButton1
+            // 
+            iconButton1.BackColor = Color.FromArgb(230, 249, 255);
+            iconButton1.Dock = DockStyle.Bottom;
+            iconButton1.Enabled = false;
+            iconButton1.FlatStyle = FlatStyle.Flat;
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.Calendar;
+            iconButton1.IconColor = Color.Black;
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.IconSize = 35;
+            iconButton1.Location = new Point(3, 20);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Size = new Size(49, 32);
+            iconButton1.TabIndex = 52;
+            iconButton1.UseVisualStyleBackColor = false;
+            // 
+            // dtDate
+            // 
+            dtDate.CalendarFont = new Font("Inter", 17.25F);
+            dtDate.CalendarMonthBackground = Color.FromArgb(176, 233, 255);
+            dtDate.Dock = DockStyle.Bottom;
+            dtDate.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Tall;
+            dtDate.Location = new Point(58, 17);
+            dtDate.MinimumSize = new Size(0, 35);
+            dtDate.Name = "dtDate";
+            dtDate.Size = new Size(241, 35);
+            dtDate.TabIndex = 51;
+            dtDate.ValueChanged += dtDate_ValueChanged;
             // 
             // pnlContainer
             // 
@@ -244,6 +278,7 @@
             panel1.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
+            tableLayoutPanel2.ResumeLayout(false);
             pnlContainer.ResumeLayout(false);
             tblVerification.ResumeLayout(false);
             tblVerification.PerformLayout();
@@ -263,5 +298,7 @@
         private TableLayoutPanel tblVerification;
         private Label lblHeader2;
         private Label label1;
+        private ReaLTaiizor.Controls.PoisonDateTime dtDate;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

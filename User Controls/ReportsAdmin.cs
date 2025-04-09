@@ -56,7 +56,7 @@ namespace NEXUS.User_Controls
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             SelectButton(btnUpdates);
-            
+
         }
 
         private void btnRate_Click(object sender, EventArgs e)
@@ -74,6 +74,21 @@ namespace NEXUS.User_Controls
                 Dock = DockStyle.Fill
             };
 
+            pnlContainer.Controls.Add(dataGrid);
+        }
+
+        private void dtDate_ValueChanged(object sender, EventArgs e)
+        {
+            string selectedDate = dtDate.Value.ToString("MM/dd/yyyy"); // Format selected date
+            string dateQuery = $"SELECT ReportID, TripID, Passenger, Driver, Location, " +
+                               $"Category, Description, Status FROM TripReportQuery WHERE Format([Date of Incident], 'MM/dd/yyyy') = '{selectedDate}'";
+
+            pnlContainer.Controls.Clear();
+
+            DataGrid dataGrid = new DataGrid(dateQuery)
+            {
+                Dock = DockStyle.Fill
+            };
             pnlContainer.Controls.Add(dataGrid);
         }
     }

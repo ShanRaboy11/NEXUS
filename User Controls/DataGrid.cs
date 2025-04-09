@@ -40,7 +40,7 @@ namespace NEXUS.User_Controls
                     query = "SELECT ID, Username, [Password], [Full Name], [Email Address], Gender, Birthday, [Plate Number], Wallet, Route, Status FROM DriversQuery";
                     break;
                 case "Report":
-                    query = "SELECT ReportID, UserID, [Date of Incident], Location, Category, Description, Status FROM Reports";
+                    query = "SELECT * FROM TripReportQuery";
                     break;
                 case "ReportDate":
                     break;
@@ -49,6 +49,9 @@ namespace NEXUS.User_Controls
                     break;
                 case "Transaction":
                     query = "SELECT * FROM Transactions";
+                    break;
+                default:
+                    query = userType;
                     break;
             }
 
@@ -61,6 +64,13 @@ namespace NEXUS.User_Controls
             {
                 DataTable dt = new DataTable();
                 adapter.Fill(dt); // Load data into DataTable
+
+                if (dt.Rows.Count == 0)
+                {
+                    pbEmpty.Visible = true;
+                    return;
+                }
+
                 dgvUsers.DataSource = dt; // Bind DataTable to DataGridView
 
 

@@ -29,11 +29,14 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DataGrid));
             dgvUsers = new Krypton.Toolkit.KryptonDataGridView();
             contextMenuStrip1 = new ContextMenuStrip(components);
             deleteToolStripMenuItem = new ToolStripMenuItem();
+            pbEmpty = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgvUsers).BeginInit();
             contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbEmpty).BeginInit();
             SuspendLayout();
             // 
             // dgvUsers
@@ -85,17 +88,30 @@
             deleteToolStripMenuItem.Text = "Delete";
             deleteToolStripMenuItem.Click += deleteToolStripMenuItem_Click;
             // 
+            // pbEmpty
+            // 
+            pbEmpty.Image = (Image)resources.GetObject("pbEmpty.Image");
+            pbEmpty.Location = new Point(0, 21);
+            pbEmpty.Name = "pbEmpty";
+            pbEmpty.Size = new Size(1312, 614);
+            pbEmpty.SizeMode = PictureBoxSizeMode.Zoom;
+            pbEmpty.TabIndex = 1;
+            pbEmpty.TabStop = false;
+            pbEmpty.Visible = false;
+            // 
             // DataGrid
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
+            Controls.Add(pbEmpty);
             Controls.Add(dgvUsers);
             Name = "DataGrid";
             Size = new Size(1312, 697);
             Load += DataGrid_Load;
             ((System.ComponentModel.ISupportInitialize)dgvUsers).EndInit();
             contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pbEmpty).EndInit();
             ResumeLayout(false);
         }
 
@@ -104,5 +120,6 @@
         private Krypton.Toolkit.KryptonDataGridView dgvUsers;
         private ContextMenuStrip contextMenuStrip1;
         private ToolStripMenuItem deleteToolStripMenuItem;
+        private PictureBox pbEmpty;
     }
 }
