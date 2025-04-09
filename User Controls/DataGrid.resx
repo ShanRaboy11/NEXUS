@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="cmsAttachment.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>171, 17</value>
+  </metadata>
   <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -124,7 +127,7 @@
   <data name="pbEmpty.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABSAAAAK5CAYAAACv24AUAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAtZRJREFUeF7s3febVFXW9vH3n7Jz7sacc3acGR1n1HF0DCTJKEkkCY6jMzqSRAER
+        wAAADsABataJCQAAtZRJREFUeF7s3febVFXW9vH3n7Jz7sacc3acGR1n1HF0DCTJKEkkCY6jMzqSRAER
         MGNAUVQUFAEzAr2bTBPNcL/Xqjr12OyzG07TXV2nqr4/fK7nGWmaqtO7z7n2XWuv9f86fpYAAAAAAAAA
         IB/+n/8fAAAAAAAAAKCvEEACAAAAAAAAyBsCSAAAAAAAAAB5QwAJAAAAAAAAIG8IIAEAAAAAAADkDQEk
         AAAAAAAAgLwhgAQAAAAAAACQNwSQAAAAAAAAAPKGABIAAAAAAABA3hBAAgAAAAAAAMgbAkgAAAAAAAAA

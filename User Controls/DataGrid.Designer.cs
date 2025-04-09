@@ -34,16 +34,19 @@
             contextMenuStrip1 = new ContextMenuStrip(components);
             deleteToolStripMenuItem = new ToolStripMenuItem();
             pbEmpty = new PictureBox();
+            cmsAttachment = new ContextMenuStrip(components);
+            attachmentToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dgvUsers).BeginInit();
             contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbEmpty).BeginInit();
+            cmsAttachment.SuspendLayout();
             SuspendLayout();
             // 
             // dgvUsers
             // 
             dgvUsers.BorderStyle = BorderStyle.None;
             dgvUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvUsers.ContextMenuStrip = contextMenuStrip1;
+            dgvUsers.ContextMenuStrip = cmsAttachment;
             dgvUsers.Dock = DockStyle.Fill;
             dgvUsers.HideOuterBorders = true;
             dgvUsers.Location = new Point(0, 0);
@@ -99,6 +102,21 @@
             pbEmpty.TabStop = false;
             pbEmpty.Visible = false;
             // 
+            // cmsAttachment
+            // 
+            cmsAttachment.Font = new Font("Segoe UI", 9F);
+            cmsAttachment.Items.AddRange(new ToolStripItem[] { attachmentToolStripMenuItem });
+            cmsAttachment.Name = "cmsAttachment";
+            cmsAttachment.Size = new Size(155, 30);
+            // 
+            // attachmentToolStripMenuItem
+            // 
+            attachmentToolStripMenuItem.Font = new Font("Inter", 10F);
+            attachmentToolStripMenuItem.Image = Properties.Resources._9104142_fullscreen_expand_maximize_enlarge_screen_icon;
+            attachmentToolStripMenuItem.Name = "attachmentToolStripMenuItem";
+            attachmentToolStripMenuItem.Size = new Size(154, 26);
+            attachmentToolStripMenuItem.Text = "Attachment";
+            // 
             // DataGrid
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -112,6 +130,7 @@
             ((System.ComponentModel.ISupportInitialize)dgvUsers).EndInit();
             contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbEmpty).EndInit();
+            cmsAttachment.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -121,5 +140,7 @@
         private ContextMenuStrip contextMenuStrip1;
         private ToolStripMenuItem deleteToolStripMenuItem;
         private PictureBox pbEmpty;
+        private ContextMenuStrip cmsAttachment;
+        private ToolStripMenuItem attachmentToolStripMenuItem;
     }
 }

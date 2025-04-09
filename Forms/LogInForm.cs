@@ -243,24 +243,35 @@ namespace NEXUS.Forms
                 }
                 else
                 {
-                    Properties.Settings.Default.SavedUser = "";
-                    Properties.Settings.Default.SavedPass = "";
+                    // Clear saved credentials if "Remember Me" is unchecked
+                    Properties.Settings.Default.SavedUser = string.Empty;
+                    Properties.Settings.Default.SavedPass = string.Empty;
                     Properties.Settings.Default.RememberMe = false;
                 }
 
-                Properties.Settings.Default.Save(); 
+                // Always save settings to persist the RememberMe state
+                Properties.Settings.Default.Save();
             }
         }
 
         private void LogInForm_Load(object sender, EventArgs e)
         {
+            Properties.Settings.Default.Reload();
+            // Check if "Remember Me" is enabled and populate fields accordingly
             if (Properties.Settings.Default.RememberMe)
             {
                 tbxEnterUsername.Text = Properties.Settings.Default.SavedUser;
-                tbxEnterPassword.UseSystemPasswordChar = true;
                 tbxEnterPassword.Text = Properties.Settings.Default.SavedPass;
-                chkRememberMe.Checked = true;
+                tbxEnterPassword.UseSystemPasswordChar = true;  // Set password visibility
+                chkRememberMe.Checked = true;  // Keep the checkbox checked
+            }
+            else
+            {
+                tbxEnterUsername.Text = "Username";
+                tbxEnterPassword.Text = "Password";
+                chkRememberMe.Checked = false;  // Uncheck the box if "Remember Me" is false
             }
         }
+
     }
 }

@@ -35,22 +35,28 @@ namespace NEXUS.User_Controls
             {
                 case "Passenger":
                     query = "SELECT ID, Username, [Password], [Full Name], [Email Address], Gender, Birthday, Classification, Wallet, Points, Status FROM PassengersQuery";
+                    dgvUsers.ContextMenuStrip = contextMenuStrip1;
                     break;
                 case "Driver":
                     query = "SELECT ID, Username, [Password], [Full Name], [Email Address], Gender, Birthday, [Plate Number], Wallet, Route, Status FROM DriversQuery";
+                    dgvUsers.ContextMenuStrip = contextMenuStrip1;
                     break;
                 case "Report":
                     query = "SELECT * FROM TripReportQuery";
+                    dgvUsers.ContextMenuStrip = cmsAttachment;
                     break;
                 case "ReportDate":
                     break;
                 case "Rate":
                     query = "SELECT * FROM AdminRatings";
+                    dgvUsers.ContextMenuStrip = contextMenuStrip1;
                     break;
                 case "Transaction":
                     query = "SELECT * FROM Transactions";
+                    dgvUsers.ContextMenuStrip = contextMenuStrip1;
                     break;
                 default:
+                    dgvUsers.ContextMenuStrip = cmsAttachment;
                     query = userType;
                     break;
             }
