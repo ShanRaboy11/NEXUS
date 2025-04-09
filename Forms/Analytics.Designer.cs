@@ -115,7 +115,7 @@
             label3.BackColor = Color.FromArgb(230, 249, 255);
             label3.Font = new Font("Inter", 15F);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(101, 67);
+            label3.Location = new Point(101, 49);
             label3.Name = "label3";
             label3.Size = new Size(687, 28);
             label3.TabIndex = 28;
@@ -125,7 +125,7 @@
             // 
             label1.Font = new Font("Inter ExtraBold", 20F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(38, 36, 68);
-            label1.Location = new Point(12, 13);
+            label1.Location = new Point(12, -5);
             label1.Name = "label1";
             label1.Size = new Size(614, 44);
             label1.TabIndex = 29;
@@ -136,7 +136,7 @@
             spaceSeparatorHorizontal1.Customization = "Kioq/yoqKv8jIyP/Kioq/w==";
             spaceSeparatorHorizontal1.Font = new Font("Verdana", 8F);
             spaceSeparatorHorizontal1.Image = null;
-            spaceSeparatorHorizontal1.Location = new Point(21, 112);
+            spaceSeparatorHorizontal1.Location = new Point(21, 94);
             spaceSeparatorHorizontal1.Name = "spaceSeparatorHorizontal1";
             spaceSeparatorHorizontal1.NoRounding = false;
             spaceSeparatorHorizontal1.Size = new Size(935, 4);
@@ -147,12 +147,12 @@
             // plotViewDriverAnalytics
             // 
             plotViewDriverAnalytics.BackColor = Color.White;
-            plotViewDriverAnalytics.Font = new Font("Inter", 12F);
+            plotViewDriverAnalytics.Font = new Font("Inter", 16F);
             plotViewDriverAnalytics.ForeColor = Color.FromArgb(38, 36, 68);
-            plotViewDriverAnalytics.Location = new Point(21, 147);
+            plotViewDriverAnalytics.Location = new Point(22, 135);
             plotViewDriverAnalytics.Name = "plotViewDriverAnalytics";
             plotViewDriverAnalytics.PanCursor = Cursors.Hand;
-            plotViewDriverAnalytics.Size = new Size(566, 265);
+            plotViewDriverAnalytics.Size = new Size(568, 308);
             plotViewDriverAnalytics.TabIndex = 51;
             plotViewDriverAnalytics.Text = "plotView1";
             plotViewDriverAnalytics.ZoomHorizontalCursor = Cursors.SizeWE;
@@ -180,9 +180,9 @@
             tableLayoutPanel1.Location = new Point(0, 422);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 3;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8.243728F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 7.19424438F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 83.45324F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8.633094F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8.99280548F));
             tableLayoutPanel1.Size = new Size(972, 278);
             tableLayoutPanel1.TabIndex = 52;
             // 
@@ -191,9 +191,9 @@
             panel7.BackColor = Color.White;
             panel7.Controls.Add(panel12);
             panel7.Dock = DockStyle.Fill;
-            panel7.Location = new Point(798, 25);
+            panel7.Location = new Point(798, 23);
             panel7.Name = "panel7";
-            panel7.Size = new Size(149, 225);
+            panel7.Size = new Size(149, 226);
             panel7.TabIndex = 3;
             // 
             // panel12
@@ -209,7 +209,7 @@
             panel12.Dock = DockStyle.Fill;
             panel12.Location = new Point(0, 0);
             panel12.Name = "panel12";
-            panel12.Size = new Size(149, 225);
+            panel12.Size = new Size(149, 226);
             panel12.TabIndex = 2;
             // 
             // label7
@@ -218,7 +218,7 @@
             label7.BackColor = Color.FromArgb(38, 36, 68);
             label7.Font = new Font("Inter SemiBold", 14F, FontStyle.Bold);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(34, 179);
+            label7.Location = new Point(34, 173);
             label7.Name = "label7";
             label7.Size = new Size(78, 27);
             label7.TabIndex = 63;
@@ -252,7 +252,7 @@
             cyberButton6.Lighting = false;
             cyberButton6.LinearGradient_Background = false;
             cyberButton6.LinearGradientPen = false;
-            cyberButton6.Location = new Point(7, 171);
+            cyberButton6.Location = new Point(7, 165);
             cyberButton6.Name = "cyberButton6";
             cyberButton6.PenWidth = 15;
             cyberButton6.Rounding = true;
@@ -275,7 +275,7 @@
             spaceSeparatorVertical11.Location = new Point(0, 4);
             spaceSeparatorVertical11.Name = "spaceSeparatorVertical11";
             spaceSeparatorVertical11.NoRounding = false;
-            spaceSeparatorVertical11.Size = new Size(4, 217);
+            spaceSeparatorVertical11.Size = new Size(4, 218);
             spaceSeparatorVertical11.TabIndex = 56;
             spaceSeparatorVertical11.Text = "spaceSeparatorVertical11";
             spaceSeparatorVertical11.Transparent = false;
@@ -289,7 +289,7 @@
             spaceSeparatorVertical12.Location = new Point(145, 4);
             spaceSeparatorVertical12.Name = "spaceSeparatorVertical12";
             spaceSeparatorVertical12.NoRounding = false;
-            spaceSeparatorVertical12.Size = new Size(4, 217);
+            spaceSeparatorVertical12.Size = new Size(4, 218);
             spaceSeparatorVertical12.TabIndex = 54;
             spaceSeparatorVertical12.Text = "spaceSeparatorVertical12";
             spaceSeparatorVertical12.Transparent = false;
@@ -300,7 +300,7 @@
             spaceSeparatorHorizontal14.Dock = DockStyle.Bottom;
             spaceSeparatorHorizontal14.Font = new Font("Verdana", 8F);
             spaceSeparatorHorizontal14.Image = null;
-            spaceSeparatorHorizontal14.Location = new Point(0, 221);
+            spaceSeparatorHorizontal14.Location = new Point(0, 222);
             spaceSeparatorHorizontal14.Name = "spaceSeparatorHorizontal14";
             spaceSeparatorHorizontal14.NoRounding = false;
             spaceSeparatorHorizontal14.Size = new Size(149, 4);
@@ -341,9 +341,9 @@
             panel6.BackColor = Color.White;
             panel6.Controls.Add(panel11);
             panel6.Dock = DockStyle.Fill;
-            panel6.Location = new Point(643, 25);
+            panel6.Location = new Point(643, 23);
             panel6.Name = "panel6";
-            panel6.Size = new Size(149, 225);
+            panel6.Size = new Size(149, 226);
             panel6.TabIndex = 3;
             // 
             // panel11
@@ -359,7 +359,7 @@
             panel11.Dock = DockStyle.Fill;
             panel11.Location = new Point(0, 0);
             panel11.Name = "panel11";
-            panel11.Size = new Size(149, 225);
+            panel11.Size = new Size(149, 226);
             panel11.TabIndex = 2;
             // 
             // label6
@@ -368,7 +368,7 @@
             label6.BackColor = Color.FromArgb(38, 36, 68);
             label6.Font = new Font("Inter SemiBold", 14F, FontStyle.Bold);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(43, 179);
+            label6.Location = new Point(43, 173);
             label6.Name = "label6";
             label6.Size = new Size(65, 27);
             label6.TabIndex = 61;
@@ -402,7 +402,7 @@
             cyberButton5.Lighting = false;
             cyberButton5.LinearGradient_Background = false;
             cyberButton5.LinearGradientPen = false;
-            cyberButton5.Location = new Point(7, 171);
+            cyberButton5.Location = new Point(7, 165);
             cyberButton5.Name = "cyberButton5";
             cyberButton5.PenWidth = 15;
             cyberButton5.Rounding = true;
@@ -425,7 +425,7 @@
             spaceSeparatorVertical9.Location = new Point(0, 4);
             spaceSeparatorVertical9.Name = "spaceSeparatorVertical9";
             spaceSeparatorVertical9.NoRounding = false;
-            spaceSeparatorVertical9.Size = new Size(4, 217);
+            spaceSeparatorVertical9.Size = new Size(4, 218);
             spaceSeparatorVertical9.TabIndex = 56;
             spaceSeparatorVertical9.Text = "spaceSeparatorVertical9";
             spaceSeparatorVertical9.Transparent = false;
@@ -439,7 +439,7 @@
             spaceSeparatorVertical10.Location = new Point(145, 4);
             spaceSeparatorVertical10.Name = "spaceSeparatorVertical10";
             spaceSeparatorVertical10.NoRounding = false;
-            spaceSeparatorVertical10.Size = new Size(4, 217);
+            spaceSeparatorVertical10.Size = new Size(4, 218);
             spaceSeparatorVertical10.TabIndex = 54;
             spaceSeparatorVertical10.Text = "spaceSeparatorVertical10";
             spaceSeparatorVertical10.Transparent = false;
@@ -450,7 +450,7 @@
             spaceSeparatorHorizontal12.Dock = DockStyle.Bottom;
             spaceSeparatorHorizontal12.Font = new Font("Verdana", 8F);
             spaceSeparatorHorizontal12.Image = null;
-            spaceSeparatorHorizontal12.Location = new Point(0, 221);
+            spaceSeparatorHorizontal12.Location = new Point(0, 222);
             spaceSeparatorHorizontal12.Name = "spaceSeparatorHorizontal12";
             spaceSeparatorHorizontal12.NoRounding = false;
             spaceSeparatorHorizontal12.Size = new Size(149, 4);
@@ -491,9 +491,9 @@
             panel1.BackColor = Color.White;
             panel1.Controls.Add(panel2);
             panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(23, 25);
+            panel1.Location = new Point(23, 23);
             panel1.Name = "panel1";
-            panel1.Size = new Size(149, 225);
+            panel1.Size = new Size(149, 226);
             panel1.TabIndex = 0;
             // 
             // panel2
@@ -509,7 +509,7 @@
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(149, 225);
+            panel2.Size = new Size(149, 226);
             panel2.TabIndex = 1;
             // 
             // lbl
@@ -518,7 +518,7 @@
             lbl.BackColor = Color.FromArgb(38, 36, 68);
             lbl.Font = new Font("Inter SemiBold", 14F, FontStyle.Bold);
             lbl.ForeColor = Color.White;
-            lbl.Location = new Point(38, 179);
+            lbl.Location = new Point(38, 174);
             lbl.Name = "lbl";
             lbl.Size = new Size(70, 27);
             lbl.TabIndex = 57;
@@ -552,7 +552,7 @@
             cyberButton4.Lighting = false;
             cyberButton4.LinearGradient_Background = false;
             cyberButton4.LinearGradientPen = false;
-            cyberButton4.Location = new Point(6, 171);
+            cyberButton4.Location = new Point(6, 166);
             cyberButton4.Name = "cyberButton4";
             cyberButton4.PenWidth = 15;
             cyberButton4.Rounding = true;
@@ -575,7 +575,7 @@
             spaceSeparatorVertical2.Location = new Point(0, 4);
             spaceSeparatorVertical2.Name = "spaceSeparatorVertical2";
             spaceSeparatorVertical2.NoRounding = false;
-            spaceSeparatorVertical2.Size = new Size(4, 217);
+            spaceSeparatorVertical2.Size = new Size(4, 218);
             spaceSeparatorVertical2.TabIndex = 56;
             spaceSeparatorVertical2.Text = "spaceSeparatorVertical2";
             spaceSeparatorVertical2.Transparent = false;
@@ -589,7 +589,7 @@
             spaceSeparatorVertical1.Location = new Point(145, 4);
             spaceSeparatorVertical1.Name = "spaceSeparatorVertical1";
             spaceSeparatorVertical1.NoRounding = false;
-            spaceSeparatorVertical1.Size = new Size(4, 217);
+            spaceSeparatorVertical1.Size = new Size(4, 218);
             spaceSeparatorVertical1.TabIndex = 54;
             spaceSeparatorVertical1.Text = "spaceSeparatorVertical1";
             spaceSeparatorVertical1.Transparent = false;
@@ -600,7 +600,7 @@
             spaceSeparatorHorizontal4.Dock = DockStyle.Bottom;
             spaceSeparatorHorizontal4.Font = new Font("Verdana", 8F);
             spaceSeparatorHorizontal4.Image = null;
-            spaceSeparatorHorizontal4.Location = new Point(0, 221);
+            spaceSeparatorHorizontal4.Location = new Point(0, 222);
             spaceSeparatorHorizontal4.Name = "spaceSeparatorHorizontal4";
             spaceSeparatorHorizontal4.NoRounding = false;
             spaceSeparatorHorizontal4.Size = new Size(149, 4);
@@ -641,9 +641,9 @@
             panel3.BackColor = Color.White;
             panel3.Controls.Add(panel8);
             panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(178, 25);
+            panel3.Location = new Point(178, 23);
             panel3.Name = "panel3";
-            panel3.Size = new Size(149, 225);
+            panel3.Size = new Size(149, 226);
             panel3.TabIndex = 2;
             // 
             // panel8
@@ -659,7 +659,7 @@
             panel8.Dock = DockStyle.Fill;
             panel8.Location = new Point(0, 0);
             panel8.Name = "panel8";
-            panel8.Size = new Size(149, 225);
+            panel8.Size = new Size(149, 226);
             panel8.TabIndex = 2;
             // 
             // label2
@@ -668,7 +668,7 @@
             label2.BackColor = Color.FromArgb(38, 36, 68);
             label2.Font = new Font("Inter SemiBold", 13F, FontStyle.Bold);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(15, 179);
+            label2.Location = new Point(15, 174);
             label2.Name = "label2";
             label2.Size = new Size(121, 26);
             label2.TabIndex = 59;
@@ -702,7 +702,7 @@
             cyberButton1.Lighting = false;
             cyberButton1.LinearGradient_Background = false;
             cyberButton1.LinearGradientPen = false;
-            cyberButton1.Location = new Point(7, 171);
+            cyberButton1.Location = new Point(7, 166);
             cyberButton1.Name = "cyberButton1";
             cyberButton1.PenWidth = 15;
             cyberButton1.Rounding = true;
@@ -725,7 +725,7 @@
             spaceSeparatorVertical3.Location = new Point(0, 4);
             spaceSeparatorVertical3.Name = "spaceSeparatorVertical3";
             spaceSeparatorVertical3.NoRounding = false;
-            spaceSeparatorVertical3.Size = new Size(4, 217);
+            spaceSeparatorVertical3.Size = new Size(4, 218);
             spaceSeparatorVertical3.TabIndex = 56;
             spaceSeparatorVertical3.Text = "spaceSeparatorVertical3";
             spaceSeparatorVertical3.Transparent = false;
@@ -739,7 +739,7 @@
             spaceSeparatorVertical4.Location = new Point(145, 4);
             spaceSeparatorVertical4.Name = "spaceSeparatorVertical4";
             spaceSeparatorVertical4.NoRounding = false;
-            spaceSeparatorVertical4.Size = new Size(4, 217);
+            spaceSeparatorVertical4.Size = new Size(4, 218);
             spaceSeparatorVertical4.TabIndex = 54;
             spaceSeparatorVertical4.Text = "spaceSeparatorVertical4";
             spaceSeparatorVertical4.Transparent = false;
@@ -750,7 +750,7 @@
             spaceSeparatorHorizontal6.Dock = DockStyle.Bottom;
             spaceSeparatorHorizontal6.Font = new Font("Verdana", 8F);
             spaceSeparatorHorizontal6.Image = null;
-            spaceSeparatorHorizontal6.Location = new Point(0, 221);
+            spaceSeparatorHorizontal6.Location = new Point(0, 222);
             spaceSeparatorHorizontal6.Name = "spaceSeparatorHorizontal6";
             spaceSeparatorHorizontal6.NoRounding = false;
             spaceSeparatorHorizontal6.Size = new Size(149, 4);
@@ -791,9 +791,9 @@
             panel4.BackColor = Color.White;
             panel4.Controls.Add(panel9);
             panel4.Dock = DockStyle.Fill;
-            panel4.Location = new Point(333, 25);
+            panel4.Location = new Point(333, 23);
             panel4.Name = "panel4";
-            panel4.Size = new Size(149, 225);
+            panel4.Size = new Size(149, 226);
             panel4.TabIndex = 3;
             // 
             // panel9
@@ -809,7 +809,7 @@
             panel9.Dock = DockStyle.Fill;
             panel9.Location = new Point(0, 0);
             panel9.Name = "panel9";
-            panel9.Size = new Size(149, 225);
+            panel9.Size = new Size(149, 226);
             panel9.TabIndex = 2;
             // 
             // spaceSeparatorVertical5
@@ -821,7 +821,7 @@
             spaceSeparatorVertical5.Location = new Point(0, 4);
             spaceSeparatorVertical5.Name = "spaceSeparatorVertical5";
             spaceSeparatorVertical5.NoRounding = false;
-            spaceSeparatorVertical5.Size = new Size(4, 217);
+            spaceSeparatorVertical5.Size = new Size(4, 218);
             spaceSeparatorVertical5.TabIndex = 56;
             spaceSeparatorVertical5.Text = "spaceSeparatorVertical5";
             spaceSeparatorVertical5.Transparent = false;
@@ -832,7 +832,7 @@
             label4.BackColor = Color.FromArgb(38, 36, 68);
             label4.Font = new Font("Inter SemiBold", 14F, FontStyle.Bold);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(38, 179);
+            label4.Location = new Point(38, 174);
             label4.Name = "label4";
             label4.Size = new Size(70, 27);
             label4.TabIndex = 59;
@@ -866,7 +866,7 @@
             cyberButton2.Lighting = false;
             cyberButton2.LinearGradient_Background = false;
             cyberButton2.LinearGradientPen = false;
-            cyberButton2.Location = new Point(6, 171);
+            cyberButton2.Location = new Point(6, 166);
             cyberButton2.Name = "cyberButton2";
             cyberButton2.PenWidth = 15;
             cyberButton2.Rounding = true;
@@ -889,7 +889,7 @@
             spaceSeparatorVertical6.Location = new Point(145, 4);
             spaceSeparatorVertical6.Name = "spaceSeparatorVertical6";
             spaceSeparatorVertical6.NoRounding = false;
-            spaceSeparatorVertical6.Size = new Size(4, 217);
+            spaceSeparatorVertical6.Size = new Size(4, 218);
             spaceSeparatorVertical6.TabIndex = 54;
             spaceSeparatorVertical6.Text = "spaceSeparatorVertical6";
             spaceSeparatorVertical6.Transparent = false;
@@ -900,7 +900,7 @@
             spaceSeparatorHorizontal8.Dock = DockStyle.Bottom;
             spaceSeparatorHorizontal8.Font = new Font("Verdana", 8F);
             spaceSeparatorHorizontal8.Image = null;
-            spaceSeparatorHorizontal8.Location = new Point(0, 221);
+            spaceSeparatorHorizontal8.Location = new Point(0, 222);
             spaceSeparatorHorizontal8.Name = "spaceSeparatorHorizontal8";
             spaceSeparatorHorizontal8.NoRounding = false;
             spaceSeparatorHorizontal8.Size = new Size(149, 4);
@@ -941,9 +941,9 @@
             panel5.BackColor = Color.White;
             panel5.Controls.Add(panel10);
             panel5.Dock = DockStyle.Fill;
-            panel5.Location = new Point(488, 25);
+            panel5.Location = new Point(488, 23);
             panel5.Name = "panel5";
-            panel5.Size = new Size(149, 225);
+            panel5.Size = new Size(149, 226);
             panel5.TabIndex = 4;
             // 
             // panel10
@@ -959,7 +959,7 @@
             panel10.Dock = DockStyle.Fill;
             panel10.Location = new Point(0, 0);
             panel10.Name = "panel10";
-            panel10.Size = new Size(149, 225);
+            panel10.Size = new Size(149, 226);
             panel10.TabIndex = 2;
             // 
             // label13
@@ -968,7 +968,7 @@
             label13.BackColor = Color.FromArgb(38, 36, 68);
             label13.Font = new Font("Inter SemiBold", 14F, FontStyle.Bold);
             label13.ForeColor = Color.White;
-            label13.Location = new Point(31, 179);
+            label13.Location = new Point(31, 173);
             label13.Name = "label13";
             label13.Size = new Size(88, 27);
             label13.TabIndex = 63;
@@ -1002,7 +1002,7 @@
             cyberButton3.Lighting = false;
             cyberButton3.LinearGradient_Background = false;
             cyberButton3.LinearGradientPen = false;
-            cyberButton3.Location = new Point(6, 171);
+            cyberButton3.Location = new Point(6, 165);
             cyberButton3.Name = "cyberButton3";
             cyberButton3.PenWidth = 15;
             cyberButton3.Rounding = true;
@@ -1025,7 +1025,7 @@
             spaceSeparatorVertical7.Location = new Point(0, 4);
             spaceSeparatorVertical7.Name = "spaceSeparatorVertical7";
             spaceSeparatorVertical7.NoRounding = false;
-            spaceSeparatorVertical7.Size = new Size(4, 217);
+            spaceSeparatorVertical7.Size = new Size(4, 218);
             spaceSeparatorVertical7.TabIndex = 56;
             spaceSeparatorVertical7.Text = "spaceSeparatorVertical7";
             spaceSeparatorVertical7.Transparent = false;
@@ -1039,7 +1039,7 @@
             spaceSeparatorVertical8.Location = new Point(145, 4);
             spaceSeparatorVertical8.Name = "spaceSeparatorVertical8";
             spaceSeparatorVertical8.NoRounding = false;
-            spaceSeparatorVertical8.Size = new Size(4, 217);
+            spaceSeparatorVertical8.Size = new Size(4, 218);
             spaceSeparatorVertical8.TabIndex = 54;
             spaceSeparatorVertical8.Text = "spaceSeparatorVertical8";
             spaceSeparatorVertical8.Transparent = false;
@@ -1050,7 +1050,7 @@
             spaceSeparatorHorizontal10.Dock = DockStyle.Bottom;
             spaceSeparatorHorizontal10.Font = new Font("Verdana", 8F);
             spaceSeparatorHorizontal10.Image = null;
-            spaceSeparatorHorizontal10.Location = new Point(0, 221);
+            spaceSeparatorHorizontal10.Location = new Point(0, 222);
             spaceSeparatorHorizontal10.Name = "spaceSeparatorHorizontal10";
             spaceSeparatorHorizontal10.NoRounding = false;
             spaceSeparatorHorizontal10.Size = new Size(149, 4);
@@ -1090,9 +1090,9 @@
             // 
             panel13.BackColor = Color.White;
             panel13.Controls.Add(lblTotalEarnings);
-            panel13.Location = new Point(611, 147);
+            panel13.Location = new Point(612, 153);
             panel13.Name = "panel13";
-            panel13.Size = new Size(345, 269);
+            panel13.Size = new Size(345, 290);
             panel13.TabIndex = 53;
             // 
             // lblTotalEarnings
@@ -1100,10 +1100,10 @@
             lblTotalEarnings.BackColor = Color.Transparent;
             lblTotalEarnings.Font = new Font("Inter ExtraBold", 45F, FontStyle.Bold);
             lblTotalEarnings.ForeColor = Color.Black;
-            lblTotalEarnings.Location = new Point(0, 67);
+            lblTotalEarnings.Location = new Point(-1, 59);
             lblTotalEarnings.Margin = new Padding(0);
             lblTotalEarnings.Name = "lblTotalEarnings";
-            lblTotalEarnings.Size = new Size(345, 198);
+            lblTotalEarnings.Size = new Size(345, 222);
             lblTotalEarnings.TabIndex = 60;
             lblTotalEarnings.Text = "P 1000.00";
             lblTotalEarnings.TextAlign = ContentAlignment.MiddleCenter;
@@ -1112,9 +1112,9 @@
             // 
             panel14.BackColor = Color.FromArgb(38, 36, 68);
             panel14.Controls.Add(lblWeekRange);
-            panel14.Location = new Point(611, 147);
+            panel14.Location = new Point(612, 135);
             panel14.Name = "panel14";
-            panel14.Size = new Size(345, 64);
+            panel14.Size = new Size(345, 71);
             panel14.TabIndex = 0;
             // 
             // lblWeekRange
@@ -1122,9 +1122,9 @@
             lblWeekRange.BackColor = Color.FromArgb(38, 36, 68);
             lblWeekRange.Font = new Font("Inter", 16F, FontStyle.Bold);
             lblWeekRange.ForeColor = Color.White;
-            lblWeekRange.Location = new Point(6, 0);
+            lblWeekRange.Location = new Point(7, -5);
             lblWeekRange.Name = "lblWeekRange";
-            lblWeekRange.Size = new Size(333, 64);
+            lblWeekRange.Size = new Size(333, 82);
             lblWeekRange.TabIndex = 60;
             lblWeekRange.Text = "Speed";
             lblWeekRange.TextAlign = ContentAlignment.MiddleCenter;
@@ -1135,10 +1135,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
             ClientSize = new Size(972, 700);
+            Controls.Add(plotViewDriverAnalytics);
             Controls.Add(panel14);
             Controls.Add(panel13);
             Controls.Add(tableLayoutPanel1);
-            Controls.Add(plotViewDriverAnalytics);
             Controls.Add(spaceSeparatorHorizontal1);
             Controls.Add(label1);
             Controls.Add(label3);

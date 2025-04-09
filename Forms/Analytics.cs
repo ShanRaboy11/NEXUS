@@ -24,25 +24,23 @@ namespace NEXUS.Forms
 
         private Dictionary<string, decimal> GetWeeklyEarnings(int driverID)
         {
-            Dictionary<string, decimal> earnings = new Dictionary<string, decimal>
-            {
-                { "Mon", 0 }, { "Tue", 0 }, { "Wed", 0 },
-                { "Thu", 0 }, { "Fri", 0 }, { "Sat", 0 }, { "Sun", 0 }
-            };
+            Dictionary<string, decimal> earnings = new Dictionary<string, decimal>();
 
-            string query = @"
-                SELECT [Trip Date], [Fare Amount] 
-                FROM Trips 
-                WHERE DriverID = ? 
-                AND [Trip Date] >= Date() - Weekday(Date()) + 1 
-                AND [Trip Date] <= Date() - Weekday(Date()) + 7";
+            DateTime today = DateTime.Today;
+            DateTime startDate = today.AddDays(-6);
+            DateTime endDate = today.AddDays(1).AddTicks(-1); // Include all of today
+
+            string query = @"SELECT [Trip Date], [Fare Amount] FROM Trips WHERE DriverID = ? AND [Trip Date] >= ? AND [Trip Date] <= ?";
 
             using (OleDbConnection conn = DatabaseManagement.GetConnection())
             {
                 conn.Open();
                 using (OleDbCommand cmd = new OleDbCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("?", driverID);
+                    // Pass parameters in correct order and type
+                    cmd.Parameters.Add("DriverID", OleDbType.Integer).Value = driverID;
+                    cmd.Parameters.Add("StartDate", OleDbType.Date).Value = startDate;
+                    cmd.Parameters.Add("EndDate", OleDbType.Date).Value = endDate;
 
                     using (OleDbDataReader reader = cmd.ExecuteReader())
                     {
@@ -50,50 +48,71 @@ namespace NEXUS.Forms
                         {
                             DateTime tripDate = Convert.ToDateTime(reader["Trip Date"]);
                             decimal fare = Convert.ToDecimal(reader["Fare Amount"]);
-                            string day = tripDate.DayOfWeek.ToString().Substring(0, 3); // Get first 3 chars of day name
+                            string dayName = tripDate.ToString("dddd"); // Full day name (e.g., Wednesday)
 
-                            if (earnings.ContainsKey(day))
-                                earnings[day] += fare;
+                            if (earnings.ContainsKey(dayName))
+                                earnings[dayName] += fare;
+                            else
+                                earnings[dayName] = fare;
                         }
                     }
                 }
             }
 
-            return earnings;
+            // Fill in missing days (to ensure 7 days shown)
+            for (int i = 0; i < 7; i++)
+            {
+                string day = today.AddDays(-i).ToString("dddd");
+                if (!earnings.ContainsKey(day))
+                    earnings[day] = 0;
+            }
+
+            // Order days from today backward
+            return earnings
+                .OrderByDescending(e =>
+                {
+                    if (Enum.TryParse<DayOfWeek>(e.Key, out var dayOfWeek))
+                    {
+                        return (7 + (int)today.DayOfWeek - (int)dayOfWeek) % 7;
+                    }
+                    return int.MaxValue;
+                })
+                .ToDictionary(pair => pair.Key, pair => pair.Value);
         }
+
+
 
         private void LoadDriverWeeklyEarningsChart(int driverID)
         {
             var earnings = GetWeeklyEarnings(driverID);
 
-
             // Compute total earnings
-            decimal totalEarnings = earnings.Values.Sum(); // Add this line
+            decimal totalEarnings = earnings.Values.Sum();
 
-            // Show in chart title (you can remove this if you prefer using a label instead)
+            // Create the model with total earnings in the title (optional)
             var model = new PlotModel
             {
-                Title = $"Driver Weekly Earnings"
+                Title = "Driver Earnings (Last 7 Days)",
+                TitleFontSize = 18
             };
 
             var series = new BarSeries
             {
                 LabelPlacement = LabelPlacement.Inside,
                 LabelFormatString = "₱{0:N0}",
-                FillColor = OxyColors.SteelBlue // 👈 Change color here if you want
+                FillColor = OxyColors.SteelBlue
             };
 
-            string[] weekDays = { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" };
-
-            foreach (string day in weekDays)
+            // Add items dynamically based on earnings dictionary
+            foreach (var dayEarning in earnings)
             {
-                series.Items.Add(new BarItem((double)earnings[day]));
+                series.Items.Add(new BarItem((double)dayEarning.Value));
             }
 
             model.Axes.Add(new CategoryAxis
             {
                 Position = AxisPosition.Left,
-                ItemsSource = weekDays
+                ItemsSource = earnings.Keys.ToList() // Use dynamic day names (e.g., Wed, Tue, etc.)
             });
 
             model.Axes.Add(new LinearAxis
@@ -106,34 +125,17 @@ namespace NEXUS.Forms
             model.Series.Add(series);
             plotViewDriverAnalytics.Model = model;
 
-            lblTotalEarnings.Text = $"₱ {totalEarnings:N2}"; // Make sure you have this label on your form
-            lblWeekRange.Text = $"{GetCurrentWeekDateRange()}";
-        }
-
-        private string GetCurrentWeekDateRange()
-        {
-            DateTime today = DateTime.Today;
-            int diff = (7 + (today.DayOfWeek - DayOfWeek.Monday)) % 7;
-            DateTime monday = today.AddDays(-diff);
-            DateTime sunday = monday.AddDays(6);
-
-            return $"{monday:MMMM d, yyyy} – {sunday:MMMM d, yyyy}";
+            // Update total and date range labels
+            lblTotalEarnings.Text = $"₱ {totalEarnings:N2}";
+            lblWeekRange.Text = $"({DateTime.Today.AddDays(-6):MMMM d, yyyy} - {DateTime.Today:MMMM d, yyyy})";
         }
 
         private Dictionary<string, double> GetDriverAverageRatings(int driverID)
         {
             Dictionary<string, double> averages = new Dictionary<string, double>();
 
-            string query = @"
-             SELECT 
-             AVG(Safety) AS AvgSafety,
-             AVG(Smoothness) AS AvgSmoothness,
-             AVG(Speed) AS AvgSpeed,
-             AVG(Comfortability) AS AvgComfort,
-             AVG(Cleanliness) AS AvgClean,
-             AVG([Overall Satisfaction]) AS AvgSatisfaction
-             FROM Rate
-             WHERE DriverID = ?";
+            string query = @"SELECT AVG(Safety) AS AvgSafety,AVG(Smoothness) AS AvgSmoothness,AVG(Speed) AS AvgSpeed, AVG(Comfortability) AS AvgComfort,
+             AVG(Cleanliness) AS AvgClean, AVG([Overall Satisfaction]) AS AvgSatisfaction FROM Rate WHERE DriverID = ?";
 
             using (OleDbConnection conn = DatabaseManagement.GetConnection())
             {
