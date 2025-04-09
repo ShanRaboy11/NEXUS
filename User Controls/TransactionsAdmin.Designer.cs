@@ -34,10 +34,12 @@
             btnTransactions = new FontAwesome.Sharp.IconButton();
             panel2 = new Panel();
             tableLayoutPanel2 = new TableLayoutPanel();
-            cmbxFilter = new ComboBox();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             label2 = new Label();
             dtDate = new ReaLTaiizor.Controls.PoisonDateTime();
+            panel3 = new Panel();
+            cmbxJeepCodes = new ComboBox();
+            cmbxFilter = new ComboBox();
             pnlContainer = new Panel();
             tblVerification = new TableLayoutPanel();
             lblHeader2 = new Label();
@@ -46,6 +48,7 @@
             tableLayoutPanel1.SuspendLayout();
             panel2.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
+            panel3.SuspendLayout();
             pnlContainer.SuspendLayout();
             tblVerification.SuspendLayout();
             SuspendLayout();
@@ -133,10 +136,10 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 509F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel2.Controls.Add(cmbxFilter, 0, 0);
             tableLayoutPanel2.Controls.Add(iconButton1, 2, 0);
             tableLayoutPanel2.Controls.Add(label2, 0, 0);
             tableLayoutPanel2.Controls.Add(dtDate, 3, 0);
+            tableLayoutPanel2.Controls.Add(panel3, 1, 0);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(0, 0);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -144,21 +147,6 @@
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel2.Size = new Size(1312, 38);
             tableLayoutPanel2.TabIndex = 0;
-            // 
-            // cmbxFilter
-            // 
-            cmbxFilter.BackColor = Color.White;
-            cmbxFilter.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbxFilter.Font = new Font("Inter", 12.25F);
-            cmbxFilter.ForeColor = Color.FromArgb(24, 60, 114);
-            cmbxFilter.FormattingEnabled = true;
-            cmbxFilter.Items.AddRange(new object[] { "Cash In", "Cash Out", "Payments" });
-            cmbxFilter.Location = new Point(103, 3);
-            cmbxFilter.Name = "cmbxFilter";
-            cmbxFilter.Size = new Size(148, 31);
-            cmbxFilter.TabIndex = 29;
-            cmbxFilter.TabStop = false;
-            cmbxFilter.SelectedIndexChanged += cmbxFilter_SelectedIndexChanged;
             // 
             // iconButton1
             // 
@@ -193,6 +181,7 @@
             // 
             dtDate.CalendarFont = new Font("Inter", 17.25F);
             dtDate.CalendarMonthBackground = Color.FromArgb(176, 233, 255);
+            dtDate.Dock = DockStyle.Left;
             dtDate.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Tall;
             dtDate.Location = new Point(1043, 3);
             dtDate.MinimumSize = new Size(0, 35);
@@ -200,6 +189,48 @@
             dtDate.Size = new Size(266, 35);
             dtDate.TabIndex = 51;
             dtDate.ValueChanged += dtDate_ValueChanged;
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(cmbxJeepCodes);
+            panel3.Controls.Add(cmbxFilter);
+            panel3.Location = new Point(103, 3);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(148, 32);
+            panel3.TabIndex = 52;
+            // 
+            // cmbxJeepCodes
+            // 
+            cmbxJeepCodes.BackColor = Color.FromArgb(176, 233, 255);
+            cmbxJeepCodes.Dock = DockStyle.Fill;
+            cmbxJeepCodes.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbxJeepCodes.Font = new Font("Inter", 15.25F);
+            cmbxJeepCodes.ForeColor = Color.FromArgb(24, 60, 114);
+            cmbxJeepCodes.FormattingEnabled = true;
+            cmbxJeepCodes.Items.AddRange(new object[] { "01C", "01K", "02B", "03A", "03B", "03L", "03Q", "04B", "04H", "04I", "04L", "04M", "06B", "06C", "06G", "06H", "07B", "08F", "08G", "09C", "09F", "09G", "10F", "10G", "10H", "10M", "11A", "12D", "12G", "12I", "12L", "13B", "13C", "13H", "14D", "17B", "17C", "17D", "20A", "21A", "22A", "22D", "22I", "23", "23D", "62B", "MI-01A", "MI-02B", "MI-03A", "MI-03B" });
+            cmbxJeepCodes.Location = new Point(0, 0);
+            cmbxJeepCodes.Name = "cmbxJeepCodes";
+            cmbxJeepCodes.Size = new Size(148, 36);
+            cmbxJeepCodes.TabIndex = 26;
+            cmbxJeepCodes.TabStop = false;
+            cmbxJeepCodes.Visible = false;
+            cmbxJeepCodes.SelectedIndexChanged += cmbxJeepCodes_SelectedIndexChanged;
+            // 
+            // cmbxFilter
+            // 
+            cmbxFilter.BackColor = Color.White;
+            cmbxFilter.Dock = DockStyle.Fill;
+            cmbxFilter.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbxFilter.Font = new Font("Inter", 12.25F);
+            cmbxFilter.ForeColor = Color.FromArgb(24, 60, 114);
+            cmbxFilter.FormattingEnabled = true;
+            cmbxFilter.Items.AddRange(new object[] { "Cash In", "Cash Out", "Payments" });
+            cmbxFilter.Location = new Point(0, 0);
+            cmbxFilter.Name = "cmbxFilter";
+            cmbxFilter.Size = new Size(148, 31);
+            cmbxFilter.TabIndex = 29;
+            cmbxFilter.TabStop = false;
+            cmbxFilter.SelectedIndexChanged += cmbxFilter_SelectedIndexChanged;
             // 
             // pnlContainer
             // 
@@ -292,6 +323,7 @@
             panel2.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
+            panel3.ResumeLayout(false);
             pnlContainer.ResumeLayout(false);
             tblVerification.ResumeLayout(false);
             tblVerification.PerformLayout();
@@ -314,5 +346,7 @@
         private FontAwesome.Sharp.IconButton iconButton1;
         private ComboBox cmbxFilter;
         private ReaLTaiizor.Controls.PoisonDateTime dtDate;
+        private ComboBox cmbxJeepCodes;
+        private Panel panel3;
     }
 }

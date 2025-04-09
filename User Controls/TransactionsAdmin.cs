@@ -12,7 +12,7 @@ namespace NEXUS.User_Controls
 {
     public partial class TransactionsAdmin : UserControl
     {
-        private string query;
+        private string query, current;
         private FontAwesome.Sharp.IconButton selectedButton = null;
         private FontAwesome.Sharp.IconButton currentBtn;
         string filter;
@@ -27,6 +27,18 @@ namespace NEXUS.User_Controls
             pnlContainer.Controls.Clear();
 
             DataGrid dataGrid = new DataGrid("Transaction")
+            {
+                Dock = DockStyle.Fill
+            };
+
+            pnlContainer.Controls.Add(dataGrid);
+        }
+
+        private void DisplayAllTrips()
+        {
+            pnlContainer.Controls.Clear();
+
+            DataGrid dataGrid = new DataGrid("Trip")
             {
                 Dock = DockStyle.Fill
             };
@@ -54,12 +66,16 @@ namespace NEXUS.User_Controls
         {
             SelectButton(btnTransactions);
             DisplayAllTransactions();
+            cmbxJeepCodes.Visible = false;
+            current = "Transactions";
         }
 
         private void btnTrips_Click(object sender, EventArgs e)
         {
             SelectButton(btnTrips);
-
+            DisplayAllTrips();
+            cmbxJeepCodes.Visible = true;
+            current = "Trip";
         }
 
         private void cmbxFilter_SelectedValueChanged(object sender, EventArgs e)
@@ -92,9 +108,28 @@ namespace NEXUS.User_Controls
 
         private void dtDate_ValueChanged(object sender, EventArgs e)
         {
-            string selectedDate = dtDate.Value.ToString("MM/dd/yyyy"); // Format selected date
-            query = $"SELECT TransactionID, UserID, [Full Name], Amount, Type FROM Transactions WHERE Format([TransactionDate], 'MM/dd/yyyy') = '{selectedDate}'";
+            if(current == "Transactions")
+            {
+                string selectedDate = dtDate.Value.ToString("MM/dd/yyyy"); 
+                query = $"SELECT TransactionID, UserID, [Full Name], Amount, Type FROM Transactions WHERE Format([TransactionDate], 'MM/dd/yyyy') = '{selectedDate}'";
+            }
+            else
+            {
+                string selectedDate = dtDate.Value.ToString("MM/dd/yyyy"); 
+                query = $"SELECT TripID, Passenger, Driver, [Plate Number], Route, Location, Destination, [Fare Amount] FROM Trips WHERE Format([Trip Date], 'MM/dd/yyyy') = '{selectedDate}'";
+            }
             DisplayDataGrid(query);
+        }
+
+        private void cmbxJeepCodes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string jeepCode = null;
+            if (cmbxJeepCodes.SelectedItem != null)
+            {
+                jeepCode = cmbxJeepCodes.SelectedItem.ToString();
+                query = $"SELECT TripID, [Trip Date], Passenger, Driver, [Plate Number], Location, Destination, [Fare Amount] FROM Trips WHERE Route = '{jeepCode}'";
+            }
+            DisplayDataGrid (query);
         }
     }
 }

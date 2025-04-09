@@ -46,7 +46,8 @@ namespace NEXUS.User_Controls
                     query = "SELECT * FROM TripReportQuery";
                     dgvUsers.ContextMenuStrip = cmsAttachment;
                     break;
-                case "ReportDate":
+                case "Trip":
+                    query = "SELECT * FROM Trips";
                     break;
                 case "Rate":
                     query = "SELECT * FROM AdminRatings";
