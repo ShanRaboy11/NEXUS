@@ -73,7 +73,7 @@ namespace NEXUS.Forms
             // Show in chart title (you can remove this if you prefer using a label instead)
             var model = new PlotModel
             {
-                Title = $"Driver Weekly Earnings - Total: ₱{totalEarnings:N2}"
+                Title = $"Driver Weekly Earnings"
             };
 
             var series = new BarSeries
@@ -106,8 +106,8 @@ namespace NEXUS.Forms
             model.Series.Add(series);
             plotViewDriverAnalytics.Model = model;
 
-            //lblTotalEarnings.Text = $"Total Earnings: ₱{totalEarnings:N2}"; // Make sure you have this label on your form
-            //lblWeekRange.Text = $"Week of {GetCurrentWeekDateRange()}";
+            lblTotalEarnings.Text = $"₱ {totalEarnings:N2}"; // Make sure you have this label on your form
+            lblWeekRange.Text = $"{GetCurrentWeekDateRange()}";
         }
 
         private string GetCurrentWeekDateRange()

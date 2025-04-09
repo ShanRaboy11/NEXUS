@@ -289,41 +289,46 @@ namespace NEXUS.Forms
 
         private void UpdateRecentTrip()
         {
-            string query = @"
-        SELECT [Trip Date], SUM([Fare Amount]) AS TotalFare 
-        FROM Trips 
-        WHERE DriverID = ? 
-        AND [Trip Date] = (
-            SELECT MAX([Trip Date]) 
-            FROM Trips 
-            WHERE DriverID = ?
-        ) 
-        GROUP BY [Trip Date]";
+            string dateQuery = @"SELECT MAX([Trip Date]) FROM Trips WHERE DriverID = ?";
+
+            DateTime? recentTripDate = null;
 
             using (OleDbConnection conn = DatabaseManagement.GetConnection())
             {
                 conn.Open();
-                using (OleDbCommand cmd = new OleDbCommand(query, conn))
+
+                using (OleDbCommand dateCmd = new OleDbCommand(dateQuery, conn))
                 {
-                    cmd.Parameters.AddWithValue("?", driver.UserID); // 1st ?
-                    cmd.Parameters.AddWithValue("?", driver.UserID); // 2nd ?
-
-                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    dateCmd.Parameters.AddWithValue("?", driver.UserID);
+                    var result = dateCmd.ExecuteScalar();
+                    if (result != DBNull.Value && result != null)
                     {
-                        if (reader.Read())
-                        {
-                            DateTime recentTripDate = reader.GetDateTime(0);
-                            decimal totalFare = Convert.ToDecimal(reader[1]);
-
-                            lblTripDate.Text = recentTripDate.ToString("MMMM d, yyyy");
-                            lblTotalEarned.Text = totalFare.ToString("C");
-                        }
-                        else
-                        {
-                            lblTripDate.Text = "No trips found";
-                            lblTotalEarned.Text = "₱0.00";
-                        }
+                        recentTripDate = Convert.ToDateTime(result);
                     }
+                }
+
+                if (recentTripDate.HasValue)
+                {
+                    string fareQuery = @"SELECT SUM([Fare Amount]) FROM Trips WHERE DriverID = ? AND FORMAT([Trip Date], 'yyyy-mm-dd') = ?";
+
+                    using (OleDbCommand fareCmd = new OleDbCommand(fareQuery, conn))
+                    {
+                        fareCmd.Parameters.AddWithValue("?", driver.UserID);
+                        fareCmd.Parameters.AddWithValue("?", recentTripDate.Value.ToString("yyyy-MM-dd"));
+
+                        var fareResult = fareCmd.ExecuteScalar();
+                        decimal totalFare = fareResult != DBNull.Value && fareResult != null
+                            ? Convert.ToDecimal(fareResult)
+                            : 0;
+
+                        lblTripDate.Text = recentTripDate.Value.ToString("MMMM d, yyyy");
+                        lblTotalEarned.Text = totalFare.ToString("C", new System.Globalization.CultureInfo("en-PH"));
+                    }
+                }
+                else
+                {
+                    lblTripDate.Text = "No trips found";
+                    lblTotalEarned.Text = "₱0.00";
                 }
             }
         }

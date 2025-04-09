@@ -89,6 +89,9 @@
             spaceSeparatorHorizontal9 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
             lblComfort = new Label();
             panel13 = new Panel();
+            lblTotalEarnings = new Label();
+            panel14 = new Panel();
+            lblWeekRange = new Label();
             tableLayoutPanel1.SuspendLayout();
             panel7.SuspendLayout();
             panel12.SuspendLayout();
@@ -102,6 +105,8 @@
             panel9.SuspendLayout();
             panel5.SuspendLayout();
             panel10.SuspendLayout();
+            panel13.SuspendLayout();
+            panel14.SuspendLayout();
             SuspendLayout();
             // 
             // label3
@@ -134,13 +139,16 @@
             spaceSeparatorHorizontal1.Location = new Point(21, 112);
             spaceSeparatorHorizontal1.Name = "spaceSeparatorHorizontal1";
             spaceSeparatorHorizontal1.NoRounding = false;
-            spaceSeparatorHorizontal1.Size = new Size(930, 4);
+            spaceSeparatorHorizontal1.Size = new Size(935, 4);
             spaceSeparatorHorizontal1.TabIndex = 50;
             spaceSeparatorHorizontal1.Text = "spaceSeparatorHorizontal1";
             spaceSeparatorHorizontal1.Transparent = false;
             // 
             // plotViewDriverAnalytics
             // 
+            plotViewDriverAnalytics.BackColor = Color.White;
+            plotViewDriverAnalytics.Font = new Font("Inter", 12F);
+            plotViewDriverAnalytics.ForeColor = Color.FromArgb(38, 36, 68);
             plotViewDriverAnalytics.Location = new Point(21, 147);
             plotViewDriverAnalytics.Name = "plotViewDriverAnalytics";
             plotViewDriverAnalytics.PanCursor = Cursors.Hand;
@@ -1081,10 +1089,45 @@
             // panel13
             // 
             panel13.BackColor = Color.White;
-            panel13.Location = new Point(602, 147);
+            panel13.Controls.Add(lblTotalEarnings);
+            panel13.Location = new Point(611, 147);
             panel13.Name = "panel13";
-            panel13.Size = new Size(345, 252);
+            panel13.Size = new Size(345, 269);
             panel13.TabIndex = 53;
+            // 
+            // lblTotalEarnings
+            // 
+            lblTotalEarnings.BackColor = Color.Transparent;
+            lblTotalEarnings.Font = new Font("Inter ExtraBold", 45F, FontStyle.Bold);
+            lblTotalEarnings.ForeColor = Color.Black;
+            lblTotalEarnings.Location = new Point(0, 67);
+            lblTotalEarnings.Margin = new Padding(0);
+            lblTotalEarnings.Name = "lblTotalEarnings";
+            lblTotalEarnings.Size = new Size(345, 198);
+            lblTotalEarnings.TabIndex = 60;
+            lblTotalEarnings.Text = "P 1000.00";
+            lblTotalEarnings.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // panel14
+            // 
+            panel14.BackColor = Color.FromArgb(38, 36, 68);
+            panel14.Controls.Add(lblWeekRange);
+            panel14.Location = new Point(611, 147);
+            panel14.Name = "panel14";
+            panel14.Size = new Size(345, 64);
+            panel14.TabIndex = 0;
+            // 
+            // lblWeekRange
+            // 
+            lblWeekRange.BackColor = Color.FromArgb(38, 36, 68);
+            lblWeekRange.Font = new Font("Inter", 16F, FontStyle.Bold);
+            lblWeekRange.ForeColor = Color.White;
+            lblWeekRange.Location = new Point(6, 0);
+            lblWeekRange.Name = "lblWeekRange";
+            lblWeekRange.Size = new Size(333, 64);
+            lblWeekRange.TabIndex = 60;
+            lblWeekRange.Text = "Speed";
+            lblWeekRange.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Analytics
             // 
@@ -1092,6 +1135,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
             ClientSize = new Size(972, 700);
+            Controls.Add(panel14);
             Controls.Add(panel13);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(plotViewDriverAnalytics);
@@ -1124,6 +1168,8 @@
             panel5.ResumeLayout(false);
             panel10.ResumeLayout(false);
             panel10.PerformLayout();
+            panel13.ResumeLayout(false);
+            panel14.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1191,5 +1237,8 @@
         public Label label13;
         private Label lblSpeed;
         private Panel panel13;
+        private Panel panel14;
+        public Label lblWeekRange;
+        private Label lblTotalEarnings;
     }
 }
