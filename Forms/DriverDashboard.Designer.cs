@@ -57,7 +57,7 @@
             cyberButton6 = new ReaLTaiizor.Controls.CyberButton();
             label26 = new Label();
             label27 = new Label();
-            cyberButton7 = new ReaLTaiizor.Controls.CyberButton();
+            btnCashOut = new ReaLTaiizor.Controls.CyberButton();
             lblWallet = new Label();
             label29 = new Label();
             label30 = new Label();
@@ -366,7 +366,7 @@
             panel1.Controls.Add(cyberButton6);
             panel1.Controls.Add(label26);
             panel1.Controls.Add(label27);
-            panel1.Controls.Add(cyberButton7);
+            panel1.Controls.Add(btnCashOut);
             panel1.Controls.Add(lblWallet);
             panel1.Controls.Add(label29);
             panel1.Controls.Add(label30);
@@ -523,46 +523,46 @@
             label27.TabIndex = 39;
             label27.Text = "Trip";
             // 
-            // cyberButton7
+            // btnCashOut
             // 
-            cyberButton7.Alpha = 20;
-            cyberButton7.BackColor = Color.Transparent;
-            cyberButton7.Background = true;
-            cyberButton7.Background_WidthPen = 4F;
-            cyberButton7.BackgroundPen = true;
-            cyberButton7.ColorBackground = Color.FromArgb(153, 229, 255);
-            cyberButton7.ColorBackground_1 = Color.FromArgb(153, 229, 255);
-            cyberButton7.ColorBackground_2 = Color.FromArgb(41, 63, 86);
-            cyberButton7.ColorBackground_Pen = Color.FromArgb(153, 229, 255);
-            cyberButton7.ColorLighting = Color.FromArgb(153, 229, 255);
-            cyberButton7.ColorPen_1 = Color.FromArgb(37, 52, 68);
-            cyberButton7.ColorPen_2 = Color.FromArgb(41, 63, 86);
-            cyberButton7.Cursor = Cursors.Hand;
-            cyberButton7.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            cyberButton7.Effect_1 = true;
-            cyberButton7.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
-            cyberButton7.Effect_1_Transparency = 25;
-            cyberButton7.Effect_2 = true;
-            cyberButton7.Effect_2_ColorBackground = Color.White;
-            cyberButton7.Effect_2_Transparency = 20;
-            cyberButton7.Font = new Font("Inter", 12F);
-            cyberButton7.ForeColor = Color.FromArgb(38, 36, 68);
-            cyberButton7.Lighting = false;
-            cyberButton7.LinearGradient_Background = false;
-            cyberButton7.LinearGradientPen = false;
-            cyberButton7.Location = new Point(183, 339);
-            cyberButton7.Name = "cyberButton7";
-            cyberButton7.PenWidth = 15;
-            cyberButton7.Rounding = true;
-            cyberButton7.RoundingInt = 70;
-            cyberButton7.Size = new Size(117, 43);
-            cyberButton7.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            cyberButton7.TabIndex = 37;
-            cyberButton7.Tag = "Cyber";
-            cyberButton7.TextButton = "+ Cash in";
-            cyberButton7.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            cyberButton7.Timer_Effect_1 = 5;
-            cyberButton7.Timer_RGB = 300;
+            btnCashOut.Alpha = 20;
+            btnCashOut.BackColor = Color.Transparent;
+            btnCashOut.Background = true;
+            btnCashOut.Background_WidthPen = 4F;
+            btnCashOut.BackgroundPen = true;
+            btnCashOut.ColorBackground = Color.FromArgb(153, 229, 255);
+            btnCashOut.ColorBackground_1 = Color.FromArgb(153, 229, 255);
+            btnCashOut.ColorBackground_2 = Color.FromArgb(41, 63, 86);
+            btnCashOut.ColorBackground_Pen = Color.FromArgb(153, 229, 255);
+            btnCashOut.ColorLighting = Color.FromArgb(153, 229, 255);
+            btnCashOut.ColorPen_1 = Color.FromArgb(37, 52, 68);
+            btnCashOut.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            btnCashOut.Cursor = Cursors.Hand;
+            btnCashOut.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            btnCashOut.Effect_1 = true;
+            btnCashOut.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            btnCashOut.Effect_1_Transparency = 25;
+            btnCashOut.Effect_2 = true;
+            btnCashOut.Effect_2_ColorBackground = Color.White;
+            btnCashOut.Effect_2_Transparency = 20;
+            btnCashOut.Font = new Font("Inter", 12F);
+            btnCashOut.ForeColor = Color.FromArgb(38, 36, 68);
+            btnCashOut.Lighting = false;
+            btnCashOut.LinearGradient_Background = false;
+            btnCashOut.LinearGradientPen = false;
+            btnCashOut.Location = new Point(183, 339);
+            btnCashOut.Name = "btnCashOut";
+            btnCashOut.PenWidth = 15;
+            btnCashOut.Rounding = true;
+            btnCashOut.RoundingInt = 70;
+            btnCashOut.Size = new Size(117, 43);
+            btnCashOut.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            btnCashOut.TabIndex = 37;
+            btnCashOut.Tag = "Cyber";
+            btnCashOut.TextButton = "+ Cash Out";
+            btnCashOut.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            btnCashOut.Timer_Effect_1 = 5;
+            btnCashOut.Timer_RGB = 300;
             // 
             // lblWallet
             // 
@@ -739,7 +739,7 @@
         private ReaLTaiizor.Controls.CyberButton cyberButton6;
         private Label label26;
         private Label label27;
-        private ReaLTaiizor.Controls.CyberButton cyberButton7;
+        private ReaLTaiizor.Controls.CyberButton btnCashOut;
         private Label lblWallet;
         private Label label29;
         private Label label30;

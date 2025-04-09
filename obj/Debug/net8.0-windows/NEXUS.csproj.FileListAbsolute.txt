@@ -85,3 +85,5 @@ C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.User_Con
 C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\NEXUS.dll.config
 C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\OxyPlot.dll
 C:\Users\Shan Michael\source\repos\NEXUS\bin\Debug\net8.0-windows\OxyPlot.WindowsForms.dll
+C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.CashOut.resources
+C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.EditProfile.resources
