@@ -40,11 +40,12 @@ namespace NEXUS.User_Controls
                     query = "SELECT ID, Username, [Password], [Full Name], [Email Address], Gender, Birthday, [Plate Number], Wallet, Route, Status FROM DriversQuery";
                     break;
                 case "Report":
-                    query = "SELECT * FROM Reports";
+                    query = "SELECT ReportID, UserID, [Date of Incident], Location, Category, Description, Status FROM Reports";
                     break;
                 case "ReportDate":
                     break;
                 case "Rate":
+                    query = "SELECT * FROM AdminRatings";
                     break;
                 case "Transaction":
                     query = "SELECT * FROM Transactions";

@@ -62,7 +62,19 @@ namespace NEXUS.User_Controls
         private void btnRate_Click(object sender, EventArgs e)
         {
             SelectButton(btnRate);
-            
+            DisplayRates();
+        }
+
+        private void DisplayRates()
+        {
+            pnlContainer.Controls.Clear();
+
+            DataGrid dataGrid = new DataGrid("Rate")
+            {
+                Dock = DockStyle.Fill
+            };
+
+            pnlContainer.Controls.Add(dataGrid);
         }
     }
 }

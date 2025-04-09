@@ -169,7 +169,7 @@
             // 
             tblVerification.AutoScroll = true;
             tblVerification.BackColor = Color.FromArgb(230, 249, 255);
-            tblVerification.ColumnCount = 4;
+            tblVerification.ColumnCount = 3;
             tblVerification.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 41.3318024F));
             tblVerification.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 58.6681976F));
             tblVerification.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 222F));
@@ -211,9 +211,9 @@
             lblHeader2.Dock = DockStyle.Fill;
             lblHeader2.Font = new Font("Inter SemiBold", 20F, FontStyle.Bold);
             lblHeader2.ForeColor = Color.FromArgb(24, 60, 114);
-            lblHeader2.Location = new Point(357, 5);
+            lblHeader2.Location = new Point(447, 5);
             lblHeader2.Name = "lblHeader2";
-            lblHeader2.Size = new Size(490, 45);
+            lblHeader2.Size = new Size(617, 45);
             lblHeader2.TabIndex = 1;
             lblHeader2.Text = "Attachment";
             lblHeader2.TextAlign = ContentAlignment.MiddleCenter;
@@ -226,7 +226,7 @@
             label1.ForeColor = Color.FromArgb(24, 60, 114);
             label1.Location = new Point(8, 5);
             label1.Name = "label1";
-            label1.Size = new Size(343, 45);
+            label1.Size = new Size(433, 45);
             label1.TabIndex = 0;
             label1.Text = "Name";
             label1.TextAlign = ContentAlignment.MiddleCenter;
