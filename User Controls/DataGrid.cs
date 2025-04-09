@@ -31,7 +31,7 @@ namespace NEXUS.User_Controls
             string query = null;
             if (string.IsNullOrEmpty(userType)) return;
 
-            switch(userType)
+            switch (userType)
             {
                 case "Passenger":
                     query = "SELECT ID, Username, [Password], [Full Name], [Email Address], Gender, Birthday, Classification, Wallet, Points, Status FROM PassengersQuery";
@@ -188,5 +188,53 @@ namespace NEXUS.User_Controls
             dgvUsers.ClearSelection();
             dgvUsers.CurrentCell = null;
         }
+
+        private void attachmentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgvUsers.SelectedRows.Count == 0)
+                return;
+
+            // Get the selected ReportID from the first selected row
+            var selectedRow = dgvUsers.SelectedRows[0];
+            var reportId = selectedRow.Cells["ReportID"].Value.ToString();
+
+            if (string.IsNullOrEmpty(reportId))
+                return;
+
+            // Retrieve image bytes from the database
+            byte[] imageData = GetImageFromDatabase(reportId);
+
+            if (imageData != null && imageData.Length > 0)
+            {
+                DisplayImage displayForm = new DisplayImage(imageData, null);
+                DialogBox dialogBox = new DialogBox();
+                dialogBox.ShowOverlay(displayForm, null);
+            }
+        }
+
+        private byte[] GetImageFromDatabase(string reportId)
+        {
+            byte[] imageBytes = null;
+
+            string query = "SELECT Documentation FROM Reports WHERE ReportID = ?";
+
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            using (OleDbCommand cmd = new OleDbCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("?", reportId);
+
+                conn.Open();
+                var result = cmd.ExecuteScalar();
+
+                if (result != DBNull.Value && result != null)
+                {
+                    imageBytes = (byte[])result;
+                }
+            }
+
+            return imageBytes;
+        }
+
+
     }
 }

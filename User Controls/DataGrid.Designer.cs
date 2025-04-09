@@ -31,15 +31,15 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DataGrid));
             dgvUsers = new Krypton.Toolkit.KryptonDataGridView();
+            cmsAttachment = new ContextMenuStrip(components);
+            attachmentToolStripMenuItem = new ToolStripMenuItem();
             contextMenuStrip1 = new ContextMenuStrip(components);
             deleteToolStripMenuItem = new ToolStripMenuItem();
             pbEmpty = new PictureBox();
-            cmsAttachment = new ContextMenuStrip(components);
-            attachmentToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dgvUsers).BeginInit();
+            cmsAttachment.SuspendLayout();
             contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbEmpty).BeginInit();
-            cmsAttachment.SuspendLayout();
             SuspendLayout();
             // 
             // dgvUsers
@@ -75,6 +75,22 @@
             dgvUsers.StateSelected.DataCell.Back.Color2 = Color.FromArgb(0, 229, 255);
             dgvUsers.TabIndex = 0;
             // 
+            // cmsAttachment
+            // 
+            cmsAttachment.Font = new Font("Segoe UI", 9F);
+            cmsAttachment.Items.AddRange(new ToolStripItem[] { attachmentToolStripMenuItem });
+            cmsAttachment.Name = "cmsAttachment";
+            cmsAttachment.Size = new Size(181, 52);
+            // 
+            // attachmentToolStripMenuItem
+            // 
+            attachmentToolStripMenuItem.Font = new Font("Inter", 10F);
+            attachmentToolStripMenuItem.Image = Properties.Resources._9104142_fullscreen_expand_maximize_enlarge_screen_icon;
+            attachmentToolStripMenuItem.Name = "attachmentToolStripMenuItem";
+            attachmentToolStripMenuItem.Size = new Size(180, 26);
+            attachmentToolStripMenuItem.Text = "Attachment";
+            attachmentToolStripMenuItem.Click += attachmentToolStripMenuItem_Click;
+            // 
             // contextMenuStrip1
             // 
             contextMenuStrip1.Font = new Font("Segoe UI", 9F);
@@ -102,21 +118,6 @@
             pbEmpty.TabStop = false;
             pbEmpty.Visible = false;
             // 
-            // cmsAttachment
-            // 
-            cmsAttachment.Font = new Font("Segoe UI", 9F);
-            cmsAttachment.Items.AddRange(new ToolStripItem[] { attachmentToolStripMenuItem });
-            cmsAttachment.Name = "cmsAttachment";
-            cmsAttachment.Size = new Size(155, 30);
-            // 
-            // attachmentToolStripMenuItem
-            // 
-            attachmentToolStripMenuItem.Font = new Font("Inter", 10F);
-            attachmentToolStripMenuItem.Image = Properties.Resources._9104142_fullscreen_expand_maximize_enlarge_screen_icon;
-            attachmentToolStripMenuItem.Name = "attachmentToolStripMenuItem";
-            attachmentToolStripMenuItem.Size = new Size(154, 26);
-            attachmentToolStripMenuItem.Text = "Attachment";
-            // 
             // DataGrid
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -128,9 +129,9 @@
             Size = new Size(1312, 697);
             Load += DataGrid_Load;
             ((System.ComponentModel.ISupportInitialize)dgvUsers).EndInit();
+            cmsAttachment.ResumeLayout(false);
             contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbEmpty).EndInit();
-            cmsAttachment.ResumeLayout(false);
             ResumeLayout(false);
         }
 
