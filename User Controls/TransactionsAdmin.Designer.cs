@@ -152,12 +152,13 @@
             cmbxFilter.Font = new Font("Inter", 12.25F);
             cmbxFilter.ForeColor = Color.FromArgb(24, 60, 114);
             cmbxFilter.FormattingEnabled = true;
-            cmbxFilter.Items.AddRange(new object[] { "Cash In", "Payments" });
+            cmbxFilter.Items.AddRange(new object[] { "Cash In", "Cash Out", "Payments" });
             cmbxFilter.Location = new Point(103, 3);
             cmbxFilter.Name = "cmbxFilter";
             cmbxFilter.Size = new Size(148, 31);
             cmbxFilter.TabIndex = 29;
             cmbxFilter.TabStop = false;
+            cmbxFilter.SelectedIndexChanged += cmbxFilter_SelectedIndexChanged;
             // 
             // iconButton1
             // 
@@ -198,7 +199,7 @@
             dtDate.Name = "dtDate";
             dtDate.Size = new Size(266, 35);
             dtDate.TabIndex = 51;
-            dtDate.Visible = false;
+            dtDate.ValueChanged += dtDate_ValueChanged;
             // 
             // pnlContainer
             // 

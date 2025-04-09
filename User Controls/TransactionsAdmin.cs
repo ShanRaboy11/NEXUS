@@ -12,6 +12,7 @@ namespace NEXUS.User_Controls
 {
     public partial class TransactionsAdmin : UserControl
     {
+        private string query;
         private FontAwesome.Sharp.IconButton selectedButton = null;
         private FontAwesome.Sharp.IconButton currentBtn;
         string filter;
@@ -66,9 +67,34 @@ namespace NEXUS.User_Controls
             this.filter = cmbxFilter.SelectedValue.ToString();
         }
 
-        private void kryptonDateTimePicker1_ValueChanged(object sender, EventArgs e)
+        private void DisplayDataGrid(string transactionQuery)
         {
+            pnlContainer.Controls.Clear();
 
+            DataGrid dataGrid = new DataGrid(transactionQuery)
+            {
+                Dock = DockStyle.Fill
+            };
+
+            pnlContainer.Controls.Add(dataGrid);
+        }
+
+        private void cmbxFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbxFilter.SelectedItem == "Cash In")
+                query = "SELECT TransactionID, UserID, TransactionDate, [Full Name], Amount FROM Transactions WHERE Type = 'Cash In'";
+            else if (cmbxFilter.SelectedItem == "Cash Out")
+                query = "SELECT TransactionID, UserID, TransactionDate, [Full Name], Amount FROM Transactions WHERE Type = 'Cash Out'";
+            else
+                query = "SELECT TransactionID, UserID, TransactionDate, [Full Name], Amount FROM Transactions WHERE Type = 'Trip Payment'";
+            DisplayDataGrid(query);
+        }
+
+        private void dtDate_ValueChanged(object sender, EventArgs e)
+        {
+            string selectedDate = dtDate.Value.ToString("MM/dd/yyyy"); // Format selected date
+            query = $"SELECT TransactionID, UserID, [Full Name], Amount, Type FROM Transactions WHERE Format([TransactionDate], 'MM/dd/yyyy') = '{selectedDate}'";
+            DisplayDataGrid(query);
         }
     }
 }
