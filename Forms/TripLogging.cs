@@ -14,11 +14,12 @@ namespace NEXUS.Forms
     public partial class TripLogging : Form
     {
         private int UserID;
-        public TripLogging(int userID)
+        public TripLogging(int userID, string message)
         {
             InitializeComponent();
             this.UserID = userID;
-            DisplayScanner();
+            if(message == "camera")
+                DisplayScanner();
         }
 
         private void DisplayScanner()
@@ -31,6 +32,18 @@ namespace NEXUS.Forms
             };
 
             pnlContainerScan.Controls.Add(qRScanUC);
+        }
+
+        public void DisplayPayment(string decoded, int userID)
+        {
+            pnlContainerScan.Controls.Clear();
+
+            PaymentUC payment = new PaymentUC(decoded, UserID)
+            {
+                Dock = DockStyle.Fill
+            };
+
+            pnlContainerScan.Controls.Add(payment);
         }
 
         private void pbClose_Click(object sender, EventArgs e)

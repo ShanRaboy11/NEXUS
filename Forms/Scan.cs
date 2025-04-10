@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ZXing;
+using ZXing.Windows.Compatibility;
 
 namespace NEXUS.Forms
 {
@@ -52,7 +54,7 @@ namespace NEXUS.Forms
         
         private void btnOpenQRScan_Click(object sender, EventArgs e)
         {
-            TripLogging tripLogging = new TripLogging(userID);
+            TripLogging tripLogging = new TripLogging(userID, "camera");
             ShowOverlay(tripLogging, null);
             tripLogging.FormClosed += (s, args) => this.Show();
         }
@@ -66,11 +68,56 @@ namespace NEXUS.Forms
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    btnUploadQR.SizeMode = PictureBoxSizeMode.Zoom;
-                    btnUploadQR.Image = Image.FromFile(openFileDialog.FileName);
-                    lblUpload.Visible = false;
+                    Image uploadedImage = Image.FromFile(openFileDialog.FileName);
+
+                    // Decode QR Code from image
+                    using (Bitmap bitmap = new Bitmap(uploadedImage))
+                    {
+                        BarcodeReader reader = new BarcodeReader
+                        {
+                            AutoRotate = true,
+                            Options = { TryHarder = true, PossibleFormats = new[] { BarcodeFormat.QR_CODE } }
+                        };
+
+                        Result result = reader.Decode(bitmap);
+
+                        if (result != null && !string.IsNullOrEmpty(result.Text))
+                        {
+                            string decoded = result.Text.Trim();
+
+                            if (int.TryParse(decoded, out int driverID))
+                            {
+                                TripLogging tripLogging = new TripLogging(userID, null);
+                                ShowOverlay(tripLogging, null);
+                                tripLogging.DisplayPayment(decoded, userID);
+                            }
+                            else
+                            {
+                                //ShowInvalidQRCodeDialog();
+                            }
+                        }
+                        else
+                        {
+                            //ShowInvalidQRCodeDialog();
+                        }
+                    }
                 }
             }
         }
+
+        /*
+        private void ShowInvalidQRCodeDialog()
+        {
+            DialogBox dialogBox = new DialogBox();
+            Scan scan = new Scan(PassengerID);
+            dialogBox.ShowIcon("invalid qr code");
+
+            scan.ShowOverlay(dialogBox, null);
+            containerPanel.Controls.Clear();
+
+            QRScanUC newQRScanUC = new QRScanUC(containerPanel, PassengerID);
+            containerPanel.Controls.Add(newQRScanUC);
+        }*/
+
     }
 }

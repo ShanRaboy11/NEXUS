@@ -38,7 +38,6 @@
             lblUpload = new Label();
             pictureBox2 = new PictureBox();
             label6 = new Label();
-            btnSubmitQR = new ReaLTaiizor.Controls.CyberButton();
             ((System.ComponentModel.ISupportInitialize)btnUploadQR).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -78,7 +77,7 @@
             // label5
             // 
             label5.Font = new Font("Inter Medium", 13F, FontStyle.Bold);
-            label5.Location = new Point(69, 615);
+            label5.Location = new Point(69, 644);
             label5.Name = "label5";
             label5.Size = new Size(866, 23);
             label5.TabIndex = 39;
@@ -120,7 +119,7 @@
             btnUploadQR.BackColor = Color.White;
             btnUploadQR.Cursor = Cursors.Hand;
             btnUploadQR.Image = (Image)resources.GetObject("btnUploadQR.Image");
-            btnUploadQR.Location = new Point(534, 277);
+            btnUploadQR.Location = new Point(534, 292);
             btnUploadQR.Name = "btnUploadQR";
             btnUploadQR.Size = new Size(401, 294);
             btnUploadQR.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -135,7 +134,7 @@
             lblUpload.Cursor = Cursors.Hand;
             lblUpload.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblUpload.ForeColor = Color.FromArgb(24, 60, 114);
-            lblUpload.Location = new Point(674, 461);
+            lblUpload.Location = new Point(674, 476);
             lblUpload.Name = "lblUpload";
             lblUpload.Size = new Size(138, 23);
             lblUpload.TabIndex = 42;
@@ -147,7 +146,7 @@
             pictureBox2.BackColor = Color.White;
             pictureBox2.Cursor = Cursors.Hand;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(69, 277);
+            pictureBox2.Location = new Point(69, 292);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(401, 294);
             pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -162,53 +161,12 @@
             label6.Cursor = Cursors.Hand;
             label6.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.FromArgb(24, 60, 114);
-            label6.Location = new Point(208, 461);
+            label6.Location = new Point(208, 476);
             label6.Name = "label6";
             label6.Size = new Size(120, 23);
             label6.TabIndex = 44;
             label6.Text = "Scan QR Code";
             label6.Click += btnOpenQRScan_Click;
-            // 
-            // btnSubmitQR
-            // 
-            btnSubmitQR.Alpha = 20;
-            btnSubmitQR.BackColor = Color.Transparent;
-            btnSubmitQR.Background = true;
-            btnSubmitQR.Background_WidthPen = 4F;
-            btnSubmitQR.BackgroundPen = true;
-            btnSubmitQR.ColorBackground = Color.FromArgb(24, 60, 114);
-            btnSubmitQR.ColorBackground_1 = Color.FromArgb(24, 60, 114);
-            btnSubmitQR.ColorBackground_2 = Color.FromArgb(24, 60, 114);
-            btnSubmitQR.ColorBackground_Pen = Color.FromArgb(153, 229, 255);
-            btnSubmitQR.ColorLighting = Color.FromArgb(24, 60, 114);
-            btnSubmitQR.ColorPen_1 = Color.FromArgb(24, 60, 114);
-            btnSubmitQR.ColorPen_2 = Color.FromArgb(24, 60, 114);
-            btnSubmitQR.Cursor = Cursors.Hand;
-            btnSubmitQR.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            btnSubmitQR.Effect_1 = true;
-            btnSubmitQR.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
-            btnSubmitQR.Effect_1_Transparency = 25;
-            btnSubmitQR.Effect_2 = true;
-            btnSubmitQR.Effect_2_ColorBackground = Color.White;
-            btnSubmitQR.Effect_2_Transparency = 20;
-            btnSubmitQR.Font = new Font("Inter", 14.25F);
-            btnSubmitQR.ForeColor = Color.FromArgb(245, 245, 245);
-            btnSubmitQR.Lighting = false;
-            btnSubmitQR.LinearGradient_Background = false;
-            btnSubmitQR.LinearGradientPen = false;
-            btnSubmitQR.Location = new Point(336, 669);
-            btnSubmitQR.Name = "btnSubmitQR";
-            btnSubmitQR.PenWidth = 15;
-            btnSubmitQR.Rounding = true;
-            btnSubmitQR.RoundingInt = 70;
-            btnSubmitQR.Size = new Size(312, 46);
-            btnSubmitQR.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            btnSubmitQR.TabIndex = 45;
-            btnSubmitQR.Tag = "Cyber";
-            btnSubmitQR.TextButton = "Submit";
-            btnSubmitQR.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            btnSubmitQR.Timer_Effect_1 = 5;
-            btnSubmitQR.Timer_RGB = 300;
             // 
             // Scan
             // 
@@ -216,7 +174,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
             ClientSize = new Size(988, 739);
-            Controls.Add(btnSubmitQR);
             Controls.Add(label6);
             Controls.Add(pictureBox2);
             Controls.Add(lblUpload);
@@ -247,6 +204,5 @@
         private Label lblUpload;
         private PictureBox pictureBox2;
         private Label label6;
-        private ReaLTaiizor.Controls.CyberButton btnSubmitQR;
     }
 }
