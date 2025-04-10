@@ -28,57 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            cyberButton3 = new ReaLTaiizor.Controls.CyberButton();
             tableLayoutPanel1 = new TableLayoutPanel();
             panel1 = new Panel();
-            label1 = new Label();
-            lblUserFName = new Label();
+            panel2 = new Panel();
+            spaceSeparatorHorizontal4 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
+            spaceSeparatorVertical1 = new ReaLTaiizor.Controls.SpaceSeparatorVertical();
+            panel4 = new Panel();
+            tableLayoutPanel2 = new TableLayoutPanel();
+            panel6 = new Panel();
+            lblNumPassenger = new Label();
+            lblNumDriver = new Label();
+            panel5 = new Panel();
+            pvPieChart = new OxyPlot.WindowsForms.PlotView();
+            spaceSeparatorVertical2 = new ReaLTaiizor.Controls.SpaceSeparatorVertical();
+            spaceSeparatorHorizontal3 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
+            panel3 = new Panel();
+            lblUsers = new Label();
+            spaceSeparatorHorizontal1 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
             tableLayoutPanel1.SuspendLayout();
-            panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            panel4.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
+            panel3.SuspendLayout();
             SuspendLayout();
-            // 
-            // cyberButton3
-            // 
-            cyberButton3.Alpha = 20;
-            cyberButton3.BackColor = Color.Transparent;
-            cyberButton3.Background = true;
-            cyberButton3.Background_WidthPen = 4F;
-            cyberButton3.BackgroundPen = true;
-            cyberButton3.ColorBackground = Color.FromArgb(153, 229, 255);
-            cyberButton3.ColorBackground_1 = Color.FromArgb(38, 36, 68);
-            cyberButton3.ColorBackground_2 = Color.FromArgb(41, 63, 86);
-            cyberButton3.ColorBackground_Pen = Color.FromArgb(153, 229, 255);
-            cyberButton3.ColorLighting = Color.FromArgb(153, 229, 255);
-            cyberButton3.ColorPen_1 = Color.FromArgb(37, 52, 68);
-            cyberButton3.ColorPen_2 = Color.FromArgb(41, 63, 86);
-            cyberButton3.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            cyberButton3.Dock = DockStyle.Fill;
-            cyberButton3.Effect_1 = true;
-            cyberButton3.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
-            cyberButton3.Effect_1_Transparency = 25;
-            cyberButton3.Effect_2 = true;
-            cyberButton3.Effect_2_ColorBackground = Color.White;
-            cyberButton3.Effect_2_Transparency = 20;
-            cyberButton3.Enabled = false;
-            cyberButton3.Font = new Font("Inter", 12F);
-            cyberButton3.ForeColor = Color.FromArgb(38, 36, 68);
-            cyberButton3.Lighting = false;
-            cyberButton3.LinearGradient_Background = false;
-            cyberButton3.LinearGradientPen = false;
-            cyberButton3.Location = new Point(0, 0);
-            cyberButton3.Name = "cyberButton3";
-            cyberButton3.PenWidth = 15;
-            cyberButton3.Rounding = true;
-            cyberButton3.RoundingInt = 70;
-            cyberButton3.Size = new Size(428, 331);
-            cyberButton3.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            cyberButton3.TabIndex = 42;
-            cyberButton3.Tag = "Cyber";
-            cyberButton3.TextButton = "";
-            cyberButton3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            cyberButton3.Timer_Effect_1 = 5;
-            cyberButton3.Timer_RGB = 300;
-            cyberButton3.Click += cyberButton3_Click;
             // 
             // tableLayoutPanel1
             // 
@@ -89,6 +61,7 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 392F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Controls.Add(panel1, 1, 2);
+            tableLayoutPanel1.Controls.Add(panel2, 1, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -99,42 +72,210 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Size = new Size(1312, 767);
             tableLayoutPanel1.TabIndex = 43;
-            tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
             // 
             // panel1
             // 
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(lblUserFName);
-            panel1.Controls.Add(cyberButton3);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(16, 412);
             panel1.Name = "panel1";
             panel1.Size = new Size(428, 331);
             panel1.TabIndex = 45;
             // 
-            // label1
+            // panel2
             // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.FromArgb(153, 229, 255);
-            label1.Font = new Font("Inter ExtraBold", 25F, FontStyle.Bold);
-            label1.ForeColor = Color.FromArgb(24, 60, 114);
-            label1.Location = new Point(139, 233);
-            label1.Name = "label1";
-            label1.Size = new Size(135, 49);
-            label1.TabIndex = 44;
-            label1.Text = "USERS";
+            panel2.BackColor = Color.White;
+            panel2.Controls.Add(spaceSeparatorHorizontal4);
+            panel2.Controls.Add(spaceSeparatorVertical1);
+            panel2.Controls.Add(panel4);
+            panel2.Controls.Add(pvPieChart);
+            panel2.Controls.Add(spaceSeparatorVertical2);
+            panel2.Controls.Add(spaceSeparatorHorizontal3);
+            panel2.Controls.Add(panel3);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(16, 19);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(428, 387);
+            panel2.TabIndex = 47;
             // 
-            // lblUserFName
+            // spaceSeparatorHorizontal4
             // 
-            lblUserFName.BackColor = Color.FromArgb(153, 229, 255);
-            lblUserFName.Font = new Font("Inter ExtraBold", 90F, FontStyle.Bold);
-            lblUserFName.ForeColor = Color.White;
-            lblUserFName.Location = new Point(55, 33);
-            lblUserFName.Name = "lblUserFName";
-            lblUserFName.Size = new Size(317, 200);
-            lblUserFName.TabIndex = 43;
-            lblUserFName.Text = "0";
-            lblUserFName.TextAlign = ContentAlignment.MiddleCenter;
+            spaceSeparatorHorizontal4.Customization = "Kioq/yoqKv8jIyP/Kioq/w==";
+            spaceSeparatorHorizontal4.Dock = DockStyle.Bottom;
+            spaceSeparatorHorizontal4.Font = new Font("Verdana", 8F);
+            spaceSeparatorHorizontal4.Image = null;
+            spaceSeparatorHorizontal4.Location = new Point(4, 383);
+            spaceSeparatorHorizontal4.Name = "spaceSeparatorHorizontal4";
+            spaceSeparatorHorizontal4.NoRounding = false;
+            spaceSeparatorHorizontal4.Size = new Size(420, 4);
+            spaceSeparatorHorizontal4.TabIndex = 61;
+            spaceSeparatorHorizontal4.Text = "spaceSeparatorHorizontal4";
+            spaceSeparatorHorizontal4.Transparent = false;
+            // 
+            // spaceSeparatorVertical1
+            // 
+            spaceSeparatorVertical1.Customization = "Kioq/yoqKv8jIyP/Kioq/w==";
+            spaceSeparatorVertical1.Dock = DockStyle.Right;
+            spaceSeparatorVertical1.Font = new Font("Verdana", 8F);
+            spaceSeparatorVertical1.Image = null;
+            spaceSeparatorVertical1.Location = new Point(424, 55);
+            spaceSeparatorVertical1.Name = "spaceSeparatorVertical1";
+            spaceSeparatorVertical1.NoRounding = false;
+            spaceSeparatorVertical1.Size = new Size(4, 332);
+            spaceSeparatorVertical1.TabIndex = 57;
+            spaceSeparatorVertical1.Text = "spaceSeparatorVertical1";
+            spaceSeparatorVertical1.Transparent = false;
+            // 
+            // panel4
+            // 
+            panel4.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            panel4.BackColor = Color.White;
+            panel4.Controls.Add(tableLayoutPanel2);
+            panel4.Location = new Point(356, 328);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(69, 56);
+            panel4.TabIndex = 62;
+            // 
+            // tableLayoutPanel2
+            // 
+            tableLayoutPanel2.ColumnCount = 2;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 42.0289841F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 57.9710159F));
+            tableLayoutPanel2.Controls.Add(panel6, 0, 1);
+            tableLayoutPanel2.Controls.Add(lblNumPassenger, 1, 0);
+            tableLayoutPanel2.Controls.Add(lblNumDriver, 1, 1);
+            tableLayoutPanel2.Controls.Add(panel5, 0, 0);
+            tableLayoutPanel2.Dock = DockStyle.Fill;
+            tableLayoutPanel2.Location = new Point(0, 0);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 3;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 8F));
+            tableLayoutPanel2.Size = new Size(69, 56);
+            tableLayoutPanel2.TabIndex = 0;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.FromArgb(0, 229, 255);
+            panel6.Dock = DockStyle.Fill;
+            panel6.Location = new Point(3, 27);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(23, 18);
+            panel6.TabIndex = 65;
+            // 
+            // lblNumPassenger
+            // 
+            lblNumPassenger.Dock = DockStyle.Fill;
+            lblNumPassenger.Font = new Font("Inter Medium", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblNumPassenger.ForeColor = Color.FromArgb(24, 60, 114);
+            lblNumPassenger.Location = new Point(29, 0);
+            lblNumPassenger.Margin = new Padding(0);
+            lblNumPassenger.Name = "lblNumPassenger";
+            lblNumPassenger.Size = new Size(40, 24);
+            lblNumPassenger.TabIndex = 62;
+            lblNumPassenger.Text = "15";
+            lblNumPassenger.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // lblNumDriver
+            // 
+            lblNumDriver.Dock = DockStyle.Fill;
+            lblNumDriver.Font = new Font("Inter Medium", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblNumDriver.ForeColor = Color.FromArgb(24, 60, 114);
+            lblNumDriver.Location = new Point(29, 24);
+            lblNumDriver.Margin = new Padding(0);
+            lblNumDriver.Name = "lblNumDriver";
+            lblNumDriver.Size = new Size(40, 24);
+            lblNumDriver.TabIndex = 63;
+            lblNumDriver.Text = "18";
+            lblNumDriver.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.FromArgb(153, 229, 255);
+            panel5.Dock = DockStyle.Fill;
+            panel5.Location = new Point(3, 3);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(23, 18);
+            panel5.TabIndex = 64;
+            // 
+            // pvPieChart
+            // 
+            pvPieChart.BackColor = Color.White;
+            pvPieChart.Dock = DockStyle.Fill;
+            pvPieChart.Location = new Point(4, 55);
+            pvPieChart.Name = "pvPieChart";
+            pvPieChart.PanCursor = Cursors.Hand;
+            pvPieChart.Size = new Size(424, 332);
+            pvPieChart.TabIndex = 46;
+            pvPieChart.Text = "plotView1";
+            pvPieChart.ZoomHorizontalCursor = Cursors.SizeWE;
+            pvPieChart.ZoomRectangleCursor = Cursors.SizeNWSE;
+            pvPieChart.ZoomVerticalCursor = Cursors.SizeNS;
+            // 
+            // spaceSeparatorVertical2
+            // 
+            spaceSeparatorVertical2.Customization = "Kioq/yoqKv8jIyP/Kioq/w==";
+            spaceSeparatorVertical2.Dock = DockStyle.Left;
+            spaceSeparatorVertical2.Font = new Font("Verdana", 8F);
+            spaceSeparatorVertical2.Image = null;
+            spaceSeparatorVertical2.Location = new Point(0, 55);
+            spaceSeparatorVertical2.Name = "spaceSeparatorVertical2";
+            spaceSeparatorVertical2.NoRounding = false;
+            spaceSeparatorVertical2.Size = new Size(4, 332);
+            spaceSeparatorVertical2.TabIndex = 59;
+            spaceSeparatorVertical2.Text = "spaceSeparatorVertical2";
+            spaceSeparatorVertical2.Transparent = false;
+            // 
+            // spaceSeparatorHorizontal3
+            // 
+            spaceSeparatorHorizontal3.Customization = "Kioq/yoqKv8jIyP/Kioq/w==";
+            spaceSeparatorHorizontal3.Dock = DockStyle.Top;
+            spaceSeparatorHorizontal3.Font = new Font("Verdana", 8F);
+            spaceSeparatorHorizontal3.Image = null;
+            spaceSeparatorHorizontal3.Location = new Point(0, 51);
+            spaceSeparatorHorizontal3.Name = "spaceSeparatorHorizontal3";
+            spaceSeparatorHorizontal3.NoRounding = false;
+            spaceSeparatorHorizontal3.Size = new Size(428, 4);
+            spaceSeparatorHorizontal3.TabIndex = 58;
+            spaceSeparatorHorizontal3.Text = "spaceSeparatorHorizontal3";
+            spaceSeparatorHorizontal3.Transparent = false;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(38, 36, 68);
+            panel3.Controls.Add(lblUsers);
+            panel3.Controls.Add(spaceSeparatorHorizontal1);
+            panel3.Dock = DockStyle.Top;
+            panel3.Location = new Point(0, 0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(428, 51);
+            panel3.TabIndex = 0;
+            // 
+            // lblUsers
+            // 
+            lblUsers.Dock = DockStyle.Top;
+            lblUsers.Font = new Font("Inter", 20F, FontStyle.Bold);
+            lblUsers.ForeColor = Color.White;
+            lblUsers.Location = new Point(0, 4);
+            lblUsers.Name = "lblUsers";
+            lblUsers.Size = new Size(428, 44);
+            lblUsers.TabIndex = 61;
+            lblUsers.Text = "label2";
+            lblUsers.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // spaceSeparatorHorizontal1
+            // 
+            spaceSeparatorHorizontal1.Customization = "Kioq/yoqKv8jIyP/Kioq/w==";
+            spaceSeparatorHorizontal1.Dock = DockStyle.Top;
+            spaceSeparatorHorizontal1.Font = new Font("Verdana", 8F);
+            spaceSeparatorHorizontal1.Image = null;
+            spaceSeparatorHorizontal1.Location = new Point(0, 0);
+            spaceSeparatorHorizontal1.Name = "spaceSeparatorHorizontal1";
+            spaceSeparatorHorizontal1.NoRounding = false;
+            spaceSeparatorHorizontal1.Size = new Size(428, 4);
+            spaceSeparatorHorizontal1.TabIndex = 60;
+            spaceSeparatorHorizontal1.Text = "spaceSeparatorHorizontal1";
+            spaceSeparatorHorizontal1.Transparent = false;
             // 
             // HomeAdmin
             // 
@@ -145,17 +286,31 @@
             Name = "HomeAdmin";
             Size = new Size(1312, 767);
             tableLayoutPanel1.ResumeLayout(false);
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel4.ResumeLayout(false);
+            tableLayoutPanel2.ResumeLayout(false);
+            panel3.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-
-        private ReaLTaiizor.Controls.CyberButton cyberButton3;
         private TableLayoutPanel tableLayoutPanel1;
         private Panel panel1;
         private Label label1;
-        private Label lblUserFName;
+        private OxyPlot.WindowsForms.PlotView pvPieChart;
+        private Panel panel2;
+        private Panel panel3;
+        private ReaLTaiizor.Controls.SpaceSeparatorVertical spaceSeparatorVertical2;
+        private ReaLTaiizor.Controls.SpaceSeparatorVertical spaceSeparatorVertical1;
+        private ReaLTaiizor.Controls.SpaceSeparatorHorizontal spaceSeparatorHorizontal3;
+        private ReaLTaiizor.Controls.SpaceSeparatorHorizontal spaceSeparatorHorizontal4;
+        private ReaLTaiizor.Controls.SpaceSeparatorHorizontal spaceSeparatorHorizontal1;
+        private Label lblUsers;
+        private Panel panel4;
+        private TableLayoutPanel tableLayoutPanel2;
+        private Panel panel6;
+        private Label lblNumPassenger;
+        private Label lblNumDriver;
+        private Panel panel5;
     }
 }

@@ -248,32 +248,26 @@ namespace NEXUS.User_Controls
         {
             if (cbxPoints.Checked)
             {
-                // Retrieve points and convert to decimal for comparison
                 this.points = Trip.RetrievePoints(CurrentPassenger);
                 decimal convertedPoints = (decimal)this.points;
 
-                // Check if the points can cover the fare
                 if (convertedPoints < farePrice)
                 {
-                    // Points are not enough to cover the entire fare
-                    farePrice -= convertedPoints;  // Subtract all points from fare
-                    this.points = 0;  // Set points to 0 after using them all
+                    farePrice -= convertedPoints; 
+                    this.points = 0; 
                 }
                 else
                 {
-                    // Points can cover the entire fare
-                    convertedPoints -= farePrice;  // Deduct the farePrice from points
-                    farePrice = 0;  // Set farePrice to 0
-                    this.points = (double)convertedPoints;  // Update the points after deduction 
+                    convertedPoints -= farePrice; 
+                    farePrice = 0; 
+                    this.points = (double)convertedPoints;  
                 }
 
-                lblAmount.Text = farePrice.ToString("N2");  // Update the amount label
-                //lblAmount.Text = convertedPoints.ToString("N2");
+                lblAmount.Text = farePrice.ToString("N2");  
                 pointsUsed = true;
             }
             else
             {
-                // Reset points and recalculate fare if no points are used
                 this.points = 0;
                 CalculateFare();
                 pointsUsed = false;
