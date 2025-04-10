@@ -107,14 +107,32 @@ namespace NEXUS.User_Controls
                 DataTable dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);
 
+                double totalRevenue = 0;
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    totalRevenue += Convert.ToDouble(row["TotalFare"]);
+                }
+
                 // Now you can use this data to create the chart
                 CreateRevenueLineChart(dataTable);
-            }
+                lblTotalRevenue.Text = "₱ " + totalRevenue.ToString("N2");
+            }           
         }
 
         private void CreateRevenueLineChart(DataTable dataTable)
         {
-            var model = new PlotModel { Title = "Total Revenue in the Last 7 Days" };
+            var model = new PlotModel { };
+
+            // Create the area series (shaded area under the line)
+            var areaSeries = new AreaSeries
+            {
+                Title = "Revenue Area",
+                MarkerType = MarkerType.Circle,
+                MarkerSize = 4,
+                MarkerStroke = OxyColors.Black,
+                Color = OxyColor.FromRgb(38, 36, 68),  // Line color
+                Fill = OxyColor.FromArgb(100, 153, 229, 255)  // Shaded area under the line (lightened shade of the line color)
+            };
 
             // Create the line series
             var lineSeries = new LineSeries
@@ -124,20 +142,25 @@ namespace NEXUS.User_Controls
                 MarkerSize = 4,
                 MarkerStroke = OxyColors.Black,
                 LineStyle = LineStyle.Solid,
-                Color = OxyColor.FromRgb(38, 36, 68)
+                Color = OxyColor.FromRgb(38, 36, 68)  // Line color
             };
 
-            // Add data points to the line series
+            // Add data points to the line series and area series
             foreach (DataRow row in dataTable.Rows)
             {
-                DateTime tripDate = Convert.ToDateTime(row["TripDay"]); // Use "TripDay" instead of "Trip Date"
+                DateTime tripDate = Convert.ToDateTime(row["TripDay"]);  // Use "TripDay" instead of "Trip Date"
                 double totalFare = Convert.ToDouble(row["TotalFare"]);
 
                 // Add the data point to the line series
                 lineSeries.Points.Add(new DataPoint(DateTimeAxis.ToDouble(tripDate), totalFare));
+
+                // Add the same data point to the area series for shading
+                areaSeries.Points.Add(new DataPoint(DateTimeAxis.ToDouble(tripDate), totalFare));
             }
 
-            model.Series.Add(lineSeries);
+            // Add both series to the plot model
+            model.Series.Add(areaSeries);  // Add AreaSeries to the model
+            model.Series.Add(lineSeries);  // Add LineSeries to the model
 
             // Set up the X-axis (Date)
             model.Axes.Add(new DateTimeAxis
@@ -153,11 +176,12 @@ namespace NEXUS.User_Controls
                 Position = AxisPosition.Left,
                 MinimumPadding = 0.1,
                 MaximumPadding = 0.1,
-                Title = "Total Revenue ($)"
+                Title = "Total Revenue (₱)"
             });
 
             // Assign the model to the plot view
             pvRevenueChart.Model = model;  // pvRevenueChart is the name of the PlotView control
         }
+
     }
 }

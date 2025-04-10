@@ -46,12 +46,22 @@
             spaceSeparatorHorizontal1 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
             panel1 = new Panel();
             pvRevenueChart = new OxyPlot.WindowsForms.PlotView();
+            panel8 = new Panel();
+            lblTotalRevenue = new Label();
+            panel7 = new Panel();
+            lblReport = new Label();
+            spaceSeparatorHorizontal5 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
+            spaceSeparatorVertical4 = new ReaLTaiizor.Controls.SpaceSeparatorVertical();
+            spaceSeparatorHorizontal2 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
+            spaceSeparatorVertical3 = new ReaLTaiizor.Controls.SpaceSeparatorVertical();
             tableLayoutPanel1.SuspendLayout();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             panel3.SuspendLayout();
             panel1.SuspendLayout();
+            panel8.SuspendLayout();
+            panel7.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -70,8 +80,8 @@
             tableLayoutPanel1.RowCount = 5;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 3.38983059F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 51.36897F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 4.95436764F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 37.4185143F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 3.91134286F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 38.33116F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 2.868318F));
             tableLayoutPanel1.Size = new Size(1312, 767);
             tableLayoutPanel1.TabIndex = 43;
@@ -112,10 +122,10 @@
             spaceSeparatorVertical1.Dock = DockStyle.Right;
             spaceSeparatorVertical1.Font = new Font("Verdana", 8F);
             spaceSeparatorVertical1.Image = null;
-            spaceSeparatorVertical1.Location = new Point(483, 55);
+            spaceSeparatorVertical1.Location = new Point(483, 49);
             spaceSeparatorVertical1.Name = "spaceSeparatorVertical1";
             spaceSeparatorVertical1.NoRounding = false;
-            spaceSeparatorVertical1.Size = new Size(4, 333);
+            spaceSeparatorVertical1.Size = new Size(4, 339);
             spaceSeparatorVertical1.TabIndex = 57;
             spaceSeparatorVertical1.Text = "spaceSeparatorVertical1";
             spaceSeparatorVertical1.Transparent = false;
@@ -197,10 +207,10 @@
             // 
             pvPieChart.BackColor = Color.White;
             pvPieChart.Dock = DockStyle.Fill;
-            pvPieChart.Location = new Point(4, 55);
+            pvPieChart.Location = new Point(4, 49);
             pvPieChart.Name = "pvPieChart";
             pvPieChart.PanCursor = Cursors.Hand;
-            pvPieChart.Size = new Size(483, 333);
+            pvPieChart.Size = new Size(483, 339);
             pvPieChart.TabIndex = 46;
             pvPieChart.Text = "plotView1";
             pvPieChart.ZoomHorizontalCursor = Cursors.SizeWE;
@@ -213,10 +223,10 @@
             spaceSeparatorVertical2.Dock = DockStyle.Left;
             spaceSeparatorVertical2.Font = new Font("Verdana", 8F);
             spaceSeparatorVertical2.Image = null;
-            spaceSeparatorVertical2.Location = new Point(0, 55);
+            spaceSeparatorVertical2.Location = new Point(0, 49);
             spaceSeparatorVertical2.Name = "spaceSeparatorVertical2";
             spaceSeparatorVertical2.NoRounding = false;
-            spaceSeparatorVertical2.Size = new Size(4, 333);
+            spaceSeparatorVertical2.Size = new Size(4, 339);
             spaceSeparatorVertical2.TabIndex = 59;
             spaceSeparatorVertical2.Text = "spaceSeparatorVertical2";
             spaceSeparatorVertical2.Transparent = false;
@@ -227,7 +237,7 @@
             spaceSeparatorHorizontal3.Dock = DockStyle.Top;
             spaceSeparatorHorizontal3.Font = new Font("Verdana", 8F);
             spaceSeparatorHorizontal3.Image = null;
-            spaceSeparatorHorizontal3.Location = new Point(0, 51);
+            spaceSeparatorHorizontal3.Location = new Point(0, 45);
             spaceSeparatorHorizontal3.Name = "spaceSeparatorHorizontal3";
             spaceSeparatorHorizontal3.NoRounding = false;
             spaceSeparatorHorizontal3.Size = new Size(487, 4);
@@ -243,7 +253,7 @@
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(487, 51);
+            panel3.Size = new Size(487, 45);
             panel3.TabIndex = 0;
             // 
             // lblUsers
@@ -253,10 +263,10 @@
             lblUsers.ForeColor = Color.White;
             lblUsers.Location = new Point(0, 4);
             lblUsers.Name = "lblUsers";
-            lblUsers.Size = new Size(487, 44);
+            lblUsers.Size = new Size(487, 34);
             lblUsers.TabIndex = 61;
             lblUsers.Text = "label2";
-            lblUsers.TextAlign = ContentAlignment.MiddleCenter;
+            lblUsers.TextAlign = ContentAlignment.TopCenter;
             // 
             // spaceSeparatorHorizontal1
             // 
@@ -276,6 +286,11 @@
             // 
             panel1.BackColor = Color.White;
             panel1.Controls.Add(pvRevenueChart);
+            panel1.Controls.Add(panel8);
+            panel1.Controls.Add(panel7);
+            panel1.Controls.Add(spaceSeparatorVertical4);
+            panel1.Controls.Add(spaceSeparatorHorizontal2);
+            panel1.Controls.Add(spaceSeparatorVertical3);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(548, 29);
             panel1.Name = "panel1";
@@ -286,15 +301,116 @@
             // 
             pvRevenueChart.BackColor = Color.White;
             pvRevenueChart.Dock = DockStyle.Fill;
-            pvRevenueChart.Location = new Point(0, 0);
+            pvRevenueChart.Location = new Point(4, 89);
+            pvRevenueChart.Margin = new Padding(0);
             pvRevenueChart.Name = "pvRevenueChart";
             pvRevenueChart.PanCursor = Cursors.Hand;
-            pvRevenueChart.Size = new Size(728, 388);
+            pvRevenueChart.Size = new Size(720, 295);
             pvRevenueChart.TabIndex = 48;
             pvRevenueChart.Text = "plotView1";
             pvRevenueChart.ZoomHorizontalCursor = Cursors.SizeWE;
             pvRevenueChart.ZoomRectangleCursor = Cursors.SizeNWSE;
             pvRevenueChart.ZoomVerticalCursor = Cursors.SizeNS;
+            // 
+            // panel8
+            // 
+            panel8.BackColor = Color.White;
+            panel8.Controls.Add(lblTotalRevenue);
+            panel8.Dock = DockStyle.Top;
+            panel8.Location = new Point(4, 38);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(720, 51);
+            panel8.TabIndex = 65;
+            // 
+            // lblTotalRevenue
+            // 
+            lblTotalRevenue.Dock = DockStyle.Fill;
+            lblTotalRevenue.Font = new Font("Inter", 30F, FontStyle.Bold);
+            lblTotalRevenue.ForeColor = Color.FromArgb(38, 36, 68);
+            lblTotalRevenue.Location = new Point(0, 0);
+            lblTotalRevenue.Margin = new Padding(0);
+            lblTotalRevenue.Name = "lblTotalRevenue";
+            lblTotalRevenue.Size = new Size(720, 51);
+            lblTotalRevenue.TabIndex = 61;
+            lblTotalRevenue.Text = "label2";
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.White;
+            panel7.Controls.Add(lblReport);
+            panel7.Controls.Add(spaceSeparatorHorizontal5);
+            panel7.Dock = DockStyle.Top;
+            panel7.Location = new Point(4, 0);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(720, 38);
+            panel7.TabIndex = 64;
+            // 
+            // lblReport
+            // 
+            lblReport.Dock = DockStyle.Fill;
+            lblReport.Font = new Font("Inter Medium", 16.75F, FontStyle.Bold);
+            lblReport.ForeColor = Color.FromArgb(38, 36, 68);
+            lblReport.Location = new Point(0, 4);
+            lblReport.Name = "lblReport";
+            lblReport.Size = new Size(720, 34);
+            lblReport.TabIndex = 61;
+            lblReport.Text = "Weekly Report";
+            // 
+            // spaceSeparatorHorizontal5
+            // 
+            spaceSeparatorHorizontal5.Customization = "Kioq/yoqKv8jIyP/Kioq/w==";
+            spaceSeparatorHorizontal5.Dock = DockStyle.Top;
+            spaceSeparatorHorizontal5.Font = new Font("Verdana", 8F);
+            spaceSeparatorHorizontal5.Image = null;
+            spaceSeparatorHorizontal5.Location = new Point(0, 0);
+            spaceSeparatorHorizontal5.Name = "spaceSeparatorHorizontal5";
+            spaceSeparatorHorizontal5.NoRounding = false;
+            spaceSeparatorHorizontal5.Size = new Size(720, 4);
+            spaceSeparatorHorizontal5.TabIndex = 60;
+            spaceSeparatorHorizontal5.Text = "spaceSeparatorHorizontal5";
+            spaceSeparatorHorizontal5.Transparent = false;
+            // 
+            // spaceSeparatorVertical4
+            // 
+            spaceSeparatorVertical4.Customization = "Kioq/yoqKv8jIyP/Kioq/w==";
+            spaceSeparatorVertical4.Dock = DockStyle.Left;
+            spaceSeparatorVertical4.Font = new Font("Verdana", 8F);
+            spaceSeparatorVertical4.Image = null;
+            spaceSeparatorVertical4.Location = new Point(0, 0);
+            spaceSeparatorVertical4.Name = "spaceSeparatorVertical4";
+            spaceSeparatorVertical4.NoRounding = false;
+            spaceSeparatorVertical4.Size = new Size(4, 384);
+            spaceSeparatorVertical4.TabIndex = 63;
+            spaceSeparatorVertical4.Text = "spaceSeparatorVertical4";
+            spaceSeparatorVertical4.Transparent = false;
+            // 
+            // spaceSeparatorHorizontal2
+            // 
+            spaceSeparatorHorizontal2.Customization = "Kioq/yoqKv8jIyP/Kioq/w==";
+            spaceSeparatorHorizontal2.Dock = DockStyle.Bottom;
+            spaceSeparatorHorizontal2.Font = new Font("Verdana", 8F);
+            spaceSeparatorHorizontal2.Image = null;
+            spaceSeparatorHorizontal2.Location = new Point(0, 384);
+            spaceSeparatorHorizontal2.Name = "spaceSeparatorHorizontal2";
+            spaceSeparatorHorizontal2.NoRounding = false;
+            spaceSeparatorHorizontal2.Size = new Size(724, 4);
+            spaceSeparatorHorizontal2.TabIndex = 62;
+            spaceSeparatorHorizontal2.Text = "spaceSeparatorHorizontal2";
+            spaceSeparatorHorizontal2.Transparent = false;
+            // 
+            // spaceSeparatorVertical3
+            // 
+            spaceSeparatorVertical3.Customization = "Kioq/yoqKv8jIyP/Kioq/w==";
+            spaceSeparatorVertical3.Dock = DockStyle.Right;
+            spaceSeparatorVertical3.Font = new Font("Verdana", 8F);
+            spaceSeparatorVertical3.Image = null;
+            spaceSeparatorVertical3.Location = new Point(724, 0);
+            spaceSeparatorVertical3.Name = "spaceSeparatorVertical3";
+            spaceSeparatorVertical3.NoRounding = false;
+            spaceSeparatorVertical3.Size = new Size(4, 388);
+            spaceSeparatorVertical3.TabIndex = 58;
+            spaceSeparatorVertical3.Text = "spaceSeparatorVertical3";
+            spaceSeparatorVertical3.Transparent = false;
             // 
             // HomeAdmin
             // 
@@ -310,6 +426,8 @@
             tableLayoutPanel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel1.ResumeLayout(false);
+            panel8.ResumeLayout(false);
+            panel7.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -333,5 +451,13 @@
         private Panel panel5;
         private Panel panel1;
         private OxyPlot.WindowsForms.PlotView pvRevenueChart;
+        private ReaLTaiizor.Controls.SpaceSeparatorVertical spaceSeparatorVertical4;
+        private ReaLTaiizor.Controls.SpaceSeparatorHorizontal spaceSeparatorHorizontal2;
+        private ReaLTaiizor.Controls.SpaceSeparatorVertical spaceSeparatorVertical3;
+        private Panel panel8;
+        private Label lblTotalRevenue;
+        private Panel panel7;
+        private Label lblReport;
+        private ReaLTaiizor.Controls.SpaceSeparatorHorizontal spaceSeparatorHorizontal5;
     }
 }
