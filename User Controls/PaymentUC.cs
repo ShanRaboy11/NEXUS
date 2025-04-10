@@ -31,6 +31,7 @@ namespace NEXUS.User_Controls
             DecodeQRCode(qrInfo);
             SetBaseAmount();
             this.CurrentPassenger = currentPassenger;
+            this.passenger = databasemanagement.GetPassengerInfoByID(CurrentPassenger);
         }
 
 
@@ -164,7 +165,6 @@ namespace NEXUS.User_Controls
 
         private bool CheckDiscountEligibility()
         {
-            passenger = databasemanagement.GetPassengerInfoByID(CurrentPassenger);
 
             if (passenger.Classification != "Regular")
             {

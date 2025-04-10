@@ -131,7 +131,7 @@ namespace NEXUS.User_Controls
                 MarkerSize = 4,
                 MarkerStroke = OxyColors.Black,
                 Color = OxyColor.FromRgb(38, 36, 68),  // Line color
-                Fill = OxyColor.FromArgb(100, 153, 229, 255)  // Shaded area under the line (lightened shade of the line color)
+                Fill = OxyColor.FromArgb(100, 0, 229, 255)    // Shaded area under the line (lightened shade of the line color)
             };
 
             // Create the line series
