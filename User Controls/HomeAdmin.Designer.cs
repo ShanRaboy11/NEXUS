@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             tableLayoutPanel1 = new TableLayoutPanel();
-            panel1 = new Panel();
             panel2 = new Panel();
             spaceSeparatorHorizontal4 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
             spaceSeparatorVertical1 = new ReaLTaiizor.Controls.SpaceSeparatorVertical();
@@ -45,41 +44,37 @@
             panel3 = new Panel();
             lblUsers = new Label();
             spaceSeparatorHorizontal1 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
+            panel1 = new Panel();
+            pvRevenueChart = new OxyPlot.WindowsForms.PlotView();
             tableLayoutPanel1.SuspendLayout();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             panel3.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 5;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 2.9069767F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 97.0930252F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 452F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 392F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Controls.Add(panel1, 1, 2);
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 1.90548778F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 37.7286568F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 2.21036577F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 56.1737823F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 2.28658533F));
             tableLayoutPanel1.Controls.Add(panel2, 1, 1);
+            tableLayoutPanel1.Controls.Add(panel1, 3, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 4;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 4.132231F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 95.86777F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 337F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.RowCount = 5;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 3.38983059F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 51.36897F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 4.95436764F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 37.4185143F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 2.868318F));
             tableLayoutPanel1.Size = new Size(1312, 767);
             tableLayoutPanel1.TabIndex = 43;
-            // 
-            // panel1
-            // 
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(16, 412);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(428, 331);
-            panel1.TabIndex = 45;
             // 
             // panel2
             // 
@@ -92,9 +87,9 @@
             panel2.Controls.Add(spaceSeparatorHorizontal3);
             panel2.Controls.Add(panel3);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(16, 19);
+            panel2.Location = new Point(27, 29);
             panel2.Name = "panel2";
-            panel2.Size = new Size(428, 387);
+            panel2.Size = new Size(487, 388);
             panel2.TabIndex = 47;
             // 
             // spaceSeparatorHorizontal4
@@ -103,10 +98,10 @@
             spaceSeparatorHorizontal4.Dock = DockStyle.Bottom;
             spaceSeparatorHorizontal4.Font = new Font("Verdana", 8F);
             spaceSeparatorHorizontal4.Image = null;
-            spaceSeparatorHorizontal4.Location = new Point(4, 383);
+            spaceSeparatorHorizontal4.Location = new Point(4, 384);
             spaceSeparatorHorizontal4.Name = "spaceSeparatorHorizontal4";
             spaceSeparatorHorizontal4.NoRounding = false;
-            spaceSeparatorHorizontal4.Size = new Size(420, 4);
+            spaceSeparatorHorizontal4.Size = new Size(479, 4);
             spaceSeparatorHorizontal4.TabIndex = 61;
             spaceSeparatorHorizontal4.Text = "spaceSeparatorHorizontal4";
             spaceSeparatorHorizontal4.Transparent = false;
@@ -117,10 +112,10 @@
             spaceSeparatorVertical1.Dock = DockStyle.Right;
             spaceSeparatorVertical1.Font = new Font("Verdana", 8F);
             spaceSeparatorVertical1.Image = null;
-            spaceSeparatorVertical1.Location = new Point(424, 55);
+            spaceSeparatorVertical1.Location = new Point(483, 55);
             spaceSeparatorVertical1.Name = "spaceSeparatorVertical1";
             spaceSeparatorVertical1.NoRounding = false;
-            spaceSeparatorVertical1.Size = new Size(4, 332);
+            spaceSeparatorVertical1.Size = new Size(4, 333);
             spaceSeparatorVertical1.TabIndex = 57;
             spaceSeparatorVertical1.Text = "spaceSeparatorVertical1";
             spaceSeparatorVertical1.Transparent = false;
@@ -130,7 +125,7 @@
             panel4.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             panel4.BackColor = Color.White;
             panel4.Controls.Add(tableLayoutPanel2);
-            panel4.Location = new Point(356, 328);
+            panel4.Location = new Point(415, 329);
             panel4.Name = "panel4";
             panel4.Size = new Size(69, 56);
             panel4.TabIndex = 62;
@@ -205,7 +200,7 @@
             pvPieChart.Location = new Point(4, 55);
             pvPieChart.Name = "pvPieChart";
             pvPieChart.PanCursor = Cursors.Hand;
-            pvPieChart.Size = new Size(424, 332);
+            pvPieChart.Size = new Size(483, 333);
             pvPieChart.TabIndex = 46;
             pvPieChart.Text = "plotView1";
             pvPieChart.ZoomHorizontalCursor = Cursors.SizeWE;
@@ -221,7 +216,7 @@
             spaceSeparatorVertical2.Location = new Point(0, 55);
             spaceSeparatorVertical2.Name = "spaceSeparatorVertical2";
             spaceSeparatorVertical2.NoRounding = false;
-            spaceSeparatorVertical2.Size = new Size(4, 332);
+            spaceSeparatorVertical2.Size = new Size(4, 333);
             spaceSeparatorVertical2.TabIndex = 59;
             spaceSeparatorVertical2.Text = "spaceSeparatorVertical2";
             spaceSeparatorVertical2.Transparent = false;
@@ -235,7 +230,7 @@
             spaceSeparatorHorizontal3.Location = new Point(0, 51);
             spaceSeparatorHorizontal3.Name = "spaceSeparatorHorizontal3";
             spaceSeparatorHorizontal3.NoRounding = false;
-            spaceSeparatorHorizontal3.Size = new Size(428, 4);
+            spaceSeparatorHorizontal3.Size = new Size(487, 4);
             spaceSeparatorHorizontal3.TabIndex = 58;
             spaceSeparatorHorizontal3.Text = "spaceSeparatorHorizontal3";
             spaceSeparatorHorizontal3.Transparent = false;
@@ -248,7 +243,7 @@
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(428, 51);
+            panel3.Size = new Size(487, 51);
             panel3.TabIndex = 0;
             // 
             // lblUsers
@@ -258,7 +253,7 @@
             lblUsers.ForeColor = Color.White;
             lblUsers.Location = new Point(0, 4);
             lblUsers.Name = "lblUsers";
-            lblUsers.Size = new Size(428, 44);
+            lblUsers.Size = new Size(487, 44);
             lblUsers.TabIndex = 61;
             lblUsers.Text = "label2";
             lblUsers.TextAlign = ContentAlignment.MiddleCenter;
@@ -272,10 +267,34 @@
             spaceSeparatorHorizontal1.Location = new Point(0, 0);
             spaceSeparatorHorizontal1.Name = "spaceSeparatorHorizontal1";
             spaceSeparatorHorizontal1.NoRounding = false;
-            spaceSeparatorHorizontal1.Size = new Size(428, 4);
+            spaceSeparatorHorizontal1.Size = new Size(487, 4);
             spaceSeparatorHorizontal1.TabIndex = 60;
             spaceSeparatorHorizontal1.Text = "spaceSeparatorHorizontal1";
             spaceSeparatorHorizontal1.Transparent = false;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.White;
+            panel1.Controls.Add(pvRevenueChart);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(548, 29);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(728, 388);
+            panel1.TabIndex = 49;
+            // 
+            // pvRevenueChart
+            // 
+            pvRevenueChart.BackColor = Color.White;
+            pvRevenueChart.Dock = DockStyle.Fill;
+            pvRevenueChart.Location = new Point(0, 0);
+            pvRevenueChart.Name = "pvRevenueChart";
+            pvRevenueChart.PanCursor = Cursors.Hand;
+            pvRevenueChart.Size = new Size(728, 388);
+            pvRevenueChart.TabIndex = 48;
+            pvRevenueChart.Text = "plotView1";
+            pvRevenueChart.ZoomHorizontalCursor = Cursors.SizeWE;
+            pvRevenueChart.ZoomRectangleCursor = Cursors.SizeNWSE;
+            pvRevenueChart.ZoomVerticalCursor = Cursors.SizeNS;
             // 
             // HomeAdmin
             // 
@@ -290,12 +309,12 @@
             panel4.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
         private TableLayoutPanel tableLayoutPanel1;
-        private Panel panel1;
         private Label label1;
         private OxyPlot.WindowsForms.PlotView pvPieChart;
         private Panel panel2;
@@ -312,5 +331,7 @@
         private Label lblNumPassenger;
         private Label lblNumDriver;
         private Panel panel5;
+        private Panel panel1;
+        private OxyPlot.WindowsForms.PlotView pvRevenueChart;
     }
 }

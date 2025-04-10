@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NEXUS.Classes;
+using OxyPlot.Axes;
 
 namespace NEXUS.User_Controls
 {
@@ -21,6 +22,7 @@ namespace NEXUS.User_Controls
         {
             InitializeComponent();
             LoadUserDataAndShowChart();
+            LoadRevenueData();
         }
 
         private void LoadUserDataAndShowChart()
@@ -94,12 +96,68 @@ namespace NEXUS.User_Controls
             lblUsers.Text = numUsers + " Users";
         }
 
-
-
-
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        private void LoadRevenueData()
         {
+            string query = @"SELECT Sum([Fare Amount]) AS TotalFare, Format([Trip Date], 'mm/dd/yyyy') AS TripDay FROM Trips WHERE [Trip Date] >= Date() - 7
+                GROUP BY Format([Trip Date], 'mm/dd/yyyy') ORDER BY Format([Trip Date], 'mm/dd/yyyy') ASC";
 
+            using (OleDbConnection connection = DatabaseManagement.GetConnection())
+            {
+                OleDbDataAdapter dataAdapter = new OleDbDataAdapter(query, connection);
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+
+                // Now you can use this data to create the chart
+                CreateRevenueLineChart(dataTable);
+            }
+        }
+
+        private void CreateRevenueLineChart(DataTable dataTable)
+        {
+            var model = new PlotModel { Title = "Total Revenue in the Last 7 Days" };
+
+            // Create the line series
+            var lineSeries = new LineSeries
+            {
+                Title = "Revenue",
+                MarkerType = MarkerType.Circle,
+                MarkerSize = 4,
+                MarkerStroke = OxyColors.Black,
+                LineStyle = LineStyle.Solid,
+                Color = OxyColor.FromRgb(38, 36, 68)
+            };
+
+            // Add data points to the line series
+            foreach (DataRow row in dataTable.Rows)
+            {
+                DateTime tripDate = Convert.ToDateTime(row["TripDay"]); // Use "TripDay" instead of "Trip Date"
+                double totalFare = Convert.ToDouble(row["TotalFare"]);
+
+                // Add the data point to the line series
+                lineSeries.Points.Add(new DataPoint(DateTimeAxis.ToDouble(tripDate), totalFare));
+            }
+
+            model.Series.Add(lineSeries);
+
+            // Set up the X-axis (Date)
+            model.Axes.Add(new DateTimeAxis
+            {
+                Position = AxisPosition.Bottom,
+                StringFormat = "MM/dd",
+                Title = "Date"
+            });
+
+            // Set up the Y-axis (Revenue)
+            model.Axes.Add(new LinearAxis
+            {
+                Position = AxisPosition.Left,
+                MinimumPadding = 0.1,
+                MaximumPadding = 0.1,
+                Title = "Total Revenue ($)"
+            });
+
+            // Assign the model to the plot view
+            pvRevenueChart.Model = model;  // pvRevenueChart is the name of the PlotView control
         }
     }
 }
