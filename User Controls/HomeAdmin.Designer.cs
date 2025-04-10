@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             tableLayoutPanel1 = new TableLayoutPanel();
             panel2 = new Panel();
             spaceSeparatorHorizontal4 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
@@ -54,6 +55,10 @@
             spaceSeparatorVertical4 = new ReaLTaiizor.Controls.SpaceSeparatorVertical();
             spaceSeparatorHorizontal2 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
             spaceSeparatorVertical3 = new ReaLTaiizor.Controls.SpaceSeparatorVertical();
+            cmsRevenue = new ContextMenuStrip(components);
+            weeklyToolStripMenuItem = new ToolStripMenuItem();
+            monthlyToolStripMenuItem = new ToolStripMenuItem();
+            yearlyToolStripMenuItem = new ToolStripMenuItem();
             tableLayoutPanel1.SuspendLayout();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
@@ -62,6 +67,7 @@
             panel1.SuspendLayout();
             panel8.SuspendLayout();
             panel7.SuspendLayout();
+            cmsRevenue.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -300,6 +306,7 @@
             // pvRevenueChart
             // 
             pvRevenueChart.BackColor = Color.White;
+            pvRevenueChart.ContextMenuStrip = cmsRevenue;
             pvRevenueChart.Dock = DockStyle.Fill;
             pvRevenueChart.Location = new Point(4, 89);
             pvRevenueChart.Margin = new Padding(0);
@@ -412,6 +419,36 @@
             spaceSeparatorVertical3.Text = "spaceSeparatorVertical3";
             spaceSeparatorVertical3.Transparent = false;
             // 
+            // cmsRevenue
+            // 
+            cmsRevenue.Items.AddRange(new ToolStripItem[] { weeklyToolStripMenuItem, monthlyToolStripMenuItem, yearlyToolStripMenuItem });
+            cmsRevenue.Name = "cmsRevenue";
+            cmsRevenue.Size = new Size(136, 82);
+            // 
+            // weeklyToolStripMenuItem
+            // 
+            weeklyToolStripMenuItem.Font = new Font("Inter", 11.25F);
+            weeklyToolStripMenuItem.Name = "weeklyToolStripMenuItem";
+            weeklyToolStripMenuItem.Size = new Size(135, 26);
+            weeklyToolStripMenuItem.Text = "Weekly";
+            weeklyToolStripMenuItem.Click += weeklyToolStripMenuItem_Click;
+            // 
+            // monthlyToolStripMenuItem
+            // 
+            monthlyToolStripMenuItem.Font = new Font("Inter", 11.25F);
+            monthlyToolStripMenuItem.Name = "monthlyToolStripMenuItem";
+            monthlyToolStripMenuItem.Size = new Size(135, 26);
+            monthlyToolStripMenuItem.Text = "Monthly";
+            monthlyToolStripMenuItem.Click += monthlyToolStripMenuItem_Click;
+            // 
+            // yearlyToolStripMenuItem
+            // 
+            yearlyToolStripMenuItem.Font = new Font("Inter", 11.25F);
+            yearlyToolStripMenuItem.Name = "yearlyToolStripMenuItem";
+            yearlyToolStripMenuItem.Size = new Size(135, 26);
+            yearlyToolStripMenuItem.Text = "Yearly";
+            yearlyToolStripMenuItem.Click += yearlyToolStripMenuItem_Click;
+            // 
             // HomeAdmin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -428,6 +465,7 @@
             panel1.ResumeLayout(false);
             panel8.ResumeLayout(false);
             panel7.ResumeLayout(false);
+            cmsRevenue.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -459,5 +497,9 @@
         private Panel panel7;
         private Label lblReport;
         private ReaLTaiizor.Controls.SpaceSeparatorHorizontal spaceSeparatorHorizontal5;
+        private ContextMenuStrip cmsRevenue;
+        private ToolStripMenuItem weeklyToolStripMenuItem;
+        private ToolStripMenuItem monthlyToolStripMenuItem;
+        private ToolStripMenuItem yearlyToolStripMenuItem;
     }
 }
