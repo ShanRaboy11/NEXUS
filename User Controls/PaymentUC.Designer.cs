@@ -48,6 +48,7 @@
             cmbxLocation = new ComboBox();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
+            cbxPoints = new CheckBox();
             lblAmount = new Label();
             numericMultiplier = new NumericUpDown();
             label1 = new Label();
@@ -332,6 +333,7 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(cbxPoints);
             panel2.Controls.Add(lblAmount);
             panel2.Controls.Add(numericMultiplier);
             panel2.Controls.Add(label1);
@@ -342,6 +344,19 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(599, 166);
             panel2.TabIndex = 26;
+            // 
+            // cbxPoints
+            // 
+            cbxPoints.AutoSize = true;
+            cbxPoints.Font = new Font("Inter Medium", 13F, FontStyle.Bold);
+            cbxPoints.ForeColor = Color.FromArgb(38, 36, 68);
+            cbxPoints.Location = new Point(406, 7);
+            cbxPoints.Name = "cbxPoints";
+            cbxPoints.Size = new Size(195, 30);
+            cbxPoints.TabIndex = 39;
+            cbxPoints.Text = "Use Wheel Tokens";
+            cbxPoints.UseVisualStyleBackColor = true;
+            cbxPoints.CheckedChanged += cbxPoints_CheckedChanged;
             // 
             // lblAmount
             // 
@@ -489,5 +504,6 @@
         private NumericUpDown numericMultiplier;
         public Label lblAmount;
         private TableLayoutPanel tableLayoutPanel6;
+        private CheckBox cbxPoints;
     }
 }

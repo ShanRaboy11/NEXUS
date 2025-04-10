@@ -22,6 +22,8 @@ namespace NEXUS.User_Controls
         Passenger passenger;
         private decimal baseAmount;
         private decimal farePrice;
+        private bool pointsUsed = false;
+        private double points = 0;
 
         public PaymentUC(string qrInfo, int currentPassenger)
         {
@@ -36,7 +38,7 @@ namespace NEXUS.User_Controls
         {
             int driverID = int.Parse(QRInfo);
             this.currentDriver = databasemanagement.GetUserInfoByID(driverID);
-            
+
             using (MemoryStream ms = new MemoryStream(currentDriver.ProfilePicture))
             {
                 pbDriverPicture.Image = Image.FromStream(ms);
@@ -133,10 +135,10 @@ namespace NEXUS.User_Controls
                     decimal fare = baseAmount;
                     if (distance >= 5)
                     {
-                        int kmBeyondMinimum = (int)Math.Floor(distance) - 4; 
+                        int kmBeyondMinimum = (int)Math.Floor(distance) - 4;
                         if (kmBeyondMinimum >= 1)
                         {
-                            fare += kmBeyondMinimum;  
+                            fare += kmBeyondMinimum;
                         }
                     }
 
@@ -149,6 +151,7 @@ namespace NEXUS.User_Controls
 
                     this.baseAmount = fare * numericMultiplier.Value;
                     this.baseAmount = Math.Round(this.baseAmount); //rounds to the nearest whole number
+                    farePrice = baseAmount;
                     lblAmount.Text = this.baseAmount.ToString("N2");
                 }
                 catch (Exception ex)
@@ -167,7 +170,7 @@ namespace NEXUS.User_Controls
             {
                 return true;
             }
-            else 
+            else
                 return false;
         }
 
@@ -191,9 +194,13 @@ namespace NEXUS.User_Controls
                 scan.ShowOverlay(dialogBox, null);
                 return;
             }
+
             Trip trip = new Trip(currentDriver.UserID, CurrentPassenger, DateTime.Now, passenger.Name, currentDriver.Name, currentDriver.PlateNumber, currentDriver.Route, cmbxLocation.SelectedItem.ToString()
                 , cmbxDestination.SelectedItem.ToString(), double.Parse(lblAmount.Text));
-            
+
+            if (pointsUsed)
+                Trip.DeductPoints(points, CurrentPassenger);
+
             trip.SaveTripToDatabase();
             passengerWallet = trip.DeductFareAmountToWallet();
 
@@ -230,11 +237,49 @@ namespace NEXUS.User_Controls
 
         private void numericMultiplier_ValueChanged(object sender, EventArgs e)
         {
-            if (this.baseAmount > 0) 
+            if (this.baseAmount > 0)
             {
                 this.farePrice = this.baseAmount * numericMultiplier.Value;
                 lblAmount.Text = this.farePrice.ToString("N2");
             }
         }
+
+        private void cbxPoints_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbxPoints.Checked)
+            {
+                // Retrieve points and convert to decimal for comparison
+                this.points = Trip.RetrievePoints(CurrentPassenger);
+                decimal convertedPoints = (decimal)this.points;
+
+                // Check if the points can cover the fare
+                if (convertedPoints < farePrice)
+                {
+                    // Points are not enough to cover the entire fare
+                    farePrice -= convertedPoints;  // Subtract all points from fare
+                    this.points = 0;  // Set points to 0 after using them all
+                }
+                else
+                {
+                    // Points can cover the entire fare
+                    convertedPoints -= farePrice;  // Deduct the farePrice from points
+                    farePrice = 0;  // Set farePrice to 0
+                    this.points = (double)convertedPoints;  // Update the points after deduction 
+                }
+
+                lblAmount.Text = farePrice.ToString("N2");  // Update the amount label
+                //lblAmount.Text = convertedPoints.ToString("N2");
+                pointsUsed = true;
+            }
+            else
+            {
+                // Reset points and recalculate fare if no points are used
+                this.points = 0;
+                CalculateFare();
+                pointsUsed = false;
+            }
+
+        }
+
     }
 }

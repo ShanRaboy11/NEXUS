@@ -526,7 +526,56 @@ namespace NEXUS.Classes
             return latestTripID;
         }
 
+        public static double RetrievePoints(int userID)
+        {
+            double points = 0;
+            string query = $"SELECT Points FROM Accounts WHERE ID = {userID}";
 
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            using (OleDbCommand cmd = new OleDbCommand(query, conn))
+            {
+                try
+                {
+                    conn.Open();
+                    // Execute the query and retrieve the points (assumes Points is a numeric field)
+                    var result = cmd.ExecuteScalar();
+
+                    // Check if result is not null and cast it to double
+                    if (result != DBNull.Value)
+                    {
+                        points = Convert.ToDouble(result);
+                    }
+                    else
+                    {
+                        points = 0;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error retrieving points: {ex.Message}");
+                }
+            }
+
+            return points;
+        }
+
+        public static void DeductPoints(double remainingPoints, int passengerID)
+        {
+            string query = "UPDATE Accounts SET Points = ? WHERE ID = ?";
+
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            {
+                conn.Open();
+
+                using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("?", remainingPoints);
+                    cmd.Parameters.AddWithValue("?", passengerID);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
 
     public class IncidentReport
