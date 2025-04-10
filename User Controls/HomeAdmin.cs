@@ -24,6 +24,7 @@ namespace NEXUS.User_Controls
             InitializeComponent();
             LoadUserDataAndShowChart();
             LoadRevenueData();
+            LoadDriverRevenueData();
         }
 
         private void LoadUserDataAndShowChart()
@@ -445,7 +446,6 @@ namespace NEXUS.User_Controls
             pvRevenueChart.Model = model;  // pvRevenueChart is the name of the PlotView control
         }
 
-
         private void weeklyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LoadRevenueData();
@@ -460,5 +460,72 @@ namespace NEXUS.User_Controls
         {
             LoadAnnualRevenueData();
         }
+
+        private void LoadDriverRevenueData()
+        {
+            // SQL query to access the saved query in your database
+            string query = "SELECT * FROM DriverTotalRevenue"; // Access the saved query by name
+
+            using (OleDbConnection connection = DatabaseManagement.GetConnection())
+            {
+                OleDbDataAdapter dataAdapter = new OleDbDataAdapter(query, connection);
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+
+                // Create the chart
+                CreateDriverRevenueBarChart(dataTable);
+            }
+        }
+
+        private void CreateDriverRevenueBarChart(DataTable dataTable)
+        {
+            // Create the plot model
+            var model = new PlotModel
+            {
+                Title = "Driver Revenue Performance",
+                TitleFontSize = 18
+            };
+
+            // Create the bar series
+            var series = new BarSeries
+            {
+                LabelPlacement = LabelPlacement.Inside,
+                LabelFormatString = "₱{0:N0}",
+                FillColor = OxyColor.FromRgb(76, 229, 255)
+            };
+
+            // Add items dynamically based on data
+            foreach (DataRow row in dataTable.Rows)
+            {
+                string driverName = row["FirstName"].ToString(); // Get the first name of the driver
+                double totalRevenue = Convert.ToDouble(row["TotalRevenue"]); // Get the total revenue for that driver
+
+                // Add the data to the BarSeries
+                series.Items.Add(new BarItem(totalRevenue));
+            }
+
+            // Add the bar series to the plot model
+            model.Series.Add(series);
+
+            // Set up the X-axis (Driver Names)
+            model.Axes.Add(new CategoryAxis
+            {
+                Position = AxisPosition.Left,
+                ItemsSource = dataTable.AsEnumerable().Select(r => r["FirstName"].ToString()).ToList(),
+                Title = "Driver"
+            });
+
+            // Set up the Y-axis (Revenue)
+            model.Axes.Add(new LinearAxis
+            {
+                Position = AxisPosition.Bottom,
+                Minimum = 0,
+                Title = "Total Revenue (₱)"
+            });
+
+            // Assign the model to the PlotView
+            pvDrivers.Model = model; // Assuming plotViewDriverRevenue is your PlotView control
+        }
+
     }
 }
