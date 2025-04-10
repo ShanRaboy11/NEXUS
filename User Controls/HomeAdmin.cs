@@ -319,6 +319,131 @@ namespace NEXUS.User_Controls
         }
 
 
+        private void LoadAnnualRevenueData()
+        {
+            string query = @"SELECT Sum([Fare Amount]) AS TotalFare, Format([Trip Date], 'yyyy') AS TripYear FROM Trips 
+             WHERE [Trip Date] >= DateAdd('yyyy', -1, Date()) 
+             GROUP BY Format([Trip Date], 'yyyy') 
+             ORDER BY Format([Trip Date], 'yyyy') ASC";
+
+            using (OleDbConnection connection = DatabaseManagement.GetConnection())
+            {
+                OleDbDataAdapter dataAdapter = new OleDbDataAdapter(query, connection);
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+
+                // Debugging: Check if data is being retrieved
+                if (dataTable.Rows.Count == 0)
+                {
+                    MessageBox.Show("No data available for the past year.");
+                    return;
+                }
+
+                // Add missing years to the DataTable with zero values
+                AddMissingYears(dataTable);
+
+                // Sum up total revenue
+                double totalRevenue = 0;
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    totalRevenue += Convert.ToDouble(row["TotalFare"]);
+                }
+
+                // Create the chart with the data (including years with zero revenue)
+                CreateAnnualRevenueLineChart(dataTable);
+                lblTotalRevenue.Text = "₱ " + totalRevenue.ToString("N2");  // Display total revenue with proper formatting
+            }
+        }
+
+        private void AddMissingYears(DataTable dataTable)
+        {
+            // Generate all years for the past 2 years (current year and last year)
+            List<string> expectedYears = new List<string>();
+            DateTime currentDate = DateTime.Now;
+
+            for (int i = -1; i <= 0; i++)  // Loop through last year and this year
+            {
+                expectedYears.Add(currentDate.AddYears(i).ToString("yyyy"));
+            }
+
+            // Loop through the expected years and check if they exist in the data
+            foreach (var year in expectedYears)
+            {
+                // If the year is not present in the dataTable, add it with zero total fare
+                if (!dataTable.AsEnumerable().Any(row => row["TripYear"].ToString() == year))
+                {
+                    // Add missing year with zero fare
+                    DataRow newRow = dataTable.NewRow();
+                    newRow["TripYear"] = year;
+                    newRow["TotalFare"] = 0;  // No revenue for this year
+                    dataTable.Rows.Add(newRow);
+                }
+            }
+        }
+
+        private void CreateAnnualRevenueLineChart(DataTable dataTable)
+        {
+            var model = new PlotModel { };
+
+            // Create the area series (shaded area under the line)
+            var areaSeries = new AreaSeries
+            {
+                Title = "Revenue Area",
+                MarkerType = MarkerType.Circle,
+                MarkerSize = 4,
+                MarkerStroke = OxyColors.Black,
+                Color = OxyColor.FromRgb(38, 36, 68),  // Line color
+                Fill = OxyColor.FromArgb(100, 0, 229, 255)    // Shaded area under the line (lightened shade of the line color)
+            };
+
+            // Create the line series
+            var lineSeries = new LineSeries
+            {
+                Title = "Revenue",
+                MarkerType = MarkerType.Circle,
+                MarkerSize = 4,
+                MarkerStroke = OxyColors.Black,
+                LineStyle = LineStyle.Solid,
+                Color = OxyColor.FromRgb(38, 36, 68)  // Line color
+            };
+
+            // Add data points to the line series and area series
+            foreach (DataRow row in dataTable.Rows)
+            {
+                DateTime tripYear = DateTime.ParseExact(row["TripYear"].ToString(), "yyyy", CultureInfo.InvariantCulture);
+                double totalFare = Convert.ToDouble(row["TotalFare"]);
+
+                // Add the data point to the line series
+                lineSeries.Points.Add(new DataPoint(DateTimeAxis.ToDouble(tripYear), totalFare));
+
+                // Add the same data point to the area series for shading
+                areaSeries.Points.Add(new DataPoint(DateTimeAxis.ToDouble(tripYear), totalFare));
+            }
+
+            // Add both series to the plot model
+            model.Series.Add(areaSeries);  // Add AreaSeries to the model
+            model.Series.Add(lineSeries);  // Add LineSeries to the model
+
+            // Set up the X-axis (Year)
+            model.Axes.Add(new DateTimeAxis
+            {
+                Position = AxisPosition.Bottom,
+                StringFormat = "yyyy",  // Format for the year (e.g., 2025)
+                Title = "Year"
+            });
+
+            // Set up the Y-axis (Revenue)
+            model.Axes.Add(new LinearAxis
+            {
+                Position = AxisPosition.Left,
+                MinimumPadding = 0.1,
+                MaximumPadding = 0.1,
+                Title = "Total Revenue (₱)"
+            });
+
+            // Assign the model to the plot view
+            pvRevenueChart.Model = model;  // pvRevenueChart is the name of the PlotView control
+        }
 
 
         private void weeklyToolStripMenuItem_Click(object sender, EventArgs e)
@@ -333,7 +458,7 @@ namespace NEXUS.User_Controls
 
         private void yearlyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            LoadAnnualRevenueData();
         }
     }
 }
