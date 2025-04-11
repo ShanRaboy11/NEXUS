@@ -26,6 +26,7 @@ namespace NEXUS.User_Controls
             LoadRevenueData();
             LoadDriverWeeklyRevenueData();
             CountPendingReports();
+            DisplayDriverRankings();
         }
 
         private void LoadUserDataAndShowChart()
@@ -75,7 +76,7 @@ namespace NEXUS.User_Controls
                 InsideLabelPosition = 0.8,
                 AngleSpan = 360,
                 StartAngle = 15,
-                FontSize = 16,
+                FontSize = 18,
                 TextColor = OxyColors.Black
             };
 
@@ -151,7 +152,7 @@ namespace NEXUS.User_Controls
                 InsideLabelPosition = 0.8,
                 AngleSpan = 360,
                 StartAngle = 10,
-                FontSize = 16,
+                FontSize = 18,
                 TextColor = OxyColors.Black
             };
 
@@ -227,7 +228,7 @@ namespace NEXUS.User_Controls
                 InsideLabelPosition = 0.8,
                 AngleSpan = 360,
                 StartAngle = 15,
-                FontSize = 16,
+                FontSize = 18,
                 TextColor = OxyColors.Black
             };
 
@@ -322,6 +323,7 @@ namespace NEXUS.User_Controls
             model.Axes.Add(new DateTimeAxis
             {
                 Position = AxisPosition.Bottom,
+                FontSize = 16,
                 StringFormat = "MM/dd",
                 Title = "Date"
             });
@@ -330,6 +332,7 @@ namespace NEXUS.User_Controls
             model.Axes.Add(new LinearAxis
             {
                 Position = AxisPosition.Left,
+                FontSize = 16,
                 MinimumPadding = 0.1,
                 MaximumPadding = 0.1,
                 Title = "Total Revenue (₱)"
@@ -453,6 +456,7 @@ namespace NEXUS.User_Controls
             model.Axes.Add(new DateTimeAxis
             {
                 Position = AxisPosition.Bottom,
+                FontSize = 16,
                 StringFormat = "MM/yyyy",  // Format for the month (e.g., 01/2025 for January 2025)
                 Title = "Month",
                 IntervalType = DateTimeIntervalType.Months,  // Ensure the interval is set to months
@@ -464,6 +468,7 @@ namespace NEXUS.User_Controls
             model.Axes.Add(new LinearAxis
             {
                 Position = AxisPosition.Left,
+                FontSize = 16,
                 MinimumPadding = 0.1,
                 MaximumPadding = 0.1,
                 Title = "Total Revenue (₱)"
@@ -583,6 +588,7 @@ namespace NEXUS.User_Controls
             model.Axes.Add(new DateTimeAxis
             {
                 Position = AxisPosition.Bottom,
+                FontSize = 16,
                 StringFormat = "yyyy",  // Format for the year (e.g., 2025)
                 Title = "Year"
             });
@@ -591,6 +597,7 @@ namespace NEXUS.User_Controls
             model.Axes.Add(new LinearAxis
             {
                 Position = AxisPosition.Left,
+                FontSize = 16,
                 MinimumPadding = 0.1,
                 MaximumPadding = 0.1,
                 Title = "Total Revenue (₱)"
@@ -646,7 +653,8 @@ namespace NEXUS.User_Controls
                 LabelPlacement = LabelPlacement.Inside,
                 LabelFormatString = "₱{0:N0}",
                 FillColor = OxyColor.FromRgb(76, 229, 255), // Custom bar color
-                TextColor = OxyColor.FromRgb(24, 60, 114) // Label text color
+                TextColor = OxyColor.FromRgb(24, 60, 114),
+                FontSize = 16
             };
 
             // Add items dynamically based on data
@@ -668,6 +676,7 @@ namespace NEXUS.User_Controls
                 TitleColor = OxyColors.White,
                 TextColor = OxyColors.White,
                 AxislineColor = OxyColors.White,
+                FontSize = 16,
                 TicklineColor = OxyColors.White
             });
 
@@ -680,6 +689,7 @@ namespace NEXUS.User_Controls
                 TitleColor = OxyColors.White,
                 TextColor = OxyColors.White,
                 AxislineColor = OxyColors.White,
+                FontSize = 16,
                 TicklineColor = OxyColors.White
             });
 
@@ -716,7 +726,8 @@ namespace NEXUS.User_Controls
                 LabelPlacement = LabelPlacement.Inside,
                 LabelFormatString = "₱{0:N0}",
                 FillColor = OxyColor.FromRgb(76, 229, 255),
-                TextColor = OxyColor.FromRgb(24, 60, 114)
+                TextColor = OxyColor.FromRgb(24, 60, 114),
+                FontSize = 16
             };
 
             foreach (DataRow row in dataTable.Rows)
@@ -735,6 +746,7 @@ namespace NEXUS.User_Controls
                 TitleColor = OxyColors.White,
                 TextColor = OxyColors.White,
                 AxislineColor = OxyColors.White,
+                FontSize = 16,
                 TicklineColor = OxyColors.White
             });
 
@@ -746,6 +758,7 @@ namespace NEXUS.User_Controls
                 TitleColor = OxyColors.White,
                 TextColor = OxyColors.White,
                 AxislineColor = OxyColors.White,
+                FontSize = 16,
                 TicklineColor = OxyColors.White
             });
 
@@ -796,7 +809,8 @@ namespace NEXUS.User_Controls
                 LabelPlacement = LabelPlacement.Inside,
                 LabelFormatString = "₱{0:N0}",
                 FillColor = OxyColor.FromRgb(76, 229, 255),
-                TextColor = OxyColor.FromRgb(24, 60, 114)
+                TextColor = OxyColor.FromRgb(24, 60, 114),
+                FontSize = 16
             };
 
             foreach (DataRow row in dataTable.Rows)
@@ -815,6 +829,7 @@ namespace NEXUS.User_Controls
                 TitleColor = OxyColors.White,
                 TextColor = OxyColors.White,
                 AxislineColor = OxyColors.White,
+                FontSize = 16,
                 TicklineColor = OxyColors.White
             });
 
@@ -826,6 +841,7 @@ namespace NEXUS.User_Controls
                 TitleColor = OxyColors.White,
                 TextColor = OxyColors.White,
                 AxislineColor = OxyColors.White,
+                FontSize = 16,
                 TicklineColor = OxyColors.White
             });
 
@@ -864,6 +880,81 @@ namespace NEXUS.User_Controls
             }
         }
 
+        public void DisplayDriverRankings()
+        {
+            string query = @"SELECT Driver, (AVG(Safety) + AVG(Smoothness) + AVG(Speed) + AVG(Comfortability) + AVG(Cleanliness) + AVG([Overall Satisfaction])) / 6 AS OverallAvgRating
+            FROM RatingsQuery GROUP BY Driver ORDER BY (AVG(Safety) + AVG(Smoothness) + AVG(Speed) + AVG(Comfortability) + AVG(Cleanliness) + AVG([Overall Satisfaction])) / 6 DESC;
+    ";
+
+            using (OleDbConnection connection = DatabaseManagement.GetConnection())
+            {
+                try
+                {
+                    OleDbDataAdapter dataAdapter = new OleDbDataAdapter(query, connection);
+                    DataTable dataTable = new DataTable();
+                    dataAdapter.Fill(dataTable);
+
+                    if (dataTable.Rows.Count == 0)
+                    {
+                        MessageBox.Show("No data found in the RatingsQuery table.");
+                        return;
+                    }
+
+                    // Add a Rank column
+                    dataTable.Columns.Add("Rank", typeof(int));
+
+                    int rank = 1;
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        row["Rank"] = rank++;
+                    }
+
+                    // Reorder columns and remove rating column
+                    dataTable.Columns["Rank"].SetOrdinal(0);
+                    dataTable.Columns.Remove("OverallAvgRating");
+
+                    // Bind to KryptonDataGridView
+                    dgvRank.DataSource = dataTable;
+
+                    // Set column headers
+                    dgvRank.Columns["Rank"].HeaderText = "Rank";
+                    dgvRank.Columns["Driver"].HeaderText = "Driver";
+
+                    // Appearance customization
+                    dgvRank.ColumnHeadersDefaultCellStyle.Font = new Font("Inter", 16, FontStyle.Bold);
+                    dgvRank.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                    dgvRank.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(45, 45, 48); // optional: dark background
+                    dgvRank.EnableHeadersVisualStyles = false; // apply custom header styling
+
+                    dgvRank.DefaultCellStyle.Font = new Font("Inter", 14);
+
+                    // Adjust column width
+                    dgvRank.Columns["Rank"].Width = 60; // set a narrow width for Rank column
+                    dgvRank.Columns["Driver"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+                    // Disable interaction
+                    dgvRank.ReadOnly = true;
+                    dgvRank.AllowUserToAddRows = false;
+                    dgvRank.AllowUserToDeleteRows = false;
+                    dgvRank.AllowUserToResizeColumns = false;
+                    dgvRank.AllowUserToResizeRows = false;
+                    dgvRank.AllowUserToOrderColumns = false;
+                    dgvRank.RowHeadersVisible = false;
+                    dgvRank.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                    dgvRank.MultiSelect = false;
+                    dgvRank.ClearSelection();
+
+                    // Vertical scroll only
+                    dgvRank.ScrollBars = ScrollBars.Vertical;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
+
+
         private void weeklyToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             LoadDriverWeeklyRevenueData();
@@ -892,6 +983,12 @@ namespace NEXUS.User_Controls
         private void usersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LoadUserDataAndShowChart();
+        }
+
+        private void HomeAdmin_Load(object sender, EventArgs e)
+        {
+            dgvRank.ClearSelection();
+            dgvRank.CurrentCell = null;
         }
     }
 }

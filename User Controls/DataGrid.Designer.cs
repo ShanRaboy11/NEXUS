@@ -33,10 +33,10 @@
             dgvUsers = new Krypton.Toolkit.KryptonDataGridView();
             cmsAttachment = new ContextMenuStrip(components);
             attachmentToolStripMenuItem = new ToolStripMenuItem();
+            resolvedToolStripMenuItem = new ToolStripMenuItem();
             contextMenuStrip1 = new ContextMenuStrip(components);
             deleteToolStripMenuItem = new ToolStripMenuItem();
             pbEmpty = new PictureBox();
-            resolvedToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dgvUsers).BeginInit();
             cmsAttachment.SuspendLayout();
             contextMenuStrip1.SuspendLayout();
@@ -81,16 +81,25 @@
             cmsAttachment.Font = new Font("Segoe UI", 9F);
             cmsAttachment.Items.AddRange(new ToolStripItem[] { attachmentToolStripMenuItem, resolvedToolStripMenuItem });
             cmsAttachment.Name = "cmsAttachment";
-            cmsAttachment.Size = new Size(181, 78);
+            cmsAttachment.Size = new Size(155, 56);
             // 
             // attachmentToolStripMenuItem
             // 
             attachmentToolStripMenuItem.Font = new Font("Inter", 10F);
             attachmentToolStripMenuItem.Image = Properties.Resources._9104142_fullscreen_expand_maximize_enlarge_screen_icon;
             attachmentToolStripMenuItem.Name = "attachmentToolStripMenuItem";
-            attachmentToolStripMenuItem.Size = new Size(180, 26);
+            attachmentToolStripMenuItem.Size = new Size(154, 26);
             attachmentToolStripMenuItem.Text = "Attachment";
             attachmentToolStripMenuItem.Click += attachmentToolStripMenuItem_Click;
+            // 
+            // resolvedToolStripMenuItem
+            // 
+            resolvedToolStripMenuItem.Font = new Font("Inter", 10F);
+            resolvedToolStripMenuItem.Image = Properties.Resources._8665019_check_mark_icon;
+            resolvedToolStripMenuItem.Name = "resolvedToolStripMenuItem";
+            resolvedToolStripMenuItem.Size = new Size(154, 26);
+            resolvedToolStripMenuItem.Text = "Resolved";
+            resolvedToolStripMenuItem.Click += resolvedToolStripMenuItem_Click;
             // 
             // contextMenuStrip1
             // 
@@ -118,15 +127,6 @@
             pbEmpty.TabIndex = 1;
             pbEmpty.TabStop = false;
             pbEmpty.Visible = false;
-            // 
-            // resolvedToolStripMenuItem
-            // 
-            resolvedToolStripMenuItem.Font = new Font("Inter", 10F);
-            resolvedToolStripMenuItem.Image = Properties.Resources._8665019_check_mark_icon;
-            resolvedToolStripMenuItem.Name = "resolvedToolStripMenuItem";
-            resolvedToolStripMenuItem.Size = new Size(180, 26);
-            resolvedToolStripMenuItem.Text = "Resolved";
-            resolvedToolStripMenuItem.Click += resolvedToolStripMenuItem_Click;
             // 
             // DataGrid
             // 

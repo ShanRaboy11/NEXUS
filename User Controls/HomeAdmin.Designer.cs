@@ -75,8 +75,8 @@
             panel9 = new Panel();
             panel10 = new Panel();
             lblTitle = new Label();
-            panel12 = new Panel();
-            tableLayoutPanel4 = new TableLayoutPanel();
+            panelRank = new Panel();
+            dgvRank = new Krypton.Toolkit.KryptonDataGridView();
             tableLayoutPanel1.SuspendLayout();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
@@ -93,7 +93,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel9.SuspendLayout();
             panel10.SuspendLayout();
-            panel12.SuspendLayout();
+            panelRank.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvRank).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -510,7 +511,7 @@
             pvDrivers.Location = new Point(0, 38);
             pvDrivers.Name = "pvDrivers";
             pvDrivers.PanCursor = Cursors.Hand;
-            pvDrivers.Size = new Size(692, 272);
+            pvDrivers.Size = new Size(618, 272);
             pvDrivers.TabIndex = 50;
             pvDrivers.Text = "plotView1";
             pvDrivers.ZoomHorizontalCursor = Cursors.SizeWE;
@@ -550,16 +551,16 @@
             // tableLayoutPanel3
             // 
             tableLayoutPanel3.ColumnCount = 7;
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 2.13414645F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 23.9636F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 1.51668346F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70.71935F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 1.82370818F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 295F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 1.42155683F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 18.9547577F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 1.17004681F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 48.6739464F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 1.326053F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 28.471138F));
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 28F));
             tableLayoutPanel3.Controls.Add(panel11, 1, 1);
             tableLayoutPanel3.Controls.Add(panel9, 3, 1);
-            tableLayoutPanel3.Controls.Add(panel12, 5, 1);
+            tableLayoutPanel3.Controls.Add(panelRank, 5, 1);
             tableLayoutPanel3.Dock = DockStyle.Fill;
             tableLayoutPanel3.Location = new Point(0, 412);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -576,13 +577,14 @@
             panel11.Controls.Add(lblReports);
             panel11.Controls.Add(pictureBox1);
             panel11.Dock = DockStyle.Fill;
-            panel11.Location = new Point(24, 23);
+            panel11.Location = new Point(21, 23);
             panel11.Name = "panel11";
-            panel11.Size = new Size(230, 310);
+            panel11.Size = new Size(237, 310);
             panel11.TabIndex = 52;
             // 
             // lblReports
             // 
+            lblReports.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             lblReports.BackColor = Color.FromArgb(0, 229, 255);
             lblReports.Font = new Font("Inter", 60F, FontStyle.Bold);
             lblReports.ForeColor = Color.FromArgb(38, 36, 68);
@@ -590,7 +592,7 @@
             lblReports.Location = new Point(3, 78);
             lblReports.Margin = new Padding(0);
             lblReports.Name = "lblReports";
-            lblReports.Size = new Size(224, 118);
+            lblReports.Size = new Size(226, 118);
             lblReports.TabIndex = 43;
             lblReports.Text = "2";
             lblReports.TextAlign = ContentAlignment.MiddleCenter;
@@ -601,7 +603,8 @@
             pictureBox1.Image = Properties.Resources.Reports__1_;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(230, 310);
+            pictureBox1.Size = new Size(237, 310);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 44;
             pictureBox1.TabStop = false;
             // 
@@ -611,9 +614,9 @@
             panel9.Controls.Add(pvDrivers);
             panel9.Controls.Add(panel10);
             panel9.Dock = DockStyle.Fill;
-            panel9.Location = new Point(274, 23);
+            panel9.Location = new Point(279, 23);
             panel9.Name = "panel9";
-            panel9.Size = new Size(692, 310);
+            panel9.Size = new Size(618, 310);
             panel9.TabIndex = 51;
             // 
             // panel10
@@ -623,7 +626,7 @@
             panel10.Dock = DockStyle.Top;
             panel10.Location = new Point(0, 0);
             panel10.Name = "panel10";
-            panel10.Size = new Size(692, 38);
+            panel10.Size = new Size(618, 38);
             panel10.TabIndex = 65;
             // 
             // lblTitle
@@ -633,44 +636,51 @@
             lblTitle.ForeColor = Color.White;
             lblTitle.Location = new Point(0, 0);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(692, 38);
+            lblTitle.Size = new Size(618, 38);
             lblTitle.TabIndex = 61;
             lblTitle.Text = "Driver Analysis – Weekly Revenue";
             // 
-            // panel12
+            // panelRank
             // 
-            panel12.BackColor = Color.FromArgb(153, 229, 255);
-            panel12.Controls.Add(tableLayoutPanel4);
-            panel12.Dock = DockStyle.Fill;
-            panel12.Location = new Point(990, 23);
-            panel12.Name = "panel12";
-            panel12.Size = new Size(289, 310);
-            panel12.TabIndex = 53;
+            panelRank.BackColor = Color.FromArgb(153, 229, 255);
+            panelRank.Controls.Add(dgvRank);
+            panelRank.Dock = DockStyle.Fill;
+            panelRank.Location = new Point(920, 23);
+            panelRank.Name = "panelRank";
+            panelRank.Size = new Size(359, 310);
+            panelRank.TabIndex = 53;
             // 
-            // tableLayoutPanel4
+            // dgvRank
             // 
-            tableLayoutPanel4.ColumnCount = 2;
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.07266F));
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 88.92734F));
-            tableLayoutPanel4.Dock = DockStyle.Fill;
-            tableLayoutPanel4.Location = new Point(0, 0);
-            tableLayoutPanel4.Name = "tableLayoutPanel4";
-            tableLayoutPanel4.RowCount = 13;
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 8.333333F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 8.333333F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 8.333333F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 8.333333F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 8.333333F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 8.333333F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 8.333333F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 8.333333F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 8.333333F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 8.333333F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 8.333333F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 8.333333F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel4.Size = new Size(289, 310);
-            tableLayoutPanel4.TabIndex = 0;
+            dgvRank.BorderStyle = BorderStyle.None;
+            dgvRank.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvRank.Dock = DockStyle.Fill;
+            dgvRank.HideOuterBorders = true;
+            dgvRank.Location = new Point(0, 0);
+            dgvRank.Name = "dgvRank";
+            dgvRank.PaletteMode = Krypton.Toolkit.PaletteMode.Office2007BlueLightMode;
+            dgvRank.ReadOnly = true;
+            dgvRank.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvRank.ShowEditingIcon = false;
+            dgvRank.Size = new Size(359, 310);
+            dgvRank.StateCommon.Background.Color1 = Color.FromArgb(153, 229, 255);
+            dgvRank.StateCommon.Background.Color2 = Color.FromArgb(153, 229, 255);
+            dgvRank.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
+            dgvRank.StateCommon.DataCell.Back.Color1 = Color.FromArgb(153, 229, 255);
+            dgvRank.StateCommon.DataCell.Border.Color1 = Color.White;
+            dgvRank.StateCommon.DataCell.Border.Color2 = Color.White;
+            dgvRank.StateCommon.DataCell.Content.Color1 = Color.FromArgb(24, 60, 114);
+            dgvRank.StateCommon.DataCell.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            dgvRank.StateCommon.DataCell.Content.TextV = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            dgvRank.StateCommon.HeaderColumn.Back.Color1 = Color.FromArgb(38, 36, 68);
+            dgvRank.StateCommon.HeaderColumn.Back.Color2 = Color.FromArgb(38, 36, 68);
+            dgvRank.StateCommon.HeaderColumn.Border.Color1 = Color.White;
+            dgvRank.StateCommon.HeaderColumn.Border.Color2 = Color.White;
+            dgvRank.StateCommon.HeaderColumn.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            dgvRank.StateCommon.HeaderColumn.Content.TextV = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            dgvRank.StateSelected.DataCell.Back.Color1 = Color.FromArgb(0, 229, 255);
+            dgvRank.StateSelected.DataCell.Back.Color2 = Color.FromArgb(0, 229, 255);
+            dgvRank.TabIndex = 1;
             // 
             // HomeAdmin
             // 
@@ -681,6 +691,7 @@
             Controls.Add(tableLayoutPanel1);
             Name = "HomeAdmin";
             Size = new Size(1312, 767);
+            Load += HomeAdmin_Load;
             tableLayoutPanel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel4.ResumeLayout(false);
@@ -697,13 +708,13 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel9.ResumeLayout(false);
             panel10.ResumeLayout(false);
-            panel12.ResumeLayout(false);
+            panelRank.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvRank).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
         private TableLayoutPanel tableLayoutPanel1;
-        private Label label1;
         private OxyPlot.WindowsForms.PlotView pvPieChart;
         private Panel panel2;
         private Panel panel3;
@@ -748,11 +759,11 @@
         private Label lblTitle;
         private Panel panel11;
         private Label lblReports;
-        private Panel panel12;
-        private TableLayoutPanel tableLayoutPanel4;
+        private Panel panelRank;
         private PictureBox pictureBox1;
         private ReaLTaiizor.Controls.CyberRichTextBox cyberRichTextBox1;
         private ReaLTaiizor.Controls.CyberButton cyberButton1;
         private ReaLTaiizor.Controls.CyberButton cyberButton3;
+        private Krypton.Toolkit.KryptonDataGridView dgvRank;
     }
 }
