@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             pictureBox6 = new PictureBox();
             pbMap = new PictureBox();
@@ -37,16 +38,19 @@
             label2 = new Label();
             panel3 = new Panel();
             panel2 = new Panel();
+            picAdSlideshow = new PictureBox();
             pvPassenger = new OxyPlot.WindowsForms.PlotView();
             label3 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             tableLayoutPanel2 = new TableLayoutPanel();
+            timerAds = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbMap).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbLaws).BeginInit();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picAdSlideshow).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             SuspendLayout();
@@ -133,6 +137,7 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
+            panel2.Controls.Add(picAdSlideshow);
             panel2.Controls.Add(pvPassenger);
             panel2.Controls.Add(label3);
             panel2.Dock = DockStyle.Fill;
@@ -140,6 +145,15 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(490, 281);
             panel2.TabIndex = 38;
+            // 
+            // picAdSlideshow
+            // 
+            picAdSlideshow.Dock = DockStyle.Fill;
+            picAdSlideshow.Location = new Point(0, 48);
+            picAdSlideshow.Name = "picAdSlideshow";
+            picAdSlideshow.Size = new Size(490, 233);
+            picAdSlideshow.TabIndex = 41;
+            picAdSlideshow.TabStop = false;
             // 
             // pvPassenger
             // 
@@ -218,6 +232,7 @@
             ((System.ComponentModel.ISupportInitialize)pbLaws).EndInit();
             panel3.ResumeLayout(false);
             panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)picAdSlideshow).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
             ResumeLayout(false);
@@ -237,5 +252,7 @@
         private TableLayoutPanel tableLayoutPanel1;
         private TableLayoutPanel tableLayoutPanel2;
         private OxyPlot.WindowsForms.PlotView pvPassenger;
+        private PictureBox picAdSlideshow;
+        private System.Windows.Forms.Timer timerAds;
     }
 }

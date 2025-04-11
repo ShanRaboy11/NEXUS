@@ -20,6 +20,8 @@ namespace NEXUS.Forms
         private Dashboard passengerDashboard;
         private DriverDashboard driverDashboard;
         private UserInformation currentUser;
+        private List<Image> adImages = new List<Image>();
+        private int currentAdIndex = 0;
 
         public Home(UserInformation user)
         {
@@ -31,12 +33,17 @@ namespace NEXUS.Forms
             {
                 passengerDashboard = new Dashboard(passenger);
                 LoadPassengerFareAnalytics();
+                pvPassenger.Visible = true;
+                label3.Visible = true;
+                label3.Dock = DockStyle.Top;
             }
             else if (user is Driver driver)
             {
                 driverDashboard = new DriverDashboard(driver);
                 pvPassenger.Visible = false;
                 label3.Visible = false;
+                label3.Dock = DockStyle.None;
+                LoadAds();
             }
         }
 
@@ -134,6 +141,63 @@ namespace NEXUS.Forms
             pvPassenger.Model = model; // Make sure this matches your PlotView control name
         }
 
+        private void LoadAdImages()
+        {
+            string adsPath = Path.Combine(AppContext.BaseDirectory, "ads");
+
+
+            if (Directory.Exists(adsPath))
+            {
+                string[] adFiles = Directory.GetFiles(adsPath, "*.*")
+                    .Where(f => f.EndsWith(".jpg") || f.EndsWith(".png"))
+                    .ToArray();
+
+                foreach (string file in adFiles)
+                {
+                    try
+                    {
+                        adImages.Add(Image.FromFile(file));
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Failed to load ad: {file}\n{ex.Message}");
+                    }
+                }
+
+                if (adImages.Count > 0)
+                {
+                    picAdSlideshow.Image = adImages[0];
+                    picAdSlideshow.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ads folder not found:\n" + adsPath);
+            }
+        }
+
+
+
+        private void TimerAds_Tick(object sender, EventArgs e)
+        {
+            if (adImages.Count == 0) return;
+
+            currentAdIndex++;
+            if (currentAdIndex >= adImages.Count)
+                currentAdIndex = 0;
+
+            picAdSlideshow.Image = adImages[currentAdIndex];
+        }
+
+
+        private void LoadAds()
+        {
+            LoadAdImages();
+
+            timerAds.Interval = 4000; // 4 seconds per slide
+            timerAds.Tick += TimerAds_Tick;
+            timerAds.Start();
+        }
     }
 
 }
