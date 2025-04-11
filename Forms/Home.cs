@@ -15,14 +15,14 @@ namespace NEXUS.Forms
     {
         private Dashboard passengerDashboard;
         private DriverDashboard driverDashboard;
-        private UserInformation currentUser; 
+        private UserInformation currentUser;
 
         public Home(UserInformation user)
         {
             InitializeComponent();
             this.currentUser = user;
 
-            
+
             if (user is Passenger passenger)
             {
                 passengerDashboard = new Dashboard(passenger);
@@ -35,8 +35,11 @@ namespace NEXUS.Forms
 
         private void pbMap_Click(object sender, EventArgs e)
         {
+            //Scan scan = new Scan(currentUser.UserID);
             Map map = new Map();
-
+            map.ShowDialog();
+            //scan.ShowOverlay(map, null);
+            /*
             if (currentUser is Passenger)
             {
                 passengerDashboard?.OpenChildForm(map);
@@ -44,7 +47,7 @@ namespace NEXUS.Forms
             else if (currentUser is Driver)
             {
                 driverDashboard?.OpenChildForm(map);
-            }
+            }*/
         }
     }
 

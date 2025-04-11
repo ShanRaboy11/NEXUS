@@ -72,6 +72,7 @@
             pbMap.Size = new Size(828, 223);
             pbMap.TabIndex = 35;
             pbMap.TabStop = false;
+            pbMap.Click += pbMap_Click;
             // 
             // label1
             // 
