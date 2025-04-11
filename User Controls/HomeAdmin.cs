@@ -24,7 +24,7 @@ namespace NEXUS.User_Controls
             InitializeComponent();
             LoadUserDataAndShowChart();
             LoadRevenueData();
-            LoadDriverRevenueData();
+            LoadDriverWeeklyRevenueData();
         }
 
         private void LoadUserDataAndShowChart()
@@ -605,9 +605,103 @@ namespace NEXUS.User_Controls
             pvDrivers.Model = model;
         }
 
+        private void LoadDriverMonthlyRevenueData()
+        {
+            // SQL query to get monthly revenue per driver (last 30 days)
+            string query = @"
+        SELECT 
+            Left(d.[Full Name], InStr(d.[Full Name], ' ') - 1) AS FirstName,
+            Sum(t.[Fare Amount]) AS TotalRevenue
+        FROM 
+            DriversQuery AS d
+        INNER JOIN 
+            Trips AS t ON d.ID = t.DriverID
+        WHERE 
+            t.[Trip Date] >= Date() - 29
+        GROUP BY 
+            Left(d.[Full Name], InStr(d.[Full Name], ' ') - 1)
+        ORDER BY 
+            Sum(t.[Fare Amount]) DESC;
+    ";
+
+            using (OleDbConnection connection = DatabaseManagement.GetConnection())
+            {
+                OleDbDataAdapter dataAdapter = new OleDbDataAdapter(query, connection);
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+
+                // Create the chart
+                CreateDriverMonthlyRevenueBarChart(dataTable);
+            }
+        }
+
+        private void CreateDriverMonthlyRevenueBarChart(DataTable dataTable)
+        {
+            var model = new PlotModel
+            {
+                Title = "Driver Revenue (Last 30 Days)",
+                TitleFontSize = 18,
+                TitleColor = OxyColors.White,
+                TextColor = OxyColors.White,
+                PlotAreaBorderColor = OxyColors.White
+            };
+
+            var series = new BarSeries
+            {
+                LabelPlacement = LabelPlacement.Inside,
+                LabelFormatString = "₱{0:N0}",
+                FillColor = OxyColor.FromRgb(76, 229, 255),
+                TextColor = OxyColor.FromRgb(24, 60, 114)
+            };
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                double monthlyRevenue = Convert.ToDouble(row["TotalRevenue"]);
+                series.Items.Add(new BarItem(monthlyRevenue));
+            }
+
+            model.Series.Add(series);
+
+            model.Axes.Add(new CategoryAxis
+            {
+                Position = AxisPosition.Left,
+                ItemsSource = dataTable.AsEnumerable().Select(r => r["FirstName"].ToString()).ToList(),
+                Title = "Driver",
+                TitleColor = OxyColors.White,
+                TextColor = OxyColors.White,
+                AxislineColor = OxyColors.White,
+                TicklineColor = OxyColors.White
+            });
+
+            model.Axes.Add(new LinearAxis
+            {
+                Position = AxisPosition.Bottom,
+                Minimum = 0,
+                Title = "Revenue this Month (₱)",
+                TitleColor = OxyColors.White,
+                TextColor = OxyColors.White,
+                AxislineColor = OxyColors.White,
+                TicklineColor = OxyColors.White
+            });
+
+            // Assign to PlotView
+            pvDrivers.Model = model;
+        }
+
+
         private void weeklyToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             LoadDriverWeeklyRevenueData();
+        }
+
+        private void monthlyToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            LoadDriverMonthlyRevenueData();
+        }
+
+        private void totalRevenueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoadDriverRevenueData();
         }
     }
 }

@@ -60,12 +60,12 @@
             spaceSeparatorHorizontal2 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
             spaceSeparatorVertical3 = new ReaLTaiizor.Controls.SpaceSeparatorVertical();
             pvDrivers = new OxyPlot.WindowsForms.PlotView();
-            tableLayoutPanel3 = new TableLayoutPanel();
-            panel9 = new Panel();
             cmsDriver = new ContextMenuStrip(components);
             weeklyToolStripMenuItem1 = new ToolStripMenuItem();
-            totalRevenueToolStripMenuItem = new ToolStripMenuItem();
             monthlyToolStripMenuItem1 = new ToolStripMenuItem();
+            totalRevenueToolStripMenuItem = new ToolStripMenuItem();
+            tableLayoutPanel3 = new TableLayoutPanel();
+            panel9 = new Panel();
             tableLayoutPanel1.SuspendLayout();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
@@ -75,9 +75,9 @@
             cmsRevenue.SuspendLayout();
             panel8.SuspendLayout();
             panel7.SuspendLayout();
+            cmsDriver.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
             panel9.SuspendLayout();
-            cmsDriver.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -469,6 +469,36 @@
             pvDrivers.ZoomRectangleCursor = Cursors.SizeNWSE;
             pvDrivers.ZoomVerticalCursor = Cursors.SizeNS;
             // 
+            // cmsDriver
+            // 
+            cmsDriver.Items.AddRange(new ToolStripItem[] { weeklyToolStripMenuItem1, monthlyToolStripMenuItem1, totalRevenueToolStripMenuItem });
+            cmsDriver.Name = "cmsDriver";
+            cmsDriver.Size = new Size(181, 104);
+            // 
+            // weeklyToolStripMenuItem1
+            // 
+            weeklyToolStripMenuItem1.Font = new Font("Inter", 11.25F);
+            weeklyToolStripMenuItem1.Name = "weeklyToolStripMenuItem1";
+            weeklyToolStripMenuItem1.Size = new Size(180, 26);
+            weeklyToolStripMenuItem1.Text = "Weekly";
+            weeklyToolStripMenuItem1.Click += weeklyToolStripMenuItem1_Click;
+            // 
+            // monthlyToolStripMenuItem1
+            // 
+            monthlyToolStripMenuItem1.Font = new Font("Inter", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            monthlyToolStripMenuItem1.Name = "monthlyToolStripMenuItem1";
+            monthlyToolStripMenuItem1.Size = new Size(180, 26);
+            monthlyToolStripMenuItem1.Text = "Monthly";
+            monthlyToolStripMenuItem1.Click += monthlyToolStripMenuItem1_Click;
+            // 
+            // totalRevenueToolStripMenuItem
+            // 
+            totalRevenueToolStripMenuItem.Font = new Font("Inter", 11.25F);
+            totalRevenueToolStripMenuItem.Name = "totalRevenueToolStripMenuItem";
+            totalRevenueToolStripMenuItem.Size = new Size(180, 26);
+            totalRevenueToolStripMenuItem.Text = "Total Revenue";
+            totalRevenueToolStripMenuItem.Click += totalRevenueToolStripMenuItem_Click;
+            // 
             // tableLayoutPanel3
             // 
             tableLayoutPanel3.ColumnCount = 5;
@@ -498,34 +528,6 @@
             panel9.Size = new Size(557, 300);
             panel9.TabIndex = 51;
             // 
-            // cmsDriver
-            // 
-            cmsDriver.Items.AddRange(new ToolStripItem[] { weeklyToolStripMenuItem1, monthlyToolStripMenuItem1, totalRevenueToolStripMenuItem });
-            cmsDriver.Name = "cmsDriver";
-            cmsDriver.Size = new Size(181, 104);
-            // 
-            // weeklyToolStripMenuItem1
-            // 
-            weeklyToolStripMenuItem1.Font = new Font("Inter", 11.25F);
-            weeklyToolStripMenuItem1.Name = "weeklyToolStripMenuItem1";
-            weeklyToolStripMenuItem1.Size = new Size(180, 26);
-            weeklyToolStripMenuItem1.Text = "Weekly";
-            weeklyToolStripMenuItem1.Click += weeklyToolStripMenuItem1_Click;
-            // 
-            // totalRevenueToolStripMenuItem
-            // 
-            totalRevenueToolStripMenuItem.Font = new Font("Inter", 11.25F);
-            totalRevenueToolStripMenuItem.Name = "totalRevenueToolStripMenuItem";
-            totalRevenueToolStripMenuItem.Size = new Size(180, 26);
-            totalRevenueToolStripMenuItem.Text = "Total Revenue";
-            // 
-            // monthlyToolStripMenuItem1
-            // 
-            monthlyToolStripMenuItem1.Font = new Font("Inter", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            monthlyToolStripMenuItem1.Name = "monthlyToolStripMenuItem1";
-            monthlyToolStripMenuItem1.Size = new Size(180, 26);
-            monthlyToolStripMenuItem1.Text = "Monthly";
-            // 
             // HomeAdmin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -544,9 +546,9 @@
             cmsRevenue.ResumeLayout(false);
             panel8.ResumeLayout(false);
             panel7.ResumeLayout(false);
+            cmsDriver.ResumeLayout(false);
             tableLayoutPanel3.ResumeLayout(false);
             panel9.ResumeLayout(false);
-            cmsDriver.ResumeLayout(false);
             ResumeLayout(false);
         }
 
