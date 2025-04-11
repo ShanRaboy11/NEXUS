@@ -37,8 +37,8 @@
             label2 = new Label();
             panel3 = new Panel();
             panel2 = new Panel();
+            pvPassenger = new OxyPlot.WindowsForms.PlotView();
             label3 = new Label();
-            pictureBox2 = new PictureBox();
             tableLayoutPanel1 = new TableLayoutPanel();
             tableLayoutPanel2 = new TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
@@ -47,7 +47,6 @@
             ((System.ComponentModel.ISupportInitialize)pbLaws).BeginInit();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             SuspendLayout();
@@ -67,7 +66,7 @@
             // 
             pbMap.Cursor = Cursors.Hand;
             pbMap.Image = (Image)resources.GetObject("pbMap.Image");
-            pbMap.Location = new Point(41, 59);
+            pbMap.Location = new Point(41, 45);
             pbMap.Name = "pbMap";
             pbMap.Size = new Size(828, 223);
             pbMap.TabIndex = 35;
@@ -76,10 +75,9 @@
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label1.Font = new Font("Inter SemiBold", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(38, 36, 68);
-            label1.Location = new Point(1, 10);
+            label1.Location = new Point(0, 3);
             label1.Name = "label1";
             label1.Size = new Size(107, 39);
             label1.TabIndex = 36;
@@ -94,14 +92,14 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(25, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(455, 281);
+            panel1.Size = new Size(412, 281);
             panel1.TabIndex = 37;
             // 
             // pbLaws
             // 
             pbLaws.Cursor = Cursors.Hand;
             pbLaws.Image = (Image)resources.GetObject("pbLaws.Image");
-            pbLaws.Location = new Point(37, 59);
+            pbLaws.Location = new Point(5, 68);
             pbLaws.Name = "pbLaws";
             pbLaws.Size = new Size(398, 195);
             pbLaws.SizeMode = PictureBoxSizeMode.Zoom;
@@ -115,13 +113,14 @@
             label2.ForeColor = Color.FromArgb(38, 36, 68);
             label2.Location = new Point(0, 0);
             label2.Name = "label2";
-            label2.Size = new Size(455, 52);
+            label2.Size = new Size(412, 52);
             label2.TabIndex = 37;
             label2.Text = "Information Panel";
             label2.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // panel3
             // 
+            panel3.AutoScroll = true;
             panel3.BackColor = Color.FromArgb(153, 229, 255);
             panel3.Controls.Add(pbMap);
             panel3.Controls.Add(label1);
@@ -134,13 +133,26 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
+            panel2.Controls.Add(pvPassenger);
             panel2.Controls.Add(label3);
-            panel2.Controls.Add(pictureBox2);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(506, 3);
+            panel2.Location = new Point(467, 3);
             panel2.Name = "panel2";
-            panel2.Size = new Size(451, 281);
+            panel2.Size = new Size(490, 281);
             panel2.TabIndex = 38;
+            // 
+            // pvPassenger
+            // 
+            pvPassenger.Dock = DockStyle.Fill;
+            pvPassenger.Location = new Point(0, 48);
+            pvPassenger.Name = "pvPassenger";
+            pvPassenger.PanCursor = Cursors.Hand;
+            pvPassenger.Size = new Size(490, 233);
+            pvPassenger.TabIndex = 40;
+            pvPassenger.Text = "plotView1";
+            pvPassenger.ZoomHorizontalCursor = Cursors.SizeWE;
+            pvPassenger.ZoomRectangleCursor = Cursors.SizeNWSE;
+            pvPassenger.ZoomVerticalCursor = Cursors.SizeNS;
             // 
             // label3
             // 
@@ -149,28 +161,17 @@
             label3.ForeColor = Color.FromArgb(38, 36, 68);
             label3.Location = new Point(0, 0);
             label3.Name = "label3";
-            label3.Size = new Size(451, 51);
+            label3.Size = new Size(490, 48);
             label3.TabIndex = 39;
-            label3.Text = "Weather";
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Cursor = Cursors.Hand;
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(27, 59);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(398, 195);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 39;
-            pictureBox2.TabStop = false;
+            label3.Text = "Fare Expenses";
             // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 5;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 461F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 457F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 418F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 24F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 496F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.Controls.Add(panel2, 3, 0);
             tableLayoutPanel1.Controls.Add(panel1, 1, 0);
@@ -217,7 +218,6 @@
             ((System.ComponentModel.ISupportInitialize)pbLaws).EndInit();
             panel3.ResumeLayout(false);
             panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
             ResumeLayout(false);
@@ -233,9 +233,9 @@
         private Panel panel2;
         private PictureBox pbLaws;
         private Label label2;
-        private PictureBox pictureBox2;
         private Label label3;
         private TableLayoutPanel tableLayoutPanel1;
         private TableLayoutPanel tableLayoutPanel2;
+        private OxyPlot.WindowsForms.PlotView pvPassenger;
     }
 }
