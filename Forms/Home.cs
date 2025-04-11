@@ -198,6 +198,13 @@ namespace NEXUS.Forms
             timerAds.Tick += TimerAds_Tick;
             timerAds.Start();
         }
+
+        private void pbLaws_Click(object sender, EventArgs e)
+        {
+            Information information = new Information();
+            Scan scan = new Scan(currentUser.UserID);
+            scan.ShowOverlay(information, null);
+        }
     }
 
 }

@@ -132,5 +132,9 @@ namespace NEXUS.Forms
             return (10.295261349234304, 123.88125737517491);
         }
 
+        private void pbClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

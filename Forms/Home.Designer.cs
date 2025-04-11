@@ -38,21 +38,21 @@
             label2 = new Label();
             panel3 = new Panel();
             panel2 = new Panel();
+            picAdSlideshow = new PictureBox();
             pvPassenger = new OxyPlot.WindowsForms.PlotView();
             label3 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             tableLayoutPanel2 = new TableLayoutPanel();
             timerAds = new System.Windows.Forms.Timer(components);
-            picAdSlideshow = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbMap).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbLaws).BeginInit();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picAdSlideshow).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)picAdSlideshow).BeginInit();
             SuspendLayout();
             // 
             // pictureBox6
@@ -109,6 +109,7 @@
             pbLaws.SizeMode = PictureBoxSizeMode.Zoom;
             pbLaws.TabIndex = 38;
             pbLaws.TabStop = false;
+            pbLaws.Click += pbLaws_Click;
             // 
             // label2
             // 
@@ -145,6 +146,14 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(490, 281);
             panel2.TabIndex = 38;
+            // 
+            // picAdSlideshow
+            // 
+            picAdSlideshow.Location = new Point(22, 24);
+            picAdSlideshow.Name = "picAdSlideshow";
+            picAdSlideshow.Size = new Size(445, 237);
+            picAdSlideshow.TabIndex = 41;
+            picAdSlideshow.TabStop = false;
             // 
             // pvPassenger
             // 
@@ -204,14 +213,6 @@
             tableLayoutPanel2.Size = new Size(983, 169);
             tableLayoutPanel2.TabIndex = 37;
             // 
-            // picAdSlideshow
-            // 
-            picAdSlideshow.Location = new Point(22, 24);
-            picAdSlideshow.Name = "picAdSlideshow";
-            picAdSlideshow.Size = new Size(445, 237);
-            picAdSlideshow.TabIndex = 41;
-            picAdSlideshow.TabStop = false;
-            // 
             // Home
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -231,9 +232,9 @@
             ((System.ComponentModel.ISupportInitialize)pbLaws).EndInit();
             panel3.ResumeLayout(false);
             panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)picAdSlideshow).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)picAdSlideshow).EndInit();
             ResumeLayout(false);
         }
 

@@ -40,6 +40,9 @@
     <Compile Update="Forms\Home.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\Information.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\Map.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +104,9 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="User Controls\PaymentUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="User Controls\PUV.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="User Controls\QRScanUC.cs">
