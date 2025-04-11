@@ -41,6 +41,7 @@
             panel5 = new Panel();
             pvPieChart = new OxyPlot.WindowsForms.PlotView();
             cmsPie = new ContextMenuStrip(components);
+            usersToolStripMenuItem = new ToolStripMenuItem();
             passengersToolStripMenuItem = new ToolStripMenuItem();
             driversToolStripMenuItem = new ToolStripMenuItem();
             spaceSeparatorVertical2 = new ReaLTaiizor.Controls.SpaceSeparatorVertical();
@@ -69,7 +70,8 @@
             totalRevenueToolStripMenuItem = new ToolStripMenuItem();
             tableLayoutPanel3 = new TableLayoutPanel();
             panel9 = new Panel();
-            usersToolStripMenuItem = new ToolStripMenuItem();
+            panel10 = new Panel();
+            lblTitle = new Label();
             tableLayoutPanel1.SuspendLayout();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
@@ -83,6 +85,7 @@
             cmsDriver.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
             panel9.SuspendLayout();
+            panel10.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -240,13 +243,21 @@
             // 
             cmsPie.Items.AddRange(new ToolStripItem[] { usersToolStripMenuItem, passengersToolStripMenuItem, driversToolStripMenuItem });
             cmsPie.Name = "contextMenuStrip1";
-            cmsPie.Size = new Size(181, 104);
+            cmsPie.Size = new Size(162, 82);
+            // 
+            // usersToolStripMenuItem
+            // 
+            usersToolStripMenuItem.Font = new Font("Inter", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            usersToolStripMenuItem.Name = "usersToolStripMenuItem";
+            usersToolStripMenuItem.Size = new Size(161, 26);
+            usersToolStripMenuItem.Text = "Users";
+            usersToolStripMenuItem.Click += usersToolStripMenuItem_Click;
             // 
             // passengersToolStripMenuItem
             // 
             passengersToolStripMenuItem.Font = new Font("Inter", 11.25F);
             passengersToolStripMenuItem.Name = "passengersToolStripMenuItem";
-            passengersToolStripMenuItem.Size = new Size(180, 26);
+            passengersToolStripMenuItem.Size = new Size(161, 26);
             passengersToolStripMenuItem.Text = "Passengers";
             passengersToolStripMenuItem.Click += passengersToolStripMenuItem_Click;
             // 
@@ -254,7 +265,7 @@
             // 
             driversToolStripMenuItem.Font = new Font("Inter", 11.25F);
             driversToolStripMenuItem.Name = "driversToolStripMenuItem";
-            driversToolStripMenuItem.Size = new Size(180, 26);
+            driversToolStripMenuItem.Size = new Size(161, 26);
             driversToolStripMenuItem.Text = "Drivers";
             driversToolStripMenuItem.Click += driversToolStripMenuItem_Click;
             // 
@@ -487,10 +498,11 @@
             // pvDrivers
             // 
             pvDrivers.ContextMenuStrip = cmsDriver;
-            pvDrivers.Location = new Point(148, 3);
+            pvDrivers.Dock = DockStyle.Fill;
+            pvDrivers.Location = new Point(0, 38);
             pvDrivers.Name = "pvDrivers";
             pvDrivers.PanCursor = Cursors.Hand;
-            pvDrivers.Size = new Size(325, 300);
+            pvDrivers.Size = new Size(557, 272);
             pvDrivers.TabIndex = 50;
             pvDrivers.Text = "plotView1";
             pvDrivers.ZoomHorizontalCursor = Cursors.SizeWE;
@@ -540,9 +552,9 @@
             tableLayoutPanel3.Location = new Point(0, 412);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 3;
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 7.08013248F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 86.4788742F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 6.47887325F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 5.633803F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 89.0140839F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 5.352113F));
             tableLayoutPanel3.Size = new Size(1312, 355);
             tableLayoutPanel3.TabIndex = 44;
             // 
@@ -550,19 +562,33 @@
             // 
             panel9.BackColor = Color.FromArgb(38, 36, 68);
             panel9.Controls.Add(pvDrivers);
+            panel9.Controls.Add(panel10);
             panel9.Dock = DockStyle.Fill;
-            panel9.Location = new Point(362, 28);
+            panel9.Location = new Point(362, 23);
             panel9.Name = "panel9";
-            panel9.Size = new Size(557, 300);
+            panel9.Size = new Size(557, 310);
             panel9.TabIndex = 51;
             // 
-            // usersToolStripMenuItem
+            // panel10
             // 
-            usersToolStripMenuItem.Font = new Font("Inter", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            usersToolStripMenuItem.Size = new Size(180, 26);
-            usersToolStripMenuItem.Text = "Users";
-            usersToolStripMenuItem.Click += usersToolStripMenuItem_Click;
+            panel10.BackColor = Color.FromArgb(38, 36, 68);
+            panel10.Controls.Add(lblTitle);
+            panel10.Dock = DockStyle.Top;
+            panel10.Location = new Point(0, 0);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(557, 38);
+            panel10.TabIndex = 65;
+            // 
+            // lblTitle
+            // 
+            lblTitle.Dock = DockStyle.Fill;
+            lblTitle.Font = new Font("Inter SemiBold", 17.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitle.ForeColor = Color.White;
+            lblTitle.Location = new Point(0, 0);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(557, 38);
+            lblTitle.TabIndex = 61;
+            lblTitle.Text = "Driver Analysis – Weekly Revenue";
             // 
             // HomeAdmin
             // 
@@ -586,6 +612,7 @@
             cmsDriver.ResumeLayout(false);
             tableLayoutPanel3.ResumeLayout(false);
             panel9.ResumeLayout(false);
+            panel10.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -632,5 +659,7 @@
         private ToolStripMenuItem passengersToolStripMenuItem;
         private ToolStripMenuItem driversToolStripMenuItem;
         private ToolStripMenuItem usersToolStripMenuItem;
+        private Panel panel10;
+        private Label lblTitle;
     }
 }

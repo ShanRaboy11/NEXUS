@@ -635,9 +635,6 @@ namespace NEXUS.User_Controls
             // Create the plot model
             var model = new PlotModel
             {
-                Title = "Driver Revenue Performance",
-                TitleFontSize = 18,
-                TitleColor = OxyColors.White,
                 TextColor = OxyColors.White, // General text (legend, series labels, etc.)
                 PlotAreaBorderColor = OxyColors.White
             };
@@ -685,7 +682,7 @@ namespace NEXUS.User_Controls
                 TicklineColor = OxyColors.White
             });
 
-            // Assign the model to the PlotView
+            lblTitle.Text = "Driver Analysis – Total Revenue";
             pvDrivers.Model = model;
         }
 
@@ -709,9 +706,6 @@ namespace NEXUS.User_Controls
         {
             var model = new PlotModel
             {
-                Title = "Driver Revenue (Last 7 Days)",
-                TitleFontSize = 18,
-                TitleColor = OxyColors.White,
                 TextColor = OxyColors.White,
                 PlotAreaBorderColor = OxyColors.White
             };
@@ -754,7 +748,7 @@ namespace NEXUS.User_Controls
                 TicklineColor = OxyColors.White
             });
 
-            // Assign the model to the PlotView (you can change this if using a different PlotView control)
+            lblTitle.Text = "Driver Analysis – Weekly Revenue";
             pvDrivers.Model = model;
         }
 
@@ -792,9 +786,6 @@ namespace NEXUS.User_Controls
         {
             var model = new PlotModel
             {
-                Title = "Driver Revenue (Last 30 Days)",
-                TitleFontSize = 18,
-                TitleColor = OxyColors.White,
                 TextColor = OxyColors.White,
                 PlotAreaBorderColor = OxyColors.White
             };
@@ -837,7 +828,7 @@ namespace NEXUS.User_Controls
                 TicklineColor = OxyColors.White
             });
 
-            // Assign to PlotView
+            lblTitle.Text = "Driver Analysis – Monthly Revenue";
             pvDrivers.Model = model;
         }
 
