@@ -36,10 +36,13 @@
             panel4 = new Panel();
             tableLayoutPanel2 = new TableLayoutPanel();
             panel6 = new Panel();
-            lblNumPassenger = new Label();
             lblNumDriver = new Label();
+            lblNumPassenger = new Label();
             panel5 = new Panel();
             pvPieChart = new OxyPlot.WindowsForms.PlotView();
+            cmsPie = new ContextMenuStrip(components);
+            passengersToolStripMenuItem = new ToolStripMenuItem();
+            driversToolStripMenuItem = new ToolStripMenuItem();
             spaceSeparatorVertical2 = new ReaLTaiizor.Controls.SpaceSeparatorVertical();
             spaceSeparatorHorizontal3 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
             panel3 = new Panel();
@@ -66,10 +69,12 @@
             totalRevenueToolStripMenuItem = new ToolStripMenuItem();
             tableLayoutPanel3 = new TableLayoutPanel();
             panel9 = new Panel();
+            usersToolStripMenuItem = new ToolStripMenuItem();
             tableLayoutPanel1.SuspendLayout();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
+            cmsPie.SuspendLayout();
             panel3.SuspendLayout();
             panel1.SuspendLayout();
             cmsRevenue.SuspendLayout();
@@ -160,8 +165,8 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 42.0289841F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 57.9710159F));
             tableLayoutPanel2.Controls.Add(panel6, 0, 1);
-            tableLayoutPanel2.Controls.Add(lblNumPassenger, 1, 0);
-            tableLayoutPanel2.Controls.Add(lblNumDriver, 1, 1);
+            tableLayoutPanel2.Controls.Add(lblNumDriver, 1, 0);
+            tableLayoutPanel2.Controls.Add(lblNumPassenger, 1, 1);
             tableLayoutPanel2.Controls.Add(panel5, 0, 0);
             tableLayoutPanel2.Location = new Point(0, 0);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -174,42 +179,42 @@
             // 
             // panel6
             // 
-            panel6.BackColor = Color.FromArgb(0, 229, 255);
+            panel6.BackColor = Color.FromArgb(153, 229, 255);
             panel6.Dock = DockStyle.Fill;
             panel6.Location = new Point(3, 27);
             panel6.Name = "panel6";
             panel6.Size = new Size(23, 18);
             panel6.TabIndex = 65;
             // 
-            // lblNumPassenger
-            // 
-            lblNumPassenger.Dock = DockStyle.Fill;
-            lblNumPassenger.Font = new Font("Inter Medium", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblNumPassenger.ForeColor = Color.FromArgb(24, 60, 114);
-            lblNumPassenger.Location = new Point(29, 0);
-            lblNumPassenger.Margin = new Padding(0);
-            lblNumPassenger.Name = "lblNumPassenger";
-            lblNumPassenger.Size = new Size(40, 24);
-            lblNumPassenger.TabIndex = 62;
-            lblNumPassenger.Text = "15";
-            lblNumPassenger.TextAlign = ContentAlignment.TopCenter;
-            // 
             // lblNumDriver
             // 
             lblNumDriver.Dock = DockStyle.Fill;
             lblNumDriver.Font = new Font("Inter Medium", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblNumDriver.ForeColor = Color.FromArgb(24, 60, 114);
-            lblNumDriver.Location = new Point(29, 24);
+            lblNumDriver.Location = new Point(29, 0);
             lblNumDriver.Margin = new Padding(0);
             lblNumDriver.Name = "lblNumDriver";
             lblNumDriver.Size = new Size(40, 24);
-            lblNumDriver.TabIndex = 63;
-            lblNumDriver.Text = "18";
-            lblNumDriver.TextAlign = ContentAlignment.MiddleCenter;
+            lblNumDriver.TabIndex = 62;
+            lblNumDriver.Text = "15";
+            lblNumDriver.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // lblNumPassenger
+            // 
+            lblNumPassenger.Dock = DockStyle.Fill;
+            lblNumPassenger.Font = new Font("Inter Medium", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblNumPassenger.ForeColor = Color.FromArgb(24, 60, 114);
+            lblNumPassenger.Location = new Point(29, 24);
+            lblNumPassenger.Margin = new Padding(0);
+            lblNumPassenger.Name = "lblNumPassenger";
+            lblNumPassenger.Size = new Size(40, 24);
+            lblNumPassenger.TabIndex = 63;
+            lblNumPassenger.Text = "18";
+            lblNumPassenger.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panel5
             // 
-            panel5.BackColor = Color.FromArgb(153, 229, 255);
+            panel5.BackColor = Color.FromArgb(0, 229, 255);
             panel5.Dock = DockStyle.Fill;
             panel5.Location = new Point(3, 3);
             panel5.Name = "panel5";
@@ -219,6 +224,7 @@
             // pvPieChart
             // 
             pvPieChart.BackColor = Color.White;
+            pvPieChart.ContextMenuStrip = cmsPie;
             pvPieChart.Dock = DockStyle.Fill;
             pvPieChart.Location = new Point(4, 49);
             pvPieChart.Name = "pvPieChart";
@@ -229,6 +235,28 @@
             pvPieChart.ZoomHorizontalCursor = Cursors.SizeWE;
             pvPieChart.ZoomRectangleCursor = Cursors.SizeNWSE;
             pvPieChart.ZoomVerticalCursor = Cursors.SizeNS;
+            // 
+            // cmsPie
+            // 
+            cmsPie.Items.AddRange(new ToolStripItem[] { usersToolStripMenuItem, passengersToolStripMenuItem, driversToolStripMenuItem });
+            cmsPie.Name = "contextMenuStrip1";
+            cmsPie.Size = new Size(181, 104);
+            // 
+            // passengersToolStripMenuItem
+            // 
+            passengersToolStripMenuItem.Font = new Font("Inter", 11.25F);
+            passengersToolStripMenuItem.Name = "passengersToolStripMenuItem";
+            passengersToolStripMenuItem.Size = new Size(180, 26);
+            passengersToolStripMenuItem.Text = "Passengers";
+            passengersToolStripMenuItem.Click += passengersToolStripMenuItem_Click;
+            // 
+            // driversToolStripMenuItem
+            // 
+            driversToolStripMenuItem.Font = new Font("Inter", 11.25F);
+            driversToolStripMenuItem.Name = "driversToolStripMenuItem";
+            driversToolStripMenuItem.Size = new Size(180, 26);
+            driversToolStripMenuItem.Text = "Drivers";
+            driversToolStripMenuItem.Click += driversToolStripMenuItem_Click;
             // 
             // spaceSeparatorVertical2
             // 
@@ -473,13 +501,13 @@
             // 
             cmsDriver.Items.AddRange(new ToolStripItem[] { weeklyToolStripMenuItem1, monthlyToolStripMenuItem1, totalRevenueToolStripMenuItem });
             cmsDriver.Name = "cmsDriver";
-            cmsDriver.Size = new Size(181, 104);
+            cmsDriver.Size = new Size(180, 82);
             // 
             // weeklyToolStripMenuItem1
             // 
             weeklyToolStripMenuItem1.Font = new Font("Inter", 11.25F);
             weeklyToolStripMenuItem1.Name = "weeklyToolStripMenuItem1";
-            weeklyToolStripMenuItem1.Size = new Size(180, 26);
+            weeklyToolStripMenuItem1.Size = new Size(179, 26);
             weeklyToolStripMenuItem1.Text = "Weekly";
             weeklyToolStripMenuItem1.Click += weeklyToolStripMenuItem1_Click;
             // 
@@ -487,7 +515,7 @@
             // 
             monthlyToolStripMenuItem1.Font = new Font("Inter", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             monthlyToolStripMenuItem1.Name = "monthlyToolStripMenuItem1";
-            monthlyToolStripMenuItem1.Size = new Size(180, 26);
+            monthlyToolStripMenuItem1.Size = new Size(179, 26);
             monthlyToolStripMenuItem1.Text = "Monthly";
             monthlyToolStripMenuItem1.Click += monthlyToolStripMenuItem1_Click;
             // 
@@ -495,7 +523,7 @@
             // 
             totalRevenueToolStripMenuItem.Font = new Font("Inter", 11.25F);
             totalRevenueToolStripMenuItem.Name = "totalRevenueToolStripMenuItem";
-            totalRevenueToolStripMenuItem.Size = new Size(180, 26);
+            totalRevenueToolStripMenuItem.Size = new Size(179, 26);
             totalRevenueToolStripMenuItem.Text = "Total Revenue";
             totalRevenueToolStripMenuItem.Click += totalRevenueToolStripMenuItem_Click;
             // 
@@ -528,6 +556,14 @@
             panel9.Size = new Size(557, 300);
             panel9.TabIndex = 51;
             // 
+            // usersToolStripMenuItem
+            // 
+            usersToolStripMenuItem.Font = new Font("Inter", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            usersToolStripMenuItem.Name = "usersToolStripMenuItem";
+            usersToolStripMenuItem.Size = new Size(180, 26);
+            usersToolStripMenuItem.Text = "Users";
+            usersToolStripMenuItem.Click += usersToolStripMenuItem_Click;
+            // 
             // HomeAdmin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -541,6 +577,7 @@
             panel2.ResumeLayout(false);
             panel4.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
+            cmsPie.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel1.ResumeLayout(false);
             cmsRevenue.ResumeLayout(false);
@@ -567,8 +604,8 @@
         private Panel panel4;
         private TableLayoutPanel tableLayoutPanel2;
         private Panel panel6;
-        private Label lblNumPassenger;
         private Label lblNumDriver;
+        private Label lblNumPassenger;
         private Panel panel5;
         private Panel panel1;
         private OxyPlot.WindowsForms.PlotView pvRevenueChart;
@@ -591,5 +628,9 @@
         private ToolStripMenuItem weeklyToolStripMenuItem1;
         private ToolStripMenuItem monthlyToolStripMenuItem1;
         private ToolStripMenuItem totalRevenueToolStripMenuItem;
+        private ContextMenuStrip cmsPie;
+        private ToolStripMenuItem passengersToolStripMenuItem;
+        private ToolStripMenuItem driversToolStripMenuItem;
+        private ToolStripMenuItem usersToolStripMenuItem;
     }
 }

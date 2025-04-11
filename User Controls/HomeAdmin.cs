@@ -93,10 +93,163 @@ namespace NEXUS.User_Controls
             model.Series.Add(pieSeries);
 
             pvPieChart.Model = model;
-            lblNumPassenger.Text = totalPassengers.ToString();
             lblNumDriver.Text = totalDrivers.ToString();
+            lblNumPassenger.Text = totalPassengers.ToString();
             lblUsers.Text = numUsers + " Users";
         }
+
+        private void LoadPassengerStatusDataAndShowChart()
+        {
+            int verifiedPassengers = 0;
+            int pendingPassengers = 0;
+
+            string query = "SELECT [User Type], [Status] FROM Accounts";
+
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+                    using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string userType = reader["User Type"].ToString().Trim().ToLower();
+                            string status = reader["Status"].ToString().Trim().ToLower();
+
+                            if (userType == "passenger")
+                            {
+                                if (status == "verified")
+                                    verifiedPassengers++;
+                                else if (status == "pending")
+                                    pendingPassengers++;
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                    return;
+                }
+            }
+
+            CreatePassengerStatusPieChart(verifiedPassengers, pendingPassengers);
+        }
+
+        private void CreatePassengerStatusPieChart(int verified, int pending)
+        {
+            int totalPassengers = verified + pending;
+
+            var model = new PlotModel(); // No title here
+
+            var pieSeries = new PieSeries
+            {
+                StrokeThickness = 2.0,
+                InsideLabelPosition = 0.8,
+                AngleSpan = 360,
+                StartAngle = 10,
+                FontSize = 16,
+                TextColor = OxyColors.Black
+            };
+
+            pieSeries.Slices.Add(new PieSlice("Verified", verified)
+            {
+                IsExploded = true,
+                Fill = OxyColor.FromRgb(153, 229, 255)
+            });
+
+            pieSeries.Slices.Add(new PieSlice("Pending", pending)
+            {
+                IsExploded = true,
+                Fill = OxyColor.FromRgb(0, 229, 255)
+            });
+
+            model.Series.Add(pieSeries);
+
+            pvPieChart.Model = model;
+            lblNumDriver.Text = pending.ToString();
+            lblNumPassenger.Text = verified.ToString();
+            lblUsers.Text = "Passenger Verification Status";
+        }
+
+        private void LoadDriverStatusDataAndShowChart()
+        {
+            int verifiedDrivers = 0;
+            int pendingDrivers = 0;
+
+            string query = "SELECT [User Type], [Status] FROM Accounts";
+
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+                    using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string userType = reader["User Type"].ToString().Trim().ToLower();
+                            string status = reader["Status"].ToString().Trim().ToLower();
+
+                            if (userType == "driver")
+                            {
+                                if (status == "verified")
+                                    verifiedDrivers++;
+                                else if (status == "pending")
+                                    pendingDrivers++;
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                    return;
+                }
+            }
+
+            CreateDriverStatusPieChart(verifiedDrivers, pendingDrivers);
+        }
+
+        private void CreateDriverStatusPieChart(int verified, int pending)
+        {
+            int totalDrivers = verified + pending;
+
+            var model = new PlotModel(); // No title here
+
+            var pieSeries = new PieSeries
+            {
+                StrokeThickness = 2.0,
+                InsideLabelPosition = 0.8,
+                AngleSpan = 360,
+                StartAngle = 15,
+                FontSize = 16,
+                TextColor = OxyColors.Black
+            };
+
+            pieSeries.Slices.Add(new PieSlice("Verified", verified)
+            {
+                IsExploded = true,
+                Fill = OxyColor.FromRgb(153, 229, 255)
+            });
+
+            pieSeries.Slices.Add(new PieSlice("Pending", pending)
+            {
+                IsExploded = true,
+                Fill = OxyColor.FromRgb(0, 229, 255)
+            });
+
+            model.Series.Add(pieSeries);
+
+            pvPieChart.Model = model;
+            lblNumPassenger.Text = verified.ToString();
+            lblNumDriver.Text = pending.ToString();
+            lblUsers.Text = "Driver Verification Status";
+        }
+
 
         private void LoadRevenueData()
         {
@@ -688,7 +841,6 @@ namespace NEXUS.User_Controls
             pvDrivers.Model = model;
         }
 
-
         private void weeklyToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             LoadDriverWeeklyRevenueData();
@@ -702,6 +854,21 @@ namespace NEXUS.User_Controls
         private void totalRevenueToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LoadDriverRevenueData();
+        }
+
+        private void driversToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoadDriverStatusDataAndShowChart();
+        }
+
+        private void passengersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoadPassengerStatusDataAndShowChart();
+        }
+
+        private void usersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoadUserDataAndShowChart();
         }
     }
 }
