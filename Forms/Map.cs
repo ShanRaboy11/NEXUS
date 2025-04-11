@@ -9,8 +9,6 @@ namespace NEXUS.Forms
 {
     public partial class Map : Form
     {
-        double latitude = 10.295261349234304;
-        double longitude = 123.88125737517491;
         public Map()
         {
             InitializeComponent();
@@ -100,13 +98,39 @@ namespace NEXUS.Forms
                 {
                     var response = await httpClient.GetStringAsync("http://ip-api.com/json/");
                     var data = JsonConvert.DeserializeObject<dynamic>(response);
-                    return (latitude, longitude);
+
+                    string status = data.status;
+                    string isp = data.isp;
+                    string city = data.city;
+                    string region = data.regionName;
+                    string country = data.country;
+
+                    double realLat = data.lat;
+                    double realLon = data.lon;
+
+
+                    bool isPrecisionAcceptable =
+                        data.query != "127.0.0.1" &&
+                        country == "Philippines" &&
+                        Math.Abs(realLat - 10.295261349234304) < 0.00001;
+
+                    if (status == "success" && isPrecisionAcceptable)
+                    {
+                        return (realLat, realLon);
+                    }
+
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                return (latitude, longitude);
+                Console.WriteLine($"Location detection failed. Using fallback location. Error: {ex.Message}");
             }
+
+
+
+
+            return (10.295261349234304, 123.88125737517491);
         }
+
     }
 }

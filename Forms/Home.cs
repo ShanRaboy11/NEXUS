@@ -35,19 +35,9 @@ namespace NEXUS.Forms
 
         private void pbMap_Click(object sender, EventArgs e)
         {
-            //Scan scan = new Scan(currentUser.UserID);
+            Scan scan = new Scan(currentUser.UserID);
             Map map = new Map();
-            map.ShowDialog();
-            //scan.ShowOverlay(map, null);
-            /*
-            if (currentUser is Passenger)
-            {
-                passengerDashboard?.OpenChildForm(map);
-            }
-            else if (currentUser is Driver)
-            {
-                driverDashboard?.OpenChildForm(map);
-            }*/
+            scan.ShowOverlay(map, null);
         }
     }
 
