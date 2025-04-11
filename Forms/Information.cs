@@ -13,15 +13,15 @@ namespace NEXUS.Forms
 {
     public partial class Information : Form
     {
-        private Button selectedButton = null;
-        private Button currentBtn;
+        private FontAwesome.Sharp.IconButton selectedButton = null;
+        private FontAwesome.Sharp.IconButton currentBtn;
         public Information()
         {
             InitializeComponent();
             btnPUV_Click(btnPUV, EventArgs.Empty);
         }
 
-        private void SelectButton(Button button)
+        private void SelectButton(FontAwesome.Sharp.IconButton button)
         {
             if (selectedButton != null)
             {
@@ -49,6 +49,46 @@ namespace NEXUS.Forms
             pnlBG.Controls.Clear();
             pnlBG.Controls.Add(pUV);
             SelectButton(btnPUV);
+        }
+
+        private void btnPassengers_Click(object sender, EventArgs e)
+        {
+            PassengerInfo passengerInfo = new PassengerInfo();
+
+            passengerInfo.Dock = DockStyle.Fill;
+            pnlBG.Controls.Clear();
+            pnlBG.Controls.Add(passengerInfo);
+            SelectButton(btnPassengers);
+        }
+
+        private void btnDrivers_Click(object sender, EventArgs e)
+        {
+            DriverInfo driverInfo = new DriverInfo();
+
+            driverInfo.Dock = DockStyle.Fill;
+            pnlBG.Controls.Clear();
+            pnlBG.Controls.Add(driverInfo);
+            SelectButton(btnDrivers);
+        }
+
+        private void btnFare_Click(object sender, EventArgs e)
+        {
+            FareMatrix fareMatrix = new FareMatrix();
+
+            fareMatrix.Dock = DockStyle.Fill;
+            pnlBG.Controls.Clear();
+            pnlBG.Controls.Add(fareMatrix);
+            SelectButton(btnFare);
+        }
+
+        private void btnLTFRB_Click(object sender, EventArgs e)
+        {
+            LTFRB lTFRB = new LTFRB();
+
+            lTFRB.Dock = DockStyle.Fill;
+            pnlBG.Controls.Clear();
+            pnlBG.Controls.Add(lTFRB);
+            SelectButton(btnLTFRB);
         }
     }
 }

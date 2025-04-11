@@ -37,11 +37,11 @@
             pictureBox1 = new PictureBox();
             pnlBG = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
-            btnLTFRB = new Button();
-            btnFare = new Button();
-            btnDrivers = new Button();
-            btnPassengers = new Button();
-            btnPUV = new Button();
+            btnFare = new FontAwesome.Sharp.IconButton();
+            btnLTFRB = new FontAwesome.Sharp.IconButton();
+            btnDrivers = new FontAwesome.Sharp.IconButton();
+            btnPUV = new FontAwesome.Sharp.IconButton();
+            btnPassengers = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbClose).BeginInit();
@@ -139,11 +139,11 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Controls.Add(btnLTFRB, 4, 0);
-            tableLayoutPanel1.Controls.Add(btnFare, 3, 0);
-            tableLayoutPanel1.Controls.Add(btnDrivers, 2, 0);
-            tableLayoutPanel1.Controls.Add(btnPassengers, 1, 0);
+            tableLayoutPanel1.Controls.Add(btnFare, 0, 0);
+            tableLayoutPanel1.Controls.Add(btnLTFRB, 0, 0);
+            tableLayoutPanel1.Controls.Add(btnDrivers, 0, 0);
             tableLayoutPanel1.Controls.Add(btnPUV, 0, 0);
+            tableLayoutPanel1.Controls.Add(btnPassengers, 0, 0);
             tableLayoutPanel1.Dock = DockStyle.Top;
             tableLayoutPanel1.Location = new Point(0, 28);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -152,66 +152,100 @@
             tableLayoutPanel1.Size = new Size(690, 40);
             tableLayoutPanel1.TabIndex = 21;
             // 
-            // btnLTFRB
-            // 
-            btnLTFRB.Dock = DockStyle.Fill;
-            btnLTFRB.FlatStyle = FlatStyle.Flat;
-            btnLTFRB.Font = new Font("Inter", 11F);
-            btnLTFRB.Location = new Point(555, 3);
-            btnLTFRB.Name = "btnLTFRB";
-            btnLTFRB.Size = new Size(132, 34);
-            btnLTFRB.TabIndex = 4;
-            btnLTFRB.Text = "LTFRB";
-            btnLTFRB.UseVisualStyleBackColor = true;
-            // 
             // btnFare
             // 
             btnFare.Dock = DockStyle.Fill;
+            btnFare.FlatAppearance.BorderSize = 0;
             btnFare.FlatStyle = FlatStyle.Flat;
-            btnFare.Font = new Font("Inter", 11F);
+            btnFare.Font = new Font("Inter Medium", 11F, FontStyle.Bold);
+            btnFare.ForeColor = Color.Black;
+            btnFare.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnFare.IconColor = Color.Black;
+            btnFare.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnFare.ImageAlign = ContentAlignment.MiddleLeft;
             btnFare.Location = new Point(417, 3);
             btnFare.Name = "btnFare";
             btnFare.Size = new Size(132, 34);
-            btnFare.TabIndex = 3;
+            btnFare.TabIndex = 40;
             btnFare.Text = "Fare Matrix";
             btnFare.UseVisualStyleBackColor = true;
+            btnFare.Click += btnFare_Click;
+            // 
+            // btnLTFRB
+            // 
+            btnLTFRB.Dock = DockStyle.Fill;
+            btnLTFRB.FlatAppearance.BorderSize = 0;
+            btnLTFRB.FlatStyle = FlatStyle.Flat;
+            btnLTFRB.Font = new Font("Inter Medium", 11F, FontStyle.Bold);
+            btnLTFRB.ForeColor = Color.Black;
+            btnLTFRB.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnLTFRB.IconColor = Color.Black;
+            btnLTFRB.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnLTFRB.ImageAlign = ContentAlignment.MiddleLeft;
+            btnLTFRB.Location = new Point(555, 3);
+            btnLTFRB.Name = "btnLTFRB";
+            btnLTFRB.Size = new Size(132, 34);
+            btnLTFRB.TabIndex = 39;
+            btnLTFRB.Text = "LTFRB";
+            btnLTFRB.UseVisualStyleBackColor = true;
+            btnLTFRB.Click += btnLTFRB_Click;
             // 
             // btnDrivers
             // 
             btnDrivers.Dock = DockStyle.Fill;
+            btnDrivers.FlatAppearance.BorderSize = 0;
             btnDrivers.FlatStyle = FlatStyle.Flat;
-            btnDrivers.Font = new Font("Inter", 11F);
+            btnDrivers.Font = new Font("Inter Medium", 11F, FontStyle.Bold);
+            btnDrivers.ForeColor = Color.Black;
+            btnDrivers.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnDrivers.IconColor = Color.Black;
+            btnDrivers.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnDrivers.ImageAlign = ContentAlignment.MiddleLeft;
             btnDrivers.Location = new Point(279, 3);
             btnDrivers.Name = "btnDrivers";
             btnDrivers.Size = new Size(132, 34);
-            btnDrivers.TabIndex = 2;
+            btnDrivers.TabIndex = 38;
             btnDrivers.Text = "Drivers";
             btnDrivers.UseVisualStyleBackColor = true;
-            // 
-            // btnPassengers
-            // 
-            btnPassengers.Dock = DockStyle.Fill;
-            btnPassengers.FlatStyle = FlatStyle.Flat;
-            btnPassengers.Font = new Font("Inter", 11F);
-            btnPassengers.Location = new Point(141, 3);
-            btnPassengers.Name = "btnPassengers";
-            btnPassengers.Size = new Size(132, 34);
-            btnPassengers.TabIndex = 1;
-            btnPassengers.Text = "Passengers";
-            btnPassengers.UseVisualStyleBackColor = true;
+            btnDrivers.Click += btnDrivers_Click;
             // 
             // btnPUV
             // 
             btnPUV.Dock = DockStyle.Fill;
+            btnPUV.FlatAppearance.BorderSize = 0;
             btnPUV.FlatStyle = FlatStyle.Flat;
-            btnPUV.Font = new Font("Inter", 11F);
+            btnPUV.Font = new Font("Inter Medium", 11F, FontStyle.Bold);
+            btnPUV.ForeColor = Color.Black;
+            btnPUV.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnPUV.IconColor = Color.Black;
+            btnPUV.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnPUV.ImageAlign = ContentAlignment.MiddleLeft;
             btnPUV.Location = new Point(3, 3);
             btnPUV.Name = "btnPUV";
             btnPUV.Size = new Size(132, 34);
-            btnPUV.TabIndex = 0;
+            btnPUV.TabIndex = 37;
             btnPUV.Text = "PUV Laws";
             btnPUV.UseVisualStyleBackColor = true;
             btnPUV.Click += btnPUV_Click;
+            // 
+            // btnPassengers
+            // 
+            btnPassengers.Dock = DockStyle.Fill;
+            btnPassengers.FlatAppearance.BorderSize = 0;
+            btnPassengers.FlatStyle = FlatStyle.Flat;
+            btnPassengers.Font = new Font("Inter Medium", 11F, FontStyle.Bold);
+            btnPassengers.ForeColor = Color.Black;
+            btnPassengers.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnPassengers.IconColor = Color.Black;
+            btnPassengers.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnPassengers.ImageAlign = ContentAlignment.MiddleLeft;
+            btnPassengers.Location = new Point(141, 3);
+            btnPassengers.Name = "btnPassengers";
+            btnPassengers.Size = new Size(132, 34);
+            btnPassengers.TabIndex = 36;
+            btnPassengers.Text = "Passengers";
+            btnPassengers.UseVisualStyleBackColor = true;
+            btnPassengers.Click += btnPassengers_Click;
             // 
             // Information
             // 
@@ -247,10 +281,10 @@
         private PictureBox pbClose;
         private Panel pnlBG;
         private TableLayoutPanel tableLayoutPanel1;
-        private Button btnPUV;
-        private Button btnLTFRB;
-        private Button btnFare;
-        private Button btnDrivers;
-        private Button btnPassengers;
+        private FontAwesome.Sharp.IconButton btnFare;
+        private FontAwesome.Sharp.IconButton btnLTFRB;
+        private FontAwesome.Sharp.IconButton btnDrivers;
+        private FontAwesome.Sharp.IconButton btnPUV;
+        private FontAwesome.Sharp.IconButton btnPassengers;
     }
 }

@@ -117,8 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="richTextBox3.Text" xml:space="preserve">
+    <value>Department Resolution No. 118-12 stipulates that PUV drivers should not work more than 8 hours a day. If required to work overtime, the total working hours must not exceed 12 hours within a 24-hour period. Additionally, drivers are entitled to at least a 1-hour rest period within a 12-hour shift.</value>
+  </data>
   <data name="richTextBox1.Text" xml:space="preserve">
-    <value>All Public Utility Vehicles (PUVs) must secure a Certificate of Public Convenience (CPC) from the Land Transportation Franchising and Regulatory Board (LTFRB). This certificate specifies authorized routes, vehicle types, and operational terms. ​
-LTO Portal</value>
+    <value>According to LTFRB Memorandum Circular No. 2024-040, all PUV drivers and conductors are required to undergo a comprehensive road safety training program. This training, which costs ₱2,000, must be completed within 2 to 8 days and is a prerequisite for franchise renewal. </value>
   </data>
 </root>
