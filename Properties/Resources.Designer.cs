@@ -333,6 +333,26 @@ namespace NEXUS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bgReports {
+            get {
+                object obj = ResourceManager.GetObject("bgReports", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bgReports1 {
+            get {
+                object obj = ResourceManager.GetObject("bgReports1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close__1_ {
             get {
                 object obj = ResourceManager.GetObject("close (1)", resourceCulture);
@@ -626,6 +646,16 @@ namespace NEXUS.Properties {
         internal static System.Drawing.Bitmap report_normal {
             get {
                 object obj = ResourceManager.GetObject("report_normal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Reports {
+            get {
+                object obj = ResourceManager.GetObject("Reports", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

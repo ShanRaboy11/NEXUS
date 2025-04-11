@@ -552,7 +552,7 @@
             lblTripTime.BackColor = Color.FromArgb(153, 229, 255);
             lblTripTime.Font = new Font("Inter", 18F, FontStyle.Bold);
             lblTripTime.ForeColor = Color.FromArgb(24, 60, 114);
-            lblTripTime.Location = new Point(177, 591);
+            lblTripTime.Location = new Point(178, 591);
             lblTripTime.Name = "lblTripTime";
             lblTripTime.Size = new Size(131, 35);
             lblTripTime.TabIndex = 44;
@@ -564,7 +564,7 @@
             lblPlate.BackColor = Color.FromArgb(153, 229, 255);
             lblPlate.Font = new Font("Inter", 18F, FontStyle.Bold);
             lblPlate.ForeColor = Color.FromArgb(24, 60, 114);
-            lblPlate.Location = new Point(177, 555);
+            lblPlate.Location = new Point(178, 555);
             lblPlate.Name = "lblPlate";
             lblPlate.Size = new Size(128, 35);
             lblPlate.TabIndex = 43;
@@ -577,11 +577,11 @@
             lblRoute.Font = new Font("Inter", 50F, FontStyle.Bold);
             lblRoute.ForeColor = Color.FromArgb(24, 60, 114);
             lblRoute.Location = new Point(25, 541);
-            lblRoute.Margin = new Padding(0, 0, 3, 0);
+            lblRoute.Margin = new Padding(0);
             lblRoute.Name = "lblRoute";
-            lblRoute.Size = new Size(175, 96);
+            lblRoute.Size = new Size(189, 96);
             lblRoute.TabIndex = 42;
-            lblRoute.Text = "10F";
+            lblRoute.Text = "09C";
             lblRoute.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // cyberButton3

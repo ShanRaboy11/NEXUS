@@ -69,9 +69,14 @@
             monthlyToolStripMenuItem1 = new ToolStripMenuItem();
             totalRevenueToolStripMenuItem = new ToolStripMenuItem();
             tableLayoutPanel3 = new TableLayoutPanel();
+            panel11 = new Panel();
+            lblReports = new Label();
             panel9 = new Panel();
             panel10 = new Panel();
             lblTitle = new Label();
+            panel12 = new Panel();
+            tableLayoutPanel4 = new TableLayoutPanel();
+            pictureBox1 = new PictureBox();
             tableLayoutPanel1.SuspendLayout();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
@@ -84,8 +89,11 @@
             panel7.SuspendLayout();
             cmsDriver.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
+            panel11.SuspendLayout();
             panel9.SuspendLayout();
             panel10.SuspendLayout();
+            panel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -94,8 +102,8 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 1.90548778F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 37.7286568F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 2.21036577F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 56.1737823F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 2.28658533F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 57.0121956F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 1.44817078F));
             tableLayoutPanel1.Controls.Add(panel2, 1, 1);
             tableLayoutPanel1.Controls.Add(panel1, 3, 1);
             tableLayoutPanel1.Dock = DockStyle.Top;
@@ -346,7 +354,7 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(548, 11);
             panel1.Name = "panel1";
-            panel1.Size = new Size(728, 398);
+            panel1.Size = new Size(739, 398);
             panel1.TabIndex = 49;
             // 
             // pvRevenueChart
@@ -358,7 +366,7 @@
             pvRevenueChart.Margin = new Padding(0);
             pvRevenueChart.Name = "pvRevenueChart";
             pvRevenueChart.PanCursor = Cursors.Hand;
-            pvRevenueChart.Size = new Size(720, 305);
+            pvRevenueChart.Size = new Size(731, 305);
             pvRevenueChart.TabIndex = 48;
             pvRevenueChart.Text = "plotView1";
             pvRevenueChart.ZoomHorizontalCursor = Cursors.SizeWE;
@@ -402,7 +410,7 @@
             panel8.Dock = DockStyle.Top;
             panel8.Location = new Point(4, 38);
             panel8.Name = "panel8";
-            panel8.Size = new Size(720, 51);
+            panel8.Size = new Size(731, 51);
             panel8.TabIndex = 65;
             // 
             // lblTotalRevenue
@@ -413,7 +421,7 @@
             lblTotalRevenue.Location = new Point(0, 0);
             lblTotalRevenue.Margin = new Padding(0);
             lblTotalRevenue.Name = "lblTotalRevenue";
-            lblTotalRevenue.Size = new Size(720, 51);
+            lblTotalRevenue.Size = new Size(731, 51);
             lblTotalRevenue.TabIndex = 61;
             lblTotalRevenue.Text = "label2";
             // 
@@ -425,7 +433,7 @@
             panel7.Dock = DockStyle.Top;
             panel7.Location = new Point(4, 0);
             panel7.Name = "panel7";
-            panel7.Size = new Size(720, 38);
+            panel7.Size = new Size(731, 38);
             panel7.TabIndex = 64;
             // 
             // lblReport
@@ -435,7 +443,7 @@
             lblReport.ForeColor = Color.FromArgb(38, 36, 68);
             lblReport.Location = new Point(0, 4);
             lblReport.Name = "lblReport";
-            lblReport.Size = new Size(720, 34);
+            lblReport.Size = new Size(731, 34);
             lblReport.TabIndex = 61;
             lblReport.Text = "Weekly Report";
             // 
@@ -448,7 +456,7 @@
             spaceSeparatorHorizontal5.Location = new Point(0, 0);
             spaceSeparatorHorizontal5.Name = "spaceSeparatorHorizontal5";
             spaceSeparatorHorizontal5.NoRounding = false;
-            spaceSeparatorHorizontal5.Size = new Size(720, 4);
+            spaceSeparatorHorizontal5.Size = new Size(731, 4);
             spaceSeparatorHorizontal5.TabIndex = 60;
             spaceSeparatorHorizontal5.Text = "spaceSeparatorHorizontal5";
             spaceSeparatorHorizontal5.Transparent = false;
@@ -476,7 +484,7 @@
             spaceSeparatorHorizontal2.Location = new Point(0, 394);
             spaceSeparatorHorizontal2.Name = "spaceSeparatorHorizontal2";
             spaceSeparatorHorizontal2.NoRounding = false;
-            spaceSeparatorHorizontal2.Size = new Size(724, 4);
+            spaceSeparatorHorizontal2.Size = new Size(735, 4);
             spaceSeparatorHorizontal2.TabIndex = 62;
             spaceSeparatorHorizontal2.Text = "spaceSeparatorHorizontal2";
             spaceSeparatorHorizontal2.Transparent = false;
@@ -487,7 +495,7 @@
             spaceSeparatorVertical3.Dock = DockStyle.Right;
             spaceSeparatorVertical3.Font = new Font("Verdana", 8F);
             spaceSeparatorVertical3.Image = null;
-            spaceSeparatorVertical3.Location = new Point(724, 0);
+            spaceSeparatorVertical3.Location = new Point(735, 0);
             spaceSeparatorVertical3.Name = "spaceSeparatorVertical3";
             spaceSeparatorVertical3.NoRounding = false;
             spaceSeparatorVertical3.Size = new Size(4, 398);
@@ -502,7 +510,7 @@
             pvDrivers.Location = new Point(0, 38);
             pvDrivers.Name = "pvDrivers";
             pvDrivers.PanCursor = Cursors.Hand;
-            pvDrivers.Size = new Size(557, 272);
+            pvDrivers.Size = new Size(692, 272);
             pvDrivers.TabIndex = 50;
             pvDrivers.Text = "plotView1";
             pvDrivers.ZoomHorizontalCursor = Cursors.SizeWE;
@@ -541,13 +549,17 @@
             // 
             // tableLayoutPanel3
             // 
-            tableLayoutPanel3.ColumnCount = 5;
+            tableLayoutPanel3.ColumnCount = 7;
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 2.13414645F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25.2286587F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 42.9115868F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 27.2103653F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 2.43902445F));
-            tableLayoutPanel3.Controls.Add(panel9, 2, 1);
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 23.9636F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 1.51668346F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70.71935F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 1.82370818F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 295F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 28F));
+            tableLayoutPanel3.Controls.Add(panel11, 1, 1);
+            tableLayoutPanel3.Controls.Add(panel9, 3, 1);
+            tableLayoutPanel3.Controls.Add(panel12, 5, 1);
             tableLayoutPanel3.Dock = DockStyle.Fill;
             tableLayoutPanel3.Location = new Point(0, 412);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -558,15 +570,40 @@
             tableLayoutPanel3.Size = new Size(1312, 355);
             tableLayoutPanel3.TabIndex = 44;
             // 
+            // panel11
+            // 
+            panel11.BackColor = Color.FromArgb(230, 249, 255);
+            panel11.Controls.Add(lblReports);
+            panel11.Controls.Add(pictureBox1);
+            panel11.Dock = DockStyle.Fill;
+            panel11.Location = new Point(24, 23);
+            panel11.Name = "panel11";
+            panel11.Size = new Size(230, 310);
+            panel11.TabIndex = 52;
+            // 
+            // lblReports
+            // 
+            lblReports.BackColor = Color.FromArgb(0, 229, 255);
+            lblReports.Font = new Font("Inter", 60F, FontStyle.Bold);
+            lblReports.ForeColor = Color.FromArgb(38, 36, 68);
+            lblReports.Image = Properties.Resources.bgReports1;
+            lblReports.Location = new Point(0, 78);
+            lblReports.Margin = new Padding(0);
+            lblReports.Name = "lblReports";
+            lblReports.Size = new Size(227, 118);
+            lblReports.TabIndex = 43;
+            lblReports.Text = "2";
+            lblReports.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // panel9
             // 
             panel9.BackColor = Color.FromArgb(38, 36, 68);
             panel9.Controls.Add(pvDrivers);
             panel9.Controls.Add(panel10);
             panel9.Dock = DockStyle.Fill;
-            panel9.Location = new Point(362, 23);
+            panel9.Location = new Point(274, 23);
             panel9.Name = "panel9";
-            panel9.Size = new Size(557, 310);
+            panel9.Size = new Size(692, 310);
             panel9.TabIndex = 51;
             // 
             // panel10
@@ -576,7 +613,7 @@
             panel10.Dock = DockStyle.Top;
             panel10.Location = new Point(0, 0);
             panel10.Name = "panel10";
-            panel10.Size = new Size(557, 38);
+            panel10.Size = new Size(692, 38);
             panel10.TabIndex = 65;
             // 
             // lblTitle
@@ -586,9 +623,54 @@
             lblTitle.ForeColor = Color.White;
             lblTitle.Location = new Point(0, 0);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(557, 38);
+            lblTitle.Size = new Size(692, 38);
             lblTitle.TabIndex = 61;
             lblTitle.Text = "Driver Analysis – Weekly Revenue";
+            // 
+            // panel12
+            // 
+            panel12.BackColor = Color.FromArgb(153, 229, 255);
+            panel12.Controls.Add(tableLayoutPanel4);
+            panel12.Dock = DockStyle.Fill;
+            panel12.Location = new Point(990, 23);
+            panel12.Name = "panel12";
+            panel12.Size = new Size(289, 310);
+            panel12.TabIndex = 53;
+            // 
+            // tableLayoutPanel4
+            // 
+            tableLayoutPanel4.ColumnCount = 2;
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.07266F));
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 88.92734F));
+            tableLayoutPanel4.Dock = DockStyle.Fill;
+            tableLayoutPanel4.Location = new Point(0, 0);
+            tableLayoutPanel4.Name = "tableLayoutPanel4";
+            tableLayoutPanel4.RowCount = 13;
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 8.333333F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 8.333333F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 8.333333F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 8.333333F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 8.333333F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 8.333333F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 8.333333F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 8.333333F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 8.333333F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 8.333333F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 8.333333F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 8.333333F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel4.Size = new Size(289, 310);
+            tableLayoutPanel4.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Image = Properties.Resources.Reports;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(230, 310);
+            pictureBox1.TabIndex = 44;
+            pictureBox1.TabStop = false;
             // 
             // HomeAdmin
             // 
@@ -611,8 +693,11 @@
             panel7.ResumeLayout(false);
             cmsDriver.ResumeLayout(false);
             tableLayoutPanel3.ResumeLayout(false);
+            panel11.ResumeLayout(false);
             panel9.ResumeLayout(false);
             panel10.ResumeLayout(false);
+            panel12.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -661,5 +746,13 @@
         private ToolStripMenuItem usersToolStripMenuItem;
         private Panel panel10;
         private Label lblTitle;
+        private Panel panel11;
+        private Label lblReports;
+        private Panel panel12;
+        private TableLayoutPanel tableLayoutPanel4;
+        private PictureBox pictureBox1;
+        private ReaLTaiizor.Controls.CyberRichTextBox cyberRichTextBox1;
+        private ReaLTaiizor.Controls.CyberButton cyberButton1;
+        private ReaLTaiizor.Controls.CyberButton cyberButton3;
     }
 }
