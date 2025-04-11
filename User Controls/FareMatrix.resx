@@ -117,8 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="richTextBox3.Text" xml:space="preserve">
+    <value>PUV drivers and operators are subject to penalties for various infractions to ensure passenger safety and service reliability. Common violations include overcharging, refusal to convey passengers, reckless driving, and operating without the proper fare matrix displayed. Penalties for these offenses range from fines to suspension or revocation of licenses. For example, reckless driving can result in a ₱2,000 fine for the first offense, escalating to ₱10,000 and license suspension for repeated violations. Failure to display the authorized fare matrix is also penalized, as it is considered a violation of LTFRB regulations. </value>
+  </data>
   <data name="richTextBox1.Text" xml:space="preserve">
-    <value>All Public Utility Vehicles (PUVs) must secure a Certificate of Public Convenience (CPC) from the Land Transportation Franchising and Regulatory Board (LTFRB). This certificate specifies authorized routes, vehicle types, and operational terms. ​
-LTO Portal</value>
+    <value>The Land Transportation Franchising and Regulatory Board (LTFRB) establishes fare rates for Public Utility Vehicles (PUVs) such as jeepneys, buses, taxis, and UV Express services. These rates are determined based on factors like fuel prices, operational costs, and distance traveled. For instance, the minimum jeepney fare is set at ₱13.00 for the first four kilometers on traditional jeepneys and  ₱15.00 on modern jeepneys, with an additional ₱1.00 charged for each succeeding kilometer. This fare structure is periodically reviewed to reflect changes in economic conditions. </value>
   </data>
 </root>

@@ -127,9 +127,6 @@
   <data name="3844443_disable_eye_inactive_see_show_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3844443_disable_eye_inactive_see_show_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="emergency (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\emergency (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="default" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\default.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -150,6 +147,9 @@
   </data>
   <data name="history_hover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\history_hover.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="scan_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\scan_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Reports" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Reports.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -223,8 +223,8 @@
   <data name="bgReports1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bgReports1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Removal-915" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Removal-915.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="route_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\route_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="google-placeholder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\google-placeholder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -283,9 +283,6 @@
   <data name="home_animation" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\home_animation.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="route_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\route_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="white_clock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\white_clock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -298,11 +295,17 @@
   <data name="Animation - 1739888639577" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Animation - 1739888639577.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Reports (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Reports (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="8530693_window_maximize_icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\8530693_window_maximize_icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="image_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\image_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="scan_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\scan_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Removal-915" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Removal-915.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1904659_arrow_backup_down_download_save_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1904659_arrow_backup_down_download_save_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -325,8 +328,8 @@
   <data name="115762_calendar_date_event_month_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\115762_calendar_date_event_month_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="8530693_window_maximize_icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\8530693_window_maximize_icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="emergency (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\emergency (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="03L" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\03L.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -337,7 +340,7 @@
   <data name="Removal-9151" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Removal-9151.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Reports (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Reports (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="image-removebg-preview (12)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\image-removebg-preview (12).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

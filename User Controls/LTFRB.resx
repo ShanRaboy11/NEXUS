@@ -117,8 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="richTextBox3.Text" xml:space="preserve">
+    <value>The Land Transportation Franchising and Regulatory Board (LTFRB) operates a 24/7 hotline at 1342, allowing commuters to report issues such as overcharging, reckless driving, or refusal to convey. Additionally, mobile numbers are available for sending complaints via SMS or Viber: 0917-550-1342 for Globe/TM subscribers and 0998-550-1342 for Smart/TNT/Sun users. ​</value>
+  </data>
   <data name="richTextBox1.Text" xml:space="preserve">
-    <value>All Public Utility Vehicles (PUVs) must secure a Certificate of Public Convenience (CPC) from the Land Transportation Franchising and Regulatory Board (LTFRB). This certificate specifies authorized routes, vehicle types, and operational terms. ​
-LTO Portal</value>
+    <value>The LTFRB is a government agency under the Department of Transportation (DOTr) in the Philippines. Its primary role is to regulate and oversee public land transportation services, ensuring the safety, reliability, and affordability of Public Utility Vehicles (PUVs) such as jeepneys, buses, taxis, UV Express, and Transport Network Vehicle Services (TNVS). It grants franchises (or Certificates of Public Convenience), sets and adjusts fare rates, enforces transport policies, and handles complaints involving PUV operations. Through these responsibilities, the LTFRB plays a crucial role in promoting commuter rights and improving the quality of public transportation in the country.</value>
+  </data>
+  <data name="richTextBox5.Text" xml:space="preserve">
+    <value>Commuters can file formal complaints by emailing complaints@ltfrb.gov.ph. It's important to include your full name, contact details, and a detailed account of the incident. Supporting evidence like photos or videos can strengthen your complaint. </value>
   </data>
 </root>
