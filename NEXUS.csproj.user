@@ -94,10 +94,22 @@
     <Compile Update="User Controls\DataGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="User Controls\DriverInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="User Controls\DriversAdmin.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="User Controls\FareMatrix.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="User Controls\HomeAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="User Controls\LTFRB.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="User Controls\PassengerInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="User Controls\PassengersAdmin.cs">
