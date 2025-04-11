@@ -483,7 +483,10 @@ namespace NEXUS.User_Controls
             var model = new PlotModel
             {
                 Title = "Driver Revenue Performance",
-                TitleFontSize = 18
+                TitleFontSize = 18,
+                TitleColor = OxyColors.White,
+                TextColor = OxyColors.White, // General text (legend, series labels, etc.)
+                PlotAreaBorderColor = OxyColors.White
             };
 
             // Create the bar series
@@ -491,41 +494,120 @@ namespace NEXUS.User_Controls
             {
                 LabelPlacement = LabelPlacement.Inside,
                 LabelFormatString = "₱{0:N0}",
-                FillColor = OxyColor.FromRgb(76, 229, 255)
+                FillColor = OxyColor.FromRgb(76, 229, 255), // Custom bar color
+                TextColor = OxyColor.FromRgb(24, 60, 114) // Label text color
             };
 
             // Add items dynamically based on data
             foreach (DataRow row in dataTable.Rows)
             {
-                string driverName = row["FirstName"].ToString(); // Get the first name of the driver
-                double totalRevenue = Convert.ToDouble(row["TotalRevenue"]); // Get the total revenue for that driver
-
-                // Add the data to the BarSeries
+                double totalRevenue = Convert.ToDouble(row["TotalRevenue"]);
                 series.Items.Add(new BarItem(totalRevenue));
             }
 
             // Add the bar series to the plot model
             model.Series.Add(series);
 
-            // Set up the X-axis (Driver Names)
+            // Category Axis (Driver Names)
             model.Axes.Add(new CategoryAxis
             {
                 Position = AxisPosition.Left,
                 ItemsSource = dataTable.AsEnumerable().Select(r => r["FirstName"].ToString()).ToList(),
-                Title = "Driver"
+                Title = "Driver",
+                TitleColor = OxyColors.White,
+                TextColor = OxyColors.White,
+                AxislineColor = OxyColors.White,
+                TicklineColor = OxyColors.White
             });
 
-            // Set up the Y-axis (Revenue)
+            // Linear Axis (Revenue)
             model.Axes.Add(new LinearAxis
             {
                 Position = AxisPosition.Bottom,
                 Minimum = 0,
-                Title = "Total Revenue (₱)"
+                Title = "Total Revenue (₱)",
+                TitleColor = OxyColors.White,
+                TextColor = OxyColors.White,
+                AxislineColor = OxyColors.White,
+                TicklineColor = OxyColors.White
             });
 
             // Assign the model to the PlotView
-            pvDrivers.Model = model; // Assuming plotViewDriverRevenue is your PlotView control
+            pvDrivers.Model = model;
         }
 
+        private void LoadDriverWeeklyRevenueData()
+        {
+            // SQL query to access the saved query for weekly revenue
+            string query = "SELECT * FROM DriverWeeklyRevenue"; // Access the saved query by name
+
+            using (OleDbConnection connection = DatabaseManagement.GetConnection())
+            {
+                OleDbDataAdapter dataAdapter = new OleDbDataAdapter(query, connection);
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+
+                // Create the chart
+                CreateDriverWeeklyRevenueBarChart(dataTable);
+            }
+        }
+
+        private void CreateDriverWeeklyRevenueBarChart(DataTable dataTable)
+        {
+            var model = new PlotModel
+            {
+                Title = "Driver Revenue (Last 7 Days)",
+                TitleFontSize = 18,
+                TitleColor = OxyColors.White,
+                TextColor = OxyColors.White,
+                PlotAreaBorderColor = OxyColors.White
+            };
+
+            var series = new BarSeries
+            {
+                LabelPlacement = LabelPlacement.Inside,
+                LabelFormatString = "₱{0:N0}",
+                FillColor = OxyColor.FromRgb(76, 229, 255),
+                TextColor = OxyColor.FromRgb(24, 60, 114)
+            };
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                double weeklyRevenue = Convert.ToDouble(row["TotalRevenue"]);
+                series.Items.Add(new BarItem(weeklyRevenue));
+            }
+
+            model.Series.Add(series);
+
+            model.Axes.Add(new CategoryAxis
+            {
+                Position = AxisPosition.Left,
+                ItemsSource = dataTable.AsEnumerable().Select(r => r["FirstName"].ToString()).ToList(),
+                Title = "Driver",
+                TitleColor = OxyColors.White,
+                TextColor = OxyColors.White,
+                AxislineColor = OxyColors.White,
+                TicklineColor = OxyColors.White
+            });
+
+            model.Axes.Add(new LinearAxis
+            {
+                Position = AxisPosition.Bottom,
+                Minimum = 0,
+                Title = "Revenue this Week (₱)",
+                TitleColor = OxyColors.White,
+                TextColor = OxyColors.White,
+                AxislineColor = OxyColors.White,
+                TicklineColor = OxyColors.White
+            });
+
+            // Assign the model to the PlotView (you can change this if using a different PlotView control)
+            pvDrivers.Model = model;
+        }
+
+        private void weeklyToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            LoadDriverWeeklyRevenueData();
+        }
     }
 }

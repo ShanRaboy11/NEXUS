@@ -61,6 +61,11 @@
             spaceSeparatorVertical3 = new ReaLTaiizor.Controls.SpaceSeparatorVertical();
             pvDrivers = new OxyPlot.WindowsForms.PlotView();
             tableLayoutPanel3 = new TableLayoutPanel();
+            panel9 = new Panel();
+            cmsDriver = new ContextMenuStrip(components);
+            weeklyToolStripMenuItem1 = new ToolStripMenuItem();
+            totalRevenueToolStripMenuItem = new ToolStripMenuItem();
+            monthlyToolStripMenuItem1 = new ToolStripMenuItem();
             tableLayoutPanel1.SuspendLayout();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
@@ -71,6 +76,8 @@
             panel8.SuspendLayout();
             panel7.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
+            panel9.SuspendLayout();
+            cmsDriver.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -451,11 +458,11 @@
             // 
             // pvDrivers
             // 
-            pvDrivers.Dock = DockStyle.Fill;
-            pvDrivers.Location = new Point(362, 28);
+            pvDrivers.ContextMenuStrip = cmsDriver;
+            pvDrivers.Location = new Point(148, 3);
             pvDrivers.Name = "pvDrivers";
             pvDrivers.PanCursor = Cursors.Hand;
-            pvDrivers.Size = new Size(557, 300);
+            pvDrivers.Size = new Size(325, 300);
             pvDrivers.TabIndex = 50;
             pvDrivers.Text = "plotView1";
             pvDrivers.ZoomHorizontalCursor = Cursors.SizeWE;
@@ -470,7 +477,7 @@
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 42.9115868F));
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 27.2103653F));
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 2.43902445F));
-            tableLayoutPanel3.Controls.Add(pvDrivers, 2, 1);
+            tableLayoutPanel3.Controls.Add(panel9, 2, 1);
             tableLayoutPanel3.Dock = DockStyle.Fill;
             tableLayoutPanel3.Location = new Point(0, 412);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -480,6 +487,44 @@
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 6.47887325F));
             tableLayoutPanel3.Size = new Size(1312, 355);
             tableLayoutPanel3.TabIndex = 44;
+            // 
+            // panel9
+            // 
+            panel9.BackColor = Color.FromArgb(38, 36, 68);
+            panel9.Controls.Add(pvDrivers);
+            panel9.Dock = DockStyle.Fill;
+            panel9.Location = new Point(362, 28);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(557, 300);
+            panel9.TabIndex = 51;
+            // 
+            // cmsDriver
+            // 
+            cmsDriver.Items.AddRange(new ToolStripItem[] { weeklyToolStripMenuItem1, monthlyToolStripMenuItem1, totalRevenueToolStripMenuItem });
+            cmsDriver.Name = "cmsDriver";
+            cmsDriver.Size = new Size(181, 104);
+            // 
+            // weeklyToolStripMenuItem1
+            // 
+            weeklyToolStripMenuItem1.Font = new Font("Inter", 11.25F);
+            weeklyToolStripMenuItem1.Name = "weeklyToolStripMenuItem1";
+            weeklyToolStripMenuItem1.Size = new Size(180, 26);
+            weeklyToolStripMenuItem1.Text = "Weekly";
+            weeklyToolStripMenuItem1.Click += weeklyToolStripMenuItem1_Click;
+            // 
+            // totalRevenueToolStripMenuItem
+            // 
+            totalRevenueToolStripMenuItem.Font = new Font("Inter", 11.25F);
+            totalRevenueToolStripMenuItem.Name = "totalRevenueToolStripMenuItem";
+            totalRevenueToolStripMenuItem.Size = new Size(180, 26);
+            totalRevenueToolStripMenuItem.Text = "Total Revenue";
+            // 
+            // monthlyToolStripMenuItem1
+            // 
+            monthlyToolStripMenuItem1.Font = new Font("Inter", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            monthlyToolStripMenuItem1.Name = "monthlyToolStripMenuItem1";
+            monthlyToolStripMenuItem1.Size = new Size(180, 26);
+            monthlyToolStripMenuItem1.Text = "Monthly";
             // 
             // HomeAdmin
             // 
@@ -500,6 +545,8 @@
             panel8.ResumeLayout(false);
             panel7.ResumeLayout(false);
             tableLayoutPanel3.ResumeLayout(false);
+            panel9.ResumeLayout(false);
+            cmsDriver.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -537,5 +584,10 @@
         private ToolStripMenuItem yearlyToolStripMenuItem;
         private OxyPlot.WindowsForms.PlotView pvDrivers;
         private TableLayoutPanel tableLayoutPanel3;
+        private Panel panel9;
+        private ContextMenuStrip cmsDriver;
+        private ToolStripMenuItem weeklyToolStripMenuItem1;
+        private ToolStripMenuItem monthlyToolStripMenuItem1;
+        private ToolStripMenuItem totalRevenueToolStripMenuItem;
     }
 }
