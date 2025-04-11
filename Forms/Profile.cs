@@ -23,7 +23,7 @@ namespace NEXUS.Forms
         {
             UserInformation userInformation = Cryptography.GetUserInfo(userName, type);
 
-            if(userInformation is Passenger passenger)
+            if (userInformation is Passenger passenger)
             {
                 using (MemoryStream ms = new MemoryStream(passenger.ProfilePicture))
                 {
@@ -39,7 +39,7 @@ namespace NEXUS.Forms
                 lblTokens.Text = passenger.Points.ToString();
                 lblStatus.Text = passenger.Status;
             }
-            else if(userInformation is Driver driver)
+            else if (userInformation is Driver driver)
             {
                 using (MemoryStream ms = new MemoryStream(driver.ProfilePicture))
                 {
@@ -66,6 +66,12 @@ namespace NEXUS.Forms
         private void label8_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnEditProfile_Click(object sender, EventArgs e)
+        {
+            pbChangePic.Visible = true;
+            btnAttachment.Visible = true;
         }
     }
 }

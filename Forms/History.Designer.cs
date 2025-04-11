@@ -36,7 +36,6 @@
             dtDate = new ReaLTaiizor.Controls.PoisonDateTime();
             label2 = new Label();
             cmsDataGrid = new ContextMenuStrip(components);
-            displayToolStripMenuItem = new ToolStripMenuItem();
             rateToolStripMenuItem = new ToolStripMenuItem();
             cmbxFilter = new ComboBox();
             pbIcon = new PictureBox();
@@ -112,22 +111,15 @@
             // cmsDataGrid
             // 
             cmsDataGrid.Font = new Font("Segoe UI", 9F);
-            cmsDataGrid.Items.AddRange(new ToolStripItem[] { displayToolStripMenuItem, rateToolStripMenuItem });
+            cmsDataGrid.Items.AddRange(new ToolStripItem[] { rateToolStripMenuItem });
             cmsDataGrid.Name = "contextMenuStrip1";
-            cmsDataGrid.Size = new Size(113, 48);
-            // 
-            // displayToolStripMenuItem
-            // 
-            displayToolStripMenuItem.Image = Properties.Resources._9104142_fullscreen_expand_maximize_enlarge_screen_icon;
-            displayToolStripMenuItem.Name = "displayToolStripMenuItem";
-            displayToolStripMenuItem.Size = new Size(112, 22);
-            displayToolStripMenuItem.Text = "Display";
+            cmsDataGrid.Size = new Size(98, 26);
             // 
             // rateToolStripMenuItem
             // 
             rateToolStripMenuItem.Image = Properties.Resources.rate_hover;
             rateToolStripMenuItem.Name = "rateToolStripMenuItem";
-            rateToolStripMenuItem.Size = new Size(112, 22);
+            rateToolStripMenuItem.Size = new Size(97, 22);
             rateToolStripMenuItem.Text = "Rate";
             rateToolStripMenuItem.Click += rateToolStripMenuItem_Click;
             // 
@@ -259,7 +251,6 @@
         private ComboBox cmbxFilter;
         private PictureBox pbIcon;
         private ContextMenuStrip cmsDataGrid;
-        private ToolStripMenuItem displayToolStripMenuItem;
         private ToolStripMenuItem rateToolStripMenuItem;
         private Krypton.Toolkit.KryptonDataGridView dgvHistory;
         private ComboBox cmbxJeepCodes;

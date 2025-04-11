@@ -54,7 +54,7 @@
             panel3 = new Panel();
             panel4 = new Panel();
             label8 = new Label();
-            btnSubmitReport = new ReaLTaiizor.Controls.CyberButton();
+            btnEditProfile = new ReaLTaiizor.Controls.CyberButton();
             label9 = new Label();
             lblEmail = new Label();
             lblBirthday = new Label();
@@ -62,6 +62,8 @@
             label5 = new Label();
             label1 = new Label();
             lblStatus = new Label();
+            pbChangePic = new PictureBox();
+            btnAttachment = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)pbProfilePicture).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbBackground).BeginInit();
             panel1.SuspendLayout();
@@ -75,6 +77,7 @@
             ((System.ComponentModel.ISupportInitialize)pbClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbChangePic).BeginInit();
             SuspendLayout();
             // 
             // pbProfilePicture
@@ -356,53 +359,54 @@
             label8.Text = "Email :";
             label8.Click += label8_Click;
             // 
-            // btnSubmitReport
+            // btnEditProfile
             // 
-            btnSubmitReport.Alpha = 20;
-            btnSubmitReport.BackColor = Color.Transparent;
-            btnSubmitReport.Background = true;
-            btnSubmitReport.Background_WidthPen = 4F;
-            btnSubmitReport.BackgroundPen = true;
-            btnSubmitReport.ColorBackground = Color.FromArgb(24, 60, 114);
-            btnSubmitReport.ColorBackground_1 = Color.FromArgb(24, 60, 114);
-            btnSubmitReport.ColorBackground_2 = Color.FromArgb(24, 60, 114);
-            btnSubmitReport.ColorBackground_Pen = Color.FromArgb(153, 229, 255);
-            btnSubmitReport.ColorLighting = Color.FromArgb(24, 60, 114);
-            btnSubmitReport.ColorPen_1 = Color.FromArgb(24, 60, 114);
-            btnSubmitReport.ColorPen_2 = Color.FromArgb(24, 60, 114);
-            btnSubmitReport.Cursor = Cursors.Hand;
-            btnSubmitReport.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            btnSubmitReport.Effect_1 = true;
-            btnSubmitReport.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
-            btnSubmitReport.Effect_1_Transparency = 25;
-            btnSubmitReport.Effect_2 = true;
-            btnSubmitReport.Effect_2_ColorBackground = Color.White;
-            btnSubmitReport.Effect_2_Transparency = 20;
-            btnSubmitReport.Font = new Font("Inter", 11.25F);
-            btnSubmitReport.ForeColor = Color.FromArgb(245, 245, 245);
-            btnSubmitReport.Lighting = false;
-            btnSubmitReport.LinearGradient_Background = false;
-            btnSubmitReport.LinearGradientPen = false;
-            btnSubmitReport.Location = new Point(210, 601);
-            btnSubmitReport.Name = "btnSubmitReport";
-            btnSubmitReport.PenWidth = 15;
-            btnSubmitReport.Rounding = true;
-            btnSubmitReport.RoundingInt = 70;
-            btnSubmitReport.Size = new Size(159, 45);
-            btnSubmitReport.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            btnSubmitReport.TabIndex = 36;
-            btnSubmitReport.Tag = "Cyber";
-            btnSubmitReport.TextButton = "Edit Profile";
-            btnSubmitReport.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            btnSubmitReport.Timer_Effect_1 = 5;
-            btnSubmitReport.Timer_RGB = 300;
+            btnEditProfile.Alpha = 20;
+            btnEditProfile.BackColor = Color.Transparent;
+            btnEditProfile.Background = true;
+            btnEditProfile.Background_WidthPen = 4F;
+            btnEditProfile.BackgroundPen = true;
+            btnEditProfile.ColorBackground = Color.FromArgb(24, 60, 114);
+            btnEditProfile.ColorBackground_1 = Color.FromArgb(24, 60, 114);
+            btnEditProfile.ColorBackground_2 = Color.FromArgb(24, 60, 114);
+            btnEditProfile.ColorBackground_Pen = Color.FromArgb(153, 229, 255);
+            btnEditProfile.ColorLighting = Color.FromArgb(24, 60, 114);
+            btnEditProfile.ColorPen_1 = Color.FromArgb(24, 60, 114);
+            btnEditProfile.ColorPen_2 = Color.FromArgb(24, 60, 114);
+            btnEditProfile.Cursor = Cursors.Hand;
+            btnEditProfile.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            btnEditProfile.Effect_1 = true;
+            btnEditProfile.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            btnEditProfile.Effect_1_Transparency = 25;
+            btnEditProfile.Effect_2 = true;
+            btnEditProfile.Effect_2_ColorBackground = Color.White;
+            btnEditProfile.Effect_2_Transparency = 20;
+            btnEditProfile.Font = new Font("Inter", 11.25F);
+            btnEditProfile.ForeColor = Color.FromArgb(245, 245, 245);
+            btnEditProfile.Lighting = false;
+            btnEditProfile.LinearGradient_Background = false;
+            btnEditProfile.LinearGradientPen = false;
+            btnEditProfile.Location = new Point(201, 602);
+            btnEditProfile.Name = "btnEditProfile";
+            btnEditProfile.PenWidth = 15;
+            btnEditProfile.Rounding = true;
+            btnEditProfile.RoundingInt = 70;
+            btnEditProfile.Size = new Size(159, 45);
+            btnEditProfile.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            btnEditProfile.TabIndex = 36;
+            btnEditProfile.Tag = "Cyber";
+            btnEditProfile.TextButton = "Edit Profile";
+            btnEditProfile.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            btnEditProfile.Timer_Effect_1 = 5;
+            btnEditProfile.Timer_RGB = 300;
+            btnEditProfile.Click += btnEditProfile_Click;
             // 
             // label9
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Inter SemiBold", 16F, FontStyle.Bold);
             label9.ForeColor = SystemColors.ControlDarkDark;
-            label9.Location = new Point(96, 499);
+            label9.Location = new Point(94, 499);
             label9.Name = "label9";
             label9.Size = new Size(118, 31);
             label9.TabIndex = 37;
@@ -457,7 +461,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Inter SemiBold", 16F, FontStyle.Bold);
             label1.ForeColor = SystemColors.ControlDarkDark;
-            label1.Location = new Point(97, 550);
+            label1.Location = new Point(95, 550);
             label1.Name = "label1";
             label1.Size = new Size(95, 31);
             label1.TabIndex = 46;
@@ -474,12 +478,43 @@
             lblStatus.Text = "angelorivera@gmail.com";
             lblStatus.TextAlign = ContentAlignment.MiddleLeft;
             // 
+            // pbChangePic
+            // 
+            pbChangePic.BackColor = Color.FromArgb(0, 229, 255);
+            pbChangePic.Image = Properties.Resources._2190990_camera_circle_photo_photographer_photography_icon;
+            pbChangePic.Location = new Point(325, 165);
+            pbChangePic.Name = "pbChangePic";
+            pbChangePic.Size = new Size(26, 26);
+            pbChangePic.SizeMode = PictureBoxSizeMode.Zoom;
+            pbChangePic.TabIndex = 48;
+            pbChangePic.TabStop = false;
+            pbChangePic.Visible = false;
+            // 
+            // btnAttachment
+            // 
+            btnAttachment.FlatAppearance.BorderSize = 0;
+            btnAttachment.FlatStyle = FlatStyle.Flat;
+            btnAttachment.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAttachment.IconChar = FontAwesome.Sharp.IconChar.Image;
+            btnAttachment.IconColor = Color.FromArgb(24, 60, 114);
+            btnAttachment.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnAttachment.IconSize = 40;
+            btnAttachment.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAttachment.Location = new Point(521, 615);
+            btnAttachment.Name = "btnAttachment";
+            btnAttachment.Size = new Size(46, 43);
+            btnAttachment.TabIndex = 49;
+            btnAttachment.UseVisualStyleBackColor = true;
+            btnAttachment.Visible = false;
+            // 
             // Profile
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
             ClientSize = new Size(577, 667);
+            Controls.Add(btnAttachment);
+            Controls.Add(pbChangePic);
             Controls.Add(lblStatus);
             Controls.Add(label1);
             Controls.Add(lblUser);
@@ -487,7 +522,7 @@
             Controls.Add(lblBirthday);
             Controls.Add(lblEmail);
             Controls.Add(label9);
-            Controls.Add(btnSubmitReport);
+            Controls.Add(btnEditProfile);
             Controls.Add(label8);
             Controls.Add(panel4);
             Controls.Add(panel2);
@@ -515,6 +550,7 @@
             ((System.ComponentModel.ISupportInitialize)pbClose).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbChangePic).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -546,7 +582,7 @@
         private Panel panel5;
         private Panel panel4;
         private Label label8;
-        private ReaLTaiizor.Controls.CyberButton btnSubmitReport;
+        private ReaLTaiizor.Controls.CyberButton btnEditProfile;
         private Label label9;
         private Label lblEmail;
         private Label lblBirthday;
@@ -554,5 +590,7 @@
         private Label label5;
         private Label label1;
         private Label lblStatus;
+        private PictureBox pbChangePic;
+        private FontAwesome.Sharp.IconButton btnAttachment;
     }
 }

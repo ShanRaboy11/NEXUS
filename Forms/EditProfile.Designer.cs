@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditProfile));
             panel2 = new Panel();
+            pictureBox2 = new PictureBox();
+            pictureBox9 = new PictureBox();
+            pictureBox10 = new PictureBox();
             pictureBox7 = new PictureBox();
             pictureBox4 = new PictureBox();
             pictureBox8 = new PictureBox();
@@ -39,10 +42,16 @@
             pbClose = new PictureBox();
             pictureBox1 = new PictureBox();
             pictureBox6 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox9 = new PictureBox();
-            pictureBox10 = new PictureBox();
+            pbProfilePicture = new PictureBox();
+            pbChangePic = new PictureBox();
+            pnlUsername = new Panel();
+            tbxNewName = new TextBox();
+            panel1 = new Panel();
+            tbxNewEmail = new TextBox();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
@@ -52,9 +61,10 @@
             ((System.ComponentModel.ISupportInitialize)pbClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbProfilePicture).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbChangePic).BeginInit();
+            pnlUsername.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel2
@@ -77,6 +87,39 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(577, 28);
             panel2.TabIndex = 35;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(524, 7);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(14, 14);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 40;
+            pictureBox2.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            pictureBox9.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
+            pictureBox9.Location = new Point(493, 5);
+            pictureBox9.Name = "pictureBox9";
+            pictureBox9.Size = new Size(19, 19);
+            pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox9.TabIndex = 39;
+            pictureBox9.TabStop = false;
+            // 
+            // pictureBox10
+            // 
+            pictureBox10.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBox10.Image = (Image)resources.GetObject("pictureBox10.Image");
+            pictureBox10.Location = new Point(551, 5);
+            pictureBox10.Name = "pictureBox10";
+            pictureBox10.Size = new Size(18, 18);
+            pictureBox10.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox10.TabIndex = 38;
+            pictureBox10.TabStop = false;
             // 
             // pictureBox7
             // 
@@ -177,38 +220,72 @@
             pictureBox6.TabIndex = 0;
             pictureBox6.TabStop = false;
             // 
-            // pictureBox2
+            // pbProfilePicture
             // 
-            pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(524, 7);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(14, 14);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 40;
-            pictureBox2.TabStop = false;
+            pbProfilePicture.BackColor = Color.FromArgb(230, 249, 255);
+            pbProfilePicture.Image = (Image)resources.GetObject("pbProfilePicture.Image");
+            pbProfilePicture.Location = new Point(34, 59);
+            pbProfilePicture.Name = "pbProfilePicture";
+            pbProfilePicture.Size = new Size(120, 101);
+            pbProfilePicture.SizeMode = PictureBoxSizeMode.Zoom;
+            pbProfilePicture.TabIndex = 36;
+            pbProfilePicture.TabStop = false;
             // 
-            // pictureBox9
+            // pbChangePic
             // 
-            pictureBox9.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
-            pictureBox9.Location = new Point(493, 5);
-            pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(19, 19);
-            pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox9.TabIndex = 39;
-            pictureBox9.TabStop = false;
+            pbChangePic.Image = Properties.Resources._2190990_camera_circle_photo_photographer_photography_icon;
+            pbChangePic.Location = new Point(129, 142);
+            pbChangePic.Name = "pbChangePic";
+            pbChangePic.Size = new Size(26, 26);
+            pbChangePic.SizeMode = PictureBoxSizeMode.Zoom;
+            pbChangePic.TabIndex = 37;
+            pbChangePic.TabStop = false;
             // 
-            // pictureBox10
+            // pnlUsername
             // 
-            pictureBox10.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureBox10.Image = (Image)resources.GetObject("pictureBox10.Image");
-            pictureBox10.Location = new Point(551, 5);
-            pictureBox10.Name = "pictureBox10";
-            pictureBox10.Size = new Size(18, 18);
-            pictureBox10.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox10.TabIndex = 38;
-            pictureBox10.TabStop = false;
+            pnlUsername.BackColor = Color.FromArgb(176, 233, 255);
+            pnlUsername.BackgroundImageLayout = ImageLayout.None;
+            pnlUsername.Controls.Add(tbxNewName);
+            pnlUsername.Location = new Point(196, 54);
+            pnlUsername.Name = "pnlUsername";
+            pnlUsername.Size = new Size(316, 48);
+            pnlUsername.TabIndex = 38;
+            // 
+            // tbxNewName
+            // 
+            tbxNewName.BackColor = Color.FromArgb(176, 233, 255);
+            tbxNewName.BorderStyle = BorderStyle.None;
+            tbxNewName.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbxNewName.ForeColor = Color.FromArgb(24, 60, 114);
+            tbxNewName.Location = new Point(13, 13);
+            tbxNewName.Name = "tbxNewName";
+            tbxNewName.Size = new Size(288, 20);
+            tbxNewName.TabIndex = 9;
+            tbxNewName.TabStop = false;
+            tbxNewName.Text = "Name";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(176, 233, 255);
+            panel1.BackgroundImageLayout = ImageLayout.None;
+            panel1.Controls.Add(tbxNewEmail);
+            panel1.Location = new Point(196, 123);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(316, 48);
+            panel1.TabIndex = 39;
+            // 
+            // tbxNewEmail
+            // 
+            tbxNewEmail.BackColor = Color.FromArgb(176, 233, 255);
+            tbxNewEmail.BorderStyle = BorderStyle.None;
+            tbxNewEmail.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbxNewEmail.ForeColor = Color.FromArgb(24, 60, 114);
+            tbxNewEmail.Location = new Point(13, 13);
+            tbxNewEmail.Name = "tbxNewEmail";
+            tbxNewEmail.Size = new Size(288, 20);
+            tbxNewEmail.TabIndex = 9;
+            tbxNewEmail.TabStop = false;
+            tbxNewEmail.Text = "Email";
             // 
             // EditProfile
             // 
@@ -216,6 +293,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
             ClientSize = new Size(577, 667);
+            Controls.Add(panel1);
+            Controls.Add(pnlUsername);
+            Controls.Add(pbChangePic);
+            Controls.Add(pbProfilePicture);
             Controls.Add(panel2);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -223,6 +304,9 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "EditProfile";
             panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
@@ -232,9 +316,12 @@
             ((System.ComponentModel.ISupportInitialize)pbClose).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbProfilePicture).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbChangePic).EndInit();
+            pnlUsername.ResumeLayout(false);
+            pnlUsername.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -253,5 +340,11 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox9;
         private PictureBox pictureBox10;
+        private PictureBox pbProfilePicture;
+        private PictureBox pbChangePic;
+        private Panel pnlUsername;
+        private TextBox tbxNewName;
+        private Panel panel1;
+        private TextBox tbxNewEmail;
     }
 }

@@ -36,6 +36,7 @@ namespace NEXUS.Forms
                 pvPassenger.Visible = true;
                 label3.Visible = true;
                 label3.Dock = DockStyle.Top;
+                picAdSlideshow.Visible = false;
             }
             else if (user is Driver driver)
             {
