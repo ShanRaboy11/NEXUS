@@ -663,6 +663,16 @@ namespace NEXUS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Reports__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Reports (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap route_hover {
             get {
                 object obj = ResourceManager.GetObject("route_hover", resourceCulture);

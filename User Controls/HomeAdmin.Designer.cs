@@ -71,12 +71,12 @@
             tableLayoutPanel3 = new TableLayoutPanel();
             panel11 = new Panel();
             lblReports = new Label();
+            pictureBox1 = new PictureBox();
             panel9 = new Panel();
             panel10 = new Panel();
             lblTitle = new Label();
             panel12 = new Panel();
             tableLayoutPanel4 = new TableLayoutPanel();
-            pictureBox1 = new PictureBox();
             tableLayoutPanel1.SuspendLayout();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
@@ -90,10 +90,10 @@
             cmsDriver.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
             panel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel9.SuspendLayout();
             panel10.SuspendLayout();
             panel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -587,13 +587,23 @@
             lblReports.Font = new Font("Inter", 60F, FontStyle.Bold);
             lblReports.ForeColor = Color.FromArgb(38, 36, 68);
             lblReports.Image = Properties.Resources.bgReports1;
-            lblReports.Location = new Point(0, 78);
+            lblReports.Location = new Point(3, 78);
             lblReports.Margin = new Padding(0);
             lblReports.Name = "lblReports";
-            lblReports.Size = new Size(227, 118);
+            lblReports.Size = new Size(224, 118);
             lblReports.TabIndex = 43;
             lblReports.Text = "2";
             lblReports.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Image = Properties.Resources.Reports__1_;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(230, 310);
+            pictureBox1.TabIndex = 44;
+            pictureBox1.TabStop = false;
             // 
             // panel9
             // 
@@ -662,16 +672,6 @@
             tableLayoutPanel4.Size = new Size(289, 310);
             tableLayoutPanel4.TabIndex = 0;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Image = Properties.Resources.Reports;
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(230, 310);
-            pictureBox1.TabIndex = 44;
-            pictureBox1.TabStop = false;
-            // 
             // HomeAdmin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -694,10 +694,10 @@
             cmsDriver.ResumeLayout(false);
             tableLayoutPanel3.ResumeLayout(false);
             panel11.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel9.ResumeLayout(false);
             panel10.ResumeLayout(false);
             panel12.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 

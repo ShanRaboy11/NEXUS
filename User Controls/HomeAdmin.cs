@@ -25,6 +25,7 @@ namespace NEXUS.User_Controls
             LoadUserDataAndShowChart();
             LoadRevenueData();
             LoadDriverWeeklyRevenueData();
+            CountPendingReports();
         }
 
         private void LoadUserDataAndShowChart()
@@ -830,6 +831,37 @@ namespace NEXUS.User_Controls
 
             lblTitle.Text = "Driver Analysis – Monthly Revenue";
             pvDrivers.Model = model;
+        }
+
+        public void CountPendingReports()
+        {
+            int pendingCount = 0;
+
+            string query = "SELECT Status FROM Reports";
+
+            using (OleDbConnection connection = DatabaseManagement.GetConnection())
+            {
+                try
+                {
+                    OleDbDataAdapter dataAdapter = new OleDbDataAdapter(query, connection);
+                    DataTable dataTable = new DataTable();
+                    dataAdapter.Fill(dataTable);
+
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        if (row["Status"].ToString() == "Pending")
+                        {
+                            pendingCount++;
+                        }
+                    }
+
+                    lblReports.Text = pendingCount.ToString();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
         }
 
         private void weeklyToolStripMenuItem1_Click(object sender, EventArgs e)
