@@ -397,5 +397,30 @@ namespace NEXUS.Forms
             }
             lblPoints1.Text = points.ToString("F1");
         }
+
+        public void UpdateProfilePicture(int PassengerID)
+        {
+            string query = "SELECT [Profile Picture] FROM Accounts WHERE ID = ?";
+
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            {
+                using (OleDbCommand command = new OleDbCommand(query, conn))
+                {
+                    command.Parameters.Add("ID", OleDbType.Integer).Value = PassengerID;
+
+                    conn.Open();
+                    object result = command.ExecuteScalar();
+
+                    byte[] imageBytes = (byte[])result;
+
+                    using (MemoryStream ms = new MemoryStream(imageBytes))
+                    {
+                        Image profileImage = Image.FromStream(ms);
+                        pbProfilePicture.Image = profileImage;
+                    }
+                }
+            }
+        }
+
     }
 }

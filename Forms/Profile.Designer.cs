@@ -58,12 +58,12 @@
             label9 = new Label();
             lblEmail = new Label();
             lblBirthday = new Label();
-            lblUser = new Label();
             label5 = new Label();
             label1 = new Label();
             lblStatus = new Label();
             pbChangePic = new PictureBox();
             btnAttachment = new FontAwesome.Sharp.IconButton();
+            lblUser = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pbProfilePicture).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbBackground).BeginInit();
             panel1.SuspendLayout();
@@ -386,7 +386,7 @@
             btnEditProfile.Lighting = false;
             btnEditProfile.LinearGradient_Background = false;
             btnEditProfile.LinearGradientPen = false;
-            btnEditProfile.Location = new Point(201, 602);
+            btnEditProfile.Location = new Point(207, 602);
             btnEditProfile.Name = "btnEditProfile";
             btnEditProfile.PenWidth = 15;
             btnEditProfile.Rounding = true;
@@ -434,17 +434,6 @@
             lblBirthday.Text = "angelorivera@gmail.com";
             lblBirthday.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // lblUser
-            // 
-            lblUser.Font = new Font("Inter Medium", 17F, FontStyle.Bold);
-            lblUser.ForeColor = Color.FromArgb(24, 60, 114);
-            lblUser.Location = new Point(249, 389);
-            lblUser.Name = "lblUser";
-            lblUser.Size = new Size(327, 44);
-            lblUser.TabIndex = 45;
-            lblUser.Text = "angelorivera@gmail.com";
-            lblUser.TextAlign = ContentAlignment.MiddleLeft;
-            // 
             // label5
             // 
             label5.AutoSize = true;
@@ -481,6 +470,7 @@
             // pbChangePic
             // 
             pbChangePic.BackColor = Color.FromArgb(0, 229, 255);
+            pbChangePic.Cursor = Cursors.Hand;
             pbChangePic.Image = Properties.Resources._2190990_camera_circle_photo_photographer_photography_icon;
             pbChangePic.Location = new Point(325, 165);
             pbChangePic.Name = "pbChangePic";
@@ -489,23 +479,40 @@
             pbChangePic.TabIndex = 48;
             pbChangePic.TabStop = false;
             pbChangePic.Visible = false;
+            pbChangePic.Click += pbChangePic_Click;
             // 
             // btnAttachment
             // 
+            btnAttachment.Cursor = Cursors.Hand;
             btnAttachment.FlatAppearance.BorderSize = 0;
             btnAttachment.FlatStyle = FlatStyle.Flat;
             btnAttachment.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAttachment.IconChar = FontAwesome.Sharp.IconChar.Image;
+            btnAttachment.IconChar = FontAwesome.Sharp.IconChar.IdCardClip;
             btnAttachment.IconColor = Color.FromArgb(24, 60, 114);
             btnAttachment.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnAttachment.IconSize = 40;
             btnAttachment.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAttachment.Location = new Point(521, 615);
+            btnAttachment.Location = new Point(520, 614);
             btnAttachment.Name = "btnAttachment";
             btnAttachment.Size = new Size(46, 43);
             btnAttachment.TabIndex = 49;
             btnAttachment.UseVisualStyleBackColor = true;
             btnAttachment.Visible = false;
+            btnAttachment.Click += btnAttachment_Click;
+            // 
+            // lblUser
+            // 
+            lblUser.BackColor = Color.FromArgb(230, 249, 255);
+            lblUser.BorderStyle = BorderStyle.None;
+            lblUser.Font = new Font("Inter Medium", 17F, FontStyle.Bold);
+            lblUser.ForeColor = Color.FromArgb(24, 60, 114);
+            lblUser.Location = new Point(252, 400);
+            lblUser.Name = "lblUser";
+            lblUser.Size = new Size(319, 28);
+            lblUser.TabIndex = 50;
+            lblUser.TabStop = false;
+            lblUser.Text = "Name";
+            lblUser.Click += lblUser_Click;
             // 
             // Profile
             // 
@@ -513,11 +520,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
             ClientSize = new Size(577, 667);
+            Controls.Add(lblUser);
             Controls.Add(btnAttachment);
             Controls.Add(pbChangePic);
             Controls.Add(lblStatus);
             Controls.Add(label1);
-            Controls.Add(lblUser);
             Controls.Add(label5);
             Controls.Add(lblBirthday);
             Controls.Add(lblEmail);
@@ -586,11 +593,11 @@
         private Label label9;
         private Label lblEmail;
         private Label lblBirthday;
-        private Label lblUser;
         private Label label5;
         private Label label1;
         private Label lblStatus;
         private PictureBox pbChangePic;
         private FontAwesome.Sharp.IconButton btnAttachment;
+        private TextBox lblUser;
     }
 }

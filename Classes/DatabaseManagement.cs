@@ -178,7 +178,56 @@ namespace NEXUS.Classes
             return wallet >= (double)amount;  // Ensure correct logic
         }
 
+        public static void UpdateAccountAttachment(int accountId, byte[] attachment)
+        {
+            string query = "UPDATE Accounts SET Attachment = ? WHERE ID = ?";
 
+            using (OleDbConnection conn = GetConnection())
+            {
+                using (OleDbCommand command = new OleDbCommand(query, conn))
+                {
+                    command.Parameters.Add("Attachment", OleDbType.Binary).Value = attachment;
+                    command.Parameters.Add("ID", OleDbType.Integer).Value = accountId;
+
+                    conn.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public static void UpdateAccountUsername(int accountId, string newUsername)
+        {
+            string query = "UPDATE Accounts SET Username = ? WHERE ID = ?";
+
+            using (OleDbConnection conn = GetConnection())
+            {
+                using (OleDbCommand command = new OleDbCommand(query, conn))
+                {
+                    command.Parameters.Add("Username", OleDbType.VarChar).Value = newUsername;
+                    command.Parameters.Add("ID", OleDbType.Integer).Value = accountId;
+
+                    conn.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public static void UpdateAccountProfilePic(int accountId, byte[] profilepic)
+        {
+            string query = "UPDATE Accounts SET [Profile Picture] = ? WHERE ID = ?";
+
+            using (OleDbConnection conn = GetConnection())
+            {
+                using (OleDbCommand command = new OleDbCommand(query, conn))
+                {
+                    command.Parameters.Add("Profile Picture", OleDbType.Binary).Value = profilepic;
+                    command.Parameters.Add("ID", OleDbType.Integer).Value = accountId;
+
+                    conn.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
 
         public static OleDbConnection Connect()
         {
