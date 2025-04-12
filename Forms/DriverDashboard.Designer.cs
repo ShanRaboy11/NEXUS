@@ -51,6 +51,7 @@
             label1 = new Label();
             panel1 = new Panel();
             pbNotified = new PictureBox();
+            btnNotification = new FontAwesome.Sharp.IconButton();
             label2 = new Label();
             lblTotalEarned = new Label();
             cyberButton1 = new ReaLTaiizor.Controls.CyberButton();
@@ -67,7 +68,6 @@
             pictureBox10 = new PictureBox();
             cyberButton8 = new ReaLTaiizor.Controls.CyberButton();
             SidebarTransition = new System.Windows.Forms.Timer(components);
-            btnNotification = new FontAwesome.Sharp.IconButton();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -397,6 +397,25 @@
             pbNotified.Visible = false;
             pbNotified.Click += pbNotified_Click;
             // 
+            // btnNotification
+            // 
+            btnNotification.BackColor = Color.FromArgb(38, 36, 68);
+            btnNotification.Cursor = Cursors.Hand;
+            btnNotification.FlatAppearance.BorderColor = Color.FromArgb(38, 36, 68);
+            btnNotification.FlatAppearance.BorderSize = 0;
+            btnNotification.FlatStyle = FlatStyle.Flat;
+            btnNotification.IconChar = FontAwesome.Sharp.IconChar.Bell;
+            btnNotification.IconColor = Color.White;
+            btnNotification.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnNotification.IconSize = 40;
+            btnNotification.Location = new Point(259, 35);
+            btnNotification.Name = "btnNotification";
+            btnNotification.Size = new Size(53, 42);
+            btnNotification.TabIndex = 59;
+            btnNotification.TabStop = false;
+            btnNotification.UseVisualStyleBackColor = false;
+            btnNotification.Click += btnNotification_Click;
+            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -696,25 +715,6 @@
             // 
             SidebarTransition.Interval = 10;
             SidebarTransition.Tick += SidebarTransition_Tick;
-            // 
-            // btnNotification
-            // 
-            btnNotification.BackColor = Color.FromArgb(38, 36, 68);
-            btnNotification.Cursor = Cursors.Hand;
-            btnNotification.FlatAppearance.BorderColor = Color.FromArgb(38, 36, 68);
-            btnNotification.FlatAppearance.BorderSize = 0;
-            btnNotification.FlatStyle = FlatStyle.Flat;
-            btnNotification.IconChar = FontAwesome.Sharp.IconChar.Bell;
-            btnNotification.IconColor = Color.White;
-            btnNotification.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnNotification.IconSize = 40;
-            btnNotification.Location = new Point(259, 35);
-            btnNotification.Name = "btnNotification";
-            btnNotification.Size = new Size(53, 42);
-            btnNotification.TabIndex = 59;
-            btnNotification.TabStop = false;
-            btnNotification.UseVisualStyleBackColor = false;
-            btnNotification.Click += btnNotification_Click;
             // 
             // DriverDashboard
             // 

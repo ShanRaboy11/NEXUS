@@ -96,3 +96,4 @@ C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.Fo
 C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.User_Controls.ForgetPasssword3.resources
 C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.User_Controls.ForgetPassword1.resources
 C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.User_Controls.ForgetPassword2.resources
+C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.Receipt.resources
