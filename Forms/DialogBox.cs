@@ -94,6 +94,12 @@ namespace NEXUS.Forms
                 pbDialogIcon.Image = Resources.Animation___1739888639577;
                 lblMessage.Text = "You have already rated this trip.";
             }    
+            else if(message == "invalid email")
+            {
+                Pausetimer.Enabled = false;
+                pbDialogIcon.Image = Resources.Animation___1739888639577;
+                lblMessage.Text = "Email address is invalid";
+            }
             else
             {
                 Pausetimer.Enabled = false;

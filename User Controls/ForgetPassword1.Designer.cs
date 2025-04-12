@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             pnlUsername = new Panel();
-            tbxEmailRevoery = new TextBox();
+            txtEmail = new TextBox();
             pbLogo = new PictureBox();
-            btnLogin = new ReaLTaiizor.Controls.CyberButton();
+            btnSendCode = new ReaLTaiizor.Controls.CyberButton();
             lblUserFName = new Label();
             label1 = new Label();
             richTextBox5 = new RichTextBox();
@@ -44,24 +44,25 @@
             // 
             pnlUsername.BackColor = Color.FromArgb(176, 233, 255);
             pnlUsername.BackgroundImageLayout = ImageLayout.None;
-            pnlUsername.Controls.Add(tbxEmailRevoery);
+            pnlUsername.Controls.Add(txtEmail);
             pnlUsername.Location = new Point(43, 278);
             pnlUsername.Name = "pnlUsername";
             pnlUsername.Size = new Size(311, 48);
             pnlUsername.TabIndex = 4;
             // 
-            // tbxEmailRevoery
+            // txtEmail
             // 
-            tbxEmailRevoery.BackColor = Color.FromArgb(176, 233, 255);
-            tbxEmailRevoery.BorderStyle = BorderStyle.None;
-            tbxEmailRevoery.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbxEmailRevoery.ForeColor = Color.FromArgb(24, 60, 114);
-            tbxEmailRevoery.Location = new Point(17, 14);
-            tbxEmailRevoery.Name = "tbxEmailRevoery";
-            tbxEmailRevoery.Size = new Size(275, 20);
-            tbxEmailRevoery.TabIndex = 9;
-            tbxEmailRevoery.TabStop = false;
-            tbxEmailRevoery.Text = "Email";
+            txtEmail.BackColor = Color.FromArgb(176, 233, 255);
+            txtEmail.BorderStyle = BorderStyle.None;
+            txtEmail.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtEmail.ForeColor = Color.FromArgb(24, 60, 114);
+            txtEmail.Location = new Point(17, 14);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(275, 20);
+            txtEmail.TabIndex = 9;
+            txtEmail.TabStop = false;
+            txtEmail.Text = "Email";
+            txtEmail.Click += txtEmail_Click;
             // 
             // pbLogo
             // 
@@ -74,46 +75,47 @@
             pbLogo.TabIndex = 3;
             pbLogo.TabStop = false;
             // 
-            // btnLogin
+            // btnSendCode
             // 
-            btnLogin.Alpha = 20;
-            btnLogin.BackColor = Color.Transparent;
-            btnLogin.Background = true;
-            btnLogin.Background_WidthPen = 4F;
-            btnLogin.BackgroundPen = true;
-            btnLogin.ColorBackground = Color.FromArgb(24, 60, 114);
-            btnLogin.ColorBackground_1 = Color.FromArgb(24, 60, 114);
-            btnLogin.ColorBackground_2 = Color.FromArgb(24, 60, 114);
-            btnLogin.ColorBackground_Pen = Color.FromArgb(128, 223, 255);
-            btnLogin.ColorLighting = Color.FromArgb(24, 60, 114);
-            btnLogin.ColorPen_1 = Color.FromArgb(24, 60, 114);
-            btnLogin.ColorPen_2 = Color.FromArgb(24, 60, 114);
-            btnLogin.Cursor = Cursors.Hand;
-            btnLogin.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            btnLogin.Effect_1 = true;
-            btnLogin.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
-            btnLogin.Effect_1_Transparency = 25;
-            btnLogin.Effect_2 = true;
-            btnLogin.Effect_2_ColorBackground = Color.White;
-            btnLogin.Effect_2_Transparency = 20;
-            btnLogin.Font = new Font("Inter", 12.25F);
-            btnLogin.ForeColor = Color.FromArgb(245, 245, 245);
-            btnLogin.Lighting = false;
-            btnLogin.LinearGradient_Background = false;
-            btnLogin.LinearGradientPen = false;
-            btnLogin.Location = new Point(42, 346);
-            btnLogin.Name = "btnLogin";
-            btnLogin.PenWidth = 15;
-            btnLogin.Rounding = true;
-            btnLogin.RoundingInt = 70;
-            btnLogin.Size = new Size(311, 44);
-            btnLogin.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            btnLogin.TabIndex = 10;
-            btnLogin.Tag = "Cyber";
-            btnLogin.TextButton = "Send Code";
-            btnLogin.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            btnLogin.Timer_Effect_1 = 5;
-            btnLogin.Timer_RGB = 300;
+            btnSendCode.Alpha = 20;
+            btnSendCode.BackColor = Color.Transparent;
+            btnSendCode.Background = true;
+            btnSendCode.Background_WidthPen = 4F;
+            btnSendCode.BackgroundPen = true;
+            btnSendCode.ColorBackground = Color.FromArgb(24, 60, 114);
+            btnSendCode.ColorBackground_1 = Color.FromArgb(24, 60, 114);
+            btnSendCode.ColorBackground_2 = Color.FromArgb(24, 60, 114);
+            btnSendCode.ColorBackground_Pen = Color.FromArgb(128, 223, 255);
+            btnSendCode.ColorLighting = Color.FromArgb(24, 60, 114);
+            btnSendCode.ColorPen_1 = Color.FromArgb(24, 60, 114);
+            btnSendCode.ColorPen_2 = Color.FromArgb(24, 60, 114);
+            btnSendCode.Cursor = Cursors.Hand;
+            btnSendCode.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            btnSendCode.Effect_1 = true;
+            btnSendCode.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            btnSendCode.Effect_1_Transparency = 25;
+            btnSendCode.Effect_2 = true;
+            btnSendCode.Effect_2_ColorBackground = Color.White;
+            btnSendCode.Effect_2_Transparency = 20;
+            btnSendCode.Font = new Font("Inter", 12.25F);
+            btnSendCode.ForeColor = Color.FromArgb(245, 245, 245);
+            btnSendCode.Lighting = false;
+            btnSendCode.LinearGradient_Background = false;
+            btnSendCode.LinearGradientPen = false;
+            btnSendCode.Location = new Point(42, 346);
+            btnSendCode.Name = "btnSendCode";
+            btnSendCode.PenWidth = 15;
+            btnSendCode.Rounding = true;
+            btnSendCode.RoundingInt = 70;
+            btnSendCode.Size = new Size(311, 44);
+            btnSendCode.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            btnSendCode.TabIndex = 10;
+            btnSendCode.Tag = "Cyber";
+            btnSendCode.TextButton = "Send Code";
+            btnSendCode.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            btnSendCode.Timer_Effect_1 = 5;
+            btnSendCode.Timer_RGB = 300;
+            btnSendCode.Click += btnSendCode_Click;
             // 
             // lblUserFName
             // 
@@ -170,7 +172,7 @@
             Controls.Add(richTextBox5);
             Controls.Add(label1);
             Controls.Add(lblUserFName);
-            Controls.Add(btnLogin);
+            Controls.Add(btnSendCode);
             Controls.Add(pnlUsername);
             Controls.Add(pbLogo);
             Name = "ForgetPassword1";
@@ -185,9 +187,9 @@
         #endregion
 
         private Panel pnlUsername;
-        private TextBox tbxEmailRevoery;
+        private TextBox txtEmail;
         private PictureBox pbLogo;
-        private ReaLTaiizor.Controls.CyberButton btnLogin;
+        private ReaLTaiizor.Controls.CyberButton btnSendCode;
         private Label lblUserFName;
         private Label label1;
         private RichTextBox richTextBox5;
