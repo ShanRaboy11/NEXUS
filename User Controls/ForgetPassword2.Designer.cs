@@ -32,14 +32,14 @@
             lblUserFName = new Label();
             btnLogin = new ReaLTaiizor.Controls.CyberButton();
             pnlUsername = new Panel();
-            panel1 = new Panel();
-            panel2 = new Panel();
-            panel3 = new Panel();
-            panel4 = new Panel();
             textBox1 = new TextBox();
+            panel1 = new Panel();
             textBox2 = new TextBox();
+            panel2 = new Panel();
             textBox3 = new TextBox();
+            panel3 = new Panel();
             textBox4 = new TextBox();
+            panel4 = new Panel();
             textBox5 = new TextBox();
             pnlUsername.SuspendLayout();
             panel1.SuspendLayout();
@@ -98,7 +98,7 @@
             btnLogin.Lighting = false;
             btnLogin.LinearGradient_Background = false;
             btnLogin.LinearGradientPen = false;
-            btnLogin.Location = new Point(33, 286);
+            btnLogin.Location = new Point(33, 290);
             btnLogin.Name = "btnLogin";
             btnLogin.PenWidth = 15;
             btnLogin.Rounding = true;
@@ -117,50 +117,10 @@
             pnlUsername.BackColor = Color.FromArgb(176, 233, 255);
             pnlUsername.BackgroundImageLayout = ImageLayout.None;
             pnlUsername.Controls.Add(textBox1);
-            pnlUsername.Location = new Point(31, 192);
+            pnlUsername.Location = new Point(31, 196);
             pnlUsername.Name = "pnlUsername";
             pnlUsername.Size = new Size(55, 55);
             pnlUsername.TabIndex = 48;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(176, 233, 255);
-            panel1.BackgroundImageLayout = ImageLayout.None;
-            panel1.Controls.Add(textBox2);
-            panel1.Location = new Point(97, 192);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(55, 55);
-            panel1.TabIndex = 49;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.FromArgb(176, 233, 255);
-            panel2.BackgroundImageLayout = ImageLayout.None;
-            panel2.Controls.Add(textBox3);
-            panel2.Location = new Point(161, 192);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(55, 55);
-            panel2.TabIndex = 49;
-            // 
-            // panel3
-            // 
-            panel3.BackColor = Color.FromArgb(176, 233, 255);
-            panel3.BackgroundImageLayout = ImageLayout.None;
-            panel3.Controls.Add(textBox4);
-            panel3.Location = new Point(227, 192);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(55, 55);
-            panel3.TabIndex = 49;
-            // 
-            // panel4
-            // 
-            panel4.BackColor = Color.FromArgb(176, 233, 255);
-            panel4.BackgroundImageLayout = ImageLayout.None;
-            panel4.Controls.Add(textBox5);
-            panel4.Location = new Point(292, 192);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(55, 55);
-            panel4.TabIndex = 49;
             // 
             // textBox1
             // 
@@ -176,6 +136,16 @@
             textBox1.Text = "5";
             textBox1.TextAlign = HorizontalAlignment.Center;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(176, 233, 255);
+            panel1.BackgroundImageLayout = ImageLayout.None;
+            panel1.Controls.Add(textBox2);
+            panel1.Location = new Point(97, 196);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(55, 55);
+            panel1.TabIndex = 49;
+            // 
             // textBox2
             // 
             textBox2.BackColor = Color.FromArgb(176, 233, 255);
@@ -189,6 +159,16 @@
             textBox2.TabStop = false;
             textBox2.Text = "5";
             textBox2.TextAlign = HorizontalAlignment.Center;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(176, 233, 255);
+            panel2.BackgroundImageLayout = ImageLayout.None;
+            panel2.Controls.Add(textBox3);
+            panel2.Location = new Point(161, 196);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(55, 55);
+            panel2.TabIndex = 49;
             // 
             // textBox3
             // 
@@ -204,6 +184,16 @@
             textBox3.Text = "5";
             textBox3.TextAlign = HorizontalAlignment.Center;
             // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(176, 233, 255);
+            panel3.BackgroundImageLayout = ImageLayout.None;
+            panel3.Controls.Add(textBox4);
+            panel3.Location = new Point(227, 196);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(55, 55);
+            panel3.TabIndex = 49;
+            // 
             // textBox4
             // 
             textBox4.BackColor = Color.FromArgb(176, 233, 255);
@@ -217,6 +207,16 @@
             textBox4.TabStop = false;
             textBox4.Text = "5";
             textBox4.TextAlign = HorizontalAlignment.Center;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.FromArgb(176, 233, 255);
+            panel4.BackgroundImageLayout = ImageLayout.None;
+            panel4.Controls.Add(textBox5);
+            panel4.Location = new Point(292, 196);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(55, 55);
+            panel4.TabIndex = 49;
             // 
             // textBox5
             // 

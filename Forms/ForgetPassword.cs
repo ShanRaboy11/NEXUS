@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NEXUS.User_Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,19 @@ namespace NEXUS.Forms
         public ForgetPassword()
         {
             InitializeComponent();
+            Display();
+        }
+
+        private void Display()
+        {
+            pnlContainer.Controls.Clear();
+
+            ForgetPassword1 forgetPassword1 = new ForgetPassword1(pnlContainer)
+            {
+                Dock = DockStyle.Fill
+            };
+
+            pnlContainer.Controls.Add(forgetPassword1);
         }
     }
 }

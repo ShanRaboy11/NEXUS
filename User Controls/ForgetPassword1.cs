@@ -12,7 +12,7 @@ namespace NEXUS.User_Controls
 {
     public partial class ForgetPassword1 : UserControl
     {
-        public ForgetPassword1()
+        public ForgetPassword1(Panel pnlContainer)
         {
             InitializeComponent();
         }

@@ -273,5 +273,11 @@ namespace NEXUS.Forms
             }
         }
 
+        private void lblForgetPass_Click(object sender, EventArgs e)
+        {
+            ForgetPassword forgetPassword = new ForgetPassword();
+            forgetPassword.Show();
+            this.Close();
+        }
     }
 }

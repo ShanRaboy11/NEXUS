@@ -45,7 +45,7 @@
             pnlUsername.BackColor = Color.FromArgb(176, 233, 255);
             pnlUsername.BackgroundImageLayout = ImageLayout.None;
             pnlUsername.Controls.Add(tbxEmailRevoery);
-            pnlUsername.Location = new Point(34, 278);
+            pnlUsername.Location = new Point(43, 278);
             pnlUsername.Name = "pnlUsername";
             pnlUsername.Size = new Size(311, 48);
             pnlUsername.TabIndex = 4;
@@ -67,7 +67,7 @@
             // 
             pbLogo.Cursor = Cursors.Hand;
             pbLogo.Image = Properties.Resources.Removal_915;
-            pbLogo.Location = new Point(144, 24);
+            pbLogo.Location = new Point(153, 24);
             pbLogo.Name = "pbLogo";
             pbLogo.Size = new Size(90, 90);
             pbLogo.SizeMode = PictureBoxSizeMode.Zoom;
@@ -84,7 +84,7 @@
             btnLogin.ColorBackground = Color.FromArgb(24, 60, 114);
             btnLogin.ColorBackground_1 = Color.FromArgb(24, 60, 114);
             btnLogin.ColorBackground_2 = Color.FromArgb(24, 60, 114);
-            btnLogin.ColorBackground_Pen = Color.FromArgb(153, 229, 255);
+            btnLogin.ColorBackground_Pen = Color.FromArgb(128, 223, 255);
             btnLogin.ColorLighting = Color.FromArgb(24, 60, 114);
             btnLogin.ColorPen_1 = Color.FromArgb(24, 60, 114);
             btnLogin.ColorPen_2 = Color.FromArgb(24, 60, 114);
@@ -101,7 +101,7 @@
             btnLogin.Lighting = false;
             btnLogin.LinearGradient_Background = false;
             btnLogin.LinearGradientPen = false;
-            btnLogin.Location = new Point(33, 346);
+            btnLogin.Location = new Point(42, 346);
             btnLogin.Name = "btnLogin";
             btnLogin.PenWidth = 15;
             btnLogin.Rounding = true;
@@ -120,7 +120,7 @@
             lblUserFName.AutoSize = true;
             lblUserFName.Font = new Font("Inter ExtraBold", 18F, FontStyle.Bold);
             lblUserFName.ForeColor = Color.FromArgb(24, 60, 114);
-            lblUserFName.Location = new Point(130, 125);
+            lblUserFName.Location = new Point(139, 125);
             lblUserFName.Name = "lblUserFName";
             lblUserFName.Size = new Size(116, 35);
             lblUserFName.TabIndex = 34;
@@ -131,7 +131,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Inter ExtraBold", 18F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(24, 60, 114);
-            label1.Location = new Point(110, 155);
+            label1.Location = new Point(119, 155);
             label1.Name = "label1";
             label1.Size = new Size(154, 35);
             label1.TabIndex = 35;
@@ -142,7 +142,7 @@
             richTextBox5.BackColor = Color.FromArgb(230, 249, 255);
             richTextBox5.BorderStyle = BorderStyle.None;
             richTextBox5.Font = new Font("Inter", 11F);
-            richTextBox5.Location = new Point(33, 195);
+            richTextBox5.Location = new Point(42, 195);
             richTextBox5.Name = "richTextBox5";
             richTextBox5.ReadOnly = true;
             richTextBox5.Size = new Size(335, 24);
@@ -154,7 +154,7 @@
             richTextBox1.BackColor = Color.FromArgb(230, 249, 255);
             richTextBox1.BorderStyle = BorderStyle.None;
             richTextBox1.Font = new Font("Inter", 11F);
-            richTextBox1.Location = new Point(82, 216);
+            richTextBox1.Location = new Point(91, 216);
             richTextBox1.Name = "richTextBox1";
             richTextBox1.ReadOnly = true;
             richTextBox1.Size = new Size(227, 23);

@@ -47,7 +47,6 @@ C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.Di
 C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.DisplayImage.resources
 C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.DriverDashboard.resources
 C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.DriverHistory.resources
-C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.EditProfile.resources
 C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.History.resources
 C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.Home.resources
 C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.LogInForm.resources
@@ -93,3 +92,7 @@ C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.User_Con
 C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.User_Controls.FareMatrix.resources
 C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.User_Controls.LTFRB.resources
 C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.User_Controls.PassengerInfo.resources
+C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.Forms.ForgetPassword.resources
+C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.User_Controls.ForgetPasssword3.resources
+C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.User_Controls.ForgetPassword1.resources
+C:\Users\Shan Michael\source\repos\NEXUS\obj\Debug\net8.0-windows\NEXUS.User_Controls.ForgetPassword2.resources
