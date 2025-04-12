@@ -11,6 +11,14 @@
       "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:forms\\receipt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\user controls\\forgetpassword2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:user controls\\forgetpassword2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\forms\\progressbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:forms\\progressbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\forms\\driverdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:forms\\driverdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
@@ -31,20 +39,12 @@
       "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:user controls\\forgetpassword1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\forms\\progressbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:forms\\progressbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|c:\\users\\shan michael\\source\\repos\\nexus\\user controls\\paymentuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:user controls\\paymentuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|c:\\users\\shan michael\\source\\repos\\nexus\\forms\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:forms\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\user controls\\forgetpassword2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:user controls\\forgetpassword2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\user controls\\forgetpasssword3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -366,7 +366,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
@@ -383,13 +383,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Dashboard.cs",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\Dashboard.cs",
               "RelativeDocumentMoniker": "Forms\\Dashboard.cs",
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\Dashboard.cs",
               "RelativeToolTip": "Forms\\Dashboard.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAACAAAABEAAAA",
+              "ViewState": "AQIAAAcAAAAAAAAAAEBVwCAAAABEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-15T07:25:10.283Z",
               "IsPinned": true,
@@ -407,10 +407,22 @@
               "RelativeDocumentMoniker": "Forms\\Receipt.cs",
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\Receipt.cs",
               "RelativeToolTip": "Forms\\Receipt.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAowDkAAAAvAAAA",
+              "ViewState": "AQIAAHgAAAAAAAAAAAAqwI0AAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-12T15:55:00.223Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Receipt.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\Receipt.cs",
+              "RelativeDocumentMoniker": "Forms\\Receipt.cs",
+              "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\Receipt.cs [Design]",
+              "RelativeToolTip": "Forms\\Receipt.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T15:54:04.048Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -427,7 +439,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
               "Title": "ProgressBar.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\ProgressBar.cs",
               "RelativeDocumentMoniker": "Forms\\ProgressBar.cs",
@@ -435,18 +447,6 @@
               "RelativeToolTip": "Forms\\ProgressBar.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-12T15:54:30.409Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Receipt.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\Receipt.cs",
-              "RelativeDocumentMoniker": "Forms\\Receipt.cs",
-              "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\Receipt.cs [Design]",
-              "RelativeToolTip": "Forms\\Receipt.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T15:54:04.048Z",
               "EditorCaption": " [Design]"
             },
             {
@@ -510,22 +510,24 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\ForgetPasssword3.cs [Design]",
               "RelativeToolTip": "User Controls\\ForgetPasssword3.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T10:36:32.939Z"
+              "WhenOpened": "2025-04-12T10:36:32.939Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 2,
               "Title": "ForgetPassword2.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\ForgetPassword2.cs",
               "RelativeDocumentMoniker": "User Controls\\ForgetPassword2.cs",
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\ForgetPassword2.cs [Design]",
               "RelativeToolTip": "User Controls\\ForgetPassword2.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T10:35:48.194Z"
+              "WhenOpened": "2025-04-12T10:35:48.194Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "ForgetPassword1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\ForgetPassword1.cs",
               "RelativeDocumentMoniker": "User Controls\\ForgetPassword1.cs",
@@ -544,7 +546,8 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\ForgetPassword.cs [Design]",
               "RelativeToolTip": "Forms\\ForgetPassword.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T10:24:48.19Z"
+              "WhenOpened": "2025-04-12T10:24:48.19Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -555,7 +558,8 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\LogInForm.cs [Design]",
               "RelativeToolTip": "Forms\\LogInForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T12:52:22.562Z"
+              "WhenOpened": "2025-04-08T12:52:22.562Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -566,11 +570,12 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\Register2.cs [Design]",
               "RelativeToolTip": "Forms\\Register2.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T09:13:50.013Z"
+              "WhenOpened": "2025-04-12T09:13:50.013Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "WelcomeForm.cs",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\WelcomeForm.cs",
               "RelativeDocumentMoniker": "Forms\\WelcomeForm.cs",
@@ -583,7 +588,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Email.cs",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Classes\\Email.cs",
               "RelativeDocumentMoniker": "Classes\\Email.cs",
@@ -596,7 +601,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "DriverDashboard.cs",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\DriverDashboard.cs",
               "RelativeDocumentMoniker": "Forms\\DriverDashboard.cs",
@@ -609,7 +614,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "DriverDashboard.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\DriverDashboard.cs",
               "RelativeDocumentMoniker": "Forms\\DriverDashboard.cs",
@@ -628,7 +633,8 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\DisplayImage.cs [Design]",
               "RelativeToolTip": "Forms\\DisplayImage.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T03:54:14.297Z"
+              "WhenOpened": "2025-04-12T03:54:14.297Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -639,7 +645,8 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\Register.cs [Design]",
               "RelativeToolTip": "Forms\\Register.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-11T17:01:55.944Z"
+              "WhenOpened": "2025-04-11T17:01:55.944Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -663,7 +670,8 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\Profile.cs [Design]",
               "RelativeToolTip": "Forms\\Profile.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T13:11:38.022Z"
+              "WhenOpened": "2025-04-09T13:11:38.022Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -687,7 +695,8 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\LTFRB.cs [Design]",
               "RelativeToolTip": "User Controls\\LTFRB.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-11T14:46:47.336Z"
+              "WhenOpened": "2025-04-11T14:46:47.336Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -698,7 +707,8 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\FareMatrix.cs [Design]",
               "RelativeToolTip": "User Controls\\FareMatrix.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-11T14:46:31.433Z"
+              "WhenOpened": "2025-04-11T14:46:31.433Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -709,7 +719,8 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\DriverInfo.cs [Design]",
               "RelativeToolTip": "User Controls\\DriverInfo.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-11T14:46:09.579Z"
+              "WhenOpened": "2025-04-11T14:46:09.579Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -720,7 +731,8 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\PassengerInfo.cs [Design]",
               "RelativeToolTip": "User Controls\\PassengerInfo.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-11T14:45:50.27Z"
+              "WhenOpened": "2025-04-11T14:45:50.27Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -757,7 +769,8 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\PUV.cs [Design]",
               "RelativeToolTip": "User Controls\\PUV.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-11T14:10:37.631Z"
+              "WhenOpened": "2025-04-11T14:10:37.631Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -768,7 +781,8 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\Information.cs [Design]",
               "RelativeToolTip": "Forms\\Information.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-11T13:59:07.667Z"
+              "WhenOpened": "2025-04-11T13:59:07.667Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -805,7 +819,8 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\Map.cs [Design]",
               "RelativeToolTip": "Forms\\Map.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-11T09:24:04.175Z"
+              "WhenOpened": "2025-04-11T09:24:04.175Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -829,7 +844,8 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\HomeAdmin.cs [Design]",
               "RelativeToolTip": "User Controls\\HomeAdmin.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T10:46:56.294Z"
+              "WhenOpened": "2025-04-10T10:46:56.294Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -853,7 +869,8 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\Message.cs [Design]",
               "RelativeToolTip": "Forms\\Message.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T11:43:00.492Z"
+              "WhenOpened": "2025-04-09T11:43:00.492Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -891,7 +908,8 @@
               "RelativeToolTip": "Forms\\DisplayImage.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T09:32:03.403Z"
+              "WhenOpened": "2025-04-09T09:32:03.403Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -902,7 +920,8 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\DataGrid.cs [Design]",
               "RelativeToolTip": "User Controls\\DataGrid.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T08:43:22.857Z"
+              "WhenOpened": "2025-04-09T08:43:22.857Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -913,7 +932,8 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\CashOut.cs [Design]",
               "RelativeToolTip": "Forms\\CashOut.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T05:31:19.407Z"
+              "WhenOpened": "2025-04-09T05:31:19.407Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -924,7 +944,8 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\CashIn.cs [Design]",
               "RelativeToolTip": "Forms\\CashIn.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T15:58:12.717Z"
+              "WhenOpened": "2025-04-08T15:58:12.717Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -948,7 +969,8 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\Analytics.cs [Design]",
               "RelativeToolTip": "Forms\\Analytics.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T13:11:49.119Z"
+              "WhenOpened": "2025-04-08T13:11:49.119Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -960,7 +982,8 @@
               "RelativeToolTip": "Forms\\LogInForm.cs",
               "ViewState": "AQIAAFAAAAAAAAAAAAAAwGAAAABMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T12:52:25.872Z"
+              "WhenOpened": "2025-04-08T12:52:25.872Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -971,7 +994,8 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Properties\\Settings.settings",
               "RelativeToolTip": "Properties\\Settings.settings",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002767|",
-              "WhenOpened": "2025-04-08T12:51:15.408Z"
+              "WhenOpened": "2025-04-08T12:51:15.408Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -982,7 +1006,8 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\NEXUS.csproj",
               "RelativeToolTip": "NEXUS.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-08T12:50:59.459Z"
+              "WhenOpened": "2025-04-08T12:50:59.459Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -1006,7 +1031,8 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\RouteFinder.cs [Design]",
               "RelativeToolTip": "Forms\\RouteFinder.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-06T07:20:51.219Z"
+              "WhenOpened": "2025-04-06T07:20:51.219Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -1017,7 +1043,8 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\DialogBox.cs [Design]",
               "RelativeToolTip": "Forms\\DialogBox.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T15:58:17.89Z"
+              "WhenOpened": "2025-04-05T15:58:17.89Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -1029,7 +1056,8 @@
               "RelativeToolTip": "Forms\\Rate.cs",
               "ViewState": "AQIAAJ8BAAAAAAAAAAAqwLMBAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T15:47:54.812Z"
+              "WhenOpened": "2025-04-05T15:47:54.812Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -1041,7 +1069,8 @@
               "RelativeToolTip": "Classes\\OpenRouteService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABrAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-04T14:53:35.849Z"
+              "WhenOpened": "2025-04-04T14:53:35.849Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -1052,7 +1081,8 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\ClassDiagram1.cd",
               "RelativeToolTip": "ClassDiagram1.cd",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000463|",
-              "WhenOpened": "2025-04-03T11:07:46.003Z"
+              "WhenOpened": "2025-04-03T11:07:46.003Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -1064,7 +1094,8 @@
               "RelativeToolTip": "Classes\\UserInformationClass.cs",
               "ViewState": "AQIAAM0AAAAAAAAAAAAQwNUAAABNAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-08T10:53:51.142Z"
+              "WhenOpened": "2025-03-08T10:53:51.142Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -1076,7 +1107,8 @@
               "RelativeToolTip": "User Controls\\DataGrid.cs",
               "ViewState": "AQIAAD0AAAAAAAAAAAApwEkAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T05:05:51.057Z"
+              "WhenOpened": "2025-04-01T05:05:51.057Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -1087,7 +1119,8 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\History.cs [Design]",
               "RelativeToolTip": "Forms\\History.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T16:28:28.076Z"
+              "WhenOpened": "2025-03-31T16:28:28.076Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -1098,7 +1131,8 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\Report.cs [Design]",
               "RelativeToolTip": "Forms\\Report.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T15:36:10.847Z"
+              "WhenOpened": "2025-03-31T15:36:10.847Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -1109,7 +1143,8 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\QRCodeGeneratorform.cs [Design]",
               "RelativeToolTip": "Forms\\QRCodeGeneratorform.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T13:37:59.482Z"
+              "WhenOpened": "2025-03-31T13:37:59.482Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -1121,7 +1156,8 @@
               "RelativeToolTip": "Forms\\Report.cs",
               "ViewState": "AQIAACYAAAAAAAAAAAAqwEYAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T11:39:07.205Z"
+              "WhenOpened": "2025-03-31T11:39:07.205Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -1133,7 +1169,8 @@
               "RelativeToolTip": "Forms\\QRCodeGeneratorform.cs",
               "ViewState": "AQIAAA0AAAAAAAAAAAASwB4AAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T11:38:57.927Z"
+              "WhenOpened": "2025-03-31T11:38:57.927Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -1145,7 +1182,8 @@
               "RelativeToolTip": "Forms\\History.cs",
               "ViewState": "AQIAAJ0AAAAAAAAAAAAgwKwAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T11:38:51.71Z"
+              "WhenOpened": "2025-03-31T11:38:51.71Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -1169,11 +1207,12 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\Scan.cs [Design]",
               "RelativeToolTip": "Forms\\Scan.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T11:34:31.464Z"
+              "WhenOpened": "2025-03-31T11:34:31.464Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "PaymentUC.cs",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\PaymentUC.cs",
               "RelativeDocumentMoniker": "User Controls\\PaymentUC.cs",
@@ -1193,7 +1232,8 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\PaymentUC.cs [Design]",
               "RelativeToolTip": "User Controls\\PaymentUC.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T11:22:38.737Z"
+              "WhenOpened": "2025-03-31T11:22:38.737Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -1203,7 +1243,7 @@
               "RelativeDocumentMoniker": "User Controls\\QRScanUC.cs",
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\QRScanUC.cs",
               "RelativeToolTip": "User Controls\\QRScanUC.cs",
-              "ViewState": "AQIAACwAAAAAAAAAAAAAADwAAAAQAAAA",
+              "ViewState": "AQIAACkAAAAAAAAAAIBJwDwAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-31T11:12:06.119Z",
               "EditorCaption": ""
@@ -1217,7 +1257,8 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\QRScanUC.cs [Design]",
               "RelativeToolTip": "User Controls\\QRScanUC.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T11:07:06.201Z"
+              "WhenOpened": "2025-03-31T11:07:06.201Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -1241,7 +1282,8 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\TripLogging.cs [Design]",
               "RelativeToolTip": "Forms\\TripLogging.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T11:03:27.295Z"
+              "WhenOpened": "2025-03-31T11:03:27.295Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -1252,7 +1294,8 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\DriverHistory.cs [Design]",
               "RelativeToolTip": "Forms\\DriverHistory.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T07:27:02.595Z"
+              "WhenOpened": "2025-03-30T07:27:02.595Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -1264,7 +1307,8 @@
               "RelativeToolTip": "Forms\\DialogBox.cs",
               "ViewState": "AQIAAFwAAAAAAAAAAAAwwHAAAABFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T06:35:15.431Z"
+              "WhenOpened": "2025-03-30T06:35:15.431Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -1287,7 +1331,7 @@
               "RelativeDocumentMoniker": "User Controls\\ReportsAdmin.cs",
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\ReportsAdmin.cs",
               "RelativeToolTip": "User Controls\\ReportsAdmin.cs",
-              "ViewState": "AQIAAE4AAAAAAAAAAAAmwGEAAAAAAAAA",
+              "ViewState": "AQIAAE4AAAAAAAAAAAA4wGEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-29T14:14:41.816Z",
               "EditorCaption": ""
@@ -1313,7 +1357,7 @@
               "RelativeDocumentMoniker": "User Controls\\PassengersAdmin.cs",
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\PassengersAdmin.cs",
               "RelativeToolTip": "User Controls\\PassengersAdmin.cs",
-              "ViewState": "AQIAALwAAAAAAAAAAAA5wNcAAAA8AAAA",
+              "ViewState": "AQIAAL0AAAAAAAAAAAAgwNcAAAA8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-27T10:43:57.397Z",
               "EditorCaption": ""
@@ -1327,7 +1371,8 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\TransactionsAdmin.cs [Design]",
               "RelativeToolTip": "User Controls\\TransactionsAdmin.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T15:27:13.169Z"
+              "WhenOpened": "2025-03-26T15:27:13.169Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -1338,7 +1383,8 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\ReportsAdmin.cs [Design]",
               "RelativeToolTip": "User Controls\\ReportsAdmin.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T15:26:19.041Z"
+              "WhenOpened": "2025-03-26T15:26:19.041Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -1349,7 +1395,8 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\DriversAdmin.cs [Design]",
               "RelativeToolTip": "User Controls\\DriversAdmin.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T15:25:24.264Z"
+              "WhenOpened": "2025-03-26T15:25:24.264Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -1360,7 +1407,8 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\PassengersAdmin.cs [Design]",
               "RelativeToolTip": "User Controls\\PassengersAdmin.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T15:22:21.229Z"
+              "WhenOpened": "2025-03-26T15:22:21.229Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -1384,7 +1432,8 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\AdminDashboard.cs [Design]",
               "RelativeToolTip": "Forms\\AdminDashboard.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T10:31:28.35Z"
+              "WhenOpened": "2025-03-26T10:31:28.35Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -1396,7 +1445,8 @@
               "RelativeToolTip": "Forms\\Register.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAABkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T11:43:59.265Z"
+              "WhenOpened": "2025-03-22T11:43:59.265Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -1407,7 +1457,8 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\Home.cs [Design]",
               "RelativeToolTip": "Forms\\Home.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T11:41:30.643Z"
+              "WhenOpened": "2025-03-21T11:41:30.643Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -1419,7 +1470,8 @@
               "RelativeToolTip": "Classes\\DatabaseManagement.cs",
               "ViewState": "AQIAABMBAAAAAAAAAAAcwCEBAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T14:35:45.48Z"
+              "WhenOpened": "2025-03-22T14:35:45.48Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -1429,9 +1481,10 @@
               "RelativeDocumentMoniker": "Classes\\Cryptography.cs",
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Classes\\Cryptography.cs",
               "RelativeToolTip": "Classes\\Cryptography.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA8AAAAJAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAIBJwA8AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T11:18:00.707Z"
+              "WhenOpened": "2025-03-22T11:18:00.707Z",
+              "EditorCaption": ""
             }
           ]
         }

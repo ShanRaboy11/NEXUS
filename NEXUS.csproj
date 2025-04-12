@@ -12,11 +12,13 @@
     <PackageReference Include="AForge.Video.DirectShow" Version="2.2.5" />
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
     <PackageReference Include="FontAwesome.Sharp" Version="6.6.0" />
+    <PackageReference Include="iTextSharp" Version="5.5.13.4" />
     <PackageReference Include="Krypton.Toolkit" Version="90.25.2.55" />
     <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3124.44" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="OxyPlot.Core" Version="2.2.0" />
     <PackageReference Include="OxyPlot.WindowsForms" Version="2.2.0" />
+    <PackageReference Include="PDFsharp" Version="6.1.1" />
     <PackageReference Include="QRCoder" Version="1.6.0" />
     <PackageReference Include="ReaLTaiizor" Version="3.8.1.1" />
     <PackageReference Include="System.Data.OleDb" Version="9.0.3" />

@@ -77,6 +77,10 @@
               "target": "Package",
               "version": "[2.2.0, )"
             },
+            "PDFsharp": {
+              "target": "Package",
+              "version": "[6.1.1, )"
+            },
             "QRCoder": {
               "target": "Package",
               "version": "[1.6.0, )"
@@ -96,6 +100,10 @@
             "ZXing.Net.Bindings.Windows.Compatibility": {
               "target": "Package",
               "version": "[0.16.13, )"
+            },
+            "iTextSharp": {
+              "target": "Package",
+              "version": "[5.5.13.4, )"
             }
           },
           "imports": [
