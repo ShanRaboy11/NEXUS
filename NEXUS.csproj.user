@@ -31,7 +31,7 @@
     <Compile Update="Forms\DriverHistory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\EditProfile.cs">
+    <Compile Update="Forms\ForgetPassword.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\History.cs">
@@ -101,6 +101,15 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="User Controls\FareMatrix.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="User Controls\ForgetPasssword3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="User Controls\ForgetPassword1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="User Controls\ForgetPassword2.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="User Controls\HomeAdmin.cs">

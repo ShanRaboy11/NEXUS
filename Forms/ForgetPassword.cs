@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace NEXUS.Forms
 {
-    public partial class EditProfile : Form
+    public partial class ForgetPassword : Form
     {
-        public EditProfile()
+        public ForgetPassword()
         {
             InitializeComponent();
         }
