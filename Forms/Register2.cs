@@ -106,7 +106,7 @@ namespace NEXUS.Forms
                 );
                 newDriver.SaveToDatabase();
             }
-
+            Email.SendRegistrationEmail(userData.Email, fullName);
             dialogBox.ShowIcon("register");
             logInForm.overlayForm(this, dialogBox);
             logInForm.Show();

@@ -234,6 +234,7 @@ namespace NEXUS.Classes
 
                 cmd.ExecuteNonQuery();
             }
+            
         }
 
         public void SaveImageToDatabase(byte[] imageBytes, int userID)
@@ -309,6 +310,7 @@ namespace NEXUS.Classes
         private string destination;
         private double fareAmount;
         private string plateNumber;
+        private double points;
 
         public int DriverID { get => driverID; set => driverID = value; }
         public int PassengerID { get => passengerID; set => passengerID = value; }
@@ -537,10 +539,8 @@ namespace NEXUS.Classes
                 try
                 {
                     conn.Open();
-                    // Execute the query and retrieve the points (assumes Points is a numeric field)
                     var result = cmd.ExecuteScalar();
 
-                    // Check if result is not null and cast it to double
                     if (result != DBNull.Value)
                     {
                         points = Convert.ToDouble(result);

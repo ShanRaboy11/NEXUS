@@ -67,7 +67,7 @@ namespace NEXUS
             };
             progressBar.labelChange("NEXUS");
             progressBar.Show();
-            this.Hide();
+            this.Hide();          
         }
     }
 }
