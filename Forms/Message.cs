@@ -61,6 +61,8 @@ namespace NEXUS.Forms
             else if(message == "rejected")
             {
                 pbDialogIcon.Image = Resources.Animation___1739888639577;
+                lblMessage.Size = new Size(439, 54);
+                lblMessage.Location = new Point(3, 133);
                 lblMessage.Text = "Your verification request has been rejected. Kindly resubmit with a valid ID.";
                 btnOK.TextButton = "OK";
             }

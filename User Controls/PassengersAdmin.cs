@@ -150,35 +150,79 @@ namespace NEXUS.User_Controls
 
         private void ApprovePassenger(string passengerName)
         {
-            string query = "UPDATE Accounts SET Status = 'Verified' WHERE [Full Name] = ?";
+            string updateQuery = "UPDATE Accounts SET Status = 'Verified' WHERE [Full Name] = ?";
+            string getUserIdQuery = "SELECT ID FROM Accounts WHERE [Full Name] = ?";
+            string insertNotificationQuery = "INSERT INTO Notifications (UserID, Message, Status) VALUES (?, ?, ?)";
 
             using (OleDbConnection conn = DatabaseManagement.GetConnection())
-            using (OleDbCommand cmd = new OleDbCommand(query, conn))
+            using (OleDbCommand updateCmd = new OleDbCommand(updateQuery, conn))
+            using (OleDbCommand getUserCmd = new OleDbCommand(getUserIdQuery, conn))
+            using (OleDbCommand insertCmd = new OleDbCommand(insertNotificationQuery, conn))
             {
                 conn.Open();
-                cmd.Parameters.AddWithValue("?", passengerName);
 
-                int rowsAffected = cmd.ExecuteNonQuery();
+                // Update status
+                updateCmd.Parameters.AddWithValue("?", passengerName);
+                updateCmd.ExecuteNonQuery();
+
+                // Get UserID
+                getUserCmd.Parameters.AddWithValue("?", passengerName);
+                object result = getUserCmd.ExecuteScalar();
+
+                if (result != null)
+                {
+                    int userId = Convert.ToInt32(result);
+
+                    // Insert Notification
+                    insertCmd.Parameters.AddWithValue("?", userId);
+                    insertCmd.Parameters.AddWithValue("?", "verified");
+                    insertCmd.Parameters.AddWithValue("?", "Unread");
+
+                    insertCmd.ExecuteNonQuery();
+                }
             }
 
             LoadPendingPassengers();
         }
+
 
         private void RejectPassenger(string passengerName)
         {
-            string query = "UPDATE Accounts SET Status = 'Rejected' WHERE [Full Name] = ?";
+            string updateQuery = "UPDATE Accounts SET Status = 'Rejected' WHERE [Full Name] = ?";
+            string getUserIdQuery = "SELECT ID FROM Accounts WHERE [Full Name] = ?";
+            string insertNotificationQuery = "INSERT INTO Notifications (UserID, Message, Status) VALUES (?, ?, ?)";
 
             using (OleDbConnection conn = DatabaseManagement.GetConnection())
-            using (OleDbCommand cmd = new OleDbCommand(query, conn))
+            using (OleDbCommand updateCmd = new OleDbCommand(updateQuery, conn))
+            using (OleDbCommand getUserCmd = new OleDbCommand(getUserIdQuery, conn))
+            using (OleDbCommand insertCmd = new OleDbCommand(insertNotificationQuery, conn))
             {
                 conn.Open();
-                cmd.Parameters.AddWithValue("?", passengerName);
 
-                int rowsAffected = cmd.ExecuteNonQuery();
+                // Update status
+                updateCmd.Parameters.AddWithValue("?", passengerName);
+                updateCmd.ExecuteNonQuery();
+
+                // Get UserID
+                getUserCmd.Parameters.AddWithValue("?", passengerName);
+                object result = getUserCmd.ExecuteScalar();
+
+                if (result != null)
+                {
+                    int userId = Convert.ToInt32(result);
+
+                    // Insert Notification
+                    insertCmd.Parameters.AddWithValue("?", userId);
+                    insertCmd.Parameters.AddWithValue("?", "rejected");
+                    insertCmd.Parameters.AddWithValue("?", "Unread");
+
+                    insertCmd.ExecuteNonQuery();
+                }
             }
 
             LoadPendingPassengers();
         }
+
 
         private void DisplayAttachment(byte[] fileName)
         {

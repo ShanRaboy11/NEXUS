@@ -440,7 +440,19 @@ namespace NEXUS.Forms
 
         private void pbNotified_Click(object sender, EventArgs e)
         {
-            DatabaseManagement.MarkNotificationsAsRead(passenger.UserID);
+            DataTable notifications = DatabaseManagement.GetUnreadNotifications(passenger.UserID);
+
+            if (notifications.Rows.Count > 0)
+            {
+                string type = notifications.Rows[0]["Message"].ToString().ToLower();
+
+                Message message = new Message(type); 
+                Scan scan = new Scan(passenger.UserID);
+                scan.ShowOverlay(message, null);
+
+                DatabaseManagement.MarkNotificationsAsRead(passenger.UserID);
+                pbNotified.Visible = false;
+            }
         }
 
         private void btnNotification_Click(object sender, EventArgs e)

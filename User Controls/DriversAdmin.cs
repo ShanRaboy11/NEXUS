@@ -148,34 +148,74 @@ namespace NEXUS.User_Controls
         private void ApproveDriver(string driverName)
         {
             string query = "UPDATE Accounts SET Status = 'Verified' WHERE [Full Name] = ?";
+            string getUserIdQuery = "SELECT ID FROM Accounts WHERE [Full Name] = ?";
+            string insertNotificationQuery = "INSERT INTO Notifications (UserID, Message, Status) VALUES (?, ?, ?)";
 
             using (OleDbConnection conn = DatabaseManagement.GetConnection())
             using (OleDbCommand cmd = new OleDbCommand(query, conn))
+            using (OleDbCommand getUserCmd = new OleDbCommand(getUserIdQuery, conn))
+            using (OleDbCommand insertCmd = new OleDbCommand(insertNotificationQuery, conn))
             {
                 conn.Open();
                 cmd.Parameters.AddWithValue("?", driverName);
-
                 int rowsAffected = cmd.ExecuteNonQuery();
+
+                // Get UserID
+                getUserCmd.Parameters.AddWithValue("?", driverName);
+                object result = getUserCmd.ExecuteScalar();
+
+                if (result != null)
+                {
+                    int userId = Convert.ToInt32(result);
+
+                    // Insert Notification
+                    insertCmd.Parameters.AddWithValue("?", userId);
+                    insertCmd.Parameters.AddWithValue("?", "verified");
+                    insertCmd.Parameters.AddWithValue("?", "Unread");
+
+                    insertCmd.ExecuteNonQuery();
+                }
             }
 
             LoadPendingDrivers();
         }
+
 
         private void RejectDriver(string driverName)
         {
             string query = "UPDATE Accounts SET Status = 'Rejected' WHERE [Full Name] = ?";
+            string getUserIdQuery = "SELECT ID FROM Accounts WHERE [Full Name] = ?";
+            string insertNotificationQuery = "INSERT INTO Notifications (UserID, Message, Status) VALUES (?, ?, ?)";
 
             using (OleDbConnection conn = DatabaseManagement.GetConnection())
             using (OleDbCommand cmd = new OleDbCommand(query, conn))
+            using (OleDbCommand getUserCmd = new OleDbCommand(getUserIdQuery, conn))
+            using (OleDbCommand insertCmd = new OleDbCommand(insertNotificationQuery, conn))
             {
                 conn.Open();
                 cmd.Parameters.AddWithValue("?", driverName);
-
                 int rowsAffected = cmd.ExecuteNonQuery();
+
+                // Get UserID
+                getUserCmd.Parameters.AddWithValue("?", driverName);
+                object result = getUserCmd.ExecuteScalar();
+
+                if (result != null)
+                {
+                    int userId = Convert.ToInt32(result);
+
+                    // Insert Notification
+                    insertCmd.Parameters.AddWithValue("?", userId);
+                    insertCmd.Parameters.AddWithValue("?", "rejected");
+                    insertCmd.Parameters.AddWithValue("?", "Unread");
+
+                    insertCmd.ExecuteNonQuery();
+                }
             }
 
             LoadPendingDrivers();
         }
+
 
         private void DisplayAttachment(byte[] fileName)
         {

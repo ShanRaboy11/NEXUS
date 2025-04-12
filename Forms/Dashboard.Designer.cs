@@ -426,8 +426,9 @@
             // 
             // pbNotified
             // 
+            pbNotified.Cursor = Cursors.Hand;
             pbNotified.Image = Properties.Resources._1__1_;
-            pbNotified.Location = new Point(258, 54);
+            pbNotified.Location = new Point(259, 34);
             pbNotified.Name = "pbNotified";
             pbNotified.Size = new Size(53, 42);
             pbNotified.TabIndex = 56;
@@ -438,6 +439,7 @@
             // btnNotification
             // 
             btnNotification.BackColor = Color.FromArgb(38, 36, 68);
+            btnNotification.Cursor = Cursors.Hand;
             btnNotification.FlatStyle = FlatStyle.Flat;
             btnNotification.IconChar = FontAwesome.Sharp.IconChar.Bell;
             btnNotification.IconColor = Color.White;
