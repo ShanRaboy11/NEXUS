@@ -14,6 +14,7 @@ namespace NEXUS.User_Controls
     {
         private FontAwesome.Sharp.IconButton selectedButton = null;
         private FontAwesome.Sharp.IconButton currentBtn;
+        private string current;
         public ReportsAdmin()
         {
             InitializeComponent();
@@ -51,12 +52,16 @@ namespace NEXUS.User_Controls
         {
             SelectButton(btnReports);
             DisplayReports();
+            current = "Report";
         }
 
         private void btnRate_Click(object sender, EventArgs e)
         {
             SelectButton(btnRate);
             DisplayRates();
+            cmbxFilter.Items.Clear();
+            cmbxFilter.Items.Add("Trip Date");
+            cmbxFilter.Items.Add("Date Rated");
         }
 
         private void DisplayRates()
@@ -73,9 +78,23 @@ namespace NEXUS.User_Controls
 
         private void dtDate_ValueChanged(object sender, EventArgs e)
         {
-            string selectedDate = dtDate.Value.ToString("MM/dd/yyyy"); // Format selected date
-            string dateQuery = $"SELECT ReportID, TripID, Passenger, Driver, Location, " +
-                               $"Category, Description, Status FROM TripReportQuery WHERE Format([Date of Incident], 'MM/dd/yyyy') = '{selectedDate}'";
+            string selectedDate = dtDate.Value.ToString("MM/dd/yyyy");
+            string dateQuery = null;
+            if (current == "Report")
+            {
+                dateQuery = $"SELECT ReportID, TripID, Passenger, Driver, Location, " +
+                            $"Category, Description, Status FROM TripReportQuery WHERE Format([Date of Incident], 'MM/dd/yyyy') = '{selectedDate}'";
+            }
+            else if(current == "Date Rated")
+            {
+                dateQuery = $"SELECT TripID, [Trip Date], Passenger, Driver, Safety, Smoothness, Speed, " +
+                            $"Comfortability, Cleanliness, [Overall Satisfaction], Comments FROM AdminRatings WHERE Format([Date Rated], 'MM/dd/yyyy') = '{selectedDate}'";
+            }
+            else
+            {
+                dateQuery = $"SELECT TripID, Passenger, Driver, Safety, Smoothness, Speed, " +
+                            $"Comfortability, Cleanliness, [Overall Satisfaction], Comments, [Date Rated] FROM AdminRatings WHERE Format([Trip Date], 'MM/dd/yyyy') = '{selectedDate}'";
+            }
 
             pnlContainer.Controls.Clear();
 
@@ -88,7 +107,7 @@ namespace NEXUS.User_Controls
 
         private void cmbxFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cmbxFilter.SelectedItem == "Pending Reports")
+            if (cmbxFilter.SelectedItem == "Pending Reports")
             {
                 dtDate.Visible = false;
                 pbDate.Visible = false;
@@ -101,12 +120,24 @@ namespace NEXUS.User_Controls
                 };
                 pnlContainer.Controls.Add(dataGrid);
             }
+            else if (cmbxFilter.SelectedItem == "Trip Date")
+            {
+                current = "Trip Date";
+                dtDate.Visible = true;
+                pbDate.Visible = true;
+
+            }
+            else if (cmbxFilter.SelectedItem == "Date Rated")
+            {
+                current = "Date Rated";
+                dtDate.Visible = true;
+                pbDate.Visible = true;
+            }
             else
             {
                 dtDate.Visible = true;
                 pbDate.Visible = true;
             }
-
         }
     }
 }

@@ -192,6 +192,7 @@
             pbDate.Anchor = AnchorStyles.Left;
             pbDate.BackColor = Color.FromArgb(230, 249, 255);
             pbDate.Enabled = false;
+            pbDate.FlatAppearance.BorderSize = 0;
             pbDate.FlatStyle = FlatStyle.Flat;
             pbDate.IconChar = FontAwesome.Sharp.IconChar.Calendar;
             pbDate.IconColor = Color.Black;
