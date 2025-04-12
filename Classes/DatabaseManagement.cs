@@ -212,6 +212,25 @@ namespace NEXUS.Classes
             }
         }
 
+        public static void ResubmitValidID(int accountId)
+        {
+            string query = "UPDATE Accounts SET Status = ? WHERE ID = ?";
+
+            using (OleDbConnection conn = GetConnection())
+            {
+                using (OleDbCommand command = new OleDbCommand(query, conn))
+                {
+                    // ORDER matters, names are ignored but harmless
+                    command.Parameters.Add("Status", OleDbType.Char).Value = "Pending";
+                    command.Parameters.Add("ID", OleDbType.Integer).Value = accountId;
+
+                    conn.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+
         public static void UpdateAccountProfilePic(int accountId, byte[] profilepic)
         {
             string query = "UPDATE Accounts SET [Profile Picture] = ? WHERE ID = ?";

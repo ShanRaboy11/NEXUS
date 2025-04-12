@@ -28,6 +28,7 @@ namespace NEXUS.Forms
             this.Load += (s, e) => btnHome_Click(btnHome1, EventArgs.Empty);
             lblUserFName.Text = currentDriver.Name.Split(' ')[0] + "!";
             UpdateBalance(driver.UserID);
+            CheckAndDisplayNotifications();
             using (MemoryStream ms = new MemoryStream(currentDriver.ProfilePicture))
             {
                 pbProfilePic.Image = Image.FromStream(ms);
@@ -338,6 +339,69 @@ namespace NEXUS.Forms
             CashOut cashOut = new CashOut(driver.UserID, driver.Name);
             Scan scan = new Scan(driver.UserID);
             scan.ShowOverlay(cashOut, null);
+        }
+
+        public void UpdateProfilePicture(int DriverID)
+        {
+            string query = "SELECT [Profile Picture] FROM Accounts WHERE ID = ?";
+
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            {
+                using (OleDbCommand command = new OleDbCommand(query, conn))
+                {
+                    command.Parameters.Add("ID", OleDbType.Integer).Value = DriverID;
+
+                    conn.Open();
+                    object result = command.ExecuteScalar();
+
+                    byte[] imageBytes = (byte[])result;
+
+                    using (MemoryStream ms = new MemoryStream(imageBytes))
+                    {
+                        Image profileImage = Image.FromStream(ms);
+                        pbProfilePic.Image = profileImage;
+                    }
+                }
+            }
+        }
+
+        private void CheckAndDisplayNotifications()
+        {
+            DataTable notifications = DatabaseManagement.GetUnreadNotifications(driver.UserID);
+
+            if (notifications.Rows.Count > 0)
+            {
+                pbNotified.Visible = true;
+            }
+            else
+            {
+                pbNotified.Visible = false;
+            }
+        }
+
+        private void btnNotification_Click(object sender, EventArgs e)
+        {
+            Message message = new Message("no notif");
+            Scan scan = new Scan(driver.UserID);
+            scan.ShowOverlay(message, null);
+        }
+
+        private void pbNotified_Click(object sender, EventArgs e)
+        {
+
+            DataTable notifications = DatabaseManagement.GetUnreadNotifications(driver.UserID);
+
+            if (notifications.Rows.Count > 0)
+            {
+                string type = notifications.Rows[0]["Message"].ToString().ToLower();
+
+                Message message = new Message(type);
+                Scan scan = new Scan(driver.UserID);
+                scan.ShowOverlay(message, null);
+
+                DatabaseManagement.MarkNotificationsAsRead(driver.UserID);
+                pbNotified.Visible = false;
+            }
         }
     }
 }

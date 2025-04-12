@@ -69,11 +69,22 @@ namespace NEXUS.Forms
         private void pbCloseee_Click(object sender, EventArgs e)
         {
             Form parentForm = this.FindForm();
-            if (parentForm != null)
+            if (userInformation.UserType == "Passenger")
             {
                 parentForm.FormClosed += (s, args) =>
                 {
                     Dashboard existingDashboard = Application.OpenForms.OfType<Dashboard>().FirstOrDefault();
+                    if (existingDashboard != null)
+                    {
+                        existingDashboard.UpdateProfilePicture(userInformation.UserID);
+                    }
+                };
+            }
+            else
+            {
+                parentForm.FormClosed += (s, args) =>
+                {
+                    DriverDashboard existingDashboard = Application.OpenForms.OfType<DriverDashboard>().FirstOrDefault();
                     if (existingDashboard != null)
                     {
                         existingDashboard.UpdateProfilePicture(userInformation.UserID);
@@ -126,6 +137,7 @@ namespace NEXUS.Forms
 
                     }
                 }
+                DatabaseManagement.ResubmitValidID(userInformation.UserID);
             }
             else
             {

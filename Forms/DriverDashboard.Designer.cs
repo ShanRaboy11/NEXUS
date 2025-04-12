@@ -50,6 +50,7 @@
             lblUserFName = new Label();
             label1 = new Label();
             panel1 = new Panel();
+            pbNotified = new PictureBox();
             label2 = new Label();
             lblTotalEarned = new Label();
             cyberButton1 = new ReaLTaiizor.Controls.CyberButton();
@@ -66,6 +67,7 @@
             pictureBox10 = new PictureBox();
             cyberButton8 = new ReaLTaiizor.Controls.CyberButton();
             SidebarTransition = new System.Windows.Forms.Timer(components);
+            btnNotification = new FontAwesome.Sharp.IconButton();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -78,6 +80,7 @@
             pnlDesktop1.SuspendLayout();
             pnlTop.SuspendLayout();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbNotified).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbProfilePic).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbProfile1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
@@ -359,6 +362,8 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(pbNotified);
+            panel1.Controls.Add(btnNotification);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(lblTotalEarned);
             panel1.Controls.Add(cyberButton1);
@@ -379,6 +384,18 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(324, 879);
             panel1.TabIndex = 32;
+            // 
+            // pbNotified
+            // 
+            pbNotified.Cursor = Cursors.Hand;
+            pbNotified.Image = Properties.Resources._1__1_;
+            pbNotified.Location = new Point(259, 35);
+            pbNotified.Name = "pbNotified";
+            pbNotified.Size = new Size(53, 42);
+            pbNotified.TabIndex = 58;
+            pbNotified.TabStop = false;
+            pbNotified.Visible = false;
+            pbNotified.Click += pbNotified_Click;
             // 
             // label2
             // 
@@ -615,7 +632,7 @@
             pbProfile1.BackColor = Color.FromArgb(38, 36, 68);
             pbProfile1.Cursor = Cursors.Hand;
             pbProfile1.Image = (Image)resources.GetObject("pbProfile1.Image");
-            pbProfile1.Location = new Point(256, 29);
+            pbProfile1.Location = new Point(196, 29);
             pbProfile1.Name = "pbProfile1";
             pbProfile1.Size = new Size(48, 50);
             pbProfile1.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -680,6 +697,25 @@
             SidebarTransition.Interval = 10;
             SidebarTransition.Tick += SidebarTransition_Tick;
             // 
+            // btnNotification
+            // 
+            btnNotification.BackColor = Color.FromArgb(38, 36, 68);
+            btnNotification.Cursor = Cursors.Hand;
+            btnNotification.FlatAppearance.BorderColor = Color.FromArgb(38, 36, 68);
+            btnNotification.FlatAppearance.BorderSize = 0;
+            btnNotification.FlatStyle = FlatStyle.Flat;
+            btnNotification.IconChar = FontAwesome.Sharp.IconChar.Bell;
+            btnNotification.IconColor = Color.White;
+            btnNotification.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnNotification.IconSize = 40;
+            btnNotification.Location = new Point(259, 35);
+            btnNotification.Name = "btnNotification";
+            btnNotification.Size = new Size(53, 42);
+            btnNotification.TabIndex = 59;
+            btnNotification.TabStop = false;
+            btnNotification.UseVisualStyleBackColor = false;
+            btnNotification.Click += btnNotification_Click;
+            // 
             // DriverDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
@@ -710,6 +746,7 @@
             pnlTop.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pbNotified).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbProfilePic).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbProfile1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
@@ -754,5 +791,7 @@
         private Label lblTotalEarned;
         private Label label2;
         private ReaLTaiizor.Controls.CyberButton cyberButton1;
+        private PictureBox pbNotified;
+        private FontAwesome.Sharp.IconButton btnNotification;
     }
 }
