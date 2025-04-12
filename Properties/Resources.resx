@@ -181,6 +181,9 @@
   <data name="jeepcode" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\jeepcode.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="1 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="2075817_compass_explore_route_travel_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2075817_compass_explore_route_travel_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -319,6 +322,9 @@
   <data name="1904659_arrow_backup_down_download_save_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1904659_arrow_backup_down_download_save_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Untitled design (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Untitled design (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="route_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\route_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -352,7 +358,7 @@
   <data name="Reports (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Reports (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="roundcorner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\roundcorner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
