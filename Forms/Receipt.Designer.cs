@@ -35,25 +35,25 @@
             lblAmount = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             panel1 = new Panel();
+            label6 = new Label();
             lblRefNumber = new Label();
             pictureBox2 = new PictureBox();
             panel2 = new Panel();
             lblPassenger = new Label();
-            label5 = new Label();
             pictureBox4 = new PictureBox();
             panel3 = new Panel();
             lblDT = new Label();
-            label3 = new Label();
             pictureBox3 = new PictureBox();
             panel4 = new Panel();
             lblDriver = new Label();
-            label7 = new Label();
             pictureBox5 = new PictureBox();
             btnPDF = new FontAwesome.Sharp.IconButton();
             pictureBox6 = new PictureBox();
             label2 = new Label();
             label4 = new Label();
-            label6 = new Label();
+            label1 = new Label();
+            label3 = new Label();
+            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
@@ -142,6 +142,16 @@
             panel1.Size = new Size(188, 92);
             panel1.TabIndex = 0;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Inter", 12F);
+            label6.Location = new Point(11, 10);
+            label6.Name = "label6";
+            label6.Size = new Size(100, 23);
+            label6.TabIndex = 62;
+            label6.Text = "Ref Number";
+            // 
             // lblRefNumber
             // 
             lblRefNumber.Font = new Font("Inter SemiBold", 16F, FontStyle.Bold);
@@ -165,8 +175,8 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(label3);
             panel2.Controls.Add(lblPassenger);
-            panel2.Controls.Add(label5);
             panel2.Controls.Add(pictureBox4);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(20, 101);
@@ -184,16 +194,6 @@
             lblPassenger.TabIndex = 4;
             lblPassenger.Text = "Mikki Claver";
             // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Inter", 10.75F);
-            label5.Location = new Point(12, 11);
-            label5.Name = "label5";
-            label5.Size = new Size(86, 22);
-            label5.TabIndex = 3;
-            label5.Text = "Passenger";
-            // 
             // pictureBox4
             // 
             pictureBox4.Dock = DockStyle.Fill;
@@ -207,8 +207,8 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(label1);
             panel3.Controls.Add(lblDT);
-            panel3.Controls.Add(label3);
             panel3.Controls.Add(pictureBox3);
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(214, 3);
@@ -226,16 +226,6 @@
             lblDT.TabIndex = 3;
             lblDT.Text = "000000112";
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Inter", 10.75F);
-            label3.Location = new Point(12, 11);
-            label3.Name = "label3";
-            label3.Size = new Size(109, 22);
-            label3.TabIndex = 2;
-            label3.Text = "Payment Date";
-            // 
             // pictureBox3
             // 
             pictureBox3.Dock = DockStyle.Fill;
@@ -249,8 +239,8 @@
             // 
             // panel4
             // 
+            panel4.Controls.Add(label5);
             panel4.Controls.Add(lblDriver);
-            panel4.Controls.Add(label7);
             panel4.Controls.Add(pictureBox5);
             panel4.Dock = DockStyle.Fill;
             panel4.Location = new Point(214, 101);
@@ -267,16 +257,6 @@
             lblDriver.Size = new Size(153, 31);
             lblDriver.TabIndex = 5;
             lblDriver.Text = "000000112";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Inter", 10.75F);
-            label7.Location = new Point(12, 11);
-            label7.Name = "label7";
-            label7.Size = new Size(54, 22);
-            label7.TabIndex = 4;
-            label7.Text = "Driver";
             // 
             // pictureBox5
             // 
@@ -342,15 +322,35 @@
             label4.TabIndex = 61;
             label4.Text = "Total Payment";
             // 
-            // label6
+            // label1
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Inter", 11F);
-            label6.Location = new Point(11, 10);
-            label6.Name = "label6";
-            label6.Size = new Size(96, 22);
-            label6.TabIndex = 62;
-            label6.Text = "Ref Number";
+            label1.AutoSize = true;
+            label1.Font = new Font("Inter", 12F);
+            label1.Location = new Point(12, 10);
+            label1.Name = "label1";
+            label1.Size = new Size(115, 23);
+            label1.TabIndex = 63;
+            label1.Text = "Payment Date";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Inter", 12F);
+            label3.Location = new Point(14, 10);
+            label3.Name = "label3";
+            label3.Size = new Size(88, 23);
+            label3.TabIndex = 63;
+            label3.Text = "Passenger";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Inter", 12F);
+            label5.Location = new Point(15, 10);
+            label5.Name = "label5";
+            label5.Size = new Size(56, 23);
+            label5.TabIndex = 64;
+            label5.Text = "Driver";
             // 
             // Receipt
             // 
@@ -409,14 +409,14 @@
         private PictureBox pictureBox5;
         private Label lblRefNumber;
         private Label lblPassenger;
-        private Label label5;
         private Label lblDT;
-        private Label label3;
         private Label lblDriver;
-        private Label label7;
         private PictureBox pictureBox6;
         private Label label2;
         private Label label6;
         private Label label4;
+        private Label label3;
+        private Label label1;
+        private Label label5;
     }
 }
