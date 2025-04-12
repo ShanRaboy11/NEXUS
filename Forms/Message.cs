@@ -46,6 +46,24 @@ namespace NEXUS.Forms
                 lblMessage.Text = "Your withdrawal request completed successfully.";
                 btnOK.TextButton = "OK";
             }
+            else if(message == "no notif")
+            {
+                pbDialogIcon.Image = Resources.Animation___1739885779319;
+                lblMessage.Text = "You’re all caught up!";
+                btnOK.TextButton = "OK";
+            }
+            else if(message == "verified")
+            {
+                pbDialogIcon.Image = Resources.Animation___1739885779319;
+                lblMessage.Text = "Your account has been successfully verified!";
+                btnOK.TextButton = "OK";
+            }
+            else if(message == "rejected")
+            {
+                pbDialogIcon.Image = Resources.Animation___1739888639577;
+                lblMessage.Text = "Your verification request has been rejected. Kindly resubmit with a valid ID.";
+                btnOK.TextButton = "OK";
+            }
             else if (message == "wait")
             {
                 pbDialogIcon.Image = Resources.Animation___1739888639577;

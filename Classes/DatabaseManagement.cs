@@ -229,6 +229,36 @@ namespace NEXUS.Classes
             }
         }
 
+        public static DataTable GetUnreadNotifications(int userID)
+        {
+            string query = "SELECT * FROM Notifications WHERE UserID = ? AND Status = 'Unread'";
+
+            using (OleDbConnection conn = GetConnection())
+            using (OleDbCommand command = new OleDbCommand(query, conn))
+            using (OleDbDataAdapter adapter = new OleDbDataAdapter(command))
+            {
+                command.Parameters.AddWithValue("PassengerID", userID);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                return dt;
+            }
+        }
+
+        public static void MarkNotificationsAsRead(int userID)
+        {
+            string query = "UPDATE Notifications SET Status = 'Read' WHERE UserID = ? AND Status = 'Unread'";
+
+            using (OleDbConnection conn = GetConnection())
+            using (OleDbCommand command = new OleDbCommand(query, conn))
+            {
+                command.Parameters.AddWithValue("PassengerID", userID);
+                conn.Open();
+                command.ExecuteNonQuery();
+            }
+        }
+
+
+
         public static OleDbConnection Connect()
         {
             try

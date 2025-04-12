@@ -33,6 +33,7 @@ namespace NEXUS.Forms
             string currentName = currentPassenger.Name.Split(' ')[0] + "!";
             lblUserFName.Text = currentName;
             UpdateBalance(currentPassenger.UserID);
+            CheckAndDisplayNotifications();
             using (MemoryStream ms = new MemoryStream(currentPassenger.ProfilePicture))
             {
                 pbProfilePicture.Image = Image.FromStream(ms);
@@ -422,5 +423,31 @@ namespace NEXUS.Forms
             }
         }
 
+        private void CheckAndDisplayNotifications()
+        {
+            DataTable notifications = DatabaseManagement.GetUnreadNotifications(passenger.UserID);
+
+            if (notifications.Rows.Count > 0)
+            {
+                pbNotified.Visible = true;
+            }
+            else
+            {
+                pbNotified.Visible = false;
+            }
+        }
+
+
+        private void pbNotified_Click(object sender, EventArgs e)
+        {
+            DatabaseManagement.MarkNotificationsAsRead(passenger.UserID);
+        }
+
+        private void btnNotification_Click(object sender, EventArgs e)
+        {
+            Message message = new Message("no notif");
+            Scan scan = new Scan(passenger.UserID);
+            scan.ShowOverlay(message, null);
+        }
     }
 }
