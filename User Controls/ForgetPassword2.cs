@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NEXUS.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,9 +14,11 @@ namespace NEXUS.User_Controls
     public partial class ForgetPassword2 : UserControl
     {
         private string resetCode;
-        public ForgetPassword2(Panel pnlContainer, string resetcode)
+        Panel pnlContainer;
+        public ForgetPassword2(Panel pnlcontainer, string resetcode)
         {
             InitializeComponent();
+            pnlContainer = pnlcontainer;
             resetCode = resetcode;
         }
 
@@ -63,19 +66,29 @@ namespace NEXUS.User_Controls
         private void btnVerifyCode_Click(object sender, EventArgs e)
         {
             string enteredCode = tbxCode1.Text + tbxCode2.Text + tbxCode3.Text + tbxCode4.Text + tbxCode5.Text;
-
+            DialogBox dialogBox = new DialogBox();
             if (enteredCode.Length < 5)
             {
+                dialogBox.ShowIcon("blank");
+                dialogBox.ShowDialog();
                 return;
             }
 
             if (enteredCode == resetCode) 
             {
+                pnlContainer.Controls.Clear();
 
+                ForgetPasssword3 forgetPassword3 = new ForgetPasssword3()
+                {
+                    Dock = DockStyle.Fill
+                };
+
+                pnlContainer.Controls.Add(forgetPassword3);
             }
             else
             {
-
+                dialogBox.ShowIcon("invalid code");
+                dialogBox.ShowDialog();
             }
         }
 

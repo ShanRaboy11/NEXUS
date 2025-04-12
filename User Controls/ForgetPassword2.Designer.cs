@@ -111,6 +111,7 @@
             btnVerify.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             btnVerify.Timer_Effect_1 = 5;
             btnVerify.Timer_RGB = 300;
+            btnVerify.Click += btnVerifyCode_Click;
             // 
             // pnlUsername
             // 

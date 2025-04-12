@@ -100,6 +100,12 @@ namespace NEXUS.Forms
                 pbDialogIcon.Image = Resources.Animation___1739888639577;
                 lblMessage.Text = "Email address is invalid";
             }
+            else if(message == "invalid code")
+            {
+                Pausetimer.Enabled = false;
+                pbDialogIcon.Image = Resources.Animation___1739888639577;
+                lblMessage.Text = "The code you entered is incorrect.";
+            }
             else
             {
                 Pausetimer.Enabled = false;
