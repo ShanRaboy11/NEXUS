@@ -106,6 +106,17 @@ namespace NEXUS.Forms
                 pbDialogIcon.Image = Resources.Animation___1739888639577;
                 lblMessage.Text = "The code you entered is incorrect.";
             }
+            else if(message == "passwords mismatch")
+            {
+                Pausetimer.Enabled = false;
+                pbDialogIcon.Image = Resources.Animation___1739888639577;
+                lblMessage.Text = "Passwords do not match. Try again.";
+            }
+            else if(message == "password updated")
+            {
+                pbDialogIcon.Image = Resources.Animation___1739885779319;
+                lblMessage.Text = "Password updated successfully";
+            }
             else
             {
                 Pausetimer.Enabled = false;

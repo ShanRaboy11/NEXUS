@@ -276,6 +276,20 @@ namespace NEXUS.Classes
             }
         }
 
+        public static void UpdatePassword(string password, string email)
+        {
+            string query = "UPDATE Accounts SET [Password] = ? WHERE [Email Address] = ?";
+
+            using (OleDbConnection conn = GetConnection())
+            using (OleDbCommand command = new OleDbCommand(query, conn))
+            {
+                command.Parameters.AddWithValue("Password", password);  // Password is hashed
+                command.Parameters.AddWithValue("Email Address", email);
+
+                conn.Open();
+                command.ExecuteNonQuery();
+            }
+        }
 
 
         public static OleDbConnection Connect()

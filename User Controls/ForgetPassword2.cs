@@ -13,13 +13,14 @@ namespace NEXUS.User_Controls
 {
     public partial class ForgetPassword2 : UserControl
     {
-        private string resetCode;
+        private string resetCode, userEmail;
         Panel pnlContainer;
-        public ForgetPassword2(Panel pnlcontainer, string resetcode)
+        public ForgetPassword2(Panel pnlcontainer, string resetcode, string email)
         {
             InitializeComponent();
             pnlContainer = pnlcontainer;
             resetCode = resetcode;
+            this.userEmail = email;
         }
 
         private void tbxCode_TextChanged(object sender, EventArgs e)
@@ -78,7 +79,7 @@ namespace NEXUS.User_Controls
             {
                 pnlContainer.Controls.Clear();
 
-                ForgetPasssword3 forgetPassword3 = new ForgetPasssword3()
+                ForgetPasssword3 forgetPassword3 = new ForgetPasssword3(userEmail)
                 {
                     Dock = DockStyle.Fill
                 };

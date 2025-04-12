@@ -1,4 +1,5 @@
 ﻿using NEXUS.Classes;
+using NEXUS.Forms;
 using NEXUS.Properties;
 using System;
 using System.Collections.Generic;
@@ -15,9 +16,11 @@ namespace NEXUS.User_Controls
     public partial class ForgetPasssword3 : UserControl
     {
         bool isPasswordVisible = false, isPasswordVisible1 = false, isClicked = false, isClicked1 = false;
-        public ForgetPasssword3()
+        string userEmail;
+        public ForgetPasssword3(string email)
         {
             InitializeComponent();
+            this.userEmail = email;
         }
 
         private void pbPrivacy1_Click(object sender, EventArgs e)
@@ -75,7 +78,7 @@ namespace NEXUS.User_Controls
                 tbxConfirmPassword.Text = "";
             }
 
-            if (isPasswordVisible)
+            if (isPasswordVisible1)
             {
                 pbPrivacy2.Image = Resources.show_eye;
                 tbxConfirmPassword.UseSystemPasswordChar = false;
@@ -92,15 +95,29 @@ namespace NEXUS.User_Controls
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if(tbxNewPassword.Text == tbxConfirmPassword.Text)
+            DialogBox dialogBox = new DialogBox();
+            if (tbxNewPassword.Text == tbxConfirmPassword.Text)
             {
                 string newPassword = Cryptography.ToSHA256(tbxNewPassword.Text);
+                DatabaseManagement.UpdatePassword(newPassword, userEmail);
 
+                Form parentForm = this.FindForm();
+                if (parentForm != null)
+                {
+                    dialogBox.ShowIcon("password updated");
+                    if (dialogBox.ShowDialog() == DialogResult.OK)
+                    {
+                        dialogBox.Close();
+                        parentForm.Close();
+                    }
+                }
             }
             else
             {
-
+                dialogBox.ShowIcon("passwords mismatch");
+                dialogBox.ShowDialog();
             }
+
         }
     }
 }

@@ -3,8 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|c:\\users\\shan michael\\source\\repos\\nexus\\forms\\dialogbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:forms\\dialogbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|c:\\users\\shan michael\\source\\repos\\nexus\\user controls\\forgetpasssword3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:user controls\\forgetpasssword3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|c:\\users\\shan michael\\source\\repos\\nexus\\classes\\databasemanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:classes\\databasemanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|c:\\users\\shan michael\\source\\repos\\nexus\\user controls\\forgetpassword2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:user controls\\forgetpassword2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|c:\\users\\shan michael\\source\\repos\\nexus\\user controls\\forgetpassword1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:user controls\\forgetpassword1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|c:\\users\\shan michael\\source\\repos\\nexus\\user controls\\paymentuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:user controls\\paymentuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\forms\\dialogbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:forms\\dialogbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|c:\\users\\shan michael\\source\\repos\\nexus\\classes\\cryptography.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,14 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\user controls\\forgetpassword1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:user controls\\forgetpassword1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|c:\\users\\shan michael\\source\\repos\\nexus\\user controls\\forgetpassword2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:user controls\\forgetpassword2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|c:\\users\\shan michael\\source\\repos\\nexus\\user controls\\forgetpassword1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:user controls\\forgetpassword1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|c:\\users\\shan michael\\source\\repos\\nexus\\forms\\forgetpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -41,14 +57,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\forms\\register2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:forms\\register2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|c:\\users\\shan michael\\source\\repos\\nexus\\forms\\dialogbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:forms\\dialogbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\forms\\dialogbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:forms\\dialogbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\user controls\\forgetpassword2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -71,10 +79,6 @@
       "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:classes\\userinformationclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|c:\\users\\shan michael\\source\\repos\\nexus\\classes\\databasemanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:classes\\databasemanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|c:\\users\\shan michael\\source\\repos\\nexus\\forms\\triplogging.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:forms\\triplogging.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -89,10 +93,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|c:\\users\\shan michael\\source\\repos\\nexus\\forms\\welcomeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:forms\\welcomeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|c:\\users\\shan michael\\source\\repos\\nexus\\user controls\\paymentuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:user controls\\paymentuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|c:\\users\\shan michael\\source\\repos\\nexus\\forms\\profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -350,11 +350,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 71,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "Dashboard.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\Dashboard.cs",
               "RelativeDocumentMoniker": "Forms\\Dashboard.cs",
@@ -366,7 +366,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "Dashboard.cs",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\Dashboard.cs",
               "RelativeDocumentMoniker": "Forms\\Dashboard.cs",
@@ -383,46 +383,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ForgetPasssword3.cs",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\ForgetPasssword3.cs",
               "RelativeDocumentMoniker": "User Controls\\ForgetPasssword3.cs",
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\ForgetPasssword3.cs",
               "RelativeToolTip": "User Controls\\ForgetPasssword3.cs",
-              "ViewState": "AQIAAFQAAAAAAAAAAAAmwGEAAAAAAAAA",
+              "ViewState": "AQIAAF4AAAAAAAAAAAAmwHQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-12T12:24:49.432Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "ForgetPassword2.cs",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\ForgetPassword2.cs",
               "RelativeDocumentMoniker": "User Controls\\ForgetPassword2.cs",
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\ForgetPassword2.cs",
               "RelativeToolTip": "User Controls\\ForgetPassword2.cs",
-              "ViewState": "AQIAADwAAAAAAAAAAAAMwFMAAAASAAAA",
+              "ViewState": "AQIAAEMAAAAAAAAAAAAcwFEAAABRAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-12T11:28:14.534Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "ForgetPassword1.cs",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\ForgetPassword1.cs",
               "RelativeDocumentMoniker": "User Controls\\ForgetPassword1.cs",
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\ForgetPassword1.cs",
               "RelativeToolTip": "User Controls\\ForgetPassword1.cs",
-              "ViewState": "AQIAAEgAAAAAAAAAAAAowGUAAAAFAAAA",
+              "ViewState": "AQIAABwAAAAAAAAAAAAgwDsAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-12T11:07:15.788Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "ForgetPassword.cs",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\ForgetPassword.cs",
               "RelativeDocumentMoniker": "Forms\\ForgetPassword.cs",
@@ -435,19 +435,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "ForgetPasssword3.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\ForgetPasssword3.cs",
               "RelativeDocumentMoniker": "User Controls\\ForgetPasssword3.cs",
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\ForgetPasssword3.cs [Design]",
               "RelativeToolTip": "User Controls\\ForgetPasssword3.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T10:36:32.939Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-04-12T10:36:32.939Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "ForgetPassword2.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\ForgetPassword2.cs",
               "RelativeDocumentMoniker": "User Controls\\ForgetPassword2.cs",
@@ -458,19 +457,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "ForgetPassword1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\ForgetPassword1.cs",
               "RelativeDocumentMoniker": "User Controls\\ForgetPassword1.cs",
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\ForgetPassword1.cs [Design]",
               "RelativeToolTip": "User Controls\\ForgetPassword1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T10:34:53.583Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-04-12T10:34:53.583Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "ForgetPassword.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\ForgetPassword.cs",
               "RelativeDocumentMoniker": "Forms\\ForgetPassword.cs",
@@ -481,31 +479,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "LogInForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\LogInForm.cs",
               "RelativeDocumentMoniker": "Forms\\LogInForm.cs",
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\LogInForm.cs [Design]",
               "RelativeToolTip": "Forms\\LogInForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T12:52:22.562Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-04-08T12:52:22.562Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "Register2.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\Register2.cs",
               "RelativeDocumentMoniker": "Forms\\Register2.cs",
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\Register2.cs [Design]",
               "RelativeToolTip": "Forms\\Register2.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T09:13:50.013Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-04-12T09:13:50.013Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "WelcomeForm.cs",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\WelcomeForm.cs",
               "RelativeDocumentMoniker": "Forms\\WelcomeForm.cs",
@@ -517,7 +513,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "Email.cs",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Classes\\Email.cs",
               "RelativeDocumentMoniker": "Classes\\Email.cs",
@@ -612,7 +608,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "LTFRB.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\LTFRB.cs",
               "RelativeDocumentMoniker": "User Controls\\LTFRB.cs",
@@ -884,7 +880,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "LogInForm.cs",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\LogInForm.cs",
               "RelativeDocumentMoniker": "Forms\\LogInForm.cs",
@@ -892,8 +888,7 @@
               "RelativeToolTip": "Forms\\LogInForm.cs",
               "ViewState": "AQIAAFAAAAAAAAAAAAAAwGAAAABMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T12:52:25.872Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-08T12:52:25.872Z"
             },
             {
               "$type": "Document",
@@ -943,7 +938,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 6,
               "Title": "DialogBox.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\DialogBox.cs",
               "RelativeDocumentMoniker": "Forms\\DialogBox.cs",
@@ -990,7 +985,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "UserInformationClass.cs",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Classes\\UserInformationClass.cs",
               "RelativeDocumentMoniker": "Classes\\UserInformationClass.cs",
@@ -1107,13 +1102,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 5,
               "Title": "PaymentUC.cs",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\PaymentUC.cs",
               "RelativeDocumentMoniker": "User Controls\\PaymentUC.cs",
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\User Controls\\PaymentUC.cs",
               "RelativeToolTip": "User Controls\\PaymentUC.cs",
-              "ViewState": "AQIAALIAAAAAAAAAAIA1wLkAAAANAAAA",
+              "ViewState": "AQIAANQAAAAAAAAAAAASwOoAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-31T11:23:05.743Z",
               "EditorCaption": ""
@@ -1155,7 +1150,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "TripLogging.cs",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\TripLogging.cs",
               "RelativeDocumentMoniker": "Forms\\TripLogging.cs",
@@ -1190,13 +1185,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 0,
               "Title": "DialogBox.cs",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\DialogBox.cs",
               "RelativeDocumentMoniker": "Forms\\DialogBox.cs",
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\DialogBox.cs",
               "RelativeToolTip": "Forms\\DialogBox.cs",
-              "ViewState": "AQIAAFYAAAAAAAAAAAAwwGwAAAAQAAAA",
+              "ViewState": "AQIAAFwAAAAAAAAAAAAwwHAAAABFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-30T06:35:15.431Z",
               "EditorCaption": ""
@@ -1346,19 +1341,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 2,
               "Title": "DatabaseManagement.cs",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Classes\\DatabaseManagement.cs",
               "RelativeDocumentMoniker": "Classes\\DatabaseManagement.cs",
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Classes\\DatabaseManagement.cs",
               "RelativeToolTip": "Classes\\DatabaseManagement.cs",
-              "ViewState": "AQIAALsAAAAAAAAAAAAAANoAAAA6AAAA",
+              "ViewState": "AQIAABMBAAAAAAAAAAAcwCEBAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T14:35:45.48Z"
+              "WhenOpened": "2025-03-22T14:35:45.48Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "Cryptography.cs",
               "DocumentMoniker": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Classes\\Cryptography.cs",
               "RelativeDocumentMoniker": "Classes\\Cryptography.cs",
@@ -1366,8 +1362,7 @@
               "RelativeToolTip": "Classes\\Cryptography.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAAA8AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T11:18:00.707Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-22T11:18:00.707Z"
             }
           ]
         }

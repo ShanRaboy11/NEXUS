@@ -39,7 +39,7 @@ namespace NEXUS.User_Controls
                 dialogBox.ShowDialog();
                 return;
             }
-            /*
+            
             string query = "SELECT [Email Address] FROM Accounts WHERE [Email Address] = ?";
 
             using (OleDbConnection conn = DatabaseManagement.GetConnection())
@@ -57,7 +57,7 @@ namespace NEXUS.User_Controls
                     return;
                 }
             }
-            */
+            
             Random rand = new Random();
             resetCode = rand.Next(10000, 99999).ToString();
 
@@ -84,7 +84,7 @@ namespace NEXUS.User_Controls
 
             pnlContainer.Controls.Clear();
 
-            ForgetPassword2 forgetPassword2 = new ForgetPassword2(pnlContainer, resetCode)
+            ForgetPassword2 forgetPassword2 = new ForgetPassword2(pnlContainer, resetCode, userEmail)
             {
                 Dock = DockStyle.Fill
             };
