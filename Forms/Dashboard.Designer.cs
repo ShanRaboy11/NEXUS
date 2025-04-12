@@ -74,6 +74,8 @@
             pbProfile = new PictureBox();
             pictureBox5 = new PictureBox();
             cyberButton2 = new ReaLTaiizor.Controls.CyberButton();
+            btnNotification = new FontAwesome.Sharp.IconButton();
+            pbNotified = new PictureBox();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -88,6 +90,7 @@
             ((System.ComponentModel.ISupportInitialize)pbProfilePicture).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbProfile).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbNotified).BeginInit();
             SuspendLayout();
             // 
             // panel2
@@ -391,6 +394,8 @@
             // panel3
             // 
             panel3.BackColor = Color.White;
+            panel3.Controls.Add(pbNotified);
+            panel3.Controls.Add(btnNotification);
             panel3.Controls.Add(pbTransLogo);
             panel3.Controls.Add(iconButton1);
             panel3.Controls.Add(lblFare);
@@ -739,7 +744,7 @@
             pbProfile.BackColor = Color.FromArgb(38, 36, 68);
             pbProfile.Cursor = Cursors.Hand;
             pbProfile.Image = (Image)resources.GetObject("pbProfile.Image");
-            pbProfile.Location = new Point(256, 29);
+            pbProfile.Location = new Point(196, 29);
             pbProfile.Name = "pbProfile";
             pbProfile.Size = new Size(48, 50);
             pbProfile.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -799,6 +804,30 @@
             cyberButton2.Timer_Effect_1 = 5;
             cyberButton2.Timer_RGB = 300;
             // 
+            // btnNotification
+            // 
+            btnNotification.BackColor = Color.FromArgb(38, 36, 68);
+            btnNotification.FlatStyle = FlatStyle.Flat;
+            btnNotification.IconChar = FontAwesome.Sharp.IconChar.Bell;
+            btnNotification.IconColor = Color.White;
+            btnNotification.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnNotification.IconSize = 40;
+            btnNotification.Location = new Point(259, 35);
+            btnNotification.Name = "btnNotification";
+            btnNotification.Size = new Size(53, 42);
+            btnNotification.TabIndex = 55;
+            btnNotification.UseVisualStyleBackColor = false;
+            // 
+            // pbNotified
+            // 
+            pbNotified.Image = Properties.Resources._1__1_;
+            pbNotified.Location = new Point(258, 33);
+            pbNotified.Name = "pbNotified";
+            pbNotified.Size = new Size(53, 42);
+            pbNotified.TabIndex = 56;
+            pbNotified.TabStop = false;
+            pbNotified.Visible = false;
+            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -830,6 +859,7 @@
             ((System.ComponentModel.ISupportInitialize)pbProfilePicture).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbProfile).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbNotified).EndInit();
             ResumeLayout(false);
         }
 
@@ -879,5 +909,7 @@
         private FontAwesome.Sharp.IconButton iconButton1;
         private PictureBox pbTransLogo;
         private Label lblPoints1;
+        private FontAwesome.Sharp.IconButton btnNotification;
+        private PictureBox pbNotified;
     }
 }
