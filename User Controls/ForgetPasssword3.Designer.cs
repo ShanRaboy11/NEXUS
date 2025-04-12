@@ -34,15 +34,15 @@
             lblUserFName = new Label();
             btnLogin = new ReaLTaiizor.Controls.CyberButton();
             pnlUsername = new Panel();
-            tbxEmailRevoery = new TextBox();
+            pbPrivacy1 = new PictureBox();
+            tbxNewPassword = new TextBox();
             panel1 = new Panel();
-            textBox1 = new TextBox();
-            pbPrivacy = new PictureBox();
-            pictureBox1 = new PictureBox();
+            pbPrivacy2 = new PictureBox();
+            tbxConfirmPassword = new TextBox();
             pnlUsername.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbPrivacy1).BeginInit();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pbPrivacy).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbPrivacy2).BeginInit();
             SuspendLayout();
             // 
             // richTextBox1
@@ -136,71 +136,73 @@
             // 
             pnlUsername.BackColor = Color.FromArgb(176, 233, 255);
             pnlUsername.BackgroundImageLayout = ImageLayout.None;
-            pnlUsername.Controls.Add(pbPrivacy);
-            pnlUsername.Controls.Add(tbxEmailRevoery);
+            pnlUsername.Controls.Add(pbPrivacy1);
+            pnlUsername.Controls.Add(tbxNewPassword);
             pnlUsername.Location = new Point(38, 200);
             pnlUsername.Name = "pnlUsername";
             pnlUsername.Size = new Size(311, 48);
             pnlUsername.TabIndex = 48;
             // 
-            // tbxEmailRevoery
+            // pbPrivacy1
             // 
-            tbxEmailRevoery.BackColor = Color.FromArgb(176, 233, 255);
-            tbxEmailRevoery.BorderStyle = BorderStyle.None;
-            tbxEmailRevoery.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbxEmailRevoery.ForeColor = Color.FromArgb(24, 60, 114);
-            tbxEmailRevoery.Location = new Point(17, 14);
-            tbxEmailRevoery.Name = "tbxEmailRevoery";
-            tbxEmailRevoery.Size = new Size(275, 20);
-            tbxEmailRevoery.TabIndex = 9;
-            tbxEmailRevoery.TabStop = false;
-            tbxEmailRevoery.Text = "New Password";
+            pbPrivacy1.Cursor = Cursors.Hand;
+            pbPrivacy1.Image = Properties.Resources._3844443_disable_eye_inactive_see_show_icon;
+            pbPrivacy1.Location = new Point(271, 14);
+            pbPrivacy1.Name = "pbPrivacy1";
+            pbPrivacy1.Size = new Size(33, 21);
+            pbPrivacy1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pbPrivacy1.TabIndex = 10;
+            pbPrivacy1.TabStop = false;
+            pbPrivacy1.Click += pbPrivacy1_Click;
+            // 
+            // tbxNewPassword
+            // 
+            tbxNewPassword.BackColor = Color.FromArgb(176, 233, 255);
+            tbxNewPassword.BorderStyle = BorderStyle.None;
+            tbxNewPassword.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbxNewPassword.ForeColor = Color.FromArgb(24, 60, 114);
+            tbxNewPassword.Location = new Point(17, 14);
+            tbxNewPassword.Name = "tbxNewPassword";
+            tbxNewPassword.Size = new Size(257, 20);
+            tbxNewPassword.TabIndex = 9;
+            tbxNewPassword.TabStop = false;
+            tbxNewPassword.Text = "New Password";
+            tbxNewPassword.Click += tbxNewPassword_Click;
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(176, 233, 255);
             panel1.BackgroundImageLayout = ImageLayout.None;
-            panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(pbPrivacy2);
+            panel1.Controls.Add(tbxConfirmPassword);
             panel1.Location = new Point(39, 262);
             panel1.Name = "panel1";
             panel1.Size = new Size(311, 48);
             panel1.TabIndex = 54;
             // 
-            // textBox1
+            // pbPrivacy2
             // 
-            textBox1.BackColor = Color.FromArgb(176, 233, 255);
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.ForeColor = Color.FromArgb(24, 60, 114);
-            textBox1.Location = new Point(17, 14);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(275, 20);
-            textBox1.TabIndex = 9;
-            textBox1.TabStop = false;
-            textBox1.Text = "Confirm Password";
+            pbPrivacy2.Cursor = Cursors.Hand;
+            pbPrivacy2.Image = Properties.Resources._3844443_disable_eye_inactive_see_show_icon;
+            pbPrivacy2.Location = new Point(270, 14);
+            pbPrivacy2.Name = "pbPrivacy2";
+            pbPrivacy2.Size = new Size(33, 21);
+            pbPrivacy2.SizeMode = PictureBoxSizeMode.CenterImage;
+            pbPrivacy2.TabIndex = 10;
+            pbPrivacy2.TabStop = false;
             // 
-            // pbPrivacy
+            // tbxConfirmPassword
             // 
-            pbPrivacy.Cursor = Cursors.Hand;
-            pbPrivacy.Image = Properties.Resources._3844443_disable_eye_inactive_see_show_icon;
-            pbPrivacy.Location = new Point(271, 14);
-            pbPrivacy.Name = "pbPrivacy";
-            pbPrivacy.Size = new Size(33, 21);
-            pbPrivacy.SizeMode = PictureBoxSizeMode.CenterImage;
-            pbPrivacy.TabIndex = 10;
-            pbPrivacy.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Cursor = Cursors.Hand;
-            pictureBox1.Image = Properties.Resources._3844443_disable_eye_inactive_see_show_icon;
-            pictureBox1.Location = new Point(270, 14);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(33, 21);
-            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox1.TabIndex = 10;
-            pictureBox1.TabStop = false;
+            tbxConfirmPassword.BackColor = Color.FromArgb(176, 233, 255);
+            tbxConfirmPassword.BorderStyle = BorderStyle.None;
+            tbxConfirmPassword.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbxConfirmPassword.ForeColor = Color.FromArgb(24, 60, 114);
+            tbxConfirmPassword.Location = new Point(17, 14);
+            tbxConfirmPassword.Name = "tbxConfirmPassword";
+            tbxConfirmPassword.Size = new Size(256, 20);
+            tbxConfirmPassword.TabIndex = 9;
+            tbxConfirmPassword.TabStop = false;
+            tbxConfirmPassword.Text = "Confirm Password";
             // 
             // ForgetPasssword3
             // 
@@ -218,10 +220,10 @@
             Size = new Size(397, 458);
             pnlUsername.ResumeLayout(false);
             pnlUsername.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pbPrivacy1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pbPrivacy).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbPrivacy2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -234,10 +236,10 @@
         private Label lblUserFName;
         private ReaLTaiizor.Controls.CyberButton btnLogin;
         private Panel pnlUsername;
-        private TextBox tbxEmailRevoery;
+        private TextBox tbxNewPassword;
         private Panel panel1;
-        private TextBox textBox1;
-        private PictureBox pbPrivacy;
-        private PictureBox pictureBox1;
+        private TextBox tbxConfirmPassword;
+        private PictureBox pbPrivacy1;
+        private PictureBox pbPrivacy2;
     }
 }
