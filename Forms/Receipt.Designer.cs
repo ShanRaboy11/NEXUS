@@ -37,25 +37,31 @@
             lblAmount = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             panel1 = new Panel();
-            panel2 = new Panel();
-            panel3 = new Panel();
-            panel4 = new Panel();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
-            pictureBox2 = new PictureBox();
-            pictureBox3 = new PictureBox();
-            pictureBox4 = new PictureBox();
-            pictureBox5 = new PictureBox();
+            lblRefNumber = new Label();
             label1 = new Label();
-            label2 = new Label();
+            pictureBox2 = new PictureBox();
+            panel2 = new Panel();
+            pictureBox4 = new PictureBox();
+            panel3 = new Panel();
+            pictureBox3 = new PictureBox();
+            panel4 = new Panel();
+            pictureBox5 = new PictureBox();
+            btnPDF = new FontAwesome.Sharp.IconButton();
+            label3 = new Label();
+            lblDT = new Label();
+            label5 = new Label();
+            lblPassenger = new Label();
+            label7 = new Label();
+            lblDriver = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
-            panel2.SuspendLayout();
-            panel3.SuspendLayout();
-            panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             SuspendLayout();
             // 
@@ -149,7 +155,7 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(label2);
+            panel1.Controls.Add(lblRefNumber);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(pictureBox2);
             panel1.Dock = DockStyle.Fill;
@@ -158,53 +164,25 @@
             panel1.Size = new Size(188, 92);
             panel1.TabIndex = 0;
             // 
-            // panel2
+            // lblRefNumber
             // 
-            panel2.Controls.Add(pictureBox4);
-            panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(20, 101);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(188, 92);
-            panel2.TabIndex = 1;
+            lblRefNumber.Font = new Font("Inter SemiBold", 16F, FontStyle.Bold);
+            lblRefNumber.ForeColor = Color.FromArgb(24, 60, 114);
+            lblRefNumber.Location = new Point(12, 42);
+            lblRefNumber.Name = "lblRefNumber";
+            lblRefNumber.Size = new Size(159, 31);
+            lblRefNumber.TabIndex = 2;
+            lblRefNumber.Text = "000000112";
             // 
-            // panel3
+            // label1
             // 
-            panel3.Controls.Add(pictureBox3);
-            panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(214, 3);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(180, 92);
-            panel3.TabIndex = 2;
-            // 
-            // panel4
-            // 
-            panel4.Controls.Add(pictureBox5);
-            panel4.Dock = DockStyle.Fill;
-            panel4.Location = new Point(214, 101);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(180, 92);
-            panel4.TabIndex = 3;
-            // 
-            // iconButton1
-            // 
-            iconButton1.Dock = DockStyle.Bottom;
-            iconButton1.FlatAppearance.BorderSize = 0;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.Font = new Font("Inter Medium", 15F, FontStyle.Bold);
-            iconButton1.ForeColor = Color.FromArgb(24, 60, 114);
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.Download;
-            iconButton1.IconColor = Color.FromArgb(24, 60, 114);
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 40;
-            iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton1.Location = new Point(0, 500);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Padding = new Padding(95, 0, 0, 0);
-            iconButton1.Size = new Size(416, 78);
-            iconButton1.TabIndex = 59;
-            iconButton1.Text = "         Get PDF Receipt";
-            iconButton1.TextAlign = ContentAlignment.MiddleLeft;
-            iconButton1.UseVisualStyleBackColor = true;
+            label1.AutoSize = true;
+            label1.Font = new Font("Inter", 10.75F);
+            label1.Location = new Point(11, 11);
+            label1.Name = "label1";
+            label1.Size = new Size(96, 22);
+            label1.TabIndex = 1;
+            label1.Text = "Ref Number";
             // 
             // pictureBox2
             // 
@@ -217,16 +195,16 @@
             pictureBox2.TabIndex = 0;
             pictureBox2.TabStop = false;
             // 
-            // pictureBox3
+            // panel2
             // 
-            pictureBox3.Dock = DockStyle.Fill;
-            pictureBox3.Image = Properties.Resources.roundcorner;
-            pictureBox3.Location = new Point(0, 0);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(180, 92);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 1;
-            pictureBox3.TabStop = false;
+            panel2.Controls.Add(lblPassenger);
+            panel2.Controls.Add(label5);
+            panel2.Controls.Add(pictureBox4);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(20, 101);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(188, 92);
+            panel2.TabIndex = 1;
             // 
             // pictureBox4
             // 
@@ -239,6 +217,39 @@
             pictureBox4.TabIndex = 1;
             pictureBox4.TabStop = false;
             // 
+            // panel3
+            // 
+            panel3.Controls.Add(lblDT);
+            panel3.Controls.Add(label3);
+            panel3.Controls.Add(pictureBox3);
+            panel3.Dock = DockStyle.Fill;
+            panel3.Location = new Point(214, 3);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(180, 92);
+            panel3.TabIndex = 2;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Dock = DockStyle.Fill;
+            pictureBox3.Image = Properties.Resources.roundcorner;
+            pictureBox3.Location = new Point(0, 0);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(180, 92);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 1;
+            pictureBox3.TabStop = false;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(lblDriver);
+            panel4.Controls.Add(label7);
+            panel4.Controls.Add(pictureBox5);
+            panel4.Dock = DockStyle.Fill;
+            panel4.Location = new Point(214, 101);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(180, 92);
+            panel4.TabIndex = 3;
+            // 
             // pictureBox5
             // 
             pictureBox5.Dock = DockStyle.Fill;
@@ -250,26 +261,86 @@
             pictureBox5.TabIndex = 1;
             pictureBox5.TabStop = false;
             // 
-            // label1
+            // btnPDF
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Inter", 10.75F);
-            label1.Location = new Point(11, 11);
-            label1.Name = "label1";
-            label1.Size = new Size(96, 22);
-            label1.TabIndex = 1;
-            label1.Text = "Ref Number";
+            btnPDF.Dock = DockStyle.Bottom;
+            btnPDF.FlatAppearance.BorderSize = 0;
+            btnPDF.FlatStyle = FlatStyle.Flat;
+            btnPDF.Font = new Font("Inter Medium", 15F, FontStyle.Bold);
+            btnPDF.ForeColor = Color.FromArgb(24, 60, 114);
+            btnPDF.IconChar = FontAwesome.Sharp.IconChar.Download;
+            btnPDF.IconColor = Color.FromArgb(24, 60, 114);
+            btnPDF.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnPDF.IconSize = 40;
+            btnPDF.ImageAlign = ContentAlignment.MiddleLeft;
+            btnPDF.Location = new Point(0, 500);
+            btnPDF.Name = "btnPDF";
+            btnPDF.Padding = new Padding(95, 0, 0, 0);
+            btnPDF.Size = new Size(416, 78);
+            btnPDF.TabIndex = 59;
+            btnPDF.Text = "         Get PDF Receipt";
+            btnPDF.TextAlign = ContentAlignment.MiddleLeft;
+            btnPDF.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // label3
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Inter SemiBold", 16F, FontStyle.Bold);
-            label2.ForeColor = Color.FromArgb(24, 60, 114);
-            label2.Location = new Point(12, 42);
-            label2.Name = "label2";
-            label2.Size = new Size(136, 31);
-            label2.TabIndex = 2;
-            label2.Text = "000000112";
+            label3.AutoSize = true;
+            label3.Font = new Font("Inter", 10.75F);
+            label3.Location = new Point(12, 11);
+            label3.Name = "label3";
+            label3.Size = new Size(112, 22);
+            label3.TabIndex = 2;
+            label3.Text = "Payment Time";
+            // 
+            // lblDT
+            // 
+            lblDT.Font = new Font("Inter SemiBold", 16F, FontStyle.Bold);
+            lblDT.ForeColor = Color.FromArgb(24, 60, 114);
+            lblDT.Location = new Point(6, 42);
+            lblDT.Name = "lblDT";
+            lblDT.Size = new Size(165, 31);
+            lblDT.TabIndex = 3;
+            lblDT.Text = "000000112";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Inter", 10.75F);
+            label5.Location = new Point(12, 11);
+            label5.Name = "label5";
+            label5.Size = new Size(86, 22);
+            label5.TabIndex = 3;
+            label5.Text = "Passenger";
+            // 
+            // lblPassenger
+            // 
+            lblPassenger.Font = new Font("Inter SemiBold", 16F, FontStyle.Bold);
+            lblPassenger.ForeColor = Color.FromArgb(24, 60, 114);
+            lblPassenger.Location = new Point(12, 41);
+            lblPassenger.Name = "lblPassenger";
+            lblPassenger.Size = new Size(165, 31);
+            lblPassenger.TabIndex = 4;
+            lblPassenger.Text = "000000112";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Inter", 10.75F);
+            label7.Location = new Point(12, 11);
+            label7.Name = "label7";
+            label7.Size = new Size(54, 22);
+            label7.TabIndex = 4;
+            label7.Text = "Driver";
+            // 
+            // lblDriver
+            // 
+            lblDriver.Font = new Font("Inter SemiBold", 16F, FontStyle.Bold);
+            lblDriver.ForeColor = Color.FromArgb(24, 60, 114);
+            lblDriver.Location = new Point(7, 41);
+            lblDriver.Name = "lblDriver";
+            lblDriver.Size = new Size(165, 31);
+            lblDriver.TabIndex = 5;
+            lblDriver.Text = "000000112";
             // 
             // Receipt
             // 
@@ -277,7 +348,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 249, 255);
             ClientSize = new Size(416, 578);
-            Controls.Add(iconButton1);
+            Controls.Add(btnPDF);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(richTextBox1);
             Controls.Add(spaceSeparatorHorizontal1);
@@ -294,12 +365,15 @@
             tableLayoutPanel1.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel3.ResumeLayout(false);
-            panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -318,12 +392,18 @@
         private Panel panel2;
         private Panel panel3;
         private Panel panel4;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btnPDF;
         private PictureBox pictureBox2;
         private PictureBox pictureBox4;
         private PictureBox pictureBox3;
         private PictureBox pictureBox5;
         private Label label1;
-        private Label label2;
+        private Label lblRefNumber;
+        private Label lblPassenger;
+        private Label label5;
+        private Label lblDT;
+        private Label label3;
+        private Label lblDriver;
+        private Label label7;
     }
 }
