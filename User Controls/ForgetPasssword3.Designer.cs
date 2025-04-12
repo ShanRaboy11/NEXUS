@@ -131,6 +131,7 @@
             btnLogin.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             btnLogin.Timer_Effect_1 = 5;
             btnLogin.Timer_RGB = 300;
+            btnLogin.Click += btnLogin_Click;
             // 
             // pnlUsername
             // 
@@ -190,6 +191,7 @@
             pbPrivacy2.SizeMode = PictureBoxSizeMode.CenterImage;
             pbPrivacy2.TabIndex = 10;
             pbPrivacy2.TabStop = false;
+            pbPrivacy2.Click += pbPrivacy2_Click;
             // 
             // tbxConfirmPassword
             // 
@@ -203,6 +205,7 @@
             tbxConfirmPassword.TabIndex = 9;
             tbxConfirmPassword.TabStop = false;
             tbxConfirmPassword.Text = "Confirm Password";
+            tbxConfirmPassword.Click += tbxConfirmPassword_Click;
             // 
             // ForgetPasssword3
             // 

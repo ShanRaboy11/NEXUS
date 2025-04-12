@@ -1,4 +1,5 @@
-﻿using NEXUS.Properties;
+﻿using NEXUS.Classes;
+using NEXUS.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -53,6 +54,53 @@ namespace NEXUS.User_Controls
             tbxNewPassword.Text = "";
             tbxNewPassword.UseSystemPasswordChar = true;
             tbxNewPassword.Font = new Font("Inter", 9, FontStyle.Regular);
+        }
+
+        private void tbxConfirmPassword_Click(object sender, EventArgs e)
+        {
+            if (isClicked1) return;
+
+            isClicked1 = true;
+            tbxConfirmPassword.Text = "";
+            tbxConfirmPassword.UseSystemPasswordChar = true;
+            tbxConfirmPassword.Font = new Font("Inter", 9, FontStyle.Regular);
+        }
+
+        private void pbPrivacy2_Click(object sender, EventArgs e)
+        {
+            isPasswordVisible1 = !isPasswordVisible1;
+
+            if (tbxConfirmPassword.Text == "Confirm Password")
+            {
+                tbxConfirmPassword.Text = "";
+            }
+
+            if (isPasswordVisible)
+            {
+                pbPrivacy2.Image = Resources.show_eye;
+                tbxConfirmPassword.UseSystemPasswordChar = false;
+                tbxConfirmPassword.TabStop = false;
+                tbxConfirmPassword.Font = new Font("Inter", 12, FontStyle.Regular);
+            }
+            else
+            {
+                pbPrivacy2.Image = Resources._3844443_disable_eye_inactive_see_show_icon;
+                tbxConfirmPassword.UseSystemPasswordChar = true;
+                tbxConfirmPassword.Font = new Font("Inter", 9, FontStyle.Regular);
+            }
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if(tbxNewPassword.Text == tbxConfirmPassword.Text)
+            {
+                string newPassword = Cryptography.ToSHA256(tbxNewPassword.Text);
+
+            }
+            else
+            {
+
+            }
         }
     }
 }

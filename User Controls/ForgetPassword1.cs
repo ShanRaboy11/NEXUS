@@ -22,6 +22,7 @@ namespace NEXUS.User_Controls
     {
         private string resetCode;
         Panel pnlContainer;
+        bool isClicked;
         public ForgetPassword1(Panel pnlcontainer)
         {
             InitializeComponent();
@@ -93,6 +94,9 @@ namespace NEXUS.User_Controls
 
         private void txtEmail_Click(object sender, EventArgs e)
         {
+            if (isClicked) return;
+
+            isClicked = true;
             txtEmail.Text = "";
         }
     }
