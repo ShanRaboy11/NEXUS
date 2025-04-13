@@ -45,10 +45,6 @@ namespace NEXUS.Forms
             label2.Parent = pnlReceipt;
             line1.Parent = pnlReceipt;
             label4.Parent = pnlReceipt;
-            pictureBox2.Parent = pnlReceipt;
-            pictureBox3.Parent = pnlReceipt;
-            pictureBox4.Parent = pnlReceipt;
-            pictureBox5.Parent = pnlReceipt;
             label1.Parent = pnlReceipt;
             label3.Parent = pnlReceipt;
             label5.Parent = pnlReceipt;
@@ -99,7 +95,7 @@ namespace NEXUS.Forms
             {
                 // Define page size based on your panel's size (416x516 pixels)
                 float width = 416f;
-                float height = 509f;
+                float height = 518f;
 
                 iTextSharp.text.Rectangle pageSize = new iTextSharp.text.Rectangle(width, height);
                 iTextSharp.text.Document pdfDoc = new iTextSharp.text.Document(pageSize, 0, 0, 0, 0);
@@ -125,11 +121,12 @@ namespace NEXUS.Forms
         private Bitmap CaptureControl(Control control)
         {
             Bitmap bmp = new Bitmap(control.Width, control.Height);
-            control.Invoke(new Action(() => {
+            control.Invoke(new Action(() =>
+            {
                 control.DrawToBitmap(bmp, new System.Drawing.Rectangle(0, 0, control.Width, control.Height));
             }));
 
-            // This workaround captures overlapping child controls more reliably
+
             foreach (Control child in control.Controls)
             {
                 if (child.Visible)
