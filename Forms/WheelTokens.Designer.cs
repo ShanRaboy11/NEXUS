@@ -42,15 +42,17 @@
             panel3 = new Panel();
             panel2 = new Panel();
             panel1 = new Panel();
+            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(193, 12);
+            pictureBox1.Location = new Point(179, -8);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(287, 223);
+            pictureBox1.Size = new Size(306, 245);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -60,29 +62,31 @@
             label1.AutoSize = true;
             label1.Font = new Font("Inter", 25F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(38, 36, 68);
-            label1.Location = new Point(260, 19);
+            label1.Location = new Point(250, 18);
             label1.Name = "label1";
-            label1.Size = new Size(255, 49);
+            label1.Size = new Size(270, 49);
             label1.TabIndex = 1;
-            label1.Text = "Wheel Tokens";
+            label1.Text = "WHEEL TOKEN";
             // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.White;
             label2.Font = new Font("Inter Medium", 16.25F, FontStyle.Bold);
             label2.ForeColor = Color.FromArgb(24, 60, 114);
-            label2.Location = new Point(256, 189);
+            label2.Location = new Point(256, 194);
+            label2.Margin = new Padding(0);
             label2.Name = "label2";
-            label2.Size = new Size(246, 31);
+            label2.Size = new Size(256, 31);
             label2.TabIndex = 2;
-            label2.Text = "1 Wheel Token = 0.5 ₱";
+            label2.Text = "1 Wheel Token = ₱ 1.00";
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Inter", 13.75F);
             label3.ForeColor = Color.FromArgb(24, 60, 114);
-            label3.Location = new Point(31, 247);
+            label3.Location = new Point(28, 259);
             label3.Name = "label3";
             label3.Size = new Size(583, 27);
             label3.TabIndex = 3;
@@ -93,18 +97,18 @@
             label4.AutoSize = true;
             label4.Font = new Font("Inter", 13.75F);
             label4.ForeColor = Color.FromArgb(24, 60, 114);
-            label4.Location = new Point(31, 298);
+            label4.Location = new Point(28, 291);
             label4.Name = "label4";
-            label4.Size = new Size(361, 27);
+            label4.Size = new Size(381, 27);
             label4.TabIndex = 4;
-            label4.Text = "Complete a ride to earn 1 Wheel Token.";
+            label4.Text = "Complete a ride to earn 0.5 Wheel Token.";
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Inter", 13.75F);
             label5.ForeColor = Color.FromArgb(24, 60, 114);
-            label5.Location = new Point(31, 368);
+            label5.Location = new Point(29, 354);
             label5.Name = "label5";
             label5.Size = new Size(669, 27);
             label5.TabIndex = 5;
@@ -115,7 +119,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Inter", 13.75F);
             label6.ForeColor = Color.FromArgb(24, 60, 114);
-            label6.Location = new Point(31, 398);
+            label6.Location = new Point(29, 387);
             label6.Name = "label6";
             label6.Size = new Size(441, 27);
             label6.TabIndex = 6;
@@ -131,7 +135,7 @@
             btnOK1.ColorBackground = Color.FromArgb(24, 60, 114);
             btnOK1.ColorBackground_1 = Color.FromArgb(24, 60, 114);
             btnOK1.ColorBackground_2 = Color.FromArgb(24, 60, 114);
-            btnOK1.ColorBackground_Pen = Color.FromArgb(128, 223, 255);
+            btnOK1.ColorBackground_Pen = Color.FromArgb(153, 229, 255);
             btnOK1.ColorLighting = Color.FromArgb(24, 60, 114);
             btnOK1.ColorPen_1 = Color.FromArgb(24, 60, 114);
             btnOK1.ColorPen_2 = Color.FromArgb(24, 60, 114);
@@ -148,7 +152,7 @@
             btnOK1.Lighting = false;
             btnOK1.LinearGradient_Background = false;
             btnOK1.LinearGradientPen = false;
-            btnOK1.Location = new Point(335, 451);
+            btnOK1.Location = new Point(335, 443);
             btnOK1.Name = "btnOK1";
             btnOK1.PenWidth = 15;
             btnOK1.Rounding = true;
@@ -168,7 +172,7 @@
             spaceSeparatorHorizontal1.Customization = "Kioq/yoqKv8jIyP/Kioq/w==";
             spaceSeparatorHorizontal1.Font = new Font("Verdana", 8F);
             spaceSeparatorHorizontal1.Image = null;
-            spaceSeparatorHorizontal1.Location = new Point(225, 71);
+            spaceSeparatorHorizontal1.Location = new Point(225, 73);
             spaceSeparatorHorizontal1.Name = "spaceSeparatorHorizontal1";
             spaceSeparatorHorizontal1.NoRounding = false;
             spaceSeparatorHorizontal1.Size = new Size(325, 4);
@@ -212,12 +216,24 @@
             panel1.Size = new Size(726, 4);
             panel1.TabIndex = 35;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(246, 181);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(278, 59);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 39;
+            pictureBox2.TabStop = false;
+            // 
             // WheelTokens
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(153, 229, 255);
+            BackColor = Color.FromArgb(230, 249, 255);
             ClientSize = new Size(726, 506);
+            Controls.Add(label2);
+            Controls.Add(pictureBox2);
             Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(panel2);
@@ -228,7 +244,6 @@
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
             Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -238,6 +253,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "WheelTokens";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -257,5 +273,6 @@
         private Panel panel3;
         private Panel panel2;
         private Panel panel1;
+        private PictureBox pictureBox2;
     }
 }
