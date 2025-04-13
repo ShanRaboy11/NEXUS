@@ -53,7 +53,7 @@
             // 
             pbAbout.Cursor = Cursors.Hand;
             pbAbout.Image = Properties.Resources.Removal_915;
-            pbAbout.Location = new Point(6, 3);
+            pbAbout.Location = new Point(6, 9);
             pbAbout.Name = "pbAbout";
             pbAbout.Size = new Size(58, 60);
             pbAbout.SizeMode = PictureBoxSizeMode.Zoom;
@@ -65,7 +65,7 @@
             lblUserFName.AutoSize = true;
             lblUserFName.Font = new Font("Inter ExtraBold", 18F, FontStyle.Bold);
             lblUserFName.ForeColor = Color.FromArgb(24, 60, 114);
-            lblUserFName.Location = new Point(75, 16);
+            lblUserFName.Location = new Point(75, 22);
             lblUserFName.Name = "lblUserFName";
             lblUserFName.Size = new Size(222, 35);
             lblUserFName.TabIndex = 34;
@@ -76,10 +76,10 @@
             spaceSeparatorHorizontal1.Customization = "Kioq/yoqKv8jIyP/Kioq/w==";
             spaceSeparatorHorizontal1.Font = new Font("Verdana", 8F);
             spaceSeparatorHorizontal1.Image = null;
-            spaceSeparatorHorizontal1.Location = new Point(-49, 71);
+            spaceSeparatorHorizontal1.Location = new Point(-49, 79);
             spaceSeparatorHorizontal1.Name = "spaceSeparatorHorizontal1";
             spaceSeparatorHorizontal1.NoRounding = false;
-            spaceSeparatorHorizontal1.Size = new Size(495, 4);
+            spaceSeparatorHorizontal1.Size = new Size(400, 4);
             spaceSeparatorHorizontal1.TabIndex = 49;
             spaceSeparatorHorizontal1.Text = "spaceSeparatorHorizontal1";
             spaceSeparatorHorizontal1.Transparent = false;

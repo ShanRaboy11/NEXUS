@@ -32,6 +32,8 @@
             pbAbout = new PictureBox();
             lblUserFName = new Label();
             panel1 = new Panel();
+            label7 = new Label();
+            richTextBox7 = new RichTextBox();
             spaceSeparatorHorizontal1 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
             label6 = new Label();
             richTextBox6 = new RichTextBox();
@@ -45,8 +47,6 @@
             richTextBox2 = new RichTextBox();
             richTextBox1 = new RichTextBox();
             label1 = new Label();
-            label7 = new Label();
-            richTextBox7 = new RichTextBox();
             ((System.ComponentModel.ISupportInitialize)pbAbout).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -55,7 +55,7 @@
             // 
             pbAbout.Cursor = Cursors.Hand;
             pbAbout.Image = Properties.Resources.Removal_915;
-            pbAbout.Location = new Point(6, 3);
+            pbAbout.Location = new Point(6, 11);
             pbAbout.Name = "pbAbout";
             pbAbout.Size = new Size(58, 60);
             pbAbout.SizeMode = PictureBoxSizeMode.Zoom;
@@ -67,7 +67,7 @@
             lblUserFName.AutoSize = true;
             lblUserFName.Font = new Font("Inter ExtraBold", 18F, FontStyle.Bold);
             lblUserFName.ForeColor = Color.FromArgb(24, 60, 114);
-            lblUserFName.Location = new Point(75, 16);
+            lblUserFName.Location = new Point(75, 24);
             lblUserFName.Name = "lblUserFName";
             lblUserFName.Size = new Size(329, 35);
             lblUserFName.TabIndex = 34;
@@ -99,12 +99,35 @@
             panel1.Size = new Size(690, 722);
             panel1.TabIndex = 35;
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Inter Medium", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.FromArgb(24, 60, 114);
+            label7.Location = new Point(4, 798);
+            label7.Name = "label7";
+            label7.Size = new Size(178, 30);
+            label7.TabIndex = 51;
+            label7.Text = "Safe Spaces Act";
+            // 
+            // richTextBox7
+            // 
+            richTextBox7.BackColor = Color.FromArgb(230, 249, 255);
+            richTextBox7.BorderStyle = BorderStyle.None;
+            richTextBox7.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            richTextBox7.Location = new Point(23, 832);
+            richTextBox7.Name = "richTextBox7";
+            richTextBox7.ReadOnly = true;
+            richTextBox7.Size = new Size(648, 54);
+            richTextBox7.TabIndex = 50;
+            richTextBox7.Text = "Republic Act No. 11313 prohibits gender-based sexual harassment in public spaces, including PUVs. Violators face fines and suspension or revocation of their CPC.";
+            // 
             // spaceSeparatorHorizontal1
             // 
             spaceSeparatorHorizontal1.Customization = "Kioq/yoqKv8jIyP/Kioq/w==";
             spaceSeparatorHorizontal1.Font = new Font("Verdana", 8F);
             spaceSeparatorHorizontal1.Image = null;
-            spaceSeparatorHorizontal1.Location = new Point(-49, 71);
+            spaceSeparatorHorizontal1.Location = new Point(-49, 84);
             spaceSeparatorHorizontal1.Name = "spaceSeparatorHorizontal1";
             spaceSeparatorHorizontal1.NoRounding = false;
             spaceSeparatorHorizontal1.Size = new Size(495, 4);
@@ -232,7 +255,7 @@
             richTextBox1.BackColor = Color.FromArgb(230, 249, 255);
             richTextBox1.BorderStyle = BorderStyle.None;
             richTextBox1.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            richTextBox1.Location = new Point(22, 141);
+            richTextBox1.Location = new Point(22, 143);
             richTextBox1.Name = "richTextBox1";
             richTextBox1.ReadOnly = true;
             richTextBox1.Size = new Size(648, 106);
@@ -244,34 +267,11 @@
             label1.AutoSize = true;
             label1.Font = new Font("Inter Medium", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(24, 60, 114);
-            label1.Location = new Point(6, 104);
+            label1.Location = new Point(6, 106);
             label1.Name = "label1";
             label1.Size = new Size(401, 30);
             label1.TabIndex = 36;
             label1.Text = "Franchise and Operational Compliance";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Inter Medium", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.ForeColor = Color.FromArgb(24, 60, 114);
-            label7.Location = new Point(4, 798);
-            label7.Name = "label7";
-            label7.Size = new Size(178, 30);
-            label7.TabIndex = 51;
-            label7.Text = "Safe Spaces Act";
-            // 
-            // richTextBox7
-            // 
-            richTextBox7.BackColor = Color.FromArgb(230, 249, 255);
-            richTextBox7.BorderStyle = BorderStyle.None;
-            richTextBox7.Font = new Font("Inter", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            richTextBox7.Location = new Point(23, 832);
-            richTextBox7.Name = "richTextBox7";
-            richTextBox7.ReadOnly = true;
-            richTextBox7.Size = new Size(648, 54);
-            richTextBox7.TabIndex = 50;
-            richTextBox7.Text = "Republic Act No. 11313 prohibits gender-based sexual harassment in public spaces, including PUVs. Violators face fines and suspension or revocation of their CPC.";
             // 
             // PUV
             // 

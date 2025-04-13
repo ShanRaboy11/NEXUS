@@ -33,8 +33,8 @@
             richTextBox1 = new RichTextBox();
             label1 = new Label();
             panel1 = new Panel();
-            richTextBox5 = new RichTextBox();
             pictureBox1 = new PictureBox();
+            richTextBox5 = new RichTextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -65,14 +65,14 @@
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Inter Medium", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Inter ExtraBold", 16.75F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(24, 60, 114);
             label1.Location = new Point(18, 181);
             label1.Name = "label1";
             label1.Size = new Size(650, 30);
             label1.TabIndex = 36;
-            label1.Text = "Land Transportation Franchising and Regulatory Board (LTFRB)";
+            label1.Text = "Land Transportation Franchising and Regulatory Board ";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
@@ -88,6 +88,17 @@
             panel1.Size = new Size(690, 722);
             panel1.TabIndex = 36;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Cursor = Cursors.Hand;
+            pictureBox1.Image = Properties.Resources.image_removebg_preview__12_;
+            pictureBox1.Location = new Point(260, 23);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(161, 137);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 50;
+            pictureBox1.TabStop = false;
+            // 
             // richTextBox5
             // 
             richTextBox5.BackColor = Color.FromArgb(230, 249, 255);
@@ -100,17 +111,6 @@
             richTextBox5.TabIndex = 45;
             richTextBox5.Text = resources.GetString("richTextBox5.Text");
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Cursor = Cursors.Hand;
-            pictureBox1.Image = Properties.Resources.image_removebg_preview__12_;
-            pictureBox1.Location = new Point(260, 23);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(161, 137);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 50;
-            pictureBox1.TabStop = false;
-            // 
             // LTFRB
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -120,7 +120,6 @@
             Name = "LTFRB";
             Size = new Size(690, 722);
             panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
