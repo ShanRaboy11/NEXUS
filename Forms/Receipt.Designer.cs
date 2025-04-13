@@ -127,7 +127,7 @@
             btnPDF.Location = new Point(0, 523);
             btnPDF.Margin = new Padding(3, 0, 3, 3);
             btnPDF.Name = "btnPDF";
-            btnPDF.Padding = new Padding(95, 0, 0, 0);
+            btnPDF.Padding = new Padding(105, 0, 0, 0);
             btnPDF.Size = new Size(416, 45);
             btnPDF.TabIndex = 59;
             btnPDF.Text = "         Get PDF Receipt";

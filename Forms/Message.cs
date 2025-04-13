@@ -75,6 +75,12 @@ namespace NEXUS.Forms
                 lblMessage.Text = "Your account is currently being verified.";
                 btnOK.TextButton = "OK";
             }
+            else
+            {
+                pbDialogIcon.Image = Resources.Animation___1739888639577;
+                lblMessage.Text = "Fill in required field";
+                btnOK.TextButton = "OK";
+            }
         }
 
         private void btnOK_Click(object sender, EventArgs e)

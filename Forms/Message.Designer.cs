@@ -62,7 +62,7 @@
             btnOK.ColorBackground = Color.FromArgb(24, 60, 114);
             btnOK.ColorBackground_1 = Color.FromArgb(24, 60, 114);
             btnOK.ColorBackground_2 = Color.FromArgb(24, 60, 114);
-            btnOK.ColorBackground_Pen = Color.FromArgb(153, 229, 255);
+            btnOK.ColorBackground_Pen = Color.FromArgb(128, 223, 255);
             btnOK.ColorLighting = Color.FromArgb(24, 60, 114);
             btnOK.ColorPen_1 = Color.FromArgb(24, 60, 114);
             btnOK.ColorPen_2 = Color.FromArgb(24, 60, 114);
@@ -79,7 +79,7 @@
             btnOK.Lighting = false;
             btnOK.LinearGradient_Background = false;
             btnOK.LinearGradientPen = false;
-            btnOK.Location = new Point(155, 196);
+            btnOK.Location = new Point(148, 196);
             btnOK.Name = "btnOK";
             btnOK.PenWidth = 15;
             btnOK.Rounding = true;
@@ -97,7 +97,7 @@
             // pbDialogIcon
             // 
             pbDialogIcon.Image = Properties.Resources.Animation___1743240515087;
-            pbDialogIcon.Location = new Point(124, 14);
+            pbDialogIcon.Location = new Point(125, 15);
             pbDialogIcon.Name = "pbDialogIcon";
             pbDialogIcon.Size = new Size(186, 124);
             pbDialogIcon.SizeMode = PictureBoxSizeMode.Zoom;

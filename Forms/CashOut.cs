@@ -64,6 +64,12 @@ namespace NEXUS.Forms
             Message message = new Message("cash out");
             Scan scan = new Scan(userID);
 
+            if (tbxAmount.Text == "0" || string.IsNullOrEmpty(tbxAmount.Text))
+            {
+                Message message1 = new Message("bblank");
+                scan.ShowOverlay(message1, null);
+                return;
+            }
             double amount = double.Parse(tbxAmount.Text);
             DatabaseManagement.CashOutRequest(this.userID, this.Name, amount);
             scan.ShowOverlay(message, null);
