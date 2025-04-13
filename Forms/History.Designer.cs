@@ -42,6 +42,7 @@
             dgvHistory = new Krypton.Toolkit.KryptonDataGridView();
             cmbxJeepCodes = new ComboBox();
             pbEmpty = new PictureBox();
+            receiptToolStripMenuItem = new ToolStripMenuItem();
             cmsDataGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbIcon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvHistory).BeginInit();
@@ -111,15 +112,16 @@
             // cmsDataGrid
             // 
             cmsDataGrid.Font = new Font("Segoe UI", 9F);
-            cmsDataGrid.Items.AddRange(new ToolStripItem[] { rateToolStripMenuItem });
+            cmsDataGrid.Items.AddRange(new ToolStripItem[] { rateToolStripMenuItem, receiptToolStripMenuItem });
             cmsDataGrid.Name = "contextMenuStrip1";
-            cmsDataGrid.Size = new Size(98, 26);
+            cmsDataGrid.Size = new Size(181, 78);
             // 
             // rateToolStripMenuItem
             // 
+            rateToolStripMenuItem.Font = new Font("Inter", 10F);
             rateToolStripMenuItem.Image = Properties.Resources.rate_hover;
             rateToolStripMenuItem.Name = "rateToolStripMenuItem";
-            rateToolStripMenuItem.Size = new Size(97, 22);
+            rateToolStripMenuItem.Size = new Size(180, 26);
             rateToolStripMenuItem.Text = "Rate";
             rateToolStripMenuItem.Click += rateToolStripMenuItem_Click;
             // 
@@ -212,6 +214,15 @@
             pbEmpty.TabStop = false;
             pbEmpty.Visible = false;
             // 
+            // receiptToolStripMenuItem
+            // 
+            receiptToolStripMenuItem.Font = new Font("Inter", 10F);
+            receiptToolStripMenuItem.Image = Properties.Resources._3339034_business_tools_receipt_page_print_ticket_icon;
+            receiptToolStripMenuItem.Name = "receiptToolStripMenuItem";
+            receiptToolStripMenuItem.Size = new Size(180, 26);
+            receiptToolStripMenuItem.Text = "Receipt";
+            receiptToolStripMenuItem.Click += receiptToolStripMenuItem_Click;
+            // 
             // History
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -255,5 +266,6 @@
         private Krypton.Toolkit.KryptonDataGridView dgvHistory;
         private ComboBox cmbxJeepCodes;
         private PictureBox pbEmpty;
+        private ToolStripMenuItem receiptToolStripMenuItem;
     }
 }

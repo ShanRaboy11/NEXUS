@@ -18,6 +18,7 @@ using System.Reflection.Metadata;
 using ZXing.OneD;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using Microsoft.VisualBasic.ApplicationServices;
 
 
 namespace NEXUS.Forms
@@ -34,11 +35,12 @@ namespace NEXUS.Forms
            int nWidthEllipse,
            int nHeightEllipse
            );
-        public Receipt(int userID)
+        public Receipt(int userID, string message)
         {
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
-            DisplayReciptInfo(userID);
+            if(message == "recent")
+                DisplayReciptInfo(userID);
             pictureBox1.Parent = pnlReceipt;
             lblAmount.Parent = pnlReceipt;
             lblHeader.Parent = pnlReceipt;
@@ -72,6 +74,36 @@ namespace NEXUS.Forms
                     reader.Read();
 
                     int tripID = Convert.ToInt32(reader["TripID"]);
+                    DateTime tripDate = Convert.ToDateTime(reader["Trip Date"]);
+                    string passenger = reader["Passenger"].ToString();
+                    string driver = reader["Driver"].ToString();
+                    double fare = Convert.ToDouble(reader["Fare Amount"]);
+
+                    lblRefNumber.Text = "000000" + tripID.ToString();
+                    lblDT.Text = tripDate.ToString("MMMM d, yyyy");
+                    lblPassenger.Text = passenger.Split(' ')[0];
+                    lblDriver.Text = driver.Split(' ')[0];
+                    lblAmount.Text = fare.ToString("C");
+                }
+            }
+        }
+
+        public void DisplaySelectedTrip(int tripID)
+        {
+            string tripQuery = @"
+        SELECT [Trip Date], Passenger, Driver, [Fare Amount]
+        FROM Trips WHERE TripID = ?";
+
+            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            using (OleDbCommand cmd = new OleDbCommand(tripQuery, conn))
+            {
+                cmd.Parameters.AddWithValue("?", tripID);
+                conn.Open();
+
+                using (OleDbDataReader reader = cmd.ExecuteReader())
+                {
+                    reader.Read();
+
                     DateTime tripDate = Convert.ToDateTime(reader["Trip Date"]);
                     string passenger = reader["Passenger"].ToString();
                     string driver = reader["Driver"].ToString();

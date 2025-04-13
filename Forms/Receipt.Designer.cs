@@ -203,7 +203,7 @@
             spaceSeparatorVertical7.Customization = "Kioq/yoqKv8jIyP/Kioq/w==";
             spaceSeparatorVertical7.Font = new Font("Verdana", 8F);
             spaceSeparatorVertical7.Image = null;
-            spaceSeparatorVertical7.Location = new Point(220, 406);
+            spaceSeparatorVertical7.Location = new Point(215, 407);
             spaceSeparatorVertical7.Name = "spaceSeparatorVertical7";
             spaceSeparatorVertical7.NoRounding = false;
             spaceSeparatorVertical7.Size = new Size(4, 92);
@@ -216,7 +216,7 @@
             spaceSeparatorHorizontal7.Customization = "Kioq/yoqKv8jIyP/Kioq/w==";
             spaceSeparatorHorizontal7.Font = new Font("Verdana", 8F);
             spaceSeparatorHorizontal7.Image = null;
-            spaceSeparatorHorizontal7.Location = new Point(220, 494);
+            spaceSeparatorHorizontal7.Location = new Point(215, 495);
             spaceSeparatorHorizontal7.Name = "spaceSeparatorHorizontal7";
             spaceSeparatorHorizontal7.NoRounding = false;
             spaceSeparatorHorizontal7.Size = new Size(180, 4);
@@ -229,7 +229,7 @@
             spaceSeparatorVertical8.Customization = "Kioq/yoqKv8jIyP/Kioq/w==";
             spaceSeparatorVertical8.Font = new Font("Verdana", 8F);
             spaceSeparatorVertical8.Image = null;
-            spaceSeparatorVertical8.Location = new Point(396, 406);
+            spaceSeparatorVertical8.Location = new Point(391, 407);
             spaceSeparatorVertical8.Name = "spaceSeparatorVertical8";
             spaceSeparatorVertical8.NoRounding = false;
             spaceSeparatorVertical8.Size = new Size(4, 92);
@@ -242,7 +242,7 @@
             spaceSeparatorHorizontal8.Customization = "Kioq/yoqKv8jIyP/Kioq/w==";
             spaceSeparatorHorizontal8.Font = new Font("Verdana", 8F);
             spaceSeparatorHorizontal8.Image = null;
-            spaceSeparatorHorizontal8.Location = new Point(220, 406);
+            spaceSeparatorHorizontal8.Location = new Point(215, 407);
             spaceSeparatorHorizontal8.Name = "spaceSeparatorHorizontal8";
             spaceSeparatorHorizontal8.NoRounding = false;
             spaceSeparatorHorizontal8.Size = new Size(180, 4);
@@ -255,7 +255,7 @@
             spaceSeparatorVertical5.Customization = "Kioq/yoqKv8jIyP/Kioq/w==";
             spaceSeparatorVertical5.Font = new Font("Verdana", 8F);
             spaceSeparatorVertical5.Image = null;
-            spaceSeparatorVertical5.Location = new Point(18, 406);
+            spaceSeparatorVertical5.Location = new Point(20, 407);
             spaceSeparatorVertical5.Name = "spaceSeparatorVertical5";
             spaceSeparatorVertical5.NoRounding = false;
             spaceSeparatorVertical5.Size = new Size(4, 92);
@@ -268,7 +268,7 @@
             spaceSeparatorHorizontal5.Customization = "Kioq/yoqKv8jIyP/Kioq/w==";
             spaceSeparatorHorizontal5.Font = new Font("Verdana", 8F);
             spaceSeparatorHorizontal5.Image = null;
-            spaceSeparatorHorizontal5.Location = new Point(18, 494);
+            spaceSeparatorHorizontal5.Location = new Point(20, 495);
             spaceSeparatorHorizontal5.Name = "spaceSeparatorHorizontal5";
             spaceSeparatorHorizontal5.NoRounding = false;
             spaceSeparatorHorizontal5.Size = new Size(180, 4);
@@ -281,7 +281,7 @@
             spaceSeparatorVertical6.Customization = "Kioq/yoqKv8jIyP/Kioq/w==";
             spaceSeparatorVertical6.Font = new Font("Verdana", 8F);
             spaceSeparatorVertical6.Image = null;
-            spaceSeparatorVertical6.Location = new Point(194, 406);
+            spaceSeparatorVertical6.Location = new Point(196, 407);
             spaceSeparatorVertical6.Name = "spaceSeparatorVertical6";
             spaceSeparatorVertical6.NoRounding = false;
             spaceSeparatorVertical6.Size = new Size(4, 92);
@@ -294,7 +294,7 @@
             spaceSeparatorHorizontal6.Customization = "Kioq/yoqKv8jIyP/Kioq/w==";
             spaceSeparatorHorizontal6.Font = new Font("Verdana", 8F);
             spaceSeparatorHorizontal6.Image = null;
-            spaceSeparatorHorizontal6.Location = new Point(18, 406);
+            spaceSeparatorHorizontal6.Location = new Point(20, 407);
             spaceSeparatorHorizontal6.Name = "spaceSeparatorHorizontal6";
             spaceSeparatorHorizontal6.NoRounding = false;
             spaceSeparatorHorizontal6.Size = new Size(180, 4);
@@ -307,7 +307,7 @@
             spaceSeparatorVertical3.Customization = "Kioq/yoqKv8jIyP/Kioq/w==";
             spaceSeparatorVertical3.Font = new Font("Verdana", 8F);
             spaceSeparatorVertical3.Image = null;
-            spaceSeparatorVertical3.Location = new Point(220, 303);
+            spaceSeparatorVertical3.Location = new Point(215, 299);
             spaceSeparatorVertical3.Name = "spaceSeparatorVertical3";
             spaceSeparatorVertical3.NoRounding = false;
             spaceSeparatorVertical3.Size = new Size(4, 92);
@@ -320,7 +320,7 @@
             spaceSeparatorHorizontal3.Customization = "Kioq/yoqKv8jIyP/Kioq/w==";
             spaceSeparatorHorizontal3.Font = new Font("Verdana", 8F);
             spaceSeparatorHorizontal3.Image = null;
-            spaceSeparatorHorizontal3.Location = new Point(220, 391);
+            spaceSeparatorHorizontal3.Location = new Point(215, 387);
             spaceSeparatorHorizontal3.Name = "spaceSeparatorHorizontal3";
             spaceSeparatorHorizontal3.NoRounding = false;
             spaceSeparatorHorizontal3.Size = new Size(180, 4);
@@ -333,7 +333,7 @@
             spaceSeparatorVertical4.Customization = "Kioq/yoqKv8jIyP/Kioq/w==";
             spaceSeparatorVertical4.Font = new Font("Verdana", 8F);
             spaceSeparatorVertical4.Image = null;
-            spaceSeparatorVertical4.Location = new Point(396, 303);
+            spaceSeparatorVertical4.Location = new Point(391, 299);
             spaceSeparatorVertical4.Name = "spaceSeparatorVertical4";
             spaceSeparatorVertical4.NoRounding = false;
             spaceSeparatorVertical4.Size = new Size(4, 92);
@@ -346,7 +346,7 @@
             spaceSeparatorHorizontal4.Customization = "Kioq/yoqKv8jIyP/Kioq/w==";
             spaceSeparatorHorizontal4.Font = new Font("Verdana", 8F);
             spaceSeparatorHorizontal4.Image = null;
-            spaceSeparatorHorizontal4.Location = new Point(220, 303);
+            spaceSeparatorHorizontal4.Location = new Point(215, 299);
             spaceSeparatorHorizontal4.Name = "spaceSeparatorHorizontal4";
             spaceSeparatorHorizontal4.NoRounding = false;
             spaceSeparatorHorizontal4.Size = new Size(180, 4);
@@ -359,7 +359,7 @@
             spaceSeparatorVertical2.Customization = "Kioq/yoqKv8jIyP/Kioq/w==";
             spaceSeparatorVertical2.Font = new Font("Verdana", 8F);
             spaceSeparatorVertical2.Image = null;
-            spaceSeparatorVertical2.Location = new Point(18, 303);
+            spaceSeparatorVertical2.Location = new Point(20, 299);
             spaceSeparatorVertical2.Name = "spaceSeparatorVertical2";
             spaceSeparatorVertical2.NoRounding = false;
             spaceSeparatorVertical2.Size = new Size(4, 92);
@@ -372,7 +372,7 @@
             spaceSeparatorHorizontal2.Customization = "Kioq/yoqKv8jIyP/Kioq/w==";
             spaceSeparatorHorizontal2.Font = new Font("Verdana", 8F);
             spaceSeparatorHorizontal2.Image = null;
-            spaceSeparatorHorizontal2.Location = new Point(18, 391);
+            spaceSeparatorHorizontal2.Location = new Point(20, 387);
             spaceSeparatorHorizontal2.Name = "spaceSeparatorHorizontal2";
             spaceSeparatorHorizontal2.NoRounding = false;
             spaceSeparatorHorizontal2.Size = new Size(180, 4);
@@ -385,7 +385,7 @@
             spaceSeparatorVertical1.Customization = "Kioq/yoqKv8jIyP/Kioq/w==";
             spaceSeparatorVertical1.Font = new Font("Verdana", 8F);
             spaceSeparatorVertical1.Image = null;
-            spaceSeparatorVertical1.Location = new Point(194, 303);
+            spaceSeparatorVertical1.Location = new Point(196, 299);
             spaceSeparatorVertical1.Name = "spaceSeparatorVertical1";
             spaceSeparatorVertical1.NoRounding = false;
             spaceSeparatorVertical1.Size = new Size(4, 92);
@@ -398,7 +398,7 @@
             spaceSeparatorHorizontal1.Customization = "Kioq/yoqKv8jIyP/Kioq/w==";
             spaceSeparatorHorizontal1.Font = new Font("Verdana", 8F);
             spaceSeparatorHorizontal1.Image = null;
-            spaceSeparatorHorizontal1.Location = new Point(18, 303);
+            spaceSeparatorHorizontal1.Location = new Point(20, 299);
             spaceSeparatorHorizontal1.Name = "spaceSeparatorHorizontal1";
             spaceSeparatorHorizontal1.NoRounding = false;
             spaceSeparatorHorizontal1.Size = new Size(180, 4);
@@ -410,7 +410,7 @@
             // 
             lblRefNumber.Font = new Font("Inter SemiBold", 16F, FontStyle.Bold);
             lblRefNumber.ForeColor = Color.FromArgb(24, 60, 114);
-            lblRefNumber.Location = new Point(29, 348);
+            lblRefNumber.Location = new Point(31, 344);
             lblRefNumber.Name = "lblRefNumber";
             lblRefNumber.Size = new Size(159, 31);
             lblRefNumber.TabIndex = 2;
@@ -420,7 +420,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Inter", 12F);
-            label5.Location = new Point(230, 419);
+            label5.Location = new Point(225, 420);
             label5.Name = "label5";
             label5.Size = new Size(56, 23);
             label5.TabIndex = 64;
@@ -430,7 +430,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Inter", 12F);
-            label3.Location = new Point(32, 419);
+            label3.Location = new Point(34, 420);
             label3.Name = "label3";
             label3.Size = new Size(88, 23);
             label3.TabIndex = 63;
@@ -440,7 +440,7 @@
             // 
             lblDriver.Font = new Font("Inter SemiBold", 16F, FontStyle.Bold);
             lblDriver.ForeColor = Color.FromArgb(24, 60, 114);
-            lblDriver.Location = new Point(238, 452);
+            lblDriver.Location = new Point(233, 453);
             lblDriver.Name = "lblDriver";
             lblDriver.Size = new Size(155, 31);
             lblDriver.TabIndex = 5;
@@ -450,7 +450,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Inter", 12F);
-            label1.Location = new Point(230, 317);
+            label1.Location = new Point(225, 313);
             label1.Name = "label1";
             label1.Size = new Size(115, 23);
             label1.TabIndex = 63;
@@ -460,7 +460,7 @@
             // 
             lblPassenger.Font = new Font("Inter SemiBold", 16F, FontStyle.Bold);
             lblPassenger.ForeColor = Color.FromArgb(24, 60, 114);
-            lblPassenger.Location = new Point(38, 452);
+            lblPassenger.Location = new Point(40, 453);
             lblPassenger.Name = "lblPassenger";
             lblPassenger.Size = new Size(152, 31);
             lblPassenger.TabIndex = 4;
@@ -470,7 +470,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Inter", 12F);
-            label6.Location = new Point(31, 317);
+            label6.Location = new Point(33, 313);
             label6.Name = "label6";
             label6.Size = new Size(100, 23);
             label6.TabIndex = 62;
@@ -480,7 +480,7 @@
             // 
             lblDT.Font = new Font("Inter SemiBold", 16F, FontStyle.Bold);
             lblDT.ForeColor = Color.FromArgb(24, 60, 114);
-            lblDT.Location = new Point(228, 348);
+            lblDT.Location = new Point(223, 344);
             lblDT.Name = "lblDT";
             lblDT.Size = new Size(165, 31);
             lblDT.TabIndex = 3;

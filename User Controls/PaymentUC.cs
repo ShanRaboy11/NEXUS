@@ -231,7 +231,7 @@ namespace NEXUS.User_Controls
                     dialogBox.Close();
                     overlayForm.Close();
                     parentForm.Close();
-                    Receipt receipt = new Receipt(passenger.UserID);
+                    Receipt receipt = new Receipt(passenger.UserID, "recent");
                     scan.ShowOverlay(receipt, null);
                 }
             }

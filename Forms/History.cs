@@ -84,7 +84,7 @@ namespace NEXUS.Forms
                 pbIcon.Image = Resources._115762_calendar_date_event_month_icon;
                 pbIcon.Size = new System.Drawing.Size(74, 51);
             }
-            else if(tool == "Unrated Trips")
+            else if (tool == "Unrated Trips")
             {
                 cmbxJeepCodes.Visible = false;
                 dtDate.Visible = true;
@@ -93,7 +93,7 @@ namespace NEXUS.Forms
                 pbIcon.Size = new System.Drawing.Size(74, 51);
                 DisplayUnrated();
             }
-            else if(tool == "Rated Trips")
+            else if (tool == "Rated Trips")
             {
                 cmbxJeepCodes.Visible = false;
                 dtDate.Visible = true;
@@ -141,7 +141,6 @@ namespace NEXUS.Forms
                         }
                         else
                         {
-                            // Pass the details to your rate form for rating
                             Rate rate = new Rate(UserID, driverID, driverName, tripID);
                             scan.ShowOverlay(rate, null);
                             scan.FormClosed += (s, args) => this.Show();
@@ -156,7 +155,7 @@ namespace NEXUS.Forms
         {
             if (cmbxJeepCodes.SelectedItem != null)
             {
-                string JeepCode = cmbxJeepCodes.SelectedItem.ToString(); 
+                string JeepCode = cmbxJeepCodes.SelectedItem.ToString();
                 this.filterQuery = $"SELECT TripID, [Trip Date], DriverID, Driver, [Plate Number], Location, " +
                                    $"Destination, [Fare Amount] FROM Trips WHERE Route = '{JeepCode}' AND PassengerID = {UserID}";
                 DisplayDataGrid(this.filterQuery);
@@ -165,13 +164,13 @@ namespace NEXUS.Forms
 
         private void dtpTripDate_ValueChanged(object sender, EventArgs e)
         {
-            if(Filter == "Date")
+            if (Filter == "Date")
             {
                 string selectedDate = dtDate.Value.ToString("MM/dd/yyyy"); // Format selected date
                 this.filterQuery = $"SELECT TripID, [Trip Date], DriverID, Driver, [Plate Number], Location, " +
                                    $"Destination, [Fare Amount] FROM Trips WHERE Format([Trip Date], 'MM/dd/yyyy') = '{selectedDate}' AND PassengerID = {UserID}";
             }
-            else if(Filter == "Rated Trips")
+            else if (Filter == "Rated Trips")
             {
                 string selectedDate = dtDate.Value.ToString("MM/dd/yyyy");
 
@@ -218,6 +217,20 @@ namespace NEXUS.Forms
             dgvHistory.CurrentCell = null;
             dgvHistory.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgvHistory.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
+        }
+
+        private void receiptToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Scan scan = new Scan(UserID);
+            Receipt receipt = new Receipt(UserID, null);
+            if (dgvHistory.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dgvHistory.SelectedRows[0];
+
+                int tripID = Convert.ToInt32(selectedRow.Cells["TripID"].Value);
+                receipt.DisplaySelectedTrip(tripID);
+                scan.ShowOverlay(receipt, null);
+            }
         }
     }
 }

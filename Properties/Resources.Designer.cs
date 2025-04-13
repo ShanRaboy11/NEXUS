@@ -243,6 +243,16 @@ namespace NEXUS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3339034_business_tools_receipt_page_print_ticket_icon {
+            get {
+                object obj = ResourceManager.GetObject("3339034_business tools_receipt_page_print_ticket_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _3844443_disable_eye_inactive_see_show_icon {
             get {
                 object obj = ResourceManager.GetObject("3844443_disable_eye_inactive_see_show_icon", resourceCulture);
