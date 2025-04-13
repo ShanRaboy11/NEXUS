@@ -81,10 +81,11 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.Untitled_design__3_;
-            pictureBox1.Location = new Point(192, 17);
+            pictureBox1.Image = Properties.Resources.Removal_9151;
+            pictureBox1.Location = new Point(188, 17);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(42, 42);
+            pictureBox1.Size = new Size(45, 45);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 54;
             pictureBox1.TabStop = false;
             // 

@@ -86,7 +86,7 @@
             cmbxFilter.Font = new Font("Inter", 14.25F);
             cmbxFilter.ForeColor = Color.FromArgb(24, 60, 114);
             cmbxFilter.FormattingEnabled = true;
-            cmbxFilter.Items.AddRange(new object[] { "Date", "Rate" });
+            cmbxFilter.Items.AddRange(new object[] { "Date", "Rate", "Reports" });
             cmbxFilter.Location = new Point(109, 161);
             cmbxFilter.Name = "cmbxFilter";
             cmbxFilter.Size = new Size(219, 35);

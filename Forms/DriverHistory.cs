@@ -78,7 +78,7 @@ namespace NEXUS.Forms
                 pbIcon.Visible = true;
                 pbIcon.Image = Resources._115762_calendar_date_event_month_icon;
             }
-            else
+            else if(tool == "Rate")
             {
                 pbIcon.Visible = true;
                 dtDate.Visible = true;
@@ -87,26 +87,37 @@ namespace NEXUS.Forms
                     $"[Overall Satisfaction], Comments, [Date Rated] FROM RatingsQuery WHERE DriverID = {UserID}";
                 DisplayDataGrid(this.filterQuery);
             }
+            else
+            {
+                pbIcon.Visible = true;
+                dtDate.Visible = true;
+                pbIcon.Image = Resources.report_normal;
+                this.filterQuery = $"SELECT ReportID, TripID, [Date of Incident], Passenger, Location, Category, Description, Status FROM TripReportQuery" +
+                    $" WHERE DriverID = {UserID}";
+                DisplayDataGrid(this.filterQuery);
+            }
         }
 
         private void dtDate_ValueChanged(object sender, EventArgs e)
         {
-            if(Filter == "Date")
+            string selectedDate = dtDate.Value.ToString("MM/dd/yyyy");
+
+            if (Filter == "Date")
             {
-                string selectedDate = dtDate.Value.ToString("MM/dd/yyyy");
                 this.filterQuery = $"SELECT TripID, [Trip Date], PassengerID, Passenger, [Plate Number], Location, " +
-                                   $"Destination, [Fare Amount] FROM Trips WHERE Format([Trip Date], 'MM/dd/yyyy') = '{selectedDate}' AND DriverID = {UserID}";
-                
-                DisplayDataGrid(this.filterQuery);
+                                   $"Destination, [Fare Amount] FROM Trips WHERE Format([Trip Date], 'MM/dd/yyyy') = '{selectedDate}' AND DriverID = {UserID}";            
+            }
+            else if(Filter == "Rate")
+            {
+                this.filterQuery = $"SELECT RatingID, [Trip Date], [Full Name], Safety, Smoothness, Speed, Comfortability, Cleanliness, " +
+                    $"[Overall Satisfaction], Comments, [Date Rated] FROM RatingsQuery WHERE Format([Trip Date], 'MM/dd/yyyy') = '{selectedDate}' AND DriverID = {UserID}";       
             }
             else
             {
-                string selectedDateRate = dtDate.Value.ToString("MM/dd/yyyy");
-                this.filterQuery = $"SELECT RatingID, [Trip Date], [Full Name], Safety, Smoothness, Speed, Comfortability, Cleanliness, " +
-                    $"[Overall Satisfaction], Comments, [Date Rated] FROM RatingsQuery WHERE Format([Trip Date], 'MM/dd/yyyy') = '{selectedDateRate}' AND DriverID = {UserID}";
-                
-                DisplayDataGrid(this.filterQuery);
+                this.filterQuery = $"SELECT ReportID, TripID, Passenger, Location, Category, Description, Status FROM TripReportQuery" +
+                    $" WHERE Format([Date of Incident], 'MM/dd/yyyy') = '{selectedDate}' AND DriverID = {UserID}";
             }
+            DisplayDataGrid(this.filterQuery);
         }
 
         private Dictionary<string, double> GetDriverAverageRatings(int driverID)
