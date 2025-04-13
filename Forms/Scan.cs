@@ -1,4 +1,5 @@
 ﻿using NEXUS.Classes;
+using NEXUS.User_Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -87,37 +88,29 @@ namespace NEXUS.Forms
 
                             if (int.TryParse(decoded, out int driverID))
                             {
+                                // QR Code is valid, proceed with payment
                                 TripLogging tripLogging = new TripLogging(userID, null);
                                 ShowOverlay(tripLogging, null);
                                 tripLogging.DisplayPayment(decoded, userID);
                             }
                             else
-                            {
-                                //ShowInvalidQRCodeDialog();
-                            }
+                                ShowInvalidQRCodeDialog();
                         }
                         else
                         {
-                            //ShowInvalidQRCodeDialog();
+                            ShowInvalidQRCodeDialog();
                         }
                     }
                 }
             }
         }
 
-        /*
         private void ShowInvalidQRCodeDialog()
         {
             DialogBox dialogBox = new DialogBox();
-            Scan scan = new Scan(PassengerID);
             dialogBox.ShowIcon("invalid qr code");
 
-            scan.ShowOverlay(dialogBox, null);
-            containerPanel.Controls.Clear();
-
-            QRScanUC newQRScanUC = new QRScanUC(containerPanel, PassengerID);
-            containerPanel.Controls.Add(newQRScanUC);
-        }*/
-
+            ShowOverlay(dialogBox, null);
+        }
     }
 }
