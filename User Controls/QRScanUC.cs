@@ -19,6 +19,11 @@ namespace NEXUS.User_Controls
         private Panel containerPanel;
         private int PassengerID;
         private bool isProcessing = false;
+        private bool stopRequested = false;
+        private string lastScannedText = null;
+        private DateTime lastInvalidScanTime = DateTime.MinValue;
+
+
         bool cameraInitialized = false;
         public QRScanUC(Panel pnlContainer, int passengerID)
         {
@@ -26,12 +31,13 @@ namespace NEXUS.User_Controls
             containerPanel = pnlContainer;
             this.PassengerID = passengerID;
             InitializeCamera();
+            this.stopRequested = false;
             this.Disposed += QRScanUC_Disposed;
         }
 
         private void InitializeCamera()
         {
-
+            if (stopRequested) return;
             videoDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
             if (videoDevices.Count > 0)
             {
@@ -70,30 +76,40 @@ namespace NEXUS.User_Controls
         {
             if (picCam.Image == null || isProcessing) return;
 
-            isProcessing = true; // Prevent multiple scans at the same time
+            isProcessing = true;
 
-            using (Bitmap bitmap = new Bitmap(picCam.Image))
+            try
             {
-                BarcodeReader reader = new BarcodeReader
+                using (Bitmap bitmap = new Bitmap(picCam.Image))
                 {
-                    AutoRotate = true,
-                    Options = { TryHarder = true, PossibleFormats = new[] { BarcodeFormat.QR_CODE } }
-                };
-
-                Result result = reader.Decode(bitmap);
-
-                if (result != null && !string.IsNullOrEmpty(result.Text))
-                {
-                    string decoded = result.Text.Trim();
-
-                    // Stop camera asynchronously to avoid UI freeze
-                    await Task.Run(() => StopCamera());
-
-                    this.BeginInvoke(new Action(() =>
+                    BarcodeReader reader = new BarcodeReader
                     {
-                        try
+                        AutoRotate = true,
+                        Options = { TryHarder = true, PossibleFormats = new[] { BarcodeFormat.QR_CODE } }
+                    };
+
+                    Result result = reader.Decode(bitmap);
+
+                    if (result != null && !string.IsNullOrEmpty(result.Text))
+                    {
+                        string decoded = result.Text.Trim();
+
+                        // 🚫 Prevent reprocessing same value (invalid or valid)
+                        if (decoded == lastScannedText && (DateTime.Now - lastInvalidScanTime).TotalSeconds < 2)
                         {
-                            if (int.TryParse(decoded, out int driverID))
+                            isProcessing = false;
+                            return;
+                        }
+
+                        lastScannedText = decoded;
+
+                        if (int.TryParse(decoded, out int driverID))
+                        {
+                            stopRequested = true;
+
+                            await Task.Run(() => StopCamera());
+
+                            this.BeginInvoke(new Action(() =>
                             {
                                 containerPanel.Controls.Clear();
                                 PaymentUC paymentUC = new PaymentUC(decoded, PassengerID)
@@ -103,38 +119,36 @@ namespace NEXUS.User_Controls
                                 containerPanel.Controls.Add(paymentUC);
                                 StopCamera();
                                 scanTimer.Stop();
-                            }
-                            else
-                            {
-                                throw new System.FormatException("Invalid QR code");
-                            }
+                            }));
                         }
-                        catch (Exception ex)
+                        else
                         {
-                            DialogBox dialogBox = new DialogBox();
-                            Scan scan = new Scan(PassengerID);
-                            dialogBox.ShowIcon("invalid qr code");
-
-                            scan.ShowOverlay(dialogBox, null);
-
-                            if (!cameraInitialized)
-                            {
-                                Task.Run(() => InitializeCamera());
-                                cameraInitialized = true;
-                                isProcessing = false;
-                            }
-                            containerPanel.Controls.Clear();
-
-                            QRScanUC newQRScanUC = new QRScanUC(containerPanel, PassengerID);
-
-                            containerPanel.Controls.Add(newQRScanUC);
+                            lastInvalidScanTime = DateTime.Now;
+                            ShowInvalidQRCodeFeedback();
                         }
-                    }));
+                    }
                 }
             }
+            catch
+            {
+                ShowInvalidQRCodeFeedback();
+            }
 
-            isProcessing = false; // Allow scanning again if needed
+            isProcessing = false;
         }
+
+
+        private void ShowInvalidQRCodeFeedback()
+        {
+            DialogBox dialogBox = new DialogBox();
+            Scan scan = new Scan(PassengerID);
+            dialogBox.ShowIcon("invalid qr code");
+            scan.ShowOverlay(dialogBox, null);
+        }
+
+
+
+
 
         private void StopCamera()
         {
@@ -146,6 +160,8 @@ namespace NEXUS.User_Controls
                 videoCaptureDevice.WaitForStop();
                 videoCaptureDevice = null;
             }
+            cameraInitialized = false;
+            scanTimer.Stop();
         }
 
         private void QRScanUC_Disposed(object sender, EventArgs e)
