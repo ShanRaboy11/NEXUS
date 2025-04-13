@@ -19,7 +19,7 @@
       "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:user controls\\reportsadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|c:\\users\\shan michael\\source\\repos\\nexus\\forms\\receipt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\forms\\receipt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E7123356-4CB4-43EC-A46A-26DF44C5A371}|NEXUS.csproj|solutionrelative:forms\\receipt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -419,8 +419,7 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\Receipt.cs [Design]",
               "RelativeToolTip": "Forms\\Receipt.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T15:54:04.048Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-04-12T15:54:04.048Z"
             },
             {
               "$type": "Document",
@@ -999,8 +998,7 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\RouteFinder.cs [Design]",
               "RelativeToolTip": "Forms\\RouteFinder.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-06T07:20:51.219Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-04-06T07:20:51.219Z"
             },
             {
               "$type": "Document",
@@ -1246,8 +1244,7 @@
               "ToolTip": "C:\\Users\\Shan Michael\\source\\repos\\NEXUS\\Forms\\DriverHistory.cs [Design]",
               "RelativeToolTip": "Forms\\DriverHistory.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T07:27:02.595Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-03-30T07:27:02.595Z"
             },
             {
               "$type": "Document",
