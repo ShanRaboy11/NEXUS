@@ -167,7 +167,7 @@
             btnTransactions.Location = new Point(0, 570);
             btnTransactions.Name = "btnTransactions";
             btnTransactions.Padding = new Padding(15, 0, 0, 0);
-            btnTransactions.Size = new Size(199, 43);
+            btnTransactions.Size = new Size(209, 43);
             btnTransactions.TabIndex = 38;
             btnTransactions.Text = "            Transactions";
             btnTransactions.UseVisualStyleBackColor = true;

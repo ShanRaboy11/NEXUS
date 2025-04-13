@@ -59,9 +59,9 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.Controls.Add(btnCashOut, 0, 0);
+            tableLayoutPanel1.Controls.Add(btnCashOut, 2, 0);
             tableLayoutPanel1.Controls.Add(btnDrivers, 0, 0);
-            tableLayoutPanel1.Controls.Add(btnVerification, 2, 0);
+            tableLayoutPanel1.Controls.Add(btnVerification, 1, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -81,9 +81,9 @@
             btnCashOut.IconColor = Color.Black;
             btnCashOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnCashOut.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCashOut.Location = new Point(440, 3);
+            btnCashOut.Location = new Point(877, 3);
             btnCashOut.Name = "btnCashOut";
-            btnCashOut.Size = new Size(431, 64);
+            btnCashOut.Size = new Size(432, 64);
             btnCashOut.TabIndex = 36;
             btnCashOut.Text = "Cash Out";
             btnCashOut.UseVisualStyleBackColor = true;
@@ -119,9 +119,9 @@
             btnVerification.IconColor = Color.Black;
             btnVerification.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnVerification.ImageAlign = ContentAlignment.MiddleLeft;
-            btnVerification.Location = new Point(877, 3);
+            btnVerification.Location = new Point(440, 3);
             btnVerification.Name = "btnVerification";
-            btnVerification.Size = new Size(432, 64);
+            btnVerification.Size = new Size(431, 64);
             btnVerification.TabIndex = 35;
             btnVerification.Text = "Verification";
             btnVerification.UseVisualStyleBackColor = true;

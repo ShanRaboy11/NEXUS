@@ -46,6 +46,7 @@ namespace NEXUS.Forms
             }
             else if(message == "save")
             {
+                Pausetimer.Enabled = false;
                 pbDialogIcon.Image = Resources.Animation___1739885779319;
                 lblMessage.Text = "Image Succssfully Saved";
             }
@@ -64,7 +65,6 @@ namespace NEXUS.Forms
             }
             else if (message == "qr save")
             {
-                Pausetimer.Enabled = false;
                 pbDialogIcon.Image = Resources.Animation___1739885779319;
                 lblMessage.Text = "QR Code Saved Successfully";
             }
