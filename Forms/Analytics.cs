@@ -92,7 +92,7 @@ namespace NEXUS.Forms
             // Create the model with total earnings in the title (optional)
             var model = new PlotModel
             {
-                Title = "Driver Earnings (Last 7 Days)",
+                Title = "Driver Earnings",
                 TitleFontSize = 18
             };
 

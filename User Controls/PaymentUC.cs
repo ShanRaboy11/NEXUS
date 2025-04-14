@@ -44,9 +44,9 @@ namespace NEXUS.User_Controls
             {
                 pbDriverPicture.Image = Image.FromStream(ms);
             }
-            lblDriverName.Text = currentDriver.Name;
-            lblDriverRoute.Text = currentDriver.Route;
-            lblDriverStatus.Text = currentDriver.Status;
+            lblDriverName.Text = "Name:   " + currentDriver.Name;
+            lblDriverRoute.Text = "Route:    " + currentDriver.Route;
+            lblDriverStatus.Text = "Status:   " + currentDriver.Status;
             lblPlateNum.Text = currentDriver.PlateNumber;
             lblDateTime.Text = DateTime.Now.ToString("f");
             ComboBoxList(currentDriver.Route);

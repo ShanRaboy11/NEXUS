@@ -26,7 +26,7 @@ namespace NEXUS.Classes
                 mail.To.Add(recipientEmail);
                 mail.Subject = "Welcome to NEXUS!";
                 mail.Body = $"Hello {fullName},\n\nThank you for registering with NEXUS! Your account has been created successfully.\n\nBest regards,\nNEXUS Team";
-
+                
                 smtpServer.Port = 587;
                 smtpServer.Credentials = new NetworkCredential(senderEmail, appPassword);
                 smtpServer.EnableSsl = true;
