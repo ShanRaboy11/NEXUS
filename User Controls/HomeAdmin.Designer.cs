@@ -42,9 +42,9 @@
             passengersToolStripMenuItem = new ToolStripMenuItem();
             driversToolStripMenuItem = new ToolStripMenuItem();
             tableLayoutPanel4 = new TableLayoutPanel();
-            iconButton2 = new FontAwesome.Sharp.IconButton();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
-            btnTransactions = new FontAwesome.Sharp.IconButton();
+            btnDrivers = new FontAwesome.Sharp.IconButton();
+            btnPassengers = new FontAwesome.Sharp.IconButton();
+            btnUsers = new FontAwesome.Sharp.IconButton();
             spaceSeparatorHorizontal4 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
             spaceSeparatorVertical1 = new ReaLTaiizor.Controls.SpaceSeparatorVertical();
             spaceSeparatorVertical2 = new ReaLTaiizor.Controls.SpaceSeparatorVertical();
@@ -61,6 +61,10 @@
             panel8 = new Panel();
             lblTotalRevenue = new Label();
             panel4 = new Panel();
+            tableLayoutPanel5 = new TableLayoutPanel();
+            btnAnnual = new FontAwesome.Sharp.IconButton();
+            btnMonth = new FontAwesome.Sharp.IconButton();
+            btnWeek = new FontAwesome.Sharp.IconButton();
             panel7 = new Panel();
             lblReport = new Label();
             spaceSeparatorHorizontal5 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
@@ -77,18 +81,14 @@
             lblReports = new Label();
             pictureBox1 = new PictureBox();
             panel9 = new Panel();
+            tableLayoutPanel6 = new TableLayoutPanel();
+            btnDTotal = new FontAwesome.Sharp.IconButton();
+            btnDMionth = new FontAwesome.Sharp.IconButton();
+            btnDriverWeek = new FontAwesome.Sharp.IconButton();
             panel10 = new Panel();
             lblTitle = new Label();
             panelRank = new Panel();
             dgvRank = new Krypton.Toolkit.KryptonDataGridView();
-            tableLayoutPanel5 = new TableLayoutPanel();
-            iconButton3 = new FontAwesome.Sharp.IconButton();
-            iconButton4 = new FontAwesome.Sharp.IconButton();
-            iconButton5 = new FontAwesome.Sharp.IconButton();
-            tableLayoutPanel6 = new TableLayoutPanel();
-            iconButton6 = new FontAwesome.Sharp.IconButton();
-            iconButton7 = new FontAwesome.Sharp.IconButton();
-            iconButton8 = new FontAwesome.Sharp.IconButton();
             tableLayoutPanel1.SuspendLayout();
             panel2.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
@@ -98,17 +98,17 @@
             panel1.SuspendLayout();
             cmsRevenue.SuspendLayout();
             panel8.SuspendLayout();
+            tableLayoutPanel5.SuspendLayout();
             panel7.SuspendLayout();
             cmsDriver.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
             panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel9.SuspendLayout();
+            tableLayoutPanel6.SuspendLayout();
             panel10.SuspendLayout();
             panelRank.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvRank).BeginInit();
-            tableLayoutPanel5.SuspendLayout();
-            tableLayoutPanel6.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -263,9 +263,9 @@
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 27.3486423F));
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 19.8329849F));
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.4029236F));
-            tableLayoutPanel4.Controls.Add(iconButton2, 0, 0);
-            tableLayoutPanel4.Controls.Add(iconButton1, 0, 0);
-            tableLayoutPanel4.Controls.Add(btnTransactions, 0, 0);
+            tableLayoutPanel4.Controls.Add(btnDrivers, 0, 0);
+            tableLayoutPanel4.Controls.Add(btnPassengers, 0, 0);
+            tableLayoutPanel4.Controls.Add(btnUsers, 0, 0);
             tableLayoutPanel4.Dock = DockStyle.Top;
             tableLayoutPanel4.Location = new Point(4, 49);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -274,62 +274,62 @@
             tableLayoutPanel4.Size = new Size(479, 47);
             tableLayoutPanel4.TabIndex = 63;
             // 
-            // iconButton2
+            // btnDrivers
             // 
-            iconButton2.Dock = DockStyle.Fill;
-            iconButton2.FlatAppearance.BorderSize = 0;
-            iconButton2.FlatStyle = FlatStyle.Flat;
-            iconButton2.Font = new Font("Inter Medium", 13F, FontStyle.Bold);
-            iconButton2.ForeColor = Color.Black;
-            iconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconButton2.IconColor = Color.Black;
-            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton2.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton2.Location = new Point(227, 3);
-            iconButton2.Name = "iconButton2";
-            iconButton2.Size = new Size(88, 41);
-            iconButton2.TabIndex = 37;
-            iconButton2.Text = "Drivers";
-            iconButton2.UseVisualStyleBackColor = true;
-            iconButton2.Click += driversToolStripMenuItem_Click;
+            btnDrivers.Dock = DockStyle.Fill;
+            btnDrivers.FlatAppearance.BorderSize = 0;
+            btnDrivers.FlatStyle = FlatStyle.Flat;
+            btnDrivers.Font = new Font("Inter Medium", 13F, FontStyle.Bold);
+            btnDrivers.ForeColor = Color.Black;
+            btnDrivers.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnDrivers.IconColor = Color.Black;
+            btnDrivers.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnDrivers.ImageAlign = ContentAlignment.MiddleLeft;
+            btnDrivers.Location = new Point(227, 3);
+            btnDrivers.Name = "btnDrivers";
+            btnDrivers.Size = new Size(88, 41);
+            btnDrivers.TabIndex = 37;
+            btnDrivers.Text = "Drivers";
+            btnDrivers.UseVisualStyleBackColor = true;
+            btnDrivers.Click += driversToolStripMenuItem_Click;
             // 
-            // iconButton1
+            // btnPassengers
             // 
-            iconButton1.Dock = DockStyle.Fill;
-            iconButton1.FlatAppearance.BorderSize = 0;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.Font = new Font("Inter Medium", 13F, FontStyle.Bold);
-            iconButton1.ForeColor = Color.Black;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconButton1.IconColor = Color.Black;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton1.Location = new Point(97, 3);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(124, 41);
-            iconButton1.TabIndex = 36;
-            iconButton1.Text = "Passengers";
-            iconButton1.UseVisualStyleBackColor = true;
-            iconButton1.Click += passengersToolStripMenuItem_Click;
+            btnPassengers.Dock = DockStyle.Fill;
+            btnPassengers.FlatAppearance.BorderSize = 0;
+            btnPassengers.FlatStyle = FlatStyle.Flat;
+            btnPassengers.Font = new Font("Inter Medium", 13F, FontStyle.Bold);
+            btnPassengers.ForeColor = Color.Black;
+            btnPassengers.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnPassengers.IconColor = Color.Black;
+            btnPassengers.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnPassengers.ImageAlign = ContentAlignment.MiddleLeft;
+            btnPassengers.Location = new Point(97, 3);
+            btnPassengers.Name = "btnPassengers";
+            btnPassengers.Size = new Size(124, 41);
+            btnPassengers.TabIndex = 36;
+            btnPassengers.Text = "Passengers";
+            btnPassengers.UseVisualStyleBackColor = true;
+            btnPassengers.Click += passengersToolStripMenuItem_Click;
             // 
-            // btnTransactions
+            // btnUsers
             // 
-            btnTransactions.Dock = DockStyle.Fill;
-            btnTransactions.FlatAppearance.BorderSize = 0;
-            btnTransactions.FlatStyle = FlatStyle.Flat;
-            btnTransactions.Font = new Font("Inter Medium", 13F, FontStyle.Bold);
-            btnTransactions.ForeColor = Color.Black;
-            btnTransactions.IconChar = FontAwesome.Sharp.IconChar.None;
-            btnTransactions.IconColor = Color.Black;
-            btnTransactions.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnTransactions.ImageAlign = ContentAlignment.MiddleLeft;
-            btnTransactions.Location = new Point(3, 3);
-            btnTransactions.Name = "btnTransactions";
-            btnTransactions.Size = new Size(88, 41);
-            btnTransactions.TabIndex = 35;
-            btnTransactions.Text = "Users";
-            btnTransactions.UseVisualStyleBackColor = true;
-            btnTransactions.Click += usersToolStripMenuItem_Click;
+            btnUsers.Dock = DockStyle.Fill;
+            btnUsers.FlatAppearance.BorderSize = 0;
+            btnUsers.FlatStyle = FlatStyle.Flat;
+            btnUsers.Font = new Font("Inter Medium", 13F, FontStyle.Bold);
+            btnUsers.ForeColor = Color.Black;
+            btnUsers.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnUsers.IconColor = Color.Black;
+            btnUsers.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnUsers.ImageAlign = ContentAlignment.MiddleLeft;
+            btnUsers.Location = new Point(3, 3);
+            btnUsers.Name = "btnUsers";
+            btnUsers.Size = new Size(88, 41);
+            btnUsers.TabIndex = 35;
+            btnUsers.Text = "Users";
+            btnUsers.UseVisualStyleBackColor = true;
+            btnUsers.Click += usersToolStripMenuItem_Click;
             // 
             // spaceSeparatorHorizontal4
             // 
@@ -428,9 +428,9 @@
             // 
             panel1.BackColor = Color.White;
             panel1.Controls.Add(pvRevenueChart);
-            panel1.Controls.Add(tableLayoutPanel5);
             panel1.Controls.Add(panel8);
             panel1.Controls.Add(panel4);
+            panel1.Controls.Add(tableLayoutPanel5);
             panel1.Controls.Add(panel7);
             panel1.Controls.Add(spaceSeparatorVertical4);
             panel1.Controls.Add(spaceSeparatorHorizontal2);
@@ -493,14 +493,13 @@
             panel8.BackColor = Color.White;
             panel8.Controls.Add(lblTotalRevenue);
             panel8.Dock = DockStyle.Top;
-            panel8.Location = new Point(4, 38);
+            panel8.Location = new Point(4, 78);
             panel8.Name = "panel8";
             panel8.Size = new Size(731, 51);
             panel8.TabIndex = 65;
             // 
             // lblTotalRevenue
             // 
-            lblTotalRevenue.Dock = DockStyle.Fill;
             lblTotalRevenue.Font = new Font("Inter", 30F, FontStyle.Bold);
             lblTotalRevenue.ForeColor = Color.FromArgb(38, 36, 68);
             lblTotalRevenue.Location = new Point(0, 0);
@@ -518,6 +517,85 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(69, 56);
             panel4.TabIndex = 62;
+            // 
+            // tableLayoutPanel5
+            // 
+            tableLayoutPanel5.ColumnCount = 4;
+            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 18.76886F));
+            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 18.7688637F));
+            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 18.7688637F));
+            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 43.6934166F));
+            tableLayoutPanel5.Controls.Add(btnAnnual, 0, 0);
+            tableLayoutPanel5.Controls.Add(btnMonth, 0, 0);
+            tableLayoutPanel5.Controls.Add(btnWeek, 0, 0);
+            tableLayoutPanel5.Dock = DockStyle.Top;
+            tableLayoutPanel5.Location = new Point(4, 38);
+            tableLayoutPanel5.Margin = new Padding(0);
+            tableLayoutPanel5.Name = "tableLayoutPanel5";
+            tableLayoutPanel5.RowCount = 1;
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel5.Size = new Size(731, 40);
+            tableLayoutPanel5.TabIndex = 66;
+            // 
+            // btnAnnual
+            // 
+            btnAnnual.Dock = DockStyle.Fill;
+            btnAnnual.FlatAppearance.BorderSize = 0;
+            btnAnnual.FlatStyle = FlatStyle.Flat;
+            btnAnnual.Font = new Font("Inter Medium", 13F, FontStyle.Bold);
+            btnAnnual.ForeColor = Color.Black;
+            btnAnnual.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnAnnual.IconColor = Color.Black;
+            btnAnnual.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnAnnual.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAnnual.Location = new Point(277, 3);
+            btnAnnual.Name = "btnAnnual";
+            btnAnnual.Size = new Size(131, 34);
+            btnAnnual.TabIndex = 37;
+            btnAnnual.Text = "Annual";
+            btnAnnual.TextAlign = ContentAlignment.TopCenter;
+            btnAnnual.UseVisualStyleBackColor = true;
+            btnAnnual.Click += yearlyToolStripMenuItem_Click;
+            // 
+            // btnMonth
+            // 
+            btnMonth.Dock = DockStyle.Fill;
+            btnMonth.FlatAppearance.BorderSize = 0;
+            btnMonth.FlatStyle = FlatStyle.Flat;
+            btnMonth.Font = new Font("Inter Medium", 13F, FontStyle.Bold);
+            btnMonth.ForeColor = Color.Black;
+            btnMonth.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnMonth.IconColor = Color.Black;
+            btnMonth.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnMonth.ImageAlign = ContentAlignment.MiddleLeft;
+            btnMonth.Location = new Point(140, 3);
+            btnMonth.Name = "btnMonth";
+            btnMonth.Size = new Size(131, 34);
+            btnMonth.TabIndex = 36;
+            btnMonth.Text = "Month";
+            btnMonth.TextAlign = ContentAlignment.TopCenter;
+            btnMonth.UseVisualStyleBackColor = true;
+            btnMonth.Click += monthlyToolStripMenuItem_Click;
+            // 
+            // btnWeek
+            // 
+            btnWeek.Dock = DockStyle.Fill;
+            btnWeek.FlatAppearance.BorderSize = 0;
+            btnWeek.FlatStyle = FlatStyle.Flat;
+            btnWeek.Font = new Font("Inter Medium", 13F, FontStyle.Bold);
+            btnWeek.ForeColor = Color.Black;
+            btnWeek.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnWeek.IconColor = Color.Black;
+            btnWeek.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnWeek.ImageAlign = ContentAlignment.MiddleLeft;
+            btnWeek.Location = new Point(3, 3);
+            btnWeek.Name = "btnWeek";
+            btnWeek.Size = new Size(131, 34);
+            btnWeek.TabIndex = 35;
+            btnWeek.Text = "Week";
+            btnWeek.TextAlign = ContentAlignment.TopCenter;
+            btnWeek.UseVisualStyleBackColor = true;
+            btnWeek.Click += weeklyToolStripMenuItem_Click;
             // 
             // panel7
             // 
@@ -601,10 +679,10 @@
             // 
             pvDrivers.ContextMenuStrip = cmsDriver;
             pvDrivers.Dock = DockStyle.Fill;
-            pvDrivers.Location = new Point(0, 38);
+            pvDrivers.Location = new Point(0, 78);
             pvDrivers.Name = "pvDrivers";
             pvDrivers.PanCursor = Cursors.Hand;
-            pvDrivers.Size = new Size(618, 272);
+            pvDrivers.Size = new Size(618, 232);
             pvDrivers.TabIndex = 50;
             pvDrivers.Text = "plotView1";
             pvDrivers.ZoomHorizontalCursor = Cursors.SizeWE;
@@ -704,14 +782,93 @@
             // panel9
             // 
             panel9.BackColor = Color.FromArgb(38, 36, 68);
-            panel9.Controls.Add(tableLayoutPanel6);
             panel9.Controls.Add(pvDrivers);
+            panel9.Controls.Add(tableLayoutPanel6);
             panel9.Controls.Add(panel10);
             panel9.Dock = DockStyle.Fill;
             panel9.Location = new Point(279, 23);
             panel9.Name = "panel9";
             panel9.Size = new Size(618, 310);
             panel9.TabIndex = 51;
+            // 
+            // tableLayoutPanel6
+            // 
+            tableLayoutPanel6.ColumnCount = 4;
+            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20.1414833F));
+            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20.1414833F));
+            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 24.7572823F));
+            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35.11327F));
+            tableLayoutPanel6.Controls.Add(btnDTotal, 0, 0);
+            tableLayoutPanel6.Controls.Add(btnDMionth, 0, 0);
+            tableLayoutPanel6.Controls.Add(btnDriverWeek, 0, 0);
+            tableLayoutPanel6.Dock = DockStyle.Top;
+            tableLayoutPanel6.Location = new Point(0, 38);
+            tableLayoutPanel6.Margin = new Padding(0);
+            tableLayoutPanel6.Name = "tableLayoutPanel6";
+            tableLayoutPanel6.RowCount = 1;
+            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel6.Size = new Size(618, 40);
+            tableLayoutPanel6.TabIndex = 67;
+            // 
+            // btnDTotal
+            // 
+            btnDTotal.Dock = DockStyle.Fill;
+            btnDTotal.FlatAppearance.BorderSize = 0;
+            btnDTotal.FlatStyle = FlatStyle.Flat;
+            btnDTotal.Font = new Font("Inter Medium", 13F, FontStyle.Bold);
+            btnDTotal.ForeColor = Color.White;
+            btnDTotal.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnDTotal.IconColor = Color.Black;
+            btnDTotal.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnDTotal.ImageAlign = ContentAlignment.MiddleLeft;
+            btnDTotal.Location = new Point(251, 3);
+            btnDTotal.Name = "btnDTotal";
+            btnDTotal.Size = new Size(146, 34);
+            btnDTotal.TabIndex = 37;
+            btnDTotal.Text = "Total Revenue";
+            btnDTotal.TextAlign = ContentAlignment.TopCenter;
+            btnDTotal.UseVisualStyleBackColor = true;
+            btnDTotal.Click += totalRevenueToolStripMenuItem_Click;
+            // 
+            // btnDMionth
+            // 
+            btnDMionth.Dock = DockStyle.Fill;
+            btnDMionth.FlatAppearance.BorderSize = 0;
+            btnDMionth.FlatStyle = FlatStyle.Flat;
+            btnDMionth.Font = new Font("Inter Medium", 13F, FontStyle.Bold);
+            btnDMionth.ForeColor = Color.White;
+            btnDMionth.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnDMionth.IconColor = Color.Black;
+            btnDMionth.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnDMionth.ImageAlign = ContentAlignment.MiddleLeft;
+            btnDMionth.Location = new Point(127, 3);
+            btnDMionth.Name = "btnDMionth";
+            btnDMionth.Size = new Size(118, 34);
+            btnDMionth.TabIndex = 36;
+            btnDMionth.Text = "Month";
+            btnDMionth.TextAlign = ContentAlignment.TopCenter;
+            btnDMionth.UseVisualStyleBackColor = true;
+            btnDMionth.Click += monthlyToolStripMenuItem1_Click;
+            // 
+            // btnDriverWeek
+            // 
+            btnDriverWeek.Dock = DockStyle.Fill;
+            btnDriverWeek.FlatAppearance.BorderSize = 0;
+            btnDriverWeek.FlatStyle = FlatStyle.Flat;
+            btnDriverWeek.Font = new Font("Inter Medium", 13F, FontStyle.Bold);
+            btnDriverWeek.ForeColor = Color.White;
+            btnDriverWeek.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnDriverWeek.IconColor = Color.Black;
+            btnDriverWeek.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnDriverWeek.ImageAlign = ContentAlignment.MiddleLeft;
+            btnDriverWeek.Location = new Point(3, 3);
+            btnDriverWeek.Name = "btnDriverWeek";
+            btnDriverWeek.Size = new Size(118, 34);
+            btnDriverWeek.TabIndex = 35;
+            btnDriverWeek.Text = "Week";
+            btnDriverWeek.TextAlign = ContentAlignment.TopCenter;
+            btnDriverWeek.UseVisualStyleBackColor = true;
+            btnDriverWeek.Click += weeklyToolStripMenuItem1_Click;
             // 
             // panel10
             // 
@@ -776,164 +933,6 @@
             dgvRank.StateSelected.DataCell.Back.Color2 = Color.FromArgb(0, 229, 255);
             dgvRank.TabIndex = 1;
             // 
-            // tableLayoutPanel5
-            // 
-            tableLayoutPanel5.ColumnCount = 4;
-            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 18.76886F));
-            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 18.7688637F));
-            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 18.7688637F));
-            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 43.6934166F));
-            tableLayoutPanel5.Controls.Add(iconButton3, 0, 0);
-            tableLayoutPanel5.Controls.Add(iconButton4, 0, 0);
-            tableLayoutPanel5.Controls.Add(iconButton5, 0, 0);
-            tableLayoutPanel5.Dock = DockStyle.Top;
-            tableLayoutPanel5.Location = new Point(4, 89);
-            tableLayoutPanel5.Margin = new Padding(0);
-            tableLayoutPanel5.Name = "tableLayoutPanel5";
-            tableLayoutPanel5.RowCount = 1;
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel5.Size = new Size(731, 40);
-            tableLayoutPanel5.TabIndex = 66;
-            // 
-            // iconButton3
-            // 
-            iconButton3.Dock = DockStyle.Fill;
-            iconButton3.FlatAppearance.BorderSize = 0;
-            iconButton3.FlatStyle = FlatStyle.Flat;
-            iconButton3.Font = new Font("Inter Medium", 13F, FontStyle.Bold);
-            iconButton3.ForeColor = Color.Black;
-            iconButton3.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconButton3.IconColor = Color.Black;
-            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton3.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton3.Location = new Point(277, 3);
-            iconButton3.Name = "iconButton3";
-            iconButton3.Size = new Size(131, 34);
-            iconButton3.TabIndex = 37;
-            iconButton3.Text = "Annual";
-            iconButton3.TextAlign = ContentAlignment.TopCenter;
-            iconButton3.UseVisualStyleBackColor = true;
-            iconButton3.Click += yearlyToolStripMenuItem_Click;
-            // 
-            // iconButton4
-            // 
-            iconButton4.Dock = DockStyle.Fill;
-            iconButton4.FlatAppearance.BorderSize = 0;
-            iconButton4.FlatStyle = FlatStyle.Flat;
-            iconButton4.Font = new Font("Inter Medium", 13F, FontStyle.Bold);
-            iconButton4.ForeColor = Color.Black;
-            iconButton4.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconButton4.IconColor = Color.Black;
-            iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton4.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton4.Location = new Point(140, 3);
-            iconButton4.Name = "iconButton4";
-            iconButton4.Size = new Size(131, 34);
-            iconButton4.TabIndex = 36;
-            iconButton4.Text = "Month";
-            iconButton4.TextAlign = ContentAlignment.TopCenter;
-            iconButton4.UseVisualStyleBackColor = true;
-            iconButton4.Click += monthlyToolStripMenuItem_Click;
-            // 
-            // iconButton5
-            // 
-            iconButton5.Dock = DockStyle.Fill;
-            iconButton5.FlatAppearance.BorderSize = 0;
-            iconButton5.FlatStyle = FlatStyle.Flat;
-            iconButton5.Font = new Font("Inter Medium", 13F, FontStyle.Bold);
-            iconButton5.ForeColor = Color.Black;
-            iconButton5.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconButton5.IconColor = Color.Black;
-            iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton5.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton5.Location = new Point(3, 3);
-            iconButton5.Name = "iconButton5";
-            iconButton5.Size = new Size(131, 34);
-            iconButton5.TabIndex = 35;
-            iconButton5.Text = "Week";
-            iconButton5.TextAlign = ContentAlignment.TopCenter;
-            iconButton5.UseVisualStyleBackColor = true;
-            iconButton5.Click += weeklyToolStripMenuItem_Click;
-            // 
-            // tableLayoutPanel6
-            // 
-            tableLayoutPanel6.ColumnCount = 4;
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20.1414833F));
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20.1414833F));
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 24.7572823F));
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35.11327F));
-            tableLayoutPanel6.Controls.Add(iconButton6, 0, 0);
-            tableLayoutPanel6.Controls.Add(iconButton7, 0, 0);
-            tableLayoutPanel6.Controls.Add(iconButton8, 0, 0);
-            tableLayoutPanel6.Dock = DockStyle.Top;
-            tableLayoutPanel6.Location = new Point(0, 38);
-            tableLayoutPanel6.Margin = new Padding(0);
-            tableLayoutPanel6.Name = "tableLayoutPanel6";
-            tableLayoutPanel6.RowCount = 1;
-            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel6.Size = new Size(618, 40);
-            tableLayoutPanel6.TabIndex = 67;
-            // 
-            // iconButton6
-            // 
-            iconButton6.Dock = DockStyle.Fill;
-            iconButton6.FlatAppearance.BorderSize = 0;
-            iconButton6.FlatStyle = FlatStyle.Flat;
-            iconButton6.Font = new Font("Inter Medium", 13F, FontStyle.Bold);
-            iconButton6.ForeColor = Color.White;
-            iconButton6.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconButton6.IconColor = Color.Black;
-            iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton6.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton6.Location = new Point(251, 3);
-            iconButton6.Name = "iconButton6";
-            iconButton6.Size = new Size(146, 34);
-            iconButton6.TabIndex = 37;
-            iconButton6.Text = "Total Revenue";
-            iconButton6.TextAlign = ContentAlignment.TopCenter;
-            iconButton6.UseVisualStyleBackColor = true;
-            iconButton6.Click += totalRevenueToolStripMenuItem_Click;
-            // 
-            // iconButton7
-            // 
-            iconButton7.Dock = DockStyle.Fill;
-            iconButton7.FlatAppearance.BorderSize = 0;
-            iconButton7.FlatStyle = FlatStyle.Flat;
-            iconButton7.Font = new Font("Inter Medium", 13F, FontStyle.Bold);
-            iconButton7.ForeColor = Color.White;
-            iconButton7.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconButton7.IconColor = Color.Black;
-            iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton7.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton7.Location = new Point(127, 3);
-            iconButton7.Name = "iconButton7";
-            iconButton7.Size = new Size(118, 34);
-            iconButton7.TabIndex = 36;
-            iconButton7.Text = "Month";
-            iconButton7.TextAlign = ContentAlignment.TopCenter;
-            iconButton7.UseVisualStyleBackColor = true;
-            iconButton7.Click += monthlyToolStripMenuItem1_Click;
-            // 
-            // iconButton8
-            // 
-            iconButton8.Dock = DockStyle.Fill;
-            iconButton8.FlatAppearance.BorderSize = 0;
-            iconButton8.FlatStyle = FlatStyle.Flat;
-            iconButton8.Font = new Font("Inter Medium", 13F, FontStyle.Bold);
-            iconButton8.ForeColor = Color.White;
-            iconButton8.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconButton8.IconColor = Color.Black;
-            iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton8.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton8.Location = new Point(3, 3);
-            iconButton8.Name = "iconButton8";
-            iconButton8.Size = new Size(118, 34);
-            iconButton8.TabIndex = 35;
-            iconButton8.Text = "Week";
-            iconButton8.TextAlign = ContentAlignment.TopCenter;
-            iconButton8.UseVisualStyleBackColor = true;
-            iconButton8.Click += weeklyToolStripMenuItem1_Click;
-            // 
             // HomeAdmin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -953,17 +952,17 @@
             panel1.ResumeLayout(false);
             cmsRevenue.ResumeLayout(false);
             panel8.ResumeLayout(false);
+            tableLayoutPanel5.ResumeLayout(false);
             panel7.ResumeLayout(false);
             cmsDriver.ResumeLayout(false);
             tableLayoutPanel3.ResumeLayout(false);
             panel11.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel9.ResumeLayout(false);
+            tableLayoutPanel6.ResumeLayout(false);
             panel10.ResumeLayout(false);
             panelRank.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvRank).EndInit();
-            tableLayoutPanel5.ResumeLayout(false);
-            tableLayoutPanel6.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -1020,16 +1019,16 @@
         private ReaLTaiizor.Controls.CyberButton cyberButton3;
         private Krypton.Toolkit.KryptonDataGridView dgvRank;
         private TableLayoutPanel tableLayoutPanel4;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton btnTransactions;
+        private FontAwesome.Sharp.IconButton btnDrivers;
+        private FontAwesome.Sharp.IconButton btnPassengers;
+        private FontAwesome.Sharp.IconButton btnUsers;
         private TableLayoutPanel tableLayoutPanel5;
-        private FontAwesome.Sharp.IconButton iconButton3;
-        private FontAwesome.Sharp.IconButton iconButton4;
-        private FontAwesome.Sharp.IconButton iconButton5;
+        private FontAwesome.Sharp.IconButton btnAnnual;
+        private FontAwesome.Sharp.IconButton btnMonth;
+        private FontAwesome.Sharp.IconButton btnWeek;
         private TableLayoutPanel tableLayoutPanel6;
-        private FontAwesome.Sharp.IconButton iconButton6;
-        private FontAwesome.Sharp.IconButton iconButton7;
-        private FontAwesome.Sharp.IconButton iconButton8;
+        private FontAwesome.Sharp.IconButton btnDTotal;
+        private FontAwesome.Sharp.IconButton btnDMionth;
+        private FontAwesome.Sharp.IconButton btnDriverWeek;
     }
 }

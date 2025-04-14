@@ -14,17 +14,25 @@ using System.Windows.Forms;
 using NEXUS.Classes;
 using OxyPlot.Axes;
 using System.Globalization;
+using FontAwesome.Sharp;
 
 namespace NEXUS.User_Controls
 {
     public partial class HomeAdmin : UserControl
     {
+        private IconButton selectedGeneralButton = null;
+        private IconButton selectedDriverButton = null;
+        private IconButton selectedUserButton = null;
+        private FontAwesome.Sharp.IconButton currentBtn;
         public HomeAdmin()
         {
             InitializeComponent();
-            LoadUserDataAndShowChart();
-            LoadRevenueData();
-            LoadDriverWeeklyRevenueData();
+            //LoadUserDataAndShowChart();
+            //LoadRevenueData();
+            //LoadDriverWeeklyRevenueData();
+            weeklyToolStripMenuItem_Click(btnWeek, EventArgs.Empty);
+            usersToolStripMenuItem_Click(btnUsers, EventArgs.Empty);
+            weeklyToolStripMenuItem1_Click(btnDriverWeek, EventArgs.Empty);
             CountPendingReports();
             DisplayDriverRankings();
         }
@@ -607,21 +615,6 @@ namespace NEXUS.User_Controls
             pvRevenueChart.Model = model;  // pvRevenueChart is the name of the PlotView control
         }
 
-        private void weeklyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LoadRevenueData();
-        }
-
-        private void monthlyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LoadMonthlyRevenueData();
-        }
-
-        private void yearlyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LoadAnnualRevenueData();
-        }
-
         private void LoadDriverRevenueData()
         {
             // SQL query to access the saved query in your database
@@ -954,41 +947,94 @@ namespace NEXUS.User_Controls
             }
         }
 
+        private void weeklyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoadRevenueData();
+            SelectButton(ref selectedGeneralButton, btnWeek, Color.FromArgb(38, 36, 68), Color.White);
+        }
+
+        private void monthlyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoadMonthlyRevenueData();
+            SelectButton(ref selectedGeneralButton, btnMonth, Color.FromArgb(38, 36, 68), Color.White);
+        }
+
+        private void yearlyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoadAnnualRevenueData();
+            SelectButton(ref selectedGeneralButton, btnAnnual, Color.FromArgb(38, 36, 68), Color.White);
+        }
 
         private void weeklyToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             LoadDriverWeeklyRevenueData();
+            SelectDriverButton(btnDriverWeek);
         }
 
         private void monthlyToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             LoadDriverMonthlyRevenueData();
+            SelectDriverButton(btnDMionth);
         }
 
         private void totalRevenueToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LoadDriverRevenueData();
+            SelectDriverButton(btnDTotal);
         }
 
         private void driversToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LoadDriverStatusDataAndShowChart();
+            SelectButton(ref selectedUserButton, btnDrivers, Color.FromArgb(38, 36, 68), Color.White);
         }
 
         private void passengersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LoadPassengerStatusDataAndShowChart();
+            SelectButton(ref selectedUserButton, btnPassengers, Color.FromArgb(38, 36, 68), Color.White);
         }
 
         private void usersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LoadUserDataAndShowChart();
+            SelectButton(ref selectedUserButton, btnUsers, Color.FromArgb(38, 36, 68), Color.White);
         }
+
 
         private void HomeAdmin_Load(object sender, EventArgs e)
         {
             dgvRank.ClearSelection();
             dgvRank.CurrentCell = null;
         }
+
+        private void SelectButton(ref IconButton selectedButton, IconButton newButton, Color backColor, Color foreColor)
+        {
+            if (selectedButton != null)
+            {
+                // Reset previous selection
+                selectedButton.BackColor = Color.White;
+                selectedButton.ForeColor = Color.Black;
+            }
+
+            selectedButton = newButton;
+            selectedButton.BackColor = backColor;
+            selectedButton.ForeColor = foreColor;
+        }
+
+        private void SelectDriverButton(IconButton newButton)
+        {
+            if (selectedDriverButton != null && selectedDriverButton != newButton)
+            {
+                selectedDriverButton.BackColor = Color.FromArgb(38, 36, 68);
+                selectedDriverButton.ForeColor = Color.White;
+            }
+
+            selectedDriverButton = newButton;
+
+            newButton.BackColor = Color.White;
+            newButton.ForeColor = Color.Black;
+        }
+
     }
 }
