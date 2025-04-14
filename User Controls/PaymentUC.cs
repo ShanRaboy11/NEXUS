@@ -166,7 +166,7 @@ namespace NEXUS.User_Controls
         private bool CheckDiscountEligibility()
         {
 
-            if (passenger.Classification != "Regular")
+            if (passenger.Classification != "Regular" && passenger.Status != "Pending")
             {
                 return true;
             }

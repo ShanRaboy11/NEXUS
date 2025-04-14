@@ -1098,14 +1098,14 @@
             // lblTotalEarnings
             // 
             lblTotalEarnings.BackColor = Color.Transparent;
-            lblTotalEarnings.Font = new Font("Inter ExtraBold", 45F, FontStyle.Bold);
+            lblTotalEarnings.Font = new Font("Inter ExtraBold", 38F, FontStyle.Bold);
             lblTotalEarnings.ForeColor = Color.Black;
             lblTotalEarnings.Location = new Point(-1, 59);
             lblTotalEarnings.Margin = new Padding(0);
             lblTotalEarnings.Name = "lblTotalEarnings";
             lblTotalEarnings.Size = new Size(345, 222);
             lblTotalEarnings.TabIndex = 60;
-            lblTotalEarnings.Text = "P 1000.00";
+            lblTotalEarnings.Text = "P 1,000.00";
             lblTotalEarnings.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panel14
