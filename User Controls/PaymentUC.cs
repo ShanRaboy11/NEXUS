@@ -195,8 +195,8 @@ namespace NEXUS.User_Controls
                 return;
             }
 
-            Trip trip = new Trip(currentDriver.UserID, CurrentPassenger, DateTime.Now, passenger.Name, currentDriver.Name, currentDriver.PlateNumber, currentDriver.Route, cmbxLocation.SelectedItem.ToString()
-                , cmbxDestination.SelectedItem.ToString(), double.Parse(lblAmount.Text));
+            Trip trip = new Trip(currentDriver.UserID, CurrentPassenger, DateTime.Now, passenger.Name, currentDriver.Name, currentDriver.PlateNumber, 
+                currentDriver.Route, cmbxLocation.SelectedItem.ToString(), cmbxDestination.SelectedItem.ToString(), double.Parse(lblAmount.Text));
 
             if (pointsUsed)
                 Trip.DeductPoints(points, CurrentPassenger);

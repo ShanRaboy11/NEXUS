@@ -188,7 +188,7 @@
             lblForgetPass.RightToLeft = RightToLeft.No;
             lblForgetPass.Size = new Size(127, 21);
             lblForgetPass.TabIndex = 8;
-            lblForgetPass.Text = "Forget Password?";
+            lblForgetPass.Text = "Forgot Password?";
             lblForgetPass.Click += lblForgetPass_Click;
             // 
             // chkRememberMe

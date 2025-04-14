@@ -20,7 +20,7 @@ namespace NEXUS.Classes
                 SmtpClient smtpServer = new SmtpClient("smtp.gmail.com");
 
                 string senderEmail = "shanraboy11@gmail.com";
-                string appPassword = "waac qbyd ajwo zxhp";
+                string appPassword = "rmgn zamj abql ifgl";
 
                 mail.From = new MailAddress(senderEmail, "NEXUS: Public Utility Vehicle System");
                 mail.To.Add(recipientEmail);

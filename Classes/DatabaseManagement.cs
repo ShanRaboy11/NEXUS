@@ -29,7 +29,7 @@ namespace NEXUS.Classes
             string query = "INSERT INTO [Cash In] ([Request Date], UserID, [Full Name], Amount)" +
                 "VALUES (?, ?, ?, ?)";
 
-            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            using (OleDbConnection conn = GetConnection())
             using (OleDbCommand cmd = new OleDbCommand(query, conn))
             {
                 conn.Open();
@@ -48,7 +48,7 @@ namespace NEXUS.Classes
             string query = "INSERT INTO [Cash Out] ([Request Date], UserID, [Full Name], Amount)" +
                 "VALUES (?, ?, ?, ?)";
 
-            using (OleDbConnection conn = DatabaseManagement.GetConnection())
+            using (OleDbConnection conn = GetConnection())
             using (OleDbCommand cmd = new OleDbCommand(query, conn))
             {
                 conn.Open();

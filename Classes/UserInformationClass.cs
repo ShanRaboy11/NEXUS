@@ -52,10 +52,7 @@ namespace NEXUS.Classes
         public byte[] ProfilePicture { get => profilePicture; set => profilePicture = value; }
         public double WalletAmount { get => walletAmount; set => walletAmount = value; }
         public string Status { get => status; set => status = value; }
-
         protected string HashedPassword { get; set; }
-
-        protected string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Shan Michael\OneDrive\文档\2nd Year 2nd Sem\OOP2\NEXUS\NEXUS.accdb";
 
         protected UserInformation(int userID, string name, string email, string username, string password, string gender, string userType, string birthday, byte[] attachment, byte[] profilepic, double wallet, string status)
         {

@@ -27,9 +27,6 @@ namespace NEXUS.User_Controls
         public HomeAdmin()
         {
             InitializeComponent();
-            //LoadUserDataAndShowChart();
-            //LoadRevenueData();
-            //LoadDriverWeeklyRevenueData();
             weeklyToolStripMenuItem_Click(btnWeek, EventArgs.Empty);
             usersToolStripMenuItem_Click(btnUsers, EventArgs.Empty);
             weeklyToolStripMenuItem1_Click(btnDriverWeek, EventArgs.Empty);

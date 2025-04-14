@@ -62,7 +62,7 @@ namespace NEXUS.User_Controls
             resetCode = rand.Next(10000, 99999).ToString();
 
             string from = "shanraboy11@gmail.com";
-            string password = "waac qbyd ajwo zxhp";
+            string password = "rmgn zamj abql ifgl";
 
             MailMessage message = new MailMessage
             {

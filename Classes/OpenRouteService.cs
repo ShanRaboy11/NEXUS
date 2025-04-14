@@ -10,7 +10,7 @@ namespace NEXUS.Classes
 {
     internal class OpenRouteService
     {
-        private static readonly string apiKey = "5b3ce3597851110001cf6248f1f4ce0b30f741b6bb6844928593358a"; // 🔐 Replace with your actual API key
+        private static readonly string apiKey = "5b3ce3597851110001cf6248f1f4ce0b30f741b6bb6844928593358a"; 
 
         public static async Task<(double lon, double lat)> GetCoordinatesFromDatabase(string jeepCode, string location)
         {
@@ -49,7 +49,6 @@ namespace NEXUS.Classes
 
 
 
-        // Get distance between two places and return the value
         public static async Task<double> CalculateDistance(string jeepCode, string location, string destination)
         {
             var (startLon, startLat) = await GetCoordinatesFromDatabase(jeepCode, location);

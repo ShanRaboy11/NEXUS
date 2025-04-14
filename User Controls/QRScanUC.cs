@@ -94,7 +94,6 @@ namespace NEXUS.User_Controls
                     {
                         string decoded = result.Text.Trim();
 
-                        // 🚫 Prevent reprocessing same value (invalid or valid)
                         if (decoded == lastScannedText && (DateTime.Now - lastInvalidScanTime).TotalSeconds < 2)
                         {
                             isProcessing = false;
@@ -145,10 +144,6 @@ namespace NEXUS.User_Controls
             dialogBox.ShowIcon("invalid qr code");
             scan.ShowOverlay(dialogBox, null);
         }
-
-
-
-
 
         private void StopCamera()
         {
