@@ -951,18 +951,21 @@ namespace NEXUS.User_Controls
         {
             LoadRevenueData();
             SelectButton(ref selectedGeneralButton, btnWeek, Color.FromArgb(38, 36, 68), Color.White);
+            lblReport.Text = "Revenue: 7-Day Trend";
         }
 
         private void monthlyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LoadMonthlyRevenueData();
             SelectButton(ref selectedGeneralButton, btnMonth, Color.FromArgb(38, 36, 68), Color.White);
+            lblReport.Text = "Revenue: Monthly Overview";
         }
 
         private void yearlyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LoadAnnualRevenueData();
             SelectButton(ref selectedGeneralButton, btnAnnual, Color.FromArgb(38, 36, 68), Color.White);
+            lblReport.Text = "Revenue: Yearly Progression";
         }
 
         private void weeklyToolStripMenuItem1_Click(object sender, EventArgs e)

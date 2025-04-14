@@ -11,7 +11,7 @@ namespace NEXUS.Classes
 {
     internal class Email
     {
-        
+
         public static void SendRegistrationEmail(string recipientEmail, string fullName)
         {
             try
@@ -20,13 +20,34 @@ namespace NEXUS.Classes
                 SmtpClient smtpServer = new SmtpClient("smtp.gmail.com");
 
                 string senderEmail = "shanraboy11@gmail.com";
-                string appPassword = "waac qbyd ajwo zxhp"; 
+                string appPassword = "waac qbyd ajwo zxhp";
 
                 mail.From = new MailAddress(senderEmail, "NEXUS: Public Utility Vehicle System");
                 mail.To.Add(recipientEmail);
                 mail.Subject = "Welcome to NEXUS!";
-                mail.Body = $"Hello {fullName},\n\nThank you for registering with NEXUS! Your account has been created successfully.\n\nBest regards,\nNEXUS Team";
-                
+
+                mail.IsBodyHtml = true;
+
+                mail.Body = $@"
+        <div style='font-family:Segoe UI, sans-serif; color:#333; padding:20px;'>
+            <h2 style='color:#183c72;'>Welcome to <span style='font-weight:bold;'>NEXUS</span>!</h2>
+            <p style='font-size:16px;'>Hello <strong>{fullName}</strong>,</p>
+            <p style='font-size:15px;'>
+                Thank you for registering with <strong>NEXUS: Public Utility Vehicle System</strong>.<br />
+                Your account has been <span style='color:green; font-weight:bold;'>successfully created</span>.
+            </p>
+            <p style='font-size:15px;'>
+                We’re thrilled to have you on board. From tracking public utility routes to receiving real-time updates, 
+                your experience is about to get more seamless and efficient.
+            </p>
+            <p style='margin-top:30px; font-size:15px;'>Warm regards,<br/>
+            <span style='color:#183c72; font-weight:bold;'>NEXUS Team</span></p>
+            <hr style='margin-top:40px; border:0; border-top:1px solid #ccc;'/>
+            <p style='font-size:12px; color:gray;'>
+                This is an automated email. Please do not reply to this message.
+            </p>
+        </div>";
+
                 smtpServer.Port = 587;
                 smtpServer.Credentials = new NetworkCredential(senderEmail, appPassword);
                 smtpServer.EnableSsl = true;
@@ -37,6 +58,7 @@ namespace NEXUS.Classes
             {
                 MessageBox.Show("Failed to send registration email:\n" + ex.Message, "Email Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }      
+        }
+
     }
 }

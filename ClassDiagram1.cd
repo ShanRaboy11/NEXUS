@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="NEXUS.Classes.Attachment">
-    <Position X="8.25" Y="8.5" Width="2.75" />
+    <Position X="8.25" Y="8.25" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\UserInformationClass.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="NEXUS.Classes.Cryptography">
-    <Position X="12.5" Y="7.25" Width="2.25" />
+    <Position X="12.5" Y="7" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAQAAQAAAAAAAAACAAAAAAAAABAACAAAAAAAAAA=</HashCode>
       <FileName>Classes\Cryptography.cs</FileName>
@@ -33,12 +33,12 @@
   <Class Name="NEXUS.Classes.DatabaseManagement">
     <Position X="1" Y="0.75" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AACgAAAAAAAAAAwAAAAAAIAAAIAABEAEAAACABAAAQA=</HashCode>
+      <HashCode>AACgAAAACAAAAAyAEAAAAIAABIAABEAEAAASABMAAQA=</HashCode>
       <FileName>Classes\DatabaseManagement.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="NEXUS.Classes.RatingSystem">
-    <Position X="4.5" Y="7" Width="2.25" />
+    <Position X="4.5" Y="6.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>ABEgAAARAAAAAgAAAAIAAAAAAAAAAAAAAAAIAAABIAE=</HashCode>
       <FileName>Classes\UserInformationClass.cs</FileName>
@@ -47,7 +47,7 @@
   <Class Name="NEXUS.Classes.Trip">
     <Position X="16" Y="0.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AHEQAAgQACAIAAEgAEIBAEBCAQgACAAMAAIABAAhAAA=</HashCode>
+      <HashCode>AHEQAAiQQCAMAAEgAEIBAEBCAQgACAAMAAIABAAhAAA=</HashCode>
       <FileName>Classes\UserInformationClass.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -59,116 +59,122 @@
     </TypeIdentifier>
   </Class>
   <Class Name="NEXUS.Classes.UserRegistrationData">
-    <Position X="1" Y="4.75" Width="2.5" />
+    <Position X="16" Y="10.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAEAAACAAABCgAAAAgAAEAAAAAAACAQAAAgEAAAg=</HashCode>
       <FileName>Classes\UserInformationClass.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="NEXUS.Classes.OpenRouteService">
-    <Position X="16" Y="8" Width="2.5" />
+    <Position X="16" Y="8.25" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AgAAAAAAAAAAAACAAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\OpenRouteService.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="NEXUS.Classes.IncidentReport">
-    <Position X="1" Y="8.75" Width="2.5" />
+    <Position X="1" Y="6.25" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAQCAACEAAAgAgAAKAIAAAgSAAAAEAAAAAAIAAAIAgA=</HashCode>
       <FileName>Classes\UserInformationClass.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="NEXUS.Forms.AdminDashboard" Collapsed="true">
-    <Position X="8.25" Y="11.25" Width="2.75" />
+    <Position X="8.25" Y="10.75" Width="2.75" />
     <TypeIdentifier>
       <HashCode>jyhgKlAAACAg1JAgICiAQhMCMAAIBABAEAMUkSLSAhA=</HashCode>
       <FileName>Forms\AdminDashboard.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="NEXUS.Forms.Dashboard" Collapsed="true">
-    <Position X="8.25" Y="10" Width="2.75" />
+    <Position X="8.25" Y="9.75" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>EwgAIBAAACAEBJEACAiIQgACEAEgAhAACAE0ASBIAgE=</HashCode>
+      <HashCode>lyhAqFACBCBERJEkCKiKYgIaMAEoBpRBGAc0ESDYCgE=</HashCode>
+      <FileName>Forms\Dashboard.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="NEXUS.Forms.DriverDashboard" Collapsed="true">
-    <Position X="8.25" Y="12.5" Width="2.75" />
+    <Position X="8.25" Y="11.75" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>nhkEonAAJCAARpAgiKGCwEKaMBAiBgAAGSIEEQPQAiA=</HashCode>
+      <HashCode>nhkEqnAAJCBARpAkiKGS4EKaMBAiBgABGSYEEQPQCiA=</HashCode>
       <FileName>Forms\DriverDashboard.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="NEXUS.Forms.History" Collapsed="true">
-    <Position X="4.5" Y="12" Width="2.25" />
+    <Position X="4.5" Y="11.75" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>ABAAAAABACAAABAAAACAAAACAAEAAABAFBAgAAAAAEI=</HashCode>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="NEXUS.Forms.DriverHistory" Collapsed="true">
-    <Position X="16" Y="10" Width="2.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAACgAABAAgACgAAgCQJEAAABAAJAAAAAACEI=</HashCode>
-      <FileName>Forms\DriverHistory.cs</FileName>
+      <HashCode>AAAAAIABACgAABAAAICCAAgCSJEAEgBAFBAgAAEACEI=</HashCode>
+      <FileName>Forms\History.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="NEXUS.Forms.Home" Collapsed="true">
-    <Position X="4.5" Y="11" Width="2.25" />
+    <Position X="4.5" Y="10.75" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAIhAQACAAABAAAACAAAACAAAAAAAAAAAAAQAAACA=</HashCode>
+      <HashCode>AQAmIhAQBCAAABCAAACAAAACABAACAAAAAgACQAEICA=</HashCode>
+      <FileName>Forms\Home.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="NEXUS.Forms.Report" Collapsed="true">
-    <Position X="4.5" Y="13" Width="2.25" />
+    <Position X="4.5" Y="12.75" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAgAAAAgACAAABAAAACEAgACAAgBAgAAAAAAAUAAAEA=</HashCode>
+      <HashCode>AAgAAAAgACAAABAAAACEAggCEggBCgAAABAAAXAAAkA=</HashCode>
+      <FileName>Forms\Report.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="NEXUS.Forms.Scan" Collapsed="true">
-    <Position X="12.5" Y="9.5" Width="2.25" />
+    <Position X="12.5" Y="9.25" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAIABAACJAABAACACAAAAKIAAAAAAAAgAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAABAACJAABAACACAAAAKIAAAAAAAAgAAAAAgAAA=</HashCode>
       <FileName>Forms\Scan.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="NEXUS.Forms.RouteFinder" Collapsed="true">
-    <Position X="12.5" Y="10.5" Width="2.25" />
+    <Position X="12.5" Y="10.25" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACIAABAAAECAAAACAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAABCIAABAAAECAAAACAAAAAAAAAgAgAAAAAEA=</HashCode>
+      <FileName>Forms\RouteFinder.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="NEXUS.Forms.TripLogging" Collapsed="true">
-    <Position X="12.5" Y="11.5" Width="2.25" />
+    <Position X="8.25" Y="12.75" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AAAAABAAACAQgIAAAQCAAAgCAAAAAAAAAAAAAQBAAAA=</HashCode>
+      <HashCode>AAAAABAQACAQgIAAAQCAAAgCAAAAAAAAAAAAAQBAAAA=</HashCode>
       <FileName>Forms\TripLogging.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="NEXUS.Forms.CashIn" Collapsed="true">
-    <Position X="12.5" Y="12.5" Width="2.25" />
+    <Position X="12.5" Y="11.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>gAAAQBAgACIQgBgACAiAQAQCABAAAAAAAAAAAQBAAAA=</HashCode>
       <FileName>Forms\CashIn.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="NEXUS.Forms.QRCodeGeneratorform" Collapsed="true">
-    <Position X="16" Y="11" Width="2.5" />
+    <Position X="12.5" Y="12.25" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAKAAABAAAQCAgAACAAAAAAAgAAUIAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAUAKAAABgAAQCEgAgCEAAgAAAgAEcIAACAggA=</HashCode>
+      <FileName>Forms\QRCodeGeneratorform.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="NEXUS.Forms.LogInForm" Collapsed="true">
-    <Position X="16" Y="12" Width="2.5" />
+  <Class Name="NEXUS.Classes.Email">
+    <Position X="1" Y="11.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>sAAFgNCAAiBAAAIIECKAAAJSEEIQCBCAAwIAASHwAkA=</HashCode>
-      <FileName>Forms\LogInForm.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Email.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="NEXUS.Forms.Register" Collapsed="true">
-    <Position X="16" Y="13" Width="2.5" />
+  <Class Name="NEXUS.User_Controls.PaymentUC" Collapsed="true">
+    <Position X="1" Y="13" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>cQGFgDAAAiABQBIAKCSAAFACIAAAAABAAAJAIQSSAuA=</HashCode>
-      <FileName>Forms\Register.cs</FileName>
+      <HashCode>BAAAxBCQACAAkRIIAAHCAAISgAAgAAgCgEEhASBoAiE=</HashCode>
+      <FileName>User Controls\PaymentUC.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NEXUS.User_Controls.DataGrid" Collapsed="true">
+    <Position X="12.5" Y="13.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>ACQAAgAAAKAgAABAEASBAAACiAAAAAAAADgAAAAAgAQ=</HashCode>
+      <FileName>User Controls\DataGrid.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
