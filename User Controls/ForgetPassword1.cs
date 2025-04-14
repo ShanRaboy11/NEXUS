@@ -68,8 +68,29 @@ namespace NEXUS.User_Controls
             {
                 From = new MailAddress(from, "NEXUS: Public Utility Vehicle System"),
                 Subject = "Password Reset Code",
-                Body = $"Your password reset code is: {resetCode}"
+                IsBodyHtml = true,
+                Body = $@"
+    <div style='font-family:Segoe UI, sans-serif; color:#333; padding:20px;'>
+        <h2 style='color:#183c72;'>Password Reset Request</h2>
+        <p style='font-size:15px;'>
+            We received a request to reset your password for your <strong>NEXUS</strong> account.
+        </p>
+        <p style='font-size:15px;'>
+            Your password reset code is: 
+            <span style='font-weight:bold; color:#183c72; font-size:18px;'>{resetCode}</span>
+        </p>
+        <p style='font-size:14px;'>
+            If you did not request a password reset, please ignore this email or contact our support team.
+        </p>
+        <p style='margin-top:30px; font-size:15px;'>Stay safe,<br/>
+        <span style='color:#183c72; font-weight:bold;'>NEXUS Team</span></p>
+        <hr style='margin-top:40px; border:0; border-top:1px solid #ccc;'/>
+        <p style='font-size:12px; color:gray;'>
+            This is an automated message. Please do not reply directly to this email.
+        </p>
+    </div>"
             };
+
 
             message.To.Add(userEmail);
 
