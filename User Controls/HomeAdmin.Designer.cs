@@ -760,10 +760,10 @@
             lblReports.Font = new Font("Inter", 60F, FontStyle.Bold);
             lblReports.ForeColor = Color.FromArgb(38, 36, 68);
             lblReports.Image = Properties.Resources.bgReports1;
-            lblReports.Location = new Point(3, 78);
+            lblReports.Location = new Point(7, 78);
             lblReports.Margin = new Padding(0);
             lblReports.Name = "lblReports";
-            lblReports.Size = new Size(226, 118);
+            lblReports.Size = new Size(219, 118);
             lblReports.TabIndex = 43;
             lblReports.Text = "2";
             lblReports.TextAlign = ContentAlignment.MiddleCenter;

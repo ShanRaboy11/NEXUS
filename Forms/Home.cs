@@ -32,11 +32,11 @@ namespace NEXUS.Forms
             if (user is Passenger passenger)
             {
                 passengerDashboard = new Dashboard(passenger);
-                LoadPassengerFareAnalytics();
                 pvPassenger.Visible = true;
                 label3.Visible = true;
                 label3.Dock = DockStyle.Top;
                 picAdSlideshow.Visible = false;
+                LoadPassengerFareAnalytics();
             }
             else if (user is Driver driver)
             {
@@ -73,6 +73,18 @@ namespace NEXUS.Forms
                 OleDbDataAdapter dataAdapter = new OleDbDataAdapter(command);
                 DataTable dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);
+
+                if (dataTable.Rows.Count == 0)
+                {
+                    pvPassenger.Visible = false;
+                    label3.Visible = false;
+                    label3.Dock = DockStyle.None;
+                    pvPassenger.Model = null;
+                    picAdSlideshow.Visible = true;
+                    picAdSlideshow.BringToFront();
+                    LoadAds();
+                    return;
+                }
 
                 double totalExpenses = 0;
                 foreach (DataRow row in dataTable.Rows)
@@ -195,7 +207,7 @@ namespace NEXUS.Forms
         {
             LoadAdImages();
 
-            timerAds.Interval = 4000; // 4 seconds per slide
+            timerAds.Interval = 3000; // 4 seconds per slide
             timerAds.Tick += TimerAds_Tick;
             timerAds.Start();
         }

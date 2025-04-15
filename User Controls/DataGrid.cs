@@ -35,11 +35,11 @@ namespace NEXUS.User_Controls
             switch (userType)
             {
                 case "Passenger":
-                    query = "SELECT ID, Username, [Password], [Full Name], [Email Address], Gender, Birthday, Classification, Wallet, Points, Status FROM PassengersQuery";
+                    query = "SELECT ID, Username, [Full Name], [Email Address], Gender, Birthday, Classification, Wallet, Points, Status FROM PassengersQuery";
                     dgvUsers.ContextMenuStrip = contextMenuStrip1;
                     break;
                 case "Driver":
-                    query = "SELECT ID, Username, [Password], [Full Name], [Email Address], Gender, Birthday, [Plate Number], Wallet, Route, Status FROM DriversQuery";
+                    query = "SELECT ID, Username, [Full Name], [Email Address], Gender, Birthday, [Plate Number], Wallet, Route, Status FROM DriversQuery";
                     dgvUsers.ContextMenuStrip = contextMenuStrip1;
                     break;
                 case "Report":
