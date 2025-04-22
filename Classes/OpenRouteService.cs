@@ -10,7 +10,7 @@ namespace NEXUS.Classes
 {
     internal class OpenRouteService
     {
-        private static readonly string apiKey = "5b3ce3597851110001cf6248f1f4ce0b30f741b6bb6844928593358a"; 
+        private static readonly string apiKey = "API KEY FROM OPENROUTESERVICE API"; 
 
         public static async Task<(double lon, double lat)> GetCoordinatesFromDatabase(string jeepCode, string location)
         {

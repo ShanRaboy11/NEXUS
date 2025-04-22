@@ -150,7 +150,7 @@ namespace NEXUS.User_Controls
             if (videoCaptureDevice != null && videoCaptureDevice.IsRunning)
             {
                 scanTimer?.Stop();
-                videoCaptureDevice.NewFrame -= FinalFrame_NewFrame; // Unsubscribe event
+                videoCaptureDevice.NewFrame -= FinalFrame_NewFrame; 
                 videoCaptureDevice.SignalToStop();
                 videoCaptureDevice.WaitForStop();
                 videoCaptureDevice = null;

@@ -63,10 +63,9 @@ namespace NEXUS.User_Controls
 
             using (OleDbConnection conn = DatabaseManagement.GetConnection())
             {
-                conn.Open(); // Opening the connection synchronously
+                conn.Open(); 
                 using (OleDbCommand cmd = new OleDbCommand(query, conn))
                 {
-                    // Add jeepCode as a parameter to avoid SQL injection
                     cmd.Parameters.AddWithValue("?", jeepCode);
 
                     using (OleDbDataAdapter adapter = new OleDbDataAdapter(cmd))
@@ -143,7 +142,6 @@ namespace NEXUS.User_Controls
                         }
                     }
 
-                    // Apply discount if eligible
                     bool isDiscountEligible = CheckDiscountEligibility();
                     if (isDiscountEligible)
                     {
@@ -151,7 +149,7 @@ namespace NEXUS.User_Controls
                     }
 
                     this.baseAmount = fare * numericMultiplier.Value;
-                    this.baseAmount = Math.Round(this.baseAmount); //rounds to the nearest whole number
+                    this.baseAmount = Math.Round(this.baseAmount); 
                     farePrice = baseAmount;
                     lblAmount.Text = this.baseAmount.ToString("N2");
                 }

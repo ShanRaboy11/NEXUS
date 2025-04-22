@@ -72,7 +72,7 @@ namespace NEXUS.User_Controls
                     conn.Open();
                     using (OleDbDataReader reader = cmd.ExecuteReader())
                     {
-                        int rowIndex = 1; // Start adding passengers from the second row
+                        int rowIndex = 1; 
 
                         while (reader.Read())
                         {

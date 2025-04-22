@@ -61,8 +61,8 @@ namespace NEXUS.User_Controls
             Random rand = new Random();
             resetCode = rand.Next(10000, 99999).ToString();
 
-            string from = "shanraboy11@gmail.com";
-            string password = "rmgn zamj abql ifgl";
+            string from = "SENDER EMAIL";
+            string password = "APP PASSWORD";
 
             MailMessage message = new MailMessage
             {
