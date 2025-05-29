@@ -1,0 +1,22 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.image {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #D2042D;
+}
+
+.image img {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    border: 10px solid #FFFFFF;
+    object-fit: cover; /* Ensures image fills the circle */
+}
